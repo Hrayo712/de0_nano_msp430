@@ -1,0 +1,1454 @@
+Analysis & Synthesis report for openMSP430_fpga
+Wed Mar  6 07:57:00 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_state
+ 10. State Machine - |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|dbg_state
+ 11. State Machine - |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|i2c_state
+ 12. State Machine - |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|i_state
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Source assignments for ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated
+ 19. Source assignments for ram_16x8k:dmem_0|altsyncram:altsyncram_component|altsyncram_b4j1:auto_generated
+ 20. Parameter Settings for User Entity Instance: openMSP430:openmsp430_0
+ 21. Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_clock_module:clock_module_0
+ 22. Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_frontend:frontend_0
+ 23. Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0
+ 24. Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_sfr:sfr_0
+ 25. Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_watchdog:watchdog_0
+ 26. Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_multiplier:multiplier_0
+ 27. Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_dbg:dbg_0
+ 28. Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0
+ 29. Parameter Settings for User Entity Instance: omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0
+ 30. Parameter Settings for User Entity Instance: omsp_timerA:timerA_0
+ 31. Parameter Settings for User Entity Instance: ram_16x16k:pmem_0|altsyncram:altsyncram_component
+ 32. Parameter Settings for User Entity Instance: ram_16x8k:dmem_0|altsyncram:altsyncram_component
+ 33. Parameter Settings for Inferred Entity Instance: openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0
+ 34. altsyncram Parameter Settings by Entity Instance
+ 35. lpm_mult Parameter Settings by Entity Instance
+ 36. Port Connectivity Checks: "io_buf:io_buf_sda_0"
+ 37. Port Connectivity Checks: "omsp_timerA:timerA_0"
+ 38. Port Connectivity Checks: "openMSP430:openmsp430_0|omsp_frontend:frontend_0"
+ 39. Port Connectivity Checks: "openMSP430:openmsp430_0"
+ 40. Post-Synthesis Netlist Statistics for Top Partition
+ 41. Elapsed Time Per Partition
+ 42. Analysis & Synthesis Messages
+ 43. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Mar  6 07:57:00 2019       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; openMSP430_fpga                             ;
+; Top-level Entity Name              ; openMSP430_fpga                             ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 2,957                                       ;
+;     Total combinational functions  ; 2,794                                       ;
+;     Dedicated logic registers      ; 981                                         ;
+; Total registers                    ; 981                                         ;
+; Total pins                         ; 38                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 393,216                                     ;
+; Embedded Multiplier 9-bit elements ; 2                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; openMSP430_fpga    ; openMSP430_fpga    ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                     ;
++-------------------------------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                      ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                  ; Library ;
++-------------------------------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------+---------+
+; ../../../rtl/verilog/openMSP430_fpga.v                ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v                ;         ;
+; ../../../rtl/verilog/omsp_de0_nano_soc_led_key_sw.v   ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/omsp_de0_nano_soc_led_key_sw.v   ;         ;
+; ../../../rtl/verilog/sync_debouncer_10ms.v            ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/sync_debouncer_10ms.v            ;         ;
+; ../../../rtl/verilog/mega/ram_16x16k.v                ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v                ;         ;
+; ../../../rtl/verilog/mega/ram_16x8k.v                 ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v                 ;         ;
+; ../../../rtl/verilog/mega/io_buf.v                    ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/io_buf.v                    ;         ;
+; ../../../rtl/verilog/openmsp430/openMSP430.v          ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v          ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_frontend.v       ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v       ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_execution_unit.v ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_register_file.v  ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v  ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_alu.v            ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v            ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_sfr.v            ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v            ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_mem_backbone.v   ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v   ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_clock_module.v   ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v   ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_dbg.v            ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v            ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v        ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v        ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_watchdog.v       ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v       ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_multiplier.v     ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v     ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_sync_reset.v     ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sync_reset.v     ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_sync_cell.v      ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sync_cell.v      ;         ;
+; ../../../rtl/verilog/openmsp430/periph/omsp_timerA.v  ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v  ;         ;
+; altsyncram.tdf                                        ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                ;         ;
+; stratix_ram_block.inc                                 ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc         ;         ;
+; lpm_mux.inc                                           ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                   ;         ;
+; lpm_decode.inc                                        ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                ;         ;
+; aglobal181.inc                                        ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                ;         ;
+; a_rdenreg.inc                                         ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                 ;         ;
+; altrom.inc                                            ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altrom.inc                    ;         ;
+; altram.inc                                            ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altram.inc                    ;         ;
+; altdpram.inc                                          ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                  ;         ;
+; db/altsyncram_b1l1.tdf                                ; yes             ; Auto-Generated Megafunction            ; /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b1l1.tdf ;         ;
+; pmem.mif                                              ; yes             ; Auto-Found Memory Initialization File  ; /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/WORK/pmem.mif               ;         ;
+; db/decode_jsa.tdf                                     ; yes             ; Auto-Generated Megafunction            ; /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/WORK/db/decode_jsa.tdf      ;         ;
+; db/mux_iob.tdf                                        ; yes             ; Auto-Generated Megafunction            ; /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/WORK/db/mux_iob.tdf         ;         ;
+; db/altsyncram_b4j1.tdf                                ; yes             ; Auto-Generated Megafunction            ; /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b4j1.tdf ;         ;
+; lpm_mult.tdf                                          ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf                  ;         ;
+; lpm_add_sub.inc                                       ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc               ;         ;
+; multcore.inc                                          ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.inc                  ;         ;
+; bypassff.inc                                          ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/bypassff.inc                  ;         ;
+; altshift.inc                                          ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altshift.inc                  ;         ;
+; db/mult_p4t.tdf                                       ; yes             ; Auto-Generated Megafunction            ; /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/WORK/db/mult_p4t.tdf        ;         ;
++-------------------------------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimated Total logic elements              ; 2,957              ;
+;                                             ;                    ;
+; Total combinational functions               ; 2794               ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 1784               ;
+;     -- 3 input functions                    ; 647                ;
+;     -- <=2 input functions                  ; 363                ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 2477               ;
+;     -- arithmetic mode                      ; 317                ;
+;                                             ;                    ;
+; Total registers                             ; 981                ;
+;     -- Dedicated logic registers            ; 981                ;
+;     -- I/O registers                        ; 0                  ;
+;                                             ;                    ;
+; I/O pins                                    ; 38                 ;
+; Total memory bits                           ; 393216             ;
+;                                             ;                    ;
+; Embedded Multiplier 9-bit elements          ; 2                  ;
+;                                             ;                    ;
+; Maximum fan-out node                        ; FPGA_CLK1_50~input ;
+; Maximum fan-out                             ; 1029               ;
+; Total fan-out                               ; 14608              ;
+; Average fan-out                             ; 3.73               ;
++---------------------------------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                             ;
++-----------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
+; Compilation Hierarchy Node                                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                  ; Entity Name                  ; Library Name ;
++-----------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
+; |openMSP430_fpga                                                ; 2794 (10)           ; 981 (17)                  ; 393216      ; 2            ; 0       ; 1         ; 38   ; 0            ; |openMSP430_fpga                                                                                                     ; openMSP430_fpga              ; work         ;
+;    |io_buf:io_buf_sda_0|                                        ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|io_buf:io_buf_sda_0                                                                                 ; io_buf                       ; work         ;
+;       |io_buf_iobuf_bidir_30p:io_buf_iobuf_bidir_30p_component| ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|io_buf:io_buf_sda_0|io_buf_iobuf_bidir_30p:io_buf_iobuf_bidir_30p_component                         ; io_buf_iobuf_bidir_30p       ; work         ;
+;    |omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|     ; 192 (30)            ; 164 (32)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0                                              ; omsp_de0_nano_soc_led_key_sw ; work         ;
+;       |sync_debouncer_10ms:sync_debouncer_10ms_key0|            ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key0 ; sync_debouncer_10ms          ; work         ;
+;       |sync_debouncer_10ms:sync_debouncer_10ms_key1|            ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key1 ; sync_debouncer_10ms          ; work         ;
+;       |sync_debouncer_10ms:sync_debouncer_10ms_sw0|             ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw0  ; sync_debouncer_10ms          ; work         ;
+;       |sync_debouncer_10ms:sync_debouncer_10ms_sw1|             ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw1  ; sync_debouncer_10ms          ; work         ;
+;       |sync_debouncer_10ms:sync_debouncer_10ms_sw2|             ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw2  ; sync_debouncer_10ms          ; work         ;
+;       |sync_debouncer_10ms:sync_debouncer_10ms_sw3|             ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw3  ; sync_debouncer_10ms          ; work         ;
+;    |omsp_timerA:timerA_0|                                       ; 291 (291)           ; 136 (130)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0                                                                                ; omsp_timerA                  ; work         ;
+;       |omsp_sync_cell:sync_cell_cci0|                           ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci0                                                  ; omsp_sync_cell               ; work         ;
+;       |omsp_sync_cell:sync_cell_cci1|                           ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci1                                                  ; omsp_sync_cell               ; work         ;
+;       |omsp_sync_cell:sync_cell_cci2|                           ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci2                                                  ; omsp_sync_cell               ; work         ;
+;    |openMSP430:openmsp430_0|                                    ; 2283 (187)          ; 663 (0)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0                                                                             ; openMSP430                   ; work         ;
+;       |omsp_clock_module:clock_module_0|                        ; 23 (23)             ; 21 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0                                            ; omsp_clock_module            ; work         ;
+;          |omsp_sync_cell:sync_cell_lfxt_clk|                    ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_lfxt_clk          ; omsp_sync_cell               ; work         ;
+;          |omsp_sync_cell:sync_cell_puc|                         ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_puc               ; omsp_sync_cell               ; work         ;
+;          |omsp_sync_reset:sync_reset_por|                       ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por             ; omsp_sync_reset              ; work         ;
+;       |omsp_dbg:dbg_0|                                          ; 291 (196)           ; 128 (69)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0                                                              ; omsp_dbg                     ; work         ;
+;          |omsp_dbg_i2c:dbg_i2c_0|                               ; 95 (93)             ; 59 (55)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0                                       ; omsp_dbg_i2c                 ; work         ;
+;             |omsp_sync_cell:sync_cell_i2c_scl|                  ; 1 (1)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|omsp_sync_cell:sync_cell_i2c_scl      ; omsp_sync_cell               ; work         ;
+;             |omsp_sync_cell:sync_cell_i2c_sda|                  ; 1 (1)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|omsp_sync_cell:sync_cell_i2c_sda      ; omsp_sync_cell               ; work         ;
+;       |omsp_execution_unit:execution_unit_0|                    ; 1129 (210)          ; 266 (35)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0                                        ; omsp_execution_unit          ; work         ;
+;          |omsp_alu:alu_0|                                       ; 271 (271)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0                         ; omsp_alu                     ; work         ;
+;          |omsp_register_file:register_file_0|                   ; 648 (648)           ; 231 (231)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0     ; omsp_register_file           ; work         ;
+;       |omsp_frontend:frontend_0|                                ; 314 (314)           ; 116 (116)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0                                                    ; omsp_frontend                ; work         ;
+;       |omsp_mem_backbone:mem_backbone_0|                        ; 143 (143)           ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0                                            ; omsp_mem_backbone            ; work         ;
+;       |omsp_multiplier:multiplier_0|                            ; 139 (139)           ; 70 (70)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0                                                ; omsp_multiplier              ; work         ;
+;          |lpm_mult:Mult0|                                       ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0                                 ; lpm_mult                     ; work         ;
+;             |mult_p4t:auto_generated|                           ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0|mult_p4t:auto_generated         ; mult_p4t                     ; work         ;
+;       |omsp_sfr:sfr_0|                                          ; 6 (6)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_sfr:sfr_0                                                              ; omsp_sfr                     ; work         ;
+;       |omsp_watchdog:watchdog_0|                                ; 51 (51)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0                                                    ; omsp_watchdog                ; work         ;
+;    |ram_16x16k:pmem_0|                                          ; 18 (0)              ; 1 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|ram_16x16k:pmem_0                                                                                   ; ram_16x16k                   ; work         ;
+;       |altsyncram:altsyncram_component|                         ; 18 (0)              ; 1 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|ram_16x16k:pmem_0|altsyncram:altsyncram_component                                                   ; altsyncram                   ; work         ;
+;          |altsyncram_b1l1:auto_generated|                       ; 18 (0)              ; 1 (1)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated                    ; altsyncram_b1l1              ; work         ;
+;             |decode_jsa:decode3|                                ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|decode_jsa:decode3 ; decode_jsa                   ; work         ;
+;             |mux_iob:mux2|                                      ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|mux_iob:mux2       ; mux_iob                      ; work         ;
+;    |ram_16x8k:dmem_0|                                           ; 0 (0)               ; 0 (0)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|ram_16x8k:dmem_0                                                                                    ; ram_16x8k                    ; work         ;
+;       |altsyncram:altsyncram_component|                         ; 0 (0)               ; 0 (0)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|ram_16x8k:dmem_0|altsyncram:altsyncram_component                                                    ; altsyncram                   ; work         ;
+;          |altsyncram_b4j1:auto_generated|                       ; 0 (0)               ; 0 (0)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|ram_16x8k:dmem_0|altsyncram:altsyncram_component|altsyncram_b4j1:auto_generated                     ; altsyncram_b4j1              ; work         ;
++-----------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                 ;
++---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+----------+
+; Name                                                                                        ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF      ;
++---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+----------+
+; ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 16384        ; 16           ; --           ; --           ; 262144 ; pmem.mif ;
+; ram_16x8k:dmem_0|altsyncram:altsyncram_component|altsyncram_b4j1:auto_generated|ALTSYNCRAM  ; AUTO ; Single Port ; 8192         ; 16           ; --           ; --           ; 131072 ; None     ;
++---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+----------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 1           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 2           ;
+; Signed Embedded Multipliers           ; 1           ;
+; Unsigned Embedded Multipliers         ; 0           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------+
+; State Machine - |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_state                             ;
++------------------------+--------------------+------------------------+---------------------+------------------+
+; Name                   ; mem_state.M_ACCESS ; mem_state.M_ACCESS_BRK ; mem_state.M_SET_BRK ; mem_state.M_IDLE ;
++------------------------+--------------------+------------------------+---------------------+------------------+
+; mem_state.M_IDLE       ; 0                  ; 0                      ; 0                   ; 0                ;
+; mem_state.M_SET_BRK    ; 0                  ; 0                      ; 1                   ; 1                ;
+; mem_state.M_ACCESS_BRK ; 0                  ; 1                      ; 0                   ; 1                ;
+; mem_state.M_ACCESS     ; 1                  ; 0                      ; 0                   ; 1                ;
++------------------------+--------------------+------------------------+---------------------+------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|dbg_state                            ;
++----------------------+----------------------+----------------------+----------------------+------------------+----------------------+
+; Name                 ; dbg_state.TX_BYTE_LO ; dbg_state.RX_BYTE_HI ; dbg_state.RX_BYTE_LO ; dbg_state.RX_CMD ; dbg_state.TX_BYTE_HI ;
++----------------------+----------------------+----------------------+----------------------+------------------+----------------------+
+; dbg_state.RX_CMD     ; 0                    ; 0                    ; 0                    ; 0                ; 0                    ;
+; dbg_state.RX_BYTE_LO ; 0                    ; 0                    ; 1                    ; 1                ; 0                    ;
+; dbg_state.RX_BYTE_HI ; 0                    ; 1                    ; 0                    ; 1                ; 0                    ;
+; dbg_state.TX_BYTE_LO ; 1                    ; 0                    ; 0                    ; 1                ; 0                    ;
+; dbg_state.TX_BYTE_HI ; 0                    ; 0                    ; 0                    ; 1                ; 1                    ;
++----------------------+----------------------+----------------------+----------------------+------------------+----------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|i2c_state                                                  ;
++-----------------------+-----------------------+-------------------+-----------------------+-------------------+-----------------------+-------------------+
+; Name                  ; i2c_state.TX_DATA_ACK ; i2c_state.TX_DATA ; i2c_state.RX_DATA_ACK ; i2c_state.RX_DATA ; i2c_state.RX_ADDR_ACK ; i2c_state.RX_ADDR ;
++-----------------------+-----------------------+-------------------+-----------------------+-------------------+-----------------------+-------------------+
+; i2c_state.RX_ADDR     ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ;
+; i2c_state.RX_ADDR_ACK ; 0                     ; 0                 ; 0                     ; 0                 ; 1                     ; 1                 ;
+; i2c_state.RX_DATA     ; 0                     ; 0                 ; 0                     ; 1                 ; 0                     ; 1                 ;
+; i2c_state.RX_DATA_ACK ; 0                     ; 0                 ; 1                     ; 0                 ; 0                     ; 1                 ;
+; i2c_state.TX_DATA     ; 0                     ; 1                 ; 0                     ; 0                 ; 0                     ; 1                 ;
+; i2c_state.TX_DATA_ACK ; 1                     ; 0                 ; 0                     ; 0                 ; 0                     ; 1                 ;
++-----------------------+-----------------------+-------------------+-----------------------+-------------------+-----------------------+-------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|i_state                                         ;
++---------------------+----------------+----------------+----------------+---------------+--------------------+---------------------+
+; Name                ; i_state.I_IDLE ; i_state.I_EXT2 ; i_state.I_EXT1 ; i_state.I_DEC ; i_state.I_IRQ_DONE ; i_state.I_IRQ_FETCH ;
++---------------------+----------------+----------------+----------------+---------------+--------------------+---------------------+
+; i_state.I_IRQ_FETCH ; 0              ; 0              ; 0              ; 0             ; 0                  ; 0                   ;
+; i_state.I_IRQ_DONE  ; 0              ; 0              ; 0              ; 0             ; 1                  ; 1                   ;
+; i_state.I_DEC       ; 0              ; 0              ; 0              ; 1             ; 0                  ; 1                   ;
+; i_state.I_EXT1      ; 0              ; 0              ; 1              ; 0             ; 0                  ; 1                   ;
+; i_state.I_EXT2      ; 0              ; 1              ; 0              ; 0             ; 0                  ; 1                   ;
+; i_state.I_IDLE      ; 1              ; 0              ; 0              ; 0             ; 0                  ; 1                   ;
++---------------------+----------------+----------------+----------------+---------------+--------------------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                         ;
++-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+; Register name                                                                                               ; Reason for Removal                                                           ;
++-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+; omsp_timerA:timerA_0|tactl[2,3]                                                                             ; Stuck at GND due to stuck port data_in                                       ;
+; omsp_timerA:timerA_0|tacctl0[3,9,10]                                                                        ; Stuck at GND due to stuck port data_in                                       ;
+; omsp_timerA:timerA_0|tacctl1[3,9,10]                                                                        ; Stuck at GND due to stuck port data_in                                       ;
+; omsp_timerA:timerA_0|tacctl2[3,9,10]                                                                        ; Stuck at GND due to stuck port data_in                                       ;
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[0]                                            ; Stuck at GND due to stuck port data_in                                       ;
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[0]                                            ; Stuck at GND due to stuck port data_in                                       ;
+; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|key_sw_irq_en[6,7]                                   ; Stuck at GND due to stuck port data_in                                       ;
+; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|key_sw_irq_edge[6,7]                                 ; Stuck at GND due to stuck port data_in                                       ;
+; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|key_sw_irq_val[6,7]                                  ; Stuck at GND due to stuck port data_in                                       ;
+; openMSP430:openmsp430_0|omsp_watchdog:watchdog_0|wdtctl[3,5,6]                                              ; Stuck at GND due to stuck port data_in                                       ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r2[6,9..15] ; Stuck at GND due to stuck port data_in                                       ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[4,5]                                               ; Stuck at VCC due to stuck port data_in                                       ;
+; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|bcsctl1[0..3,6,7]                                  ; Stuck at GND due to stuck port data_in                                       ;
+; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|bcsctl2[0,4..7]                                    ; Stuck at GND due to stuck port data_in                                       ;
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[1]                                            ; Stuck at GND due to stuck port data_in                                       ;
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[1]                                            ; Stuck at GND due to stuck port data_in                                       ;
+; omsp_timerA:timerA_0|taclk_dly                                                                              ; Lost fanout                                                                  ;
+; omsp_timerA:timerA_0|inclk_dly                                                                              ; Lost fanout                                                                  ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_src_bin[3]                                            ; Merged with openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_jmp_bin[1] ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_src_bin[2]                                            ; Merged with openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_jmp_bin[0] ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r1[0]       ; Stuck at GND due to stuck port data_in                                       ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_state~4                                                          ; Lost fanout                                                                  ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_state~5                                                          ; Lost fanout                                                                  ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|dbg_state~4                                   ; Lost fanout                                                                  ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|dbg_state~5                                   ; Lost fanout                                                                  ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|i2c_state~4                                   ; Lost fanout                                                                  ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|i2c_state~5                                   ; Lost fanout                                                                  ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|i2c_state~6                                   ; Lost fanout                                                                  ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|i_state~4                                                  ; Lost fanout                                                                  ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|i_state~5                                                  ; Lost fanout                                                                  ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|i_state~6                                                  ; Lost fanout                                                                  ;
+; Total Number of Removed Registers = 60                                                                      ;                                                                              ;
++-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                      ;
++------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------+
+; Register name                                                    ; Reason for Removal        ; Registers Removed due to This Register                            ;
++------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------+
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[0] ; Stuck at GND              ; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[1], ;
+;                                                                  ; due to stuck port data_in ; omsp_timerA:timerA_0|taclk_dly, omsp_timerA:timerA_0|inclk_dly    ;
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[0] ; Stuck at GND              ; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[1]  ;
+;                                                                  ; due to stuck port data_in ;                                                                   ;
++------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 981   ;
+; Number of registers using Synchronous Clear  ; 126   ;
+; Number of registers using Synchronous Load   ; 109   ;
+; Number of registers using Asynchronous Clear ; 980   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 621   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                   ;
++------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                    ; Fan out ;
++------------------------------------------------------------------------------------------------------+---------+
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|e_state[0]                                          ; 28      ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_irq_rst                                        ; 2       ;
+; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|dbg_rst_noscan                              ; 129     ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[0]                                          ; 3       ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[1]                                          ; 3       ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[2]                                          ; 2       ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[3]                                          ; 2       ;
+; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por|data_sync[1] ; 7       ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|dbg_i2c_sda_out                        ; 2       ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|shift_buf[0]                           ; 9       ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|scl_buf[0]                             ; 4       ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|scl_buf[1]                             ; 3       ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|scl_dly                                ; 7       ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|cpu_ctl[4]                                                    ; 4       ;
+; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por|data_sync[0] ; 1       ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|sda_in_buf[0]                          ; 2       ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|sda_in_buf[1]                          ; 1       ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|sda_in_dly                             ; 2       ;
+; Total number of inverted registers = 18                                                              ;         ;
++------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r2[5]          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|dbg_din_hi[1]                                    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0|wdtcnt[5]                                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr0[15]                                                                                ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr1[5]                                                                                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr2[12]                                                                                ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r4[3]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r5[3]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r6[3]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r7[14]         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r8[15]         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r9[6]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r10[8]         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r11[11]        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r12[7]         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r13[0]         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r14[12]        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r15[8]         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_out_nxt[8]                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|clk_div[1]                                                                                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|sumext_s[0]                                               ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_sext[13]                                                 ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r1[8]          ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|tar[10]                                                                                   ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reslo[13]                                                 ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reshi[5]                                                  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|shift_buf[3]                                     ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[14]                                                            ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[5]                                                             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|dbg_mem_dout[14]                                                        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|eu_mdb_in[15]                                         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[0]                     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[10]                                               ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|pmem_addr[2]                                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|dbg_mem_din[8]                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mb_wr_msk[0]                                      ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|mab[10]                                                       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|mab[4]                                                        ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_dest[5]                                                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_in_bw[7]                                      ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[7]                                                ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[1]                     ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[5]                     ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[10]                    ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[13]                    ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 45 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|op_dst[8]                                         ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[4]                                                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[1]                                                ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|inst_src_in[6] ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|op_src[7]                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Source assignments for ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                        ;
++---------------------------------+--------------------+------+-------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                         ;
++---------------------------------+--------------------+------+-------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Source assignments for ram_16x8k:dmem_0|altsyncram:altsyncram_component|altsyncram_b4j1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                       ;
++---------------------------------+--------------------+------+------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                        ;
++---------------------------------+--------------------+------+------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: openMSP430:openmsp430_0 ;
++----------------+----------+------------------------------------------+
+; Parameter Name ; Value    ; Type                                     ;
++----------------+----------+------------------------------------------+
+; INST_NR        ; 00000000 ; Unsigned Binary                          ;
+; TOTAL_NR       ; 00000000 ; Unsigned Binary                          ;
++----------------+----------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_clock_module:clock_module_0 ;
++----------------+------------------+-------------------------------------------------------------------+
+; Parameter Name ; Value            ; Type                                                              ;
++----------------+------------------+-------------------------------------------------------------------+
+; BASE_ADDR      ; 000000001010000  ; Unsigned Binary                                                   ;
+; DEC_WD         ; 4                ; Signed Integer                                                    ;
+; BCSCTL1        ; 0111             ; Unsigned Binary                                                   ;
+; BCSCTL2        ; 1000             ; Unsigned Binary                                                   ;
+; DEC_SZ         ; 16               ; Signed Integer                                                    ;
+; BASE_REG       ; 0000000000000001 ; Unsigned Binary                                                   ;
+; BCSCTL1_D      ; 0000000010000000 ; Unsigned Binary                                                   ;
+; BCSCTL2_D      ; 0000000100000000 ; Unsigned Binary                                                   ;
++----------------+------------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_frontend:frontend_0 ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; I_IRQ_FETCH    ; 000   ; Unsigned Binary                                                      ;
+; I_IRQ_DONE     ; 001   ; Unsigned Binary                                                      ;
+; I_DEC          ; 010   ; Unsigned Binary                                                      ;
+; I_EXT1         ; 011   ; Unsigned Binary                                                      ;
+; I_EXT2         ; 100   ; Unsigned Binary                                                      ;
+; I_IDLE         ; 101   ; Unsigned Binary                                                      ;
+; E_IRQ_0        ; 0010  ; Unsigned Binary                                                      ;
+; E_IRQ_1        ; 0001  ; Unsigned Binary                                                      ;
+; E_IRQ_2        ; 0000  ; Unsigned Binary                                                      ;
+; E_IRQ_3        ; 0011  ; Unsigned Binary                                                      ;
+; E_IRQ_4        ; 0100  ; Unsigned Binary                                                      ;
+; E_SRC_AD       ; 0101  ; Unsigned Binary                                                      ;
+; E_SRC_RD       ; 0110  ; Unsigned Binary                                                      ;
+; E_SRC_WR       ; 0111  ; Unsigned Binary                                                      ;
+; E_DST_AD       ; 1000  ; Unsigned Binary                                                      ;
+; E_DST_RD       ; 1001  ; Unsigned Binary                                                      ;
+; E_DST_WR       ; 1010  ; Unsigned Binary                                                      ;
+; E_EXEC         ; 1011  ; Unsigned Binary                                                      ;
+; E_JUMP         ; 1100  ; Unsigned Binary                                                      ;
+; E_IDLE         ; 1101  ; Unsigned Binary                                                      ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0 ;
++----------------+----------------------------------+---------------------------------------------------+
+; Parameter Name ; Value                            ; Type                                              ;
++----------------+----------------------------------+---------------------------------------------------+
+; DMEM_END       ; 32768                            ; Signed Integer                                    ;
+; PMEM_OFFSET    ; 00000000000000001000000000000000 ; Unsigned Binary                                   ;
++----------------+----------------------------------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_sfr:sfr_0 ;
++----------------+------------------+-------------------------------------------------+
+; Parameter Name ; Value            ; Type                                            ;
++----------------+------------------+-------------------------------------------------+
+; BASE_ADDR      ; 000000000000000  ; Unsigned Binary                                 ;
+; DEC_WD         ; 4                ; Signed Integer                                  ;
+; IE1            ; 0000             ; Unsigned Binary                                 ;
+; IFG1           ; 0010             ; Unsigned Binary                                 ;
+; CPU_ID_LO      ; 0100             ; Unsigned Binary                                 ;
+; CPU_ID_HI      ; 0110             ; Unsigned Binary                                 ;
+; CPU_NR         ; 1000             ; Unsigned Binary                                 ;
+; DEC_SZ         ; 16               ; Signed Integer                                  ;
+; BASE_REG       ; 0000000000000001 ; Unsigned Binary                                 ;
+; IE1_D          ; 0000000000000001 ; Unsigned Binary                                 ;
+; IFG1_D         ; 0000000000000100 ; Unsigned Binary                                 ;
+; CPU_ID_LO_D    ; 0000000000010000 ; Unsigned Binary                                 ;
+; CPU_ID_HI_D    ; 0000000001000000 ; Unsigned Binary                                 ;
+; CPU_NR_D       ; 0000000100000000 ; Unsigned Binary                                 ;
++----------------+------------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_watchdog:watchdog_0 ;
++-----------------+-----------------+-----------------------------------------------------------+
+; Parameter Name  ; Value           ; Type                                                      ;
++-----------------+-----------------+-----------------------------------------------------------+
+; BASE_ADDR       ; 000000100100000 ; Unsigned Binary                                           ;
+; DEC_WD          ; 2               ; Signed Integer                                            ;
+; WDTCTL          ; 00              ; Unsigned Binary                                           ;
+; DEC_SZ          ; 4               ; Signed Integer                                            ;
+; BASE_REG        ; 0001            ; Unsigned Binary                                           ;
+; WDTCTL_D        ; 0001            ; Unsigned Binary                                           ;
+; WDTNMIES_MASK   ; 00000000        ; Unsigned Binary                                           ;
+; WDTSSEL_MASK    ; 00000100        ; Unsigned Binary                                           ;
+; WDTCTL_MASK     ; 10010111        ; Unsigned Binary                                           ;
+; WDTNMI_RD_MASK  ; 00000000        ; Unsigned Binary                                           ;
+; WDTSSEL_RD_MASK ; 00000000        ; Unsigned Binary                                           ;
+; WDTCTL_RD_MASK  ; 00000000        ; Unsigned Binary                                           ;
++-----------------+-----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_multiplier:multiplier_0 ;
++----------------+------------------+---------------------------------------------------------------+
+; Parameter Name ; Value            ; Type                                                          ;
++----------------+------------------+---------------------------------------------------------------+
+; BASE_ADDR      ; 000000100110000  ; Unsigned Binary                                               ;
+; DEC_WD         ; 4                ; Signed Integer                                                ;
+; OP1_MPY        ; 0000             ; Unsigned Binary                                               ;
+; OP1_MPYS       ; 0010             ; Unsigned Binary                                               ;
+; OP1_MAC        ; 0100             ; Unsigned Binary                                               ;
+; OP1_MACS       ; 0110             ; Unsigned Binary                                               ;
+; OP2            ; 1000             ; Unsigned Binary                                               ;
+; RESLO          ; 1010             ; Unsigned Binary                                               ;
+; RESHI          ; 1100             ; Unsigned Binary                                               ;
+; SUMEXT         ; 1110             ; Unsigned Binary                                               ;
+; DEC_SZ         ; 16               ; Signed Integer                                                ;
+; BASE_REG       ; 0000000000000001 ; Unsigned Binary                                               ;
+; OP1_MPY_D      ; 0000000000000001 ; Unsigned Binary                                               ;
+; OP1_MPYS_D     ; 0000000000000100 ; Unsigned Binary                                               ;
+; OP1_MAC_D      ; 0000000000010000 ; Unsigned Binary                                               ;
+; OP1_MACS_D     ; 0000000001000000 ; Unsigned Binary                                               ;
+; OP2_D          ; 0000000100000000 ; Unsigned Binary                                               ;
+; RESLO_D        ; 0000010000000000 ; Unsigned Binary                                               ;
+; RESHI_D        ; 0001000000000000 ; Unsigned Binary                                               ;
+; SUMEXT_D       ; 0100000000000000 ; Unsigned Binary                                               ;
++----------------+------------------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_dbg:dbg_0 ;
++----------------+---------------------------+----------------------------------------+
+; Parameter Name ; Value                     ; Type                                   ;
++----------------+---------------------------+----------------------------------------+
+; NR_REG         ; 25                        ; Signed Integer                         ;
+; CPU_ID_LO      ; 000000                    ; Unsigned Binary                        ;
+; CPU_ID_HI      ; 000001                    ; Unsigned Binary                        ;
+; CPU_CTL        ; 000010                    ; Unsigned Binary                        ;
+; CPU_STAT       ; 000011                    ; Unsigned Binary                        ;
+; MEM_CTL        ; 000100                    ; Unsigned Binary                        ;
+; MEM_ADDR       ; 000101                    ; Unsigned Binary                        ;
+; MEM_DATA       ; 000110                    ; Unsigned Binary                        ;
+; MEM_CNT        ; 000111                    ; Unsigned Binary                        ;
+; CPU_NR         ; 011000                    ; Unsigned Binary                        ;
+; BASE_D         ; 0000000000000000000000001 ; Unsigned Binary                        ;
+; CPU_ID_LO_D    ; 0000000000000000000000001 ; Unsigned Binary                        ;
+; CPU_ID_HI_D    ; 0000000000000000000000010 ; Unsigned Binary                        ;
+; CPU_CTL_D      ; 0000000000000000000000100 ; Unsigned Binary                        ;
+; CPU_STAT_D     ; 0000000000000000000001000 ; Unsigned Binary                        ;
+; MEM_CTL_D      ; 0000000000000000000010000 ; Unsigned Binary                        ;
+; MEM_ADDR_D     ; 0000000000000000000100000 ; Unsigned Binary                        ;
+; MEM_DATA_D     ; 0000000000000000001000000 ; Unsigned Binary                        ;
+; MEM_CNT_D      ; 0000000000000000010000000 ; Unsigned Binary                        ;
+; CPU_NR_D       ; 1000000000000000000000000 ; Unsigned Binary                        ;
+; M_IDLE         ; 00                        ; Unsigned Binary                        ;
+; M_SET_BRK      ; 01                        ; Unsigned Binary                        ;
+; M_ACCESS_BRK   ; 10                        ; Unsigned Binary                        ;
+; M_ACCESS       ; 11                        ; Unsigned Binary                        ;
++----------------+---------------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0 ;
++----------------+--------+----------------------------------------------------------------------------------+
+; Parameter Name ; Value  ; Type                                                                             ;
++----------------+--------+----------------------------------------------------------------------------------+
+; RX_ADDR        ; 000    ; Unsigned Binary                                                                  ;
+; RX_ADDR_ACK    ; 001    ; Unsigned Binary                                                                  ;
+; RX_DATA        ; 010    ; Unsigned Binary                                                                  ;
+; RX_DATA_ACK    ; 011    ; Unsigned Binary                                                                  ;
+; TX_DATA        ; 100    ; Unsigned Binary                                                                  ;
+; TX_DATA_ACK    ; 101    ; Unsigned Binary                                                                  ;
+; RX_CMD         ; 000    ; Unsigned Binary                                                                  ;
+; RX_BYTE_LO     ; 001    ; Unsigned Binary                                                                  ;
+; RX_BYTE_HI     ; 010    ; Unsigned Binary                                                                  ;
+; TX_BYTE_LO     ; 011    ; Unsigned Binary                                                                  ;
+; TX_BYTE_HI     ; 100    ; Unsigned Binary                                                                  ;
+; MEM_DATA       ; 000110 ; Unsigned Binary                                                                  ;
++----------------+--------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0 ;
++-------------------+-----------------+---------------------------------------------------------------+
+; Parameter Name    ; Value           ; Type                                                          ;
++-------------------+-----------------+---------------------------------------------------------------+
+; BASE_ADDR         ; 000000010010000 ; Unsigned Binary                                               ;
+; DEC_WD            ; 3               ; Signed Integer                                                ;
+; LED_CTRL          ; 000             ; Unsigned Binary                                               ;
+; KEY_SW_VAL        ; 001             ; Unsigned Binary                                               ;
+; KEY_SW_IRQ_EN     ; 010             ; Unsigned Binary                                               ;
+; KEY_SW_IRQ_EDGE   ; 011             ; Unsigned Binary                                               ;
+; KEY_SW_IRQ_VAL    ; 100             ; Unsigned Binary                                               ;
+; DEC_SZ            ; 8               ; Signed Integer                                                ;
+; BASE_REG          ; 00000001        ; Unsigned Binary                                               ;
+; LED_CTRL_D        ; 00000001        ; Unsigned Binary                                               ;
+; KEY_SW_VAL_D      ; 00000010        ; Unsigned Binary                                               ;
+; KEY_SW_IRQ_EN_D   ; 00000100        ; Unsigned Binary                                               ;
+; KEY_SW_IRQ_EDGE_D ; 00001000        ; Unsigned Binary                                               ;
+; KEY_SW_IRQ_VAL_D  ; 00010000        ; Unsigned Binary                                               ;
++-------------------+-----------------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: omsp_timerA:timerA_0                                                                                                   ;
++----------------+----------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Parameter Name ; Value                                                                                                                            ; Type            ;
++----------------+----------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; BASE_ADDR      ; 000000100000000                                                                                                                  ; Unsigned Binary ;
+; DEC_WD         ; 7                                                                                                                                ; Signed Integer  ;
+; TACTL          ; 1100000                                                                                                                          ; Unsigned Binary ;
+; TAR            ; 1110000                                                                                                                          ; Unsigned Binary ;
+; TACCTL0        ; 1100010                                                                                                                          ; Unsigned Binary ;
+; TACCR0         ; 1110010                                                                                                                          ; Unsigned Binary ;
+; TACCTL1        ; 1100100                                                                                                                          ; Unsigned Binary ;
+; TACCR1         ; 1110100                                                                                                                          ; Unsigned Binary ;
+; TACCTL2        ; 1100110                                                                                                                          ; Unsigned Binary ;
+; TACCR2         ; 1110110                                                                                                                          ; Unsigned Binary ;
+; TAIV           ; 0101110                                                                                                                          ; Unsigned Binary ;
+; DEC_SZ         ; 128                                                                                                                              ; Signed Integer  ;
+; BASE_REG       ; 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001 ; Unsigned Binary ;
+; TACTL_D        ; 00000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; TAR_D          ; 00000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; TACCTL0_D      ; 00000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; TACCR0_D       ; 00000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; TACCTL1_D      ; 00000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; TACCR1_D       ; 00000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; TACCTL2_D      ; 00000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; TACCR2_D       ; 00000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; TAIV_D         ; 00000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000 ; Unsigned Binary ;
++----------------+----------------------------------------------------------------------------------------------------------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram_16x16k:pmem_0|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+------------------------------------+
+; Parameter Name                     ; Value                ; Type                               ;
++------------------------------------+----------------------+------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                            ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                         ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                       ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                       ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                     ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                            ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                            ;
+; WIDTH_A                            ; 16                   ; Signed Integer                     ;
+; WIDTHAD_A                          ; 14                   ; Signed Integer                     ;
+; NUMWORDS_A                         ; 16384                ; Signed Integer                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                            ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                            ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                            ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                            ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                            ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                            ;
+; WIDTH_B                            ; 1                    ; Untyped                            ;
+; WIDTHAD_B                          ; 1                    ; Untyped                            ;
+; NUMWORDS_B                         ; 1                    ; Untyped                            ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                            ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                            ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                            ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                            ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                            ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                            ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                            ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                            ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                            ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                            ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                            ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                            ;
+; WIDTH_BYTEENA_A                    ; 2                    ; Signed Integer                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                            ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                            ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer                     ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                            ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                            ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                            ;
+; INIT_FILE                          ; pmem.mif             ; Untyped                            ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                            ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                            ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                            ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                            ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                            ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                            ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                            ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                            ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                            ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                            ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                            ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                            ;
+; CBXI_PARAMETER                     ; altsyncram_b1l1      ; Untyped                            ;
++------------------------------------+----------------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram_16x8k:dmem_0|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-----------------------------------+
+; Parameter Name                     ; Value                ; Type                              ;
++------------------------------------+----------------------+-----------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                           ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                    ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                           ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                           ;
+; WIDTH_A                            ; 16                   ; Signed Integer                    ;
+; WIDTHAD_A                          ; 13                   ; Signed Integer                    ;
+; NUMWORDS_A                         ; 8192                 ; Signed Integer                    ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                           ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                           ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                           ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                           ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                           ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                           ;
+; WIDTH_B                            ; 1                    ; Untyped                           ;
+; WIDTHAD_B                          ; 1                    ; Untyped                           ;
+; NUMWORDS_B                         ; 1                    ; Untyped                           ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                           ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                           ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                           ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                           ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                           ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                           ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                           ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                           ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                           ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                           ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                           ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                           ;
+; WIDTH_BYTEENA_A                    ; 2                    ; Signed Integer                    ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                           ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                           ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer                    ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                           ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                           ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                           ;
+; INIT_FILE                          ; UNUSED               ; Untyped                           ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                           ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                           ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                           ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                           ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                           ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                           ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                           ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                           ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                           ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                           ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                           ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                           ;
+; CBXI_PARAMETER                     ; altsyncram_b4j1      ; Untyped                           ;
++------------------------------------+----------------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+------------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                                 ;
++------------------------------------------------+--------------+------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                           ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                         ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                         ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                       ;
+; LPM_WIDTHA                                     ; 17           ; Untyped                                              ;
+; LPM_WIDTHB                                     ; 9            ; Untyped                                              ;
+; LPM_WIDTHP                                     ; 26           ; Untyped                                              ;
+; LPM_WIDTHR                                     ; 26           ; Untyped                                              ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                              ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                                              ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                              ;
+; LATENCY                                        ; 0            ; Untyped                                              ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                              ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                              ;
+; USE_EAB                                        ; OFF          ; Untyped                                              ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                              ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                              ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                              ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                                  ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                              ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                              ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                              ;
+; CBXI_PARAMETER                                 ; mult_p4t     ; Untyped                                              ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                              ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                              ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                              ;
++------------------------------------------------+--------------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                              ;
++-------------------------------------------+---------------------------------------------------+
+; Name                                      ; Value                                             ;
++-------------------------------------------+---------------------------------------------------+
+; Number of entity instances                ; 2                                                 ;
+; Entity Instance                           ; ram_16x16k:pmem_0|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                       ;
+;     -- WIDTH_A                            ; 16                                                ;
+;     -- NUMWORDS_A                         ; 16384                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                      ;
+;     -- WIDTH_B                            ; 1                                                 ;
+;     -- NUMWORDS_B                         ; 1                                                 ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                            ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                      ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                              ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                         ;
+; Entity Instance                           ; ram_16x8k:dmem_0|altsyncram:altsyncram_component  ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                       ;
+;     -- WIDTH_A                            ; 16                                                ;
+;     -- NUMWORDS_A                         ; 8192                                              ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                      ;
+;     -- WIDTH_B                            ; 1                                                 ;
+;     -- NUMWORDS_B                         ; 1                                                 ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                            ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                      ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                              ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                         ;
++-------------------------------------------+---------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                                              ;
++---------------------------------------+---------------------------------------------------------------------+
+; Name                                  ; Value                                                               ;
++---------------------------------------+---------------------------------------------------------------------+
+; Number of entity instances            ; 1                                                                   ;
+; Entity Instance                       ; openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 17                                                                  ;
+;     -- LPM_WIDTHB                     ; 9                                                                   ;
+;     -- LPM_WIDTHP                     ; 26                                                                  ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                              ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                  ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                                  ;
+;     -- USE_EAB                        ; OFF                                                                 ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                  ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                  ;
++---------------------------------------+---------------------------------------------------------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "io_buf:io_buf_sda_0" ;
++--------+-------+----------+---------------------+
+; Port   ; Type  ; Severity ; Details             ;
++--------+-------+----------+---------------------+
+; datain ; Input ; Info     ; Stuck at GND        ;
++--------+-------+----------+---------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "omsp_timerA:timerA_0"        ;
++------------+--------+----------+------------------------+
+; Port       ; Type   ; Severity ; Details                ;
++------------+--------+----------+------------------------+
+; ta_out0    ; Output ; Info     ; Explicitly unconnected ;
+; ta_out0_en ; Output ; Info     ; Explicitly unconnected ;
+; ta_out1    ; Output ; Info     ; Explicitly unconnected ;
+; ta_out1_en ; Output ; Info     ; Explicitly unconnected ;
+; ta_out2    ; Output ; Info     ; Explicitly unconnected ;
+; ta_out2_en ; Output ; Info     ; Explicitly unconnected ;
+; inclk      ; Input  ; Info     ; Stuck at GND           ;
+; ta_cci0a   ; Input  ; Info     ; Stuck at GND           ;
+; ta_cci0b   ; Input  ; Info     ; Stuck at GND           ;
+; ta_cci1a   ; Input  ; Info     ; Stuck at GND           ;
+; ta_cci1b   ; Input  ; Info     ; Stuck at GND           ;
+; ta_cci2a   ; Input  ; Info     ; Stuck at GND           ;
+; ta_cci2b   ; Input  ; Info     ; Stuck at GND           ;
+; taclk      ; Input  ; Info     ; Stuck at GND           ;
++------------+--------+----------+------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "openMSP430:openmsp430_0|omsp_frontend:frontend_0"                                     ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; mab[0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "openMSP430:openmsp430_0"                                                                               ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                    ; Type   ; Severity ; Details                                                                             ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; aclk                    ; Output ; Info     ; Explicitly unconnected                                                              ;
+; dbg_uart_txd            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; dco_enable              ; Output ; Info     ; Explicitly unconnected                                                              ;
+; dco_wkup                ; Output ; Info     ; Explicitly unconnected                                                              ;
+; irq_acc[13..10]         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; irq_acc[8..0]           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; lfxt_enable             ; Output ; Info     ; Explicitly unconnected                                                              ;
+; lfxt_wkup               ; Output ; Info     ; Explicitly unconnected                                                              ;
+; dma_dout                ; Output ; Info     ; Explicitly unconnected                                                              ;
+; dma_ready               ; Output ; Info     ; Explicitly unconnected                                                              ;
+; dma_resp                ; Output ; Info     ; Explicitly unconnected                                                              ;
+; smclk                   ; Output ; Info     ; Explicitly unconnected                                                              ;
+; cpu_en                  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; dbg_en                  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; dbg_i2c_addr[5..4]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; dbg_i2c_addr[3..2]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dbg_i2c_addr[6]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dbg_i2c_addr[1]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; dbg_i2c_addr[0]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dbg_i2c_broadcast[5..4] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; dbg_i2c_broadcast[3..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dbg_i2c_broadcast[6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dbg_i2c_broadcast[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; dbg_uart_rxd            ; Input  ; Info     ; Stuck at GND                                                                        ;
+; irq[13..10]             ; Input  ; Info     ; Stuck at GND                                                                        ;
+; irq[7..4]               ; Input  ; Info     ; Stuck at GND                                                                        ;
+; irq[1..0]               ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dma_addr                ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dma_din                 ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dma_en                  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dma_priority            ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dma_we                  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dma_wkup                ; Input  ; Info     ; Stuck at GND                                                                        ;
+; nmi                     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; scan_enable             ; Input  ; Info     ; Stuck at GND                                                                        ;
+; scan_mode               ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wkup                    ; Input  ; Info     ; Stuck at GND                                                                        ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 38                          ;
+; cycloneiii_ff         ; 981                         ;
+;     CLR               ; 206                         ;
+;     CLR SCLR          ; 114                         ;
+;     CLR SCLR SLD      ; 4                           ;
+;     CLR SLD           ; 36                          ;
+;     ENA               ; 1                           ;
+;     ENA CLR           ; 551                         ;
+;     ENA CLR SCLR SLD  ; 8                           ;
+;     ENA CLR SLD       ; 61                          ;
+; cycloneiii_io_ibuf    ; 1                           ;
+; cycloneiii_io_obuf    ; 20                          ;
+; cycloneiii_lcell_comb ; 2794                        ;
+;     arith             ; 317                         ;
+;         2 data inputs ; 184                         ;
+;         3 data inputs ; 133                         ;
+;     normal            ; 2477                        ;
+;         0 data inputs ; 6                           ;
+;         1 data inputs ; 19                          ;
+;         2 data inputs ; 154                         ;
+;         3 data inputs ; 514                         ;
+;         4 data inputs ; 1784                        ;
+; cycloneiii_mac_mult   ; 1                           ;
+; cycloneiii_mac_out    ; 1                           ;
+; cycloneiii_ram_block  ; 48                          ;
+;                       ;                             ;
+; Max LUT depth         ; 23.80                       ;
+; Average LUT depth     ; 13.62                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Mar  6 07:56:37 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off openMSP430_fpga -c openMSP430_fpga
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20029): Only one processor detected - disabling parallel compilation
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(270) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 270
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(270) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 270
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(272) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 272
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(272) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 272
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(907) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 907
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(907) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 907
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(909) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 909
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(909) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 909
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(275) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 275
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(275) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 275
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(277) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 277
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(277) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 277
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(753) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 753
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(753) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 753
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(755) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 755
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(755) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 755
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_uart.v(178) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 178
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg_uart.v(178) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 178
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_uart.v(180) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 180
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_dbg_uart.v(180) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 180
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(267) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 267
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(267) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 267
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(269) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 269
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(269) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 269
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(388) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 388
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(388) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 388
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(390) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 390
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(390) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 390
+Warning (10335): Unrecognized synthesis attribute "won" at ../../../rtl/verilog/openmsp430/omsp_clock_mux.v(183) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_mux.v Line: 183
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(284) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 284
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(284) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 284
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(286) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 286
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(286) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 286
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(401) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 401
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(401) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 401
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(403) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 403
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(403) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 403
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(244) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 244
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(244) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 244
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(246) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 246
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(246) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 246
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(292) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 292
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(292) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 292
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(294) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 294
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(294) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 294
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_gpu_reg.v(295) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_reg.v Line: 295
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_gpu_reg.v(295) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_reg.v Line: 295
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_gpu_reg.v(297) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_reg.v Line: 297
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_gpu_reg.v(297) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_reg.v Line: 297
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_gpu_dma.v(225) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 225
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_gpu_dma.v(225) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 225
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_gpu_dma.v(227) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 227
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_gpu_dma.v(227) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 227
+Info (12021): Found 47 design units, including 47 entities, in source file /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/scripts/design_rtl.v
+    Info (12023): Found entity 1: openMSP430_fpga File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 37
+    Info (12023): Found entity 2: omsp_de0_nano_soc_led_key_sw File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/omsp_de0_nano_soc_led_key_sw.v Line: 40
+    Info (12023): Found entity 3: sync_debouncer_10ms File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/sync_debouncer_10ms.v Line: 39
+    Info (12023): Found entity 4: ram_16x75k File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/ram_16x75k.v Line: 40
+    Info (12023): Found entity 5: ram_16x512 File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/ram_16x512.v Line: 40
+    Info (12023): Found entity 6: ram_16x16k File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 40
+    Info (12023): Found entity 7: ram_16x8k File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 40
+    Info (12023): Found entity 8: io_buf_iobuf_bidir_30p File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/io_buf.v Line: 46
+    Info (12023): Found entity 9: io_buf File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/io_buf.v Line: 110
+    Info (12023): Found entity 10: in_buf_iobuf_in_v0i File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/in_buf.v Line: 47
+    Info (12023): Found entity 11: in_buf File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/in_buf.v Line: 83
+    Info (12023): Found entity 12: openMSP430 File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 48
+    Info (12023): Found entity 13: omsp_frontend File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 48
+    Info (12023): Found entity 14: omsp_execution_unit File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 48
+    Info (12023): Found entity 15: omsp_register_file File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v Line: 48
+    Info (12023): Found entity 16: omsp_alu File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 48
+    Info (12023): Found entity 17: omsp_sfr File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 49
+    Info (12023): Found entity 18: omsp_mem_backbone File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 48
+    Info (12023): Found entity 19: omsp_clock_module File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 48
+    Info (12023): Found entity 20: omsp_dbg File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 48
+    Info (12023): Found entity 21: omsp_dbg_hwbrk File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_hwbrk.v Line: 48
+    Info (12023): Found entity 22: omsp_dbg_uart File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 48
+    Info (12023): Found entity 23: omsp_dbg_i2c File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 48
+    Info (12023): Found entity 24: omsp_watchdog File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 48
+    Info (12023): Found entity 25: omsp_multiplier File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 48
+    Info (12023): Found entity 26: omsp_sync_reset File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sync_reset.v Line: 44
+    Info (12023): Found entity 27: omsp_sync_cell File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sync_cell.v Line: 44
+    Info (12023): Found entity 28: omsp_scan_mux File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_scan_mux.v Line: 44
+    Info (12023): Found entity 29: omsp_and_gate File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_and_gate.v Line: 44
+    Info (12023): Found entity 30: omsp_wakeup_cell File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_wakeup_cell.v Line: 48
+    Info (12023): Found entity 31: omsp_clock_gate File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_gate.v Line: 44
+    Info (12023): Found entity 32: omsp_clock_mux File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_mux.v Line: 44
+    Info (12023): Found entity 33: omsp_timerA File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v Line: 48
+    Info (12023): Found entity 34: openGFX430 File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/openGFX430.v Line: 46
+    Info (12023): Found entity 35: ogfx_reg File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_reg.v Line: 43
+    Info (12023): Found entity 36: ogfx_reg_fifo File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_reg_fifo.v Line: 43
+    Info (12023): Found entity 37: ogfx_reg_vram_if File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_reg_vram_if.v Line: 43
+    Info (12023): Found entity 38: ogfx_reg_vram_addr File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_reg_vram_addr.v Line: 43
+    Info (12023): Found entity 39: ogfx_if_lt24 File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 43
+    Info (12023): Found entity 40: ogfx_backend File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend.v Line: 47
+    Info (12023): Found entity 41: ogfx_backend_frame_fifo File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_frame_fifo.v Line: 43
+    Info (12023): Found entity 42: ogfx_backend_lut_fifo File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 43
+    Info (12023): Found entity 43: ogfx_gpu File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu.v Line: 48
+    Info (12023): Found entity 44: ogfx_gpu_reg File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_reg.v Line: 43
+    Info (12023): Found entity 45: ogfx_gpu_dma File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 43
+    Info (12023): Found entity 46: ogfx_gpu_dma_addr File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma_addr.v Line: 43
+    Info (12023): Found entity 47: ogfx_ram_arbiter File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_ram_arbiter.v Line: 53
+Info (12127): Elaborating entity "openMSP430_fpga" for the top level hierarchy
+Info (12128): Elaborating entity "openMSP430" for hierarchy "openMSP430:openmsp430_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 239
+Warning (10036): Verilog HDL or VHDL warning at openMSP430.v(478): object "UNUSED_fe_mab_0" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 478
+Info (12128): Elaborating entity "omsp_clock_module" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 312
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(164): object "nodiv_smclk" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 164
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(378): object "UNUSED_cpuoff" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 378
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(379): object "UNUSED_mclk_enable" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 379
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(380): object "UNUSED_mclk_dma_wkup" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 380
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(508): object "UNUSED_scg0" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 508
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(509): object "UNUSED_cpu_en_wkup1" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 509
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(681): object "cpu_en_aux_s" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 681
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(724): object "cpuoff_and_mclk_dma_wkup_s" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 724
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(725): object "mclk_wkup_s" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 725
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(747): object "UNUSED_mclk_wkup" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 747
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(779): object "mclk_div_en" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 779
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(780): object "mclk_dma_div_en" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 780
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(960): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 960
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(961): object "UNUSED_scan_mode" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 961
+Info (12128): Elaborating entity "omsp_sync_cell" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_lfxt_clk" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 628
+Info (12128): Elaborating entity "omsp_sync_reset" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 1223
+Info (12128): Elaborating entity "omsp_frontend" for hierarchy "openMSP430:openmsp430_0|omsp_frontend:frontend_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 373
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(314): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 314
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(390): object "UNUSED_dma_en" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 390
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(391): object "UNUSED_wkup" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 391
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(392): object "UNUSED_wdt_wkup" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 392
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(393): object "UNUSED_nmi_wkup" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 393
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(394): object "UNUSED_dma_wkup" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 394
+Info (12128): Elaborating entity "omsp_execution_unit" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 421
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(419): object "UNUSED_inst_ad_idx" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 419
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(420): object "UNUSED_inst_ad_indir" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 420
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(421): object "UNUSED_inst_ad_indir_i" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 421
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(422): object "UNUSED_inst_ad_symb" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 422
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(423): object "UNUSED_inst_ad_imm" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 423
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(424): object "UNUSED_inst_ad_const" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 424
+Info (12128): Elaborating entity "omsp_register_file" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 211
+Warning (10036): Verilog HDL or VHDL warning at omsp_register_file.v(158): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v Line: 158
+Warning (10036): Verilog HDL or VHDL warning at omsp_register_file.v(172): object "UNUSED_reg_sp_val_0" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v Line: 172
+Info (12128): Elaborating entity "omsp_alu" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 319
+Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(254): object "UNUSED_inst_so_rra" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 254
+Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(255): object "UNUSED_inst_so_push" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 255
+Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(256): object "UNUSED_inst_so_call" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 256
+Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(257): object "UNUSED_inst_so_reti" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 257
+Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(258): object "UNUSED_inst_jmp" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 258
+Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(259): object "UNUSED_inst_alu" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 259
+Info (12128): Elaborating entity "omsp_mem_backbone" for hierarchy "openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 476
+Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(213): object "UNUSED_dma_addr" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 213
+Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(214): object "UNUSED_dma_din" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 214
+Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(215): object "UNUSED_dma_en" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 215
+Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(216): object "UNUSED_dma_priority" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 216
+Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(217): object "UNUSED_dma_we" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 217
+Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(331): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 331
+Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(230): truncated value with size 32 to match size of target (16) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 230
+Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(239): truncated value with size 32 to match size of target (16) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 239
+Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(258): truncated value with size 32 to match size of target (16) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 258
+Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(263): truncated value with size 32 to match size of target (16) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 263
+Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(268): truncated value with size 32 to match size of target (16) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 268
+Info (12128): Elaborating entity "omsp_sfr" for hierarchy "openMSP430:openmsp430_0|omsp_sfr:sfr_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 508
+Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(367): object "UNUSED_scan_mode" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 367
+Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(368): object "UNUSED_nmi" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 368
+Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(369): object "UNUSED_nmi_acc" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 369
+Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(370): object "UNUSED_wdtnmies" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 370
+Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(374): object "UNUSED_per_din_15_8" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 374
+Warning (10230): Verilog HDL assignment warning at omsp_sfr.v(240): truncated value with size 32 to match size of target (7) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 240
+Warning (10230): Verilog HDL assignment warning at omsp_sfr.v(246): truncated value with size 32 to match size of target (9) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 246
+Warning (10230): Verilog HDL assignment warning at omsp_sfr.v(247): truncated value with size 32 to match size of target (6) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 247
+Info (12128): Elaborating entity "omsp_watchdog" for hierarchy "openMSP430:openmsp430_0|omsp_watchdog:watchdog_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 544
+Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(170): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 170
+Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(556): object "UNUSED_scan_mode" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 556
+Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(557): object "UNUSED_smclk" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 557
+Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(558): object "UNUSED_aclk" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 558
+Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(560): object "UNUSED_per_din" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 560
+Info (12128): Elaborating entity "omsp_multiplier" for hierarchy "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 576
+Warning (10036): Verilog HDL or VHDL warning at omsp_multiplier.v(168): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 168
+Info (12128): Elaborating entity "omsp_dbg" for hierarchy "openMSP430:openmsp430_0|omsp_dbg:dbg_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 634
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(493): object "UNUSED_eu_mab" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 493
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(494): object "UNUSED_eu_mb_en" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 494
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(495): object "UNUSED_eu_mb_wr" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 495
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(496): object "UNUSED_pc" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 496
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(822): object "UNUSED_dbg_uart_rxd" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 822
+Info (12128): Elaborating entity "omsp_dbg_i2c" for hierarchy "openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 860
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg_i2c.v(159): object "sda_in_edge" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 159
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg_i2c.v(169): object "scl_edge" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 169
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg_i2c.v(317): object "UNUSED_dbg_i2c_broadcast" assigned a value but never read File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 317
+Info (12128): Elaborating entity "omsp_de0_nano_soc_led_key_sw" for hierarchy "omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 267
+Info (12128): Elaborating entity "sync_debouncer_10ms" for hierarchy "omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key1" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/omsp_de0_nano_soc_led_key_sw.v Line: 158
+Warning (10230): Verilog HDL assignment warning at sync_debouncer_10ms.v(75): truncated value with size 32 to match size of target (19) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/sync_debouncer_10ms.v Line: 75
+Info (12128): Elaborating entity "omsp_timerA" for hierarchy "omsp_timerA:timerA_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 305
+Warning (10230): Verilog HDL assignment warning at omsp_timerA.v(179): truncated value with size 512 to match size of target (128) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v Line: 179
+Warning (10230): Verilog HDL assignment warning at omsp_timerA.v(180): truncated value with size 512 to match size of target (128) File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v Line: 180
+Info (12128): Elaborating entity "ram_16x16k" for hierarchy "ram_16x16k:pmem_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 451
+Info (12128): Elaborating entity "altsyncram" for hierarchy "ram_16x16k:pmem_0|altsyncram:altsyncram_component" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 92
+Info (12130): Elaborated megafunction instantiation "ram_16x16k:pmem_0|altsyncram:altsyncram_component" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 92
+Info (12133): Instantiated megafunction "ram_16x16k:pmem_0|altsyncram:altsyncram_component" with the following parameter: File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 92
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "clock_enable_input_a" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "pmem.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "16384"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "14"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_byteena_a" = "2"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_b1l1.tdf
+    Info (12023): Found entity 1: altsyncram_b1l1 File: /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b1l1.tdf Line: 31
+Info (12128): Elaborating entity "altsyncram_b1l1" for hierarchy "ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated" File: /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_jsa.tdf
+    Info (12023): Found entity 1: decode_jsa File: /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/WORK/db/decode_jsa.tdf Line: 22
+Info (12128): Elaborating entity "decode_jsa" for hierarchy "ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|decode_jsa:decode3" File: /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b1l1.tdf Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_iob.tdf
+    Info (12023): Found entity 1: mux_iob File: /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/WORK/db/mux_iob.tdf Line: 22
+Info (12128): Elaborating entity "mux_iob" for hierarchy "ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|mux_iob:mux2" File: /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b1l1.tdf Line: 44
+Info (12128): Elaborating entity "ram_16x8k" for hierarchy "ram_16x8k:dmem_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 461
+Info (12128): Elaborating entity "altsyncram" for hierarchy "ram_16x8k:dmem_0|altsyncram:altsyncram_component" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 92
+Info (12130): Elaborated megafunction instantiation "ram_16x8k:dmem_0|altsyncram:altsyncram_component" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 92
+Info (12133): Instantiated megafunction "ram_16x8k:dmem_0|altsyncram:altsyncram_component" with the following parameter: File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 92
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "clock_enable_input_a" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "8192"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "13"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_byteena_a" = "2"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_b4j1.tdf
+    Info (12023): Found entity 1: altsyncram_b4j1 File: /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b4j1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_b4j1" for hierarchy "ram_16x8k:dmem_0|altsyncram:altsyncram_component|altsyncram_b4j1:auto_generated" File: /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "io_buf" for hierarchy "io_buf:io_buf_sda_0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 470
+Info (12128): Elaborating entity "io_buf_iobuf_bidir_30p" for hierarchy "io_buf:io_buf_sda_0|io_buf_iobuf_bidir_30p:io_buf_iobuf_bidir_30p_component" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/mega/io_buf.v Line: 128
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|Mult0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 396
+Info (12130): Elaborated megafunction instantiation "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 396
+Info (12133): Instantiated megafunction "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0" with the following parameter: File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 396
+    Info (12134): Parameter "LPM_WIDTHA" = "17"
+    Info (12134): Parameter "LPM_WIDTHB" = "9"
+    Info (12134): Parameter "LPM_WIDTHP" = "26"
+    Info (12134): Parameter "LPM_WIDTHR" = "26"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_p4t.tdf
+    Info (12023): Found entity 1: mult_p4t File: /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/WORK/db/mult_p4t.tdf Line: 28
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "ARDUINO_IO[15]" has no driver File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 62
+Info (13000): Registers with preset signals will power-up high File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 915
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 12 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/WORK/output_files/openMSP430_fpga.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "FPGA_CLK2_50" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 43
+    Warning (15610): No output dependent on input pin "FPGA_CLK3_50" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 44
+    Warning (15610): No output dependent on input pin "ADC_SDO" File: /home/hiram/Documents/openmsp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 72
+Info (21057): Implemented 3192 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21060): Implemented 17 bidirectional pins
+    Info (21061): Implemented 3104 logic cells
+    Info (21064): Implemented 48 RAM segments
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 131 warnings
+    Info: Peak virtual memory: 1024 megabytes
+    Info: Processing ended: Wed Mar  6 07:57:00 2019
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:19
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/hiram/Documents/openmsp430/altera_de0_nano/synthesis/altera/WORK/output_files/openMSP430_fpga.map.smsg.
+
+

@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Enable/Disable waveform dumping
+OMSP_NODUMP=0
+export OMSP_NODUMP
+
+# Choose GCC toolchain prefix ('msp430' for MSPGCC / 'msp430-elf' for GCC RedHat/TI)
+# Note: default to MSPGCC until GCC RedHat/TI is mature enough
+if command -v msp430-gcc >/dev/null; then
+    MSPGCC_PFX=msp430
+else
+    MSPGCC_PFX=msp430-elf
+fi
+#MSPGCC_PFX=msp430-elf
+export MSPGCC_PFX
+
+# Choose simulator:
+#                   - iverilog  : Icarus Verilog  (default)
+#                   - cver      : CVer
+#                   - verilog   : Verilog-XL
+#                   - ncverilog : NC-Verilog
+#                   - vcs       : VCS
+#                   - vsim      : Modelsim
+#                   - isim      : Xilinx simulator
+OMSP_SIMULATOR=iverilog
+export OMSP_SIMULATOR
+
+#
+# Parameter Check
+#
+EXPECTED_ARGS=1
+if [ $# -ne $EXPECTED_ARGS ]; then
+    echo ""
+    echo "ERROR          : wrong number of arguments"
+    echo "USAGE          : ./run <test name>"
+    echo "EXAMPLE	 : ./run    leds"
+    echo ""
+    echo "AVAILABLE TESTS:"
+    for fullfile in ../src/*.v ; do
+	filename=$(basename "$fullfile")
+	filename="${filename%.*}"
+	echo "                  - $filename"
+    done
+    echo ""
+  exit 1
+fi
+
+# Start simulation
+../bin/msp430sim $1

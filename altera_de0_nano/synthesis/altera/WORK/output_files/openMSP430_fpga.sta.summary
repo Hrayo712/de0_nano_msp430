@@ -1,0 +1,89 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'FPGA_CLK1_50'
+Slack : 0.101
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'FPGA_CLK1_50'
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'FPGA_CLK1_50'
+Slack : 16.187
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'FPGA_CLK1_50'
+Slack : 1.547
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : 9.484
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'FPGA_CLK2_50'
+Slack : 16.000
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'FPGA_CLK3_50'
+Slack : 16.000
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'FPGA_CLK1_50'
+Slack : 2.134
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'FPGA_CLK1_50'
+Slack : 0.311
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'FPGA_CLK1_50'
+Slack : 16.569
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'FPGA_CLK1_50'
+Slack : 1.427
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : 9.485
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FPGA_CLK2_50'
+Slack : 16.000
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FPGA_CLK3_50'
+Slack : 16.000
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'FPGA_CLK1_50'
+Slack : 8.571
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'FPGA_CLK1_50'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'FPGA_CLK1_50'
+Slack : 17.719
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'FPGA_CLK1_50'
+Slack : 0.866
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : 9.206
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'FPGA_CLK2_50'
+Slack : 16.000
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'FPGA_CLK3_50'
+Slack : 16.000
+TNS   : 0.000
+
+------------------------------------------------------------
