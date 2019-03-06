@@ -19,6 +19,6 @@ gccmsp430 (and dependencies)
 
 icarus verilog (iverilog)
 
-![de0_nano_board](/home/hiram/git/de0_nano_msp430/de0_nano_board.png)
-tcl
+![de0_nano_board](de0_nano_board.png)
+
 
