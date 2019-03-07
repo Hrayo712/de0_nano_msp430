@@ -9,6 +9,8 @@ This has been tested with
 
 **gccmsp430** 4.6.3
 
+
+
 The following packages are necessary
 
 build-essentials
@@ -18,6 +20,8 @@ openocd
 gccmsp430 (and dependencies)
 
 icarus verilog (iverilog)
+
+tk
 
 ![de0_nano_board](de0_nano_board.png)
 
