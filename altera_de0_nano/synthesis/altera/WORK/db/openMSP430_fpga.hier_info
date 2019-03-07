@@ -1,7 +1,5 @@
 |openMSP430_fpga
 FPGA_CLK1_50 => dco_clk.IN1
-FPGA_CLK2_50 => ~NO_FANOUT~
-FPGA_CLK3_50 => ~NO_FANOUT~
 KEY[0] => KEY[0].IN1
 KEY[1] => KEY[1].IN1
 SW[0] => SW[0].IN1
@@ -16,26 +14,8 @@ LED[4] <= omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0.led
 LED[5] <= omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0.led
 LED[6] <= omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0.led
 LED[7] <= omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0.led
-ARDUINO_IO[0] <> ARDUINO_IO[0]
-ARDUINO_IO[1] <> ARDUINO_IO[1]
-ARDUINO_IO[2] <> ARDUINO_IO[2]
-ARDUINO_IO[3] <> ARDUINO_IO[3]
-ARDUINO_IO[4] <> ARDUINO_IO[4]
-ARDUINO_IO[5] <> ARDUINO_IO[5]
-ARDUINO_IO[6] <> ARDUINO_IO[6]
-ARDUINO_IO[7] <> ARDUINO_IO[7]
-ARDUINO_IO[8] <> ARDUINO_IO[8]
-ARDUINO_IO[9] <> ARDUINO_IO[9]
-ARDUINO_IO[10] <> ARDUINO_IO[10]
-ARDUINO_IO[11] <> ARDUINO_IO[11]
-ARDUINO_IO[12] <> ARDUINO_IO[12]
-ARDUINO_IO[13] <> ARDUINO_IO[13]
-ARDUINO_IO[14] <> io_buf:io_buf_sda_0.dataio
-ARDUINO_RESET_N <> ARDUINO_RESET_N
-ADC_CONVST <= ADC_CONVST.DB_MAX_OUTPUT_PORT_TYPE
-ADC_SCK <= ADC_SCK.DB_MAX_OUTPUT_PORT_TYPE
-ADC_SDI <= ADC_SDI.DB_MAX_OUTPUT_PORT_TYPE
-ADC_SDO => ~NO_FANOUT~
+UART_TX <= openMSP430:openmsp430_0.dbg_uart_txd
+UART_RX => dbg_uart_rxd.IN1
 
 
 |openMSP430_fpga|openMSP430:openmsp430_0
@@ -4218,7 +4198,7 @@ scan_enable => ~NO_FANOUT~
 dbg_cpu_reset <= cpu_ctl[6].DB_MAX_OUTPUT_PORT_TYPE
 dbg_freeze <= comb.DB_MAX_OUTPUT_PORT_TYPE
 dbg_halt_cmd <= comb.DB_MAX_OUTPUT_PORT_TYPE
-dbg_i2c_sda_out <= omsp_dbg_i2c:dbg_i2c_0.dbg_i2c_sda_out
+dbg_i2c_sda_out <= <VCC>
 dbg_mem_addr[0] <= mem_addr[0].DB_MAX_OUTPUT_PORT_TYPE
 dbg_mem_addr[1] <= mem_addr[1].DB_MAX_OUTPUT_PORT_TYPE
 dbg_mem_addr[2] <= mem_addr[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -4255,7 +4235,7 @@ dbg_mem_en <= dbg_mem_en.DB_MAX_OUTPUT_PORT_TYPE
 dbg_mem_wr[0] <= dbg_mem_wr.DB_MAX_OUTPUT_PORT_TYPE
 dbg_mem_wr[1] <= dbg_mem_wr.DB_MAX_OUTPUT_PORT_TYPE
 dbg_reg_wr <= dbg_reg_wr.DB_MAX_OUTPUT_PORT_TYPE
-dbg_uart_txd <= <VCC>
+dbg_uart_txd <= omsp_dbg_uart:dbg_uart_0.dbg_uart_txd
 cpu_en_s => comb.IN1
 cpu_id[0] => cpu_id_lo_rd[0].IN1
 cpu_id[1] => cpu_id_lo_rd[1].IN1
@@ -4316,22 +4296,22 @@ dbg_halt_st => mem_state_nxt.M_ACCESS_BRK.DATAB
 dbg_halt_st => mem_state_nxt.DATAA
 dbg_halt_st => Selector1.IN1
 dbg_halt_st => halt_cpu.IN1
-dbg_i2c_addr[0] => dbg_i2c_addr[0].IN1
-dbg_i2c_addr[1] => dbg_i2c_addr[1].IN1
-dbg_i2c_addr[2] => dbg_i2c_addr[2].IN1
-dbg_i2c_addr[3] => dbg_i2c_addr[3].IN1
-dbg_i2c_addr[4] => dbg_i2c_addr[4].IN1
-dbg_i2c_addr[5] => dbg_i2c_addr[5].IN1
-dbg_i2c_addr[6] => dbg_i2c_addr[6].IN1
-dbg_i2c_broadcast[0] => dbg_i2c_broadcast[0].IN1
-dbg_i2c_broadcast[1] => dbg_i2c_broadcast[1].IN1
-dbg_i2c_broadcast[2] => dbg_i2c_broadcast[2].IN1
-dbg_i2c_broadcast[3] => dbg_i2c_broadcast[3].IN1
-dbg_i2c_broadcast[4] => dbg_i2c_broadcast[4].IN1
-dbg_i2c_broadcast[5] => dbg_i2c_broadcast[5].IN1
-dbg_i2c_broadcast[6] => dbg_i2c_broadcast[6].IN1
-dbg_i2c_scl => dbg_i2c_scl.IN1
-dbg_i2c_sda_in => dbg_i2c_sda_in.IN1
+dbg_i2c_addr[0] => ~NO_FANOUT~
+dbg_i2c_addr[1] => ~NO_FANOUT~
+dbg_i2c_addr[2] => ~NO_FANOUT~
+dbg_i2c_addr[3] => ~NO_FANOUT~
+dbg_i2c_addr[4] => ~NO_FANOUT~
+dbg_i2c_addr[5] => ~NO_FANOUT~
+dbg_i2c_addr[6] => ~NO_FANOUT~
+dbg_i2c_broadcast[0] => ~NO_FANOUT~
+dbg_i2c_broadcast[1] => ~NO_FANOUT~
+dbg_i2c_broadcast[2] => ~NO_FANOUT~
+dbg_i2c_broadcast[3] => ~NO_FANOUT~
+dbg_i2c_broadcast[4] => ~NO_FANOUT~
+dbg_i2c_broadcast[5] => ~NO_FANOUT~
+dbg_i2c_broadcast[6] => ~NO_FANOUT~
+dbg_i2c_scl => ~NO_FANOUT~
+dbg_i2c_sda_in => ~NO_FANOUT~
 dbg_mem_din[0] => comb.DATAA
 dbg_mem_din[0] => dbg_mem_din_bw[0].DATAB
 dbg_mem_din[1] => comb.DATAA
@@ -4381,7 +4361,7 @@ dbg_reg_din[13] => mem_data.DATAB
 dbg_reg_din[14] => mem_data.DATAB
 dbg_reg_din[15] => mem_data.DATAB
 dbg_rst => dbg_rst.IN1
-dbg_uart_rxd => ~NO_FANOUT~
+dbg_uart_rxd => dbg_uart_rxd.IN1
 decode_noirq => dbg_swbrk.IN1
 eu_mab[0] => ~NO_FANOUT~
 eu_mab[1] => ~NO_FANOUT~
@@ -4439,104 +4419,97 @@ puc_pnd_set => cpu_stat.IN1
 puc_pnd_set => halt_rst.IN1
 
 
-|openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0
+|openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0
 dbg_addr[0] <= dbg_addr[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dbg_addr[1] <= dbg_addr[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dbg_addr[2] <= dbg_addr[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dbg_addr[3] <= dbg_addr[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dbg_addr[4] <= dbg_addr[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dbg_addr[5] <= dbg_addr[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[0] <= dbg_din_lo[0].DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[1] <= dbg_din_lo[1].DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[2] <= dbg_din_lo[2].DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[3] <= dbg_din_lo[3].DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[4] <= dbg_din_lo[4].DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[5] <= dbg_din_lo[5].DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[6] <= dbg_din_lo[6].DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[7] <= dbg_din_lo[7].DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[8] <= dbg_din_hi[0].DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[9] <= dbg_din_hi[1].DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[10] <= dbg_din_hi[2].DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[11] <= dbg_din_hi[3].DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[12] <= dbg_din_hi[4].DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[13] <= dbg_din_hi[5].DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[14] <= dbg_din_hi[6].DB_MAX_OUTPUT_PORT_TYPE
-dbg_din[15] <= dbg_din_hi[7].DB_MAX_OUTPUT_PORT_TYPE
-dbg_i2c_sda_out <= dbg_i2c_sda_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dbg_rd <= dbg_rd~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dbg_wr <= dbg_wr~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dbg_clk => dbg_clk.IN2
-dbg_dout[0] => shift_tx_val[0].DATAA
-dbg_dout[1] => shift_tx_val[1].DATAA
-dbg_dout[2] => shift_tx_val[2].DATAA
-dbg_dout[3] => shift_tx_val[3].DATAA
-dbg_dout[4] => shift_tx_val[4].DATAA
-dbg_dout[5] => shift_tx_val[5].DATAA
-dbg_dout[6] => shift_tx_val[6].DATAA
-dbg_dout[7] => shift_tx_val[7].DATAA
-dbg_dout[8] => shift_tx_val[0].DATAB
-dbg_dout[9] => shift_tx_val[1].DATAB
-dbg_dout[10] => shift_tx_val[2].DATAB
-dbg_dout[11] => shift_tx_val[3].DATAB
-dbg_dout[12] => shift_tx_val[4].DATAB
-dbg_dout[13] => shift_tx_val[5].DATAB
-dbg_dout[14] => shift_tx_val[6].DATAB
-dbg_dout[15] => shift_tx_val[7].DATAB
-dbg_i2c_addr[0] => Equal1.IN6
-dbg_i2c_addr[1] => Equal1.IN5
-dbg_i2c_addr[2] => Equal1.IN4
-dbg_i2c_addr[3] => Equal1.IN3
-dbg_i2c_addr[4] => Equal1.IN2
-dbg_i2c_addr[5] => Equal1.IN1
-dbg_i2c_addr[6] => Equal1.IN0
-dbg_i2c_broadcast[0] => ~NO_FANOUT~
-dbg_i2c_broadcast[1] => ~NO_FANOUT~
-dbg_i2c_broadcast[2] => ~NO_FANOUT~
-dbg_i2c_broadcast[3] => ~NO_FANOUT~
-dbg_i2c_broadcast[4] => ~NO_FANOUT~
-dbg_i2c_broadcast[5] => ~NO_FANOUT~
-dbg_i2c_broadcast[6] => ~NO_FANOUT~
-dbg_i2c_scl => _.IN1
-dbg_i2c_sda_in => _.IN1
-dbg_rst => dbg_rst.IN2
-mem_burst => dbg_state_nxt.IN0
-mem_burst => dbg_state_nxt.IN0
-mem_burst => dbg_bw.OUTPUTSELECT
-mem_burst => dbg_addr.OUTPUTSELECT
-mem_burst => dbg_addr.OUTPUTSELECT
-mem_burst => dbg_addr.OUTPUTSELECT
-mem_burst => dbg_addr.OUTPUTSELECT
-mem_burst => dbg_addr.OUTPUTSELECT
-mem_burst => dbg_addr.OUTPUTSELECT
-mem_burst => dbg_rd.IN0
-mem_burst => dbg_rd.IN0
-mem_burst => dbg_state_nxt.DATAA
-mem_burst => dbg_state_nxt.DATAA
-mem_burst_end => dbg_state_nxt.IN1
-mem_burst_end => dbg_state_nxt.IN1
-mem_burst_rd => dbg_state_nxt.OUTPUTSELECT
-mem_burst_rd => dbg_state_nxt.OUTPUTSELECT
-mem_burst_rd => dbg_state_nxt.OUTPUTSELECT
-mem_burst_wr => dbg_state_nxt.OUTPUTSELECT
-mem_burst_wr => dbg_state_nxt.OUTPUTSELECT
-mem_burst_wr => dbg_state_nxt.OUTPUTSELECT
-mem_bw => dbg_bw.DATAB
-mem_bw => dbg_rd.IN1
-mem_bw => dbg_state_nxt.DATAB
-mem_bw => dbg_rd.IN1
-mem_bw => dbg_state_nxt.DATAB
+dbg_din[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_din[1] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_din[2] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_din[3] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_din[4] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_din[5] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_din[6] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_din[7] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_din[8] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_din[9] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_din[10] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_din[11] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_din[12] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_din[13] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_din[14] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_din[15] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_rd <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_uart_txd <= dbg_uart_txd~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dbg_wr <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dbg_clk => dbg_clk.IN1
+dbg_dout[0] => xfer_buf.DATAB
+dbg_dout[1] => xfer_buf.DATAB
+dbg_dout[2] => xfer_buf.DATAB
+dbg_dout[3] => xfer_buf.DATAB
+dbg_dout[4] => xfer_buf.DATAB
+dbg_dout[5] => xfer_buf.DATAB
+dbg_dout[6] => xfer_buf.DATAB
+dbg_dout[7] => xfer_buf.DATAB
+dbg_dout[8] => xfer_buf.DATAB
+dbg_dout[9] => xfer_buf.DATAB
+dbg_dout[10] => xfer_buf.DATAB
+dbg_dout[11] => xfer_buf.DATAB
+dbg_dout[12] => xfer_buf.DATAB
+dbg_dout[13] => xfer_buf.DATAB
+dbg_dout[14] => xfer_buf.DATAB
+dbg_dout[15] => xfer_buf.DATAB
+dbg_rd_rdy => txd_start.IN1
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rd_rdy => xfer_buf.OUTPUTSELECT
+dbg_rst => dbg_rst.IN1
+dbg_uart_rxd => _.IN1
+mem_burst => comb.OUTPUTSELECT
+mem_burst => uart_state_nxt.IN0
+mem_burst => dbg_din_bw.OUTPUTSELECT
+mem_burst_end => uart_state_nxt.IN1
+mem_burst_rd => comb.IN1
+mem_burst_rd => uart_state_nxt.OUTPUTSELECT
+mem_burst_rd => uart_state_nxt.OUTPUTSELECT
+mem_burst_rd => uart_state_nxt.OUTPUTSELECT
+mem_burst_rd => uart_state_nxt.OUTPUTSELECT
+mem_burst_rd => always3.IN1
+mem_burst_wr => uart_state_nxt.OUTPUTSELECT
+mem_burst_wr => uart_state_nxt.OUTPUTSELECT
+mem_burst_wr => uart_state_nxt.OUTPUTSELECT
+mem_burst_wr => uart_state_nxt.OUTPUTSELECT
+mem_burst_wr => always3.IN1
+mem_bw => dbg_din_bw.DATAB
+mem_bw => uart_state_nxt.DATAB
+mem_bw => uart_state_nxt.DATAB
+mem_bw => uart_state_nxt.DATAB
+mem_bw => uart_state_nxt.DATAB
+mem_bw => uart_state_nxt.DATAB
+mem_bw => uart_state_nxt.DATAB
 
 
-|openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|omsp_sync_cell:sync_cell_i2c_scl
-data_out <= data_sync[1].DB_MAX_OUTPUT_PORT_TYPE
-clk => data_sync[0].CLK
-clk => data_sync[1].CLK
-data_in => data_sync[0].DATAIN
-rst => data_sync[0].ACLR
-rst => data_sync[1].ACLR
-
-
-|openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|omsp_sync_cell:sync_cell_i2c_sda
+|openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|omsp_sync_cell:sync_cell_uart_rxd
 data_out <= data_sync[1].DB_MAX_OUTPUT_PORT_TYPE
 clk => data_sync[0].CLK
 clk => data_sync[1].CLK
@@ -6415,19 +6388,5 @@ wren_a => ram_block1a12.PORTAWE
 wren_a => ram_block1a13.PORTAWE
 wren_a => ram_block1a14.PORTAWE
 wren_a => ram_block1a15.PORTAWE
-
-
-|openMSP430_fpga|io_buf:io_buf_sda_0
-datain[0] => datain[0].IN1
-oe[0] => oe[0].IN1
-dataio[0] <> io_buf_iobuf_bidir_30p:io_buf_iobuf_bidir_30p_component.dataio
-dataout[0] <= io_buf_iobuf_bidir_30p:io_buf_iobuf_bidir_30p_component.dataout
-
-
-|openMSP430_fpga|io_buf:io_buf_sda_0|io_buf_iobuf_bidir_30p:io_buf_iobuf_bidir_30p_component
-datain[0] => obufa_0.IN
-dataio[0] <> dataio[0]
-dataout[0] <= ibufa_0.OUT
-oe[0] => obufa_0.OE
 
 

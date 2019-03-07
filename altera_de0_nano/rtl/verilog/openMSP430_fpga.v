@@ -40,8 +40,6 @@ module openMSP430_fpga (
   // USER CLOCKS
   //-----------------------------
   input         FPGA_CLK1_50,
-  input         FPGA_CLK2_50,
-  input         FPGA_CLK3_50,
 
   //-----------------------------
   // USER INTERFACE (FPGA)
@@ -51,24 +49,11 @@ module openMSP430_fpga (
   output  [7:0] LED,
 
   //-----------------------------
-  // GPIO
+  // UART INTERFACE 
   //-----------------------------
-  //inout  [35:0] GPIO_0,
-  //inout  [35:0] GPIO_1,
+  output        UART_TX,
+  input         UART_RX
 
-  //-----------------------------
-  // ARDUINO DIGITAL INTERFACE
-  //-----------------------------
-  inout  [15:0] ARDUINO_IO,
-  inout         ARDUINO_RESET_N,
-
-  //-----------------------------
-  // ADC
-  //-----------------------------
-  output        ADC_CONVST,
-  output        ADC_SCK,
-  output        ADC_SDI,
-  input         ADC_SDO
 );
 
 //=============================================================================
@@ -103,11 +88,6 @@ wire        [13:0] irq_acc;
 
 // openMSP430 debug interface
 wire               dbg_freeze;
-wire         [6:0] dbg_i2c_addr;
-wire         [6:0] dbg_i2c_broadcast;
-wire               dbg_i2c_scl;
-wire               dbg_i2c_sda_in;
-wire               dbg_i2c_sda_out;
 wire               dbg_uart_txd;
 wire               dbg_uart_rxd;
 
@@ -129,26 +109,6 @@ wire        [15:0] per_dout_led_key_sw;
 wire               irq_ta0;
 wire               irq_ta1;
 wire        [15:0] per_dout_tA;
-
-// Graphic Controller
-//wire               irq_gfx;
-//wire        [15:0] per_dout_gfx;
-
-//wire         [8:0] lut_ram_addr;
-//wire               lut_ram_wen;
-//wire               lut_ram_cen;
-//wire        [15:0] lut_ram_din;
-//wire        [15:0] lut_ram_dout;
-
-//wire        [16:0] vid_ram_addr;
-//wire               vid_ram_wen;
-//wire               vid_ram_cen;
-//wire        [15:0] vid_ram_din;
-//wire        [15:0] vid_ram_dout;
-
-// Touch-Screen Controller
-//wire               irq_touch;
-
 
 //=============================================================================
 // 2)  CLOCK AND RESET GENERATION
@@ -184,7 +144,7 @@ openMSP430 openmsp430_0 (
     .aclk              (),                    // ASIC ONLY: ACLK
     .aclk_en           (aclk_en),             // FPGA ONLY: ACLK enable
     .dbg_freeze        (dbg_freeze),          // Freeze peripherals
-    .dbg_i2c_sda_out   (dbg_i2c_sda_out),     // Debug interface: I2C SDA OUT
+    .dbg_i2c_sda_out   (),    					 // Debug interface: I2C SDA OUT
     .dbg_uart_txd      (dbg_uart_txd),        // Debug interface: UART TXD
     .dco_enable        (),                    // ASIC ONLY: Fast oscillator enable
     .dco_wkup          (),                    // ASIC ONLY: Fast oscillator wake-up (asynchronous)
@@ -214,10 +174,10 @@ openMSP430 openmsp430_0 (
 // INPUTs
     .cpu_en            (1'b1),                // Enable CPU code execution (asynchronous and non-glitchy)
     .dbg_en            (1'b1),                // Debug interface enable (asynchronous and non-glitchy)
-    .dbg_i2c_addr      (dbg_i2c_addr),        // Debug interface: I2C Address
-    .dbg_i2c_broadcast (dbg_i2c_broadcast),   // Debug interface: I2C Broadcast Address (for multicore systems)
-    .dbg_i2c_scl       (dbg_i2c_scl),         // Debug interface: I2C SCL
-    .dbg_i2c_sda_in    (dbg_i2c_sda_in),      // Debug interface: I2C SDA IN
+    .dbg_i2c_addr      (),        				 // Debug interface: I2C Address
+    .dbg_i2c_broadcast (),   						 // Debug interface: I2C Broadcast Address (for multicore systems)
+    .dbg_i2c_scl       (),       				 // Debug interface: I2C SCL
+    .dbg_i2c_sda_in    (),     					 // Debug interface: I2C SDA IN
     .dbg_uart_rxd      (dbg_uart_rxd),        // Debug interface: UART RXD (asynchronous)
     .dco_clk           (dco_clk),             // Fast oscillator (fast clock)
     .dmem_dout         (dmem_dout),           // Data Memory data output
@@ -304,107 +264,6 @@ omsp_timerA timerA_0 (
     .taclk             (1'b0)                 // TACLK external timer clock (SLOW)
 );
 
-//-------------------------------
-// GRAPHIC CONTROLER
-// (Interfacing with LT24 board)
-//-------------------------------
-
-// Bidirectional data bus
-//wire [15:0] lt24_data;
-//wire [15:0] lt24_d_out;
-//wire        lt24_d_out_en;
-
-//io_buf io_buf_lt24_data_00 (.datain(lt24_d_out[0]),  .oe(lt24_d_out_en), .dataout(lt24_data[0]),  .dataio(GPIO_0[8]) );
-//io_buf io_buf_lt24_data_01 (.datain(lt24_d_out[1]),  .oe(lt24_d_out_en), .dataout(lt24_data[1]),  .dataio(GPIO_0[7]) );
-//io_buf io_buf_lt24_data_02 (.datain(lt24_d_out[2]),  .oe(lt24_d_out_en), .dataout(lt24_data[2]),  .dataio(GPIO_0[6]) );
-//io_buf io_buf_lt24_data_03 (.datain(lt24_d_out[3]),  .oe(lt24_d_out_en), .dataout(lt24_data[3]),  .dataio(GPIO_0[5]) );
-//io_buf io_buf_lt24_data_04 (.datain(lt24_d_out[4]),  .oe(lt24_d_out_en), .dataout(lt24_data[4]),  .dataio(GPIO_0[13]));
-//io_buf io_buf_lt24_data_05 (.datain(lt24_d_out[5]),  .oe(lt24_d_out_en), .dataout(lt24_data[5]),  .dataio(GPIO_0[14]));
-//io_buf io_buf_lt24_data_06 (.datain(lt24_d_out[6]),  .oe(lt24_d_out_en), .dataout(lt24_data[6]),  .dataio(GPIO_0[15]));
-//io_buf io_buf_lt24_data_07 (.datain(lt24_d_out[7]),  .oe(lt24_d_out_en), .dataout(lt24_data[7]),  .dataio(GPIO_0[16]));
-//io_buf io_buf_lt24_data_08 (.datain(lt24_d_out[8]),  .oe(lt24_d_out_en), .dataout(lt24_data[8]),  .dataio(GPIO_0[17]));
-//io_buf io_buf_lt24_data_09 (.datain(lt24_d_out[9]),  .oe(lt24_d_out_en), .dataout(lt24_data[9]),  .dataio(GPIO_0[18]));
-//io_buf io_buf_lt24_data_10 (.datain(lt24_d_out[10]), .oe(lt24_d_out_en), .dataout(lt24_data[10]), .dataio(GPIO_0[19]));
-//io_buf io_buf_lt24_data_11 (.datain(lt24_d_out[11]), .oe(lt24_d_out_en), .dataout(lt24_data[11]), .dataio(GPIO_0[20]));
-//io_buf io_buf_lt24_data_12 (.datain(lt24_d_out[12]), .oe(lt24_d_out_en), .dataout(lt24_data[12]), .dataio(GPIO_0[21]));
-//io_buf io_buf_lt24_data_13 (.datain(lt24_d_out[13]), .oe(lt24_d_out_en), .dataout(lt24_data[13]), .dataio(GPIO_0[22]));
-//io_buf io_buf_lt24_data_14 (.datain(lt24_d_out[14]), .oe(lt24_d_out_en), .dataout(lt24_data[14]), .dataio(GPIO_0[23]));
-//io_buf io_buf_lt24_data_15 (.datain(lt24_d_out[15]), .oe(lt24_d_out_en), .dataout(lt24_data[15]), .dataio(GPIO_0[24]));
-
-
-
-//openGFX430 #(.BASE_ADDR(16'h0200)) opengfx430_0 (
-
-// OUTPUTs
-//    .irq_gfx_o             (irq_gfx),                 // Graphic Controller interrupt
-
-//    .lt24_cs_n_o           (GPIO_0[25]),              // LT24 Chip select (Active low)
-//    .lt24_rd_n_o           (GPIO_0[10]),              // LT24 Read strobe (Active low)
-//    .lt24_wr_n_o           (GPIO_0[11]),              // LT24 Write strobe (Active low)
-//    .lt24_rs_o             (GPIO_0[12]),              // LT24 Command/Param selection (Cmd=0/Param=1)
-//    .lt24_d_o              (lt24_d_out),              // LT24 Data output
-//    .lt24_d_en_o           (lt24_d_out_en),           // LT24 Data output enable
-//    .lt24_reset_n_o        (GPIO_0[33]),              // LT24 Reset (Active Low)
-//    .lt24_on_o             (GPIO_0[35]),              // LT24 on/off
-
-//    .per_dout_o            (per_dout_gfx),            // Peripheral data output
-
-//    .lut_ram_addr_o        (lut_ram_addr),            // LUT-RAM address
-//    .lut_ram_wen_o         (lut_ram_wen ),            // LUT-RAM write enable (active low)
-//    .lut_ram_cen_o         (lut_ram_cen ),            // LUT-RAM enable (active low)
-//    .lut_ram_din_o         (lut_ram_din ),            // LUT-RAM data input
-
-//    .vid_ram_addr_o        (vid_ram_addr),            // Video-RAM address
-//    .vid_ram_wen_o         (vid_ram_wen ),            // Video-RAM write enable (active low)
-//    .vid_ram_cen_o         (vid_ram_cen ),            // Video-RAM enable (active low)
-//    .vid_ram_din_o         (vid_ram_din ),            // Video-RAM data input
-
-// INPUTs
-//    .dbg_freeze_i          (dbg_freeze),              // Freeze address auto-incr on read
-//    .mclk                  (mclk),                    // Main system clock
-//    .per_addr_i            (per_addr),                // Peripheral address
-//    .per_din_i             (per_din),                 // Peripheral data input
-//    .per_en_i              (per_en),                  // Peripheral enable (high active)
-//    .per_we_i              (per_we),                  // Peripheral write enable (high active)
-//    .puc_rst               (puc_rst),                 // Main system reset
-
-//    .lt24_d_i              (lt24_data),               // LT24 Data input
-
-//    .lut_ram_dout_i        (lut_ram_dout),            // LUT-RAM data output
-//    .vid_ram_dout_i        (vid_ram_dout)             // Video-RAM  data output
-//);
-
-// Video memory
-//ram_16x75k vid_ram_16x75k_0 (
-
-  //  .address           ( vid_ram_addr),
-  //  .byteena	       (~{2{vid_ram_wen}}),
-  //  .clken	       (~vid_ram_cen),
-  //  .clock             ( mclk),
-  //  .data              ( vid_ram_din),
-  //  .wren              (~vid_ram_wen),
-  //  .q	               ( vid_ram_dout)
-//);
-
-// LUT memory
-//ram_16x512 lut_ram_16x512_0 (
-
-  //  .address           ( lut_ram_addr),
-  //  .byteena           (~{2{lut_ram_wen}}),
-  //  .clken             (~lut_ram_cen),
-  //  .clock             ( mclk),
-  //  .data              ( lut_ram_din),
-  //  .wren              (~lut_ram_wen),
-  //  .q	               ( lut_ram_dout)
-//);
-
-//assign GPIO_0[34] = 1'b1; //    .adc_cs_n          (GPIO_0[34]),          // ADC Chip select (Active low)
-//assign GPIO_0[4]  = 1'b0; //    .adc_dclk          (GPIO_0[4]),           // ADC Clock
-//assign GPIO_0[3]  = 1'b0; //    .adc_din           (GPIO_0[3]),           // ADC Data input
-//assign irq_touch  = 1'b0; //
-//    .adc_busy          (GPIO_0[2]),           // ADC Busy output
-//    .adc_dount         (GPIO_0[1]),           // ADC Data output
-//    .adc_penirq_n      (GPIO_0[0]),           // Pen IRQ from touch controller
 
 //-----------------------------
 // Combine peripheral
@@ -464,19 +323,7 @@ ram_16x8k dmem_0 (
 // 6)  DEBUG INTERFACE
 //=============================================================================
 
-assign  dbg_i2c_addr       =  7'd50;
-assign  dbg_i2c_broadcast  =  7'd49;
-assign  dbg_i2c_scl        =  ARDUINO_IO[15];
-io_buf io_buf_sda_0 (.datain(1'b0), .oe(~dbg_i2c_sda_out), .dataout(dbg_i2c_sda_in), .dataio(ARDUINO_IO[14]));
-assign  dbg_uart_rxd       =  1'b0;
-
-// Unused stuff
-//assign  GPIO_0             =  36'hzzzzzzzzz;
-//assign  GPIO_1             =  36'hzzzzzzzzz;
-assign  ARDUINO_IO[13:0]   =  14'hzzzz;
-assign  ARDUINO_RESET_N    =   1'hz;
-assign  ADC_CONVST         =   1'hz;
-assign  ADC_SCK            =   1'hz;
-assign  ADC_SDI            =   1'hz;
+assign  UART_TX 		=  dbg_uart_txd;
+assign  dbg_uart_rxd       =  UART_RX;
 
 endmodule

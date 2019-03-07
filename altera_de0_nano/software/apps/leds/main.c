@@ -26,7 +26,7 @@ wakeup interrupt (WDT_VECTOR) INT_watchdog(void) {
       					            * The value has 1 at bits corresponding
 					            * to taps, 0 elsewhere. */
     //led_blink_type      = (unsigned char) (lfsr & 0x0007);
-    led_blink_type      = (unsigned char) 0x06;
+    led_blink_type      = (unsigned char) 0x05;
     led_blink_type_init = 1;
   }
 }

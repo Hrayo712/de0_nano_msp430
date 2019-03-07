@@ -523,8 +523,8 @@ wakeup interrupt (WDT_VECTOR) INT_watchdog(void) {
       					            * The value has 1 at bits corresponding
 					            * to taps, 0 elsewhere. */
     //led_blink_type      = (unsigned char) (lfsr & 0x0007);
-    led_blink_type      = (unsigned char) 0x06;
-    827a:	f2 40 06 00 	mov.b	#6,	&0x4002	;#0x0006
+    led_blink_type      = (unsigned char) 0x05;
+    827a:	f2 40 05 00 	mov.b	#5,	&0x4002	;#0x0005
     827e:	02 40 
     led_blink_type_init = 1;
     8280:	d2 43 04 40 	mov.b	#1,	&0x4004	;r3 As==01
@@ -544,7 +544,7 @@ wakeup interrupt (WDT_VECTOR) INT_watchdog(void) {
     8290:	d2 53 03 40 	inc.b	&0x4003	
 					            * to taps, 0 elsewhere. */
     //led_blink_type      = (unsigned char) (lfsr & 0x0007);
-    led_blink_type      = (unsigned char) 0x06;
+    led_blink_type      = (unsigned char) 0x05;
     led_blink_type_init = 1;
   }
 }

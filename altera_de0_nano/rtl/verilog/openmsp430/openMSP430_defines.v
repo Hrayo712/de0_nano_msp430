@@ -227,8 +227,8 @@
 //    DBG_UART -> Enable UART (8N1) debug interface
 //    DBG_I2C  -> Enable I2C debug interface
 //-------------------------------------------------------
-//`define DBG_UART
-`define DBG_I2C
+`define DBG_UART
+//`define DBG_I2C
 
 
 //-------------------------------------------------------

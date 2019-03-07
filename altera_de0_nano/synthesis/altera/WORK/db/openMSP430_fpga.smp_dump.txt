@@ -6,22 +6,14 @@ mem_state.M_SET_BRK 0 0 1 1
 mem_state.M_ACCESS_BRK 0 1 0 1 
 mem_state.M_ACCESS 1 0 0 1 
 
-State Machine - |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|dbg_state
-Name dbg_state.TX_BYTE_LO dbg_state.RX_BYTE_HI dbg_state.RX_BYTE_LO dbg_state.RX_CMD dbg_state.TX_BYTE_HI 
-dbg_state.RX_CMD 0 0 0 0 0 
-dbg_state.RX_BYTE_LO 0 0 1 1 0 
-dbg_state.RX_BYTE_HI 0 1 0 1 0 
-dbg_state.TX_BYTE_LO 1 0 0 1 0 
-dbg_state.TX_BYTE_HI 0 0 0 1 1 
-
-State Machine - |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_i2c:dbg_i2c_0|i2c_state
-Name i2c_state.TX_DATA_ACK i2c_state.TX_DATA i2c_state.RX_DATA_ACK i2c_state.RX_DATA i2c_state.RX_ADDR_ACK i2c_state.RX_ADDR 
-i2c_state.RX_ADDR 0 0 0 0 0 0 
-i2c_state.RX_ADDR_ACK 0 0 0 0 1 1 
-i2c_state.RX_DATA 0 0 0 1 0 1 
-i2c_state.RX_DATA_ACK 0 0 1 0 0 1 
-i2c_state.TX_DATA 0 1 0 0 0 1 
-i2c_state.TX_DATA_ACK 1 0 0 0 0 1 
+State Machine - |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|uart_state
+Name uart_state.TX_DATA2 uart_state.TX_DATA1 uart_state.RX_DATA2 uart_state.RX_DATA1 uart_state.RX_CMD uart_state.RX_SYNC 
+uart_state.RX_SYNC 0 0 0 0 0 0 
+uart_state.RX_CMD 0 0 0 0 1 1 
+uart_state.RX_DATA1 0 0 0 1 0 1 
+uart_state.RX_DATA2 0 0 1 0 0 1 
+uart_state.TX_DATA1 0 1 0 0 0 1 
+uart_state.TX_DATA2 1 0 0 0 0 1 
 
 State Machine - |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|i_state
 Name i_state.I_IDLE i_state.I_EXT2 i_state.I_EXT1 i_state.I_DEC i_state.I_IRQ_DONE i_state.I_IRQ_FETCH 

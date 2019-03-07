@@ -36,11 +36,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "ARDUINO_IO[14]",
-					"strict" : false
-				},
-				{
-					"name" : "ARDUINO_IO[15]",
+					"name" : "UART_TX",
 					"strict" : false
 				},
 				{
@@ -49,6 +45,10 @@
 				},
 				{
 					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "UART_RX",
 					"strict" : false
 				},
 				{
