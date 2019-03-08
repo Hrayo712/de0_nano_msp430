@@ -9,6 +9,11 @@ This has been tested with
 
 **gccmsp430** 4.6.3
 
+**Eclipse IDE for C/C++ Developers**
+
+Version: 2018-12 (4.10.0)
+Build id: 20181214-0600
+
 
 
 The following packages are necessary
@@ -22,6 +27,8 @@ gccmsp430 (and dependencies)
 icarus verilog (iverilog)
 
 tk
+
+gdb-msp430
 
 ![de0_nano_board](de0_nano_board.png)
 
