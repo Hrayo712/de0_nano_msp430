@@ -59,6 +59,10 @@ module  openMSP430 (
     dmem_cen,                                // Data Memory chip enable (low active)
     dmem_din,                                // Data Memory data input
     dmem_wen,                                // Data Memory write byte enable (low active)
+	 sp_dmem_addr,                            // Stack Data Memory address
+    sp_dmem_cen,                             // Stack Data Memory chip enable (low active)
+    sp_dmem_din,                             // Stack Data Memory data input
+    sp_dmem_wen,                             // Stack Data Memory write byte enable (low active)
     irq_acc,                                 // Interrupt request accepted (one-hot signal)
     lfxt_enable,                             // ASIC ONLY: Low frequency oscillator enable
     lfxt_wkup,                               // ASIC ONLY: Low frequency oscillator wake-up (asynchronous)
@@ -88,6 +92,7 @@ module  openMSP430 (
     dbg_uart_rxd,                            // Debug interface: UART RXD (asynchronous)
     dco_clk,                                 // Fast oscillator (fast clock)
     dmem_dout,                               // Data Memory data output
+	 sp_dmem_dout,                            // Data Memory data output
     irq,                                     // Maskable interrupts
     lfxt_clk,                                // Low frequency oscillator (typ 32kHz)
     dma_addr,                                // Direct Memory Access address
@@ -123,6 +128,12 @@ output [`DMEM_MSB:0] dmem_addr;              // Data Memory address
 output               dmem_cen;               // Data Memory chip enable (low active)
 output        [15:0] dmem_din;               // Data Memory data input
 output         [1:0] dmem_wen;               // Data Memory write byte enable (low active)
+
+output [`DMEM_MSB:0] sp_dmem_addr;           // Data Memory address
+output               sp_dmem_cen;            // Data Memory chip enable (low active)
+output        [15:0] sp_dmem_din;            // Data Memory data input
+output         [1:0] sp_dmem_wen;            // Data Memory write byte enable (low active)
+
 output [`IRQ_NR-3:0] irq_acc;                // Interrupt request accepted (one-hot signal)
 output               lfxt_enable;            // ASIC ONLY: Low frequency oscillator enable
 output               lfxt_wkup;              // ASIC ONLY: Low frequency oscillator wake-up (asynchronous)
@@ -154,6 +165,8 @@ input                dbg_i2c_sda_in;         // Debug interface: I2C SDA IN
 input                dbg_uart_rxd;           // Debug interface: UART RXD (asynchronous)
 input                dco_clk;                // Fast oscillator (fast clock)
 input         [15:0] dmem_dout;              // Data Memory data output
+input         [15:0] sp_dmem_dout;           // Stack Data Memory data output
+
 input  [`IRQ_NR-3:0] irq;                    // Maskable interrupts (14, 30 or 62)
 input                lfxt_clk;               // Low frequency oscillator (typ 32kHz)
 input         [15:1] dma_addr;               // Direct Memory Access address
@@ -434,7 +447,13 @@ omsp_mem_backbone mem_backbone_0 (
     .dmem_cen          (dmem_cen),           // Data Memory chip enable (low active)
     .dmem_din          (dmem_din),           // Data Memory data input
     .dmem_wen          (dmem_wen),           // Data Memory write enable (low active)
-    .eu_mdb_in         (eu_mdb_in),          // Execution Unit Memory data bus input
+    
+	 .sp_dmem_addr		  (sp_dmem_addr),       // Stack Data Memory address
+	 .sp_dmem_cen       (sp_dmem_cen),        // Stack Data Memory chip enable (low active)
+    .sp_dmem_din       (sp_dmem_din),        // Stack Data Memory data input
+    .sp_dmem_wen       (sp_dmem_wen),        // Stack Data Memory write enable (low active)
+	 
+	 .eu_mdb_in         (eu_mdb_in),          // Execution Unit Memory data bus input
     .fe_mdb_in         (fe_mdb_in),          // Frontend Memory data bus input
     .fe_pmem_wait      (fe_pmem_wait),       // Frontend wait for Instruction fetch
     .dma_dout          (dma_dout),           // Direct Memory Access data output
@@ -457,6 +476,7 @@ omsp_mem_backbone mem_backbone_0 (
     .dbg_mem_en        (dbg_mem_en),         // Debug unit memory enable
     .dbg_mem_wr        (dbg_mem_wr),         // Debug unit memory write
     .dmem_dout         (dmem_dout),          // Data Memory data output
+	 .sp_dmem_dout		  (sp_dmem_dout),			// Stack Data Memory data output
     .eu_mab            (eu_mab[15:1]),       // Execution Unit Memory address bus
     .eu_mb_en          (eu_mb_en),           // Execution Unit Memory bus enable
     .eu_mb_wr          (eu_mb_wr),           // Execution Unit Memory bus write transfer

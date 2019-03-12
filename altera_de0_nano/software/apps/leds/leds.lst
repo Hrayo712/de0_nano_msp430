@@ -3,7 +3,7 @@ leds.elf:     file format elf32-msp430
 
 SYMBOL TABLE:
 00008000 l    d  .text	00000000 .text
-00008448 l    d  .rodata	00000000 .rodata
+00008450 l    d  .rodata	00000000 .rodata
 00004000 l    d  .data	00000000 .data
 00004002 l    d  .bss	00000000 .bss
 00004008 l    d  .noinit	00000000 .noinit
@@ -17,69 +17,69 @@ SYMBOL TABLE:
 00000000 l    d  .debug_loc	00000000 .debug_loc
 00000000 l    d  .debug_ranges	00000000 .debug_ranges
 00000000 l    df *ABS*	00000000 main.c
-00008332 l       .text	00000000 __br_unexpected_
+0000833a l       .text	00000000 __br_unexpected_
 00000000 l    df *ABS*	00000000 timerA.c
 00010000 g       *ABS*	00000000 _far_end
 00000002 g       *ABS*	00000000 __data_size
-00008332  w      .text	00000000 __isr_14
-00008332  w      .text	00000000 __isr_4
+0000833a  w      .text	00000000 __isr_14
+0000833a  w      .text	00000000 __isr_4
 00000138 g       *ABS*	00000000 __OP2
 00010000 g       *ABS*	00000000 _efartext
 00000130 g       *ABS*	00000000 __MPY
 0000013a g       *ABS*	00000000 __RESLO
 00000136 g       *ABS*	00000000 __MACS
-00008456 g       *ABS*	00000000 _etext
-00008336 g     F .text	00000072 INT_watchdog
+0000845e g       *ABS*	00000000 _etext
+0000833e g     F .text	00000072 INT_watchdog
 00000006 g       *ABS*	00000000 __bss_size
 00008000  w      .text	00000000 __watchdog_support
-0000832c  w      .text	00000000 __stop_progExec__
+00008334  w      .text	00000000 __stop_progExec__
 00004002 g     O .bss	00000002 led_blink_type
-00008332  w      .text	00000000 __isr_11
+0000833a  w      .text	00000000 __isr_11
 00004004 g     O .bss	00000002 wdt_irq_cnt
-00008332  w      .text	00000000 __isr_5
-00008456 g       *ABS*	00000000 __data_load_start
-00008332 g       .text	00000000 __dtors_end
+0000833a  w      .text	00000000 __isr_5
+0000845e g       *ABS*	00000000 __data_load_start
+0000833a g       .text	00000000 __dtors_end
 00004008 g       .bss	00000000 __bss_end
-00008332  w      .text	00000000 __isr_2
-00008336 g       .text	00000000 __isr_10
+0000833a  w      .text	00000000 __isr_2
+0000833e g       .text	00000000 __isr_10
 0000013c g       *ABS*	00000000 __RESHI
 00004008 g     O .noinit	00000002 __wdt_clear_value
-00008332  w      .text	00000000 __isr_7
+0000833a  w      .text	00000000 __isr_7
 0000ffe0 g     O .vectors	00000020 __ivtbl_16
-00008332  w      .text	00000000 __isr_0
+0000833a  w      .text	00000000 __isr_0
 00008028  w      .text	00000000 __do_clear_bss
-00008446  w      .text	00000000 _unexpected_
-00008424 g       .text	00000000 __isr_8
-00008332  w      .text	00000000 __isr_3
+0000844e  w      .text	00000000 _unexpected_
+0000842c g       .text	00000000 __isr_8
+0000833a  w      .text	00000000 __isr_3
 0000ffe0 g       .vectors	00000000 __vectors_start
 00008000  w      .text	00000000 _reset_vector__
-00008332 g       .text	00000000 __ctors_start
-00008332  w      .text	00000000 __isr_12
+0000833a g       .text	00000000 __ctors_start
+0000833a  w      .text	00000000 __isr_12
 00004000 g     O .data	00000002 lfsr
-000083a8 g     F .text	00000028 fake_delay
+000083b0 g     F .text	00000028 fake_delay
 00008010  w      .text	00000000 __do_copy_data
 00004002 g       .bss	00000000 __bss_start
-0000803e g     F .text	000002ee main
-00008332  w      .text	00000000 __isr_13
-000083fa g     F .text	0000002a ta_wait
-00008424 g     F .text	00000022 INT_timerA1
+0000803e g     F .text	000002f6 main
+0000833a  w      .text	00000000 __isr_13
+00008402 g     F .text	0000002a ta_wait
+0000842c g     F .text	00000022 INT_timerA1
 00010000 g       .vectors	00000000 _vectors_end
-000083d0 g     F .text	0000002a ta_wait_no_lpm
+000083d8 g     F .text	0000002a ta_wait_no_lpm
 00004008 g       .noinit	00000000 __noinit_start
-00008332  w      .text	00000000 __isr_9
+0000833a  w      .text	00000000 __isr_9
 0000400a g       .noinit	00000000 __noinit_end
 0000800c  w      .text	00000000 __init_stack
-00008332 g       .text	00000000 __dtors_start
-00008332  w      .text	00000000 __isr_6
-00008332 g       .text	00000000 __ctors_end
+0000833a g       .text	00000000 __dtors_start
+0000833a  w      .text	00000000 __isr_6
+0000833a g       .text	00000000 __ctors_end
 00000132 g       *ABS*	00000000 __MPYS
 00008000 g       *ABS*	00000000 __stack
-00008332  w      .text	00000000 __isr_1
+0000833a  w      .text	00000000 __isr_1
 00004002 g       .data	00000000 _edata
 0000400a g       *ABS*	00000000 _end
 00000134 g       *ABS*	00000000 __MAC
 00004006 g     O .bss	00000002 led_blink_type_init
-0000832c  w      .text	00000000 _endless_loop__
+00008334  w      .text	00000000 _endless_loop__
 00008010  w      .text	00000000 __low_level_init
 00004000 g       .data	00000000 __data_start
 00000120 g       *ABS*	00000000 __WDTCTL
@@ -104,7 +104,7 @@ Disassembly of section .text:
     8018:	92 42 08 40 	mov	&0x4008,&0x0120	
     801c:	20 01 
     801e:	2f 83       	decd	r15		
-    8020:	9f 4f 56 84 	mov	-31658(r15),16384(r15);0x8456(r15), 0x4000(r15)
+    8020:	9f 4f 5e 84 	mov	-31650(r15),16384(r15);0x845e(r15), 0x4000(r15)
     8024:	00 40 
     8026:	f8 23       	jnz	$-14     	;abs 0x8018
 
@@ -133,84 +133,82 @@ int main(void) {
   unsigned char direction;
 
   // Init global variables
-  wdt_irq_cnt         = 1;
-    8044:	92 43 04 40 	mov	#1,	&0x4004	;r3 As==01
-  led_blink_type      = 2;
-    8048:	a2 43 02 40 	mov	#2,	&0x4002	;r3 As==10
-  led_blink_type_init = 3;
-    804c:	b2 40 03 00 	mov	#3,	&0x4006	;#0x0003
-    8050:	06 40 
-  wdt_irq_cnt         = 5;
-    8052:	b2 40 05 00 	mov	#5,	&0x4004	;#0x0005
-    8056:	04 40 
+  wdt_irq_cnt         = 0;
+    8044:	82 43 04 40 	mov	#0,	&0x4004	;r3 As==00
+  led_blink_type      = 0;
+    8048:	82 43 02 40 	mov	#0,	&0x4002	;r3 As==00
+  led_blink_type_init = 1;
+    804c:	92 43 06 40 	mov	#1,	&0x4006	;r3 As==01
   direction           = 0;
-    8058:	c4 43 fb ff 	mov.b	#0,	-5(r4)	;r3 As==00, 0xfffb(r4)
+    8050:	c4 43 fb ff 	mov.b	#0,	-5(r4)	;r3 As==00, 0xfffb(r4)
   temp                = 0;
-    805c:	c4 43 fa ff 	mov.b	#0,	-6(r4)	;r3 As==00, 0xfffa(r4)
+    8054:	c4 43 fa ff 	mov.b	#0,	-6(r4)	;r3 As==00, 0xfffa(r4)
 
   // Configure watchdog timer to generate an IRQ every 327ms
   WDTCTL = WDTPW | WDTSSEL | WDTCNTCL | WDTTMSEL | WDTIS0;  // Select ACLK | Clear timer | Enable interval timer mode | div32768
-    8060:	3f 40 20 01 	mov	#288,	r15	;#0x0120
-    8064:	bf 40 1d 5a 	mov	#23069,	0(r15)	;#0x5a1d, 0x0000(r15)
-    8068:	00 00 
+    8058:	3f 40 20 01 	mov	#288,	r15	;#0x0120
+    805c:	bf 40 1d 5a 	mov	#23069,	0(r15)	;#0x5a1d, 0x0000(r15)
+    8060:	00 00 
   IE1_set_wdtie();
-    806a:	d2 d3 00 00 	bis.b	#1,	&0x0000	;r3 As==01
+    8062:	d2 d3 00 00 	bis.b	#1,	&0x0000	;r3 As==01
 
   eint();
-    806e:	32 d2       	eint			
+    8066:	32 d2       	eint			
 
   while (1) {                        // Main loop, never ends...
 
     switch(led_blink_type) {
-    8070:	1f 42 02 40 	mov	&0x4002,r15	
-    8074:	3f 90 07 00 	cmp	#7,	r15	;#0x0007
-    8078:	02 28       	jnc	$+6      	;abs 0x807e
-    807a:	30 40 de 82 	br	#0x82de	
-    807e:	0f 5f       	rla	r15		
-    8080:	3f 50 48 84 	add	#-31672,r15	;#0x8448
-    8084:	2f 4f       	mov	@r15,	r15	
-    8086:	00 4f       	br	r15		
+    8068:	1f 42 02 40 	mov	&0x4002,r15	
+    806c:	3f 90 07 00 	cmp	#7,	r15	;#0x0007
+    8070:	02 28       	jnc	$+6      	;abs 0x8076
+    8072:	30 40 e6 82 	br	#0x82e6	
+    8076:	0f 5f       	rla	r15		
+    8078:	3f 50 50 84 	add	#-31664,r15	;#0x8450
+    807c:	2f 4f       	mov	@r15,	r15	
+    807e:	00 4f       	br	r15		
     case 0 :                         // Double-counter (type1)
       if (led_blink_type_init) {
-    8088:	1f 42 06 40 	mov	&0x4006,r15	
-    808c:	0f 93       	tst	r15		
-    808e:	09 24       	jz	$+20     	;abs 0x80a2
+    8080:	1f 42 06 40 	mov	&0x4006,r15	
+    8084:	0f 93       	tst	r15		
+    8086:	09 24       	jz	$+20     	;abs 0x809a
 	LED_CTRL = 0x00;
-    8090:	3f 40 90 00 	mov	#144,	r15	;#0x0090
-    8094:	cf 43 00 00 	mov.b	#0,	0(r15)	;r3 As==00, 0x0000(r15)
+    8088:	3f 40 90 00 	mov	#144,	r15	;#0x0090
+    808c:	cf 43 00 00 	mov.b	#0,	0(r15)	;r3 As==00, 0x0000(r15)
 	temp     = 0x00;
-    8098:	c4 43 fa ff 	mov.b	#0,	-6(r4)	;r3 As==00, 0xfffa(r4)
+    8090:	c4 43 fa ff 	mov.b	#0,	-6(r4)	;r3 As==00, 0xfffa(r4)
 	led_blink_type_init=0;
-    809c:	82 43 06 40 	mov	#0,	&0x4006	;r3 As==00
-    80a0:	19 3c       	jmp	$+52     	;abs 0x80d4
+    8094:	82 43 06 40 	mov	#0,	&0x4006	;r3 As==00
+    8098:	19 3c       	jmp	$+52     	;abs 0x80cc
       } else {
 	temp     = (temp+1) & 0x0f;
-    80a2:	5f 44 fa ff 	mov.b	-6(r4),	r15	;0xfffa(r4)
-    80a6:	5f 53       	inc.b	r15		
-    80a8:	4e 4f       	mov.b	r15,	r14	
-    80aa:	7e f0 0f 00 	and.b	#15,	r14	;#0x000f
-    80ae:	c4 4e fa ff 	mov.b	r14,	-6(r4)	;0xfffa(r4)
+    809a:	5f 44 fa ff 	mov.b	-6(r4),	r15	;0xfffa(r4)
+    809e:	5f 53       	inc.b	r15		
+    80a0:	4e 4f       	mov.b	r15,	r14	
+    80a2:	7e f0 0f 00 	and.b	#15,	r14	;#0x000f
+    80a6:	c4 4e fa ff 	mov.b	r14,	-6(r4)	;0xfffa(r4)
 	temp2    = (temp<<4) | temp;
-    80b2:	5f 44 fa ff 	mov.b	-6(r4),	r15	;0xfffa(r4)
-    80b6:	0f 5f       	rla	r15		
-    80b8:	0f 5f       	rla	r15		
-    80ba:	0f 5f       	rla	r15		
-    80bc:	0f 5f       	rla	r15		
-    80be:	4e 4f       	mov.b	r15,	r14	
-    80c0:	5f 44 fa ff 	mov.b	-6(r4),	r15	;0xfffa(r4)
-    80c4:	4f de       	bis.b	r14,	r15	
-    80c6:	c4 4f fc ff 	mov.b	r15,	-4(r4)	;0xfffc(r4)
+    80aa:	5f 44 fa ff 	mov.b	-6(r4),	r15	;0xfffa(r4)
+    80ae:	0f 5f       	rla	r15		
+    80b0:	0f 5f       	rla	r15		
+    80b2:	0f 5f       	rla	r15		
+    80b4:	0f 5f       	rla	r15		
+    80b6:	4e 4f       	mov.b	r15,	r14	
+    80b8:	5f 44 fa ff 	mov.b	-6(r4),	r15	;0xfffa(r4)
+    80bc:	4f de       	bis.b	r14,	r15	
+    80be:	c4 4f fc ff 	mov.b	r15,	-4(r4)	;0xfffc(r4)
 	LED_CTRL = temp2;
-    80ca:	3f 40 90 00 	mov	#144,	r15	;#0x0090
-    80ce:	df 44 fc ff 	mov.b	-4(r4),	0(r15)	;0xfffc(r4), 0x0000(r15)
-    80d2:	00 00 
+    80c2:	3f 40 90 00 	mov	#144,	r15	;#0x0090
+    80c6:	df 44 fc ff 	mov.b	-4(r4),	0(r15)	;0xfffc(r4), 0x0000(r15)
+    80ca:	00 00 
       }
-      //ta_wait(WT_200MS);
+        ta_wait(WT_200MS);
+    80cc:	3f 40 4c 4c 	mov	#19532,	r15	;#0x4c4c
+    80d0:	b0 12 02 84 	call	#0x8402	
 	fake_delay(5000);
     80d4:	3f 40 88 13 	mov	#5000,	r15	;#0x1388
-    80d8:	b0 12 a8 83 	call	#0x83a8	
+    80d8:	b0 12 b0 83 	call	#0x83b0	
       break;
-    80dc:	30 40 28 83 	br	#0x8328	
+    80dc:	30 40 30 83 	br	#0x8330	
 
 
     case 1 :                         // Double-counter (type2)
@@ -250,9 +248,9 @@ int main(void) {
       }
       ta_wait(WT_200MS);
     812c:	3f 40 4c 4c 	mov	#19532,	r15	;#0x4c4c
-    8130:	b0 12 fa 83 	call	#0x83fa	
+    8130:	b0 12 02 84 	call	#0x8402	
       break;
-    8134:	30 40 28 83 	br	#0x8328	
+    8134:	30 40 30 83 	br	#0x8330	
 
 
     case 2 :                         // Interleaved
@@ -277,9 +275,9 @@ int main(void) {
       }
       ta_wait(WT_500MS);
     8160:	3f 40 bd be 	mov	#-16707,r15	;#0xbebd
-    8164:	b0 12 fa 83 	call	#0x83fa	
+    8164:	b0 12 02 84 	call	#0x8402	
       break;
-    8168:	df 3c       	jmp	$+448    	;abs 0x8328
+    8168:	e3 3c       	jmp	$+456    	;abs 0x8330
 
 
     case 3 :                         // Blink
@@ -303,12 +301,12 @@ int main(void) {
       }
       ta_wait(WT_500MS);
     8190:	3f 40 bd be 	mov	#-16707,r15	;#0xbebd
-    8194:	b0 12 fa 83 	call	#0x83fa	
+    8194:	b0 12 02 84 	call	#0x8402	
       ta_wait(WT_200MS);
     8198:	3f 40 4c 4c 	mov	#19532,	r15	;#0x4c4c
-    819c:	b0 12 fa 83 	call	#0x83fa	
+    819c:	b0 12 02 84 	call	#0x8402	
       break;
-    81a0:	c3 3c       	jmp	$+392    	;abs 0x8328
+    81a0:	c7 3c       	jmp	$+400    	;abs 0x8330
 
 
     case 4 :                         // Inverted Ping-pong
@@ -367,9 +365,9 @@ int main(void) {
       }
       ta_wait(WT_100MS);
     8212:	3f 40 26 26 	mov	#9766,	r15	;#0x2626
-    8216:	b0 12 fa 83 	call	#0x83fa	
+    8216:	b0 12 02 84 	call	#0x8402	
       break;
-    821a:	86 3c       	jmp	$+270    	;abs 0x8328
+    821a:	8a 3c       	jmp	$+278    	;abs 0x8330
 
 
     case 5 :                         // Ping-pong
@@ -421,291 +419,293 @@ int main(void) {
     827e:	df 44 fa ff 	mov.b	-6(r4),	0(r15)	;0xfffa(r4), 0x0000(r15)
     8282:	00 00 
       }
-      //ta_wait(WT_100MS);
+        ta_wait(WT_100MS);
+    8284:	3f 40 26 26 	mov	#9766,	r15	;#0x2626
+    8288:	b0 12 02 84 	call	#0x8402	
 	fake_delay(5000);
-    8284:	3f 40 88 13 	mov	#5000,	r15	;#0x1388
-    8288:	b0 12 a8 83 	call	#0x83a8	
+    828c:	3f 40 88 13 	mov	#5000,	r15	;#0x1388
+    8290:	b0 12 b0 83 	call	#0x83b0	
       break;
-    828c:	4d 3c       	jmp	$+156    	;abs 0x8328
+    8294:	4d 3c       	jmp	$+156    	;abs 0x8330
 
 
     case 6 :                         // Inverted Shift -->
       if (led_blink_type_init) {
-    828e:	1f 42 06 40 	mov	&0x4006,r15	
-    8292:	0f 93       	tst	r15		
-    8294:	08 24       	jz	$+18     	;abs 0x82a6
+    8296:	1f 42 06 40 	mov	&0x4006,r15	
+    829a:	0f 93       	tst	r15		
+    829c:	08 24       	jz	$+18     	;abs 0x82ae
 	LED_CTRL = 0x3f;
-    8296:	3f 40 90 00 	mov	#144,	r15	;#0x0090
-    829a:	ff 40 3f 00 	mov.b	#63,	0(r15)	;#0x003f, 0x0000(r15)
-    829e:	00 00 
+    829e:	3f 40 90 00 	mov	#144,	r15	;#0x0090
+    82a2:	ff 40 3f 00 	mov.b	#63,	0(r15)	;#0x003f, 0x0000(r15)
+    82a6:	00 00 
 	led_blink_type_init=0;
-    82a0:	82 43 06 40 	mov	#0,	&0x4006	;r3 As==00
-    82a4:	17 3c       	jmp	$+48     	;abs 0x82d4
+    82a8:	82 43 06 40 	mov	#0,	&0x4006	;r3 As==00
+    82ac:	17 3c       	jmp	$+48     	;abs 0x82dc
       } else {
 	temp     = (LED_CTRL >> 1) | 0x80;
-    82a6:	3f 40 90 00 	mov	#144,	r15	;#0x0090
-    82aa:	6f 4f       	mov.b	@r15,	r15	
-    82ac:	4f 4f       	mov.b	r15,	r15	
-    82ae:	4f 4f       	mov.b	r15,	r15	
-    82b0:	12 c3       	clrc			
-    82b2:	4f 10       	rrc.b	r15		
-    82b4:	4e 4f       	mov.b	r15,	r14	
-    82b6:	7e d0 80 ff 	bis.b	#-128,	r14	;#0xff80
-    82ba:	c4 4e fa ff 	mov.b	r14,	-6(r4)	;0xfffa(r4)
+    82ae:	3f 40 90 00 	mov	#144,	r15	;#0x0090
+    82b2:	6f 4f       	mov.b	@r15,	r15	
+    82b4:	4f 4f       	mov.b	r15,	r15	
+    82b6:	4f 4f       	mov.b	r15,	r15	
+    82b8:	12 c3       	clrc			
+    82ba:	4f 10       	rrc.b	r15		
+    82bc:	4e 4f       	mov.b	r15,	r14	
+    82be:	7e d0 80 ff 	bis.b	#-128,	r14	;#0xff80
+    82c2:	c4 4e fa ff 	mov.b	r14,	-6(r4)	;0xfffa(r4)
 	LED_CTRL = temp;
-    82be:	3f 40 90 00 	mov	#144,	r15	;#0x0090
-    82c2:	df 44 fa ff 	mov.b	-6(r4),	0(r15)	;0xfffa(r4), 0x0000(r15)
-    82c6:	00 00 
+    82c6:	3f 40 90 00 	mov	#144,	r15	;#0x0090
+    82ca:	df 44 fa ff 	mov.b	-6(r4),	0(r15)	;0xfffa(r4), 0x0000(r15)
+    82ce:	00 00 
 	if (temp==0xfe) {led_blink_type_init = 1;}
-    82c8:	f4 90 fe ff 	cmp.b	#-2,	-6(r4)	;#0xfffe, 0xfffa(r4)
-    82cc:	fa ff 
-    82ce:	02 20       	jnz	$+6      	;abs 0x82d4
-    82d0:	92 43 06 40 	mov	#1,	&0x4006	;r3 As==01
+    82d0:	f4 90 fe ff 	cmp.b	#-2,	-6(r4)	;#0xfffe, 0xfffa(r4)
+    82d4:	fa ff 
+    82d6:	02 20       	jnz	$+6      	;abs 0x82dc
+    82d8:	92 43 06 40 	mov	#1,	&0x4006	;r3 As==01
       }
       ta_wait(WT_100MS);
-    82d4:	3f 40 26 26 	mov	#9766,	r15	;#0x2626
-    82d8:	b0 12 fa 83 	call	#0x83fa	
+    82dc:	3f 40 26 26 	mov	#9766,	r15	;#0x2626
+    82e0:	b0 12 02 84 	call	#0x8402	
       break;
-    82dc:	25 3c       	jmp	$+76     	;abs 0x8328
+    82e4:	25 3c       	jmp	$+76     	;abs 0x8330
 
 
     default:                         // Shift -->
       if (led_blink_type_init) {
-    82de:	1f 42 06 40 	mov	&0x4006,r15	
-    82e2:	0f 93       	tst	r15		
-    82e4:	08 24       	jz	$+18     	;abs 0x82f6
+    82e6:	1f 42 06 40 	mov	&0x4006,r15	
+    82ea:	0f 93       	tst	r15		
+    82ec:	08 24       	jz	$+18     	;abs 0x82fe
 	LED_CTRL = 0x80;
-    82e6:	3f 40 90 00 	mov	#144,	r15	;#0x0090
-    82ea:	ff 40 80 ff 	mov.b	#-128,	0(r15)	;#0xff80, 0x0000(r15)
-    82ee:	00 00 
+    82ee:	3f 40 90 00 	mov	#144,	r15	;#0x0090
+    82f2:	ff 40 80 ff 	mov.b	#-128,	0(r15)	;#0xff80, 0x0000(r15)
+    82f6:	00 00 
 	led_blink_type_init=0;
-    82f0:	82 43 06 40 	mov	#0,	&0x4006	;r3 As==00
-    82f4:	13 3c       	jmp	$+40     	;abs 0x831c
+    82f8:	82 43 06 40 	mov	#0,	&0x4006	;r3 As==00
+    82fc:	13 3c       	jmp	$+40     	;abs 0x8324
       } else {
 	temp     = LED_CTRL >> 1;
-    82f6:	3f 40 90 00 	mov	#144,	r15	;#0x0090
-    82fa:	6f 4f       	mov.b	@r15,	r15	
-    82fc:	4f 4f       	mov.b	r15,	r15	
-    82fe:	c4 4f fa ff 	mov.b	r15,	-6(r4)	;0xfffa(r4)
-    8302:	12 c3       	clrc			
-    8304:	54 10 fa ff 	rrc.b	-6(r4)		;0xfffa(r4)
+    82fe:	3f 40 90 00 	mov	#144,	r15	;#0x0090
+    8302:	6f 4f       	mov.b	@r15,	r15	
+    8304:	4f 4f       	mov.b	r15,	r15	
+    8306:	c4 4f fa ff 	mov.b	r15,	-6(r4)	;0xfffa(r4)
+    830a:	12 c3       	clrc			
+    830c:	54 10 fa ff 	rrc.b	-6(r4)		;0xfffa(r4)
 	LED_CTRL = temp;
-    8308:	3f 40 90 00 	mov	#144,	r15	;#0x0090
-    830c:	df 44 fa ff 	mov.b	-6(r4),	0(r15)	;0xfffa(r4), 0x0000(r15)
-    8310:	00 00 
+    8310:	3f 40 90 00 	mov	#144,	r15	;#0x0090
+    8314:	df 44 fa ff 	mov.b	-6(r4),	0(r15)	;0xfffa(r4), 0x0000(r15)
+    8318:	00 00 
 	if (temp==0x01) {led_blink_type_init = 1;}
-    8312:	d4 93 fa ff 	cmp.b	#1,	-6(r4)	;r3 As==01, 0xfffa(r4)
-    8316:	02 20       	jnz	$+6      	;abs 0x831c
-    8318:	92 43 06 40 	mov	#1,	&0x4006	;r3 As==01
+    831a:	d4 93 fa ff 	cmp.b	#1,	-6(r4)	;r3 As==01, 0xfffa(r4)
+    831e:	02 20       	jnz	$+6      	;abs 0x8324
+    8320:	92 43 06 40 	mov	#1,	&0x4006	;r3 As==01
       }
       ta_wait(WT_100MS);
-    831c:	3f 40 26 26 	mov	#9766,	r15	;#0x2626
-    8320:	b0 12 fa 83 	call	#0x83fa	
+    8324:	3f 40 26 26 	mov	#9766,	r15	;#0x2626
+    8328:	b0 12 02 84 	call	#0x8402	
     }
   }
-    8324:	30 40 70 80 	br	#0x8070	
-    8328:	30 40 70 80 	br	#0x8070	
+    832c:	30 40 68 80 	br	#0x8068	
+    8330:	30 40 68 80 	br	#0x8068	
 
-0000832c <__stop_progExec__>:
-    832c:	32 d0 f0 00 	bis	#240,	r2	;#0x00f0
-    8330:	fd 3f       	jmp	$-4      	;abs 0x832c
+00008334 <__stop_progExec__>:
+    8334:	32 d0 f0 00 	bis	#240,	r2	;#0x00f0
+    8338:	fd 3f       	jmp	$-4      	;abs 0x8334
 
-00008332 <__ctors_end>:
-    8332:	30 40 46 84 	br	#0x8446	
+0000833a <__ctors_end>:
+    833a:	30 40 4e 84 	br	#0x844e	
 
-00008336 <INT_watchdog>:
+0000833e <INT_watchdog>:
 volatile unsigned int  lfsr = 0xACEB;
 volatile unsigned int wdt_irq_cnt;
 volatile unsigned int led_blink_type;
 volatile unsigned int led_blink_type_init;
 
 wakeup interrupt (WDT_VECTOR) INT_watchdog(void) {
-    8336:	0f 12       	push	r15		
-    8338:	0e 12       	push	r14		
-    833a:	04 12       	push	r4		
-    833c:	04 41       	mov	r1,	r4	
-    833e:	34 50 06 00 	add	#6,	r4	;#0x0006
-    8342:	21 83       	decd	r1		
+    833e:	0f 12       	push	r15		
+    8340:	0e 12       	push	r14		
+    8342:	04 12       	push	r4		
+    8344:	04 41       	mov	r1,	r4	
+    8346:	34 50 06 00 	add	#6,	r4	;#0x0006
+    834a:	21 83       	decd	r1		
 
   unsigned int lfsr_lsb;
 
   if (wdt_irq_cnt<15) {
-    8344:	1f 42 04 40 	mov	&0x4004,r15	
-    8348:	3f 90 0f 00 	cmp	#15,	r15	;#0x000f
-    834c:	06 2c       	jc	$+14     	;abs 0x835a
+    834c:	1f 42 04 40 	mov	&0x4004,r15	
+    8350:	3f 90 0f 00 	cmp	#15,	r15	;#0x000f
+    8354:	06 2c       	jc	$+14     	;abs 0x8362
     wdt_irq_cnt++;
-    834e:	1f 42 04 40 	mov	&0x4004,r15	
-    8352:	1f 53       	inc	r15		
-    8354:	82 4f 04 40 	mov	r15,	&0x4004	
-    8358:	1f 3c       	jmp	$+64     	;abs 0x8398
+    8356:	1f 42 04 40 	mov	&0x4004,r15	
+    835a:	1f 53       	inc	r15		
+    835c:	82 4f 04 40 	mov	r15,	&0x4004	
+    8360:	1f 3c       	jmp	$+64     	;abs 0x83a0
   } else {
     wdt_irq_cnt=0;
-    835a:	82 43 04 40 	mov	#0,	&0x4004	;r3 As==00
+    8362:	82 43 04 40 	mov	#0,	&0x4004	;r3 As==00
 
     // Update lfsr to select random LED algo
     lfsr_lsb = lfsr & 1;			   /* Get LSB (i.e., the output bit). */
-    835e:	1f 42 00 40 	mov	&0x4000,r15	
-    8362:	0e 4f       	mov	r15,	r14	
-    8364:	1e f3       	and	#1,	r14	;r3 As==01
-    8366:	84 4e f8 ff 	mov	r14,	-8(r4)	;0xfff8(r4)
+    8366:	1f 42 00 40 	mov	&0x4000,r15	
+    836a:	0e 4f       	mov	r15,	r14	
+    836c:	1e f3       	and	#1,	r14	;r3 As==01
+    836e:	84 4e f8 ff 	mov	r14,	-8(r4)	;0xfff8(r4)
     lfsr     >>= 1;				   /* Shift register */
-    836a:	1f 42 00 40 	mov	&0x4000,r15	
-    836e:	12 c3       	clrc			
-    8370:	0f 10       	rrc	r15		
-    8372:	82 4f 00 40 	mov	r15,	&0x4000	
+    8372:	1f 42 00 40 	mov	&0x4000,r15	
+    8376:	12 c3       	clrc			
+    8378:	0f 10       	rrc	r15		
+    837a:	82 4f 00 40 	mov	r15,	&0x4000	
     lfsr     ^= (-lfsr_lsb) & 0xB400u;	           /* If the output bit is 1, apply toggle mask.
-    8376:	1f 44 f8 ff 	mov	-8(r4),	r15	;0xfff8(r4)
-    837a:	3f e3       	inv	r15		
-    837c:	1f 53       	inc	r15		
-    837e:	0e 4f       	mov	r15,	r14	
-    8380:	3e f0 00 b4 	and	#-19456,r14	;#0xb400
-    8384:	1f 42 00 40 	mov	&0x4000,r15	
-    8388:	0f ee       	xor	r14,	r15	
-    838a:	82 4f 00 40 	mov	r15,	&0x4000	
+    837e:	1f 44 f8 ff 	mov	-8(r4),	r15	;0xfff8(r4)
+    8382:	3f e3       	inv	r15		
+    8384:	1f 53       	inc	r15		
+    8386:	0e 4f       	mov	r15,	r14	
+    8388:	3e f0 00 b4 	and	#-19456,r14	;#0xb400
+    838c:	1f 42 00 40 	mov	&0x4000,r15	
+    8390:	0f ee       	xor	r14,	r15	
+    8392:	82 4f 00 40 	mov	r15,	&0x4000	
       					            * The value has 1 at bits corresponding
 					            * to taps, 0 elsewhere. */
     //led_blink_type      = (unsigned char) (lfsr & 0x0007);
     led_blink_type      = (unsigned char) 0x05;
-    838e:	b2 40 05 00 	mov	#5,	&0x4002	;#0x0005
-    8392:	02 40 
+    8396:	b2 40 05 00 	mov	#5,	&0x4002	;#0x0005
+    839a:	02 40 
     led_blink_type_init = 1;
-    8394:	92 43 06 40 	mov	#1,	&0x4006	;r3 As==01
+    839c:	92 43 06 40 	mov	#1,	&0x4006	;r3 As==01
   }
 }
-    8398:	21 53       	incd	r1		
-    839a:	34 41       	pop	r4		
-    839c:	3e 41       	pop	r14		
-    839e:	3f 41       	pop	r15		
-    83a0:	b1 c0 f0 00 	bic	#240,	0(r1)	;#0x00f0, 0x0000(r1)
-    83a4:	00 00 
-    83a6:	00 13       	reti			
+    83a0:	21 53       	incd	r1		
+    83a2:	34 41       	pop	r4		
+    83a4:	3e 41       	pop	r14		
+    83a6:	3f 41       	pop	r15		
+    83a8:	b1 c0 f0 00 	bic	#240,	0(r1)	;#0x00f0, 0x0000(r1)
+    83ac:	00 00 
+    83ae:	00 13       	reti			
 
-000083a8 <fake_delay>:
+000083b0 <fake_delay>:
 
 /* Delay */
 
 void fake_delay(int delay){
-    83a8:	04 12       	push	r4		
-    83aa:	04 41       	mov	r1,	r4	
-    83ac:	24 53       	incd	r4		
-    83ae:	21 82       	sub	#4,	r1	;r2 As==10
-    83b0:	84 4f fc ff 	mov	r15,	-4(r4)	;0xfffc(r4)
+    83b0:	04 12       	push	r4		
+    83b2:	04 41       	mov	r1,	r4	
+    83b4:	24 53       	incd	r4		
+    83b6:	21 82       	sub	#4,	r1	;r2 As==10
+    83b8:	84 4f fc ff 	mov	r15,	-4(r4)	;0xfffc(r4)
 	
     int index=0;
-    83b4:	84 43 fa ff 	mov	#0,	-6(r4)	;r3 As==00, 0xfffa(r4)
+    83bc:	84 43 fa ff 	mov	#0,	-6(r4)	;r3 As==00, 0xfffa(r4)
 
 for(index = 0; index<delay; index++){}
-    83b8:	84 43 fa ff 	mov	#0,	-6(r4)	;r3 As==00, 0xfffa(r4)
-    83bc:	02 3c       	jmp	$+6      	;abs 0x83c2
-    83be:	94 53 fa ff 	inc	-6(r4)		;0xfffa(r4)
-    83c2:	94 94 fc ff 	cmp	-4(r4),	-6(r4)	;0xfffc(r4), 0xfffa(r4)
-    83c6:	fa ff 
-    83c8:	fa 3b       	jl	$-10     	;abs 0x83be
+    83c0:	84 43 fa ff 	mov	#0,	-6(r4)	;r3 As==00, 0xfffa(r4)
+    83c4:	02 3c       	jmp	$+6      	;abs 0x83ca
+    83c6:	94 53 fa ff 	inc	-6(r4)		;0xfffa(r4)
+    83ca:	94 94 fc ff 	cmp	-4(r4),	-6(r4)	;0xfffc(r4), 0xfffa(r4)
+    83ce:	fa ff 
+    83d0:	fa 3b       	jl	$-10     	;abs 0x83c6
 	
 
 }
-    83ca:	21 52       	add	#4,	r1	;r2 As==10
-    83cc:	34 41       	pop	r4		
-    83ce:	30 41       	ret			
+    83d2:	21 52       	add	#4,	r1	;r2 As==10
+    83d4:	34 41       	pop	r4		
+    83d6:	30 41       	ret			
 
-000083d0 <ta_wait_no_lpm>:
+000083d8 <ta_wait_no_lpm>:
 //    TA_WAIT_NO_LPM                                 //
 // ( the function implements a wait by continously ) //
 // ( polling the TAR register                      ) //
 //                                                   //
 //---------------------------------------------------//
 void ta_wait_no_lpm(unsigned int time_cnt) {
-    83d0:	04 12       	push	r4		
-    83d2:	04 41       	mov	r1,	r4	
-    83d4:	24 53       	incd	r4		
-    83d6:	21 83       	decd	r1		
-    83d8:	84 4f fc ff 	mov	r15,	-4(r4)	;0xfffc(r4)
+    83d8:	04 12       	push	r4		
+    83da:	04 41       	mov	r1,	r4	
+    83dc:	24 53       	incd	r4		
+    83de:	21 83       	decd	r1		
+    83e0:	84 4f fc ff 	mov	r15,	-4(r4)	;0xfffc(r4)
 
   // Start and re-initialize TimerA
   TACTL = TASSEL0 | TACLR | MC_2;
-    83dc:	3f 40 60 01 	mov	#352,	r15	;#0x0160
-    83e0:	bf 40 24 01 	mov	#292,	0(r15)	;#0x0124, 0x0000(r15)
-    83e4:	00 00 
+    83e4:	3f 40 60 01 	mov	#352,	r15	;#0x0160
+    83e8:	bf 40 24 01 	mov	#292,	0(r15)	;#0x0124, 0x0000(r15)
+    83ec:	00 00 
 
   // Wait until time is over
   while(TAR < time_cnt);
-    83e6:	03 43       	nop			
-    83e8:	3f 40 70 01 	mov	#368,	r15	;#0x0170
-    83ec:	2f 4f       	mov	@r15,	r15	
-    83ee:	1f 94 fc ff 	cmp	-4(r4),	r15	;0xfffc(r4)
-    83f2:	fa 2b       	jnc	$-10     	;abs 0x83e8
+    83ee:	03 43       	nop			
+    83f0:	3f 40 70 01 	mov	#368,	r15	;#0x0170
+    83f4:	2f 4f       	mov	@r15,	r15	
+    83f6:	1f 94 fc ff 	cmp	-4(r4),	r15	;0xfffc(r4)
+    83fa:	fa 2b       	jnc	$-10     	;abs 0x83f0
 
 }
-    83f4:	21 53       	incd	r1		
-    83f6:	34 41       	pop	r4		
-    83f8:	30 41       	ret			
+    83fc:	21 53       	incd	r1		
+    83fe:	34 41       	pop	r4		
+    8400:	30 41       	ret			
 
-000083fa <ta_wait>:
+00008402 <ta_wait>:
 //    WAIT FUNCTION                                 //
 // ( the function brings the core to LPM0 state )   //
 // ( the timerA IRQ will exit the LPM0 state    )   //
 //                                                  //
 //--------------------------------------------------//
 void ta_wait(unsigned int time_cnt) {
-    83fa:	04 12       	push	r4		
-    83fc:	04 41       	mov	r1,	r4	
-    83fe:	24 53       	incd	r4		
-    8400:	21 83       	decd	r1		
-    8402:	84 4f fc ff 	mov	r15,	-4(r4)	;0xfffc(r4)
+    8402:	04 12       	push	r4		
+    8404:	04 41       	mov	r1,	r4	
+    8406:	24 53       	incd	r4		
+    8408:	21 83       	decd	r1		
+    840a:	84 4f fc ff 	mov	r15,	-4(r4)	;0xfffc(r4)
 
   // Set time limit for IRQ generation
   TACCR0 = time_cnt;
-    8406:	3f 40 72 01 	mov	#370,	r15	;#0x0172
-    840a:	9f 44 fc ff 	mov	-4(r4),	0(r15)	;0xfffc(r4), 0x0000(r15)
-    840e:	00 00 
+    840e:	3f 40 72 01 	mov	#370,	r15	;#0x0172
+    8412:	9f 44 fc ff 	mov	-4(r4),	0(r15)	;0xfffc(r4), 0x0000(r15)
+    8416:	00 00 
 
   // Start and re-initialize TimerA
   TACTL  = TASSEL0 | TACLR | MC_1 | TAIE;
-    8410:	3f 40 60 01 	mov	#352,	r15	;#0x0160
-    8414:	bf 40 16 01 	mov	#278,	0(r15)	;#0x0116, 0x0000(r15)
-    8418:	00 00 
+    8418:	3f 40 60 01 	mov	#352,	r15	;#0x0160
+    841c:	bf 40 16 01 	mov	#278,	0(r15)	;#0x0116, 0x0000(r15)
+    8420:	00 00 
 
   // Go to Low-Power-Mode 0
   LPM0;
-    841a:	32 d0 10 00 	bis	#16,	r2	;#0x0010
+    8422:	32 d0 10 00 	bis	#16,	r2	;#0x0010
 
 }
-    841e:	21 53       	incd	r1		
-    8420:	34 41       	pop	r4		
-    8422:	30 41       	ret			
+    8426:	21 53       	incd	r1		
+    8428:	34 41       	pop	r4		
+    842a:	30 41       	ret			
 
-00008424 <INT_timerA1>:
+0000842c <INT_timerA1>:
 
 //--------------------------------------------------//
 //    TIMER A INTERRUPT                             //
 //--------------------------------------------------//
 wakeup interrupt (TIMERA1_VECTOR) INT_timerA1(void) {
-    8424:	0f 12       	push	r15		
-    8426:	04 12       	push	r4		
-    8428:	04 41       	mov	r1,	r4	
-    842a:	24 52       	add	#4,	r4	;r2 As==10
+    842c:	0f 12       	push	r15		
+    842e:	04 12       	push	r4		
+    8430:	04 41       	mov	r1,	r4	
+    8432:	24 52       	add	#4,	r4	;r2 As==10
 
   // Clear the receive pending flag & stop timer A
   TACTL = TAIFG;
-    842c:	3f 40 60 01 	mov	#352,	r15	;#0x0160
-    8430:	9f 43 00 00 	mov	#1,	0(r15)	;r3 As==01, 0x0000(r15)
+    8434:	3f 40 60 01 	mov	#352,	r15	;#0x0160
+    8438:	9f 43 00 00 	mov	#1,	0(r15)	;r3 As==01, 0x0000(r15)
 
   // Exit the low power mode
   LPM0_EXIT;
-    8434:	b4 c0 10 00 	bic	#16,	0(r4)	;#0x0010, 0x0000(r4)
-    8438:	00 00 
+    843c:	b4 c0 10 00 	bic	#16,	0(r4)	;#0x0010, 0x0000(r4)
+    8440:	00 00 
 }
-    843a:	34 41       	pop	r4		
-    843c:	3f 41       	pop	r15		
-    843e:	b1 c0 f0 00 	bic	#240,	0(r1)	;#0x00f0, 0x0000(r1)
-    8442:	00 00 
-    8444:	00 13       	reti			
+    8442:	34 41       	pop	r4		
+    8444:	3f 41       	pop	r15		
+    8446:	b1 c0 f0 00 	bic	#240,	0(r1)	;#0x00f0, 0x0000(r1)
+    844a:	00 00 
+    844c:	00 13       	reti			
 
-00008446 <_unexpected_>:
-    8446:	00 13       	reti			
+0000844e <_unexpected_>:
+    844e:	00 13       	reti			
 
 Disassembly of section .vectors:
 
 0000ffe0 <__ivtbl_16>:
-    ffe0:	32 83 32 83 32 83 32 83 32 83 32 83 32 83 32 83     2.2.2.2.2.2.2.2.
-    fff0:	24 84 32 83 36 83 32 83 32 83 32 83 32 83 00 80     $.2.6.2.2.2.2...
+    ffe0:	3a 83 3a 83 3a 83 3a 83 3a 83 3a 83 3a 83 3a 83     :.:.:.:.:.:.:.:.
+    fff0:	2c 84 3a 83 3e 83 3a 83 3a 83 3a 83 3a 83 00 80     ,.:.>.:.:.:.:...

@@ -5,12 +5,13 @@ MEMORY {
   sfr              : ORIGIN = 0x0000, LENGTH = 0x0010
   peripheral_8bit  : ORIGIN = 0x0010, LENGTH = 0x00f0
   peripheral_16bit : ORIGIN = 0x0100, LENGTH = 0x4000-0x100 /* 16kB Peripherals    */
-  ram (wx)         : ORIGIN = 0x4000, LENGTH = 0x4000       /* 16kB Data Memory    */
+  mram (wx)		   : ORIGIN = 0x4000, LENGTH = 0x2000		
+  ram (wx)         : ORIGIN = 0x6000, LENGTH = 0x2000       /* 16kB Data Memory    */
   rom (rx)         : ORIGIN = 0x8000, LENGTH = 0x8000-0x20  /* 32kB Program Memory */
   vectors          : ORIGIN = 0xffe0, LENGTH = 0x0020
 }
 REGION_ALIAS("REGION_TEXT", rom);
-REGION_ALIAS("REGION_DATA", ram);
+REGION_ALIAS("REGION_DATA", mram);
 PROVIDE (__info_segment_size = 0x80);
 __WDTCTL = 0x0120;
 __MPY    = 0x0130;
@@ -51,6 +52,7 @@ SECTIONS
   .rela.got      : { *(.rela.got)   }
   .rel.plt       : { *(.rel.plt)    }
   .rela.plt      : { *(.rela.plt)   }
+  
   /* .any.{text,rodata,data,bss}{,.*} sections are treated as orphans and
    * placed in output sections with available space by linker.  Do not list
    * them here, or the linker will not consider them orphans. */
@@ -90,6 +92,7 @@ SECTIONS
     *(.text .text.* .gnu.linkonce.t.*)
     *(.near.text .near.text.*)
   }  > REGION_TEXT
+  
   .rodata   :
   {
      . = ALIGN(2);

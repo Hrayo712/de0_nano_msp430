@@ -74,6 +74,13 @@ wire               dmem_cen;
 wire         [1:0] dmem_wen;
 wire        [15:0] dmem_dout;
 
+wire [`DMEM_MSB:0] sp_dmem_addr;
+wire        [15:0] sp_dmem_din;
+wire               sp_dmem_cen;
+wire         [1:0] sp_dmem_wen;
+wire        [15:0] sp_dmem_dout;
+
+
 // openMSP430 Peripheral memory bus
 wire        [13:0] per_addr;
 wire        [15:0] per_din;
@@ -152,6 +159,10 @@ openMSP430 openmsp430_0 (
     .dmem_cen          (dmem_cen),            // Data Memory chip enable (low active)
     .dmem_din          (dmem_din),            // Data Memory data input
     .dmem_wen          (dmem_wen),            // Data Memory write enable (low active)
+	 .sp_dmem_addr      (sp_dmem_addr),        // Stack Data Memory address
+    .sp_dmem_cen       (sp_dmem_cen),         // Stack Data Memory chip enable (low active)
+    .sp_dmem_din       (sp_dmem_din),         // Stack Data Memory data input
+    .sp_dmem_wen       (sp_dmem_wen),         // Stack Data Memory write enable (low active)
     .irq_acc           (irq_acc),             // Interrupt request accepted (one-hot signal)
     .lfxt_enable       (),                    // ASIC ONLY: Low frequency oscillator enable
     .lfxt_wkup         (),                    // ASIC ONLY: Low frequency oscillator wake-up (asynchronous)
@@ -181,6 +192,7 @@ openMSP430 openmsp430_0 (
     .dbg_uart_rxd      (dbg_uart_rxd),        // Debug interface: UART RXD (asynchronous)
     .dco_clk           (dco_clk),             // Fast oscillator (fast clock)
     .dmem_dout         (dmem_dout),           // Data Memory data output
+	 .sp_dmem_dout      (sp_dmem_dout),           // Data Memory data output
     .irq               (irq_bus),             // Maskable interrupts
     .lfxt_clk          (lfxt_clk),            // Low frequency oscillator (typ 32kHz)
     .dma_addr          (15'h0000),            // Direct Memory Access address
@@ -296,7 +308,7 @@ assign irq_bus  = {1'b0,         // Vector 13  (0xFFFA)
 
 
 //=============================================================================
-// 5)  PROGRAM AND DATA MEMORIES
+// 5)  PROGRAM AND DATA MEMORIES - 
 //=============================================================================
 
 ram_16x16k pmem_0 (
@@ -320,7 +332,21 @@ ram_16x8k dmem_0 (
 );
 
 //=============================================================================
-// 6)  DEBUG INTERFACE
+// 6)  INCLUDE MRAM DATA MEMORY - For the time being, lets simulate it is blockram
+//=============================================================================
+
+ram_16x8k sp_dmem_0 (
+    .address   (sp_dmem_addr),
+    .byteena   (~sp_dmem_wen),
+    .clken     (~sp_dmem_cen),
+    .clock     (mclk),
+    .data      (sp_dmem_din),
+    .wren      (~(&sp_dmem_wen)),
+    .q         (sp_dmem_dout)
+);
+
+//=============================================================================
+// 7)  DEBUG INTERFACE
 //=============================================================================
 
 assign  UART_TX 		=  dbg_uart_txd;

@@ -82,9 +82,9 @@
 //`define DMEM_SIZE_CUSTOM
 //`define DMEM_SIZE_32_KB
 //`define DMEM_SIZE_24_KB
-`define DMEM_SIZE_16_KB
+//`define DMEM_SIZE_16_KB
 //`define DMEM_SIZE_10_KB
-//`define DMEM_SIZE_8_KB
+`define DMEM_SIZE_8_KB
 //`define DMEM_SIZE_5_KB
 //`define DMEM_SIZE_4_KB
 //`define DMEM_SIZE_2p5_KB
@@ -423,7 +423,6 @@
 //-------------------------------------------------------
 `define ACLK_DIVIDER
 
-
 //===============================================================
 // LOW POWER MODES
 //===============================================================
@@ -579,6 +578,7 @@
 `ifdef DMEM_SIZE_8_KB
   `define DMEM_AWIDTH       12
   `define DMEM_SIZE       8192
+  `define SP_DMEM_SIZE    8192
 `endif
 `ifdef DMEM_SIZE_5_KB
   `define DMEM_AWIDTH       12
@@ -653,6 +653,9 @@
 
 // Data Memory Base Adresses
 `define DMEM_BASE  `PER_SIZE
+
+// @cc Definition of the SP memory interface
+`define SP_DMEM_BASE `DMEM_SIZE	+ `DMEM_BASE
 
 // Program & Data Memory most significant address bit (for 16 bit words)
 `define PMEM_MSB   `PMEM_AWIDTH-1

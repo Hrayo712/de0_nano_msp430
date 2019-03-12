@@ -54,6 +54,10 @@ module  omsp_mem_backbone (
     dmem_cen,                           // Data Memory chip enable (low active)
     dmem_din,                           // Data Memory data input
     dmem_wen,                           // Data Memory write enable (low active)
+    sp_dmem_addr,                       // Stack Data Memory address
+	 sp_dmem_cen,                        // Stack Data Memory chip enable (low active)
+    sp_dmem_din,                        // Stack Data Memory data input
+    sp_dmem_wen,                        // Stack Data Memory write enable (low active)
     eu_mdb_in,                          // Execution Unit Memory data bus input
     fe_mdb_in,                          // Frontend Memory data bus input
     fe_pmem_wait,                       // Frontend wait for Instruction fetch
@@ -77,6 +81,7 @@ module  omsp_mem_backbone (
     dbg_mem_en,                         // Debug unit memory enable
     dbg_mem_wr,                         // Debug unit memory write
     dmem_dout,                          // Data Memory data output
+	 sp_dmem_dout,								 // Stack Data Memory data output
     eu_mab,                             // Execution Unit Memory address bus
     eu_mb_en,                           // Execution Unit Memory bus enable
     eu_mb_wr,                           // Execution Unit Memory bus write transfer
@@ -103,6 +108,12 @@ output [`DMEM_MSB:0] dmem_addr;         // Data Memory address
 output               dmem_cen;          // Data Memory chip enable (low active)
 output        [15:0] dmem_din;          // Data Memory data input
 output         [1:0] dmem_wen;          // Data Memory write enable (low active)
+
+output [`DMEM_MSB:0] sp_dmem_addr;         // Data Memory address
+output               sp_dmem_cen;          // Data Memory chip enable (low active)
+output        [15:0] sp_dmem_din;          // Data Memory data input
+output         [1:0] sp_dmem_wen;          // Data Memory write enable (low active)
+
 output        [15:0] eu_mdb_in;         // Execution Unit Memory data bus input
 output        [15:0] fe_mdb_in;         // Frontend Memory data bus input
 output               fe_pmem_wait;      // Frontend wait for Instruction fetch
@@ -127,6 +138,8 @@ input         [15:0] dbg_mem_dout;      // Debug unit data output
 input                dbg_mem_en;        // Debug unit memory enable
 input          [1:0] dbg_mem_wr;        // Debug unit memory write
 input         [15:0] dmem_dout;         // Data Memory data output
+input         [15:0] sp_dmem_dout;         // Data Memory data output
+
 input         [14:0] eu_mab;            // Execution Unit Memory address bus
 input                eu_mb_en;          // Execution Unit Memory bus enable
 input          [1:0] eu_mb_wr;          // Execution Unit Memory bus write transfer
@@ -146,10 +159,13 @@ input                scan_enable;       // Scan enable (active during scan shift
 
 wire                 ext_mem_en;
 wire          [15:0] ext_mem_din;
+
 wire                 ext_dmem_sel;
 wire                 ext_dmem_en;
+
 wire                 ext_pmem_sel;
 wire                 ext_pmem_en;
+
 wire                 ext_per_sel;
 wire                 ext_per_en;
 
@@ -219,7 +235,7 @@ wire  [1:0] UNUSED_dma_we       = dma_we;
 `endif
 
 //------------------------------------------
-// DATA-MEMORY Interface
+// MRAM DATA-MEMORY Interface
 //------------------------------------------
 parameter          DMEM_END      = `DMEM_BASE+`DMEM_SIZE;
 
@@ -245,6 +261,21 @@ wire         [1:0] dmem_wen      =   ext_dmem_en ? ~ext_mem_wr                 :
 wire [`DMEM_MSB:0] dmem_addr     =   ext_dmem_en ?  ext_dmem_addr[`DMEM_MSB:0] :  eu_dmem_addr[`DMEM_MSB:0];
 wire        [15:0] dmem_din      =   ext_dmem_en ?  ext_mem_dout               :  eu_mdb_out;
 
+//------------------------------------------
+// Stack DATA-MEMORY Interface
+//------------------------------------------
+parameter          SP_DMEM_END      = `SP_DMEM_BASE+`SP_DMEM_SIZE;
+
+// Execution unit access
+assign               eu_sp_dmem_sel   = (eu_mab>=(`SP_DMEM_BASE>>1)) &
+													 (eu_mab< ( SP_DMEM_END >>1));
+assign               eu_sp_dmem_en   = eu_mb_en & eu_sp_dmem_sel;
+wire          [15:0] eu_sp_dmem_addr  = {1'b0, eu_mab}-(`SP_DMEM_BASE>>1);
+
+wire					 sp_dmem_cen   = ~(eu_sp_dmem_en);
+wire 			[1:0]  sp_dmem_wen   = ~eu_mb_wr;
+wire [`DMEM_MSB:0] sp_dmem_addr  = eu_dmem_addr[`DMEM_MSB:0];
+wire 			[15:0] sp_dmem_din	= eu_mdb_out;
 
 //------------------------------------------
 // PROGRAM-MEMORY Interface
@@ -356,14 +387,15 @@ assign fe_mdb_in = pmem_dout_bckup_sel ? pmem_dout_bckup : pmem_dout;
 //------------------------------------------
 
 // Select between Peripherals, Program and Data memories
-reg [1:0] eu_mdb_in_sel;
+reg [2:0] eu_mdb_in_sel;
 always @(posedge mclk or posedge puc_rst)
   if (puc_rst)  eu_mdb_in_sel  <= 2'b00;
-  else          eu_mdb_in_sel  <= {eu_pmem_en, eu_per_en};
+  else          eu_mdb_in_sel  <= {eu_pmem_en, eu_per_en,eu_dmem_en};
 
 // Mux
-assign          eu_mdb_in       = eu_mdb_in_sel[1] ? pmem_dout    :
-                                  eu_mdb_in_sel[0] ? per_dout_val : dmem_dout;
+assign          eu_mdb_in       = eu_mdb_in_sel[2] ? pmem_dout    :
+											 eu_mdb_in_sel[1] ? per_dout_val :
+                                  eu_mdb_in_sel[0] ? dmem_dout : sp_dmem_dout;
 
 
 //------------------------------------------
@@ -371,14 +403,15 @@ assign          eu_mdb_in       = eu_mdb_in_sel[1] ? pmem_dout    :
 //------------------------------------------
 
 // Select between Peripherals, Program and Data memories
-reg   [1:0] ext_mem_din_sel;
+reg   [2:0] ext_mem_din_sel;
 always @(posedge mclk or posedge puc_rst)
   if (puc_rst)  ext_mem_din_sel <= 2'b00;
-  else          ext_mem_din_sel <= {ext_pmem_en, ext_per_en};
+  else          ext_mem_din_sel <= {ext_pmem_en, ext_per_en, ext_dmem_en};
 
 // Mux
-assign          ext_mem_din      = ext_mem_din_sel[1] ? pmem_dout    :
-                                   ext_mem_din_sel[0] ? per_dout_val : dmem_dout;
+assign          ext_mem_din      = ext_mem_din_sel[2] ? pmem_dout    :
+                                   ext_mem_din_sel[1] ? per_dout_val : 
+											  ext_mem_din_sel[0] ? dmem_dout	: sp_dmem_dout;
 
 
 endmodule // omsp_mem_backbone
