@@ -1,0 +1,64 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Mon Mar 11 21:21:36 2019
+[*]
+[dumpfile] "/home/hiram/git/de0_nano_msp430/altera_de0_nano/sim/rtl_sim/run/tb_openMSP430_fpga.vcd"
+[dumpfile_mtime] "Mon Mar 11 14:48:22 2019"
+[dumpfile_size] 24120955
+[savefile] "/home/hiram/git/de0_nano_msp430/altera_de0_nano/sim/rtl_sim/run/setup_cfg.gtkw"
+[timestart] 978200
+[size] 1851 833
+[pos] -89 -89
+*-16.324593 1150000 3470000 3390000 3650000 3550000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_openMSP430_fpga.
+[treeopen] tb_openMSP430_fpga.dut.
+[sst_width] 355
+[signals_width] 255
+[sst_expanded] 1
+[sst_vpaned_height] 323
+@28
+tb_openMSP430_fpga.FPGA_CLK1_50
+tb_openMSP430_fpga.dut.reset_n
+@22
+[color] 1
+tb_openMSP430_fpga.msp_debug_omsp.pc[15:0]
+@28
+tb_openMSP430_fpga.dut.dmem_cen
+@22
+[color] 2
+tb_openMSP430_fpga.dut.dmem_addr[12:0]
+tb_openMSP430_fpga.dut.dmem_dout[15:0]
+[color] 6
+tb_openMSP430_fpga.dut.dmem_din[15:0]
+@c00028
+[color] 7
+tb_openMSP430_fpga.dut.dmem_wen[1:0]
+@1401200
+-group_end
+@28
+tb_openMSP430_fpga.dut.pmem_cen
+@22
+tb_openMSP430_fpga.dut.pmem_addr[13:0]
+tb_openMSP430_fpga.dut.pmem_dout[15:0]
+[color] 1
+tb_openMSP430_fpga.msp_debug_omsp.inst_pc[15:0]
+tb_openMSP430_fpga.msp_debug_omsp.opcode[15:0]
+@24
+tb_openMSP430_fpga.msp_debug_omsp.inst_cycle[31:0]
+@820
+tb_openMSP430_fpga.msp_debug_omsp.inst_full[255:0]
+tb_openMSP430_fpga.msp_debug_omsp.inst_type[255:0]
+tb_openMSP430_fpga.msp_debug_omsp.inst_as[255:0]
+tb_openMSP430_fpga.msp_debug_omsp.inst_ad[255:0]
+@22
+tb_openMSP430_fpga.omsp_r1[15:0]
+tb_openMSP430_fpga.dut.openmsp430_0.mem_backbone_0.eu_mab[14:0]
+tb_openMSP430_fpga.dut.openmsp430_0.execution_unit_0.alu_out_add[15:0]
+tb_openMSP430_fpga.dut.openmsp430_0.execution_unit_0.mab[15:0]
+@28
+tb_openMSP430_fpga.dut.openmsp430_0.puc_rst
+@22
+tb_openMSP430_fpga.omsp_r5[15:0]
+tb_openMSP430_fpga.omsp_r15[15:0]
+[pattern_trace] 1
+[pattern_trace] 0

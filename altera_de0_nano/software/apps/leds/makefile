@@ -3,7 +3,7 @@ NAME            = leds
 OBJECTS         = main.o ../../libs/tA/timerA.o
 
 # Compiler performance option (-Os / -O2 / -O3)
-PORT_CFLAGS     = -O2
+PORT_CFLAGS     = -O0
 
 # Choose GCC toolchain prefix ('msp430' for MSPGCC / 'msp430-elf' for GCC RedHat/TI)
 ifndef MSPGCC_PFX
@@ -37,7 +37,7 @@ download: download-uart
 
 #additional rules for files
 ${NAME}.elf: ${OBJECTS}
-	${CC} ${CFLAGS} -T ../../ldscripts/linker.${MSPGCC_PFX}.x -o $@ ${OBJECTS}
+	${CC} ${CFLAGS} -T ../../ldscripts/linker.${MSPGCC_PFX}.x -Wl,-Map=./${NAME}.map -o $@ ${OBJECTS}
 
 ${NAME}.a43: ${NAME}.elf
 	${OBJCOPY} -O ihex $^ $@

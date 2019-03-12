@@ -49,27 +49,18 @@ module  tb_openMSP430_fpga;
 
 // User Clocks
 reg               FPGA_CLK1_50;
-reg               FPGA_CLK2_50;
-reg               FPGA_CLK3_50;
 
 // User Interface (FPGA)
 reg         [1:0] KEY;
 reg         [3:0] SW;
 wire        [7:0] LED;
 
-// GPIO
-wire	   [35:0] GPIO_0;
-wire	   [35:0] GPIO_1;
+//-----------------------------
+// UART INTERFACE 
+//-----------------------------
+wire        UART_TX;
+reg        UART_RX;
 
-// Arduino Digital Interface
-wire	   [15:0] ARDUINO_IO;
-wire		  ARDUINO_RESET_N;
-
-// ADC
-wire		  ADC_CONVST;
-wire		  ADC_SCK;
-wire		  ADC_SDI;
-reg               ADC_SDO;
 
 // Core debug signals
 wire   [8*32-1:0] omsp_i_state;
@@ -80,10 +71,6 @@ wire	   [31:0] omsp_inst_number;
 wire	   [15:0] omsp_inst_pc;
 wire   [8*32-1:0] omsp_inst_short;
 
-// LT24 data bus
-reg               lt24_data_drive_en;
-reg        [15:0] lt24_data_reg;
-wire       [15:0] lt24_data = lt24_data_drive_en ? lt24_data_reg : 16'hzzzz;
 
 // Testbench variables
 integer           i;
@@ -122,18 +109,6 @@ initial
 
 initial
   begin
-     FPGA_CLK2_50 = 1'b0;
-     forever #10.0 FPGA_CLK2_50 <= ~FPGA_CLK2_50; // 50 MHz
-  end
-
-initial
-  begin
-     FPGA_CLK3_50 = 1'b0;
-     forever #10.0 FPGA_CLK3_50 <= ~FPGA_CLK3_50; // 50 MHz
-  end
-
-initial
-  begin
      KEY[0]      = 1'b1;
      #100 KEY[0] = 1'b0;
      #600 KEY[0] = 1'b1;
@@ -154,10 +129,7 @@ initial
      SW[2]              = 1'b0;
      SW[3]              = 1'b0;
 
-     ADC_SDO            = 1'b1;     // ADC
-
-     lt24_data_drive_en = 1'b0;     // LT24 Data bus
-     lt24_data_reg      = 16'h0000;
+ 
   end
 
 //
@@ -168,50 +140,15 @@ openMSP430_fpga dut (
 
      // USER CLOCKS
      .FPGA_CLK1_50    ( FPGA_CLK1_50    ),
-     .FPGA_CLK2_50    ( FPGA_CLK2_50    ),
-     .FPGA_CLK3_50    ( FPGA_CLK3_50    ),
 
      // USER INTERFACE (FPGA)
      .KEY             ( KEY             ),
      .LED             ( LED             ),
      .SW              ( SW              ),
+     .UART_RX	      ( UART_RX		),
+     .UART_TX	      ( UART_TX		)
 
-     // GPIO
-     .GPIO_0          ( GPIO_0          ),
-     .GPIO_1          ( GPIO_1          ),
-
-     // ARDUINO DIGITAL INTERFACE
-     .ARDUINO_IO      ( ARDUINO_IO      ),
-     .ARDUINO_RESET_N ( ARDUINO_RESET_N ),
-
-     // ADC
-     .ADC_CONVST      ( ADC_CONVST      ),
-     .ADC_SCK         ( ADC_SCK         ),
-     .ADC_SDI         ( ADC_SDI         ),
-     .ADC_SDO         ( ADC_SDO         )
 );
-
-// Pull-ups for the I2C debug interface
-pullup dbg_scl_inst (ARDUINO_IO[15]);
-pullup dbg_sda_inst (ARDUINO_IO[14]);
-
-// Assign LT24 data bus
-assign GPIO_0[8]  = lt24_data[0] ;
-assign GPIO_0[7]  = lt24_data[1] ;
-assign GPIO_0[6]  = lt24_data[2] ;
-assign GPIO_0[5]  = lt24_data[3] ;
-assign GPIO_0[13] = lt24_data[4] ;
-assign GPIO_0[14] = lt24_data[5] ;
-assign GPIO_0[15] = lt24_data[6] ;
-assign GPIO_0[16] = lt24_data[7] ;
-assign GPIO_0[17] = lt24_data[8] ;
-assign GPIO_0[18] = lt24_data[9] ;
-assign GPIO_0[19] = lt24_data[10];
-assign GPIO_0[20] = lt24_data[11];
-assign GPIO_0[21] = lt24_data[12];
-assign GPIO_0[22] = lt24_data[13];
-assign GPIO_0[23] = lt24_data[14];
-assign GPIO_0[24] = lt24_data[15];
 
 
 // Debug utility signals

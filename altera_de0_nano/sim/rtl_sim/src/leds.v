@@ -15,7 +15,9 @@ initial
 
       //repeat(100) @(posedge FPGA_CLK1_50);
 
-      #(10000000.0);
+      #(1000000.0); //100 ms
+
+
 
       stimulus_done = 1;
       force omsp_inst_pc =16'hffff;

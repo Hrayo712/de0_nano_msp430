@@ -64,7 +64,7 @@
 ../../../rtl/verilog/mega/ram_16x512.v
 ../../../rtl/verilog/mega/ram_16x16k.v
 ../../../rtl/verilog/mega/ram_16x8k.v
-../../../rtl/verilog/mega/io_buf.v
+
 ../../../rtl/verilog/mega/in_buf.v
 
 //=============================================================================
