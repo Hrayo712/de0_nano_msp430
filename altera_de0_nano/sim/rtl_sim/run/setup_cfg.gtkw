@@ -1,24 +1,30 @@
 [*]
 [*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
-[*] Tue Mar 12 14:37:52 2019
+[*] Thu Mar 14 17:49:02 2019
 [*]
 [dumpfile] "/home/hiram/git/de0_nano_msp430/altera_de0_nano/sim/rtl_sim/run/tb_openMSP430_fpga.vcd"
-[dumpfile_mtime] "Tue Mar 12 13:56:14 2019"
-[dumpfile_size] 24580006
+[dumpfile_mtime] "Thu Mar 14 17:40:42 2019"
+[dumpfile_size] 11554846
 [savefile] "/home/hiram/git/de0_nano_msp430/altera_de0_nano/sim/rtl_sim/run/setup_cfg.gtkw"
 [timestart] 0
-[size] 1851 873
-[pos] -51 -51
-*-22.324593 3816800 3470000 3390000 3650000 3550000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 1851 874
+[pos] -29 -29
+*-16.324593 225000 162500 225000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_openMSP430_fpga.
 [treeopen] tb_openMSP430_fpga.dut.
 [sst_width] 355
 [signals_width] 255
 [sst_expanded] 1
-[sst_vpaned_height] 323
+[sst_vpaned_height] 328
 @28
 tb_openMSP430_fpga.FPGA_CLK1_50
+tb_openMSP430_fpga.dut.openmsp430_0.dco_clk
+@29
+tb_openMSP430_fpga.dut.pll_0.locked
+@28
+tb_openMSP430_fpga.dut.mclk
 tb_openMSP430_fpga.dut.reset_n
+tb_openMSP430_fpga.dut.KEY[1:0]
 @22
 [color] 1
 tb_openMSP430_fpga.msp_debug_omsp.pc[15:0]
@@ -70,7 +76,7 @@ tb_openMSP430_fpga.dut.sp_dmem_dout[15:0]
 tb_openMSP430_fpga.dut.sp_dmem_wen[1:0]
 [color] 2
 tb_openMSP430_fpga.dut.sp_dmem_cen
-@23
+@22
 tb_openMSP430_fpga.omsp_r1[15:0]
 [pattern_trace] 1
 [pattern_trace] 0

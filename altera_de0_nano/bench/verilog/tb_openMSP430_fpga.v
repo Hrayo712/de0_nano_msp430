@@ -54,12 +54,23 @@ reg               FPGA_CLK1_50;
 reg         [1:0] KEY;
 reg         [3:0] SW;
 wire        [7:0] LED;
+ 
+ //-----------------------------
+ // SRAM INTERFACE 
+ //-----------------------------
+  wire     [15:0]  		 SRAM_DQ ;                              //      SRAM Data bus 16 Bits
+  wire     [`DMEM_MSB:0] 	SRAM_ADDR;                              //      SRAM Address bus 18 Bits
+  wire	          		SRAM_UB_N;                              //      SRAM High-byte Data Mask
+  wire	          		SRAM_LB_N;                              //      SRAM Low-byte Data Mask
+  wire	          		SRAM_WE_N;                              //      SRAM Write Enable
+  wire	          		SRAM_CE_N;                              //      SRAM Chip Enable
+  wire	          		SRAM_OE_N;                               //      SRAM Output Enable
 
 //-----------------------------
 // UART INTERFACE 
 //-----------------------------
 wire        UART_TX;
-reg        UART_RX;
+reg         UART_RX;
 
 
 // Core debug signals
@@ -146,7 +157,14 @@ openMSP430_fpga dut (
      .LED             ( LED             ),
      .SW              ( SW              ),
      .UART_RX	      ( UART_RX		),
-     .UART_TX	      ( UART_TX		)
+     .UART_TX	      ( UART_TX		),
+     .SRAM_DQ	      ( SRAM_DQ		),
+     .SRAM_ADDR	      (	SRAM_ADDR	),
+     .SRAM_UB_N	      ( SRAM_UB_N	),
+     .SRAM_LB_N	      ( SRAM_LB_N	),
+     .SRAM_WE_N	      ( SRAM_WE_N	),
+     .SRAM_CE_N	      ( SRAM_CE_N	),
+     .SRAM_OE_N	      (	SRAM_OE_N	)
 
 );
 

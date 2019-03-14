@@ -40,6 +40,7 @@
 `include "../../../rtl/verilog/openMSP430_fpga.v"
 `include "../../../rtl/verilog/omsp_de0_nano_soc_led_key_sw.v"
 `include "../../../rtl/verilog/sync_debouncer_10ms.v"
+`include "../../../rtl/verilog/ext_de0_sram.v"
 `include "../../../rtl/verilog/mega/ram_16x75k.v"
 `include "../../../rtl/verilog/mega/ram_16x512.v"
 `include "../../../rtl/verilog/mega/ram_16x16k.v"
@@ -47,6 +48,7 @@
 //`include "../../../rtl/verilog/mega/ram_16x4k.v"
 `include "../../../rtl/verilog/mega/io_buf.v"
 `include "../../../rtl/verilog/mega/in_buf.v"
+`include "../../../rtl/verilog/mega/pll.v"
 
 //=============================================================================
 // openMSP430

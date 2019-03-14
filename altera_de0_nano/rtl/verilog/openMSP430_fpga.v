@@ -52,7 +52,17 @@ module openMSP430_fpga (
   // UART INTERFACE 
   //-----------------------------
   output        UART_TX,
-  input         UART_RX
+  input         UART_RX,
+  //-----------------------------
+  // SRAM INTERFACE 
+  //-----------------------------
+  inout   [15:0]  		  SRAM_DQ,                              //      SRAM Data bus 16 Bits
+  output  [`DMEM_MSB:0] 	SRAM_ADDR,                              //      SRAM Address bus 18 Bits
+  output          		SRAM_UB_N,                              //      SRAM High-byte Data Mask
+  output          		SRAM_LB_N,                              //      SRAM Low-byte Data Mask
+  output          		SRAM_WE_N,                              //      SRAM Write Enable
+  output          		SRAM_CE_N,                              //      SRAM Chip Enable
+  output          		SRAM_OE_N                               //      SRAM Output Enable
 
 );
 
@@ -120,12 +130,18 @@ wire        [15:0] per_dout_tA;
 //=============================================================================
 // 2)  CLOCK AND RESET GENERATION
 //=============================================================================
+wire   pll_out;
+wire   pll_lock;
 
-assign dco_clk    = FPGA_CLK1_50;
+//assign dco_clk    = FPGA_CLK1_50;
+
+assign dco_clk    = pll_lock ? pll_out : 1'b0;
+
 wire   reset_in_n = KEY[0];
 
 // Release system reset a few clock cyles after the FPGA power-on-reset
 reg [7:0] reset_dly_chain;
+
 always @ (posedge dco_clk or negedge reset_in_n)
   if (!reset_in_n) reset_dly_chain <= 8'h00;
   else             reset_dly_chain <= {1'b1, reset_dly_chain[7:1]};
@@ -134,6 +150,7 @@ assign reset_n = reset_dly_chain[0];
 
 // Generate a slow reference clock LFXT_CLK (10us period)
 reg [8:0] lfxt_clk_cnt;
+
 always @ (posedge dco_clk or negedge reset_n)
   if (!reset_n) lfxt_clk_cnt <= 9'h000;
   else          lfxt_clk_cnt <= lfxt_clk_cnt + 9'h001;
@@ -306,6 +323,17 @@ assign irq_bus  = {1'b0,         // Vector 13  (0xFFFA)
                    1'b0,         // Vector  1  (0xFFE2)
                    1'b0};        // Vector  0  (0xFFE0)
 
+//=============================================================================
+// 5) Clock Division  
+//=============================================================================
+						 
+	pll pll_0(
+	.areset (),
+	.inclk0 (FPGA_CLK1_50),
+	.c0     (pll_out),
+	.locked (pll_lock)
+	
+	);
 
 //=============================================================================
 // 5)  PROGRAM AND DATA MEMORIES - 
@@ -321,18 +349,40 @@ ram_16x16k pmem_0 (
     .q         ( pmem_dout)
 );
 
-ram_16x8k dmem_0 (
-    .address   ( dmem_addr),
-    .byteena   (~dmem_wen),
-    .clken     (~dmem_cen),
-    .clock     ( mclk),
-    .data      ( dmem_din),
-    .wren      (~(&dmem_wen)),
-    .q         ( dmem_dout)
+//ram_16x8k dmem_0 (
+//    .address   ( dmem_addr),
+//    .byteena   (~dmem_wen),
+//    .clken     (~dmem_cen),
+//    .clock     ( mclk),
+//    .data      ( dmem_din),
+//    .wren      (~(&dmem_wen)),
+//    .q         ( dmem_dout)
+//);
+//
+
+// DE1's onboard sram - only 512 words used
+ext_de0_sram #(.ADDR_WIDTH(`DMEM_MSB+1)) ram (
+
+        .clk(mclk),
+
+        .ram_addr(dmem_addr[`DMEM_MSB:0]),
+        .ram_cen(dmem_cen),
+        .ram_wen(dmem_wen[1:0]),
+        .ram_dout(dmem_dout[15:0]),
+        .ram_din(dmem_din[15:0]),
+
+        .SRAM_ADDR(SRAM_ADDR),
+        .SRAM_DQ(SRAM_DQ),
+        .SRAM_CE_N(SRAM_CE_N),
+        .SRAM_OE_N(SRAM_OE_N),
+        .SRAM_WE_N(SRAM_WE_N),
+        .SRAM_UB_N(SRAM_UB_N),
+        .SRAM_LB_N(SRAM_LB_N)
 );
 
+
 //=============================================================================
-// 6)  INCLUDE MRAM DATA MEMORY - For the time being, lets simulate it is blockram
+// 6)  INCLUDE STACK RAM DATA MEMORY - For the time being, lets simulate it is blockram
 //=============================================================================
 
 ram_16x8k sp_dmem_0 (
@@ -344,6 +394,7 @@ ram_16x8k sp_dmem_0 (
     .wren      (~(&sp_dmem_wen)),
     .q         (sp_dmem_dout)
 );
+
 
 //=============================================================================
 // 7)  DEBUG INTERFACE
