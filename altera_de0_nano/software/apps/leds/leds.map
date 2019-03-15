@@ -22,8 +22,11 @@ Archive member included because of file (symbol)
 Allocating common symbols
 Common symbol       size              file
 
+ctr                 0x2               main.o
 led_blink_type      0x2               main.o
 wdt_irq_cnt         0x2               main.o
+ctr2                0x2               main.o
+data_mram           0x2               main.o
 led_blink_type_init
                     0x2               main.o
 
@@ -137,7 +140,7 @@ LOAD /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000008000      0x450
+.text           0x0000000000008000      0x1d2
                 0x0000000000008000                . = ALIGN (0x2)
  *(.init .init.*)
  *(.init0)
@@ -162,11 +165,11 @@ LOAD /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a
  *(.init7)
  *(.init8)
  *(.init9)
- .init9         0x000000000000803e      0x2f6 main.o
+ .init9         0x000000000000803e       0x6e main.o
                 0x000000000000803e                main
  *(.fini9)
- .fini9         0x0000000000008334        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__stop_progExec__.o)
-                0x0000000000008334                __stop_progExec__
+ .fini9         0x00000000000080ac        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__stop_progExec__.o)
+                0x00000000000080ac                __stop_progExec__
  *(.fini8)
  *(.fini7)
  *(.fini6)
@@ -176,64 +179,63 @@ LOAD /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a
  *(.fini2)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000008334        0x6 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_endless_loop__.o)
-                0x0000000000008334                _endless_loop__
+ .fini0         0x00000000000080ac        0x6 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_endless_loop__.o)
+                0x00000000000080ac                _endless_loop__
  *(.fini .fini.*)
-                0x000000000000833a                . = ALIGN (0x2)
-                0x000000000000833a                __ctors_start = .
+                0x00000000000080b2                . = ALIGN (0x2)
+                0x00000000000080b2                __ctors_start = .
  *(.ctors)
-                0x000000000000833a                __ctors_end = .
-                0x000000000000833a                __dtors_start = .
+                0x00000000000080b2                __ctors_end = .
+                0x00000000000080b2                __dtors_start = .
  *(.dtors)
-                0x000000000000833a                __dtors_end = .
-                0x000000000000833a                . = ALIGN (0x2)
+                0x00000000000080b2                __dtors_end = .
+                0x00000000000080b2                . = ALIGN (0x2)
  *(.text .text.* .gnu.linkonce.t.*)
- .text          0x000000000000833a        0x4 /usr/lib/gcc/msp430/4.6.3/mmpy-16/crt0ivtbl16.o
-                0x000000000000833a                __isr_14
-                0x000000000000833a                __isr_4
-                0x000000000000833a                __isr_11
-                0x000000000000833a                __isr_5
-                0x000000000000833a                __isr_2
-                0x000000000000833a                __isr_7
-                0x000000000000833a                __isr_0
-                0x000000000000833a                __isr_3
-                0x000000000000833a                __isr_12
-                0x000000000000833a                __isr_13
-                0x000000000000833a                __isr_9
-                0x000000000000833a                __isr_6
-                0x000000000000833a                __isr_1
- .text.crt0     0x000000000000833e        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/crt0ivtbl16.o
- .text          0x000000000000833e       0x9a main.o
-                0x000000000000833e                INT_watchdog
-                0x000000000000833e                __isr_10
-                0x00000000000083b0                fake_delay
- .text          0x00000000000083d8       0x76 ../../libs/tA/timerA.o
-                0x00000000000083d8                ta_wait_no_lpm
-                0x0000000000008402                ta_wait
-                0x000000000000842c                __isr_8
-                0x000000000000842c                INT_timerA1
- .text          0x000000000000844e        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_reset_vector__.o)
- .text          0x000000000000844e        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__watchdog_support.o)
- .text          0x000000000000844e        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__init_stack.o)
- .text          0x000000000000844e        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__low_level_init.o)
- .text          0x000000000000844e        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_copy_data.o)
- .text          0x000000000000844e        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_clear_bss.o)
- .text          0x000000000000844e        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__stop_progExec__.o)
- .text          0x000000000000844e        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_endless_loop__.o)
- .text          0x000000000000844e        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_unexpected_.o)
- .text.crt0     0x000000000000844e        0x2 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_unexpected_.o)
-                0x000000000000844e                _unexpected_
+ .text          0x00000000000080b2        0x4 /usr/lib/gcc/msp430/4.6.3/mmpy-16/crt0ivtbl16.o
+                0x00000000000080b2                __isr_14
+                0x00000000000080b2                __isr_4
+                0x00000000000080b2                __isr_11
+                0x00000000000080b2                __isr_5
+                0x00000000000080b2                __isr_2
+                0x00000000000080b2                __isr_7
+                0x00000000000080b2                __isr_0
+                0x00000000000080b2                __isr_3
+                0x00000000000080b2                __isr_12
+                0x00000000000080b2                __isr_13
+                0x00000000000080b2                __isr_9
+                0x00000000000080b2                __isr_6
+                0x00000000000080b2                __isr_1
+ .text.crt0     0x00000000000080b6        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/crt0ivtbl16.o
+ .text          0x00000000000080b6       0xa4 main.o
+                0x00000000000080b6                INT_watchdog
+                0x00000000000080b6                __isr_10
+                0x0000000000008132                fake_delay
+ .text          0x000000000000815a       0x76 ../../libs/tA/timerA.o
+                0x000000000000815a                ta_wait_no_lpm
+                0x0000000000008184                ta_wait
+                0x00000000000081ae                __isr_8
+                0x00000000000081ae                INT_timerA1
+ .text          0x00000000000081d0        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_reset_vector__.o)
+ .text          0x00000000000081d0        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .text          0x00000000000081d0        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__init_stack.o)
+ .text          0x00000000000081d0        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__low_level_init.o)
+ .text          0x00000000000081d0        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_copy_data.o)
+ .text          0x00000000000081d0        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_clear_bss.o)
+ .text          0x00000000000081d0        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__stop_progExec__.o)
+ .text          0x00000000000081d0        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .text          0x00000000000081d0        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_unexpected_.o)
+ .text.crt0     0x00000000000081d0        0x2 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_unexpected_.o)
+                0x00000000000081d0                _unexpected_
  *(.near.text .near.text.*)
 
-.rodata         0x0000000000008450        0xe
-                0x0000000000008450                . = ALIGN (0x2)
+.rodata         0x00000000000081d2        0x0
+                0x00000000000081d2                . = ALIGN (0x2)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x0000000000008450        0xe main.o
  *(.near.rodata .near.rodata.*)
-                0x000000000000845e                . = ALIGN (0x2)
-                0x000000000000845e                _etext = .
+                0x00000000000081d2                . = ALIGN (0x2)
+                0x00000000000081d2                _etext = .
 
-.data           0x0000000000004000        0x2 load address 0x000000000000845e
+.data           0x0000000000004000        0x2 load address 0x00000000000081d2
                 0x0000000000004000                . = ALIGN (0x2)
                 0x0000000000004000                PROVIDE (__data_start, .)
                 0x0000000000004000                PROVIDE (__datastart, .)
@@ -254,10 +256,10 @@ LOAD /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a
  *(.near.data .near.data.*)
                 0x0000000000004002                . = ALIGN (0x2)
                 0x0000000000004002                _edata = .
-                0x000000000000845e                __data_load_start = LOADADDR (.data)
+                0x00000000000081d2                __data_load_start = LOADADDR (.data)
                 0x0000000000000002                __data_size = SIZEOF (.data)
 
-.bss            0x0000000000004002        0x6 load address 0x0000000000008460
+.bss            0x0000000000004002        0xc load address 0x00000000000081d4
                 0x0000000000004002                __bss_start = .
  *(.bss .bss.*)
  .bss           0x0000000000004002        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/crt0ivtbl16.o
@@ -274,24 +276,27 @@ LOAD /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a
  .bss           0x0000000000004002        0x0 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_unexpected_.o)
  *(.near.bss .near.bss.*)
  *(COMMON)
- COMMON         0x0000000000004002        0x6 main.o
-                0x0000000000004002                led_blink_type
-                0x0000000000004004                wdt_irq_cnt
-                0x0000000000004006                led_blink_type_init
-                0x0000000000004008                . = ALIGN (0x2)
-                0x0000000000004008                __bss_end = .
-                0x0000000000000006                __bss_size = SIZEOF (.bss)
+ COMMON         0x0000000000004002        0xc main.o
+                0x0000000000004002                ctr
+                0x0000000000004004                led_blink_type
+                0x0000000000004006                wdt_irq_cnt
+                0x0000000000004008                ctr2
+                0x000000000000400a                data_mram
+                0x000000000000400c                led_blink_type_init
+                0x000000000000400e                . = ALIGN (0x2)
+                0x000000000000400e                __bss_end = .
+                0x000000000000000c                __bss_size = SIZEOF (.bss)
 
-.noinit         0x0000000000004008        0x2 load address 0x0000000000008460
-                0x0000000000004008                . = ALIGN (0x2)
-                0x0000000000004008                __noinit_start = .
+.noinit         0x000000000000400e        0x2 load address 0x00000000000081d4
+                0x000000000000400e                . = ALIGN (0x2)
+                0x000000000000400e                __noinit_start = .
  *(.noinit .noinit.*)
- .noinit.crt0   0x0000000000004008        0x2 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__watchdog_support.o)
-                0x0000000000004008                __wdt_clear_value
-                0x000000000000400a                . = ALIGN (0x2)
-                0x000000000000400a                __noinit_end = .
-                0x000000000000400a                . = ALIGN (0x2)
-                0x000000000000400a                _end = .
+ .noinit.crt0   0x000000000000400e        0x2 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__watchdog_support.o)
+                0x000000000000400e                __wdt_clear_value
+                0x0000000000004010                . = ALIGN (0x2)
+                0x0000000000004010                __noinit_end = .
+                0x0000000000004010                . = ALIGN (0x2)
+                0x0000000000004010                _end = .
                 0x000000000000ffff                PROVIDE (__vte_0, 0xffff)
                 0x000000000000ffff                PROVIDE (__vte_1, 0xffff)
                 0x000000000000ffff                PROVIDE (__vte_2, 0xffff)
@@ -394,50 +399,50 @@ LOAD /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000      0x670
+.debug_info     0x0000000000000000      0x69d
  *(.debug_info)
- .debug_info    0x0000000000000000      0x11a main.o
- .debug_info    0x000000000000011a       0x82 ../../libs/tA/timerA.o
- .debug_info    0x000000000000019c       0xce /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__watchdog_support.o)
- .debug_info    0x000000000000026a       0xce /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__init_stack.o)
- .debug_info    0x0000000000000338       0xce /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_copy_data.o)
- .debug_info    0x0000000000000406       0xce /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_clear_bss.o)
- .debug_info    0x00000000000004d4       0xce /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_endless_loop__.o)
- .debug_info    0x00000000000005a2       0xce /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_unexpected_.o)
+ .debug_info    0x0000000000000000      0x147 main.o
+ .debug_info    0x0000000000000147       0x82 ../../libs/tA/timerA.o
+ .debug_info    0x00000000000001c9       0xce /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .debug_info    0x0000000000000297       0xce /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__init_stack.o)
+ .debug_info    0x0000000000000365       0xce /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_copy_data.o)
+ .debug_info    0x0000000000000433       0xce /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_clear_bss.o)
+ .debug_info    0x0000000000000501       0xce /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .debug_info    0x00000000000005cf       0xce /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_unexpected_.o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x0000000000000000      0x164
+.debug_abbrev   0x0000000000000000      0x182
  *(.debug_abbrev)
- .debug_abbrev  0x0000000000000000       0x92 main.o
- .debug_abbrev  0x0000000000000092       0x5a ../../libs/tA/timerA.o
- .debug_abbrev  0x00000000000000ec       0x14 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__watchdog_support.o)
- .debug_abbrev  0x0000000000000100       0x14 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__init_stack.o)
- .debug_abbrev  0x0000000000000114       0x14 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_copy_data.o)
- .debug_abbrev  0x0000000000000128       0x14 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_clear_bss.o)
- .debug_abbrev  0x000000000000013c       0x14 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_endless_loop__.o)
- .debug_abbrev  0x0000000000000150       0x14 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_unexpected_.o)
+ .debug_abbrev  0x0000000000000000       0xb0 main.o
+ .debug_abbrev  0x00000000000000b0       0x5a ../../libs/tA/timerA.o
+ .debug_abbrev  0x000000000000010a       0x14 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .debug_abbrev  0x000000000000011e       0x14 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__init_stack.o)
+ .debug_abbrev  0x0000000000000132       0x14 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_copy_data.o)
+ .debug_abbrev  0x0000000000000146       0x14 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_clear_bss.o)
+ .debug_abbrev  0x000000000000015a       0x14 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .debug_abbrev  0x000000000000016e       0x14 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_unexpected_.o)
 
-.debug_line     0x0000000000000000      0x494
+.debug_line     0x0000000000000000      0x424
  *(.debug_line)
- .debug_line    0x0000000000000000       0xe0 main.o
- .debug_line    0x00000000000000e0       0x57 ../../libs/tA/timerA.o
- .debug_line    0x0000000000000137       0x8f /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__watchdog_support.o)
- .debug_line    0x00000000000001c6       0x8d /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__init_stack.o)
- .debug_line    0x0000000000000253       0x93 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_copy_data.o)
- .debug_line    0x00000000000002e6       0x93 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_clear_bss.o)
- .debug_line    0x0000000000000379       0x8e /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_endless_loop__.o)
- .debug_line    0x0000000000000407       0x8d /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_unexpected_.o)
+ .debug_line    0x0000000000000000       0x70 main.o
+ .debug_line    0x0000000000000070       0x57 ../../libs/tA/timerA.o
+ .debug_line    0x00000000000000c7       0x8f /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .debug_line    0x0000000000000156       0x8d /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(__init_stack.o)
+ .debug_line    0x00000000000001e3       0x93 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_copy_data.o)
+ .debug_line    0x0000000000000276       0x93 /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_clear_bss.o)
+ .debug_line    0x0000000000000309       0x8e /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .debug_line    0x0000000000000397       0x8d /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a(_unexpected_.o)
 
 .debug_frame    0x0000000000000000       0xbc
  *(.debug_frame)
  .debug_frame   0x0000000000000000       0x5e main.o
  .debug_frame   0x000000000000005e       0x5e ../../libs/tA/timerA.o
 
-.debug_str      0x0000000000000000      0x152
+.debug_str      0x0000000000000000      0x161
  *(.debug_str)
- .debug_str     0x0000000000000000      0x10f main.o
-                                        0x115 (size before relaxing)
- .debug_str     0x000000000000010f       0x43 ../../libs/tA/timerA.o
+ .debug_str     0x0000000000000000      0x11e main.o
+                                        0x124 (size before relaxing)
+ .debug_str     0x000000000000011e       0x43 ../../libs/tA/timerA.o
                                          0xc8 (size before relaxing)
 
 .debug_loc      0x0000000000000000       0xe8
@@ -455,9 +460,9 @@ LOAD /usr/lib/gcc/msp430/4.6.3/mmpy-16/libcrt0.a
  *(.debug_ranges)
  .debug_ranges  0x0000000000000000        0xc main.o
                 0x0000000000008000                PROVIDE (__stack, (ORIGIN (ram) + 0x2000))
-                0x000000000000845e                PROVIDE (__data_start_rom, _etext)
-                0x0000000000008460                PROVIDE (__data_end_rom, (_etext + SIZEOF (.data)))
-                0x000000000000845e                PROVIDE (__romdatastart, _etext)
-                0x0000000000008460                PROVIDE (__romdataend, (_etext + SIZEOF (.data)))
+                0x00000000000081d2                PROVIDE (__data_start_rom, _etext)
+                0x00000000000081d4                PROVIDE (__data_end_rom, (_etext + SIZEOF (.data)))
+                0x00000000000081d2                PROVIDE (__romdatastart, _etext)
+                0x00000000000081d4                PROVIDE (__romdataend, (_etext + SIZEOF (.data)))
                 0x0000000000000002                PROVIDE (__romdatacopysize, SIZEOF (.data))
 OUTPUT(leds.elf elf32-msp430)

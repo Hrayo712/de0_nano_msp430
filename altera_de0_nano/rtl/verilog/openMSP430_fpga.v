@@ -349,36 +349,36 @@ ram_16x16k pmem_0 (
     .q         ( pmem_dout)
 );
 
-//ram_16x8k dmem_0 (
-//    .address   ( dmem_addr),
-//    .byteena   (~dmem_wen),
-//    .clken     (~dmem_cen),
-//    .clock     ( mclk),
-//    .data      ( dmem_din),
-//    .wren      (~(&dmem_wen)),
-//    .q         ( dmem_dout)
-//);
-//
+ram_16x8k dmem_0 (
+    .address   ( dmem_addr),
+    .byteena   (~dmem_wen),
+    .clken     (~dmem_cen),
+    .clock     ( mclk),
+    .data      ( dmem_din),
+    .wren      (~(&dmem_wen)),
+    .q         ( dmem_dout)
+);
+
 
 // DE1's onboard sram - only 512 words used
-ext_de0_sram #(.ADDR_WIDTH(`DMEM_MSB+1)) ram (
-
-        .clk(mclk),
-
-        .ram_addr(dmem_addr[`DMEM_MSB:0]),
-        .ram_cen(dmem_cen),
-        .ram_wen(dmem_wen[1:0]),
-        .ram_dout(dmem_dout[15:0]),
-        .ram_din(dmem_din[15:0]),
-
-        .SRAM_ADDR(SRAM_ADDR),
-        .SRAM_DQ(SRAM_DQ),
-        .SRAM_CE_N(SRAM_CE_N),
-        .SRAM_OE_N(SRAM_OE_N),
-        .SRAM_WE_N(SRAM_WE_N),
-        .SRAM_UB_N(SRAM_UB_N),
-        .SRAM_LB_N(SRAM_LB_N)
-);
+//ext_de0_sram #(.ADDR_WIDTH(`DMEM_MSB+1)) ram (
+//
+//        .clk(mclk),
+//
+//        .ram_addr(dmem_addr[`DMEM_MSB:0]),
+//        .ram_cen(dmem_cen),
+//        .ram_wen(dmem_wen[1:0]),
+//        .ram_dout(dmem_dout[15:0]),
+//        .ram_din(dmem_din[15:0]),
+//
+//        .SRAM_ADDR(SRAM_ADDR),
+//        .SRAM_DQ(SRAM_DQ),
+//        .SRAM_CE_N(SRAM_CE_N),
+//        .SRAM_OE_N(SRAM_OE_N),
+//        .SRAM_WE_N(SRAM_WE_N),
+//        .SRAM_UB_N(SRAM_UB_N),
+//        .SRAM_LB_N(SRAM_LB_N)
+//);
 
 
 //=============================================================================

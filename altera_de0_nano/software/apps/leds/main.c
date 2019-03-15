@@ -10,6 +10,12 @@ volatile unsigned int wdt_irq_cnt;
 volatile unsigned int led_blink_type;
 volatile unsigned int led_blink_type_init;
 
+volatile unsigned int ctr;
+volatile unsigned int ctr2;
+volatile unsigned int data_mram;
+
+
+
 wakeup interrupt (WDT_VECTOR) INT_watchdog(void) {
 
   unsigned int lfsr_lsb;
@@ -26,7 +32,7 @@ wakeup interrupt (WDT_VECTOR) INT_watchdog(void) {
       					            * The value has 1 at bits corresponding
 					            * to taps, 0 elsewhere. */
     //led_blink_type      = (unsigned char) (lfsr & 0x0007);
-    led_blink_type      = (unsigned char) 0x05;
+    led_blink_type      = (unsigned char) (lfsr & 0x0007);
     led_blink_type_init = 1;
   }
 }
@@ -65,121 +71,17 @@ int main(void) {
 
   while (1) {                        // Main loop, never ends...
 
-    switch(led_blink_type) {
-    case 0 :                         // Double-counter (type1)
-      if (led_blink_type_init) {
-	LED_CTRL = 0x00;
-	temp     = 0x00;
-	led_blink_type_init=0;
-      } else {
-	temp     = (temp+1) & 0x0f;
-	temp2    = (temp<<4) | temp;
-	LED_CTRL = temp2;
-      }
-        ta_wait(WT_200MS);
-	fake_delay(5000);
-      break;
+    	ctr++;
+    	ctr2 = ctr;
 
-
-    case 1 :                         // Double-counter (type2)
-      if (led_blink_type_init) {
-	LED_CTRL = 0x00;
-	temp     = 0x00;
-	led_blink_type_init=0;
-      } else {
-	temp     = (temp-1) & 0x0f;
-	temp2    = (temp<<4) | temp;
-	LED_CTRL = temp2;
-      }
-      ta_wait(WT_200MS);
-      break;
-
-
-    case 2 :                         // Interleaved
-      if (led_blink_type_init) {
-	LED_CTRL = 0x55;
-	led_blink_type_init=0;
-      } else {
-	LED_CTRL ^= 0xFF;
-      }
-      ta_wait(WT_500MS);
-      break;
-
-
-    case 3 :                         // Blink
-      if (led_blink_type_init) {
-	LED_CTRL = 0x00;
-	led_blink_type_init=0;
-      } else {
-	LED_CTRL ^= 0xFF;
-      }
-      ta_wait(WT_500MS);
-      ta_wait(WT_200MS);
-      break;
-
-
-    case 4 :                         // Inverted Ping-pong
-      if (led_blink_type_init) {
-	LED_CTRL  = 0x3F;
-	led_blink_type_init=0;
-	direction = 0;
-      } else {
-	if (direction==0) {
-	  temp     = (LED_CTRL >> 1) | 0x80;
-	  if (temp==0xFC) {direction=1;}
-	} else {
-	  temp     = (LED_CTRL << 1) | 0x01;
-	  if (temp==0x3F) {direction=0;}
-	}
-	LED_CTRL = temp;
-      }
-      ta_wait(WT_100MS);
-      break;
-
-
-    case 5 :                         // Ping-pong
-      if (led_blink_type_init) {
-	LED_CTRL  = 0x80;
-	led_blink_type_init=0;
-	direction = 0;
-      } else {
-	if (direction==0) {
-	  temp     = LED_CTRL >> 1;
-	  if (temp==0x01) {direction=1;}
-	} else {
-	  temp     = LED_CTRL << 1;
-	  if (temp==0x80) {direction=0;}
-	}
-	LED_CTRL = temp;
-      }
-        ta_wait(WT_100MS);
-	fake_delay(5000);
-      break;
-
-
-    case 6 :                         // Inverted Shift -->
-      if (led_blink_type_init) {
-	LED_CTRL = 0x3f;
-	led_blink_type_init=0;
-      } else {
-	temp     = (LED_CTRL >> 1) | 0x80;
-	LED_CTRL = temp;
-	if (temp==0xfe) {led_blink_type_init = 1;}
-      }
-      ta_wait(WT_100MS);
-      break;
-
-
-    default:                         // Shift -->
-      if (led_blink_type_init) {
-	LED_CTRL = 0x80;
-	led_blink_type_init=0;
-      } else {
-	temp     = LED_CTRL >> 1;
-	LED_CTRL = temp;
-	if (temp==0x01) {led_blink_type_init = 1;}
-      }
-      ta_wait(WT_100MS);
-    }
+    	if(ctr2 == 65000)
+    	{
+    	    
+    	    data_mram = 0xCAFE;
+    	    ctr = 0;
+	    //ta_wait(WT_500MS);
+	    fake_delay(65000);
+	    LED_CTRL ^= 0xFF;
+    	}
   }
 }

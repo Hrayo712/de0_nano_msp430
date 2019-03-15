@@ -1,29 +1,28 @@
 [*]
 [*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
-[*] Thu Mar 14 17:49:02 2019
+[*] Fri Mar 15 10:10:30 2019
 [*]
 [dumpfile] "/home/hiram/git/de0_nano_msp430/altera_de0_nano/sim/rtl_sim/run/tb_openMSP430_fpga.vcd"
-[dumpfile_mtime] "Thu Mar 14 17:40:42 2019"
-[dumpfile_size] 11554846
+[dumpfile_mtime] "Fri Mar 15 09:29:47 2019"
+[dumpfile_size] 1766853652
 [savefile] "/home/hiram/git/de0_nano_msp430/altera_de0_nano/sim/rtl_sim/run/setup_cfg.gtkw"
-[timestart] 0
-[size] 1851 874
-[pos] -29 -29
-*-16.324593 225000 162500 225000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[timestart] 13964000
+[size] 1851 873
+[pos] -51 -51
+*-18.324593 15447500 162500 225000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_openMSP430_fpga.
 [treeopen] tb_openMSP430_fpga.dut.
-[sst_width] 355
+[sst_width] 223
 [signals_width] 255
 [sst_expanded] 1
 [sst_vpaned_height] 328
 @28
 tb_openMSP430_fpga.FPGA_CLK1_50
 tb_openMSP430_fpga.dut.openmsp430_0.dco_clk
-@29
 tb_openMSP430_fpga.dut.pll_0.locked
-@28
 tb_openMSP430_fpga.dut.mclk
 tb_openMSP430_fpga.dut.reset_n
+tb_openMSP430_fpga.dut.openmsp430_0.puc_rst
 tb_openMSP430_fpga.dut.KEY[1:0]
 @22
 [color] 1
@@ -44,10 +43,23 @@ tb_openMSP430_fpga.dut.dmem_wen[1:0]
 @28
 tb_openMSP430_fpga.dut.pmem_cen
 @22
+tb_openMSP430_fpga.SRAM_ADDR[11:0]
+@28
+tb_openMSP430_fpga.SRAM_CE_N
+@22
+tb_openMSP430_fpga.SRAM_DQ[15:0]
+@28
+tb_openMSP430_fpga.SRAM_LB_N
+tb_openMSP430_fpga.SRAM_OE_N
+tb_openMSP430_fpga.SRAM_UB_N
+tb_openMSP430_fpga.SRAM_WE_N
+@22
 tb_openMSP430_fpga.dut.pmem_addr[13:0]
 tb_openMSP430_fpga.dut.pmem_dout[15:0]
+@23
 [color] 1
 tb_openMSP430_fpga.msp_debug_omsp.inst_pc[15:0]
+@22
 tb_openMSP430_fpga.msp_debug_omsp.opcode[15:0]
 @24
 tb_openMSP430_fpga.msp_debug_omsp.inst_cycle[31:0]
@@ -59,9 +71,6 @@ tb_openMSP430_fpga.msp_debug_omsp.inst_ad[255:0]
 @22
 tb_openMSP430_fpga.dut.openmsp430_0.mem_backbone_0.eu_mab[14:0]
 tb_openMSP430_fpga.dut.openmsp430_0.execution_unit_0.mab[15:0]
-@28
-tb_openMSP430_fpga.dut.openmsp430_0.puc_rst
-@22
 tb_openMSP430_fpga.omsp_r5[15:0]
 tb_openMSP430_fpga.omsp_r15[15:0]
 tb_openMSP430_fpga.omsp_r4[15:0]

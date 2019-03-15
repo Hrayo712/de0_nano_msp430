@@ -235,7 +235,7 @@ wire  [1:0] UNUSED_dma_we       = dma_we;
 `endif
 
 //------------------------------------------
-// MRAM DATA-MEMORY Interface
+//  DATA-MEMORY Interface
 //------------------------------------------
 parameter          DMEM_END      = `DMEM_BASE+`DMEM_SIZE;
 
@@ -389,12 +389,12 @@ assign fe_mdb_in = pmem_dout_bckup_sel ? pmem_dout_bckup : pmem_dout;
 // Select between Peripherals, Program and Data memories
 reg [2:0] eu_mdb_in_sel;
 always @(posedge mclk or posedge puc_rst)
-  if (puc_rst)  eu_mdb_in_sel  <= 2'b00;
-  else          eu_mdb_in_sel  <= {eu_pmem_en, eu_per_en,eu_dmem_en};
+  if (puc_rst)  eu_mdb_in_sel  <= 3'b00;
+  else          eu_mdb_in_sel  <= {eu_pmem_en, eu_per_en, eu_dmem_en};
 
 // Mux
 assign          eu_mdb_in       = eu_mdb_in_sel[2] ? pmem_dout    :
-											 eu_mdb_in_sel[1] ? per_dout_val :
+				  eu_mdb_in_sel[1] ? per_dout_val :							 eu_mdb_in_sel[1] ? per_dout_val :
                                   eu_mdb_in_sel[0] ? dmem_dout : sp_dmem_dout;
 
 
@@ -405,13 +405,13 @@ assign          eu_mdb_in       = eu_mdb_in_sel[2] ? pmem_dout    :
 // Select between Peripherals, Program and Data memories
 reg   [2:0] ext_mem_din_sel;
 always @(posedge mclk or posedge puc_rst)
-  if (puc_rst)  ext_mem_din_sel <= 2'b00;
+  if (puc_rst)  ext_mem_din_sel <= 3'b00;
   else          ext_mem_din_sel <= {ext_pmem_en, ext_per_en, ext_dmem_en};
 
 // Mux
 assign          ext_mem_din      = ext_mem_din_sel[2] ? pmem_dout    :
                                    ext_mem_din_sel[1] ? per_dout_val : 
-											  ext_mem_din_sel[0] ? dmem_dout	: sp_dmem_dout;
+				   ext_mem_din_sel[0] ? dmem_dout    : sp_dmem_dout;
 
 
 endmodule // omsp_mem_backbone
