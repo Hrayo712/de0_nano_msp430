@@ -84,6 +84,56 @@ my_pin_assignment   LED[7]	     PIN_L3	"3.3-V LVTTL"
 my_pin_assignment   UART_TX	     PIN_B4	"3.3-V LVTTL"
 my_pin_assignment   UART_RX	     PIN_B5	"3.3-V LVTTL"
 
+#External RAM assignments
+
+my_pin_assignment  SRAM_DQ[0]		PIN_A5	"3.3-V LVTTL"
+my_pin_assignment  SRAM_DQ[1]		PIN_D5	"3.3-V LVTTL"
+my_pin_assignment  SRAM_DQ[2]		PIN_B6	"3.3-V LVTTL"
+my_pin_assignment  SRAM_DQ[3]		PIN_A6	"3.3-V LVTTL"
+my_pin_assignment  SRAM_DQ[4]		PIN_B7	"3.3-V LVTTL"
+my_pin_assignment  SRAM_DQ[5]		PIN_D6	"3.3-V LVTTL"
+my_pin_assignment  SRAM_DQ[6]		PIN_A7	"3.3-V LVTTL"
+my_pin_assignment  SRAM_DQ[7]		PIN_C6	"3.3-V LVTTL"
+my_pin_assignment  SRAM_DQ[8]		PIN_C8	"3.3-V LVTTL"
+my_pin_assignment  SRAM_DQ[9]		PIN_E6	"3.3-V LVTTL"
+my_pin_assignment  SRAM_DQ[10]		PIN_E7	"3.3-V LVTTL"
+my_pin_assignment  SRAM_DQ[11]		PIN_D8	"3.3-V LVTTL"
+my_pin_assignment  SRAM_DQ[12]		PIN_E8	"3.3-V LVTTL"
+
+my_pin_assignment  SRAM_DQ[13]		PIN_F8	"3.3-V LVTTL"
+my_pin_assignment  SRAM_DQ[14]		PIN_F9	"3.3-V LVTTL"
+my_pin_assignment  SRAM_DQ[15]		PIN_E9	"3.3-V LVTTL"
+
+
+
+my_pin_assignment  SRAM_ADDR[0]		PIN_T10	"3.3-V LVTTL"
+my_pin_assignment  SRAM_ADDR[1]		PIN_R11	"3.3-V LVTTL"
+my_pin_assignment  SRAM_ADDR[2]		PIN_P11	"3.3-V LVTTL"
+my_pin_assignment  SRAM_ADDR[3]		PIN_R10	"3.3-V LVTTL"
+my_pin_assignment  SRAM_ADDR[4]		PIN_N12	"3.3-V LVTTL"
+my_pin_assignment  SRAM_ADDR[5]		PIN_P9	"3.3-V LVTTL"
+my_pin_assignment  SRAM_ADDR[6]		PIN_N9	"3.3-V LVTTL"
+my_pin_assignment  SRAM_ADDR[7]		PIN_N11	"3.3-V LVTTL"
+my_pin_assignment  SRAM_ADDR[8]		PIN_L16	"3.3-V LVTTL"
+my_pin_assignment  SRAM_ADDR[9]		PIN_K16	"3.3-V LVTTL"
+my_pin_assignment  SRAM_ADDR[10]	PIN_R16	"3.3-V LVTTL"
+my_pin_assignment  SRAM_ADDR[11]	PIN_L15	"3.3-V LVTTL"
+
+my_pin_assignment  SRAM_CE_N		PIN_F13	"3.3-V LVTTL"
+my_pin_assignment  SRAM_WE_N		PIN_T15	"3.3-V LVTTL"
+my_pin_assignment  SRAM_OE_N		PIN_T13	"3.3-V LVTTL"
+my_pin_assignment  SRAM_UB_N		PIN_T12	"3.3-V LVTTL"
+my_pin_assignment  SRAM_LB_N		PIN_T11	"3.3-V LVTTL"
+
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON        -to SRAM_DQ
+set_instance_assignment -name FAST_OUTPUT_ENABLE_REGISTER ON -to SRAM_DQ
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON 	     -to SRAM_ADDR
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON 	     -to SRAM_CE_N
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON 	     -to SRAM_WE_N
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON        -to SRAM_OE_N
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON        -to SRAM_UB_N
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON        -to SRAM_LB_N
+
 
 # Commit assignments
 export_assignments

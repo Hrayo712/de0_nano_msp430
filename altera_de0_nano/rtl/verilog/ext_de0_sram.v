@@ -108,6 +108,7 @@ module ext_de0_sram(
 	end
 
 
+
 	// SRAM access signals
 	always @(negedge clk)
 	begin

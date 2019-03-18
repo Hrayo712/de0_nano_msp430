@@ -18,7 +18,7 @@
 #
 # Quartus Prime
 # Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-# Date created = 06:56:54  March 15, 2019
+# Date created = 03:19:43  March 18, 2019
 #
 # -------------------------------------------------------------------------- #
 #
@@ -39,7 +39,7 @@
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "06:56:54  MARCH 15, 2019"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "03:19:43  MARCH 18, 2019"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name VERILOG_FILE ../scripts/design_rtl.v
 set_global_assignment -name SEARCH_PATH ../../../rtl/verilog/openmsp430/
@@ -96,3 +96,77 @@ set_location_assignment PIN_B4 -to UART_TX
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART_TX
 set_location_assignment PIN_B5 -to UART_RX
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART_RX
+set_location_assignment PIN_A5 -to SRAM_DQ[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[0]
+set_location_assignment PIN_D5 -to SRAM_DQ[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[1]
+set_location_assignment PIN_B6 -to SRAM_DQ[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[2]
+set_location_assignment PIN_A6 -to SRAM_DQ[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[3]
+set_location_assignment PIN_B7 -to SRAM_DQ[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[4]
+set_location_assignment PIN_D6 -to SRAM_DQ[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[5]
+set_location_assignment PIN_A7 -to SRAM_DQ[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[6]
+set_location_assignment PIN_C6 -to SRAM_DQ[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[7]
+set_location_assignment PIN_C8 -to SRAM_DQ[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[8]
+set_location_assignment PIN_E6 -to SRAM_DQ[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[9]
+set_location_assignment PIN_E7 -to SRAM_DQ[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[10]
+set_location_assignment PIN_D8 -to SRAM_DQ[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[11]
+set_location_assignment PIN_E8 -to SRAM_DQ[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[12]
+set_location_assignment PIN_F8 -to SRAM_DQ[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[13]
+set_location_assignment PIN_F9 -to SRAM_DQ[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[14]
+set_location_assignment PIN_E9 -to SRAM_DQ[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_DQ[15]
+set_location_assignment PIN_T10 -to SRAM_ADDR[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_ADDR[0]
+set_location_assignment PIN_R11 -to SRAM_ADDR[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_ADDR[1]
+set_location_assignment PIN_P11 -to SRAM_ADDR[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_ADDR[2]
+set_location_assignment PIN_R10 -to SRAM_ADDR[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_ADDR[3]
+set_location_assignment PIN_N12 -to SRAM_ADDR[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_ADDR[4]
+set_location_assignment PIN_P9 -to SRAM_ADDR[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_ADDR[5]
+set_location_assignment PIN_N9 -to SRAM_ADDR[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_ADDR[6]
+set_location_assignment PIN_N11 -to SRAM_ADDR[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_ADDR[7]
+set_location_assignment PIN_L16 -to SRAM_ADDR[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_ADDR[8]
+set_location_assignment PIN_K16 -to SRAM_ADDR[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_ADDR[9]
+set_location_assignment PIN_R16 -to SRAM_ADDR[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_ADDR[10]
+set_location_assignment PIN_L15 -to SRAM_ADDR[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_ADDR[11]
+set_location_assignment PIN_F13 -to SRAM_CE_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_CE_N
+set_location_assignment PIN_T15 -to SRAM_WE_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_WE_N
+set_location_assignment PIN_T13 -to SRAM_OE_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_OE_N
+set_location_assignment PIN_T12 -to SRAM_UB_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_UB_N
+set_location_assignment PIN_T11 -to SRAM_LB_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRAM_LB_N
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to SRAM_DQ
+set_instance_assignment -name FAST_OUTPUT_ENABLE_REGISTER ON -to SRAM_DQ
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to SRAM_ADDR
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to SRAM_CE_N
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to SRAM_WE_N
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to SRAM_OE_N
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to SRAM_UB_N
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to SRAM_LB_N

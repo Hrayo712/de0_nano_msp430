@@ -131,6 +131,7 @@ wire        [15:0] per_dout_tA;
 // 2)  CLOCK AND RESET GENERATION
 //=============================================================================
 wire   pll_out;
+wire   c1_pll_out;
 wire   pll_lock;
 
 //assign dco_clk    = FPGA_CLK1_50;
@@ -328,9 +329,10 @@ assign irq_bus  = {1'b0,         // Vector 13  (0xFFFA)
 //=============================================================================
 						 
 	pll pll_0(
-	.areset (),
+	
 	.inclk0 (FPGA_CLK1_50),
 	.c0     (pll_out),
+	.c1	  (c1_pll_out),
 	.locked (pll_lock)
 	
 	);
@@ -349,6 +351,7 @@ ram_16x16k pmem_0 (
     .q         ( pmem_dout)
 );
 
+/*
 ram_16x8k dmem_0 (
     .address   ( dmem_addr),
     .byteena   (~dmem_wen),
@@ -358,28 +361,28 @@ ram_16x8k dmem_0 (
     .wren      (~(&dmem_wen)),
     .q         ( dmem_dout)
 );
+*/
 
+ //DE1's onboard sram - only 512 words used
 
-// DE1's onboard sram - only 512 words used
-//ext_de0_sram #(.ADDR_WIDTH(`DMEM_MSB+1)) ram (
-//
-//        .clk(mclk),
-//
-//        .ram_addr(dmem_addr[`DMEM_MSB:0]),
-//        .ram_cen(dmem_cen),
-//        .ram_wen(dmem_wen[1:0]),
-//        .ram_dout(dmem_dout[15:0]),
-//        .ram_din(dmem_din[15:0]),
-//
-//        .SRAM_ADDR(SRAM_ADDR),
-//        .SRAM_DQ(SRAM_DQ),
-//        .SRAM_CE_N(SRAM_CE_N),
-//        .SRAM_OE_N(SRAM_OE_N),
-//        .SRAM_WE_N(SRAM_WE_N),
-//        .SRAM_UB_N(SRAM_UB_N),
-//        .SRAM_LB_N(SRAM_LB_N)
-//);
+ext_de0_sram #(.ADDR_WIDTH(`DMEM_MSB+1)) ram (
 
+        .clk(c1_pll_out),
+
+        .ram_addr(dmem_addr[`DMEM_MSB:0]),
+        .ram_cen(dmem_cen),
+        .ram_wen(dmem_wen[1:0]),
+        .ram_dout(dmem_dout[15:0]),
+        .ram_din(dmem_din[15:0]),
+
+        .SRAM_ADDR(SRAM_ADDR),
+        .SRAM_DQ(SRAM_DQ),
+        .SRAM_CE_N(SRAM_CE_N),
+        .SRAM_OE_N(SRAM_OE_N),
+        .SRAM_WE_N(SRAM_WE_N),
+        .SRAM_UB_N(SRAM_UB_N),
+        .SRAM_LB_N(SRAM_LB_N)
+);
 
 //=============================================================================
 // 6)  INCLUDE STACK RAM DATA MEMORY - For the time being, lets simulate it is blockram

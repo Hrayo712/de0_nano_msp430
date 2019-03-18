@@ -81,7 +81,7 @@ int main(void) {
     	    ctr = 0;
 	    //ta_wait(WT_500MS);
 	    fake_delay(65000);
-	    LED_CTRL ^= 0xFF;
+	    LED_CTRL ^= 0x0F;
     	}
   }
 }

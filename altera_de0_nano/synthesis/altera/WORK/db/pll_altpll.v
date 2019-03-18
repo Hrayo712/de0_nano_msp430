@@ -1,4 +1,4 @@
-//altpll bandwidth_type="AUTO" CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" clk0_divide_by=25 clk0_duty_cycle=50 clk0_multiply_by=8 clk0_phase_shift="0" compensate_clock="CLK0" device_family="Cyclone IV E" inclk0_input_frequency=20000 intended_device_family="Cyclone IV E" lpm_hint="CBX_MODULE_PREFIX=pll" operation_mode="normal" pll_type="AUTO" port_clk0="PORT_USED" port_clk1="PORT_UNUSED" port_clk2="PORT_UNUSED" port_clk3="PORT_UNUSED" port_clk4="PORT_UNUSED" port_clk5="PORT_UNUSED" port_extclk0="PORT_UNUSED" port_extclk1="PORT_UNUSED" port_extclk2="PORT_UNUSED" port_extclk3="PORT_UNUSED" port_inclk1="PORT_UNUSED" port_phasecounterselect="PORT_UNUSED" port_phasedone="PORT_UNUSED" port_scandata="PORT_UNUSED" port_scandataout="PORT_UNUSED" self_reset_on_loss_lock="OFF" width_clock=5 areset clk inclk locked CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
+//altpll bandwidth_type="AUTO" CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" clk0_divide_by=25 clk0_duty_cycle=50 clk0_multiply_by=8 clk0_phase_shift="0" clk1_divide_by=25 clk1_duty_cycle=50 clk1_multiply_by=16 clk1_phase_shift="0" compensate_clock="CLK0" device_family="Cyclone IV E" inclk0_input_frequency=20000 intended_device_family="Cyclone IV E" lpm_hint="CBX_MODULE_PREFIX=pll" operation_mode="normal" pll_type="AUTO" port_clk0="PORT_USED" port_clk1="PORT_USED" port_clk2="PORT_UNUSED" port_clk3="PORT_UNUSED" port_clk4="PORT_UNUSED" port_clk5="PORT_UNUSED" port_extclk0="PORT_UNUSED" port_extclk1="PORT_UNUSED" port_extclk2="PORT_UNUSED" port_extclk3="PORT_UNUSED" port_inclk1="PORT_UNUSED" port_phasecounterselect="PORT_UNUSED" port_phasedone="PORT_UNUSED" port_scandata="PORT_UNUSED" port_scandataout="PORT_UNUSED" self_reset_on_loss_lock="OFF" width_clock=5 clk inclk locked CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
 //VERSION_BEGIN 18.1 cbx_altclkbuf 2018:09:12:13:04:09:SJ cbx_altiobuf_bidir 2018:09:12:13:04:09:SJ cbx_altiobuf_in 2018:09:12:13:04:09:SJ cbx_altiobuf_out 2018:09:12:13:04:09:SJ cbx_altpll 2018:09:12:13:04:09:SJ cbx_cycloneii 2018:09:12:13:04:09:SJ cbx_lpm_add_sub 2018:09:12:13:04:09:SJ cbx_lpm_compare 2018:09:12:13:04:09:SJ cbx_lpm_counter 2018:09:12:13:04:09:SJ cbx_lpm_decode 2018:09:12:13:04:09:SJ cbx_lpm_mux 2018:09:12:13:04:09:SJ cbx_mgl 2018:09:12:14:15:07:SJ cbx_nadder 2018:09:12:13:04:09:SJ cbx_stratix 2018:09:12:13:04:09:SJ cbx_stratixii 2018:09:12:13:04:09:SJ cbx_stratixiii 2018:09:12:13:04:09:SJ cbx_stratixv 2018:09:12:13:04:09:SJ cbx_util_mgl 2018:09:12:13:04:09:SJ  VERSION_END
 //CBXI_INSTANCE_NAME="openMSP430_fpga_pll_pll_0_altpll_altpll_component"
 // synthesis VERILOG_INPUT_VERSION VERILOG_2001
@@ -22,46 +22,33 @@
 
 
 
-//synthesis_resources = cycloneive_pll 1 reg 1 
+//synthesis_resources = cycloneive_pll 1 
 //synopsys translate_off
 `timescale 1 ps / 1 ps
 //synopsys translate_on
-(* ALTERA_ATTRIBUTE = {"SUPPRESS_DA_RULE_INTERNAL=C104;SUPPRESS_DA_RULE_INTERNAL=R101"} *)
 module  pll_altpll
 	( 
-	areset,
 	clk,
 	inclk,
 	locked) /* synthesis synthesis_clearbox=1 */;
-	input   areset;
 	output   [4:0]  clk;
 	input   [1:0]  inclk;
 	output   locked;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
-	tri0   areset;
 	tri0   [1:0]  inclk;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_on
 `endif
 
-	reg	pll_lock_sync;
 	wire  [4:0]   wire_pll1_clk;
 	wire  wire_pll1_fbout;
 	wire  wire_pll1_locked;
 
-	// synopsys translate_off
-	initial
-		pll_lock_sync = 0;
-	// synopsys translate_on
-	always @ ( posedge wire_pll1_locked or  posedge areset)
-		if (areset == 1'b1) pll_lock_sync <= 1'b0;
-		else  pll_lock_sync <= 1'b1;
 	cycloneive_pll   pll1
 	( 
 	.activeclock(),
-	.areset(areset),
 	.clk(wire_pll1_clk),
 	.clkbad(),
 	.fbin(wire_pll1_fbout),
@@ -77,6 +64,7 @@ module  pll_altpll
 	// synopsys translate_off
 	`endif
 	,
+	.areset(1'b0),
 	.clkswitch(1'b0),
 	.configupdate(1'b0),
 	.pfdena(1'b1),
@@ -96,6 +84,10 @@ module  pll_altpll
 		pll1.clk0_duty_cycle = 50,
 		pll1.clk0_multiply_by = 8,
 		pll1.clk0_phase_shift = "0",
+		pll1.clk1_divide_by = 25,
+		pll1.clk1_duty_cycle = 50,
+		pll1.clk1_multiply_by = 16,
+		pll1.clk1_phase_shift = "0",
 		pll1.compensate_clock = "clk0",
 		pll1.inclk0_input_frequency = 20000,
 		pll1.operation_mode = "normal",
@@ -104,6 +96,6 @@ module  pll_altpll
 		pll1.lpm_type = "cycloneive_pll";
 	assign
 		clk = {wire_pll1_clk[4:0]},
-		locked = (wire_pll1_locked & pll_lock_sync);
+		locked = wire_pll1_locked;
 endmodule //pll_altpll
 //VALID FILE
