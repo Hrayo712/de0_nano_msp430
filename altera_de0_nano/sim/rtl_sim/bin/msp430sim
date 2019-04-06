@@ -65,9 +65,11 @@ softdir=../../../software/apps/$1;
 elffile=../../../software/apps/$1/$1.elf;
 verfile=../src/$1.v;
 submitfile=../src/submit.f;
+
 if [ $OMSP_SIMULATOR == "isim" ]; then
     submitfile=../src/submit.prj;
 fi
+
 incfile=../../../rtl/verilog/openmsp430/openMSP430_defines.v;
 
 if [ ! -e $softdir ]; then

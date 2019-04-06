@@ -46,6 +46,7 @@
 `include "../../../rtl/verilog/mega/ram_16x8k.v"
 `include "../../../rtl/verilog/mega/io_buf.v"
 `include "../../../rtl/verilog/mega/in_buf.v"
+`include "../../../rtl/verilog/mega/pll.v"
 
 //=============================================================================
 // openMSP430

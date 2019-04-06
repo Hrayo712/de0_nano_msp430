@@ -84,6 +84,7 @@ my_pin_assignment   LED[7]	     PIN_L3	"3.3-V LVTTL"
 my_pin_assignment   UART_TX	     PIN_B4	"3.3-V LVTTL"
 my_pin_assignment   UART_RX	     PIN_B5	"3.3-V LVTTL"
 
+my_pin_assignment   OUT_PLL	     PIN_D3	"3.3-V LVTTL"
 
 # Commit assignments
 export_assignments

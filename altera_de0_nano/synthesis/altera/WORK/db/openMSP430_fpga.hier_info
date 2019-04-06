@@ -16,6 +16,7 @@ LED[6] <= omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0.led
 LED[7] <= omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0.led
 UART_TX <= openMSP430:openmsp430_0.dbg_uart_txd
 UART_RX => dbg_uart_rxd.IN1
+OUT_PLL <= <GND>
 
 
 |openMSP430_fpga|openMSP430:openmsp430_0

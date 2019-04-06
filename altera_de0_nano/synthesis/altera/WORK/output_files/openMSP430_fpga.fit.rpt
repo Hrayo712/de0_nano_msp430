@@ -1,5 +1,5 @@
 Fitter report for openMSP430_fpga
-Thu Mar  7 05:40:31 2019
+Sat Apr  6 04:41:08 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -68,18 +68,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Thu Mar  7 05:40:31 2019       ;
+; Fitter Status                      ; Successful - Sat Apr  6 04:41:08 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; openMSP430_fpga                             ;
 ; Top-level Entity Name              ; openMSP430_fpga                             ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2,934 / 22,320 ( 13 % )                     ;
+; Total logic elements               ; 2,928 / 22,320 ( 13 % )                     ;
 ;     Total combinational functions  ; 2,838 / 22,320 ( 13 % )                     ;
 ;     Dedicated logic registers      ; 1,001 / 22,320 ( 4 % )                      ;
 ; Total registers                    ; 1001                                        ;
-; Total pins                         ; 17 / 154 ( 11 % )                           ;
+; Total pins                         ; 18 / 154 ( 12 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 393,216 / 608,256 ( 65 % )                  ;
 ; Embedded Multiplier 9-bit elements ; 2 / 132 ( 2 % )                             ;
@@ -152,8 +152,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 3933 ) ; 0.00 % ( 0 / 3933 )        ; 0.00 % ( 0 / 3933 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 3933 ) ; 0.00 % ( 0 / 3933 )        ; 0.00 % ( 0 / 3933 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 3935 ) ; 0.00 % ( 0 / 3935 )        ; 0.00 % ( 0 / 3935 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 3935 ) ; 0.00 % ( 0 / 3935 )        ; 0.00 % ( 0 / 3935 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -176,7 +176,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 3923 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 3925 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -184,7 +184,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/output_files/openMSP430_fpga.pin.
+The pin-out file can be found in /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/output_files/openMSP430_fpga.pin.
 
 
 +--------------------------------------------------------------------------+
@@ -192,16 +192,16 @@ The pin-out file can be found in /home/hiram/git/de0_nano_msp430/altera_de0_nano
 +---------------------------------------------+----------------------------+
 ; Resource                                    ; Usage                      ;
 +---------------------------------------------+----------------------------+
-; Total logic elements                        ; 2,934 / 22,320 ( 13 % )    ;
-;     -- Combinational with no register       ; 1933                       ;
-;     -- Register only                        ; 96                         ;
-;     -- Combinational with a register        ; 905                        ;
+; Total logic elements                        ; 2,928 / 22,320 ( 13 % )    ;
+;     -- Combinational with no register       ; 1927                       ;
+;     -- Register only                        ; 90                         ;
+;     -- Combinational with a register        ; 911                        ;
 ;                                             ;                            ;
 ; Logic element usage by number of LUT inputs ;                            ;
 ;     -- 4 input functions                    ; 1782                       ;
 ;     -- 3 input functions                    ; 666                        ;
 ;     -- <=2 input functions                  ; 390                        ;
-;     -- Register only                        ; 96                         ;
+;     -- Register only                        ; 90                         ;
 ;                                             ;                            ;
 ; Logic elements by mode                      ;                            ;
 ;     -- normal mode                          ; 2489                       ;
@@ -211,9 +211,9 @@ The pin-out file can be found in /home/hiram/git/de0_nano_msp430/altera_de0_nano
 ;     -- Dedicated logic registers            ; 1,001 / 22,320 ( 4 % )     ;
 ;     -- I/O registers                        ; 0 / 698 ( 0 % )            ;
 ;                                             ;                            ;
-; Total LABs:  partially or completely used   ; 231 / 1,395 ( 17 % )       ;
+; Total LABs:  partially or completely used   ; 224 / 1,395 ( 16 % )       ;
 ; Virtual pins                                ; 0                          ;
-; I/O pins                                    ; 17 / 154 ( 11 % )          ;
+; I/O pins                                    ; 18 / 154 ( 12 % )          ;
 ;     -- Clock pins                           ; 5 / 7 ( 71 % )             ;
 ;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )              ;
 ;                                             ;                            ;
@@ -229,11 +229,11 @@ The pin-out file can be found in /home/hiram/git/de0_nano_msp430/altera_de0_nano
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )              ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )              ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )              ;
-; Average interconnect usage (total/H/V)      ; 8.1% / 7.9% / 8.4%         ;
-; Peak interconnect usage (total/H/V)         ; 52.5% / 50.8% / 55.0%      ;
+; Average interconnect usage (total/H/V)      ; 7.7% / 7.2% / 8.4%         ;
+; Peak interconnect usage (total/H/V)         ; 43.1% / 39.7% / 47.8%      ;
 ; Maximum fan-out                             ; 1049                       ;
 ; Highest non-global fan-out                  ; 140                        ;
-; Total fan-out                               ; 14855                      ;
+; Total fan-out                               ; 14857                      ;
 ; Average fan-out                             ; 3.69                       ;
 +---------------------------------------------+----------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
@@ -247,16 +247,16 @@ The pin-out file can be found in /home/hiram/git/de0_nano_msp430/altera_de0_nano
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 2934 / 22320 ( 13 % ) ; 0 / 22320 ( 0 % )              ;
-;     -- Combinational with no register       ; 1933                  ; 0                              ;
-;     -- Register only                        ; 96                    ; 0                              ;
-;     -- Combinational with a register        ; 905                   ; 0                              ;
+; Total logic elements                        ; 2928 / 22320 ( 13 % ) ; 0 / 22320 ( 0 % )              ;
+;     -- Combinational with no register       ; 1927                  ; 0                              ;
+;     -- Register only                        ; 90                    ; 0                              ;
+;     -- Combinational with a register        ; 911                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
 ;     -- 4 input functions                    ; 1782                  ; 0                              ;
 ;     -- 3 input functions                    ; 666                   ; 0                              ;
 ;     -- <=2 input functions                  ; 390                   ; 0                              ;
-;     -- Register only                        ; 96                    ; 0                              ;
+;     -- Register only                        ; 90                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
 ;     -- normal mode                          ; 2489                  ; 0                              ;
@@ -266,10 +266,10 @@ The pin-out file can be found in /home/hiram/git/de0_nano_msp430/altera_de0_nano
 ;     -- Dedicated logic registers            ; 1001 / 22320 ( 4 % )  ; 0 / 22320 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 231 / 1395 ( 17 % )   ; 0 / 1395 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 224 / 1395 ( 16 % )   ; 0 / 1395 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
-; I/O pins                                    ; 17                    ; 0                              ;
+; I/O pins                                    ; 18                    ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 2 / 132 ( 2 % )       ; 0 / 132 ( 0 % )                ;
 ; Total memory bits                           ; 393216                ; 0                              ;
 ; Total RAM block bits                        ; 442368                ; 0                              ;
@@ -283,7 +283,7 @@ The pin-out file can be found in /home/hiram/git/de0_nano_msp430/altera_de0_nano
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 14908                 ; 5                              ;
+;     -- Total Connections                    ; 14910                 ; 5                              ;
 ;     -- Registered Connections               ; 3486                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
@@ -292,7 +292,7 @@ The pin-out file can be found in /home/hiram/git/de0_nano_msp430/altera_de0_nano
 ;                                             ;                       ;                                ;
 ; Partition Interface                         ;                       ;                                ;
 ;     -- Input Ports                          ; 8                     ; 0                              ;
-;     -- Output Ports                         ; 9                     ; 0                              ;
+;     -- Output Ports                         ; 10                    ; 0                              ;
 ;     -- Bidir Ports                          ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Registered Ports                            ;                       ;                                ;
@@ -340,6 +340,7 @@ The pin-out file can be found in /home/hiram/git/de0_nano_msp430/altera_de0_nano
 ; LED[5]  ; F3    ; 1        ; 0            ; 26           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off         ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LED[6]  ; B1    ; 1        ; 0            ; 28           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off         ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LED[7]  ; L3    ; 2        ; 0            ; 10           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off         ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; OUT_PLL ; D3    ; 8        ; 1            ; 34           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off         ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; UART_TX ; B4    ; 8        ; 7            ; 34           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off         ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 +---------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
@@ -381,7 +382,7 @@ The pin-out file can be found in /home/hiram/git/de0_nano_msp430/altera_de0_nano
 ; 5        ; 2 / 18 ( 11 % ) ; 3.3V          ; --           ;
 ; 6        ; 1 / 13 ( 8 % )  ; 2.5V          ; --           ;
 ; 7        ; 5 / 24 ( 21 % ) ; 3.3V          ; --           ;
-; 8        ; 2 / 24 ( 8 % )  ; 3.3V          ; --           ;
+; 8        ; 3 / 24 ( 13 % ) ; 3.3V          ; --           ;
 +----------+-----------------+---------------+--------------+
 
 
@@ -440,7 +441,7 @@ The pin-out file can be found in /home/hiram/git/de0_nano_msp430/altera_de0_nano
 ; C16      ; 173        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; D1       ; 10         ; 1        ; LED[4]                                                    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; D2       ; 9          ; 1        ; ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; On           ;
-; D3       ; 246        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; D3       ; 246        ; 8        ; OUT_PLL                                                   ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; D4       ;            ;          ; VCCD_PLL3                                                 ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; D5       ; 241        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D6       ; 234        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -665,6 +666,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; LED[6]   ; Missing drive strength ;
 ; LED[7]   ; Missing drive strength ;
 ; UART_TX  ; Missing drive strength ;
+; OUT_PLL  ; Missing drive strength ;
 +----------+------------------------+
 
 
@@ -673,41 +675,41 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
 ; Compilation Hierarchy Node                                  ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                  ; Entity Name                  ; Library Name ;
 +-------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
-; |openMSP430_fpga                                            ; 2934 (18)   ; 1001 (17)                 ; 0 (0)         ; 393216      ; 48   ; 2            ; 0       ; 1         ; 17   ; 0            ; 1933 (1)     ; 96 (7)            ; 905 (10)         ; |openMSP430_fpga                                                                                                     ; openMSP430_fpga              ; work         ;
-;    |omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0| ; 218 (50)    ; 164 (32)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 54 (18)      ; 13 (7)            ; 151 (25)         ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0                                              ; omsp_de0_nano_soc_led_key_sw ; work         ;
+; |openMSP430_fpga                                            ; 2928 (18)   ; 1001 (17)                 ; 0 (0)         ; 393216      ; 48   ; 2            ; 0       ; 1         ; 18   ; 0            ; 1927 (1)     ; 90 (7)            ; 911 (10)         ; |openMSP430_fpga                                                                                                     ; openMSP430_fpga              ; work         ;
+;    |omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0| ; 218 (50)    ; 164 (32)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 54 (18)      ; 9 (3)             ; 155 (29)         ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0                                              ; omsp_de0_nano_soc_led_key_sw ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_key0|        ; 28 (28)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 1 (1)             ; 21 (21)          ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key0 ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_key1|        ; 28 (28)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 1 (1)             ; 21 (21)          ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key1 ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_sw0|         ; 28 (28)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 1 (1)             ; 21 (21)          ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw0  ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_sw1|         ; 28 (28)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 1 (1)             ; 21 (21)          ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw1  ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_sw2|         ; 28 (28)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 1 (1)             ; 21 (21)          ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw2  ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_sw3|         ; 28 (28)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 1 (1)             ; 21 (21)          ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw3  ; sync_debouncer_10ms          ; work         ;
-;    |omsp_timerA:timerA_0|                                   ; 330 (324)   ; 136 (130)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 182 (182)    ; 22 (20)           ; 126 (126)        ; |openMSP430_fpga|omsp_timerA:timerA_0                                                                                ; omsp_timerA                  ; work         ;
+;    |omsp_timerA:timerA_0|                                   ; 332 (326)   ; 136 (130)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 184 (184)    ; 22 (21)           ; 126 (125)        ; |openMSP430_fpga|omsp_timerA:timerA_0                                                                                ; omsp_timerA                  ; work         ;
 ;       |omsp_sync_cell:sync_cell_cci0|                       ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci0                                                  ; omsp_sync_cell               ; work         ;
 ;       |omsp_sync_cell:sync_cell_cci1|                       ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 1 (1)            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci1                                                  ; omsp_sync_cell               ; work         ;
-;       |omsp_sync_cell:sync_cell_cci2|                       ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 1 (1)            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci2                                                  ; omsp_sync_cell               ; work         ;
-;    |openMSP430:openmsp430_0|                                ; 2394 (164)  ; 683 (0)                   ; 0 (0)         ; 0           ; 0    ; 2            ; 0       ; 1         ; 0    ; 0            ; 1688 (143)   ; 54 (0)            ; 652 (45)         ; |openMSP430_fpga|openMSP430:openmsp430_0                                                                             ; openMSP430                   ; work         ;
-;       |omsp_clock_module:clock_module_0|                    ; 33 (27)     ; 21 (15)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 4 (1)             ; 17 (15)          ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0                                            ; omsp_clock_module            ; work         ;
+;       |omsp_sync_cell:sync_cell_cci2|                       ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci2                                                  ; omsp_sync_cell               ; work         ;
+;    |openMSP430:openmsp430_0|                                ; 2393 (165)  ; 683 (0)                   ; 0 (0)         ; 0           ; 0    ; 2            ; 0       ; 1         ; 0    ; 0            ; 1681 (139)   ; 52 (0)            ; 660 (49)         ; |openMSP430_fpga|openMSP430:openmsp430_0                                                                             ; openMSP430                   ; work         ;
+;       |omsp_clock_module:clock_module_0|                    ; 32 (26)     ; 21 (15)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (11)      ; 4 (1)             ; 17 (15)          ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0                                            ; omsp_clock_module            ; work         ;
 ;          |omsp_sync_cell:sync_cell_lfxt_clk|                ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_lfxt_clk          ; omsp_sync_cell               ; work         ;
 ;          |omsp_sync_cell:sync_cell_puc|                     ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_puc               ; omsp_sync_cell               ; work         ;
 ;          |omsp_sync_reset:sync_reset_por|                   ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 1 (1)            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por             ; omsp_sync_reset              ; work         ;
-;       |omsp_dbg:dbg_0|                                      ; 352 (186)   ; 148 (69)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 203 (117)    ; 14 (3)            ; 135 (79)         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0                                                              ; omsp_dbg                     ; work         ;
-;          |omsp_dbg_uart:dbg_uart_0|                         ; 167 (165)   ; 79 (77)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 86 (86)      ; 11 (10)           ; 70 (69)          ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0                                     ; omsp_dbg_uart                ; work         ;
+;       |omsp_dbg:dbg_0|                                      ; 352 (186)   ; 148 (69)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 203 (118)    ; 14 (3)            ; 135 (78)         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0                                                              ; omsp_dbg                     ; work         ;
+;          |omsp_dbg_uart:dbg_uart_0|                         ; 167 (165)   ; 79 (77)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 85 (85)      ; 11 (10)           ; 71 (70)          ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0                                     ; omsp_dbg_uart                ; work         ;
 ;             |omsp_sync_cell:sync_cell_uart_rxd|             ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 1 (1)            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|omsp_sync_cell:sync_cell_uart_rxd   ; omsp_sync_cell               ; work         ;
-;       |omsp_execution_unit:execution_unit_0|                ; 1149 (224)  ; 266 (35)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 872 (181)    ; 14 (8)            ; 263 (35)         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0                                        ; omsp_execution_unit          ; work         ;
-;          |omsp_alu:alu_0|                                   ; 272 (272)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 265 (265)    ; 0 (0)             ; 7 (7)            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0                         ; omsp_alu                     ; work         ;
-;          |omsp_register_file:register_file_0|               ; 659 (659)   ; 231 (231)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 426 (426)    ; 6 (6)             ; 227 (227)        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0     ; omsp_register_file           ; work         ;
-;       |omsp_frontend:frontend_0|                            ; 338 (338)   ; 116 (116)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 221 (221)    ; 11 (11)           ; 106 (106)        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0                                                    ; omsp_frontend                ; work         ;
-;       |omsp_mem_backbone:mem_backbone_0|                    ; 167 (167)   ; 38 (38)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 116 (116)    ; 2 (2)             ; 49 (49)          ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0                                            ; omsp_mem_backbone            ; work         ;
-;       |omsp_multiplier:multiplier_0|                        ; 158 (158)   ; 70 (70)                   ; 0 (0)         ; 0           ; 0    ; 2            ; 0       ; 1         ; 0    ; 0            ; 88 (88)      ; 7 (7)             ; 63 (63)          ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0                                                ; omsp_multiplier              ; work         ;
+;       |omsp_execution_unit:execution_unit_0|                ; 1147 (224)  ; 266 (35)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 867 (177)    ; 14 (10)           ; 266 (37)         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0                                        ; omsp_execution_unit          ; work         ;
+;          |omsp_alu:alu_0|                                   ; 272 (272)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 268 (268)    ; 0 (0)             ; 4 (4)            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0                         ; omsp_alu                     ; work         ;
+;          |omsp_register_file:register_file_0|               ; 656 (656)   ; 231 (231)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 422 (422)    ; 4 (4)             ; 230 (230)        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0     ; omsp_register_file           ; work         ;
+;       |omsp_frontend:frontend_0|                            ; 337 (337)   ; 116 (116)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 218 (218)    ; 6 (6)             ; 113 (113)        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0                                                    ; omsp_frontend                ; work         ;
+;       |omsp_mem_backbone:mem_backbone_0|                    ; 170 (170)   ; 38 (38)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 118 (118)    ; 3 (3)             ; 49 (49)          ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0                                            ; omsp_mem_backbone            ; work         ;
+;       |omsp_multiplier:multiplier_0|                        ; 160 (160)   ; 70 (70)                   ; 0 (0)         ; 0           ; 0    ; 2            ; 0       ; 1         ; 0    ; 0            ; 90 (90)      ; 8 (8)             ; 62 (62)          ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0                                                ; omsp_multiplier              ; work         ;
 ;          |lpm_mult:Mult0|                                   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 2            ; 0       ; 1         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0                                 ; lpm_mult                     ; work         ;
 ;             |mult_p4t:auto_generated|                       ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 2            ; 0       ; 1         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0|mult_p4t:auto_generated         ; mult_p4t                     ; work         ;
-;       |omsp_sfr:sfr_0|                                      ; 6 (6)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 3 (3)            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_sfr:sfr_0                                                              ; omsp_sfr                     ; work         ;
-;       |omsp_watchdog:watchdog_0|                            ; 54 (54)     ; 23 (23)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 30 (30)      ; 2 (2)             ; 22 (22)          ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0                                                    ; omsp_watchdog                ; work         ;
-;    |ram_16x16k:pmem_0|                                      ; 19 (0)      ; 1 (0)                     ; 0 (0)         ; 262144      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 11 (0)           ; |openMSP430_fpga|ram_16x16k:pmem_0                                                                                   ; ram_16x16k                   ; work         ;
-;       |altsyncram:altsyncram_component|                     ; 19 (0)      ; 1 (0)                     ; 0 (0)         ; 262144      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 11 (0)           ; |openMSP430_fpga|ram_16x16k:pmem_0|altsyncram:altsyncram_component                                                   ; altsyncram                   ; work         ;
-;          |altsyncram_b1l1:auto_generated|                   ; 19 (1)      ; 1 (1)                     ; 0 (0)         ; 262144      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 11 (1)           ; |openMSP430_fpga|ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated                    ; altsyncram_b1l1              ; work         ;
+;       |omsp_sfr:sfr_0|                                      ; 6 (6)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 2 (2)            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_sfr:sfr_0                                                              ; omsp_sfr                     ; work         ;
+;       |omsp_watchdog:watchdog_0|                            ; 54 (54)     ; 23 (23)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 31 (31)      ; 3 (3)             ; 20 (20)          ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0                                                    ; omsp_watchdog                ; work         ;
+;    |ram_16x16k:pmem_0|                                      ; 19 (0)      ; 1 (0)                     ; 0 (0)         ; 262144      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 12 (0)           ; |openMSP430_fpga|ram_16x16k:pmem_0                                                                                   ; ram_16x16k                   ; work         ;
+;       |altsyncram:altsyncram_component|                     ; 19 (0)      ; 1 (0)                     ; 0 (0)         ; 262144      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 12 (0)           ; |openMSP430_fpga|ram_16x16k:pmem_0|altsyncram:altsyncram_component                                                   ; altsyncram                   ; work         ;
+;          |altsyncram_b1l1:auto_generated|                   ; 19 (1)      ; 1 (1)                     ; 0 (0)         ; 262144      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 12 (1)           ; |openMSP430_fpga|ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated                    ; altsyncram_b1l1              ; work         ;
 ;             |decode_jsa:decode3|                            ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |openMSP430_fpga|ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|decode_jsa:decode3 ; decode_jsa                   ; work         ;
-;             |mux_iob:mux2|                                  ; 16 (16)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 10 (10)          ; |openMSP430_fpga|ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|mux_iob:mux2       ; mux_iob                      ; work         ;
+;             |mux_iob:mux2|                                  ; 16 (16)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 11 (11)          ; |openMSP430_fpga|ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|mux_iob:mux2       ; mux_iob                      ; work         ;
 ;    |ram_16x8k:dmem_0|                                       ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 131072      ; 16   ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |openMSP430_fpga|ram_16x8k:dmem_0                                                                                    ; ram_16x8k                    ; work         ;
 ;       |altsyncram:altsyncram_component|                     ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 131072      ; 16   ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |openMSP430_fpga|ram_16x8k:dmem_0|altsyncram:altsyncram_component                                                    ; altsyncram                   ; work         ;
 ;          |altsyncram_b4j1:auto_generated|                   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 131072      ; 16   ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |openMSP430_fpga|ram_16x8k:dmem_0|altsyncram:altsyncram_component|altsyncram_b4j1:auto_generated                     ; altsyncram_b4j1              ; work         ;
@@ -729,6 +731,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LED[6]       ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; LED[7]       ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; UART_TX      ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; OUT_PLL      ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; FPGA_CLK1_50 ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; KEY[0]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; UART_RX      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
@@ -773,82 +776,82 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; FPGA_CLK1_50                                                                                                     ; PIN_R8             ; 1049    ; Clock        ; yes    ; Global Clock         ; GCLK18           ; --                        ;
 ; KEY[0]                                                                                                           ; PIN_J15            ; 9       ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; WideAnd1                                                                                                         ; LCCOMB_X29_Y12_N14 ; 16      ; Write enable ; no     ; --                   ; --               ; --                        ;
-; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|reg_hi_wr[3]~0                                            ; LCCOMB_X34_Y12_N26 ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|reg_lo_wr[0]~5                                            ; LCCOMB_X34_Y13_N26 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|reg_lo_wr[2]~4                                            ; LCCOMB_X34_Y14_N22 ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key0|always1~0    ; LCCOMB_X44_Y13_N0  ; 19      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key1|always1~0    ; LCCOMB_X5_Y16_N20  ; 19      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw0|always1~0     ; LCCOMB_X8_Y16_N4   ; 19      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw1|always1~0     ; LCCOMB_X32_Y5_N20  ; 19      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw2|always1~0     ; LCCOMB_X32_Y25_N24 ; 19      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw3|always1~0     ; LCCOMB_X50_Y16_N20 ; 19      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; omsp_timerA:timerA_0|clk_div[1]~2                                                                                ; LCCOMB_X38_Y14_N2  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; omsp_timerA:timerA_0|reg_wr[100]~5                                                                               ; LCCOMB_X35_Y14_N28 ; 14      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; omsp_timerA:timerA_0|reg_wr[102]~4                                                                               ; LCCOMB_X36_Y14_N10 ; 12      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; omsp_timerA:timerA_0|reg_wr[114]~9                                                                               ; LCCOMB_X41_Y16_N22 ; 16      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; omsp_timerA:timerA_0|reg_wr[96]~3                                                                                ; LCCOMB_X35_Y16_N26 ; 11      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; omsp_timerA:timerA_0|reg_wr[98]~6                                                                                ; LCCOMB_X37_Y16_N28 ; 14      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; omsp_timerA:timerA_0|taccr0[2]~16                                                                                ; LCCOMB_X37_Y16_N26 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; omsp_timerA:timerA_0|taccr1[10]~1                                                                                ; LCCOMB_X35_Y12_N6  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; omsp_timerA:timerA_0|taccr2[14]~1                                                                                ; LCCOMB_X38_Y13_N26 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; omsp_timerA:timerA_0|tar[10]~1                                                                                   ; LCCOMB_X39_Y16_N30 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|dbg_rst_noscan                                          ; FF_X30_Y11_N25     ; 148     ; Async. clear ; yes    ; Global Clock         ; GCLK15           ; --                        ;
-; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_puc|data_sync[1]               ; FF_X18_Y21_N7      ; 825     ; Async. clear ; yes    ; Global Clock         ; GCLK13           ; --                        ;
-; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por|data_sync[1]             ; FF_X30_Y11_N19     ; 7       ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|puc_a_scan                                              ; LCCOMB_X34_Y15_N12 ; 2       ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|reg_hi_wr[7]~0                                          ; LCCOMB_X34_Y13_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|reg_lo_wr[8]~0                                          ; LCCOMB_X34_Y13_N12 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|dbg_rd_rdy                                                                ; FF_X20_Y19_N27     ; 27      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[4]~46                                                            ; LCCOMB_X23_Y20_N4  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|always3~1                                        ; LCCOMB_X19_Y20_N2  ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|always5~0                                        ; LCCOMB_X16_Y19_N8  ; 18      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|cmd_valid~0                                      ; LCCOMB_X20_Y21_N6  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_buf[1]~1                                    ; LCCOMB_X18_Y20_N24 ; 21      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|reg_wr[2]                                                                 ; LCCOMB_X18_Y21_N2  ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|reg_wr[4]                                                                 ; LCCOMB_X20_Y22_N16 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|reg_wr[5]                                                                 ; LCCOMB_X20_Y22_N18 ; 16      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|reg_wr[6]                                                                 ; LCCOMB_X20_Y22_N22 ; 16      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|reg_wr[7]                                                                 ; LCCOMB_X20_Y22_N20 ; 16      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|Equal13~0                                           ; LCCOMB_X29_Y19_N20 ; 55      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|Equal13~4                                           ; LCCOMB_X28_Y19_N4  ; 25      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_in_buf_en                                       ; FF_X29_Y19_N17     ; 17      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_out_nxt[7]~10                                   ; LCCOMB_X28_Y19_N6  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_stat_wr[0]                       ; LCCOMB_X35_Y19_N20 ; 4       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r10[15]~30       ; LCCOMB_X23_Y12_N26 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r11[8]~30        ; LCCOMB_X23_Y12_N12 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r12[15]~30       ; LCCOMB_X21_Y15_N6  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r13[1]~28        ; LCCOMB_X20_Y16_N30 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r14[9]~28        ; LCCOMB_X25_Y14_N16 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r15[15]~21       ; LCCOMB_X23_Y16_N6  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r1[8]~15         ; LCCOMB_X17_Y16_N12 ; 15      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r1_wr            ; LCCOMB_X21_Y16_N22 ; 16      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r2[3]~5          ; LCCOMB_X26_Y19_N2  ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r3_wr            ; LCCOMB_X28_Y20_N20 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r4[13]~30        ; LCCOMB_X16_Y14_N20 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r5[7]~30         ; LCCOMB_X16_Y14_N18 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r6[2]~30         ; LCCOMB_X20_Y14_N16 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r7[5]~30         ; LCCOMB_X20_Y14_N22 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r8[4]~30         ; LCCOMB_X18_Y14_N10 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r9[2]~30         ; LCCOMB_X18_Y14_N28 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|always7~2                                                       ; LCCOMB_X30_Y21_N8  ; 17      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|decode                                                          ; LCCOMB_X19_Y19_N12 ; 49      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_dext_rdy                                                   ; LCCOMB_X27_Y21_N30 ; 19      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_sext[9]~15                                                 ; LCCOMB_X30_Y21_N30 ; 12      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_detect~2                                                    ; LCCOMB_X25_Y19_N14 ; 23      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|comb~0                                                  ; LCCOMB_X29_Y12_N12 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|comb~1                                                  ; LCCOMB_X28_Y18_N12 ; 33      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|fe_pmem_save                                            ; LCCOMB_X29_Y18_N0  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|op1_wr~0                                                    ; LCCOMB_X35_Y17_N20 ; 18      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reg_wr[8]~1                                                 ; LCCOMB_X37_Y18_N6  ; 20      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reshi[0]~2                                                  ; LCCOMB_X41_Y18_N10 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reslo[13]~2                                                 ; LCCOMB_X35_Y18_N12 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|sumext_s[1]~1                                               ; LCCOMB_X38_Y18_N2  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_watchdog:watchdog_0|reg_wr[0]                                                       ; LCCOMB_X34_Y15_N30 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; openMSP430:openmsp430_0|omsp_watchdog:watchdog_0|wdtcnt[3]~1                                                     ; LCCOMB_X32_Y12_N6  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|decode_jsa:decode3|eq_node[0]   ; LCCOMB_X32_Y18_N10 ; 16      ; Write enable ; no     ; --                   ; --               ; --                        ;
-; ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|decode_jsa:decode3|eq_node[1]~0 ; LCCOMB_X32_Y18_N6  ; 16      ; Write enable ; no     ; --                   ; --               ; --                        ;
-; reset_dly_chain[0]                                                                                               ; FF_X39_Y10_N1      ; 11      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; WideAnd1                                                                                                         ; LCCOMB_X31_Y17_N4  ; 16      ; Write enable ; no     ; --                   ; --               ; --                        ;
+; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|reg_hi_wr[3]~0                                            ; LCCOMB_X31_Y20_N28 ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|reg_lo_wr[0]~5                                            ; LCCOMB_X34_Y20_N30 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|reg_lo_wr[2]~4                                            ; LCCOMB_X32_Y20_N26 ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key0|always1~0    ; LCCOMB_X47_Y18_N4  ; 19      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key1|always1~0    ; LCCOMB_X1_Y16_N16  ; 19      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw0|always1~0     ; LCCOMB_X17_Y22_N30 ; 19      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw1|always1~0     ; LCCOMB_X23_Y2_N2   ; 19      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw2|always1~0     ; LCCOMB_X30_Y30_N16 ; 19      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw3|always1~0     ; LCCOMB_X48_Y21_N0  ; 19      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; omsp_timerA:timerA_0|clk_div[1]~2                                                                                ; LCCOMB_X38_Y19_N4  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; omsp_timerA:timerA_0|reg_wr[100]~5                                                                               ; LCCOMB_X35_Y18_N24 ; 14      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; omsp_timerA:timerA_0|reg_wr[102]~4                                                                               ; LCCOMB_X37_Y17_N16 ; 12      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; omsp_timerA:timerA_0|reg_wr[114]~9                                                                               ; LCCOMB_X34_Y16_N0  ; 16      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; omsp_timerA:timerA_0|reg_wr[96]~3                                                                                ; LCCOMB_X34_Y21_N22 ; 11      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; omsp_timerA:timerA_0|reg_wr[98]~6                                                                                ; LCCOMB_X34_Y18_N20 ; 14      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; omsp_timerA:timerA_0|taccr0[2]~16                                                                                ; LCCOMB_X34_Y18_N16 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; omsp_timerA:timerA_0|taccr1[10]~1                                                                                ; LCCOMB_X38_Y18_N30 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; omsp_timerA:timerA_0|taccr2[14]~1                                                                                ; LCCOMB_X36_Y17_N28 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; omsp_timerA:timerA_0|tar[10]~1                                                                                   ; LCCOMB_X34_Y19_N12 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|dbg_rst_noscan                                          ; FF_X35_Y24_N13     ; 148     ; Async. clear ; yes    ; Global Clock         ; GCLK11           ; --                        ;
+; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_puc|data_sync[1]               ; FF_X25_Y24_N17     ; 825     ; Async. clear ; yes    ; Global Clock         ; GCLK10           ; --                        ;
+; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por|data_sync[1]             ; FF_X35_Y24_N3      ; 7       ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|puc_a_scan                                              ; LCCOMB_X35_Y24_N24 ; 2       ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|reg_hi_wr[7]~0                                          ; LCCOMB_X31_Y20_N2  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|reg_lo_wr[8]~0                                          ; LCCOMB_X36_Y22_N6  ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|dbg_rd_rdy                                                                ; FF_X25_Y26_N5      ; 27      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[4]~46                                                            ; LCCOMB_X28_Y24_N22 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|always3~1                                        ; LCCOMB_X24_Y27_N8  ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|always5~0                                        ; LCCOMB_X25_Y29_N2  ; 18      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|cmd_valid~0                                      ; LCCOMB_X25_Y26_N30 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_buf[1]~1                                    ; LCCOMB_X23_Y26_N30 ; 21      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|reg_wr[2]                                                                 ; LCCOMB_X24_Y26_N8  ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|reg_wr[4]                                                                 ; LCCOMB_X26_Y26_N4  ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|reg_wr[5]                                                                 ; LCCOMB_X26_Y26_N26 ; 16      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|reg_wr[6]                                                                 ; LCCOMB_X26_Y26_N14 ; 16      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|reg_wr[7]                                                                 ; LCCOMB_X26_Y26_N16 ; 16      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|Equal13~0                                           ; LCCOMB_X24_Y16_N12 ; 55      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|Equal13~4                                           ; LCCOMB_X27_Y16_N20 ; 25      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_in_buf_en                                       ; FF_X24_Y16_N19     ; 17      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_out_nxt[7]~10                                   ; LCCOMB_X24_Y15_N10 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_stat_wr[0]                       ; LCCOMB_X26_Y15_N20 ; 4       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r10[15]~30       ; LCCOMB_X18_Y22_N8  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r11[8]~30        ; LCCOMB_X18_Y22_N14 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r12[15]~30       ; LCCOMB_X17_Y19_N22 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r13[1]~28        ; LCCOMB_X18_Y18_N10 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r14[9]~28        ; LCCOMB_X18_Y17_N12 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r15[15]~21       ; LCCOMB_X18_Y16_N6  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r1[8]~15         ; LCCOMB_X17_Y18_N6  ; 15      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r1_wr            ; LCCOMB_X23_Y17_N10 ; 16      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r2[3]~5          ; LCCOMB_X19_Y17_N12 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r3_wr            ; LCCOMB_X26_Y22_N8  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r4[13]~30        ; LCCOMB_X20_Y16_N30 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r5[7]~30         ; LCCOMB_X19_Y22_N30 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r6[2]~30         ; LCCOMB_X18_Y20_N6  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r7[5]~30         ; LCCOMB_X18_Y18_N4  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r8[4]~30         ; LCCOMB_X15_Y20_N24 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r9[2]~30         ; LCCOMB_X15_Y20_N10 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|always7~2                                                       ; LCCOMB_X24_Y14_N30 ; 17      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|decode                                                          ; LCCOMB_X27_Y14_N2  ; 49      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_dext_rdy                                                   ; LCCOMB_X23_Y14_N28 ; 19      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_sext[9]~15                                                 ; LCCOMB_X25_Y13_N24 ; 12      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_detect~2                                                    ; LCCOMB_X25_Y21_N0  ; 23      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|comb~0                                                  ; LCCOMB_X28_Y20_N28 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|comb~1                                                  ; LCCOMB_X26_Y21_N8  ; 33      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|fe_pmem_save                                            ; LCCOMB_X25_Y21_N16 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|op1_wr~0                                                    ; LCCOMB_X35_Y21_N28 ; 18      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reg_wr[8]~1                                                 ; LCCOMB_X36_Y21_N30 ; 20      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reshi[0]~2                                                  ; LCCOMB_X38_Y21_N6  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reslo[13]~2                                                 ; LCCOMB_X37_Y21_N0  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|sumext_s[1]~1                                               ; LCCOMB_X39_Y22_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_watchdog:watchdog_0|reg_wr[0]                                                       ; LCCOMB_X35_Y21_N18 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; openMSP430:openmsp430_0|omsp_watchdog:watchdog_0|wdtcnt[3]~1                                                     ; LCCOMB_X34_Y23_N26 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|decode_jsa:decode3|eq_node[0]   ; LCCOMB_X25_Y21_N12 ; 16      ; Write enable ; no     ; --                   ; --               ; --                        ;
+; ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|decode_jsa:decode3|eq_node[1]~0 ; LCCOMB_X26_Y21_N10 ; 16      ; Write enable ; no     ; --                   ; --               ; --                        ;
+; reset_dly_chain[0]                                                                                               ; FF_X47_Y19_N1      ; 11      ; Async. clear ; no     ; --                   ; --               ; --                        ;
 +------------------------------------------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -857,9 +860,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name                                                                                               ; Location       ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------------------------------------------------------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; FPGA_CLK1_50                                                                                       ; PIN_R8         ; 1049    ; 55                                   ; Global Clock         ; GCLK18           ; --                        ;
-; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|dbg_rst_noscan                            ; FF_X30_Y11_N25 ; 148     ; 0                                    ; Global Clock         ; GCLK15           ; --                        ;
-; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_puc|data_sync[1] ; FF_X18_Y21_N7  ; 825     ; 0                                    ; Global Clock         ; GCLK13           ; --                        ;
+; FPGA_CLK1_50                                                                                       ; PIN_R8         ; 1049    ; 22                                   ; Global Clock         ; GCLK18           ; --                        ;
+; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|dbg_rst_noscan                            ; FF_X35_Y24_N13 ; 148     ; 0                                    ; Global Clock         ; GCLK11           ; --                        ;
+; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_puc|data_sync[1] ; FF_X25_Y24_N17 ; 825     ; 0                                    ; Global Clock         ; GCLK10           ; --                        ;
 +----------------------------------------------------------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -868,8 +871,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 ; Name                                                                                        ; Type ; Mode        ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size   ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF      ; Location                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Mixed Width RDW Mode ; Port A RDW Mode        ; Port B RDW Mode        ; ECC Mode ; ECC Pipeline Registers ; Fits in MLABs ;
 +---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
-; ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; Single Clock ; 16384        ; 16           ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 262144 ; 16384                       ; 16                          ; --                          ; --                          ; 262144              ; 32   ; pmem.mif ; M9K_X33_Y16_N0, M9K_X33_Y21_N0, M9K_X22_Y29_N0, M9K_X22_Y16_N0, M9K_X33_Y13_N0, M9K_X33_Y15_N0, M9K_X22_Y24_N0, M9K_X22_Y21_N0, M9K_X33_Y20_N0, M9K_X22_Y18_N0, M9K_X22_Y19_N0, M9K_X22_Y15_N0, M9K_X22_Y17_N0, M9K_X22_Y25_N0, M9K_X33_Y26_N0, M9K_X22_Y23_N0, M9K_X33_Y28_N0, M9K_X33_Y29_N0, M9K_X33_Y23_N0, M9K_X33_Y19_N0, M9K_X33_Y27_N0, M9K_X33_Y24_N0, M9K_X33_Y17_N0, M9K_X33_Y18_N0, M9K_X22_Y22_N0, M9K_X33_Y22_N0, M9K_X33_Y14_N0, M9K_X22_Y14_N0, M9K_X22_Y26_N0, M9K_X22_Y20_N0, M9K_X33_Y25_N0, M9K_X22_Y28_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
-; ram_16x8k:dmem_0|altsyncram:altsyncram_component|altsyncram_b4j1:auto_generated|ALTSYNCRAM  ; AUTO ; Single Port ; Single Clock ; 8192         ; 16           ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 131072 ; 8192                        ; 16                          ; --                          ; --                          ; 131072              ; 16   ; None     ; M9K_X33_Y9_N0, M9K_X22_Y5_N0, M9K_X33_Y12_N0, M9K_X22_Y13_N0, M9K_X33_Y11_N0, M9K_X22_Y12_N0, M9K_X22_Y9_N0, M9K_X33_Y8_N0, M9K_X33_Y7_N0, M9K_X33_Y6_N0, M9K_X22_Y8_N0, M9K_X33_Y10_N0, M9K_X33_Y5_N0, M9K_X22_Y10_N0, M9K_X22_Y11_N0, M9K_X22_Y6_N0                                                                                                                                                                                                                                                                          ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
+; ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; Single Clock ; 16384        ; 16           ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 262144 ; 16384                       ; 16                          ; --                          ; --                          ; 262144              ; 32   ; pmem.mif ; M9K_X22_Y21_N0, M9K_X33_Y21_N0, M9K_X33_Y19_N0, M9K_X33_Y23_N0, M9K_X22_Y22_N0, M9K_X22_Y18_N0, M9K_X22_Y13_N0, M9K_X22_Y15_N0, M9K_X33_Y18_N0, M9K_X33_Y20_N0, M9K_X22_Y10_N0, M9K_X22_Y23_N0, M9K_X22_Y20_N0, M9K_X22_Y30_N0, M9K_X33_Y29_N0, M9K_X33_Y26_N0, M9K_X33_Y14_N0, M9K_X33_Y16_N0, M9K_X22_Y24_N0, M9K_X22_Y25_N0, M9K_X33_Y22_N0, M9K_X33_Y28_N0, M9K_X22_Y16_N0, M9K_X33_Y17_N0, M9K_X33_Y25_N0, M9K_X22_Y28_N0, M9K_X22_Y12_N0, M9K_X33_Y24_N0, M9K_X22_Y29_N0, M9K_X22_Y26_N0, M9K_X22_Y27_N0, M9K_X33_Y27_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
+; ram_16x8k:dmem_0|altsyncram:altsyncram_component|altsyncram_b4j1:auto_generated|ALTSYNCRAM  ; AUTO ; Single Port ; Single Clock ; 8192         ; 16           ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 131072 ; 8192                        ; 16                          ; --                          ; --                          ; 131072              ; 16   ; None     ; M9K_X22_Y31_N0, M9K_X33_Y15_N0, M9K_X22_Y17_N0, M9K_X33_Y13_N0, M9K_X33_Y10_N0, M9K_X22_Y11_N0, M9K_X22_Y19_N0, M9K_X33_Y9_N0, M9K_X33_Y30_N0, M9K_X22_Y6_N0, M9K_X33_Y12_N0, M9K_X22_Y14_N0, M9K_X22_Y9_N0, M9K_X33_Y31_N0, M9K_X33_Y7_N0, M9K_X33_Y11_N0                                                                                                                                                                                                                                                                     ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
 +---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
@@ -880,76 +883,76 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ;   Addr   ;              +0              ;              +1              ;              +2              ;              +3              ;              +4              ;              +5              ;              +6              ;              +7              ;
 +----------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+
-;0;(0100001001010101) (41125) (16981) (4255)    ;(0000000100100000) (440) (288) (120)   ;(1101000000110101) (150065) (53301) (D035)   ;(0101101000001000) (55010) (23048) (5A08)   ;(0100010110000010) (42602) (17794) (4582)   ;(0100000000000110) (40006) (16390) (4006)   ;(0100000000110001) (40061) (16433) (4031)   ;(1000000000000000) (100000) (32768) (8000)   ;
-;8;(0100000000111111) (40077) (16447) (403F)    ;(0000000000000010) (2) (2) (02)   ;(1001001100001111) (111417) (37647) (930F)   ;(0010010000001000) (22010) (9224) (2408)   ;(0100001010010010) (41222) (17042) (4292)   ;(0100000000000110) (40006) (16390) (4006)   ;(0000000100100000) (440) (288) (120)   ;(1000001100101111) (101457) (33583) (832F)   ;
-;16;(0100111110011111) (47637) (20383) (4F9F)    ;(1000001011100010) (101342) (33506) (82E2)   ;(0100000000000000) (40000) (16384) (4000)   ;(0010001111111000) (21770) (9208) (23F8)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000000000100) (4) (4) (04)   ;(1001001100001111) (111417) (37647) (930F)   ;(0010010000000111) (22007) (9223) (2407)   ;
-;24;(0100001010010010) (41222) (17042) (4292)    ;(0100000000000110) (40006) (16390) (4006)   ;(0000000100100000) (440) (288) (120)   ;(1000001100011111) (101437) (33567) (831F)   ;(0100001111001111) (41717) (17359) (43CF)   ;(0100000000000010) (40002) (16386) (4002)   ;(0010001111111001) (21771) (9209) (23F9)   ;(0100001111000010) (41702) (17346) (43C2)   ;
-;32;(0100000000000011) (40003) (16387) (4003)    ;(0100001111000010) (41702) (17346) (43C2)   ;(0100000000000010) (40002) (16386) (4002)   ;(0100001111010010) (41722) (17362) (43D2)   ;(0100000000000100) (40004) (16388) (4004)   ;(0100000010110010) (40262) (16562) (40B2)   ;(0101101000011101) (55035) (23069) (5A1D)   ;(0000000100100000) (440) (288) (120)   ;
-;40;(1101001111010010) (151722) (54226) (D3D2)    ;(0000000000000000) (0) (0) (00)   ;(1101001000110010) (151062) (53810) (D232)   ;(0100001101001010) (41512) (17226) (434A)   ;(0100001101001011) (41513) (17227) (434B)   ;(0100001001011111) (41137) (16991) (425F)   ;(0100000000000010) (40002) (16386) (4002)   ;(1001000001111111) (110177) (36991) (907F)   ;
-;48;(0000000000000111) (7) (7) (07)    ;(0010110011010010) (26322) (11474) (2CD2)   ;(0100111101001111) (47517) (20303) (4F4F)   ;(0101111100001111) (57417) (24335) (5F0F)   ;(0100111100010000) (47420) (20240) (4F10)   ;(1000001011010100) (101324) (33492) (82D4)   ;(0100001001011111) (41137) (16991) (425F)   ;(0100000000000100) (40004) (16388) (4004)   ;
-;56;(1001001101001111) (111517) (37711) (934F)    ;(0010010000000110) (22006) (9222) (2406)   ;(0100001111000010) (41702) (17346) (43C2)   ;(0000000010010000) (220) (144) (90)   ;(0100001111000010) (41702) (17346) (43C2)   ;(0100000000000100) (40004) (16388) (4004)   ;(0100001101001011) (41513) (17227) (434B)   ;(0011110000001101) (36015) (15373) (3C0D)   ;
-;64;(0101001101011011) (51533) (21339) (535B)    ;(1111000001111011) (170173) (61563) (F07B)   ;(0000000000001111) (17) (15) (0F)   ;(0100101100001111) (45417) (19215) (4B0F)   ;(1111000000111111) (170077) (61503) (F03F)   ;(0000000000001111) (17) (15) (0F)   ;(0101111100001111) (57417) (24335) (5F0F)   ;(0101111100001111) (57417) (24335) (5F0F)   ;
-;72;(0101111100001111) (57417) (24335) (5F0F)    ;(0101111100001111) (57417) (24335) (5F0F)   ;(1101101101001111) (155517) (56143) (DB4F)   ;(0100111111000010) (47702) (20418) (4FC2)   ;(0000000010010000) (220) (144) (90)   ;(0100000000111111) (40077) (16447) (403F)   ;(0100110001001100) (46114) (19532) (4C4C)   ;(0001001010110000) (11260) (4784) (12B0)   ;
-;80;(1000001010110000) (101260) (33456) (82B0)    ;(0011111111011011) (37733) (16347) (3FDB)   ;(0100001001011111) (41137) (16991) (425F)   ;(0100000000000100) (40004) (16388) (4004)   ;(1001001101001111) (111517) (37711) (934F)   ;(0010010000000110) (22006) (9222) (2406)   ;(0100001111000010) (41702) (17346) (43C2)   ;(0000000010010000) (220) (144) (90)   ;
-;88;(0100001111000010) (41702) (17346) (43C2)    ;(0100000000000100) (40004) (16388) (4004)   ;(0100001101001011) (41513) (17227) (434B)   ;(0011110000001101) (36015) (15373) (3C0D)   ;(0101001101111011) (51573) (21371) (537B)   ;(1111000001111011) (170173) (61563) (F07B)   ;(0000000000001111) (17) (15) (0F)   ;(0100101100001111) (45417) (19215) (4B0F)   ;
-;96;(1111000000111111) (170077) (61503) (F03F)    ;(0000000000001111) (17) (15) (0F)   ;(0101111100001111) (57417) (24335) (5F0F)   ;(0101111100001111) (57417) (24335) (5F0F)   ;(0101111100001111) (57417) (24335) (5F0F)   ;(0101111100001111) (57417) (24335) (5F0F)   ;(1101101101001111) (155517) (56143) (DB4F)   ;(0100111111000010) (47702) (20418) (4FC2)   ;
-;104;(0000000010010000) (220) (144) (90)    ;(0100000000111111) (40077) (16447) (403F)   ;(0100110001001100) (46114) (19532) (4C4C)   ;(0001001010110000) (11260) (4784) (12B0)   ;(1000001010110000) (101260) (33456) (82B0)   ;(0011111110111111) (37677) (16319) (3FBF)   ;(0100001001011111) (41137) (16991) (425F)   ;(0100000000000100) (40004) (16388) (4004)   ;
-;112;(1001001101001111) (111517) (37711) (934F)    ;(0010010000000110) (22006) (9222) (2406)   ;(0100000011110010) (40362) (16626) (40F2)   ;(0000000001010101) (125) (85) (55)   ;(0000000010010000) (220) (144) (90)   ;(0100001111000010) (41702) (17346) (43C2)   ;(0100000000000100) (40004) (16388) (4004)   ;(0011110000000101) (36005) (15365) (3C05)   ;
-;120;(0100001001011111) (41137) (16991) (425F)    ;(0000000010010000) (220) (144) (90)   ;(1110001101111111) (161577) (58239) (E37F)   ;(0100111111000010) (47702) (20418) (4FC2)   ;(0000000010010000) (220) (144) (90)   ;(0100000000111111) (40077) (16447) (403F)   ;(1011111010111101) (137275) (48829) (BEBD)   ;(0001001010110000) (11260) (4784) (12B0)   ;
-;128;(1000001010110000) (101260) (33456) (82B0)    ;(0011111110101011) (37653) (16299) (3FAB)   ;(0100001001011111) (41137) (16991) (425F)   ;(0100000000000100) (40004) (16388) (4004)   ;(1001001101001111) (111517) (37711) (934F)   ;(0010010000000101) (22005) (9221) (2405)   ;(0100001111000010) (41702) (17346) (43C2)   ;(0000000010010000) (220) (144) (90)   ;
-;136;(0100001111000010) (41702) (17346) (43C2)    ;(0100000000000100) (40004) (16388) (4004)   ;(0011110000000101) (36005) (15365) (3C05)   ;(0100001001011111) (41137) (16991) (425F)   ;(0000000010010000) (220) (144) (90)   ;(1110001101111111) (161577) (58239) (E37F)   ;(0100111111000010) (47702) (20418) (4FC2)   ;(0000000010010000) (220) (144) (90)   ;
-;144;(0100000000111111) (40077) (16447) (403F)    ;(1011111010111101) (137275) (48829) (BEBD)   ;(0001001010110000) (11260) (4784) (12B0)   ;(1000001010110000) (101260) (33456) (82B0)   ;(0100000000111111) (40077) (16447) (403F)   ;(0100110001001100) (46114) (19532) (4C4C)   ;(0001001010110000) (11260) (4784) (12B0)   ;(1000001010110000) (101260) (33456) (82B0)   ;
-;152;(0011111110010100) (37624) (16276) (3F94)    ;(0100001001011111) (41137) (16991) (425F)   ;(0100000000000100) (40004) (16388) (4004)   ;(1001001101001111) (111517) (37711) (934F)   ;(0010010000000111) (22007) (9223) (2407)   ;(0100000011110010) (40362) (16626) (40F2)   ;(0000000000111111) (77) (63) (3F)   ;(0000000010010000) (220) (144) (90)   ;
-;160;(0100001111000010) (41702) (17346) (43C2)    ;(0100000000000100) (40004) (16388) (4004)   ;(0100001101001010) (41512) (17226) (434A)   ;(0011110000011010) (36032) (15386) (3C1A)   ;(1001001101001010) (111512) (37706) (934A)   ;(0010000000001010) (20012) (8202) (200A)   ;(0100001001011011) (41133) (16987) (425B)   ;(0000000010010000) (220) (144) (90)   ;
-;168;(1100001100010010) (141422) (49938) (C312)    ;(0001000001001011) (10113) (4171) (104B)   ;(1101000001111011) (150173) (53371) (D07B)   ;(1111111110000000) (177600) (65408) (FF80)   ;(1001000001111011) (110173) (36987) (907B)   ;(1111111111111100) (177774) (65532) (FFFC)   ;(0010000000001101) (20015) (8205) (200D)   ;(0011110000001001) (36011) (15369) (3C09)   ;
-;176;(0100001001011011) (41133) (16987) (425B)    ;(0000000010010000) (220) (144) (90)   ;(0100101101001011) (45513) (19275) (4B4B)   ;(0101101100001011) (55413) (23307) (5B0B)   ;(1101001101011011) (151533) (54107) (D35B)   ;(1001000001111011) (110173) (36987) (907B)   ;(0000000000111111) (77) (63) (3F)   ;(0010000000000100) (20004) (8196) (2004)   ;
-;184;(0011110000000010) (36002) (15362) (3C02)    ;(0100001101011010) (41532) (17242) (435A)   ;(0011110000000001) (36001) (15361) (3C01)   ;(0100001101001010) (41512) (17226) (434A)   ;(0100101111000010) (45702) (19394) (4BC2)   ;(0000000010010000) (220) (144) (90)   ;(0100000000111111) (40077) (16447) (403F)   ;(0010011000100110) (23046) (9766) (2626)   ;
-;192;(0001001010110000) (11260) (4784) (12B0)    ;(1000001010110000) (101260) (33456) (82B0)   ;(0011111101101010) (37552) (16234) (3F6A)   ;(0100001001011111) (41137) (16991) (425F)   ;(0100000000000100) (40004) (16388) (4004)   ;(1001001101001111) (111517) (37711) (934F)   ;(0010010000000111) (22007) (9223) (2407)   ;(0100000011110010) (40362) (16626) (40F2)   ;
-;200;(1111111110000000) (177600) (65408) (FF80)    ;(0000000010010000) (220) (144) (90)   ;(0100001111000010) (41702) (17346) (43C2)   ;(0100000000000100) (40004) (16388) (4004)   ;(0100001101001010) (41512) (17226) (434A)   ;(0011110000010101) (36025) (15381) (3C15)   ;(1001001101001010) (111512) (37706) (934A)   ;(0010000000000111) (20007) (8199) (2007)   ;
-;208;(0100001001011011) (41133) (16987) (425B)    ;(0000000010010000) (220) (144) (90)   ;(1100001100010010) (141422) (49938) (C312)   ;(0001000001001011) (10113) (4171) (104B)   ;(1001001101011011) (111533) (37723) (935B)   ;(0010000000001011) (20013) (8203) (200B)   ;(0011110000000111) (36007) (15367) (3C07)   ;(0100001001011011) (41133) (16987) (425B)   ;
-;216;(0000000010010000) (220) (144) (90)    ;(0101101101001011) (55513) (23371) (5B4B)   ;(1001000001111011) (110173) (36987) (907B)   ;(1111111110000000) (177600) (65408) (FF80)   ;(0010000000000100) (20004) (8196) (2004)   ;(0011110000000010) (36002) (15362) (3C02)   ;(0100001101011010) (41532) (17242) (435A)   ;(0011110000000001) (36001) (15361) (3C01)   ;
-;224;(0100001101001010) (41512) (17226) (434A)    ;(0100101111000010) (45702) (19394) (4BC2)   ;(0000000010010000) (220) (144) (90)   ;(0100000000111111) (40077) (16447) (403F)   ;(0010011000100110) (23046) (9766) (2626)   ;(0001001010110000) (11260) (4784) (12B0)   ;(1000001010110000) (101260) (33456) (82B0)   ;(0011111101000101) (37505) (16197) (3F45)   ;
-;232;(0100001001011111) (41137) (16991) (425F)    ;(0100000000000100) (40004) (16388) (4004)   ;(1001001101001111) (111517) (37711) (934F)   ;(0010010000000110) (22006) (9222) (2406)   ;(0100000011110010) (40362) (16626) (40F2)   ;(0000000000111111) (77) (63) (3F)   ;(0000000010010000) (220) (144) (90)   ;(0100001111000010) (41702) (17346) (43C2)   ;
-;240;(0100000000000100) (40004) (16388) (4004)    ;(0011110000001101) (36015) (15373) (3C0D)   ;(0100001001011011) (41133) (16987) (425B)   ;(0000000010010000) (220) (144) (90)   ;(1100001100010010) (141422) (49938) (C312)   ;(0001000001001011) (10113) (4171) (104B)   ;(1101000001111011) (150173) (53371) (D07B)   ;(1111111110000000) (177600) (65408) (FF80)   ;
-;248;(0100101111000010) (45702) (19394) (4BC2)    ;(0000000010010000) (220) (144) (90)   ;(1001000001111011) (110173) (36987) (907B)   ;(1111111111111110) (177776) (65534) (FFFE)   ;(0010000000000010) (20002) (8194) (2002)   ;(0100001111010010) (41722) (17362) (43D2)   ;(0100000000000100) (40004) (16388) (4004)   ;(0100000000111111) (40077) (16447) (403F)   ;
-;256;(0010011000100110) (23046) (9766) (2626)    ;(0001001010110000) (11260) (4784) (12B0)   ;(1000001010110000) (101260) (33456) (82B0)   ;(0011111100101001) (37451) (16169) (3F29)   ;(0100001001011111) (41137) (16991) (425F)   ;(0100000000000100) (40004) (16388) (4004)   ;(1001001101001111) (111517) (37711) (934F)   ;(0010010000000110) (22006) (9222) (2406)   ;
-;264;(0100000011110010) (40362) (16626) (40F2)    ;(1111111110000000) (177600) (65408) (FF80)   ;(0000000010010000) (220) (144) (90)   ;(0100001111000010) (41702) (17346) (43C2)   ;(0100000000000100) (40004) (16388) (4004)   ;(0011110000001010) (36012) (15370) (3C0A)   ;(0100001001011011) (41133) (16987) (425B)   ;(0000000010010000) (220) (144) (90)   ;
-;272;(1100001100010010) (141422) (49938) (C312)    ;(0001000001001011) (10113) (4171) (104B)   ;(0100101111000010) (45702) (19394) (4BC2)   ;(0000000010010000) (220) (144) (90)   ;(1001001101011011) (111533) (37723) (935B)   ;(0010000000000010) (20002) (8194) (2002)   ;(0100001111010010) (41722) (17362) (43D2)   ;(0100000000000100) (40004) (16388) (4004)   ;
-;280;(0100000000111111) (40077) (16447) (403F)    ;(0010011000100110) (23046) (9766) (2626)   ;(0001001010110000) (11260) (4784) (12B0)   ;(1000001010110000) (101260) (33456) (82B0)   ;(0011111100010000) (37420) (16144) (3F10)   ;(1101000000110010) (150062) (53298) (D032)   ;(0000000011110000) (360) (240) (F0)   ;(0011111111111101) (37775) (16381) (3FFD)   ;
-;288;(0100000000110000) (40060) (16432) (4030)    ;(1000001011010010) (101322) (33490) (82D2)   ;(0001001000001111) (11017) (4623) (120F)   ;(0001001000001110) (11016) (4622) (120E)   ;(0100001001011111) (41137) (16991) (425F)   ;(0100000000000011) (40003) (16387) (4003)   ;(1001000001111111) (110177) (36991) (907F)   ;(0000000000001111) (17) (15) (0F)   ;
-;296;(0010100000011111) (24037) (10271) (281F)    ;(0100001111000010) (41702) (17346) (43C2)   ;(0100000000000011) (40003) (16387) (4003)   ;(0100001000011111) (41037) (16927) (421F)   ;(0100000000000000) (40000) (16384) (4000)   ;(0100001000011110) (41036) (16926) (421E)   ;(0100000000000000) (40000) (16384) (4000)   ;(1100001100010010) (141422) (49938) (C312)   ;
-;304;(0001000000001110) (10016) (4110) (100E)    ;(0100111010000010) (47202) (20098) (4E82)   ;(0100000000000000) (40000) (16384) (4000)   ;(0100001000011110) (41036) (16926) (421E)   ;(0100000000000000) (40000) (16384) (4000)   ;(1111001100011111) (171437) (62239) (F31F)   ;(1110001100111111) (161477) (58175) (E33F)   ;(0101001100011111) (51437) (21279) (531F)   ;
-;312;(1111000000111111) (170077) (61503) (F03F)    ;(1011010000000000) (132000) (46080) (B400)   ;(1110111000001111) (167017) (60943) (EE0F)   ;(0100111110000010) (47602) (20354) (4F82)   ;(0100000000000000) (40000) (16384) (4000)   ;(0100000011110010) (40362) (16626) (40F2)   ;(0000000000000011) (3) (3) (03)   ;(0100000000000010) (40002) (16386) (4002)   ;
-;320;(0100001111010010) (41722) (17362) (43D2)    ;(0100000000000100) (40004) (16388) (4004)   ;(0100000100111110) (40476) (16702) (413E)   ;(0100000100111111) (40477) (16703) (413F)   ;(1100000010110001) (140261) (49329) (C0B1)   ;(0000000011110000) (360) (240) (F0)   ;(0000000000000000) (0) (0) (00)   ;(0001001100000000) (11400) (4864) (1300)   ;
-;328;(0101001111010010) (51722) (21458) (53D2)    ;(0100000000000011) (40003) (16387) (4003)   ;(0100000100111110) (40476) (16702) (413E)   ;(0100000100111111) (40477) (16703) (413F)   ;(1100000010110001) (140261) (49329) (C0B1)   ;(0000000011110000) (360) (240) (F0)   ;(0000000000000000) (0) (0) (00)   ;(0001001100000000) (11400) (4864) (1300)   ;
-;336;(0100000010110010) (40262) (16562) (40B2)    ;(0000000100100100) (444) (292) (124)   ;(0000000101100000) (540) (352) (160)   ;(0100001000011110) (41036) (16926) (421E)   ;(0000000101110000) (560) (368) (170)   ;(1001111100001110) (117416) (40718) (9F0E)   ;(0010101111111100) (25774) (11260) (2BFC)   ;(0100000100110000) (40460) (16688) (4130)   ;
-;344;(0100111110000010) (47602) (20354) (4F82)    ;(0000000101110010) (562) (370) (172)   ;(0100000010110010) (40262) (16562) (40B2)   ;(0000000100010110) (426) (278) (116)   ;(0000000101100000) (540) (352) (160)   ;(1101000000110010) (150062) (53298) (D032)   ;(0000000000010000) (20) (16) (10)   ;(0100000100110000) (40460) (16688) (4130)   ;
-;352;(0100001110010010) (41622) (17298) (4392)    ;(0000000101100000) (540) (352) (160)   ;(1100000010110001) (140261) (49329) (C0B1)   ;(0000000000010000) (20) (16) (10)   ;(0000000000000000) (0) (0) (00)   ;(1100000010110001) (140261) (49329) (C0B1)   ;(0000000011110000) (360) (240) (F0)   ;(0000000000000000) (0) (0) (00)   ;
-;360;(0001001100000000) (11400) (4864) (1300)    ;(0001001100000000) (11400) (4864) (1300)   ;(1000000001101100) (100154) (32876) (806C)   ;(1000000010100100) (100244) (32932) (80A4)   ;(1000000011011100) (100334) (32988) (80DC)   ;(1000000100000100) (100404) (33028) (8104)   ;(1000000100110010) (100462) (33074) (8132)   ;(1000000110000110) (100606) (33158) (8186)   ;
-;368;(1000000111010000) (100720) (33232) (81D0)    ;(1010110011101011) (126353) (44267) (ACEB)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;376;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;384;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;392;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;400;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;408;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;416;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;424;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;432;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;440;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;448;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;456;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;464;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;472;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;480;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;488;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;496;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;504;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;512;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;520;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;528;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;536;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;544;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;552;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
+;0;(0100001001010101) (41125) (16981) (4255)    ;(0000000100100000) (440) (288) (120)   ;(1101000000110101) (150065) (53301) (D035)   ;(0101101000001000) (55010) (23048) (5A08)   ;(0100010110000010) (42602) (17794) (4582)   ;(0100000000001000) (40010) (16392) (4008)   ;(0100000000110001) (40061) (16433) (4031)   ;(1000000000000000) (100000) (32768) (8000)   ;
+;8;(0100000000111111) (40077) (16447) (403F)    ;(0000000000000010) (2) (2) (02)   ;(1001001100001111) (111417) (37647) (930F)   ;(0010010000001000) (22010) (9224) (2408)   ;(0100001010010010) (41222) (17042) (4292)   ;(0100000000001000) (40010) (16392) (4008)   ;(0000000100100000) (440) (288) (120)   ;(1000001100101111) (101457) (33583) (832F)   ;
+;16;(0100111110011111) (47637) (20383) (4F9F)    ;(1000010001011000) (102130) (33880) (8458)   ;(0100000000000000) (40000) (16384) (4000)   ;(0010001111111000) (21770) (9208) (23F8)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000000000110) (6) (6) (06)   ;(1001001100001111) (111417) (37647) (930F)   ;(0010010000000111) (22007) (9223) (2407)   ;
+;24;(0100001010010010) (41222) (17042) (4292)    ;(0100000000001000) (40010) (16392) (4008)   ;(0000000100100000) (440) (288) (120)   ;(1000001100011111) (101437) (33567) (831F)   ;(0100001111001111) (41717) (17359) (43CF)   ;(0100000000000010) (40002) (16386) (4002)   ;(0010001111111001) (21771) (9209) (23F9)   ;(0100000100000100) (40404) (16644) (4104)   ;
+;32;(0101001100100100) (51444) (21284) (5324)    ;(1000001000100001) (101041) (33313) (8221)   ;(0100001110000010) (41602) (17282) (4382)   ;(0100000000000100) (40004) (16388) (4004)   ;(0100001110000010) (41602) (17282) (4382)   ;(0100000000000010) (40002) (16386) (4002)   ;(0100001110010010) (41622) (17298) (4392)   ;(0100000000000110) (40006) (16390) (4006)   ;
+;40;(0100001111000100) (41704) (17348) (43C4)    ;(1111111111111011) (177773) (65531) (FFFB)   ;(0100001111000100) (41704) (17348) (43C4)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000100100000) (440) (288) (120)   ;(0100000010111111) (40277) (16575) (40BF)   ;(0101101000011101) (55035) (23069) (5A1D)   ;
+;48;(0000000000000000) (0) (0) (00)    ;(1101001111010010) (151722) (54226) (D3D2)   ;(0000000000000000) (0) (0) (00)   ;(1101001000110010) (151062) (53810) (D232)   ;(0100001000011111) (41037) (16927) (421F)   ;(0100000000000010) (40002) (16386) (4002)   ;(1001000000111111) (110077) (36927) (903F)   ;(0000000000000111) (7) (7) (07)   ;
+;56;(0010100000000010) (24002) (10242) (2802)    ;(0100000000110000) (40060) (16432) (4030)   ;(1000001011010110) (101326) (33494) (82D6)   ;(0101111100001111) (57417) (24335) (5F0F)   ;(0101000000111111) (50077) (20543) (503F)   ;(1000010001001010) (102112) (33866) (844A)   ;(0100111100101111) (47457) (20271) (4F2F)   ;(0100111100000000) (47400) (20224) (4F00)   ;
+;64;(0100001000011111) (41037) (16927) (421F)    ;(0100000000000110) (40006) (16390) (4006)   ;(1001001100001111) (111417) (37647) (930F)   ;(0010010000001001) (22011) (9225) (2409)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000010010000) (220) (144) (90)   ;(0100001111001111) (41717) (17359) (43CF)   ;(0000000000000000) (0) (0) (00)   ;
+;72;(0100001111000100) (41704) (17348) (43C4)    ;(1111111111111010) (177772) (65530) (FFFA)   ;(0100001110000010) (41602) (17282) (4382)   ;(0100000000000110) (40006) (16390) (4006)   ;(0011110000011001) (36031) (15385) (3C19)   ;(0100010001011111) (42137) (17503) (445F)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0101001101011111) (51537) (21343) (535F)   ;
+;80;(0100111101001110) (47516) (20302) (4F4E)    ;(1111000001111110) (170176) (61566) (F07E)   ;(0000000000001111) (17) (15) (0F)   ;(0100111011000100) (47304) (20164) (4EC4)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0100010001011111) (42137) (17503) (445F)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0101111100001111) (57417) (24335) (5F0F)   ;
+;88;(0101111100001111) (57417) (24335) (5F0F)    ;(0101111100001111) (57417) (24335) (5F0F)   ;(0101111100001111) (57417) (24335) (5F0F)   ;(0100111101001110) (47516) (20302) (4F4E)   ;(0100010001011111) (42137) (17503) (445F)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(1101111001001111) (157117) (56911) (DE4F)   ;(0100111111000100) (47704) (20420) (4FC4)   ;
+;96;(1111111111111100) (177774) (65532) (FFFC)    ;(0100000000111111) (40077) (16447) (403F)   ;(0000000010010000) (220) (144) (90)   ;(0100010011011111) (42337) (17631) (44DF)   ;(1111111111111100) (177774) (65532) (FFFC)   ;(0000000000000000) (0) (0) (00)   ;(0100000000111111) (40077) (16447) (403F)   ;(0100110001001100) (46114) (19532) (4C4C)   ;
+;104;(0001001010110000) (11260) (4784) (12B0)    ;(1000001111111100) (101774) (33788) (83FC)   ;(0100000000110000) (40060) (16432) (4030)   ;(1000001100100000) (101440) (33568) (8320)   ;(0100001000011111) (41037) (16927) (421F)   ;(0100000000000110) (40006) (16390) (4006)   ;(1001001100001111) (111417) (37647) (930F)   ;(0010010000001001) (22011) (9225) (2409)   ;
+;112;(0100000000111111) (40077) (16447) (403F)    ;(0000000010010000) (220) (144) (90)   ;(0100001111001111) (41717) (17359) (43CF)   ;(0000000000000000) (0) (0) (00)   ;(0100001111000100) (41704) (17348) (43C4)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0100001110000010) (41602) (17282) (4382)   ;(0100000000000110) (40006) (16390) (4006)   ;
+;120;(0011110000011001) (36031) (15385) (3C19)    ;(0100010001011111) (42137) (17503) (445F)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0101001101111111) (51577) (21375) (537F)   ;(0100111101001110) (47516) (20302) (4F4E)   ;(1111000001111110) (170176) (61566) (F07E)   ;(0000000000001111) (17) (15) (0F)   ;(0100111011000100) (47304) (20164) (4EC4)   ;
+;128;(1111111111111010) (177772) (65530) (FFFA)    ;(0100010001011111) (42137) (17503) (445F)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0101111100001111) (57417) (24335) (5F0F)   ;(0101111100001111) (57417) (24335) (5F0F)   ;(0101111100001111) (57417) (24335) (5F0F)   ;(0101111100001111) (57417) (24335) (5F0F)   ;(0100111101001110) (47516) (20302) (4F4E)   ;
+;136;(0100010001011111) (42137) (17503) (445F)    ;(1111111111111010) (177772) (65530) (FFFA)   ;(1101111001001111) (157117) (56911) (DE4F)   ;(0100111111000100) (47704) (20420) (4FC4)   ;(1111111111111100) (177774) (65532) (FFFC)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000010010000) (220) (144) (90)   ;(0100010011011111) (42337) (17631) (44DF)   ;
+;144;(1111111111111100) (177774) (65532) (FFFC)    ;(0000000000000000) (0) (0) (00)   ;(0100000000111111) (40077) (16447) (403F)   ;(0100110001001100) (46114) (19532) (4C4C)   ;(0001001010110000) (11260) (4784) (12B0)   ;(1000001111111100) (101774) (33788) (83FC)   ;(0100000000110000) (40060) (16432) (4030)   ;(1000001100100000) (101440) (33568) (8320)   ;
+;152;(0100001000011111) (41037) (16927) (421F)    ;(0100000000000110) (40006) (16390) (4006)   ;(1001001100001111) (111417) (37647) (930F)   ;(0010010000001000) (22010) (9224) (2408)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000010010000) (220) (144) (90)   ;(0100000011111111) (40377) (16639) (40FF)   ;(0000000001010101) (125) (85) (55)   ;
+;160;(0000000000000000) (0) (0) (00)    ;(0100001110000010) (41602) (17282) (4382)   ;(0100000000000110) (40006) (16390) (4006)   ;(0011110000001000) (36010) (15368) (3C08)   ;(0100000000111110) (40076) (16446) (403E)   ;(0000000010010000) (220) (144) (90)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000010010000) (220) (144) (90)   ;
+;168;(0100111101101111) (47557) (20335) (4F6F)    ;(1110001101111111) (161577) (58239) (E37F)   ;(0100111111001110) (47716) (20430) (4FCE)   ;(0000000000000000) (0) (0) (00)   ;(0100000000111111) (40077) (16447) (403F)   ;(1011111010111101) (137275) (48829) (BEBD)   ;(0001001010110000) (11260) (4784) (12B0)   ;(1000001111111100) (101774) (33788) (83FC)   ;
+;176;(0011110011011111) (36337) (15583) (3CDF)    ;(0100001000011111) (41037) (16927) (421F)   ;(0100000000000110) (40006) (16390) (4006)   ;(1001001100001111) (111417) (37647) (930F)   ;(0010010000000111) (22007) (9223) (2407)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000010010000) (220) (144) (90)   ;(0100001111001111) (41717) (17359) (43CF)   ;
+;184;(0000000000000000) (0) (0) (00)    ;(0100001110000010) (41602) (17282) (4382)   ;(0100000000000110) (40006) (16390) (4006)   ;(0011110000001000) (36010) (15368) (3C08)   ;(0100000000111110) (40076) (16446) (403E)   ;(0000000010010000) (220) (144) (90)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000010010000) (220) (144) (90)   ;
+;192;(0100111101101111) (47557) (20335) (4F6F)    ;(1110001101111111) (161577) (58239) (E37F)   ;(0100111111001110) (47716) (20430) (4FCE)   ;(0000000000000000) (0) (0) (00)   ;(0100000000111111) (40077) (16447) (403F)   ;(1011111010111101) (137275) (48829) (BEBD)   ;(0001001010110000) (11260) (4784) (12B0)   ;(1000001111111100) (101774) (33788) (83FC)   ;
+;200;(0100000000111111) (40077) (16447) (403F)    ;(0100110001001100) (46114) (19532) (4C4C)   ;(0001001010110000) (11260) (4784) (12B0)   ;(1000001111111100) (101774) (33788) (83FC)   ;(0011110011000011) (36303) (15555) (3CC3)   ;(0100001000011111) (41037) (16927) (421F)   ;(0100000000000110) (40006) (16390) (4006)   ;(1001001100001111) (111417) (37647) (930F)   ;
+;208;(0010010000001010) (22012) (9226) (240A)    ;(0100000000111111) (40077) (16447) (403F)   ;(0000000010010000) (220) (144) (90)   ;(0100000011111111) (40377) (16639) (40FF)   ;(0000000000111111) (77) (63) (3F)   ;(0000000000000000) (0) (0) (00)   ;(0100001110000010) (41602) (17282) (4382)   ;(0100000000000110) (40006) (16390) (4006)   ;
+;216;(0100001111000100) (41704) (17348) (43C4)    ;(1111111111111011) (177773) (65531) (FFFB)   ;(0011110000101010) (36052) (15402) (3C2A)   ;(1001001111000100) (111704) (37828) (93C4)   ;(1111111111111011) (177773) (65531) (FFFB)   ;(0010000000010011) (20023) (8211) (2013)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000010010000) (220) (144) (90)   ;
+;224;(0100111101101111) (47557) (20335) (4F6F)    ;(0100111101001111) (47517) (20303) (4F4F)   ;(0100111101001111) (47517) (20303) (4F4F)   ;(1100001100010010) (141422) (49938) (C312)   ;(0001000001001111) (10117) (4175) (104F)   ;(0100111101001110) (47516) (20302) (4F4E)   ;(1101000001111110) (150176) (53374) (D07E)   ;(1111111110000000) (177600) (65408) (FF80)   ;
+;232;(0100111011000100) (47304) (20164) (4EC4)    ;(1111111111111010) (177772) (65530) (FFFA)   ;(1001000011110100) (110364) (37108) (90F4)   ;(1111111111111100) (177774) (65532) (FFFC)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0010000000010010) (20022) (8210) (2012)   ;(0100001111010100) (41724) (17364) (43D4)   ;(1111111111111011) (177773) (65531) (FFFB)   ;
+;240;(0011110000001111) (36017) (15375) (3C0F)    ;(0100000000111111) (40077) (16447) (403F)   ;(0000000010010000) (220) (144) (90)   ;(0100111101101111) (47557) (20335) (4F6F)   ;(0100111101001111) (47517) (20303) (4F4F)   ;(0101111100001111) (57417) (24335) (5F0F)   ;(0100111101001111) (47517) (20303) (4F4F)   ;(1101001101011111) (151537) (54111) (D35F)   ;
+;248;(0100111111000100) (47704) (20420) (4FC4)    ;(1111111111111010) (177772) (65530) (FFFA)   ;(1001000011110100) (110364) (37108) (90F4)   ;(0000000000111111) (77) (63) (3F)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0010000000000010) (20002) (8194) (2002)   ;(0100001111000100) (41704) (17348) (43C4)   ;(1111111111111011) (177773) (65531) (FFFB)   ;
+;256;(0100000000111111) (40077) (16447) (403F)    ;(0000000010010000) (220) (144) (90)   ;(0100010011011111) (42337) (17631) (44DF)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0000000000000000) (0) (0) (00)   ;(0100000000111111) (40077) (16447) (403F)   ;(0010011000100110) (23046) (9766) (2626)   ;(0001001010110000) (11260) (4784) (12B0)   ;
+;264;(1000001111111100) (101774) (33788) (83FC)    ;(0011110010000110) (36206) (15494) (3C86)   ;(0100001000011111) (41037) (16927) (421F)   ;(0100000000000110) (40006) (16390) (4006)   ;(1001001100001111) (111417) (37647) (930F)   ;(0010010000001010) (22012) (9226) (240A)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000010010000) (220) (144) (90)   ;
+;272;(0100000011111111) (40377) (16639) (40FF)    ;(1111111110000000) (177600) (65408) (FF80)   ;(0000000000000000) (0) (0) (00)   ;(0100001110000010) (41602) (17282) (4382)   ;(0100000000000110) (40006) (16390) (4006)   ;(0100001111000100) (41704) (17348) (43C4)   ;(1111111111111011) (177773) (65531) (FFFB)   ;(0011110000100110) (36046) (15398) (3C26)   ;
+;280;(1001001111000100) (111704) (37828) (93C4)    ;(1111111111111011) (177773) (65531) (FFFB)   ;(0010000000001111) (20017) (8207) (200F)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000010010000) (220) (144) (90)   ;(0100111101101111) (47557) (20335) (4F6F)   ;(0100111101001111) (47517) (20303) (4F4F)   ;(0100111111000100) (47704) (20420) (4FC4)   ;
+;288;(1111111111111010) (177772) (65530) (FFFA)    ;(1100001100010010) (141422) (49938) (C312)   ;(0001000001010100) (10124) (4180) (1054)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(1001001111010100) (111724) (37844) (93D4)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0010000000010010) (20022) (8210) (2012)   ;(0100001111010100) (41724) (17364) (43D4)   ;
+;296;(1111111111111011) (177773) (65531) (FFFB)    ;(0011110000001111) (36017) (15375) (3C0F)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000010010000) (220) (144) (90)   ;(0100111101101111) (47557) (20335) (4F6F)   ;(0100111101001111) (47517) (20303) (4F4F)   ;(0100111111000100) (47704) (20420) (4FC4)   ;(1111111111111010) (177772) (65530) (FFFA)   ;
+;304;(0101010011010100) (52324) (21716) (54D4)    ;(1111111111111010) (177772) (65530) (FFFA)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(1001000011110100) (110364) (37108) (90F4)   ;(1111111110000000) (177600) (65408) (FF80)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0010000000000010) (20002) (8194) (2002)   ;(0100001111000100) (41704) (17348) (43C4)   ;
+;312;(1111111111111011) (177773) (65531) (FFFB)    ;(0100000000111111) (40077) (16447) (403F)   ;(0000000010010000) (220) (144) (90)   ;(0100010011011111) (42337) (17631) (44DF)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0000000000000000) (0) (0) (00)   ;(0100000000111111) (40077) (16447) (403F)   ;(0010011000100110) (23046) (9766) (2626)   ;
+;320;(0001001010110000) (11260) (4784) (12B0)    ;(1000001111111100) (101774) (33788) (83FC)   ;(0011110001001101) (36115) (15437) (3C4D)   ;(0100001000011111) (41037) (16927) (421F)   ;(0100000000000110) (40006) (16390) (4006)   ;(1001001100001111) (111417) (37647) (930F)   ;(0010010000001000) (22010) (9224) (2408)   ;(0100000000111111) (40077) (16447) (403F)   ;
+;328;(0000000010010000) (220) (144) (90)    ;(0100000011111111) (40377) (16639) (40FF)   ;(0000000000111111) (77) (63) (3F)   ;(0000000000000000) (0) (0) (00)   ;(0100001110000010) (41602) (17282) (4382)   ;(0100000000000110) (40006) (16390) (4006)   ;(0011110000010111) (36027) (15383) (3C17)   ;(0100000000111111) (40077) (16447) (403F)   ;
+;336;(0000000010010000) (220) (144) (90)    ;(0100111101101111) (47557) (20335) (4F6F)   ;(0100111101001111) (47517) (20303) (4F4F)   ;(0100111101001111) (47517) (20303) (4F4F)   ;(1100001100010010) (141422) (49938) (C312)   ;(0001000001001111) (10117) (4175) (104F)   ;(0100111101001110) (47516) (20302) (4F4E)   ;(1101000001111110) (150176) (53374) (D07E)   ;
+;344;(1111111110000000) (177600) (65408) (FF80)    ;(0100111011000100) (47304) (20164) (4EC4)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000010010000) (220) (144) (90)   ;(0100010011011111) (42337) (17631) (44DF)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0000000000000000) (0) (0) (00)   ;
+;352;(1001000011110100) (110364) (37108) (90F4)    ;(1111111111111110) (177776) (65534) (FFFE)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0010000000000010) (20002) (8194) (2002)   ;(0100001110010010) (41622) (17298) (4392)   ;(0100000000000110) (40006) (16390) (4006)   ;(0100000000111111) (40077) (16447) (403F)   ;(0010011000100110) (23046) (9766) (2626)   ;
+;360;(0001001010110000) (11260) (4784) (12B0)    ;(1000001111111100) (101774) (33788) (83FC)   ;(0011110000100101) (36045) (15397) (3C25)   ;(0100001000011111) (41037) (16927) (421F)   ;(0100000000000110) (40006) (16390) (4006)   ;(1001001100001111) (111417) (37647) (930F)   ;(0010010000001000) (22010) (9224) (2408)   ;(0100000000111111) (40077) (16447) (403F)   ;
+;368;(0000000010010000) (220) (144) (90)    ;(0100000011111111) (40377) (16639) (40FF)   ;(1111111110000000) (177600) (65408) (FF80)   ;(0000000000000000) (0) (0) (00)   ;(0100001110000010) (41602) (17282) (4382)   ;(0100000000000110) (40006) (16390) (4006)   ;(0011110000010011) (36023) (15379) (3C13)   ;(0100000000111111) (40077) (16447) (403F)   ;
+;376;(0000000010010000) (220) (144) (90)    ;(0100111101101111) (47557) (20335) (4F6F)   ;(0100111101001111) (47517) (20303) (4F4F)   ;(0100111111000100) (47704) (20420) (4FC4)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(1100001100010010) (141422) (49938) (C312)   ;(0001000001010100) (10124) (4180) (1054)   ;(1111111111111010) (177772) (65530) (FFFA)   ;
+;384;(0100000000111111) (40077) (16447) (403F)    ;(0000000010010000) (220) (144) (90)   ;(0100010011011111) (42337) (17631) (44DF)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0000000000000000) (0) (0) (00)   ;(1001001111010100) (111724) (37844) (93D4)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0010000000000010) (20002) (8194) (2002)   ;
+;392;(0100001110010010) (41622) (17298) (4392)    ;(0100000000000110) (40006) (16390) (4006)   ;(0100000000111111) (40077) (16447) (403F)   ;(0010011000100110) (23046) (9766) (2626)   ;(0001001010110000) (11260) (4784) (12B0)   ;(1000001111111100) (101774) (33788) (83FC)   ;(0100000000110000) (40060) (16432) (4030)   ;(1000000001101000) (100150) (32872) (8068)   ;
+;400;(0100000000110000) (40060) (16432) (4030)    ;(1000000001101000) (100150) (32872) (8068)   ;(1101000000110010) (150062) (53298) (D032)   ;(0000000011110000) (360) (240) (F0)   ;(0011111111111101) (37775) (16381) (3FFD)   ;(0100000000110000) (40060) (16432) (4030)   ;(1000010001001000) (102110) (33864) (8448)   ;(0001001000001111) (11017) (4623) (120F)   ;
+;408;(0001001000001110) (11016) (4622) (120E)    ;(0001001000000100) (11004) (4612) (1204)   ;(0100000100000100) (40404) (16644) (4104)   ;(0101000000110100) (50064) (20532) (5034)   ;(0000000000000110) (6) (6) (06)   ;(1000001100100001) (101441) (33569) (8321)   ;(0100001000011111) (41037) (16927) (421F)   ;(0100000000000100) (40004) (16388) (4004)   ;
+;416;(1001000000111111) (110077) (36927) (903F)    ;(0000000000001111) (17) (15) (0F)   ;(0010110000000110) (26006) (11270) (2C06)   ;(0100001000011111) (41037) (16927) (421F)   ;(0100000000000100) (40004) (16388) (4004)   ;(0101001100011111) (51437) (21279) (531F)   ;(0100111110000010) (47602) (20354) (4F82)   ;(0100000000000100) (40004) (16388) (4004)   ;
+;424;(0011110000100100) (36044) (15396) (3C24)    ;(0100001110000010) (41602) (17282) (4382)   ;(0100000000000100) (40004) (16388) (4004)   ;(0100001000011111) (41037) (16927) (421F)   ;(0100000000000000) (40000) (16384) (4000)   ;(0100111100001110) (47416) (20238) (4F0E)   ;(1111001100011110) (171436) (62238) (F31E)   ;(0100111010000100) (47204) (20100) (4E84)   ;
+;432;(1111111111111000) (177770) (65528) (FFF8)    ;(0100001000011111) (41037) (16927) (421F)   ;(0100000000000000) (40000) (16384) (4000)   ;(1100001100010010) (141422) (49938) (C312)   ;(0001000000001111) (10017) (4111) (100F)   ;(0100111110000010) (47602) (20354) (4F82)   ;(0100000000000000) (40000) (16384) (4000)   ;(0100010000011111) (42037) (17439) (441F)   ;
+;440;(1111111111111000) (177770) (65528) (FFF8)    ;(1110001100111111) (161477) (58175) (E33F)   ;(0101001100011111) (51437) (21279) (531F)   ;(0100111100001110) (47416) (20238) (4F0E)   ;(1111000000111110) (170076) (61502) (F03E)   ;(1011010000000000) (132000) (46080) (B400)   ;(0100001000011111) (41037) (16927) (421F)   ;(0100000000000000) (40000) (16384) (4000)   ;
+;448;(1110111000001111) (167017) (60943) (EE0F)    ;(0100111110000010) (47602) (20354) (4F82)   ;(0100000000000000) (40000) (16384) (4000)   ;(0100001000011111) (41037) (16927) (421F)   ;(0100000000000000) (40000) (16384) (4000)   ;(0100111101001111) (47517) (20303) (4F4F)   ;(0100111101001111) (47517) (20303) (4F4F)   ;(1111000000111111) (170077) (61503) (F03F)   ;
+;456;(0000000000000111) (7) (7) (07)    ;(0100111110000010) (47602) (20354) (4F82)   ;(0100000000000010) (40002) (16386) (4002)   ;(0100001110010010) (41622) (17298) (4392)   ;(0100000000000110) (40006) (16390) (4006)   ;(0101001100100001) (51441) (21281) (5321)   ;(0100000100110100) (40464) (16692) (4134)   ;(0100000100111110) (40476) (16702) (413E)   ;
+;464;(0100000100111111) (40477) (16703) (413F)    ;(1100000010110001) (140261) (49329) (C0B1)   ;(0000000011110000) (360) (240) (F0)   ;(0000000000000000) (0) (0) (00)   ;(0001001100000000) (11400) (4864) (1300)   ;(0001001000000100) (11004) (4612) (1204)   ;(0100000100000100) (40404) (16644) (4104)   ;(0101001100100100) (51444) (21284) (5324)   ;
+;472;(1000001000100001) (101041) (33313) (8221)    ;(0100111110000100) (47604) (20356) (4F84)   ;(1111111111111100) (177774) (65532) (FFFC)   ;(0100001110000100) (41604) (17284) (4384)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0100001110000100) (41604) (17284) (4384)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0011110000000010) (36002) (15362) (3C02)   ;
+;480;(0101001110010100) (51624) (21396) (5394)    ;(1111111111111010) (177772) (65530) (FFFA)   ;(1001010010010100) (112224) (38036) (9494)   ;(1111111111111100) (177774) (65532) (FFFC)   ;(1111111111111010) (177772) (65530) (FFFA)   ;(0011101111111010) (35772) (15354) (3BFA)   ;(0101001000100001) (51041) (21025) (5221)   ;(0100000100110100) (40464) (16692) (4134)   ;
+;488;(0100000100110000) (40460) (16688) (4130)    ;(0001001000000100) (11004) (4612) (1204)   ;(0100000100000100) (40404) (16644) (4104)   ;(0101001100100100) (51444) (21284) (5324)   ;(1000001100100001) (101441) (33569) (8321)   ;(0100111110000100) (47604) (20356) (4F84)   ;(1111111111111100) (177774) (65532) (FFFC)   ;(0100000000111111) (40077) (16447) (403F)   ;
+;496;(0000000101100000) (540) (352) (160)    ;(0100000010111111) (40277) (16575) (40BF)   ;(0000000100100100) (444) (292) (124)   ;(0000000000000000) (0) (0) (00)   ;(0100001100000011) (41403) (17155) (4303)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000101110000) (560) (368) (170)   ;(0100111100101111) (47457) (20271) (4F2F)   ;
+;504;(1001010000011111) (112037) (37919) (941F)    ;(1111111111111100) (177774) (65532) (FFFC)   ;(0010101111111010) (25772) (11258) (2BFA)   ;(0101001100100001) (51441) (21281) (5321)   ;(0100000100110100) (40464) (16692) (4134)   ;(0100000100110000) (40460) (16688) (4130)   ;(0001001000000100) (11004) (4612) (1204)   ;(0100000100000100) (40404) (16644) (4104)   ;
+;512;(0101001100100100) (51444) (21284) (5324)    ;(1000001100100001) (101441) (33569) (8321)   ;(0100111110000100) (47604) (20356) (4F84)   ;(1111111111111100) (177774) (65532) (FFFC)   ;(0100000000111111) (40077) (16447) (403F)   ;(0000000101110010) (562) (370) (172)   ;(0100010010011111) (42237) (17567) (449F)   ;(1111111111111100) (177774) (65532) (FFFC)   ;
+;520;(0000000000000000) (0) (0) (00)    ;(0100000000111111) (40077) (16447) (403F)   ;(0000000101100000) (540) (352) (160)   ;(0100000010111111) (40277) (16575) (40BF)   ;(0000000100010110) (426) (278) (116)   ;(0000000000000000) (0) (0) (00)   ;(1101000000110010) (150062) (53298) (D032)   ;(0000000000010000) (20) (16) (10)   ;
+;528;(0101001100100001) (51441) (21281) (5321)    ;(0100000100110100) (40464) (16692) (4134)   ;(0100000100110000) (40460) (16688) (4130)   ;(0001001000001111) (11017) (4623) (120F)   ;(0001001000000100) (11004) (4612) (1204)   ;(0100000100000100) (40404) (16644) (4104)   ;(0101001000100100) (51044) (21028) (5224)   ;(0100000000111111) (40077) (16447) (403F)   ;
+;536;(0000000101100000) (540) (352) (160)    ;(0100001110011111) (41637) (17311) (439F)   ;(0000000000000000) (0) (0) (00)   ;(1100000010110100) (140264) (49332) (C0B4)   ;(0000000000010000) (20) (16) (10)   ;(0000000000000000) (0) (0) (00)   ;(0100000100110100) (40464) (16692) (4134)   ;(0100000100111111) (40477) (16703) (413F)   ;
+;544;(1100000010110001) (140261) (49329) (C0B1)    ;(0000000011110000) (360) (240) (F0)   ;(0000000000000000) (0) (0) (00)   ;(0001001100000000) (11400) (4864) (1300)   ;(0001001100000000) (11400) (4864) (1300)   ;(1000000010000000) (100200) (32896) (8080)   ;(1000000011011000) (100330) (32984) (80D8)   ;(1000000100110000) (100460) (33072) (8130)   ;
+;552;(1000000101100010) (100542) (33122) (8162)    ;(1000000110011010) (100632) (33178) (819A)   ;(1000001000010100) (101024) (33300) (8214)   ;(1000001010000110) (101206) (33414) (8286)   ;(1010110011101011) (126353) (44267) (ACEB)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
 ;560;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
 ;568;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
 ;576;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
@@ -2926,8 +2929,8 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 ;16344;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
 ;16352;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
 ;16360;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
-;16368;(1000001001000000) (101100) (33344) (8240)    ;(1000001001000000) (101100) (33344) (8240)   ;(1000001001000000) (101100) (33344) (8240)   ;(1000001001000000) (101100) (33344) (8240)   ;(1000001001000000) (101100) (33344) (8240)   ;(1000001001000000) (101100) (33344) (8240)   ;(1000001001000000) (101100) (33344) (8240)   ;(1000001001000000) (101100) (33344) (8240)   ;
-;16376;(1000001011000000) (101300) (33472) (82C0)    ;(1000001001000000) (101100) (33344) (8240)   ;(1000001001000100) (101104) (33348) (8244)   ;(1000001001000000) (101100) (33344) (8240)   ;(1000001001000000) (101100) (33344) (8240)   ;(1000001001000000) (101100) (33344) (8240)   ;(1000001001000000) (101100) (33344) (8240)   ;(1000000000000000) (100000) (32768) (8000)   ;
+;16368;(1000001100101010) (101452) (33578) (832A)    ;(1000001100101010) (101452) (33578) (832A)   ;(1000001100101010) (101452) (33578) (832A)   ;(1000001100101010) (101452) (33578) (832A)   ;(1000001100101010) (101452) (33578) (832A)   ;(1000001100101010) (101452) (33578) (832A)   ;(1000001100101010) (101452) (33578) (832A)   ;(1000001100101010) (101452) (33578) (832A)   ;
+;16376;(1000010000100110) (102046) (33830) (8426)    ;(1000001100101010) (101452) (33578) (832A)   ;(1000001100101110) (101456) (33582) (832E)   ;(1000001100101010) (101452) (33578) (832A)   ;(1000001100101010) (101452) (33578) (832A)   ;(1000001100101010) (101452) (33578) (832A)   ;(1000001100101010) (101452) (33578) (832A)   ;(1000000000000000) (100000) (32768) (8000)   ;
 
 
 +-----------------------------------------------------------------------------------------------+
@@ -2952,8 +2955,8 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +----------------------------------------------------------------------------------------------------------+----------------------------+--------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
 ; Name                                                                                                     ; Mode                       ; Location           ; Sign Representation ; Has Input Shift Register Chain ; Data A Input Register ; Data B Input Register ; Pipeline Register ; Output Register ;
 +----------------------------------------------------------------------------------------------------------+----------------------------+--------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
-; openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0|mult_p4t:auto_generated|mac_out2     ; Simple Multiplier (18-bit) ; DSPOUT_X42_Y17_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0|mult_p4t:auto_generated|mac_mult1 ;                            ; DSPMULT_X42_Y17_N0 ; Signed              ;                                ; no                    ; no                    ; no                ;                 ;
+; openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0|mult_p4t:auto_generated|mac_out2     ; Simple Multiplier (18-bit) ; DSPOUT_X42_Y23_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0|mult_p4t:auto_generated|mac_mult1 ;                            ; DSPMULT_X42_Y23_N0 ; Signed              ;                                ; no                    ; no                    ; no                ;                 ;
 +----------------------------------------------------------------------------------------------------------+----------------------------+--------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
 
 
@@ -2962,93 +2965,93 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 6,178 / 71,559 ( 9 % ) ;
+; Block interconnects   ; 5,981 / 71,559 ( 8 % ) ;
 ; C16 interconnects     ; 101 / 2,597 ( 4 % )    ;
-; C4 interconnects      ; 3,840 / 46,848 ( 8 % ) ;
-; Direct links          ; 422 / 71,559 ( < 1 % ) ;
+; C4 interconnects      ; 3,850 / 46,848 ( 8 % ) ;
+; Direct links          ; 513 / 71,559 ( < 1 % ) ;
 ; Global clocks         ; 3 / 20 ( 15 % )        ;
-; Local interconnects   ; 1,559 / 24,624 ( 6 % ) ;
-; R24 interconnects     ; 97 / 2,496 ( 4 % )     ;
-; R4 interconnects      ; 4,921 / 62,424 ( 8 % ) ;
+; Local interconnects   ; 1,541 / 24,624 ( 6 % ) ;
+; R24 interconnects     ; 95 / 2,496 ( 4 % )     ;
+; R4 interconnects      ; 4,457 / 62,424 ( 7 % ) ;
 +-----------------------+------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                          ;
 +---------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 12.70) ; Number of LABs  (Total = 231) ;
+; Number of Logic Elements  (Average = 13.07) ; Number of LABs  (Total = 224) ;
 +---------------------------------------------+-------------------------------+
-; 1                                           ; 13                            ;
-; 2                                           ; 11                            ;
-; 3                                           ; 1                             ;
-; 4                                           ; 4                             ;
+; 1                                           ; 17                            ;
+; 2                                           ; 6                             ;
+; 3                                           ; 3                             ;
+; 4                                           ; 2                             ;
 ; 5                                           ; 3                             ;
-; 6                                           ; 2                             ;
-; 7                                           ; 3                             ;
-; 8                                           ; 1                             ;
-; 9                                           ; 4                             ;
-; 10                                          ; 4                             ;
-; 11                                          ; 13                            ;
-; 12                                          ; 10                            ;
-; 13                                          ; 14                            ;
+; 6                                           ; 1                             ;
+; 7                                           ; 4                             ;
+; 8                                           ; 2                             ;
+; 9                                           ; 2                             ;
+; 10                                          ; 1                             ;
+; 11                                          ; 8                             ;
+; 12                                          ; 5                             ;
+; 13                                          ; 6                             ;
 ; 14                                          ; 17                            ;
-; 15                                          ; 31                            ;
-; 16                                          ; 100                           ;
+; 15                                          ; 27                            ;
+; 16                                          ; 120                           ;
 +---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 2.41) ; Number of LABs  (Total = 231) ;
+; LAB-wide Signals  (Average = 2.21) ; Number of LABs  (Total = 224) ;
 +------------------------------------+-------------------------------+
-; 1 Async. clear                     ; 191                           ;
-; 1 Clock                            ; 195                           ;
-; 1 Clock enable                     ; 80                            ;
+; 1 Async. clear                     ; 169                           ;
+; 1 Clock                            ; 172                           ;
+; 1 Clock enable                     ; 69                            ;
 ; 1 Sync. clear                      ; 15                            ;
-; 1 Sync. load                       ; 23                            ;
-; 2 Async. clears                    ; 4                             ;
-; 2 Clock enables                    ; 49                            ;
+; 1 Sync. load                       ; 22                            ;
+; 2 Async. clears                    ; 3                             ;
+; 2 Clock enables                    ; 44                            ;
 +------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 16.91) ; Number of LABs  (Total = 231) ;
+; Number of Signals Sourced  (Average = 17.44) ; Number of LABs  (Total = 224) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
-; 1                                            ; 7                             ;
+; 1                                            ; 9                             ;
 ; 2                                            ; 10                            ;
-; 3                                            ; 2                             ;
-; 4                                            ; 9                             ;
-; 5                                            ; 2                             ;
-; 6                                            ; 3                             ;
-; 7                                            ; 0                             ;
-; 8                                            ; 1                             ;
-; 9                                            ; 2                             ;
-; 10                                           ; 2                             ;
-; 11                                           ; 2                             ;
-; 12                                           ; 6                             ;
+; 3                                            ; 1                             ;
+; 4                                            ; 5                             ;
+; 5                                            ; 4                             ;
+; 6                                            ; 1                             ;
+; 7                                            ; 2                             ;
+; 8                                            ; 2                             ;
+; 9                                            ; 1                             ;
+; 10                                           ; 1                             ;
+; 11                                           ; 1                             ;
+; 12                                           ; 4                             ;
 ; 13                                           ; 3                             ;
-; 14                                           ; 7                             ;
-; 15                                           ; 14                            ;
-; 16                                           ; 29                            ;
-; 17                                           ; 14                            ;
-; 18                                           ; 19                            ;
-; 19                                           ; 15                            ;
-; 20                                           ; 22                            ;
-; 21                                           ; 12                            ;
-; 22                                           ; 7                             ;
-; 23                                           ; 4                             ;
-; 24                                           ; 6                             ;
-; 25                                           ; 2                             ;
-; 26                                           ; 10                            ;
-; 27                                           ; 8                             ;
-; 28                                           ; 4                             ;
+; 14                                           ; 8                             ;
+; 15                                           ; 8                             ;
+; 16                                           ; 27                            ;
+; 17                                           ; 12                            ;
+; 18                                           ; 21                            ;
+; 19                                           ; 11                            ;
+; 20                                           ; 21                            ;
+; 21                                           ; 10                            ;
+; 22                                           ; 8                             ;
+; 23                                           ; 8                             ;
+; 24                                           ; 5                             ;
+; 25                                           ; 4                             ;
+; 26                                           ; 16                            ;
+; 27                                           ; 3                             ;
+; 28                                           ; 11                            ;
 ; 29                                           ; 2                             ;
-; 30                                           ; 4                             ;
-; 31                                           ; 1                             ;
+; 30                                           ; 3                             ;
+; 31                                           ; 0                             ;
 ; 32                                           ; 2                             ;
 +----------------------------------------------+-------------------------------+
 
@@ -3056,85 +3059,84 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +---------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                         ;
 +-------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 8.80) ; Number of LABs  (Total = 231) ;
+; Number of Signals Sourced Out  (Average = 9.13) ; Number of LABs  (Total = 224) ;
 +-------------------------------------------------+-------------------------------+
 ; 0                                               ; 0                             ;
-; 1                                               ; 25                            ;
-; 2                                               ; 11                            ;
-; 3                                               ; 13                            ;
-; 4                                               ; 8                             ;
-; 5                                               ; 4                             ;
-; 6                                               ; 12                            ;
-; 7                                               ; 24                            ;
-; 8                                               ; 13                            ;
-; 9                                               ; 20                            ;
-; 10                                              ; 17                            ;
-; 11                                              ; 11                            ;
-; 12                                              ; 16                            ;
-; 13                                              ; 12                            ;
-; 14                                              ; 8                             ;
-; 15                                              ; 7                             ;
+; 1                                               ; 27                            ;
+; 2                                               ; 10                            ;
+; 3                                               ; 11                            ;
+; 4                                               ; 4                             ;
+; 5                                               ; 8                             ;
+; 6                                               ; 9                             ;
+; 7                                               ; 13                            ;
+; 8                                               ; 14                            ;
+; 9                                               ; 18                            ;
+; 10                                              ; 19                            ;
+; 11                                              ; 15                            ;
+; 12                                              ; 15                            ;
+; 13                                              ; 8                             ;
+; 14                                              ; 12                            ;
+; 15                                              ; 10                            ;
 ; 16                                              ; 21                            ;
-; 17                                              ; 6                             ;
-; 18                                              ; 0                             ;
+; 17                                              ; 3                             ;
+; 18                                              ; 4                             ;
 ; 19                                              ; 0                             ;
-; 20                                              ; 1                             ;
-; 21                                              ; 0                             ;
+; 20                                              ; 0                             ;
+; 21                                              ; 1                             ;
 ; 22                                              ; 0                             ;
 ; 23                                              ; 0                             ;
 ; 24                                              ; 0                             ;
-; 25                                              ; 0                             ;
+; 25                                              ; 1                             ;
 ; 26                                              ; 0                             ;
 ; 27                                              ; 0                             ;
 ; 28                                              ; 1                             ;
-; 29                                              ; 1                             ;
 +-------------------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 23.48) ; Number of LABs  (Total = 231) ;
+; Number of Distinct Inputs  (Average = 23.12) ; Number of LABs  (Total = 224) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
 ; 1                                            ; 0                             ;
-; 2                                            ; 5                             ;
+; 2                                            ; 3                             ;
 ; 3                                            ; 8                             ;
-; 4                                            ; 10                            ;
-; 5                                            ; 0                             ;
-; 6                                            ; 3                             ;
-; 7                                            ; 9                             ;
-; 8                                            ; 4                             ;
-; 9                                            ; 0                             ;
-; 10                                           ; 1                             ;
-; 11                                           ; 5                             ;
-; 12                                           ; 3                             ;
-; 13                                           ; 5                             ;
-; 14                                           ; 3                             ;
-; 15                                           ; 3                             ;
-; 16                                           ; 4                             ;
+; 4                                            ; 11                            ;
+; 5                                            ; 5                             ;
+; 6                                            ; 1                             ;
+; 7                                            ; 11                            ;
+; 8                                            ; 2                             ;
+; 9                                            ; 1                             ;
+; 10                                           ; 4                             ;
+; 11                                           ; 3                             ;
+; 12                                           ; 1                             ;
+; 13                                           ; 3                             ;
+; 14                                           ; 2                             ;
+; 15                                           ; 4                             ;
+; 16                                           ; 6                             ;
 ; 17                                           ; 4                             ;
-; 18                                           ; 6                             ;
-; 19                                           ; 3                             ;
+; 18                                           ; 4                             ;
+; 19                                           ; 4                             ;
 ; 20                                           ; 6                             ;
-; 21                                           ; 7                             ;
-; 22                                           ; 7                             ;
-; 23                                           ; 7                             ;
-; 24                                           ; 7                             ;
-; 25                                           ; 5                             ;
-; 26                                           ; 8                             ;
-; 27                                           ; 9                             ;
+; 21                                           ; 6                             ;
+; 22                                           ; 4                             ;
+; 23                                           ; 8                             ;
+; 24                                           ; 11                            ;
+; 25                                           ; 3                             ;
+; 26                                           ; 6                             ;
+; 27                                           ; 7                             ;
 ; 28                                           ; 4                             ;
-; 29                                           ; 10                            ;
-; 30                                           ; 4                             ;
-; 31                                           ; 7                             ;
-; 32                                           ; 9                             ;
+; 29                                           ; 5                             ;
+; 30                                           ; 5                             ;
+; 31                                           ; 3                             ;
+; 32                                           ; 14                            ;
 ; 33                                           ; 11                            ;
-; 34                                           ; 3                             ;
-; 35                                           ; 9                             ;
-; 36                                           ; 17                            ;
-; 37                                           ; 9                             ;
-; 38                                           ; 16                            ;
+; 34                                           ; 11                            ;
+; 35                                           ; 13                            ;
+; 36                                           ; 13                            ;
+; 37                                           ; 7                             ;
+; 38                                           ; 10                            ;
 +----------------------------------------------+-------------------------------+
 
 
@@ -3194,9 +3196,9 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +--------------------+--------------+-----------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+-----------+-----------+--------------+--------------+
 ; Pin/Rules          ; IO_000002    ; IO_000003 ; IO_000001 ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007 ; IO_000008    ; IO_000022    ; IO_000021    ; IO_000046    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000047    ; IO_000020    ; IO_000019    ; IO_000018    ; IO_000015    ; IO_000014    ; IO_000013    ; IO_000012    ; IO_000011    ; IO_000010 ; IO_000009 ; IO_000033 ; IO_000034    ; IO_000042    ;
 +--------------------+--------------+-----------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+-----------+-----------+--------------+--------------+
-; Total Pass         ; 0            ; 17        ; 17        ; 0            ; 0            ; 17        ; 17        ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 8            ; 0            ; 0            ; 8            ; 0            ; 0            ; 0            ; 0            ; 17        ; 17        ; 17        ; 0            ; 0            ;
+; Total Pass         ; 0            ; 18        ; 18        ; 0            ; 0            ; 18        ; 18        ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 8            ; 0            ; 0            ; 8            ; 0            ; 0            ; 0            ; 0            ; 18        ; 18        ; 18        ; 0            ; 0            ;
 ; Total Unchecked    ; 0            ; 0         ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0         ; 0         ; 0            ; 0            ;
-; Total Inapplicable ; 17           ; 0         ; 0         ; 17           ; 17           ; 0         ; 0         ; 17           ; 17           ; 17           ; 17           ; 17           ; 17           ; 17           ; 17           ; 17           ; 17           ; 9            ; 17           ; 17           ; 9            ; 17           ; 17           ; 17           ; 17           ; 0         ; 0         ; 0         ; 17           ; 17           ;
+; Total Inapplicable ; 18           ; 0         ; 0         ; 18           ; 18           ; 0         ; 0         ; 18           ; 18           ; 18           ; 18           ; 18           ; 18           ; 18           ; 18           ; 18           ; 18           ; 10           ; 18           ; 18           ; 10           ; 18           ; 18           ; 18           ; 18           ; 0         ; 0         ; 0         ; 18           ; 18           ;
 ; Total Fail         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0         ; 0         ; 0            ; 0            ;
 ; LED[0]             ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; LED[1]             ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
@@ -3207,6 +3209,7 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 ; LED[6]             ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; LED[7]             ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; UART_TX            ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
+; OUT_PLL            ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; FPGA_CLK1_50       ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[0]             ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; UART_RX            ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
@@ -3277,12 +3280,12 @@ Info (169124): Fitter converted 5 user pins into dedicated programming pins
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Info (176045): Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
 Info (332104): Reading SDC File: '../scripts/design.sdc'
-Warning (332174): Ignored filter at design.sdc(10): FPGA_CLK2_50 could not be matched with a port File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/scripts/design.sdc Line: 10
-Warning (332049): Ignored create_clock at design.sdc(10): Argument <targets> is an empty collection File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/scripts/design.sdc Line: 10
-    Info (332050): create_clock -period "50.0 MHz" [get_ports FPGA_CLK2_50] File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/scripts/design.sdc Line: 10
-Warning (332174): Ignored filter at design.sdc(11): FPGA_CLK3_50 could not be matched with a port File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/scripts/design.sdc Line: 11
-Warning (332049): Ignored create_clock at design.sdc(11): Argument <targets> is an empty collection File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/scripts/design.sdc Line: 11
-    Info (332050): create_clock -period "50.0 MHz" [get_ports FPGA_CLK3_50] File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/scripts/design.sdc Line: 11
+Warning (332174): Ignored filter at design.sdc(10): FPGA_CLK2_50 could not be matched with a port File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/scripts/design.sdc Line: 10
+Warning (332049): Ignored create_clock at design.sdc(10): Argument <targets> is an empty collection File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/scripts/design.sdc Line: 10
+    Info (332050): create_clock -period "50.0 MHz" [get_ports FPGA_CLK2_50] File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/scripts/design.sdc Line: 10
+Warning (332174): Ignored filter at design.sdc(11): FPGA_CLK3_50 could not be matched with a port File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/scripts/design.sdc Line: 11
+Warning (332049): Ignored create_clock at design.sdc(11): Argument <targets> is an empty collection File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/scripts/design.sdc Line: 11
+    Info (332050): create_clock -period "50.0 MHz" [get_ports FPGA_CLK3_50] File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/scripts/design.sdc Line: 11
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
 Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
@@ -3290,61 +3293,61 @@ Info (332111): Found 1 clocks
     Info (332111):   Period   Clock Name
     Info (332111): ======== ============
     Info (332111):   20.000 FPGA_CLK1_50
-Info (176353): Automatically promoted node FPGA_CLK1_50~input (placed in PIN R8 (CLK15, DIFFCLK_6p)) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 42
+Info (176353): Automatically promoted node FPGA_CLK1_50~input (placed in PIN R8 (CLK15, DIFFCLK_6p)) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 42
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G18
-Info (176353): Automatically promoted node openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_puc|data_sync[1]  File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sync_cell.v Line: 74
+Info (176353): Automatically promoted node openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_puc|data_sync[1]  File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sync_cell.v Line: 74
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node openMSP430:openmsp430_0|omsp_dbg:dbg_0|dbg_halt_cmd~1 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 91
-        Info (176357): Destination node openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|puc_s File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 1276
-        Info (176357): Destination node openMSP430:openmsp430_0|omsp_dbg:dbg_0|cpu_stat~1 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 348
-Info (176353): Automatically promoted node openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|dbg_rst_noscan  File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 1245
+        Info (176357): Destination node openMSP430:openmsp430_0|omsp_dbg:dbg_0|dbg_halt_cmd~1 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 91
+        Info (176357): Destination node openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|puc_s File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 1276
+        Info (176357): Destination node openMSP430:openmsp430_0|omsp_dbg:dbg_0|cpu_stat~1 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 348
+Info (176353): Automatically promoted node openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|dbg_rst_noscan  File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 1245
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|puc_s File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 1276
+        Info (176357): Destination node openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|puc_s File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 1276
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:07
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:08
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 6% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 42% of the available device resources in the region that extends from location X21_Y11 to location X31_Y22
+    Info (170196): Router estimated peak interconnect usage is 35% of the available device resources in the region that extends from location X21_Y11 to location X31_Y22
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:09
-Info (11888): Total time spent on timing analysis during the Fitter is 1.62 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:12
+Info (11888): Total time spent on timing analysis during the Fitter is 1.75 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (169177): 8 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
-    Info (169178): Pin FPGA_CLK1_50 uses I/O standard 3.3-V LVTTL at R8 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 42
-    Info (169178): Pin KEY[0] uses I/O standard 3.3-V LVTTL at J15 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 47
-    Info (169178): Pin UART_RX uses I/O standard 3.3-V LVTTL at B5 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 57
-    Info (169178): Pin KEY[1] uses I/O standard 3.3-V LVTTL at E1 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 47
-    Info (169178): Pin SW[3] uses I/O standard 3.3-V LVTTL at M15 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 48
-    Info (169178): Pin SW[2] uses I/O standard 3.3-V LVTTL at B9 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 48
-    Info (169178): Pin SW[1] uses I/O standard 3.3-V LVTTL at T8 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 48
-    Info (169178): Pin SW[0] uses I/O standard 3.3-V LVTTL at M1 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 48
-Info (144001): Generated suppressed messages file /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/output_files/openMSP430_fpga.fit.smsg
+    Info (169178): Pin FPGA_CLK1_50 uses I/O standard 3.3-V LVTTL at R8 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 42
+    Info (169178): Pin KEY[0] uses I/O standard 3.3-V LVTTL at J15 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 47
+    Info (169178): Pin UART_RX uses I/O standard 3.3-V LVTTL at B5 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 55
+    Info (169178): Pin KEY[1] uses I/O standard 3.3-V LVTTL at E1 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 47
+    Info (169178): Pin SW[3] uses I/O standard 3.3-V LVTTL at M15 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 48
+    Info (169178): Pin SW[2] uses I/O standard 3.3-V LVTTL at B9 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 48
+    Info (169178): Pin SW[1] uses I/O standard 3.3-V LVTTL at T8 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 48
+    Info (169178): Pin SW[0] uses I/O standard 3.3-V LVTTL at M1 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 48
+Info (144001): Generated suppressed messages file /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/output_files/openMSP430_fpga.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 1190 megabytes
-    Info: Processing ended: Thu Mar  7 05:40:31 2019
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Peak virtual memory: 1195 megabytes
+    Info: Processing ended: Sat Apr  6 04:41:09 2019
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:00:28
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/output_files/openMSP430_fpga.fit.smsg.
+The suppressed messages can be found in /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/output_files/openMSP430_fpga.fit.smsg.
 
 

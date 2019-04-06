@@ -6,9 +6,9 @@ Watchdog interrupt
 Change LED blinking type every 327ms * 30 = 9.8seconds
  */
 volatile unsigned int  lfsr = 0xACEB;
-volatile unsigned char wdt_irq_cnt;
-volatile unsigned char led_blink_type;
-volatile unsigned char led_blink_type_init;
+volatile unsigned int wdt_irq_cnt;
+volatile unsigned int led_blink_type;
+volatile unsigned int led_blink_type_init;
 
 wakeup interrupt (WDT_VECTOR) INT_watchdog(void) {
 
@@ -26,11 +26,21 @@ wakeup interrupt (WDT_VECTOR) INT_watchdog(void) {
       					            * The value has 1 at bits corresponding
 					            * to taps, 0 elsewhere. */
     //led_blink_type      = (unsigned char) (lfsr & 0x0007);
-    led_blink_type      = (unsigned char) 0x05;
+    led_blink_type      = (unsigned char) (lfsr & 0x0007);
     led_blink_type_init = 1;
   }
 }
 
+/* Delay */
+
+void fake_delay(int delay){
+	
+    int index=0;
+
+for(index = 0; index<delay; index++){}
+	
+
+}
 
 /**
 Main function with some blinking leds
@@ -66,7 +76,8 @@ int main(void) {
 	temp2    = (temp<<4) | temp;
 	LED_CTRL = temp2;
       }
-      ta_wait(WT_200MS);
+        ta_wait(WT_200MS);
+	//fake_delay(5000);
       break;
 
 
@@ -141,7 +152,8 @@ int main(void) {
 	}
 	LED_CTRL = temp;
       }
-      ta_wait(WT_100MS);
+        ta_wait(WT_100MS);
+	//fake_delay(5000);
       break;
 
 

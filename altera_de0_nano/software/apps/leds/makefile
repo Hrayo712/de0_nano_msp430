@@ -1,9 +1,9 @@
 # makfile configuration
 NAME            = leds
-OBJECTS         = main.o ../../libs/tA/timerA.o
+OBJECTS         = main.o 
 
 # Compiler performance option (-Os / -O2 / -O3)
-PORT_CFLAGS     = -O0
+PORT_CFLAGS     = -O3
 
 # Choose GCC toolchain prefix ('msp430' for MSPGCC / 'msp430-elf' for GCC RedHat/TI)
 ifndef MSPGCC_PFX
@@ -15,8 +15,9 @@ WARNINGS        =  -Wall
 
 # Select flags depending on selected toolchain
 ifeq ($(MSPGCC_PFX),msp430-elf)
-INCDIR          = -I /cad/ti/gcc/include -I ../../libs -I ../../libs/tA  -I ../../libs/gfx
-CFLAGS		= -D PFX_MSP430_ELF $(INCDIR) $(PORT_CFLAGS) ${WARNINGS} -g -mcpu=msp430 -mhwmult=16bit
+INCDIR          = -I ../../libs -I/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include -I/opt/ti/ccsv8/ccs_base/msp430/include_gcc
+CFLAGS		= -mcpu=msp430 -mhwmult=16bit -std=c99 $(INCDIR) $(PORT_CFLAGS) -g3 ${WARNINGS} -gdwarf-3 -gstrict-dwarf -msmall -fstrict-aliasing -Wstrict-aliasing -save-temps -fstack-usage -mcode-region=none -mdata-region=none
+LFLAGS 		= -gdwarf-3 -gstrict-dwarf -msmall -fstrict-aliasing -Wstrict-aliasing -save-temps -fstack-usage -mcode-region=none -mdata-region=none
 else
 CFLAGS		= -D PFX_MSP430               $(PORT_CFLAGS) ${WARNINGS} -g -mcpu=430    -mmpy=16	-mivcnt=16
 endif
@@ -37,7 +38,7 @@ download: download-uart
 
 #additional rules for files
 ${NAME}.elf: ${OBJECTS}
-	${CC} ${CFLAGS} -T ../../ldscripts/linker.${MSPGCC_PFX}.x -Wl,-Map=./${NAME}.map -o $@ ${OBJECTS}
+	${CC} -T ../../ldscripts/linker.${MSPGCC_PFX}.x -mcpu=msp430 -mhwmult=16bit -L/opt/ti/ccsv8/ccs_base/msp430/include_gcc -Wl,-Map=./${NAME}.map ${LFLAGS} -o $@ ${OBJECTS}
 
 ${NAME}.a43: ${NAME}.elf
 	${OBJCOPY} -O ihex $^ $@
@@ -62,5 +63,5 @@ dist:
 FORCE:
 
 #project dependencies
-main.o: main.c
-../../libs/tA/timerA.o: ../../libs/tA/timerA.c
+#main.o: main.c
+#../../libs/tA/timerA.o: ../../libs/tA/timerA.c

@@ -52,7 +52,8 @@ module openMSP430_fpga (
   // UART INTERFACE 
   //-----------------------------
   output        UART_TX,
-  input         UART_RX
+  input         UART_RX,
+  output			 OUT_PLL
 
 );
 
@@ -114,7 +115,14 @@ wire        [15:0] per_dout_tA;
 // 2)  CLOCK AND RESET GENERATION
 //=============================================================================
 
+wire   pll_out;
+wire   pll_lock;
+
 assign dco_clk    = FPGA_CLK1_50;
+
+//assign dco_clk    = pll_lock ? pll_out : 1'b0;
+
+
 wire   reset_in_n = KEY[0];
 
 // Release system reset a few clock cyles after the FPGA power-on-reset
@@ -320,10 +328,19 @@ ram_16x8k dmem_0 (
 );
 
 //=============================================================================
+// 5) Clock Division  
+//=============================================================================
+						 
+//	pll pll_0(
+//	.inclk0 (FPGA_CLK1_50),
+//	.c0     (pll_out),
+//	.locked (pll_lock)
+//	);
+//=============================================================================
 // 6)  DEBUG INTERFACE
 //=============================================================================
 
 assign  UART_TX 		=  dbg_uart_txd;
 assign  dbg_uart_rxd       =  UART_RX;
-
+assign  OUT_PLL     = pll_out;
 endmodule

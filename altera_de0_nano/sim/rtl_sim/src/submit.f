@@ -50,7 +50,9 @@
 
 ../../../bench/verilog/altsyncram.v
 ../../../bench/verilog/cyclonev_io.v
+../../../bench/verilog/altpll.v
 
+../../../bench/verilog/dffep.v
 
 //=============================================================================
 // FPGA Specific modules
@@ -66,7 +68,7 @@
 ../../../rtl/verilog/mega/ram_16x8k.v
 
 ../../../rtl/verilog/mega/in_buf.v
-
+../../../rtl/verilog/mega/pll.v
 //=============================================================================
 // openMSP430
 //=============================================================================

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for openMSP430_fpga
-Thu Mar  7 05:40:04 2019
+Sat Apr  6 04:40:35 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -72,7 +72,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar  7 05:40:04 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sat Apr  6 04:40:35 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; openMSP430_fpga                             ;
 ; Top-level Entity Name              ; openMSP430_fpga                             ;
@@ -81,7 +81,7 @@ refer to the applicable agreement for further details.
 ;     Total combinational functions  ; 2,834                                       ;
 ;     Dedicated logic registers      ; 1,001                                       ;
 ; Total registers                    ; 1001                                        ;
-; Total pins                         ; 17                                          ;
+; Total pins                         ; 18                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 393,216                                     ;
 ; Embedded Multiplier 9-bit elements ; 2                                           ;
@@ -175,52 +175,52 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                    ;
-+-------------------------------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                      ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                 ; Library ;
-+-------------------------------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------+---------+
-; ../../../rtl/verilog/openMSP430_fpga.v                ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v                ;         ;
-; ../../../rtl/verilog/omsp_de0_nano_soc_led_key_sw.v   ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/omsp_de0_nano_soc_led_key_sw.v   ;         ;
-; ../../../rtl/verilog/sync_debouncer_10ms.v            ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/sync_debouncer_10ms.v            ;         ;
-; ../../../rtl/verilog/mega/ram_16x16k.v                ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v                ;         ;
-; ../../../rtl/verilog/mega/ram_16x8k.v                 ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v                 ;         ;
-; ../../../rtl/verilog/openmsp430/openMSP430.v          ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v          ;         ;
-; ../../../rtl/verilog/openmsp430/omsp_frontend.v       ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v       ;         ;
-; ../../../rtl/verilog/openmsp430/omsp_execution_unit.v ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v ;         ;
-; ../../../rtl/verilog/openmsp430/omsp_register_file.v  ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v  ;         ;
-; ../../../rtl/verilog/openmsp430/omsp_alu.v            ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v            ;         ;
-; ../../../rtl/verilog/openmsp430/omsp_sfr.v            ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v            ;         ;
-; ../../../rtl/verilog/openmsp430/omsp_mem_backbone.v   ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v   ;         ;
-; ../../../rtl/verilog/openmsp430/omsp_clock_module.v   ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v   ;         ;
-; ../../../rtl/verilog/openmsp430/omsp_dbg.v            ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v            ;         ;
-; ../../../rtl/verilog/openmsp430/omsp_dbg_uart.v       ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v       ;         ;
-; ../../../rtl/verilog/openmsp430/omsp_watchdog.v       ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v       ;         ;
-; ../../../rtl/verilog/openmsp430/omsp_multiplier.v     ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v     ;         ;
-; ../../../rtl/verilog/openmsp430/omsp_sync_reset.v     ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sync_reset.v     ;         ;
-; ../../../rtl/verilog/openmsp430/omsp_sync_cell.v      ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sync_cell.v      ;         ;
-; ../../../rtl/verilog/openmsp430/periph/omsp_timerA.v  ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v  ;         ;
-; altsyncram.tdf                                        ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf               ;         ;
-; stratix_ram_block.inc                                 ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc        ;         ;
-; lpm_mux.inc                                           ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                  ;         ;
-; lpm_decode.inc                                        ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc               ;         ;
-; aglobal181.inc                                        ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc               ;         ;
-; a_rdenreg.inc                                         ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                ;         ;
-; altrom.inc                                            ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altrom.inc                   ;         ;
-; altram.inc                                            ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altram.inc                   ;         ;
-; altdpram.inc                                          ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                 ;         ;
-; db/altsyncram_b1l1.tdf                                ; yes             ; Auto-Generated Megafunction            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b1l1.tdf ;         ;
-; pmem.mif                                              ; yes             ; Auto-Found Memory Initialization File  ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/pmem.mif               ;         ;
-; db/decode_jsa.tdf                                     ; yes             ; Auto-Generated Megafunction            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/decode_jsa.tdf      ;         ;
-; db/mux_iob.tdf                                        ; yes             ; Auto-Generated Megafunction            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/mux_iob.tdf         ;         ;
-; db/altsyncram_b4j1.tdf                                ; yes             ; Auto-Generated Megafunction            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b4j1.tdf ;         ;
-; lpm_mult.tdf                                          ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf                 ;         ;
-; lpm_add_sub.inc                                       ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc              ;         ;
-; multcore.inc                                          ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.inc                 ;         ;
-; bypassff.inc                                          ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/bypassff.inc                 ;         ;
-; altshift.inc                                          ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altshift.inc                 ;         ;
-; db/mult_p4t.tdf                                       ; yes             ; Auto-Generated Megafunction            ; /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/mult_p4t.tdf        ;         ;
-+-------------------------------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                       ;
++-------------------------------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                      ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                    ; Library ;
++-------------------------------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; ../../../rtl/verilog/openMSP430_fpga.v                ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v                ;         ;
+; ../../../rtl/verilog/omsp_de0_nano_soc_led_key_sw.v   ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/omsp_de0_nano_soc_led_key_sw.v   ;         ;
+; ../../../rtl/verilog/sync_debouncer_10ms.v            ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/sync_debouncer_10ms.v            ;         ;
+; ../../../rtl/verilog/mega/ram_16x16k.v                ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v                ;         ;
+; ../../../rtl/verilog/mega/ram_16x8k.v                 ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v                 ;         ;
+; ../../../rtl/verilog/openmsp430/openMSP430.v          ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v          ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_frontend.v       ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v       ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_execution_unit.v ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_register_file.v  ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v  ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_alu.v            ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v            ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_sfr.v            ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v            ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_mem_backbone.v   ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v   ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_clock_module.v   ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v   ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_dbg.v            ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v            ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_dbg_uart.v       ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v       ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_watchdog.v       ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v       ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_multiplier.v     ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v     ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_sync_reset.v     ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sync_reset.v     ;         ;
+; ../../../rtl/verilog/openmsp430/omsp_sync_cell.v      ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sync_cell.v      ;         ;
+; ../../../rtl/verilog/openmsp430/periph/omsp_timerA.v  ; yes             ; Auto-Found Verilog HDL File            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v  ;         ;
+; altsyncram.tdf                                        ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                  ;         ;
+; stratix_ram_block.inc                                 ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc           ;         ;
+; lpm_mux.inc                                           ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                     ;         ;
+; lpm_decode.inc                                        ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                  ;         ;
+; aglobal181.inc                                        ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                  ;         ;
+; a_rdenreg.inc                                         ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                   ;         ;
+; altrom.inc                                            ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altrom.inc                      ;         ;
+; altram.inc                                            ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altram.inc                      ;         ;
+; altdpram.inc                                          ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                    ;         ;
+; db/altsyncram_b1l1.tdf                                ; yes             ; Auto-Generated Megafunction            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b1l1.tdf ;         ;
+; pmem.mif                                              ; yes             ; Auto-Found Memory Initialization File  ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/pmem.mif               ;         ;
+; db/decode_jsa.tdf                                     ; yes             ; Auto-Generated Megafunction            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/decode_jsa.tdf      ;         ;
+; db/mux_iob.tdf                                        ; yes             ; Auto-Generated Megafunction            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/mux_iob.tdf         ;         ;
+; db/altsyncram_b4j1.tdf                                ; yes             ; Auto-Generated Megafunction            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b4j1.tdf ;         ;
+; lpm_mult.tdf                                          ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf                    ;         ;
+; lpm_add_sub.inc                                       ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc                 ;         ;
+; multcore.inc                                          ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.inc                    ;         ;
+; bypassff.inc                                          ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/bypassff.inc                    ;         ;
+; altshift.inc                                          ; yes             ; Megafunction                           ; /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altshift.inc                    ;         ;
+; db/mult_p4t.tdf                                       ; yes             ; Auto-Generated Megafunction            ; /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/mult_p4t.tdf        ;         ;
++-------------------------------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------+
@@ -244,15 +244,15 @@ refer to the applicable agreement for further details.
 ;     -- Dedicated logic registers            ; 1001               ;
 ;     -- I/O registers                        ; 0                  ;
 ;                                             ;                    ;
-; I/O pins                                    ; 17                 ;
+; I/O pins                                    ; 18                 ;
 ; Total memory bits                           ; 393216             ;
 ;                                             ;                    ;
 ; Embedded Multiplier 9-bit elements          ; 2                  ;
 ;                                             ;                    ;
 ; Maximum fan-out node                        ; FPGA_CLK1_50~input ;
 ; Maximum fan-out                             ; 1049               ;
-; Total fan-out                               ; 14757              ;
-; Average fan-out                             ; 3.77               ;
+; Total fan-out                               ; 14758              ;
+; Average fan-out                             ; 3.76               ;
 +---------------------------------------------+--------------------+
 
 
@@ -261,7 +261,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
 ; Compilation Hierarchy Node                                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                  ; Entity Name                  ; Library Name ;
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
-; |openMSP430_fpga                                            ; 2834 (10)           ; 1001 (17)                 ; 393216      ; 2            ; 0       ; 1         ; 17   ; 0            ; |openMSP430_fpga                                                                                                     ; openMSP430_fpga              ; work         ;
+; |openMSP430_fpga                                            ; 2834 (10)           ; 1001 (17)                 ; 393216      ; 2            ; 0       ; 1         ; 18   ; 0            ; |openMSP430_fpga                                                                                                     ; openMSP430_fpga              ; work         ;
 ;    |omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0| ; 192 (30)            ; 164 (32)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0                                              ; omsp_de0_nano_soc_led_key_sw ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_key0|        ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key0 ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_key1|        ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key1 ; sync_debouncer_10ms          ; work         ;
@@ -1082,7 +1082,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 17                          ;
+; boundary_port         ; 18                          ;
 ; cycloneiii_ff         ; 1001                        ;
 ;     CLR               ; 201                         ;
 ;     CLR SCLR          ; 114                         ;
@@ -1091,12 +1091,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA               ; 1                           ;
 ;     ENA CLR           ; 569                         ;
 ;     ENA CLR SLD       ; 77                          ;
-; cycloneiii_lcell_comb ; 2835                        ;
+; cycloneiii_lcell_comb ; 2836                        ;
 ;     arith             ; 349                         ;
 ;         2 data inputs ; 215                         ;
 ;         3 data inputs ; 134                         ;
-;     normal            ; 2486                        ;
-;         0 data inputs ; 6                           ;
+;     normal            ; 2487                        ;
+;         0 data inputs ; 7                           ;
 ;         1 data inputs ; 19                          ;
 ;         2 data inputs ; 147                         ;
 ;         3 data inputs ; 532                         ;
@@ -1115,7 +1115,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -1125,205 +1125,208 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Mar  7 05:39:41 2019
+    Info: Processing started: Sat Apr  6 04:40:09 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off openMSP430_fpga -c openMSP430_fpga
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20029): Only one processor detected - disabling parallel compilation
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(270) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 270
-Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(270) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 270
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(272) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 272
-Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(272) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 272
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(907) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 907
-Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(907) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 907
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(909) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 909
-Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(909) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 909
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(275) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 275
-Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(275) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 275
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(277) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 277
-Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(277) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 277
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(753) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 753
-Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(753) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 753
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(755) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 755
-Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(755) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 755
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_uart.v(178) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 178
-Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg_uart.v(178) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 178
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_uart.v(180) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 180
-Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_dbg_uart.v(180) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 180
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(267) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 267
-Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(267) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 267
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(269) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 269
-Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(269) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 269
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(388) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 388
-Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(388) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 388
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(390) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 390
-Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(390) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 390
-Warning (10335): Unrecognized synthesis attribute "won" at ../../../rtl/verilog/openmsp430/omsp_clock_mux.v(183) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_mux.v Line: 183
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(284) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 284
-Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(284) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 284
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(286) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 286
-Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(286) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 286
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(401) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 401
-Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(401) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 401
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(403) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 403
-Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(403) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 403
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(244) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 244
-Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(244) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 244
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(246) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 246
-Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(246) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 246
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(292) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 292
-Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(292) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 292
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(294) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 294
-Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(294) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 294
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_gpu_reg.v(295) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_reg.v Line: 295
-Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_gpu_reg.v(295) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_reg.v Line: 295
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_gpu_reg.v(297) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_reg.v Line: 297
-Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_gpu_reg.v(297) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_reg.v Line: 297
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_gpu_dma.v(225) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 225
-Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_gpu_dma.v(225) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 225
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_gpu_dma.v(227) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 227
-Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_gpu_dma.v(227) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 227
-Info (12021): Found 47 design units, including 47 entities, in source file /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/scripts/design_rtl.v
-    Info (12023): Found entity 1: openMSP430_fpga File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 37
-    Info (12023): Found entity 2: omsp_de0_nano_soc_led_key_sw File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/omsp_de0_nano_soc_led_key_sw.v Line: 40
-    Info (12023): Found entity 3: sync_debouncer_10ms File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/sync_debouncer_10ms.v Line: 39
-    Info (12023): Found entity 4: ram_16x75k File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x75k.v Line: 40
-    Info (12023): Found entity 5: ram_16x512 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x512.v Line: 40
-    Info (12023): Found entity 6: ram_16x16k File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 40
-    Info (12023): Found entity 7: ram_16x8k File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 40
-    Info (12023): Found entity 8: io_buf_iobuf_bidir_30p File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/io_buf.v Line: 46
-    Info (12023): Found entity 9: io_buf File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/io_buf.v Line: 110
-    Info (12023): Found entity 10: in_buf_iobuf_in_v0i File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/in_buf.v Line: 47
-    Info (12023): Found entity 11: in_buf File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/in_buf.v Line: 83
-    Info (12023): Found entity 12: openMSP430 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 48
-    Info (12023): Found entity 13: omsp_frontend File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 48
-    Info (12023): Found entity 14: omsp_execution_unit File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 48
-    Info (12023): Found entity 15: omsp_register_file File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v Line: 48
-    Info (12023): Found entity 16: omsp_alu File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 48
-    Info (12023): Found entity 17: omsp_sfr File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 49
-    Info (12023): Found entity 18: omsp_mem_backbone File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 48
-    Info (12023): Found entity 19: omsp_clock_module File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 48
-    Info (12023): Found entity 20: omsp_dbg File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 48
-    Info (12023): Found entity 21: omsp_dbg_hwbrk File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_hwbrk.v Line: 48
-    Info (12023): Found entity 22: omsp_dbg_uart File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 48
-    Info (12023): Found entity 23: omsp_dbg_i2c File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 48
-    Info (12023): Found entity 24: omsp_watchdog File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 48
-    Info (12023): Found entity 25: omsp_multiplier File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 48
-    Info (12023): Found entity 26: omsp_sync_reset File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sync_reset.v Line: 44
-    Info (12023): Found entity 27: omsp_sync_cell File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sync_cell.v Line: 44
-    Info (12023): Found entity 28: omsp_scan_mux File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_scan_mux.v Line: 44
-    Info (12023): Found entity 29: omsp_and_gate File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_and_gate.v Line: 44
-    Info (12023): Found entity 30: omsp_wakeup_cell File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_wakeup_cell.v Line: 48
-    Info (12023): Found entity 31: omsp_clock_gate File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_gate.v Line: 44
-    Info (12023): Found entity 32: omsp_clock_mux File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_mux.v Line: 44
-    Info (12023): Found entity 33: omsp_timerA File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v Line: 48
-    Info (12023): Found entity 34: openGFX430 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/openGFX430.v Line: 46
-    Info (12023): Found entity 35: ogfx_reg File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_reg.v Line: 43
-    Info (12023): Found entity 36: ogfx_reg_fifo File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_reg_fifo.v Line: 43
-    Info (12023): Found entity 37: ogfx_reg_vram_if File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_reg_vram_if.v Line: 43
-    Info (12023): Found entity 38: ogfx_reg_vram_addr File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_reg_vram_addr.v Line: 43
-    Info (12023): Found entity 39: ogfx_if_lt24 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 43
-    Info (12023): Found entity 40: ogfx_backend File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend.v Line: 47
-    Info (12023): Found entity 41: ogfx_backend_frame_fifo File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_frame_fifo.v Line: 43
-    Info (12023): Found entity 42: ogfx_backend_lut_fifo File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 43
-    Info (12023): Found entity 43: ogfx_gpu File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu.v Line: 48
-    Info (12023): Found entity 44: ogfx_gpu_reg File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_reg.v Line: 43
-    Info (12023): Found entity 45: ogfx_gpu_dma File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 43
-    Info (12023): Found entity 46: ogfx_gpu_dma_addr File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma_addr.v Line: 43
-    Info (12023): Found entity 47: ogfx_ram_arbiter File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_ram_arbiter.v Line: 53
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(270) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 270
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(270) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 270
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(272) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 272
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(272) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 272
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(907) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 907
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(907) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 907
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(909) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 909
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(909) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 909
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(275) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 275
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(275) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 275
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(277) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 277
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(277) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 277
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(753) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 753
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(753) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 753
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(755) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 755
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(755) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 755
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_uart.v(178) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 178
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg_uart.v(178) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 178
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_uart.v(180) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 180
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_dbg_uart.v(180) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 180
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(267) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 267
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(267) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 267
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(269) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 269
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(269) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 269
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(388) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 388
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(388) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 388
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(390) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 390
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_dbg_i2c.v(390) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 390
+Warning (10335): Unrecognized synthesis attribute "won" at ../../../rtl/verilog/openmsp430/omsp_clock_mux.v(183) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_mux.v Line: 183
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(284) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 284
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(284) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 284
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(286) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 286
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(286) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 286
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(401) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 401
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(401) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 401
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(403) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 403
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_if_lt24.v(403) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 403
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(244) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 244
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(244) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 244
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(246) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 246
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(246) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 246
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(292) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 292
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(292) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 292
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(294) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 294
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v(294) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 294
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_gpu_reg.v(295) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_reg.v Line: 295
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_gpu_reg.v(295) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_reg.v Line: 295
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_gpu_reg.v(297) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_reg.v Line: 297
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_gpu_reg.v(297) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_reg.v Line: 297
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_gpu_dma.v(225) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 225
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/opengfx430/ogfx_gpu_dma.v(225) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 225
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/opengfx430/ogfx_gpu_dma.v(227) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 227
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/opengfx430/ogfx_gpu_dma.v(227) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 227
+Info (12021): Found 48 design units, including 48 entities, in source file /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/scripts/design_rtl.v
+    Info (12023): Found entity 1: openMSP430_fpga File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 37
+    Info (12023): Found entity 2: omsp_de0_nano_soc_led_key_sw File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/omsp_de0_nano_soc_led_key_sw.v Line: 40
+    Info (12023): Found entity 3: sync_debouncer_10ms File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/sync_debouncer_10ms.v Line: 39
+    Info (12023): Found entity 4: ram_16x75k File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x75k.v Line: 40
+    Info (12023): Found entity 5: ram_16x512 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x512.v Line: 40
+    Info (12023): Found entity 6: ram_16x16k File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 40
+    Info (12023): Found entity 7: ram_16x8k File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 40
+    Info (12023): Found entity 8: io_buf_iobuf_bidir_loo File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/io_buf.v Line: 47
+    Info (12023): Found entity 9: io_buf File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/io_buf.v Line: 114
+    Info (12023): Found entity 10: in_buf_iobuf_in_v0i File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/in_buf.v Line: 47
+    Info (12023): Found entity 11: in_buf File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/in_buf.v Line: 83
+    Info (12023): Found entity 12: pll File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/pll.v Line: 39
+    Info (12023): Found entity 13: openMSP430 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 48
+    Info (12023): Found entity 14: omsp_frontend File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 48
+    Info (12023): Found entity 15: omsp_execution_unit File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 48
+    Info (12023): Found entity 16: omsp_register_file File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v Line: 48
+    Info (12023): Found entity 17: omsp_alu File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 48
+    Info (12023): Found entity 18: omsp_sfr File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 49
+    Info (12023): Found entity 19: omsp_mem_backbone File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 48
+    Info (12023): Found entity 20: omsp_clock_module File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 48
+    Info (12023): Found entity 21: omsp_dbg File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 48
+    Info (12023): Found entity 22: omsp_dbg_hwbrk File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_hwbrk.v Line: 48
+    Info (12023): Found entity 23: omsp_dbg_uart File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 48
+    Info (12023): Found entity 24: omsp_dbg_i2c File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_i2c.v Line: 48
+    Info (12023): Found entity 25: omsp_watchdog File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 48
+    Info (12023): Found entity 26: omsp_multiplier File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 48
+    Info (12023): Found entity 27: omsp_sync_reset File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sync_reset.v Line: 44
+    Info (12023): Found entity 28: omsp_sync_cell File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sync_cell.v Line: 44
+    Info (12023): Found entity 29: omsp_scan_mux File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_scan_mux.v Line: 44
+    Info (12023): Found entity 30: omsp_and_gate File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_and_gate.v Line: 44
+    Info (12023): Found entity 31: omsp_wakeup_cell File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_wakeup_cell.v Line: 48
+    Info (12023): Found entity 32: omsp_clock_gate File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_gate.v Line: 44
+    Info (12023): Found entity 33: omsp_clock_mux File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_mux.v Line: 44
+    Info (12023): Found entity 34: omsp_timerA File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v Line: 48
+    Info (12023): Found entity 35: openGFX430 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/openGFX430.v Line: 46
+    Info (12023): Found entity 36: ogfx_reg File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_reg.v Line: 43
+    Info (12023): Found entity 37: ogfx_reg_fifo File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_reg_fifo.v Line: 43
+    Info (12023): Found entity 38: ogfx_reg_vram_if File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_reg_vram_if.v Line: 43
+    Info (12023): Found entity 39: ogfx_reg_vram_addr File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_reg_vram_addr.v Line: 43
+    Info (12023): Found entity 40: ogfx_if_lt24 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_if_lt24.v Line: 43
+    Info (12023): Found entity 41: ogfx_backend File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend.v Line: 47
+    Info (12023): Found entity 42: ogfx_backend_frame_fifo File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_frame_fifo.v Line: 43
+    Info (12023): Found entity 43: ogfx_backend_lut_fifo File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_backend_lut_fifo.v Line: 43
+    Info (12023): Found entity 44: ogfx_gpu File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu.v Line: 48
+    Info (12023): Found entity 45: ogfx_gpu_reg File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_reg.v Line: 43
+    Info (12023): Found entity 46: ogfx_gpu_dma File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 43
+    Info (12023): Found entity 47: ogfx_gpu_dma_addr File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma_addr.v Line: 43
+    Info (12023): Found entity 48: ogfx_ram_arbiter File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/opengfx430/ogfx_ram_arbiter.v Line: 53
 Info (12127): Elaborating entity "openMSP430_fpga" for the top level hierarchy
-Info (12128): Elaborating entity "openMSP430" for hierarchy "openMSP430:openmsp430_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 199
-Warning (10036): Verilog HDL or VHDL warning at openMSP430.v(478): object "UNUSED_fe_mab_0" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 478
-Info (12128): Elaborating entity "omsp_clock_module" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 312
-Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(164): object "nodiv_smclk" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 164
-Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(378): object "UNUSED_cpuoff" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 378
-Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(379): object "UNUSED_mclk_enable" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 379
-Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(380): object "UNUSED_mclk_dma_wkup" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 380
-Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(508): object "UNUSED_scg0" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 508
-Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(509): object "UNUSED_cpu_en_wkup1" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 509
-Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(681): object "cpu_en_aux_s" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 681
-Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(724): object "cpuoff_and_mclk_dma_wkup_s" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 724
-Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(725): object "mclk_wkup_s" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 725
-Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(747): object "UNUSED_mclk_wkup" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 747
-Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(779): object "mclk_div_en" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 779
-Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(780): object "mclk_dma_div_en" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 780
-Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(960): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 960
-Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(961): object "UNUSED_scan_mode" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 961
-Info (12128): Elaborating entity "omsp_sync_cell" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_lfxt_clk" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 628
-Info (12128): Elaborating entity "omsp_sync_reset" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 1223
-Info (12128): Elaborating entity "omsp_frontend" for hierarchy "openMSP430:openmsp430_0|omsp_frontend:frontend_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 373
-Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(314): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 314
-Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(390): object "UNUSED_dma_en" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 390
-Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(391): object "UNUSED_wkup" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 391
-Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(392): object "UNUSED_wdt_wkup" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 392
-Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(393): object "UNUSED_nmi_wkup" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 393
-Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(394): object "UNUSED_dma_wkup" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 394
-Info (12128): Elaborating entity "omsp_execution_unit" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 421
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(419): object "UNUSED_inst_ad_idx" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 419
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(420): object "UNUSED_inst_ad_indir" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 420
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(421): object "UNUSED_inst_ad_indir_i" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 421
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(422): object "UNUSED_inst_ad_symb" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 422
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(423): object "UNUSED_inst_ad_imm" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 423
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(424): object "UNUSED_inst_ad_const" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 424
-Info (12128): Elaborating entity "omsp_register_file" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 211
-Warning (10036): Verilog HDL or VHDL warning at omsp_register_file.v(158): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v Line: 158
-Warning (10036): Verilog HDL or VHDL warning at omsp_register_file.v(172): object "UNUSED_reg_sp_val_0" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v Line: 172
-Info (12128): Elaborating entity "omsp_alu" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 319
-Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(254): object "UNUSED_inst_so_rra" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 254
-Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(255): object "UNUSED_inst_so_push" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 255
-Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(256): object "UNUSED_inst_so_call" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 256
-Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(257): object "UNUSED_inst_so_reti" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 257
-Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(258): object "UNUSED_inst_jmp" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 258
-Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(259): object "UNUSED_inst_alu" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 259
-Info (12128): Elaborating entity "omsp_mem_backbone" for hierarchy "openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 476
-Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(213): object "UNUSED_dma_addr" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 213
-Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(214): object "UNUSED_dma_din" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 214
-Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(215): object "UNUSED_dma_en" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 215
-Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(216): object "UNUSED_dma_priority" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 216
-Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(217): object "UNUSED_dma_we" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 217
-Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(331): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 331
-Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(230): truncated value with size 32 to match size of target (16) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 230
-Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(239): truncated value with size 32 to match size of target (16) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 239
-Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(258): truncated value with size 32 to match size of target (16) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 258
-Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(263): truncated value with size 32 to match size of target (16) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 263
-Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(268): truncated value with size 32 to match size of target (16) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 268
-Info (12128): Elaborating entity "omsp_sfr" for hierarchy "openMSP430:openmsp430_0|omsp_sfr:sfr_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 508
-Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(367): object "UNUSED_scan_mode" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 367
-Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(368): object "UNUSED_nmi" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 368
-Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(369): object "UNUSED_nmi_acc" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 369
-Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(370): object "UNUSED_wdtnmies" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 370
-Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(374): object "UNUSED_per_din_15_8" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 374
-Warning (10230): Verilog HDL assignment warning at omsp_sfr.v(240): truncated value with size 32 to match size of target (7) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 240
-Warning (10230): Verilog HDL assignment warning at omsp_sfr.v(246): truncated value with size 32 to match size of target (9) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 246
-Warning (10230): Verilog HDL assignment warning at omsp_sfr.v(247): truncated value with size 32 to match size of target (6) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 247
-Info (12128): Elaborating entity "omsp_watchdog" for hierarchy "openMSP430:openmsp430_0|omsp_watchdog:watchdog_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 544
-Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(170): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 170
-Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(556): object "UNUSED_scan_mode" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 556
-Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(557): object "UNUSED_smclk" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 557
-Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(558): object "UNUSED_aclk" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 558
-Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(560): object "UNUSED_per_din" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 560
-Info (12128): Elaborating entity "omsp_multiplier" for hierarchy "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 576
-Warning (10036): Verilog HDL or VHDL warning at omsp_multiplier.v(168): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 168
-Info (12128): Elaborating entity "omsp_dbg" for hierarchy "openMSP430:openmsp430_0|omsp_dbg:dbg_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 634
-Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(493): object "UNUSED_eu_mab" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 493
-Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(494): object "UNUSED_eu_mb_en" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 494
-Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(495): object "UNUSED_eu_mb_wr" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 495
-Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(496): object "UNUSED_pc" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 496
-Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(865): object "UNUSED_dbg_i2c_addr" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 865
-Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(866): object "UNUSED_dbg_i2c_broadcast" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 866
-Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(867): object "UNUSED_dbg_i2c_scl" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 867
-Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(868): object "UNUSED_dbg_i2c_sda_in" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 868
-Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(869): object "UNUSED_dbg_rd_rdy" assigned a value but never read File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 869
-Info (12128): Elaborating entity "omsp_dbg_uart" for hierarchy "openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 817
-Info (12128): Elaborating entity "omsp_de0_nano_soc_led_key_sw" for hierarchy "omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 227
-Info (12128): Elaborating entity "sync_debouncer_10ms" for hierarchy "omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key1" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/omsp_de0_nano_soc_led_key_sw.v Line: 158
-Warning (10230): Verilog HDL assignment warning at sync_debouncer_10ms.v(75): truncated value with size 32 to match size of target (19) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/sync_debouncer_10ms.v Line: 75
-Info (12128): Elaborating entity "omsp_timerA" for hierarchy "omsp_timerA:timerA_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 265
-Warning (10230): Verilog HDL assignment warning at omsp_timerA.v(179): truncated value with size 512 to match size of target (128) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v Line: 179
-Warning (10230): Verilog HDL assignment warning at omsp_timerA.v(180): truncated value with size 512 to match size of target (128) File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v Line: 180
-Info (12128): Elaborating entity "ram_16x16k" for hierarchy "ram_16x16k:pmem_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 310
-Info (12128): Elaborating entity "altsyncram" for hierarchy "ram_16x16k:pmem_0|altsyncram:altsyncram_component" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 92
-Info (12130): Elaborated megafunction instantiation "ram_16x16k:pmem_0|altsyncram:altsyncram_component" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 92
-Info (12133): Instantiated megafunction "ram_16x16k:pmem_0|altsyncram:altsyncram_component" with the following parameter: File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 92
+Warning (10858): Verilog HDL warning at openMSP430_fpga.v(118): object pll_out used but never assigned File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 118
+Warning (10030): Net "pll_out" at openMSP430_fpga.v(118) has no driver or initial value, using a default initial value '0' File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 118
+Info (12128): Elaborating entity "openMSP430" for hierarchy "openMSP430:openmsp430_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 207
+Warning (10036): Verilog HDL or VHDL warning at openMSP430.v(478): object "UNUSED_fe_mab_0" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 478
+Info (12128): Elaborating entity "omsp_clock_module" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 312
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(164): object "nodiv_smclk" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 164
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(378): object "UNUSED_cpuoff" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 378
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(379): object "UNUSED_mclk_enable" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 379
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(380): object "UNUSED_mclk_dma_wkup" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 380
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(508): object "UNUSED_scg0" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 508
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(509): object "UNUSED_cpu_en_wkup1" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 509
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(681): object "cpu_en_aux_s" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 681
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(724): object "cpuoff_and_mclk_dma_wkup_s" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 724
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(725): object "mclk_wkup_s" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 725
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(747): object "UNUSED_mclk_wkup" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 747
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(779): object "mclk_div_en" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 779
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(780): object "mclk_dma_div_en" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 780
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(960): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 960
+Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(961): object "UNUSED_scan_mode" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 961
+Info (12128): Elaborating entity "omsp_sync_cell" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_lfxt_clk" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 628
+Info (12128): Elaborating entity "omsp_sync_reset" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 1223
+Info (12128): Elaborating entity "omsp_frontend" for hierarchy "openMSP430:openmsp430_0|omsp_frontend:frontend_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 373
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(314): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 314
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(390): object "UNUSED_dma_en" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 390
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(391): object "UNUSED_wkup" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 391
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(392): object "UNUSED_wdt_wkup" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 392
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(393): object "UNUSED_nmi_wkup" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 393
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(394): object "UNUSED_dma_wkup" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 394
+Info (12128): Elaborating entity "omsp_execution_unit" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 421
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(419): object "UNUSED_inst_ad_idx" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 419
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(420): object "UNUSED_inst_ad_indir" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 420
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(421): object "UNUSED_inst_ad_indir_i" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 421
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(422): object "UNUSED_inst_ad_symb" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 422
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(423): object "UNUSED_inst_ad_imm" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 423
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(424): object "UNUSED_inst_ad_const" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 424
+Info (12128): Elaborating entity "omsp_register_file" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 211
+Warning (10036): Verilog HDL or VHDL warning at omsp_register_file.v(158): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v Line: 158
+Warning (10036): Verilog HDL or VHDL warning at omsp_register_file.v(172): object "UNUSED_reg_sp_val_0" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v Line: 172
+Info (12128): Elaborating entity "omsp_alu" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 319
+Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(254): object "UNUSED_inst_so_rra" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 254
+Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(255): object "UNUSED_inst_so_push" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 255
+Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(256): object "UNUSED_inst_so_call" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 256
+Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(257): object "UNUSED_inst_so_reti" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 257
+Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(258): object "UNUSED_inst_jmp" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 258
+Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(259): object "UNUSED_inst_alu" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 259
+Info (12128): Elaborating entity "omsp_mem_backbone" for hierarchy "openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 476
+Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(213): object "UNUSED_dma_addr" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 213
+Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(214): object "UNUSED_dma_din" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 214
+Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(215): object "UNUSED_dma_en" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 215
+Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(216): object "UNUSED_dma_priority" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 216
+Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(217): object "UNUSED_dma_we" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 217
+Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(331): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 331
+Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(230): truncated value with size 32 to match size of target (16) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 230
+Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(239): truncated value with size 32 to match size of target (16) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 239
+Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(258): truncated value with size 32 to match size of target (16) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 258
+Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(263): truncated value with size 32 to match size of target (16) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 263
+Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(268): truncated value with size 32 to match size of target (16) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 268
+Info (12128): Elaborating entity "omsp_sfr" for hierarchy "openMSP430:openmsp430_0|omsp_sfr:sfr_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 508
+Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(367): object "UNUSED_scan_mode" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 367
+Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(368): object "UNUSED_nmi" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 368
+Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(369): object "UNUSED_nmi_acc" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 369
+Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(370): object "UNUSED_wdtnmies" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 370
+Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(374): object "UNUSED_per_din_15_8" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 374
+Warning (10230): Verilog HDL assignment warning at omsp_sfr.v(240): truncated value with size 32 to match size of target (7) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 240
+Warning (10230): Verilog HDL assignment warning at omsp_sfr.v(246): truncated value with size 32 to match size of target (9) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 246
+Warning (10230): Verilog HDL assignment warning at omsp_sfr.v(247): truncated value with size 32 to match size of target (6) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 247
+Info (12128): Elaborating entity "omsp_watchdog" for hierarchy "openMSP430:openmsp430_0|omsp_watchdog:watchdog_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 544
+Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(170): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 170
+Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(556): object "UNUSED_scan_mode" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 556
+Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(557): object "UNUSED_smclk" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 557
+Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(558): object "UNUSED_aclk" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 558
+Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(560): object "UNUSED_per_din" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 560
+Info (12128): Elaborating entity "omsp_multiplier" for hierarchy "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 576
+Warning (10036): Verilog HDL or VHDL warning at omsp_multiplier.v(168): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 168
+Info (12128): Elaborating entity "omsp_dbg" for hierarchy "openMSP430:openmsp430_0|omsp_dbg:dbg_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 634
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(493): object "UNUSED_eu_mab" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 493
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(494): object "UNUSED_eu_mb_en" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 494
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(495): object "UNUSED_eu_mb_wr" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 495
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(496): object "UNUSED_pc" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 496
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(865): object "UNUSED_dbg_i2c_addr" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 865
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(866): object "UNUSED_dbg_i2c_broadcast" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 866
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(867): object "UNUSED_dbg_i2c_scl" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 867
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(868): object "UNUSED_dbg_i2c_sda_in" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 868
+Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(869): object "UNUSED_dbg_rd_rdy" assigned a value but never read File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 869
+Info (12128): Elaborating entity "omsp_dbg_uart" for hierarchy "openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 817
+Info (12128): Elaborating entity "omsp_de0_nano_soc_led_key_sw" for hierarchy "omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 235
+Info (12128): Elaborating entity "sync_debouncer_10ms" for hierarchy "omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key1" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/omsp_de0_nano_soc_led_key_sw.v Line: 158
+Warning (10230): Verilog HDL assignment warning at sync_debouncer_10ms.v(75): truncated value with size 32 to match size of target (19) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/sync_debouncer_10ms.v Line: 75
+Info (12128): Elaborating entity "omsp_timerA" for hierarchy "omsp_timerA:timerA_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 273
+Warning (10230): Verilog HDL assignment warning at omsp_timerA.v(179): truncated value with size 512 to match size of target (128) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v Line: 179
+Warning (10230): Verilog HDL assignment warning at omsp_timerA.v(180): truncated value with size 512 to match size of target (128) File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v Line: 180
+Info (12128): Elaborating entity "ram_16x16k" for hierarchy "ram_16x16k:pmem_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 318
+Info (12128): Elaborating entity "altsyncram" for hierarchy "ram_16x16k:pmem_0|altsyncram:altsyncram_component" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 92
+Info (12130): Elaborated megafunction instantiation "ram_16x16k:pmem_0|altsyncram:altsyncram_component" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 92
+Info (12133): Instantiated megafunction "ram_16x16k:pmem_0|altsyncram:altsyncram_component" with the following parameter: File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 92
     Info (12134): Parameter "byte_size" = "8"
     Info (12134): Parameter "clock_enable_input_a" = "NORMAL"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
@@ -1341,18 +1344,18 @@ Info (12133): Instantiated megafunction "ram_16x16k:pmem_0|altsyncram:altsyncram
     Info (12134): Parameter "width_a" = "16"
     Info (12134): Parameter "width_byteena_a" = "2"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_b1l1.tdf
-    Info (12023): Found entity 1: altsyncram_b1l1 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b1l1.tdf Line: 31
+    Info (12023): Found entity 1: altsyncram_b1l1 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b1l1.tdf Line: 31
 Info (12128): Elaborating entity "altsyncram_b1l1" for hierarchy "ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated" File: /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_jsa.tdf
-    Info (12023): Found entity 1: decode_jsa File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/decode_jsa.tdf Line: 22
-Info (12128): Elaborating entity "decode_jsa" for hierarchy "ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|decode_jsa:decode3" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b1l1.tdf Line: 43
+    Info (12023): Found entity 1: decode_jsa File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/decode_jsa.tdf Line: 22
+Info (12128): Elaborating entity "decode_jsa" for hierarchy "ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|decode_jsa:decode3" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b1l1.tdf Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_iob.tdf
-    Info (12023): Found entity 1: mux_iob File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/mux_iob.tdf Line: 22
-Info (12128): Elaborating entity "mux_iob" for hierarchy "ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|mux_iob:mux2" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b1l1.tdf Line: 44
-Info (12128): Elaborating entity "ram_16x8k" for hierarchy "ram_16x8k:dmem_0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 320
-Info (12128): Elaborating entity "altsyncram" for hierarchy "ram_16x8k:dmem_0|altsyncram:altsyncram_component" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 92
-Info (12130): Elaborated megafunction instantiation "ram_16x8k:dmem_0|altsyncram:altsyncram_component" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 92
-Info (12133): Instantiated megafunction "ram_16x8k:dmem_0|altsyncram:altsyncram_component" with the following parameter: File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 92
+    Info (12023): Found entity 1: mux_iob File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/mux_iob.tdf Line: 22
+Info (12128): Elaborating entity "mux_iob" for hierarchy "ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|mux_iob:mux2" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b1l1.tdf Line: 44
+Info (12128): Elaborating entity "ram_16x8k" for hierarchy "ram_16x8k:dmem_0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 328
+Info (12128): Elaborating entity "altsyncram" for hierarchy "ram_16x8k:dmem_0|altsyncram:altsyncram_component" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 92
+Info (12130): Elaborated megafunction instantiation "ram_16x8k:dmem_0|altsyncram:altsyncram_component" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 92
+Info (12133): Instantiated megafunction "ram_16x8k:dmem_0|altsyncram:altsyncram_component" with the following parameter: File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 92
     Info (12134): Parameter "byte_size" = "8"
     Info (12134): Parameter "clock_enable_input_a" = "NORMAL"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
@@ -1369,12 +1372,12 @@ Info (12133): Instantiated megafunction "ram_16x8k:dmem_0|altsyncram:altsyncram_
     Info (12134): Parameter "width_a" = "16"
     Info (12134): Parameter "width_byteena_a" = "2"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_b4j1.tdf
-    Info (12023): Found entity 1: altsyncram_b4j1 File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b4j1.tdf Line: 27
+    Info (12023): Found entity 1: altsyncram_b4j1 File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b4j1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_b4j1" for hierarchy "ram_16x8k:dmem_0|altsyncram:altsyncram_component|altsyncram_b4j1:auto_generated" File: /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (278001): Inferred 1 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|Mult0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 396
-Info (12130): Elaborated megafunction instantiation "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0" File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 396
-Info (12133): Instantiated megafunction "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0" with the following parameter: File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 396
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|Mult0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 396
+Info (12130): Elaborated megafunction instantiation "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0" File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 396
+Info (12133): Instantiated megafunction "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0" with the following parameter: File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 396
     Info (12134): Parameter "LPM_WIDTHA" = "17"
     Info (12134): Parameter "LPM_WIDTHB" = "9"
     Info (12134): Parameter "LPM_WIDTHP" = "26"
@@ -1385,30 +1388,32 @@ Info (12133): Instantiated megafunction "openMSP430:openmsp430_0|omsp_multiplier
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_p4t.tdf
-    Info (12023): Found entity 1: mult_p4t File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/mult_p4t.tdf Line: 28
-Info (13000): Registers with preset signals will power-up high File: /home/hiram/git/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 75
+    Info (12023): Found entity 1: mult_p4t File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/db/mult_p4t.tdf Line: 28
+Info (13000): Registers with preset signals will power-up high File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 75
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "OUT_PLL" is stuck at GND File: /home/hiram/master/de0_nano_msp430/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 58
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 10 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/output_files/openMSP430_fpga.map.smsg
+Info (144001): Generated suppressed messages file /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/output_files/openMSP430_fpga.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3204 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3205 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 9 output pins
+    Info (21059): Implemented 10 output pins
     Info (21061): Implemented 3137 logic cells
     Info (21064): Implemented 48 RAM segments
     Info (21062): Implemented 2 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 126 warnings
-    Info: Peak virtual memory: 1020 megabytes
-    Info: Processing ended: Thu Mar  7 05:40:04 2019
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:19
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 130 warnings
+    Info: Peak virtual memory: 1029 megabytes
+    Info: Processing ended: Sat Apr  6 04:40:35 2019
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:21
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in /home/hiram/git/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/output_files/openMSP430_fpga.map.smsg.
+The suppressed messages can be found in /home/hiram/master/de0_nano_msp430/altera_de0_nano/synthesis/altera/WORK/output_files/openMSP430_fpga.map.smsg.
 
 
