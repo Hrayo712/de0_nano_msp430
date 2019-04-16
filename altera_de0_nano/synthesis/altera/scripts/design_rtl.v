@@ -48,6 +48,7 @@
 `include "../../../rtl/verilog/mega/in_buf.v"
 `include "../../../rtl/verilog/mega/pll.v"
 
+
 //=============================================================================
 // openMSP430
 //=============================================================================
@@ -73,9 +74,14 @@
 `include "../../../rtl/verilog/openmsp430/omsp_wakeup_cell.v"
 `include "../../../rtl/verilog/openmsp430/omsp_clock_gate.v"
 `include "../../../rtl/verilog/openmsp430/omsp_clock_mux.v"
-
 `include "../../../rtl/verilog/openmsp430/periph/omsp_timerA.v"
 
+//Included 
+`include "../../../rtl/verilog/openmsp430/omsp_qwark.v" 
+`include "../../../rtl/verilog/openmsp430/omsp_qwark_periph.v" 
+`include "../../../rtl/verilog/cam_bram.v"
+`include "../../../rtl/verilog/priority_encoder.v"
+`include "../../../rtl/verilog/ram_dp.v"
 //=============================================================================
 // openMSP430
 //=============================================================================

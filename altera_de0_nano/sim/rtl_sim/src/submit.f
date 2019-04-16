@@ -50,8 +50,8 @@
 
 ../../../bench/verilog/altsyncram.v
 ../../../bench/verilog/cyclonev_io.v
-../../../bench/verilog/altpll.v
 
+../../../bench/verilog/altpll.v
 ../../../bench/verilog/dffep.v
 
 //=============================================================================
@@ -66,8 +66,9 @@
 ../../../rtl/verilog/mega/ram_16x512.v
 ../../../rtl/verilog/mega/ram_16x16k.v
 ../../../rtl/verilog/mega/ram_16x8k.v
-
+../../../rtl/verilog/mega/io_buf.v
 ../../../rtl/verilog/mega/in_buf.v
+
 ../../../rtl/verilog/mega/pll.v
 //=============================================================================
 // openMSP430
@@ -100,6 +101,12 @@
 
 ../../../rtl/verilog/openmsp430/periph/omsp_timerA.v
 
+//Included 
+../../../rtl/verilog/cam_bram.v
+../../../rtl/verilog/priority_encoder.v
+../../../rtl/verilog/ram_dp.v
+../../../rtl/verilog/openmsp430/omsp_qwark.v
+../../../rtl/verilog/openmsp430/omsp_qwark_periph.v
 //=============================================================================
 // openGFX430
 //=============================================================================

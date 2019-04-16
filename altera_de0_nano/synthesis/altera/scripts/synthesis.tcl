@@ -86,6 +86,14 @@ my_pin_assignment   UART_RX	     PIN_B5	"3.3-V LVTTL"
 
 my_pin_assignment   OUT_PLL	     PIN_D3	"3.3-V LVTTL"
 
+
+my_pin_assignment   ADDR_CE	     PIN_C3	"3.3-V LVTTL"
+my_pin_assignment   ADDR[0]	     PIN_A2	"3.3-V LVTTL"
+my_pin_assignment   ADDR[1]	     PIN_B3 	"3.3-V LVTTL"
+my_pin_assignment   TL_ADDR[0]	     PIN_A4	"3.3-V LVTTL"
+my_pin_assignment   TL_ADDR[1]	     PIN_J13	"3.3-V LVTTL"
+my_pin_assignment   WAR	    	     PIN_A3	"3.3-V LVTTL"
+ 
 # Commit assignments
 export_assignments
 

@@ -1,0 +1,85 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Thu Apr 11 13:21:34 2019
+[*]
+[dumpfile] "/home/hiram/master/de0_nano_msp430/altera_de0_nano/sim/rtl_sim/run/tb_openMSP430_fpga.vcd"
+[dumpfile_mtime] "Thu Apr 11 13:04:10 2019"
+[dumpfile_size] 3317106
+[savefile] "/home/hiram/master/de0_nano_msp430/altera_de0_nano/sim/rtl_sim/run/peripheral_setup.gtkw"
+[timestart] 421900000
+[size] 1851 874
+[pos] -89 -89
+*-22.324593 431500000 3470000 3390000 3650000 3550000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_openMSP430_fpga.
+[treeopen] tb_openMSP430_fpga.dut.
+[treeopen] tb_openMSP430_fpga.dut.openmsp430_0.
+[treeopen] tb_openMSP430_fpga.dut.timerA_0.
+[sst_width] 350
+[signals_width] 334
+[sst_expanded] 1
+[sst_vpaned_height] 280
+@28
+tb_openMSP430_fpga.dut.openmsp430_0.puc_rst
+tb_openMSP430_fpga.FPGA_CLK1_50
+@22
+[color] 1
+tb_openMSP430_fpga.msp_debug_omsp.pc[15:0]
+@28
+tb_openMSP430_fpga.dut.dmem_cen
+@22
+[color] 2
+tb_openMSP430_fpga.dut.dmem_addr[12:0]
+tb_openMSP430_fpga.dut.dmem_dout[15:0]
+[color] 6
+tb_openMSP430_fpga.dut.dmem_din[15:0]
+@c00028
+[color] 7
+tb_openMSP430_fpga.dut.dmem_wen[1:0]
+@1401200
+-group_end
+@28
+tb_openMSP430_fpga.dut.pmem_cen
+@22
+tb_openMSP430_fpga.dut.pmem_addr[13:0]
+tb_openMSP430_fpga.dut.pmem_dout[15:0]
+[color] 1
+tb_openMSP430_fpga.msp_debug_omsp.inst_pc[15:0]
+@24
+tb_openMSP430_fpga.msp_debug_omsp.inst_cycle[31:0]
+@820
+tb_openMSP430_fpga.msp_debug_omsp.inst_full[255:0]
+tb_openMSP430_fpga.msp_debug_omsp.inst_type[255:0]
+tb_openMSP430_fpga.msp_debug_omsp.inst_as[255:0]
+tb_openMSP430_fpga.msp_debug_omsp.inst_ad[255:0]
+@22
+tb_openMSP430_fpga.dut.openmsp430_0.mem_backbone_0.eu_mab[14:0]
+tb_openMSP430_fpga.dut.openmsp430_0.execution_unit_0.mab[15:0]
+@28
+tb_openMSP430_fpga.dut.openmsp430_0.qwark_0.eu_en
+tb_openMSP430_fpga.dut.openmsp430_0.mem_backbone_0.eu_mb_wr[1:0]
+@22
+tb_openMSP430_fpga.dut.openmsp430_0.execution_unit_0.mab[15:0]
+@28
+tb_openMSP430_fpga.dut.openmsp430_0.mem_backbone_0.per_en
+@22
+tb_openMSP430_fpga.dut.openmsp430_0.watchdog_0.per_addr[13:0]
+@28
+tb_openMSP430_fpga.dut.openmsp430_0.watchdog_0.reg_sel
+tb_openMSP430_fpga.dut.openmsp430_0.watchdog_0.reg_addr[1:0]
+@22
+tb_openMSP430_fpga.dut.openmsp430_0.watchdog_0.reg_dec[3:0]
+@28
+tb_openMSP430_fpga.dut.openmsp430_0.qwark_periph_0.reg_sel
+tb_openMSP430_fpga.dut.openmsp430_0.qwark_periph_0.reg_addr[1:0]
+@22
+tb_openMSP430_fpga.dut.openmsp430_0.qwark_periph_0.reg_dec[3:0]
+@28
+tb_openMSP430_fpga.dut.openmsp430_0.qwark_periph_0.reg_write
+@22
+tb_openMSP430_fpga.dut.openmsp430_0.qwark_periph_0.reg_wr[3:0]
+tb_openMSP430_fpga.dut.openmsp430_0.qwark_periph_0.per_din[15:0]
+tb_openMSP430_fpga.dut.timerA_0.per_addr[13:0]
+@29
+tb_openMSP430_fpga.dut.timerA_0.reg_sel
+[pattern_trace] 1
+[pattern_trace] 0

@@ -4,10 +4,10 @@ leds.elf:     file format elf32-msp430
 SYMBOL TABLE:
 0000fffe l    d  __reset_vector	00000000 __reset_vector
 00008000 l    d  .rodata	00000000 .rodata
-00008110 l    d  .text	00000000 .text
+00008010 l    d  .text	00000000 .text
 00004000 l    d  .data	00000000 .data
-00004002 l    d  .bss	00000000 .bss
-00004014 l    d  .noinit	00000000 .noinit
+00004006 l    d  .bss	00000000 .bss
+00004018 l    d  .noinit	00000000 .noinit
 00000000 l    d  .MP430.attributes	00000000 .MP430.attributes
 00000000 l    d  .comment	00000000 .comment
 00000000 l    d  .debug_aranges	00000000 .debug_aranges
@@ -16,1942 +16,675 @@ SYMBOL TABLE:
 00000000 l    d  .debug_line	00000000 .debug_line
 00000000 l    d  .debug_frame	00000000 .debug_frame
 00000000 l    d  .debug_str	00000000 .debug_str
-00000000 l    d  .debug_loc	00000000 .debug_loc
 00000000 l    d  .debug_macinfo	00000000 .debug_macinfo
-00000000 l    d  .debug_ranges	00000000 .debug_ranges
 00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o
 0000fffe l       __reset_vector	00000000 __msp430_resetvec_hook
-0000816c l       .text	00000000 _msp430_run_array
-0000817a l       .text	00000000 _msp430_run_done
-00000000 l    df *ABS*	00000000 main.c
-00008000 l     O .rodata	00000100 bits
+0000806c l       .text	00000000 _msp430_run_array
+0000807a l       .text	00000000 _msp430_run_done
 00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
-00008108 l     O .rodata	00000000 __CTOR_LIST__
-0000810c l     O .rodata	00000000 __DTOR_LIST__
-00008100 l     O .rodata	00000000 __EH_FRAME_BEGIN__
-000088fa l     O .text	00000000 __TMC_LIST__
-00008180 l     F .text	00000000 deregister_tm_clones
-0000819a l     F .text	00000000 register_tm_clones
-000081c8 l     F .text	00000000 __do_global_dtors_aux
-00004002 l     O .bss	00000000 completed.3056
-00004004 l     O .bss	00000000 dtor_idx.3058
-00008216 l     F .text	00000000 call___do_global_dtors_aux
-00008216 l     F .text	00000000 frame_dummy
-00004006 l     O .bss	00000000 object.3071
-0000822e l     F .text	00000000 call_frame_dummy
+00008008 l     O .rodata	00000000 __CTOR_LIST__
+0000800c l     O .rodata	00000000 __DTOR_LIST__
+00008000 l     O .rodata	00000000 __EH_FRAME_BEGIN__
+000082ca l     O .text	00000000 __TMC_LIST__
+00008080 l     F .text	00000000 deregister_tm_clones
+0000809a l     F .text	00000000 register_tm_clones
+000080c8 l     F .text	00000000 __do_global_dtors_aux
+00004006 l     O .bss	00000000 completed.3056
+00004008 l     O .bss	00000000 dtor_idx.3058
+00008116 l     F .text	00000000 call___do_global_dtors_aux
+00008116 l     F .text	00000000 frame_dummy
+0000400a l     O .bss	00000000 object.3071
+0000812e l     F .text	00000000 call_frame_dummy
 00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
-0000810a l     O .rodata	00000000 __CTOR_END__
-00008100 l     O .rodata	00000000 __FRAME_END__
-000088c4 l     F .text	00000000 __do_global_ctors_aux
-000088de l     F .text	00000000 call___do_global_ctors_aux
+0000800a l     O .rodata	00000000 __CTOR_END__
+00008000 l     O .rodata	00000000 __FRAME_END__
+00008294 l     F .text	00000000 __do_global_ctors_aux
+000082ae l     F .text	00000000 call___do_global_ctors_aux
 00000000 l    df *ABS*	00000000 crt_bss.o
 00000000 l    df *ABS*	00000000 crt_movedata.o
 00000000 l    df *ABS*	00000000 crt_main.o
+00000000 l    df *ABS*	00000000 main.c
 00000000 l    df *ABS*	00000000 srli.o
 00000000 l    df *ABS*	00000000 lib_a-memmove.o
 00000000 l    df *ABS*	00000000 lib_a-memset.o
 00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crtn.o
-000087da g       .text	00000000 .hidden __mspabi_srli_9
-0000882a g       .text	00000000 .hidden __mspabi_srll_10
-000087d6 g       .text	00000000 .hidden __mspabi_srli_10
-00008338 g     F .text	000000a4 ntbl_bitcount
-000087c2 g       .text	00000000 .hidden __mspabi_srli_15
-00008876 g     F .text	00000038 memmove
-000087ee g       .text	00000000 .hidden __mspabi_srli_4
-000087e2 g       .text	00000000 .hidden __mspabi_srli_7
-0000883c g       .text	00000000 .hidden __mspabi_srll_7
-00008854 g       .text	00000000 .hidden __mspabi_srll_3
-000087b4 g       .text	00000000 .hidden __mspabi_func_epilog_6
-000088fa g     O .text	00000000 .hidden __TMC_END__
-00008818 g       .text	00000000 .hidden __mspabi_srll_13
-0000810e g     O .rodata	00000000 .hidden __DTOR_END__
-00008104 g       .rodata	00000000 __fini_array_end
-000087ce g       .text	00000000 .hidden __mspabi_srli_12
-00008110 g     F .text	00000004 __crt0_start
+000081aa g       .text	00000000 .hidden __mspabi_srli_9
+000081fa g       .text	00000000 .hidden __mspabi_srll_10
+000081a6 g       .text	00000000 .hidden __mspabi_srli_10
+0000812e g     F .text	00000026 dummy_wait
+00008192 g       .text	00000000 .hidden __mspabi_srli_15
+00008246 g     F .text	00000038 memmove
+000081be g       .text	00000000 .hidden __mspabi_srli_4
+000081b2 g       .text	00000000 .hidden __mspabi_srli_7
+0000820c g       .text	00000000 .hidden __mspabi_srll_7
+00008224 g       .text	00000000 .hidden __mspabi_srll_3
+00008184 g       .text	00000000 .hidden __mspabi_func_epilog_6
+000082ca g     O .text	00000000 .hidden __TMC_END__
+000081e8 g       .text	00000000 .hidden __mspabi_srll_13
+0000800e g     O .rodata	00000000 .hidden __DTOR_END__
+00008004 g       .rodata	00000000 __fini_array_end
+0000819e g       .text	00000000 .hidden __mspabi_srli_12
+00008010 g     F .text	00000004 __crt0_start
 00004000 g     O .data	00000000 .hidden __dso_handle
-00008114 g     F .text	0000000e __crt0_init_bss
+00008014 g     F .text	0000000e __crt0_init_bss
 00000012 g       *ABS*	00000000 __bsssize
-00008136 g     F .text	0000000a __crt0_call_init_then_main
-000087be g       .text	00000000 .hidden __mspabi_func_epilog_1
-000087ba g       .text	00000000 .hidden __mspabi_func_epilog_3
-00008848 g       .text	00000000 .hidden __mspabi_srll_5
-00008806 g       .text	00000000 .hidden __mspabi_srli
-00008824 g       .text	00000000 .hidden __mspabi_srll_11
-000087ea g       .text	00000000 .hidden __mspabi_srli_5
-000083dc g     F .text	0000003e BW_btbl_bitcount
+00008036 g     F .text	0000000a __crt0_call_init_then_main
+0000818e g       .text	00000000 .hidden __mspabi_func_epilog_1
+0000818a g       .text	00000000 .hidden __mspabi_func_epilog_3
+00008218 g       .text	00000000 .hidden __mspabi_srll_5
+000081d6 g       .text	00000000 .hidden __mspabi_srli
+000081f4 g       .text	00000000 .hidden __mspabi_srll_11
+000081ba g       .text	00000000 .hidden __mspabi_srli_5
 00000000  w      *UND*	00000000 __deregister_frame_info
-00004014 g       .noinit	00000000 end
+00004018 g       .noinit	00000000 end
 00000000  w      *UND*	00000000 _ITM_registerTMCloneTable
-00008842 g       .text	00000000 .hidden __mspabi_srll_6
-00008110 g       .text	00000000 _start
-0000815c g     F .text	00000000 _msp430_run_fini_array
-000087fa g       .text	00000000 .hidden __mspabi_srli_1
-00008812 g       .text	00000000 .hidden __mspabi_srll_14
-00008296 g     F .text	000000a2 bitcount
-000087c6 g       .text	00000000 .hidden __mspabi_srli_14
-00000002 g       *ABS*	00000000 __romdatacopysize
-0000822e g     F .text	00000008 init
-000087d2 g       .text	00000000 .hidden __mspabi_srli_11
+00008212 g       .text	00000000 .hidden __mspabi_srll_6
+00008010 g       .text	00000000 _start
+0000805c g     F .text	00000000 _msp430_run_fini_array
+000081ca g       .text	00000000 .hidden __mspabi_srli_1
+000081e2 g       .text	00000000 .hidden __mspabi_srll_14
+00008196 g       .text	00000000 .hidden __mspabi_srli_14
+00000006 g       *ABS*	00000000 __romdatacopysize
+000081a2 g       .text	00000000 .hidden __mspabi_srli_11
 00000000  w      *UND*	00000000 _ITM_deregisterTMCloneTable
-00008104 g       .rodata	00000000 __fini_array_start
+00008004 g       .rodata	00000000 __fini_array_start
 00000000  w      *ABS*	00000000 __rom_highdatacopysize
-00008456 g     F .text	00000042 ntbl_bitcnt
-000088de g       .text	00000000 __msp430_init
-000088ae g     F .text	00000014 memset
-00008498 g     F .text	0000031a main
-0000884e g       .text	00000000 .hidden __mspabi_srll_4
-00008104 g       .rodata	00000000 __init_array_end
-000087f6 g       .text	00000000 .hidden __mspabi_srli_2
+000082ae g       .text	00000000 __msp430_init
+0000827e g     F .text	00000014 memset
+00008154 g     F .text	0000002e main
+0000821e g       .text	00000000 .hidden __mspabi_srll_4
+00008004 g       .rodata	00000000 __init_array_end
+000081c6 g       .text	00000000 .hidden __mspabi_srli_2
 00000000  w      *ABS*	00000000 __high_bsssize
-00008270 g     F .text	00000026 bit_count
 00000000  w      *ABS*	00000000 __rom_highdatastart
-000088fa g       .text	00000000 __msp430_fini_end
-0000881e g       .text	00000000 .hidden __mspabi_srll_12
-000088fa g       *ABS*	00000000 __romdatastart
-00008140 g     F .text	00000000 _msp430_run_init_array
-000087e6 g       .text	00000000 .hidden __mspabi_srli_6
-00008104 g       .rodata	00000000 __preinit_array_end
-000087f2 g       .text	00000000 .hidden __mspabi_srli_3
+000082ca g       .text	00000000 __msp430_fini_end
+000081ee g       .text	00000000 .hidden __mspabi_srll_12
+000082ca g       *ABS*	00000000 __romdatastart
+00008040 g     F .text	00000000 _msp430_run_init_array
+000081b6 g       .text	00000000 .hidden __mspabi_srli_6
+00008004 g       .rodata	00000000 __preinit_array_end
+00004002 g     O .data	00000002 u16_nv_read
+000081c2 g       .text	00000000 .hidden __mspabi_srli_3
 00000000  w      *ABS*	00000000 __high_datastart
 00000000  w      *ABS*	00000000 __upper_data_init
-00004002 g       .bss	00000000 __bssstart
-000087b6 g       .text	00000000 .hidden __mspabi_func_epilog_5
-00008236 g     F .text	0000003a btbl_bitcnt
+00004006 g       .bss	00000000 __bssstart
+00008186 g       .text	00000000 .hidden __mspabi_func_epilog_5
+00004004 g     O .data	00000002 redirected
 00008000 g       .noinit	00000000 __stack
-00008830 g       .text	00000000 .hidden __mspabi_srll_9
-00004002 g       .data	00000000 _edata
-000088f0 g       .text	00000000 __msp430_init_end
-00008870 g       .text	00000000 .hidden __mspabi_srll
+00008200 g       .text	00000000 .hidden __mspabi_srll_9
+00004006 g       .data	00000000 _edata
+000082c0 g       .text	00000000 __msp430_init_end
+00008240 g       .text	00000000 .hidden __mspabi_srll
 00000000  w      *ABS*	00000000 __high_bssstart
-0000880c g       .text	00000000 .hidden __mspabi_srll_15
-00008104 g       .rodata	00000000 __init_array_start
-0000841a g     F .text	0000003c AR_btbl_bitcount
-000087ca g       .text	00000000 .hidden __mspabi_srli_13
+000081dc g       .text	00000000 .hidden __mspabi_srll_15
+00008004 g       .rodata	00000000 __init_array_start
+0000819a g       .text	00000000 .hidden __mspabi_srli_13
 00004000 g       .data	00000000 __datastart
-00008836 g       .text	00000000 .hidden __mspabi_srll_8
-00008860 g       .text	00000000 .hidden __mspabi_srll_1
-00008104 g       .rodata	00000000 __preinit_array_start
-00008122 g     F .text	00000014 __crt0_movedata
-000087bc g       .text	00000000 .hidden __mspabi_func_epilog_2
+00008206 g       .text	00000000 .hidden __mspabi_srll_8
+00008230 g       .text	00000000 .hidden __mspabi_srll_1
+00008004 g       .rodata	00000000 __preinit_array_start
+00008022 g     F .text	00000014 __crt0_movedata
+0000818c g       .text	00000000 .hidden __mspabi_func_epilog_2
 00000000  w      *UND*	00000000 __register_frame_info
-0000814e g     F .text	00000000 _msp430_run_preinit_array
-000087b2 g       .text	00000000 .hidden __mspabi_func_epilog_7
-000087b8 g       .text	00000000 .hidden __mspabi_func_epilog_4
-0000885a g       .text	00000000 .hidden __mspabi_srll_2
-000088f0 g       .text	00000000 __msp430_fini
-000087de g       .text	00000000 .hidden __mspabi_srli_8
+0000804e g     F .text	00000000 _msp430_run_preinit_array
+00008182 g       .text	00000000 .hidden __mspabi_func_epilog_7
+00008188 g       .text	00000000 .hidden __mspabi_func_epilog_4
+0000822a g       .text	00000000 .hidden __mspabi_srll_2
+000082c0 g       .text	00000000 __msp430_fini
+000081ae g       .text	00000000 .hidden __mspabi_srli_8
 
 
 
 Disassembly of section .text:
 
-00008110 <__crt0_start>:
-    8110:	31 40 00 80 	mov	#32768,	r1	;#0x8000
+00008010 <__crt0_start>:
+    8010:	31 40 00 80 	mov	#32768,	r1	;#0x8000
 
-00008114 <__crt0_init_bss>:
-    8114:	3c 40 02 40 	mov	#16386,	r12	;#0x4002
+00008014 <__crt0_init_bss>:
+    8014:	3c 40 06 40 	mov	#16390,	r12	;#0x4006
 
-00008118 <.Loc.74.1>:
-    8118:	0d 43       	clr	r13		;
+00008018 <.Loc.74.1>:
+    8018:	0d 43       	clr	r13		;
 
-0000811a <.Loc.75.1>:
-    811a:	3e 40 12 00 	mov	#18,	r14	;#0x0012
+0000801a <.Loc.75.1>:
+    801a:	3e 40 12 00 	mov	#18,	r14	;#0x0012
 
-0000811e <.Loc.79.1>:
-    811e:	b0 12 ae 88 	call	#34990		;#0x88ae
+0000801e <.Loc.79.1>:
+    801e:	b0 12 7e 82 	call	#33406		;#0x827e
 
-00008122 <__crt0_movedata>:
-    8122:	3c 40 00 40 	mov	#16384,	r12	;#0x4000
+00008022 <__crt0_movedata>:
+    8022:	3c 40 00 40 	mov	#16384,	r12	;#0x4000
 
-00008126 <.Loc.116.1>:
-    8126:	3d 40 fa 88 	mov	#35066,	r13	;#0x88fa
+00008026 <.Loc.116.1>:
+    8026:	3d 40 ca 82 	mov	#33482,	r13	;#0x82ca
 
-0000812a <.Loc.119.1>:
-    812a:	0d 9c       	cmp	r12,	r13	;
+0000802a <.Loc.119.1>:
+    802a:	0d 9c       	cmp	r12,	r13	;
 
-0000812c <.Loc.120.1>:
-    812c:	04 24       	jz	$+10     	;abs 0x8136
+0000802c <.Loc.120.1>:
+    802c:	04 24       	jz	$+10     	;abs 0x8036
 
-0000812e <.Loc.122.1>:
-    812e:	3e 40 02 00 	mov	#2,	r14	;
+0000802e <.Loc.122.1>:
+    802e:	3e 40 06 00 	mov	#6,	r14	;
 
-00008132 <.Loc.124.1>:
-    8132:	b0 12 76 88 	call	#34934		;#0x8876
+00008032 <.Loc.124.1>:
+    8032:	b0 12 46 82 	call	#33350		;#0x8246
 
-00008136 <__crt0_call_init_then_main>:
-    8136:	b0 12 de 88 	call	#35038		;#0x88de
+00008036 <__crt0_call_init_then_main>:
+    8036:	b0 12 ae 82 	call	#33454		;#0x82ae
 
-0000813a <.Loc.196.1>:
-    813a:	0c 43       	clr	r12		;
+0000803a <.Loc.196.1>:
+    803a:	0c 43       	clr	r12		;
 
-0000813c <.Loc.197.1>:
-    813c:	b0 12 98 84 	call	#33944		;#0x8498
+0000803c <.Loc.197.1>:
+    803c:	b0 12 54 81 	call	#33108		;#0x8154
 
-00008140 <_msp430_run_init_array>:
-    8140:	34 40 04 81 	mov	#33028,	r4	;#0x8104
+00008040 <_msp430_run_init_array>:
+    8040:	34 40 04 80 	mov	#32772,	r4	;#0x8004
 
-00008144 <.Loc.224.1>:
-    8144:	35 40 04 81 	mov	#33028,	r5	;#0x8104
+00008044 <.Loc.224.1>:
+    8044:	35 40 04 80 	mov	#32772,	r5	;#0x8004
 
-00008148 <.Loc.225.1>:
-    8148:	26 43       	mov	#2,	r6	;r3 As==10
+00008048 <.Loc.225.1>:
+    8048:	26 43       	mov	#2,	r6	;r3 As==10
 
-0000814a <.Loc.226.1>:
-    814a:	30 40 6c 81 	br	#0x816c		;
+0000804a <.Loc.226.1>:
+    804a:	30 40 6c 80 	br	#0x806c		;
 
-0000814e <_msp430_run_preinit_array>:
-    814e:	34 40 04 81 	mov	#33028,	r4	;#0x8104
+0000804e <_msp430_run_preinit_array>:
+    804e:	34 40 04 80 	mov	#32772,	r4	;#0x8004
 
-00008152 <.Loc.232.1>:
-    8152:	35 40 04 81 	mov	#33028,	r5	;#0x8104
+00008052 <.Loc.232.1>:
+    8052:	35 40 04 80 	mov	#32772,	r5	;#0x8004
 
-00008156 <.Loc.233.1>:
-    8156:	26 43       	mov	#2,	r6	;r3 As==10
+00008056 <.Loc.233.1>:
+    8056:	26 43       	mov	#2,	r6	;r3 As==10
 
-00008158 <.Loc.234.1>:
-    8158:	30 40 6c 81 	br	#0x816c		;
+00008058 <.Loc.234.1>:
+    8058:	30 40 6c 80 	br	#0x806c		;
 
-0000815c <_msp430_run_fini_array>:
-    815c:	34 40 04 81 	mov	#33028,	r4	;#0x8104
+0000805c <_msp430_run_fini_array>:
+    805c:	34 40 04 80 	mov	#32772,	r4	;#0x8004
 
-00008160 <.Loc.240.1>:
-    8160:	35 40 04 81 	mov	#33028,	r5	;#0x8104
+00008060 <.Loc.240.1>:
+    8060:	35 40 04 80 	mov	#32772,	r5	;#0x8004
 
-00008164 <.Loc.241.1>:
-    8164:	36 40 fe ff 	mov	#65534,	r6	;#0xfffe
+00008064 <.Loc.241.1>:
+    8064:	36 40 fe ff 	mov	#65534,	r6	;#0xfffe
 
-00008168 <.Loc.242.1>:
-    8168:	30 40 6c 81 	br	#0x816c		;
+00008068 <.Loc.242.1>:
+    8068:	30 40 6c 80 	br	#0x806c		;
 
-0000816c <_msp430_run_array>:
-    816c:	05 94       	cmp	r4,	r5	;
+0000806c <_msp430_run_array>:
+    806c:	05 94       	cmp	r4,	r5	;
 
-0000816e <.Loc.246.1>:
-    816e:	05 24       	jz	$+12     	;abs 0x817a
+0000806e <.Loc.246.1>:
+    806e:	05 24       	jz	$+12     	;abs 0x807a
 
-00008170 <.Loc.247.1>:
-    8170:	27 44       	mov	@r4,	r7	;
+00008070 <.Loc.247.1>:
+    8070:	27 44       	mov	@r4,	r7	;
 
-00008172 <.Loc.248.1>:
-    8172:	04 56       	add	r6,	r4	;
+00008072 <.Loc.248.1>:
+    8072:	04 56       	add	r6,	r4	;
 
-00008174 <.Loc.249.1>:
-    8174:	a7 12       	call	@r7		;
+00008074 <.Loc.249.1>:
+    8074:	a7 12       	call	@r7		;
 
-00008176 <.Loc.250.1>:
-    8176:	10 40 f4 ff 	br	0xfff4		;PC rel. 0x816c
+00008076 <.Loc.250.1>:
+    8076:	10 40 f4 ff 	br	0xfff4		;PC rel. 0x806c
 
-0000817a <_msp430_run_done>:
-    817a:	30 41       	ret			
+0000807a <_msp430_run_done>:
+    807a:	30 41       	ret			
 
-0000817c <L0>:
-    817c:	30 41       	ret			
-    817e:	30 41       	ret			
+0000807c <L0>:
+    807c:	30 41       	ret			
+    807e:	30 41       	ret			
 
-00008180 <deregister_tm_clones>:
-    8180:	3c 40 fa 88 	mov	#35066,	r12	;#0x88fa
-    8184:	3c 90 fa 88 	cmp	#35066,	r12	;#0x88fa
-    8188:	07 24       	jz	$+16     	;abs 0x8198
-    818a:	3d 40 00 00 	mov	#0,	r13	;
-    818e:	0d 93       	cmp	#0,	r13	;r3 As==00
-    8190:	03 24       	jz	$+8      	;abs 0x8198
-    8192:	3c 40 fa 88 	mov	#35066,	r12	;#0x88fa
-    8196:	8d 12       	call	r13		;
+00008080 <deregister_tm_clones>:
+    8080:	3c 40 ca 82 	mov	#33482,	r12	;#0x82ca
+    8084:	3c 90 ca 82 	cmp	#33482,	r12	;#0x82ca
+    8088:	07 24       	jz	$+16     	;abs 0x8098
+    808a:	3d 40 00 00 	mov	#0,	r13	;
+    808e:	0d 93       	cmp	#0,	r13	;r3 As==00
+    8090:	03 24       	jz	$+8      	;abs 0x8098
+    8092:	3c 40 ca 82 	mov	#33482,	r12	;#0x82ca
+    8096:	8d 12       	call	r13		;
 
-00008198 <.L1>:
-    8198:	30 41       	ret			
+00008098 <.L1>:
+    8098:	30 41       	ret			
 
-0000819a <register_tm_clones>:
-    819a:	0a 12       	push	r10		;
-    819c:	3a 40 fa 88 	mov	#35066,	r10	;#0x88fa
-    81a0:	3a 80 fa 88 	sub	#35066,	r10	;#0x88fa
-    81a4:	0a 11       	rra	r10		;
-    81a6:	0c 4a       	mov	r10,	r12	;
-    81a8:	b0 12 c2 87 	call	#34754		;#0x87c2
-    81ac:	0c 5a       	add	r10,	r12	;
-    81ae:	0d 4c       	mov	r12,	r13	;
-    81b0:	0d 11       	rra	r13		;
-    81b2:	0d 93       	cmp	#0,	r13	;r3 As==00
-    81b4:	07 24       	jz	$+16     	;abs 0x81c4
-    81b6:	3e 40 00 00 	mov	#0,	r14	;
-    81ba:	0e 93       	cmp	#0,	r14	;r3 As==00
-    81bc:	03 24       	jz	$+8      	;abs 0x81c4
-    81be:	3c 40 fa 88 	mov	#35066,	r12	;#0x88fa
-    81c2:	8e 12       	call	r14		;
+0000809a <register_tm_clones>:
+    809a:	0a 12       	push	r10		;
+    809c:	3a 40 ca 82 	mov	#33482,	r10	;#0x82ca
+    80a0:	3a 80 ca 82 	sub	#33482,	r10	;#0x82ca
+    80a4:	0a 11       	rra	r10		;
+    80a6:	0c 4a       	mov	r10,	r12	;
+    80a8:	b0 12 92 81 	call	#33170		;#0x8192
+    80ac:	0c 5a       	add	r10,	r12	;
+    80ae:	0d 4c       	mov	r12,	r13	;
+    80b0:	0d 11       	rra	r13		;
+    80b2:	0d 93       	cmp	#0,	r13	;r3 As==00
+    80b4:	07 24       	jz	$+16     	;abs 0x80c4
+    80b6:	3e 40 00 00 	mov	#0,	r14	;
+    80ba:	0e 93       	cmp	#0,	r14	;r3 As==00
+    80bc:	03 24       	jz	$+8      	;abs 0x80c4
+    80be:	3c 40 ca 82 	mov	#33482,	r12	;#0x82ca
+    80c2:	8e 12       	call	r14		;
 
-000081c4 <.L9>:
-    81c4:	3a 41       	pop	r10		;
-    81c6:	30 41       	ret			
+000080c4 <.L9>:
+    80c4:	3a 41       	pop	r10		;
+    80c6:	30 41       	ret			
 
-000081c8 <__do_global_dtors_aux>:
-    81c8:	0a 12       	push	r10		;
-    81ca:	09 12       	push	r9		;
-    81cc:	c2 93 02 40 	cmp.b	#0,	&0x4002	;r3 As==00
-    81d0:	17 20       	jnz	$+48     	;abs 0x8200
-    81d2:	3a 40 0e 81 	mov	#33038,	r10	;#0x810e
-    81d6:	3a 80 0c 81 	sub	#33036,	r10	;#0x810c
-    81da:	0a 11       	rra	r10		;
-    81dc:	3a 53       	add	#-1,	r10	;r3 As==11
-    81de:	39 40 0c 81 	mov	#33036,	r9	;#0x810c
+000080c8 <__do_global_dtors_aux>:
+    80c8:	0a 12       	push	r10		;
+    80ca:	09 12       	push	r9		;
+    80cc:	c2 93 06 40 	cmp.b	#0,	&0x4006	;r3 As==00
+    80d0:	17 20       	jnz	$+48     	;abs 0x8100
+    80d2:	3a 40 0e 80 	mov	#32782,	r10	;#0x800e
+    80d6:	3a 80 0c 80 	sub	#32780,	r10	;#0x800c
+    80da:	0a 11       	rra	r10		;
+    80dc:	3a 53       	add	#-1,	r10	;r3 As==11
+    80de:	39 40 0c 80 	mov	#32780,	r9	;#0x800c
 
-000081e2 <.L19>:
-    81e2:	1c 42 04 40 	mov	&0x4004,r12	;0x4004
-    81e6:	0c 9a       	cmp	r10,	r12	;
-    81e8:	0d 28       	jnc	$+28     	;abs 0x8204
-    81ea:	b0 12 80 81 	call	#33152		;#0x8180
-    81ee:	3d 40 00 00 	mov	#0,	r13	;
-    81f2:	0d 93       	cmp	#0,	r13	;r3 As==00
-    81f4:	03 24       	jz	$+8      	;abs 0x81fc
-    81f6:	3c 40 00 81 	mov	#33024,	r12	;#0x8100
-    81fa:	8d 12       	call	r13		;
+000080e2 <.L19>:
+    80e2:	1c 42 08 40 	mov	&0x4008,r12	;0x4008
+    80e6:	0c 9a       	cmp	r10,	r12	;
+    80e8:	0d 28       	jnc	$+28     	;abs 0x8104
+    80ea:	b0 12 80 80 	call	#32896		;#0x8080
+    80ee:	3d 40 00 00 	mov	#0,	r13	;
+    80f2:	0d 93       	cmp	#0,	r13	;r3 As==00
+    80f4:	03 24       	jz	$+8      	;abs 0x80fc
+    80f6:	3c 40 00 80 	mov	#32768,	r12	;#0x8000
+    80fa:	8d 12       	call	r13		;
 
-000081fc <.L21>:
-    81fc:	d2 43 02 40 	mov.b	#1,	&0x4002	;r3 As==01
+000080fc <.L21>:
+    80fc:	d2 43 06 40 	mov.b	#1,	&0x4006	;r3 As==01
 
-00008200 <.L17>:
-    8200:	30 40 bc 87 	br	#0x87bc		;
+00008100 <.L17>:
+    8100:	30 40 8c 81 	br	#0x818c		;
 
-00008204 <.L20>:
-    8204:	1c 53       	inc	r12		;
-    8206:	82 4c 04 40 	mov	r12,	&0x4004	;
-    820a:	0c 5c       	rla	r12		;
-    820c:	0c 59       	add	r9,	r12	;
-    820e:	2c 4c       	mov	@r12,	r12	;
-    8210:	8c 12       	call	r12		;
-    8212:	30 40 e2 81 	br	#0x81e2		;
+00008104 <.L20>:
+    8104:	1c 53       	inc	r12		;
+    8106:	82 4c 08 40 	mov	r12,	&0x4008	;
+    810a:	0c 5c       	rla	r12		;
+    810c:	0c 59       	add	r9,	r12	;
+    810e:	2c 4c       	mov	@r12,	r12	;
+    8110:	8c 12       	call	r12		;
+    8112:	30 40 e2 80 	br	#0x80e2		;
 
-00008216 <call___do_global_dtors_aux>:
-    8216:	3e 40 00 00 	mov	#0,	r14	;
-    821a:	0e 93       	cmp	#0,	r14	;r3 As==00
-    821c:	05 24       	jz	$+12     	;abs 0x8228
-    821e:	3d 40 06 40 	mov	#16390,	r13	;#0x4006
-    8222:	3c 40 00 81 	mov	#33024,	r12	;#0x8100
-    8226:	8e 12       	call	r14		;
+00008116 <call___do_global_dtors_aux>:
+    8116:	3e 40 00 00 	mov	#0,	r14	;
+    811a:	0e 93       	cmp	#0,	r14	;r3 As==00
+    811c:	05 24       	jz	$+12     	;abs 0x8128
+    811e:	3d 40 0a 40 	mov	#16394,	r13	;#0x400a
+    8122:	3c 40 00 80 	mov	#32768,	r12	;#0x8000
+    8126:	8e 12       	call	r14		;
 
-00008228 <.L27>:
-    8228:	b0 12 9a 81 	call	#33178		;#0x819a
-    822c:	30 41       	ret			
+00008128 <.L27>:
+    8128:	b0 12 9a 80 	call	#32922		;#0x809a
+    812c:	30 41       	ret			
 
-0000822e <init>:
+0000812e <dummy_wait>:
+#include <stdio.h>
+#include <stdlib.h>
 
+#define  QWARK_CTL      (*(volatile unsigned int  *) 0x0190)
 
-void init()
-{
+void dummy_wait(){
+    812e:	21 83       	decd	r1		;
 
-     WDTCTL = WDTPW | WDTHOLD; // Stop WDT
-    822e:	b2 40 80 5a 	mov	#23168,	&0x0120	;#0x5a80
-    8232:	20 01 
+00008130 <.LCFI0>:
+	volatile int i=0;
+    8130:	81 43 00 00 	mov	#0,	0(r1)	;r3 As==00
 
-00008234 <.Loc.50.1>:
-   // __delay_cycles(3);
+00008134 <.Loc.13.1>:
 
-	/* init FRAM */
-  //  FRCTL0_H |= (FWPW) >> 8;
+	for(i=0;i<500;i++);
+    8134:	81 43 00 00 	mov	#0,	0(r1)	;r3 As==00
+    8138:	30 40 44 81 	br	#0x8144		;
 
-}
-    8234:	30 41       	ret			
+0000813c <.L3>:
+    813c:	2c 41       	mov	@r1,	r12	;
+    813e:	1c 53       	inc	r12		;
+    8140:	81 4c 00 00 	mov	r12,	0(r1)	;
 
-00008236 <btbl_bitcnt>:
+00008144 <.L2>:
+    8144:	2d 41       	mov	@r1,	r13	;
+    8146:	3c 40 f3 01 	mov	#499,	r12	;#0x01f3
+    814a:	0c 9d       	cmp	r13,	r12	;
+    814c:	f7 37       	jge	$-16     	;abs 0x813c
 
-int btbl_bitcnt(uint32_t x)
-{
-    8236:	0a 12       	push	r10		;
-
-00008238 <.LCFI0>:
-    8238:	09 12       	push	r9		;
-
-0000823a <.LCFI1>:
-    823a:	08 12       	push	r8		;
-
-0000823c <.LCFI2>:
-      int cnt = bits[ ((char *)&x)[0] & 0xFF ];
-    823c:	39 40 00 80 	mov	#32768,	r9	;#0x8000
-    8240:	4e 4c       	mov.b	r12,	r14	;
-    8242:	0e 59       	add	r9,	r14	;
-    8244:	68 4e       	mov.b	@r14,	r8	;
-
-00008246 <.Loc.56.1>:
-
-      if (0L != (x >>= 8))
-    8246:	b0 12 36 88 	call	#34870		;#0x8836
-
-0000824a <.LVL2>:
-    824a:	0a 4c       	mov	r12,	r10	;
-    824c:	0a dd       	bis	r13,	r10	;
-    824e:	0a 93       	cmp	#0,	r10	;r3 As==00
-    8250:	0b 24       	jz	$+24     	;abs 0x8268
-    8252:	4a 43       	clr.b	r10		;
-
-00008254 <.L6>:
-    8254:	0a 58       	add	r8,	r10	;
-
-00008256 <.Loc.54.1>:
+0000814e <.Loc.15.1>:
 
 }
-
-int btbl_bitcnt(uint32_t x)
-{
-      int cnt = bits[ ((char *)&x)[0] & 0xFF ];
-    8256:	4e 4c       	mov.b	r12,	r14	;
-    8258:	0e 59       	add	r9,	r14	;
-    825a:	68 4e       	mov.b	@r14,	r8	;
-
-0000825c <.Loc.56.1>:
-
-      if (0L != (x >>= 8))
-    825c:	b0 12 36 88 	call	#34870		;#0x8836
-
-00008260 <.LVL5>:
-    8260:	0e 4c       	mov	r12,	r14	;
-    8262:	0e dd       	bis	r13,	r14	;
-    8264:	0e 93       	cmp	#0,	r14	;r3 As==00
-    8266:	f6 23       	jnz	$-18     	;abs 0x8254
-
-00008268 <.L4>:
-            cnt += btbl_bitcnt(x);
-      return cnt;
-}
-    8268:	0c 48       	mov	r8,	r12	;
-    826a:	0c 5a       	add	r10,	r12	;
-    826c:	30 40 ba 87 	br	#0x87ba		;
-
-00008270 <bit_count>:
-int bit_count(uint32_t x)
-{
-    8270:	0e 4c       	mov	r12,	r14	;
-
-00008272 <.Loc.64.1>:
-        int n = 0;
-
-        if (x) do
-    8272:	0c dd       	bis	r13,	r12	;
-
-00008274 <.LVL9>:
-    8274:	0c 93       	cmp	#0,	r12	;r3 As==00
-    8276:	0e 24       	jz	$+30     	;abs 0x8294
-
-00008278 <.LBB16>:
-            cnt += btbl_bitcnt(x);
-      return cnt;
-}
-int bit_count(uint32_t x)
-{
-        int n = 0;
-    8278:	4c 43       	clr.b	r12		;
-
-0000827a <.L12>:
-
-        if (x) do
-              n++;
-    827a:	1c 53       	inc	r12		;
-
-0000827c <.Loc.66.1>:
-        while (0 != (x = x&(x-1))) ;
-    827c:	0b 4e       	mov	r14,	r11	;
-    827e:	3b 53       	add	#-1,	r11	;r3 As==11
-    8280:	0f 4d       	mov	r13,	r15	;
-    8282:	3f 63       	addc	#-1,	r15	;r3 As==11
-    8284:	0b fe       	and	r14,	r11	;
-    8286:	0f fd       	and	r13,	r15	;
-    8288:	0e 4b       	mov	r11,	r14	;
-
-0000828a <.LVL12>:
-    828a:	0d 4f       	mov	r15,	r13	;
-
-0000828c <.LVL13>:
-    828c:	0f 4b       	mov	r11,	r15	;
-    828e:	0f dd       	bis	r13,	r15	;
-    8290:	0f 93       	cmp	#0,	r15	;r3 As==00
-    8292:	f3 23       	jnz	$-24     	;abs 0x827a
-
-00008294 <.L9>:
-        return(n);
-}
-    8294:	30 41       	ret			
-
-00008296 <bitcount>:
-int bitcount(uint32_t i)
-{
-    8296:	0a 12       	push	r10		;
-
-00008298 <.LCFI3>:
-    8298:	09 12       	push	r9		;
-
-0000829a <.LCFI4>:
-    829a:	08 12       	push	r8		;
-
-0000829c <.LCFI5>:
-    829c:	07 12       	push	r7		;
-
-0000829e <.LCFI6>:
-      i = ((i & 0xAAAAAAAAL) >>  1) + (i & 0x55555555L);
-    829e:	0a 4c       	mov	r12,	r10	;
-    82a0:	0b 4d       	mov	r13,	r11	;
-    82a2:	12 c3       	clrc			
-    82a4:	0b 10       	rrc	r11		;
-    82a6:	0a 10       	rrc	r10		;
-    82a8:	0e 4a       	mov	r10,	r14	;
-    82aa:	3e f0 55 55 	and	#21845,	r14	;#0x5555
-    82ae:	08 4b       	mov	r11,	r8	;
-    82b0:	38 f0 55 55 	and	#21845,	r8	;#0x5555
-    82b4:	09 4c       	mov	r12,	r9	;
-    82b6:	39 f0 55 55 	and	#21845,	r9	;#0x5555
-    82ba:	0f 4d       	mov	r13,	r15	;
-    82bc:	3f f0 55 55 	and	#21845,	r15	;#0x5555
-    82c0:	09 5e       	add	r14,	r9	;
-    82c2:	08 6f       	addc	r15,	r8	;
-
-000082c4 <.LVL16>:
-      i = ((i & 0xCCCCCCCCL) >>  2) + (i & 0x33333333L);
-    82c4:	0c 49       	mov	r9,	r12	;
-    82c6:	0d 48       	mov	r8,	r13	;
-    82c8:	b0 12 5a 88 	call	#34906		;#0x885a
-    82cc:	0e 4c       	mov	r12,	r14	;
-    82ce:	3e f0 33 33 	and	#13107,	r14	;#0x3333
-    82d2:	07 4d       	mov	r13,	r7	;
-    82d4:	37 f0 33 33 	and	#13107,	r7	;#0x3333
-    82d8:	0a 49       	mov	r9,	r10	;
-    82da:	3a f0 33 33 	and	#13107,	r10	;#0x3333
-    82de:	0c 48       	mov	r8,	r12	;
-    82e0:	3c f0 33 33 	and	#13107,	r12	;#0x3333
-    82e4:	0a 5e       	add	r14,	r10	;
-    82e6:	07 6c       	addc	r12,	r7	;
-
-000082e8 <.LVL18>:
-      i = ((i & 0xF0F0F0F0L) >>  4) + (i & 0x0F0F0F0FL);
-    82e8:	0c 4a       	mov	r10,	r12	;
-    82ea:	0d 47       	mov	r7,	r13	;
-    82ec:	b0 12 4e 88 	call	#34894		;#0x884e
-    82f0:	0e 4c       	mov	r12,	r14	;
-    82f2:	3e f0 0f 0f 	and	#3855,	r14	;#0x0f0f
-    82f6:	08 4d       	mov	r13,	r8	;
-    82f8:	38 f0 0f 0f 	and	#3855,	r8	;#0x0f0f
-    82fc:	09 4a       	mov	r10,	r9	;
-    82fe:	39 f0 0f 0f 	and	#3855,	r9	;#0x0f0f
-    8302:	0c 47       	mov	r7,	r12	;
-    8304:	3c f0 0f 0f 	and	#3855,	r12	;#0x0f0f
-    8308:	09 5e       	add	r14,	r9	;
-    830a:	08 6c       	addc	r12,	r8	;
-
-0000830c <.LVL20>:
-      i = ((i & 0xFF00FF00L) >>  8) + (i & 0x00FF00FFL);
-    830c:	0c 49       	mov	r9,	r12	;
-    830e:	0d 48       	mov	r8,	r13	;
-    8310:	b0 12 36 88 	call	#34870		;#0x8836
-    8314:	4e 4c       	mov.b	r12,	r14	;
-    8316:	4f 4d       	mov.b	r13,	r15	;
-    8318:	0a 49       	mov	r9,	r10	;
-    831a:	7a f0 ff 00 	and.b	#255,	r10	;#0x00ff
-    831e:	0d 48       	mov	r8,	r13	;
-    8320:	7d f0 ff 00 	and.b	#255,	r13	;#0x00ff
-    8324:	0a 5e       	add	r14,	r10	;
-    8326:	0d 6f       	addc	r15,	r13	;
-
-00008328 <.LVL22>:
-      i = ((i & 0xFFFF0000L) >> 16) + (i & 0x0000FFFFL);
-    8328:	0c 4a       	mov	r10,	r12	;
-    832a:	7e 40 10 00 	mov.b	#16,	r14	;#0x0010
-    832e:	b0 12 70 88 	call	#34928		;#0x8870
-
-00008332 <.LVL23>:
-      return (int)i;
-}
-    8332:	0c 5a       	add	r10,	r12	;
-    8334:	30 40 b8 87 	br	#0x87b8		;
-
-00008338 <ntbl_bitcount>:
-int ntbl_bitcount(uint32_t x)
-{
-    8338:	0a 12       	push	r10		;
-
-0000833a <.LCFI7>:
-    833a:	09 12       	push	r9		;
-
-0000833c <.LCFI8>:
-    833c:	08 12       	push	r8		;
-
-0000833e <.LCFI9>:
-    833e:	07 12       	push	r7		;
-
-00008340 <.LCFI10>:
-    8340:	08 4c       	mov	r12,	r8	;
-    8342:	07 4d       	mov	r13,	r7	;
-
-00008344 <.Loc.82.1>:
-      return
-            bits[ (int) (x & 0x0000000FUL)       ] +
-            bits[ (int)((x & 0x000000F0UL) >> 4) ] +
-    8344:	39 40 00 80 	mov	#32768,	r9	;#0x8000
-    8348:	b0 12 4e 88 	call	#34894		;#0x884e
-
-0000834c <.LVL25>:
-    834c:	7c f0 0f 00 	and.b	#15,	r12	;#0x000f
-    8350:	0c 59       	add	r9,	r12	;
-
-00008352 <.Loc.81.1>:
-      return (int)i;
-}
-int ntbl_bitcount(uint32_t x)
-{
-      return
-            bits[ (int) (x & 0x0000000FUL)       ] +
-    8352:	0d 48       	mov	r8,	r13	;
-    8354:	7d f0 0f 00 	and.b	#15,	r13	;#0x000f
-    8358:	0d 59       	add	r9,	r13	;
-    835a:	6a 4d       	mov.b	@r13,	r10	;
-    835c:	6c 4c       	mov.b	@r12,	r12	;
-    835e:	0a 5c       	add	r12,	r10	;
-
-00008360 <.Loc.83.1>:
-            bits[ (int)((x & 0x000000F0UL) >> 4) ] +
-            bits[ (int)((x & 0x00000F00UL) >> 8) ] +
-    8360:	0c 48       	mov	r8,	r12	;
-    8362:	0d 47       	mov	r7,	r13	;
-    8364:	b0 12 36 88 	call	#34870		;#0x8836
-    8368:	7c f0 0f 00 	and.b	#15,	r12	;#0x000f
-    836c:	0c 59       	add	r9,	r12	;
-
-0000836e <.Loc.82.1>:
-}
-int ntbl_bitcount(uint32_t x)
-{
-      return
-            bits[ (int) (x & 0x0000000FUL)       ] +
-            bits[ (int)((x & 0x000000F0UL) >> 4) ] +
-    836e:	6c 4c       	mov.b	@r12,	r12	;
-    8370:	0a 5c       	add	r12,	r10	;
-
-00008372 <.Loc.84.1>:
-            bits[ (int)((x & 0x00000F00UL) >> 8) ] +
-            bits[ (int)((x & 0x0000F000UL) >> 12)] +
-    8372:	0c 48       	mov	r8,	r12	;
-    8374:	0d 47       	mov	r7,	r13	;
-    8376:	b0 12 1e 88 	call	#34846		;#0x881e
-    837a:	7c f0 0f 00 	and.b	#15,	r12	;#0x000f
-    837e:	0c 59       	add	r9,	r12	;
-
-00008380 <.Loc.83.1>:
-int ntbl_bitcount(uint32_t x)
-{
-      return
-            bits[ (int) (x & 0x0000000FUL)       ] +
-            bits[ (int)((x & 0x000000F0UL) >> 4) ] +
-            bits[ (int)((x & 0x00000F00UL) >> 8) ] +
-    8380:	6c 4c       	mov.b	@r12,	r12	;
-    8382:	0a 5c       	add	r12,	r10	;
-
-00008384 <.Loc.85.1>:
-            bits[ (int)((x & 0x0000F000UL) >> 12)] +
-            bits[ (int)((x & 0x000F0000UL) >> 16)] +
-    8384:	0c 48       	mov	r8,	r12	;
-    8386:	0d 47       	mov	r7,	r13	;
-    8388:	7e 40 10 00 	mov.b	#16,	r14	;#0x0010
-    838c:	b0 12 70 88 	call	#34928		;#0x8870
-    8390:	7c f0 0f 00 	and.b	#15,	r12	;#0x000f
-    8394:	0c 59       	add	r9,	r12	;
-
-00008396 <.Loc.84.1>:
-{
-      return
-            bits[ (int) (x & 0x0000000FUL)       ] +
-            bits[ (int)((x & 0x000000F0UL) >> 4) ] +
-            bits[ (int)((x & 0x00000F00UL) >> 8) ] +
-            bits[ (int)((x & 0x0000F000UL) >> 12)] +
-    8396:	6c 4c       	mov.b	@r12,	r12	;
-    8398:	0a 5c       	add	r12,	r10	;
-
-0000839a <.Loc.86.1>:
-            bits[ (int)((x & 0x000F0000UL) >> 16)] +
-            bits[ (int)((x & 0x00F00000UL) >> 20)] +
-    839a:	0c 48       	mov	r8,	r12	;
-    839c:	0d 47       	mov	r7,	r13	;
-    839e:	7e 40 14 00 	mov.b	#20,	r14	;#0x0014
-    83a2:	b0 12 70 88 	call	#34928		;#0x8870
-    83a6:	7c f0 0f 00 	and.b	#15,	r12	;#0x000f
-    83aa:	0c 59       	add	r9,	r12	;
-
-000083ac <.Loc.85.1>:
-      return
-            bits[ (int) (x & 0x0000000FUL)       ] +
-            bits[ (int)((x & 0x000000F0UL) >> 4) ] +
-            bits[ (int)((x & 0x00000F00UL) >> 8) ] +
-            bits[ (int)((x & 0x0000F000UL) >> 12)] +
-            bits[ (int)((x & 0x000F0000UL) >> 16)] +
-    83ac:	6c 4c       	mov.b	@r12,	r12	;
-    83ae:	0a 5c       	add	r12,	r10	;
-
-000083b0 <.Loc.87.1>:
-            bits[ (int)((x & 0x00F00000UL) >> 20)] +
-            bits[ (int)((x & 0x0F000000UL) >> 24)] +
-    83b0:	0c 48       	mov	r8,	r12	;
-    83b2:	0d 47       	mov	r7,	r13	;
-    83b4:	7e 40 18 00 	mov.b	#24,	r14	;#0x0018
-    83b8:	b0 12 70 88 	call	#34928		;#0x8870
-    83bc:	7c f0 0f 00 	and.b	#15,	r12	;#0x000f
-    83c0:	0c 59       	add	r9,	r12	;
-
-000083c2 <.Loc.86.1>:
-            bits[ (int) (x & 0x0000000FUL)       ] +
-            bits[ (int)((x & 0x000000F0UL) >> 4) ] +
-            bits[ (int)((x & 0x00000F00UL) >> 8) ] +
-            bits[ (int)((x & 0x0000F000UL) >> 12)] +
-            bits[ (int)((x & 0x000F0000UL) >> 16)] +
-            bits[ (int)((x & 0x00F00000UL) >> 20)] +
-    83c2:	6c 4c       	mov.b	@r12,	r12	;
-    83c4:	0a 5c       	add	r12,	r10	;
-
-000083c6 <.Loc.88.1>:
-            bits[ (int)((x & 0x0F000000UL) >> 24)] +
-            bits[ (int)((x & 0xF0000000UL) >> 28)];
-    83c6:	0c 48       	mov	r8,	r12	;
-    83c8:	0d 47       	mov	r7,	r13	;
-    83ca:	7e 40 1c 00 	mov.b	#28,	r14	;#0x001c
-    83ce:	b0 12 70 88 	call	#34928		;#0x8870
-    83d2:	0c 59       	add	r9,	r12	;
-
-000083d4 <.Loc.89.1>:
-}
-    83d4:	6c 4c       	mov.b	@r12,	r12	;
-    83d6:	0c 5a       	add	r10,	r12	;
-    83d8:	30 40 b8 87 	br	#0x87b8		;
-
-000083dc <BW_btbl_bitcount>:
-int BW_btbl_bitcount(uint32_t x)
-{
-    83dc:	0a 12       	push	r10		;
-
-000083de <.LCFI11>:
-    83de:	09 12       	push	r9		;
-
-000083e0 <.LCFI12>:
-    83e0:	08 12       	push	r8		;
-
-000083e2 <.LCFI13>:
-    83e2:	08 4d       	mov	r13,	r8	;
-
-000083e4 <.Loc.100.1>:
-            long y;
-      } U;
-
-      U.y = x;
-
-      return bits[ U.ch[0] ] + bits[ U.ch[1] ] +
-    83e4:	3a 40 00 80 	mov	#32768,	r10	;#0x8000
-    83e8:	4d 4c       	mov.b	r12,	r13	;
-    83ea:	0d 5a       	add	r10,	r13	;
-    83ec:	69 4d       	mov.b	@r13,	r9	;
-    83ee:	b0 12 de 87 	call	#34782		;#0x87de
-
-000083f2 <.LVL33>:
-    83f2:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
-    83f6:	0c 5a       	add	r10,	r12	;
-    83f8:	6c 4c       	mov.b	@r12,	r12	;
-    83fa:	09 5c       	add	r12,	r9	;
-
-000083fc <.Loc.101.1>:
-             bits[ U.ch[3] ] + bits[ U.ch[2] ];
-    83fc:	0c 48       	mov	r8,	r12	;
-    83fe:	b0 12 de 87 	call	#34782		;#0x87de
-    8402:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
-    8406:	0c 5a       	add	r10,	r12	;
-
-00008408 <.Loc.100.1>:
-            long y;
-      } U;
-
-      U.y = x;
-
-      return bits[ U.ch[0] ] + bits[ U.ch[1] ] +
-    8408:	6c 4c       	mov.b	@r12,	r12	;
-    840a:	0c 59       	add	r9,	r12	;
-
-0000840c <.Loc.101.1>:
-             bits[ U.ch[3] ] + bits[ U.ch[2] ];
-    840c:	38 f0 ff 00 	and	#255,	r8	;#0x00ff
-    8410:	0a 58       	add	r8,	r10	;
-
-00008412 <.Loc.102.1>:
-}
-    8412:	6a 4a       	mov.b	@r10,	r10	;
-    8414:	0c 5a       	add	r10,	r12	;
-    8416:	30 40 ba 87 	br	#0x87ba		;
-
-0000841a <AR_btbl_bitcount>:
-int AR_btbl_bitcount(uint32_t x)
-{
-    841a:	0a 12       	push	r10		;
-
-0000841c <.LCFI14>:
-    841c:	09 12       	push	r9		;
-
-0000841e <.LCFI15>:
-    841e:	08 12       	push	r8		;
-
-00008420 <.LCFI16>:
-    8420:	08 4d       	mov	r13,	r8	;
-
-00008422 <.Loc.108.1>:
-      unsigned char * Ptr = (unsigned char *) &x ;
-      int Accu ;
-
-      Accu  = bits[ *Ptr++ ];
-    8422:	3a 40 00 80 	mov	#32768,	r10	;#0x8000
-    8426:	4e 4c       	mov.b	r12,	r14	;
-    8428:	0e 5a       	add	r10,	r14	;
-    842a:	69 4e       	mov.b	@r14,	r9	;
-
-0000842c <.LVL37>:
-      Accu += bits[ *Ptr++ ];
-    842c:	b0 12 de 87 	call	#34782		;#0x87de
-
-00008430 <.LVL38>:
-    8430:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
-    8434:	0c 5a       	add	r10,	r12	;
-    8436:	6c 4c       	mov.b	@r12,	r12	;
-    8438:	09 5c       	add	r12,	r9	;
-
-0000843a <.Loc.110.1>:
-      Accu += bits[ *Ptr++ ];
-    843a:	4c 48       	mov.b	r8,	r12	;
-    843c:	0c 5a       	add	r10,	r12	;
-    843e:	6c 4c       	mov.b	@r12,	r12	;
-    8440:	09 5c       	add	r12,	r9	;
-
-00008442 <.LVL40>:
-      Accu += bits[ *Ptr ];
-    8442:	0c 48       	mov	r8,	r12	;
-    8444:	b0 12 de 87 	call	#34782		;#0x87de
-    8448:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
-    844c:	0a 5c       	add	r12,	r10	;
-
-0000844e <.Loc.113.1>:
-      return Accu;
-}
-    844e:	6c 4a       	mov.b	@r10,	r12	;
-    8450:	0c 59       	add	r9,	r12	;
-    8452:	30 40 ba 87 	br	#0x87ba		;
-
-00008456 <ntbl_bitcnt>:
-int ntbl_bitcnt(uint32_t x)
-{
-    8456:	0a 12       	push	r10		;
-
-00008458 <.LCFI17>:
-    8458:	09 12       	push	r9		;
-
-0000845a <.LCFI18>:
-    845a:	08 12       	push	r8		;
-
-0000845c <.LCFI19>:
-      int cnt = bits[(int)(x & 0x0000000FL)];
-    845c:	39 40 00 80 	mov	#32768,	r9	;#0x8000
-    8460:	0e 4c       	mov	r12,	r14	;
-    8462:	7e f0 0f 00 	and.b	#15,	r14	;#0x000f
-    8466:	0e 59       	add	r9,	r14	;
-    8468:	68 4e       	mov.b	@r14,	r8	;
-
-0000846a <.Loc.118.1>:
-
-      if (0L != (x >>= 4))
-    846a:	b0 12 4e 88 	call	#34894		;#0x884e
-
-0000846e <.LVL44>:
-    846e:	0a 4c       	mov	r12,	r10	;
-    8470:	0a dd       	bis	r13,	r10	;
-    8472:	0a 93       	cmp	#0,	r10	;r3 As==00
-    8474:	0d 24       	jz	$+28     	;abs 0x8490
-    8476:	4a 43       	clr.b	r10		;
-
-00008478 <.L22>:
-    8478:	0a 58       	add	r8,	r10	;
-
-0000847a <.Loc.116.1>:
-      Accu += bits[ *Ptr ];
-      return Accu;
-}
-int ntbl_bitcnt(uint32_t x)
-{
-      int cnt = bits[(int)(x & 0x0000000FL)];
-    847a:	0e 4c       	mov	r12,	r14	;
-    847c:	7e f0 0f 00 	and.b	#15,	r14	;#0x000f
-    8480:	0e 59       	add	r9,	r14	;
-    8482:	68 4e       	mov.b	@r14,	r8	;
-
-00008484 <.Loc.118.1>:
-
-      if (0L != (x >>= 4))
-    8484:	b0 12 4e 88 	call	#34894		;#0x884e
-
-00008488 <.LVL47>:
-    8488:	0e 4c       	mov	r12,	r14	;
-    848a:	0e dd       	bis	r13,	r14	;
-    848c:	0e 93       	cmp	#0,	r14	;r3 As==00
-    848e:	f4 23       	jnz	$-22     	;abs 0x8478
-
-00008490 <.L20>:
-            cnt += ntbl_bitcnt(x);
-
-      return cnt;
-}
-    8490:	0c 48       	mov	r8,	r12	;
-    8492:	0c 5a       	add	r10,	r12	;
-    8494:	30 40 ba 87 	br	#0x87ba		;
-
-00008498 <main>:
-  return n;
-}
-
-
+    814e:	03 43       	nop			
+    8150:	21 53       	incd	r1		;
+    8152:	30 41       	ret			
+
+00008154 <main>:
 int main()
 {
-    8498:	0a 12       	push	r10		;
 
-0000849a <.LCFI20>:
-    849a:	09 12       	push	r9		;
+	//Enable Idempotency Tracking	
+		
+	QWARK_CTL = 0x01;
+    8154:	3c 40 90 01 	mov	#400,	r12	;#0x0190
+    8158:	9c 43 00 00 	mov	#1,	0(r12)	;r3 As==01
 
-0000849c <.LCFI21>:
-    849c:	08 12       	push	r8		;
+0000815c <.Loc.26.1>:
 
-0000849e <.LCFI22>:
-    849e:	07 12       	push	r7		;
+	if(u16_nv_read) //WAR!!
+    815c:	1c 42 02 40 	mov	&0x4002,r12	;0x4002
+    8160:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8162:	03 24       	jz	$+8      	;abs 0x816a
 
-000084a0 <.LCFI23>:
-    84a0:	06 12       	push	r6		;
+00008164 <.Loc.27.1>:
+	u16_nv_read=7; //redirect to known address of redirected var
+    8164:	b2 40 07 00 	mov	#7,	&0x4002	;
+    8168:	02 40 
 
-000084a2 <.LCFI24>:
-    84a2:	05 12       	push	r5		;
+0000816a <.L5>:
 
-000084a4 <.LCFI25>:
-    84a4:	04 12       	push	r4		;
 
-000084a6 <.LCFI26>:
-    84a6:	31 80 18 00 	sub	#24,	r1	;#0x0018
+	if(redirected==7){
+    816a:	1c 42 04 40 	mov	&0x4004,r12	;0x4004
+    816e:	3c 90 07 00 	cmp	#7,	r12	;
+    8172:	05 20       	jnz	$+12     	;abs 0x817e
 
-000084aa <.LBB36>:
+00008174 <.Loc.31.1>:
+	LED_CTRL = 0x0F;
+    8174:	7c 40 90 00 	mov.b	#144,	r12	;#0x0090
+    8178:	fc 40 0f 00 	mov.b	#15,	0(r12)	;#0x000f
+    817c:	00 00 
 
+0000817e <.L6>:
+	//turn on LED
 
-void init()
-{
 
-     WDTCTL = WDTPW | WDTHOLD; // Stop WDT
-    84aa:	b2 40 80 5a 	mov	#23168,	&0x0120	;#0x5a80
-    84ae:	20 01 
-    84b0:	3a 40 00 80 	mov	#32768,	r10	;#0x8000
+	//liveness
+	
+	while(1);
+    817e:	30 40 7e 81 	br	#0x817e		;
 
-000084b4 <.LBE36>:
-	/* Each statement executes a different bitcount routine, with a different seed value, a 100 times*/
-	while(1){
-	LED_CTRL ^= 0x0F;
+00008182 <__mspabi_func_epilog_7>:
+    8182:	34 41       	pop	r4		;
 
-	//Initialize the variables upon every loop
-	n_0=0;
-    84b4:	48 43       	clr.b	r8		;
+00008184 <__mspabi_func_epilog_6>:
+    8184:	35 41       	pop	r5		;
 
-000084b6 <.L48>:
-	volatile unsigned  n_0, n_1, n_2, n_3, n_4, n_5, n_6;
-
-	/* Iterate through the 7 func statements 0 - 7*/
-	/* Each statement executes a different bitcount routine, with a different seed value, a 100 times*/
-	while(1){
-	LED_CTRL ^= 0x0F;
-    84b6:	7c 40 90 00 	mov.b	#144,	r12	;#0x0090
-    84ba:	fc e0 0f 00 	xor.b	#15,	0(r12)	;#0x000f
-    84be:	00 00 
+00008186 <__mspabi_func_epilog_5>:
+    8186:	36 41       	pop	r6		;
 
-000084c0 <.Loc.148.1>:
+00008188 <__mspabi_func_epilog_4>:
+    8188:	37 41       	pop	r7		;
 
-	//Initialize the variables upon every loop
-	n_0=0;
-    84c0:	81 48 0a 00 	mov	r8,	10(r1)	; 0x000a
+0000818a <__mspabi_func_epilog_3>:
+    818a:	38 41       	pop	r8		;
 
-000084c4 <.Loc.149.1>:
-	n_1=0;
-    84c4:	81 48 0c 00 	mov	r8,	12(r1)	; 0x000c
+0000818c <__mspabi_func_epilog_2>:
+    818c:	39 41       	pop	r9		;
 
-000084c8 <.Loc.150.1>:
-	n_2=0;
-    84c8:	81 48 0e 00 	mov	r8,	14(r1)	; 0x000e
+0000818e <__mspabi_func_epilog_1>:
+    818e:	3a 41       	pop	r10		;
+    8190:	30 41       	ret			
 
-000084cc <.Loc.151.1>:
-	n_3=0;
-    84cc:	81 48 10 00 	mov	r8,	16(r1)	; 0x0010
+00008192 <__mspabi_srli_15>:
+    8192:	12 c3       	clrc			
+    8194:	0c 10       	rrc	r12		;
 
-000084d0 <.Loc.152.1>:
-	n_4=0;
-    84d0:	81 48 12 00 	mov	r8,	18(r1)	; 0x0012
+00008196 <__mspabi_srli_14>:
+    8196:	12 c3       	clrc			
+    8198:	0c 10       	rrc	r12		;
 
-000084d4 <.Loc.153.1>:
-	n_5=0;
-    84d4:	81 48 14 00 	mov	r8,	20(r1)	; 0x0014
+0000819a <__mspabi_srli_13>:
+    819a:	12 c3       	clrc			
+    819c:	0c 10       	rrc	r12		;
 
-000084d8 <.Loc.154.1>:
-	n_6=0;
-    84d8:	81 48 16 00 	mov	r8,	22(r1)	; 0x0016
-    84dc:	91 43 04 00 	mov	#1,	4(r1)	;r3 As==01
-    84e0:	47 43       	clr.b	r7		;
-
-000084e2 <.LVL50>:
-	//Toggle LED upon every execution
-
-	for (func = 0; func < 7; func++) {
-
-		seed = (uint32_t)SEED;
-		if(func == 0){
-    84e2:	07 93       	cmp	#0,	r7	;r3 As==00
-    84e4:	35 24       	jz	$+108    	;abs 0x8550
-
-000084e6 <.L27>:
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_0 += bit_count(seed);
-			}
-		}
-		else if(func == 1){
-    84e6:	17 93       	cmp	#1,	r7	;r3 As==01
-    84e8:	21 25       	jz	$+580    	;abs 0x872c
-
-000084ea <.Loc.173.1>:
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_1 += bitcount(seed);
-			}
-		}
-		else if(func == 2){
-    84ea:	27 93       	cmp	#2,	r7	;r3 As==10
-    84ec:	ec 24       	jz	$+474    	;abs 0x86c6
-
-000084ee <.Loc.179.1>:
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_2 += ntbl_bitcnt(seed);
-			}
-		}
-		else if(func == 3){
-    84ee:	37 90 03 00 	cmp	#3,	r7	;
-    84f2:	bb 24       	jz	$+376    	;abs 0x866a
-
-000084f4 <.Loc.185.1>:
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_3 += ntbl_bitcount(seed);
-			}
-		}
-		else if(func == 4){
-    84f4:	27 92       	cmp	#4,	r7	;r2 As==10
-    84f6:	83 24       	jz	$+264    	;abs 0x85fe
-
-000084f8 <.Loc.191.1>:
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_4 += BW_btbl_bitcount(seed);
-			}
-		}
-		else if(func == 5){
-    84f8:	37 90 05 00 	cmp	#5,	r7	;
-    84fc:	47 24       	jz	$+144    	;abs 0x858c
-
-000084fe <.Loc.160.1>:
-
-	//Toggle LED upon every execution
-
-	for (func = 0; func < 7; func++) {
-
-		seed = (uint32_t)SEED;
-    84fe:	6e 42       	mov.b	#4,	r14	;r2 As==10
-    8500:	4f 43       	clr.b	r15		;
-
-00008502 <.L40>:
-    8502:	0c 4e       	mov	r14,	r12	;
-    8504:	0d 4f       	mov	r15,	r13	;
-    8506:	76 40 20 00 	mov.b	#32,	r6	;#0x0020
-
-0000850a <.LBB38>:
-}
-
-static int bit_shifter(uint32_t x)
-{
-  int i, n;
-  for (i = n = 0; x && (i < (sizeof(uint32_t) * CHAR_BIT)); ++i, x >>= 1)
-    850a:	45 43       	clr.b	r5		;
-    850c:	30 40 16 85 	br	#0x8516		;
-
-00008510 <.L84>:
-    8510:	36 53       	add	#-1,	r6	;r3 As==11
-    8512:	06 93       	cmp	#0,	r6	;r3 As==00
-    8514:	0a 24       	jz	$+22     	;abs 0x852a
-
-00008516 <.L44>:
-    n += (int)(x & 1L);
-    8516:	09 4c       	mov	r12,	r9	;
-    8518:	59 f3       	and.b	#1,	r9	;r3 As==01
-    851a:	05 59       	add	r9,	r5	;
-
-0000851c <.Loc.127.1>:
-}
-
-static int bit_shifter(uint32_t x)
-{
-  int i, n;
-  for (i = n = 0; x && (i < (sizeof(uint32_t) * CHAR_BIT)); ++i, x >>= 1)
-    851c:	12 c3       	clrc			
-    851e:	0d 10       	rrc	r13		;
-    8520:	0c 10       	rrc	r12		;
-    8522:	09 4c       	mov	r12,	r9	;
-    8524:	09 dd       	bis	r13,	r9	;
-    8526:	09 93       	cmp	#0,	r9	;r3 As==00
-    8528:	f3 23       	jnz	$-24     	;abs 0x8510
-
-0000852a <.L42>:
-			}
-		}
-		else if(func == 6){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_6 += bit_shifter(seed);
-    852a:	81 55 16 00 	add	r5,	22(r1)	; 0x0016
-
-0000852e <.Loc.198.1>:
-
-				n_5 += AR_btbl_bitcount(seed);
-			}
-		}
-		else if(func == 6){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-    852e:	3e 50 0d 00 	add	#13,	r14	;#0x000d
-
-00008532 <.LVL58>:
-    8532:	0f 63       	adc	r15		;
-
-00008534 <.LVL59>:
-    8534:	3e 90 18 05 	cmp	#1304,	r14	;#0x0518
-    8538:	e4 23       	jnz	$-54     	;abs 0x8502
-    853a:	0f 93       	cmp	#0,	r15	;r3 As==00
-    853c:	e2 23       	jnz	$-58     	;abs 0x8502
-
-0000853e <.LVL60>:
-	n_5=0;
-	n_6=0;
-
-	//Toggle LED upon every execution
-
-	for (func = 0; func < 7; func++) {
-    853e:	b1 90 07 00 	cmp	#7,	4(r1)	;
-    8542:	04 00 
-    8544:	b8 27       	jz	$-142    	;abs 0x84b6
-
-00008546 <.L47>:
-    8546:	17 53       	inc	r7		;
-    8548:	91 53 04 00 	inc	4(r1)		;
-
-0000854c <.LVL62>:
-
-		seed = (uint32_t)SEED;
-		if(func == 0){
-    854c:	07 93       	cmp	#0,	r7	;r3 As==00
-    854e:	cb 23       	jnz	$-104    	;abs 0x84e6
-
-00008550 <.L78>:
-
-	//Toggle LED upon every execution
-
-	for (func = 0; func < 7; func++) {
-
-		seed = (uint32_t)SEED;
-    8550:	6e 42       	mov.b	#4,	r14	;r2 As==10
-    8552:	4f 43       	clr.b	r15		;
-
-00008554 <.L65>:
-    8554:	0c 4e       	mov	r14,	r12	;
-    8556:	0d 4f       	mov	r15,	r13	;
-
-00008558 <.LBB40>:
-            cnt += btbl_bitcnt(x);
-      return cnt;
-}
-int bit_count(uint32_t x)
-{
-        int n = 0;
-    8558:	45 43       	clr.b	r5		;
-
-0000855a <.L28>:
-
-        if (x) do
-              n++;
-    855a:	15 53       	inc	r5		;
-
-0000855c <.Loc.66.1>:
-        while (0 != (x = x&(x-1))) ;
-    855c:	06 4c       	mov	r12,	r6	;
-    855e:	36 53       	add	#-1,	r6	;r3 As==11
-    8560:	09 4d       	mov	r13,	r9	;
-    8562:	39 63       	addc	#-1,	r9	;r3 As==11
-    8564:	06 fc       	and	r12,	r6	;
-    8566:	09 fd       	and	r13,	r9	;
-    8568:	0c 46       	mov	r6,	r12	;
-
-0000856a <.LVL66>:
-    856a:	0d 49       	mov	r9,	r13	;
-
-0000856c <.LVL67>:
-    856c:	09 46       	mov	r6,	r9	;
-
-0000856e <.LVL68>:
-    856e:	09 dd       	bis	r13,	r9	;
-    8570:	09 93       	cmp	#0,	r9	;r3 As==00
-    8572:	f3 23       	jnz	$-24     	;abs 0x855a
-
-00008574 <.LBE40>:
-
-		seed = (uint32_t)SEED;
-		if(func == 0){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_0 += bit_count(seed);
-    8574:	81 55 0a 00 	add	r5,	10(r1)	; 0x000a
-
-00008578 <.Loc.162.1>:
-
-	for (func = 0; func < 7; func++) {
-
-		seed = (uint32_t)SEED;
-		if(func == 0){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-    8578:	3e 50 0d 00 	add	#13,	r14	;#0x000d
-
-0000857c <.LVL70>:
-    857c:	0f 63       	adc	r15		;
-
-0000857e <.LVL71>:
-    857e:	3e 90 18 05 	cmp	#1304,	r14	;#0x0518
-    8582:	e8 23       	jnz	$-46     	;abs 0x8554
-    8584:	0f 93       	cmp	#0,	r15	;r3 As==00
-    8586:	e6 23       	jnz	$-50     	;abs 0x8554
-    8588:	30 40 46 85 	br	#0x8546		;
-
-0000858c <.L83>:
-    858c:	76 40 11 00 	mov.b	#17,	r6	;#0x0011
-    8590:	0e 48       	mov	r8,	r14	;
-    8592:	0d 48       	mov	r8,	r13	;
-    8594:	09 48       	mov	r8,	r9	;
-    8596:	5f 43       	mov.b	#1,	r15	;r3 As==01
-
-00008598 <.Loc.160.1>:
-
-	//Toggle LED upon every execution
-
-	for (func = 0; func < 7; func++) {
-
-		seed = (uint32_t)SEED;
-    8598:	64 42       	mov.b	#4,	r4	;r2 As==10
-    859a:	45 43       	clr.b	r5		;
-    859c:	30 40 e2 85 	br	#0x85e2		;
-
-000085a0 <.L85>:
-    85a0:	0c 4a       	mov	r10,	r12	;
-    85a2:	0c 56       	add	r6,	r12	;
-    85a4:	6f 4c       	mov.b	@r12,	r15	;
-    85a6:	0c 44       	mov	r4,	r12	;
-    85a8:	81 4f 02 00 	mov	r15,	2(r1)	;
-    85ac:	b0 12 de 87 	call	#34782		;#0x87de
-    85b0:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
-    85b4:	0c 5a       	add	r10,	r12	;
-    85b6:	69 4c       	mov.b	@r12,	r9	;
-    85b8:	4c 45       	mov.b	r5,	r12	;
-    85ba:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
-    85be:	0c 5a       	add	r10,	r12	;
-    85c0:	6d 4c       	mov.b	@r12,	r13	;
-    85c2:	0c 45       	mov	r5,	r12	;
-    85c4:	81 4d 00 00 	mov	r13,	0(r1)	;
-    85c8:	b0 12 de 87 	call	#34782		;#0x87de
-    85cc:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
-    85d0:	0c 5a       	add	r10,	r12	;
-    85d2:	6e 4c       	mov.b	@r12,	r14	;
-    85d4:	76 50 0d 00 	add.b	#13,	r6	;#0x000d
-    85d8:	36 f0 ff 00 	and	#255,	r6	;#0x00ff
-    85dc:	2d 41       	mov	@r1,	r13	;
-    85de:	1f 41 02 00 	mov	2(r1),	r15	;
-
-000085e2 <.L41>:
-{
-      unsigned char * Ptr = (unsigned char *) &x ;
-      int Accu ;
-
-      Accu  = bits[ *Ptr++ ];
-      Accu += bits[ *Ptr++ ];
-    85e2:	0c 49       	mov	r9,	r12	;
-    85e4:	0c 5f       	add	r15,	r12	;
-
-000085e6 <.Loc.110.1>:
-      Accu += bits[ *Ptr++ ];
-    85e6:	0c 5d       	add	r13,	r12	;
-
-000085e8 <.LVL78>:
-      Accu += bits[ *Ptr ];
-    85e8:	0e 5c       	add	r12,	r14	;
-
-000085ea <.LBE44>:
-			}
-		}
-		else if(func == 5){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_5 += AR_btbl_bitcount(seed);
-    85ea:	81 5e 14 00 	add	r14,	20(r1)	; 0x0014
-
-000085ee <.Loc.192.1>:
-
-				n_4 += BW_btbl_bitcount(seed);
-			}
-		}
-		else if(func == 5){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-    85ee:	34 50 0d 00 	add	#13,	r4	;#0x000d
-
-000085f2 <.LVL79>:
-    85f2:	05 63       	adc	r5		;
-
-000085f4 <.LVL80>:
-    85f4:	36 90 18 00 	cmp	#24,	r6	;#0x0018
-    85f8:	d3 23       	jnz	$-88     	;abs 0x85a0
-    85fa:	30 40 46 85 	br	#0x8546		;
-
-000085fe <.L82>:
-    85fe:	76 40 11 00 	mov.b	#17,	r6	;#0x0011
-    8602:	0c 48       	mov	r8,	r12	;
-    8604:	0f 48       	mov	r8,	r15	;
-    8606:	0e 48       	mov	r8,	r14	;
-    8608:	5d 43       	mov.b	#1,	r13	;r3 As==01
-
-0000860a <.Loc.160.1>:
-
-	//Toggle LED upon every execution
-
-	for (func = 0; func < 7; func++) {
-
-		seed = (uint32_t)SEED;
-    860a:	64 42       	mov.b	#4,	r4	;r2 As==10
-    860c:	45 43       	clr.b	r5		;
-    860e:	30 40 50 86 	br	#0x8650		;
-
-00008612 <.L86>:
-    8612:	0c 4a       	mov	r10,	r12	;
-    8614:	0c 56       	add	r6,	r12	;
-    8616:	6d 4c       	mov.b	@r12,	r13	;
-    8618:	0c 44       	mov	r4,	r12	;
-    861a:	81 4d 00 00 	mov	r13,	0(r1)	;
-    861e:	b0 12 de 87 	call	#34782		;#0x87de
-    8622:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
-    8626:	0c 5a       	add	r10,	r12	;
-    8628:	6e 4c       	mov.b	@r12,	r14	;
-    862a:	0c 45       	mov	r5,	r12	;
-    862c:	81 4e 02 00 	mov	r14,	2(r1)	;
-    8630:	b0 12 de 87 	call	#34782		;#0x87de
-    8634:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
-    8638:	0c 5a       	add	r10,	r12	;
-    863a:	6f 4c       	mov.b	@r12,	r15	;
-    863c:	4c 45       	mov.b	r5,	r12	;
-    863e:	0c 5a       	add	r10,	r12	;
-    8640:	6c 4c       	mov.b	@r12,	r12	;
-    8642:	76 50 0d 00 	add.b	#13,	r6	;#0x000d
-    8646:	36 f0 ff 00 	and	#255,	r6	;#0x00ff
-    864a:	2d 41       	mov	@r1,	r13	;
-    864c:	1e 41 02 00 	mov	2(r1),	r14	;
-
-00008650 <.L39>:
-            long y;
-      } U;
-
-      U.y = x;
-
-      return bits[ U.ch[0] ] + bits[ U.ch[1] ] +
-    8650:	0d 5e       	add	r14,	r13	;
-    8652:	0d 5f       	add	r15,	r13	;
-
-00008654 <.Loc.101.1>:
-             bits[ U.ch[3] ] + bits[ U.ch[2] ];
-    8654:	0c 5d       	add	r13,	r12	;
-
-00008656 <.LBE46>:
-			}
-		}
-		else if(func == 4){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_4 += BW_btbl_bitcount(seed);
-    8656:	81 5c 12 00 	add	r12,	18(r1)	; 0x0012
-
-0000865a <.Loc.186.1>:
-
-				n_3 += ntbl_bitcount(seed);
-			}
-		}
-		else if(func == 4){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-    865a:	34 50 0d 00 	add	#13,	r4	;#0x000d
-
-0000865e <.LVL86>:
-    865e:	05 63       	adc	r5		;
-
-00008660 <.LVL87>:
-    8660:	36 90 18 00 	cmp	#24,	r6	;#0x0018
-    8664:	d6 23       	jnz	$-82     	;abs 0x8612
-    8666:	30 40 46 85 	br	#0x8546		;
-
-0000866a <.L81>:
-    866a:	79 40 11 00 	mov.b	#17,	r9	;#0x0011
-    866e:	0c 48       	mov	r8,	r12	;
-    8670:	0e 48       	mov	r8,	r14	;
-    8672:	56 43       	mov.b	#1,	r6	;r3 As==01
-
-00008674 <.Loc.160.1>:
-
-	//Toggle LED upon every execution
-
-	for (func = 0; func < 7; func++) {
-
-		seed = (uint32_t)SEED;
-    8674:	64 42       	mov.b	#4,	r4	;r2 As==10
-    8676:	45 43       	clr.b	r5		;
-    8678:	30 40 ae 86 	br	#0x86ae		;
-
-0000867c <.L87>:
-    867c:	0c 49       	mov	r9,	r12	;
-    867e:	7c f0 0f 00 	and.b	#15,	r12	;#0x000f
-    8682:	0c 5a       	add	r10,	r12	;
-    8684:	66 4c       	mov.b	@r12,	r6	;
-    8686:	0c 44       	mov	r4,	r12	;
-    8688:	0d 45       	mov	r5,	r13	;
-    868a:	b0 12 4e 88 	call	#34894		;#0x884e
-    868e:	7c f0 0f 00 	and.b	#15,	r12	;#0x000f
-    8692:	0c 5a       	add	r10,	r12	;
-    8694:	6e 4c       	mov.b	@r12,	r14	;
-    8696:	0c 44       	mov	r4,	r12	;
-    8698:	0d 45       	mov	r5,	r13	;
-    869a:	81 4e 02 00 	mov	r14,	2(r1)	;
-    869e:	b0 12 36 88 	call	#34870		;#0x8836
-    86a2:	0c 5a       	add	r10,	r12	;
-    86a4:	6c 4c       	mov.b	@r12,	r12	;
-    86a6:	39 50 0d 00 	add	#13,	r9	;#0x000d
-    86aa:	1e 41 02 00 	mov	2(r1),	r14	;
-
-000086ae <.L37>:
-      return (int)i;
-}
-int ntbl_bitcount(uint32_t x)
-{
-      return
-            bits[ (int) (x & 0x0000000FUL)       ] +
-    86ae:	0e 56       	add	r6,	r14	;
-
-000086b0 <.Loc.82.1>:
-            bits[ (int)((x & 0x000000F0UL) >> 4) ] +
-    86b0:	0c 5e       	add	r14,	r12	;
-
-000086b2 <.LBE48>:
-			}
-		}
-		else if(func == 3){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_3 += ntbl_bitcount(seed);
-    86b2:	81 5c 10 00 	add	r12,	16(r1)	; 0x0010
-
-000086b6 <.Loc.180.1>:
-
-				n_2 += ntbl_bitcnt(seed);
-			}
-		}
-		else if(func == 3){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-    86b6:	34 50 0d 00 	add	#13,	r4	;#0x000d
-
-000086ba <.LVL93>:
-    86ba:	05 63       	adc	r5		;
-
-000086bc <.LVL94>:
-    86bc:	39 90 18 05 	cmp	#1304,	r9	;#0x0518
-    86c0:	dd 23       	jnz	$-68     	;abs 0x867c
-    86c2:	30 40 46 85 	br	#0x8546		;
-
-000086c6 <.L80>:
-    86c6:	76 40 11 00 	mov.b	#17,	r6	;#0x0011
-
-000086ca <.Loc.160.1>:
-
-	//Toggle LED upon every execution
-
-	for (func = 0; func < 7; func++) {
-
-		seed = (uint32_t)SEED;
-    86ca:	a1 42 06 00 	mov	#4,	6(r1)	;r2 As==10
-    86ce:	81 43 08 00 	mov	#0,	8(r1)	;r3 As==00
-    86d2:	45 43       	clr.b	r5		;
-
-000086d4 <.LBB50>:
-      Accu += bits[ *Ptr ];
-      return Accu;
-}
-int ntbl_bitcnt(uint32_t x)
-{
-      int cnt = bits[(int)(x & 0x0000000FL)];
-    86d4:	59 43       	mov.b	#1,	r9	;r3 As==01
-    86d6:	0c 49       	mov	r9,	r12	;
-    86d8:	09 45       	mov	r5,	r9	;
-    86da:	05 4c       	mov	r12,	r5	;
-
-000086dc <.L33>:
-			}
-		}
-		else if(func == 2){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_2 += ntbl_bitcnt(seed);
-    86dc:	0e 49       	mov	r9,	r14	;
-    86de:	0e 55       	add	r5,	r14	;
-    86e0:	81 5e 0e 00 	add	r14,	14(r1)	; 0x000e
-
-000086e4 <.Loc.174.1>:
-
-				n_1 += bitcount(seed);
-			}
-		}
-		else if(func == 2){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-    86e4:	b1 50 0d 00 	add	#13,	6(r1)	;#0x000d
-    86e8:	06 00 
-    86ea:	81 63 08 00 	adc	8(r1)		;
-
-000086ee <.LVL97>:
-    86ee:	36 90 18 05 	cmp	#1304,	r6	;#0x0518
-    86f2:	29 27       	jz	$-428    	;abs 0x8546
-
-000086f4 <.LBB53>:
-      Accu += bits[ *Ptr ];
-      return Accu;
-}
-int ntbl_bitcnt(uint32_t x)
-{
-      int cnt = bits[(int)(x & 0x0000000FL)];
-    86f4:	0c 46       	mov	r6,	r12	;
-    86f6:	7c f0 0f 00 	and.b	#15,	r12	;#0x000f
-    86fa:	0c 5a       	add	r10,	r12	;
-    86fc:	65 4c       	mov.b	@r12,	r5	;
-
-000086fe <.Loc.118.1>:
-
-      if (0L != (x >>= 4))
-    86fe:	1c 41 06 00 	mov	6(r1),	r12	;
-    8702:	1d 41 08 00 	mov	8(r1),	r13	;
-    8706:	b0 12 4e 88 	call	#34894		;#0x884e
-
-0000870a <.LVL99>:
-    870a:	49 43       	clr.b	r9		;
-
-0000870c <.L35>:
-    870c:	09 55       	add	r5,	r9	;
-
-0000870e <.Loc.116.1>:
-      Accu += bits[ *Ptr ];
-      return Accu;
-}
-int ntbl_bitcnt(uint32_t x)
-{
-      int cnt = bits[(int)(x & 0x0000000FL)];
-    870e:	0e 4c       	mov	r12,	r14	;
-    8710:	7e f0 0f 00 	and.b	#15,	r14	;#0x000f
-    8714:	0e 5a       	add	r10,	r14	;
-    8716:	65 4e       	mov.b	@r14,	r5	;
-
-00008718 <.Loc.118.1>:
-
-      if (0L != (x >>= 4))
-    8718:	b0 12 4e 88 	call	#34894		;#0x884e
-
-0000871c <.LVL102>:
-    871c:	0e 4c       	mov	r12,	r14	;
-    871e:	0e dd       	bis	r13,	r14	;
-    8720:	0e 93       	cmp	#0,	r14	;r3 As==00
-    8722:	f4 23       	jnz	$-22     	;abs 0x870c
-    8724:	36 50 0d 00 	add	#13,	r6	;#0x000d
-    8728:	30 40 dc 86 	br	#0x86dc		;
-
-0000872c <.L79>:
-
-	//Toggle LED upon every execution
-
-	for (func = 0; func < 7; func++) {
-
-		seed = (uint32_t)SEED;
-    872c:	64 42       	mov.b	#4,	r4	;r2 As==10
-    872e:	45 43       	clr.b	r5		;
-
-00008730 <.L66>:
-        while (0 != (x = x&(x-1))) ;
-        return(n);
-}
-int bitcount(uint32_t i)
-{
-      i = ((i & 0xAAAAAAAAL) >>  1) + (i & 0x55555555L);
-    8730:	0c 44       	mov	r4,	r12	;
-    8732:	0d 45       	mov	r5,	r13	;
-    8734:	12 c3       	clrc			
-    8736:	0d 10       	rrc	r13		;
-    8738:	0c 10       	rrc	r12		;
-    873a:	09 4c       	mov	r12,	r9	;
-    873c:	39 f0 55 55 	and	#21845,	r9	;#0x5555
-    8740:	06 4d       	mov	r13,	r6	;
-    8742:	36 f0 55 55 	and	#21845,	r6	;#0x5555
-    8746:	0c 44       	mov	r4,	r12	;
-    8748:	3c f0 55 55 	and	#21845,	r12	;#0x5555
-    874c:	0d 45       	mov	r5,	r13	;
-    874e:	3d f0 55 55 	and	#21845,	r13	;#0x5555
-    8752:	09 5c       	add	r12,	r9	;
-    8754:	06 6d       	addc	r13,	r6	;
-
-00008756 <.LVL105>:
-      i = ((i & 0xCCCCCCCCL) >>  2) + (i & 0x33333333L);
-    8756:	0c 49       	mov	r9,	r12	;
-    8758:	0d 46       	mov	r6,	r13	;
-    875a:	b0 12 5a 88 	call	#34906		;#0x885a
-    875e:	3c f0 33 33 	and	#13107,	r12	;#0x3333
-    8762:	3d f0 33 33 	and	#13107,	r13	;#0x3333
-    8766:	39 f0 33 33 	and	#13107,	r9	;#0x3333
-
-0000876a <.LVL107>:
-    876a:	36 f0 33 33 	and	#13107,	r6	;#0x3333
-    876e:	09 5c       	add	r12,	r9	;
-    8770:	06 6d       	addc	r13,	r6	;
-
-00008772 <.LVL108>:
-      i = ((i & 0xF0F0F0F0L) >>  4) + (i & 0x0F0F0F0FL);
-    8772:	0c 49       	mov	r9,	r12	;
-    8774:	0d 46       	mov	r6,	r13	;
-    8776:	b0 12 4e 88 	call	#34894		;#0x884e
-    877a:	3c f0 0f 0f 	and	#3855,	r12	;#0x0f0f
-    877e:	3d f0 0f 0f 	and	#3855,	r13	;#0x0f0f
-    8782:	39 f0 0f 0f 	and	#3855,	r9	;#0x0f0f
-
-00008786 <.LVL110>:
-    8786:	36 f0 0f 0f 	and	#3855,	r6	;#0x0f0f
-    878a:	09 5c       	add	r12,	r9	;
-    878c:	0d 66       	addc	r6,	r13	;
-
-0000878e <.LVL111>:
-      i = ((i & 0xFF00FF00L) >>  8) + (i & 0x00FF00FFL);
-    878e:	0c 49       	mov	r9,	r12	;
-    8790:	b0 12 36 88 	call	#34870		;#0x8836
-
-00008794 <.LVL112>:
-    8794:	79 f0 ff 00 	and.b	#255,	r9	;#0x00ff
-    8798:	09 5c       	add	r12,	r9	;
-
-0000879a <.LBE54>:
-			}
-		}
-		else if(func == 1){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_1 += bitcount(seed);
-    879a:	81 59 0c 00 	add	r9,	12(r1)	; 0x000c
-
-0000879e <.Loc.168.1>:
-
-				n_0 += bit_count(seed);
-			}
-		}
-		else if(func == 1){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-    879e:	34 50 0d 00 	add	#13,	r4	;#0x000d
-
-000087a2 <.LVL113>:
-    87a2:	05 63       	adc	r5		;
-
-000087a4 <.LVL114>:
-    87a4:	34 90 18 05 	cmp	#1304,	r4	;#0x0518
-    87a8:	c3 23       	jnz	$-120    	;abs 0x8730
-    87aa:	05 93       	cmp	#0,	r5	;r3 As==00
-    87ac:	c1 23       	jnz	$-124    	;abs 0x8730
-    87ae:	30 40 46 85 	br	#0x8546		;
-
-000087b2 <__mspabi_func_epilog_7>:
-    87b2:	34 41       	pop	r4		;
-
-000087b4 <__mspabi_func_epilog_6>:
-    87b4:	35 41       	pop	r5		;
-
-000087b6 <__mspabi_func_epilog_5>:
-    87b6:	36 41       	pop	r6		;
-
-000087b8 <__mspabi_func_epilog_4>:
-    87b8:	37 41       	pop	r7		;
-
-000087ba <__mspabi_func_epilog_3>:
-    87ba:	38 41       	pop	r8		;
-
-000087bc <__mspabi_func_epilog_2>:
-    87bc:	39 41       	pop	r9		;
-
-000087be <__mspabi_func_epilog_1>:
-    87be:	3a 41       	pop	r10		;
-    87c0:	30 41       	ret			
-
-000087c2 <__mspabi_srli_15>:
-    87c2:	12 c3       	clrc			
-    87c4:	0c 10       	rrc	r12		;
-
-000087c6 <__mspabi_srli_14>:
-    87c6:	12 c3       	clrc			
-    87c8:	0c 10       	rrc	r12		;
-
-000087ca <__mspabi_srli_13>:
-    87ca:	12 c3       	clrc			
-    87cc:	0c 10       	rrc	r12		;
-
-000087ce <__mspabi_srli_12>:
-    87ce:	12 c3       	clrc			
-    87d0:	0c 10       	rrc	r12		;
-
-000087d2 <__mspabi_srli_11>:
-    87d2:	12 c3       	clrc			
-    87d4:	0c 10       	rrc	r12		;
-
-000087d6 <__mspabi_srli_10>:
-    87d6:	12 c3       	clrc			
-    87d8:	0c 10       	rrc	r12		;
-
-000087da <__mspabi_srli_9>:
-    87da:	12 c3       	clrc			
-    87dc:	0c 10       	rrc	r12		;
-
-000087de <__mspabi_srli_8>:
-    87de:	12 c3       	clrc			
-    87e0:	0c 10       	rrc	r12		;
-
-000087e2 <__mspabi_srli_7>:
-    87e2:	12 c3       	clrc			
-    87e4:	0c 10       	rrc	r12		;
-
-000087e6 <__mspabi_srli_6>:
-    87e6:	12 c3       	clrc			
-    87e8:	0c 10       	rrc	r12		;
-
-000087ea <__mspabi_srli_5>:
-    87ea:	12 c3       	clrc			
-    87ec:	0c 10       	rrc	r12		;
-
-000087ee <__mspabi_srli_4>:
-    87ee:	12 c3       	clrc			
-    87f0:	0c 10       	rrc	r12		;
-
-000087f2 <__mspabi_srli_3>:
-    87f2:	12 c3       	clrc			
-    87f4:	0c 10       	rrc	r12		;
-
-000087f6 <__mspabi_srli_2>:
-    87f6:	12 c3       	clrc			
-    87f8:	0c 10       	rrc	r12		;
-
-000087fa <__mspabi_srli_1>:
-    87fa:	12 c3       	clrc			
-    87fc:	0c 10       	rrc	r12		;
-    87fe:	30 41       	ret			
-
-00008800 <.L11>:
-    8800:	3d 53       	add	#-1,	r13	;r3 As==11
-    8802:	12 c3       	clrc			
-    8804:	0c 10       	rrc	r12		;
-
-00008806 <__mspabi_srli>:
-    8806:	0d 93       	cmp	#0,	r13	;r3 As==00
-    8808:	fb 23       	jnz	$-8      	;abs 0x8800
-    880a:	30 41       	ret			
-
-0000880c <__mspabi_srll_15>:
-    880c:	12 c3       	clrc			
-    880e:	0d 10       	rrc	r13		;
-    8810:	0c 10       	rrc	r12		;
-
-00008812 <__mspabi_srll_14>:
-    8812:	12 c3       	clrc			
-    8814:	0d 10       	rrc	r13		;
-    8816:	0c 10       	rrc	r12		;
-
-00008818 <__mspabi_srll_13>:
-    8818:	12 c3       	clrc			
-    881a:	0d 10       	rrc	r13		;
-    881c:	0c 10       	rrc	r12		;
-
-0000881e <__mspabi_srll_12>:
-    881e:	12 c3       	clrc			
-    8820:	0d 10       	rrc	r13		;
-    8822:	0c 10       	rrc	r12		;
-
-00008824 <__mspabi_srll_11>:
-    8824:	12 c3       	clrc			
-    8826:	0d 10       	rrc	r13		;
-    8828:	0c 10       	rrc	r12		;
-
-0000882a <__mspabi_srll_10>:
-    882a:	12 c3       	clrc			
-    882c:	0d 10       	rrc	r13		;
-    882e:	0c 10       	rrc	r12		;
-
-00008830 <__mspabi_srll_9>:
-    8830:	12 c3       	clrc			
-    8832:	0d 10       	rrc	r13		;
-    8834:	0c 10       	rrc	r12		;
-
-00008836 <__mspabi_srll_8>:
-    8836:	12 c3       	clrc			
-    8838:	0d 10       	rrc	r13		;
-    883a:	0c 10       	rrc	r12		;
-
-0000883c <__mspabi_srll_7>:
-    883c:	12 c3       	clrc			
-    883e:	0d 10       	rrc	r13		;
-    8840:	0c 10       	rrc	r12		;
-
-00008842 <__mspabi_srll_6>:
-    8842:	12 c3       	clrc			
-    8844:	0d 10       	rrc	r13		;
-    8846:	0c 10       	rrc	r12		;
-
-00008848 <__mspabi_srll_5>:
-    8848:	12 c3       	clrc			
-    884a:	0d 10       	rrc	r13		;
-    884c:	0c 10       	rrc	r12		;
-
-0000884e <__mspabi_srll_4>:
-    884e:	12 c3       	clrc			
-    8850:	0d 10       	rrc	r13		;
-    8852:	0c 10       	rrc	r12		;
-
-00008854 <__mspabi_srll_3>:
-    8854:	12 c3       	clrc			
-    8856:	0d 10       	rrc	r13		;
-    8858:	0c 10       	rrc	r12		;
-
-0000885a <__mspabi_srll_2>:
-    885a:	12 c3       	clrc			
-    885c:	0d 10       	rrc	r13		;
-    885e:	0c 10       	rrc	r12		;
-
-00008860 <__mspabi_srll_1>:
-    8860:	12 c3       	clrc			
-    8862:	0d 10       	rrc	r13		;
-    8864:	0c 10       	rrc	r12		;
-    8866:	30 41       	ret			
-
-00008868 <.L12>:
-    8868:	3e 53       	add	#-1,	r14	;r3 As==11
-    886a:	12 c3       	clrc			
-    886c:	0d 10       	rrc	r13		;
-    886e:	0c 10       	rrc	r12		;
-
-00008870 <__mspabi_srll>:
-    8870:	0e 93       	cmp	#0,	r14	;r3 As==00
-    8872:	fa 23       	jnz	$-10     	;abs 0x8868
-    8874:	30 41       	ret			
-
-00008876 <memmove>:
-    8876:	0d 9c       	cmp	r12,	r13	;
-    8878:	0a 28       	jnc	$+22     	;abs 0x888e
-
-0000887a <.L5>:
-    887a:	0f 4c       	mov	r12,	r15	;
-    887c:	0e 5c       	add	r12,	r14	;
-
-0000887e <.L3>:
-    887e:	0e 9f       	cmp	r15,	r14	;
-    8880:	0d 24       	jz	$+28     	;abs 0x889c
-
-00008882 <.LVL3>:
-    8882:	ef 4d 00 00 	mov.b	@r13,	0(r15)	;
-    8886:	1f 53       	inc	r15		;
-
-00008888 <.LVL4>:
-    8888:	1d 53       	inc	r13		;
-    888a:	30 40 7e 88 	br	#0x887e		;
-
-0000888e <.L2>:
-    888e:	0f 4d       	mov	r13,	r15	;
-    8890:	0f 5e       	add	r14,	r15	;
-    8892:	0c 9f       	cmp	r15,	r12	;
-    8894:	f2 2f       	jc	$-26     	;abs 0x887a
-
-00008896 <.L4>:
-    8896:	3e 53       	add	#-1,	r14	;r3 As==11
-
-00008898 <.LVL7>:
-    8898:	3e 93       	cmp	#-1,	r14	;r3 As==11
-    889a:	01 20       	jnz	$+4      	;abs 0x889e
-
-0000889c <.L10>:
-    889c:	30 41       	ret			
-
-0000889e <.L6>:
-    889e:	0b 4c       	mov	r12,	r11	;
-    88a0:	0b 5e       	add	r14,	r11	;
-    88a2:	0f 4d       	mov	r13,	r15	;
-    88a4:	0f 5e       	add	r14,	r15	;
-    88a6:	eb 4f 00 00 	mov.b	@r15,	0(r11)	;
-    88aa:	30 40 96 88 	br	#0x8896		;
-
-000088ae <memset>:
-    88ae:	0f 4c       	mov	r12,	r15	;
-    88b0:	0e 5c       	add	r12,	r14	;
-
-000088b2 <.L2>:
-    88b2:	0f 9e       	cmp	r14,	r15	;
-    88b4:	01 20       	jnz	$+4      	;abs 0x88b8
-
-000088b6 <.Loc.104.1>:
-    88b6:	30 41       	ret			
-
-000088b8 <.L3>:
-    88b8:	cf 4d 00 00 	mov.b	r13,	0(r15)	;
-    88bc:	1f 53       	inc	r15		;
-
-000088be <.LVL4>:
-    88be:	30 40 b2 88 	br	#0x88b2		;
-
-000088c2 <L0>:
-    88c2:	30 41       	ret			
-
-000088c4 <__do_global_ctors_aux>:
-    88c4:	0a 12       	push	r10		;
-    88c6:	3a 40 08 81 	mov	#33032,	r10	;#0x8108
-
-000088ca <.L2>:
-    88ca:	2c 4a       	mov	@r10,	r12	;
-    88cc:	3c 93       	cmp	#-1,	r12	;r3 As==11
-    88ce:	02 20       	jnz	$+6      	;abs 0x88d4
-    88d0:	3a 41       	pop	r10		;
-    88d2:	30 41       	ret			
-
-000088d4 <.L3>:
-    88d4:	8c 12       	call	r12		;
-    88d6:	3a 50 fe ff 	add	#65534,	r10	;#0xfffe
-    88da:	30 40 ca 88 	br	#0x88ca		;
-
-000088de <call___do_global_ctors_aux>:
-    88de:	b0 12 16 82 	call	#33302		;#0x8216
-    88e2:	b0 12 c4 88 	call	#35012		;#0x88c4
-
-000088e6 <L0>:
-    88e6:	b0 12 4e 81 	call	#33102		;#0x814e
-
-000088ea <.Loc.19.1>:
-    88ea:	b0 12 40 81 	call	#33088		;#0x8140
-
-000088ee <.Loc.20.1>:
-    88ee:	30 41       	ret			
-
-000088f0 <__msp430_fini>:
-    88f0:	b0 12 5c 81 	call	#33116		;#0x815c
-
-000088f4 <L0>:
-    88f4:	b0 12 c8 81 	call	#33224		;#0x81c8
-
-000088f8 <L0>:
-    88f8:	30 41       	ret			
+0000819e <__mspabi_srli_12>:
+    819e:	12 c3       	clrc			
+    81a0:	0c 10       	rrc	r12		;
+
+000081a2 <__mspabi_srli_11>:
+    81a2:	12 c3       	clrc			
+    81a4:	0c 10       	rrc	r12		;
+
+000081a6 <__mspabi_srli_10>:
+    81a6:	12 c3       	clrc			
+    81a8:	0c 10       	rrc	r12		;
+
+000081aa <__mspabi_srli_9>:
+    81aa:	12 c3       	clrc			
+    81ac:	0c 10       	rrc	r12		;
+
+000081ae <__mspabi_srli_8>:
+    81ae:	12 c3       	clrc			
+    81b0:	0c 10       	rrc	r12		;
+
+000081b2 <__mspabi_srli_7>:
+    81b2:	12 c3       	clrc			
+    81b4:	0c 10       	rrc	r12		;
+
+000081b6 <__mspabi_srli_6>:
+    81b6:	12 c3       	clrc			
+    81b8:	0c 10       	rrc	r12		;
+
+000081ba <__mspabi_srli_5>:
+    81ba:	12 c3       	clrc			
+    81bc:	0c 10       	rrc	r12		;
+
+000081be <__mspabi_srli_4>:
+    81be:	12 c3       	clrc			
+    81c0:	0c 10       	rrc	r12		;
+
+000081c2 <__mspabi_srli_3>:
+    81c2:	12 c3       	clrc			
+    81c4:	0c 10       	rrc	r12		;
+
+000081c6 <__mspabi_srli_2>:
+    81c6:	12 c3       	clrc			
+    81c8:	0c 10       	rrc	r12		;
+
+000081ca <__mspabi_srli_1>:
+    81ca:	12 c3       	clrc			
+    81cc:	0c 10       	rrc	r12		;
+    81ce:	30 41       	ret			
+
+000081d0 <.L11>:
+    81d0:	3d 53       	add	#-1,	r13	;r3 As==11
+    81d2:	12 c3       	clrc			
+    81d4:	0c 10       	rrc	r12		;
+
+000081d6 <__mspabi_srli>:
+    81d6:	0d 93       	cmp	#0,	r13	;r3 As==00
+    81d8:	fb 23       	jnz	$-8      	;abs 0x81d0
+    81da:	30 41       	ret			
+
+000081dc <__mspabi_srll_15>:
+    81dc:	12 c3       	clrc			
+    81de:	0d 10       	rrc	r13		;
+    81e0:	0c 10       	rrc	r12		;
+
+000081e2 <__mspabi_srll_14>:
+    81e2:	12 c3       	clrc			
+    81e4:	0d 10       	rrc	r13		;
+    81e6:	0c 10       	rrc	r12		;
+
+000081e8 <__mspabi_srll_13>:
+    81e8:	12 c3       	clrc			
+    81ea:	0d 10       	rrc	r13		;
+    81ec:	0c 10       	rrc	r12		;
+
+000081ee <__mspabi_srll_12>:
+    81ee:	12 c3       	clrc			
+    81f0:	0d 10       	rrc	r13		;
+    81f2:	0c 10       	rrc	r12		;
+
+000081f4 <__mspabi_srll_11>:
+    81f4:	12 c3       	clrc			
+    81f6:	0d 10       	rrc	r13		;
+    81f8:	0c 10       	rrc	r12		;
+
+000081fa <__mspabi_srll_10>:
+    81fa:	12 c3       	clrc			
+    81fc:	0d 10       	rrc	r13		;
+    81fe:	0c 10       	rrc	r12		;
+
+00008200 <__mspabi_srll_9>:
+    8200:	12 c3       	clrc			
+    8202:	0d 10       	rrc	r13		;
+    8204:	0c 10       	rrc	r12		;
+
+00008206 <__mspabi_srll_8>:
+    8206:	12 c3       	clrc			
+    8208:	0d 10       	rrc	r13		;
+    820a:	0c 10       	rrc	r12		;
+
+0000820c <__mspabi_srll_7>:
+    820c:	12 c3       	clrc			
+    820e:	0d 10       	rrc	r13		;
+    8210:	0c 10       	rrc	r12		;
+
+00008212 <__mspabi_srll_6>:
+    8212:	12 c3       	clrc			
+    8214:	0d 10       	rrc	r13		;
+    8216:	0c 10       	rrc	r12		;
+
+00008218 <__mspabi_srll_5>:
+    8218:	12 c3       	clrc			
+    821a:	0d 10       	rrc	r13		;
+    821c:	0c 10       	rrc	r12		;
+
+0000821e <__mspabi_srll_4>:
+    821e:	12 c3       	clrc			
+    8220:	0d 10       	rrc	r13		;
+    8222:	0c 10       	rrc	r12		;
+
+00008224 <__mspabi_srll_3>:
+    8224:	12 c3       	clrc			
+    8226:	0d 10       	rrc	r13		;
+    8228:	0c 10       	rrc	r12		;
+
+0000822a <__mspabi_srll_2>:
+    822a:	12 c3       	clrc			
+    822c:	0d 10       	rrc	r13		;
+    822e:	0c 10       	rrc	r12		;
+
+00008230 <__mspabi_srll_1>:
+    8230:	12 c3       	clrc			
+    8232:	0d 10       	rrc	r13		;
+    8234:	0c 10       	rrc	r12		;
+    8236:	30 41       	ret			
+
+00008238 <.L12>:
+    8238:	3e 53       	add	#-1,	r14	;r3 As==11
+    823a:	12 c3       	clrc			
+    823c:	0d 10       	rrc	r13		;
+    823e:	0c 10       	rrc	r12		;
+
+00008240 <__mspabi_srll>:
+    8240:	0e 93       	cmp	#0,	r14	;r3 As==00
+    8242:	fa 23       	jnz	$-10     	;abs 0x8238
+    8244:	30 41       	ret			
+
+00008246 <memmove>:
+    8246:	0d 9c       	cmp	r12,	r13	;
+    8248:	0a 28       	jnc	$+22     	;abs 0x825e
+
+0000824a <.L5>:
+    824a:	0f 4c       	mov	r12,	r15	;
+    824c:	0e 5c       	add	r12,	r14	;
+
+0000824e <.L3>:
+    824e:	0e 9f       	cmp	r15,	r14	;
+    8250:	0d 24       	jz	$+28     	;abs 0x826c
+
+00008252 <.LVL3>:
+    8252:	ef 4d 00 00 	mov.b	@r13,	0(r15)	;
+    8256:	1f 53       	inc	r15		;
+
+00008258 <.LVL4>:
+    8258:	1d 53       	inc	r13		;
+    825a:	30 40 4e 82 	br	#0x824e		;
+
+0000825e <.L2>:
+    825e:	0f 4d       	mov	r13,	r15	;
+    8260:	0f 5e       	add	r14,	r15	;
+    8262:	0c 9f       	cmp	r15,	r12	;
+    8264:	f2 2f       	jc	$-26     	;abs 0x824a
+
+00008266 <.L4>:
+    8266:	3e 53       	add	#-1,	r14	;r3 As==11
+
+00008268 <.LVL7>:
+    8268:	3e 93       	cmp	#-1,	r14	;r3 As==11
+    826a:	01 20       	jnz	$+4      	;abs 0x826e
+
+0000826c <.L10>:
+    826c:	30 41       	ret			
+
+0000826e <.L6>:
+    826e:	0b 4c       	mov	r12,	r11	;
+    8270:	0b 5e       	add	r14,	r11	;
+    8272:	0f 4d       	mov	r13,	r15	;
+    8274:	0f 5e       	add	r14,	r15	;
+    8276:	eb 4f 00 00 	mov.b	@r15,	0(r11)	;
+    827a:	30 40 66 82 	br	#0x8266		;
+
+0000827e <memset>:
+    827e:	0f 4c       	mov	r12,	r15	;
+    8280:	0e 5c       	add	r12,	r14	;
+
+00008282 <.L2>:
+    8282:	0f 9e       	cmp	r14,	r15	;
+    8284:	01 20       	jnz	$+4      	;abs 0x8288
+
+00008286 <.Loc.104.1>:
+    8286:	30 41       	ret			
+
+00008288 <.L3>:
+    8288:	cf 4d 00 00 	mov.b	r13,	0(r15)	;
+    828c:	1f 53       	inc	r15		;
+
+0000828e <.LVL4>:
+    828e:	30 40 82 82 	br	#0x8282		;
+
+00008292 <L0>:
+    8292:	30 41       	ret			
+
+00008294 <__do_global_ctors_aux>:
+    8294:	0a 12       	push	r10		;
+    8296:	3a 40 08 80 	mov	#32776,	r10	;#0x8008
+
+0000829a <.L2>:
+    829a:	2c 4a       	mov	@r10,	r12	;
+    829c:	3c 93       	cmp	#-1,	r12	;r3 As==11
+    829e:	02 20       	jnz	$+6      	;abs 0x82a4
+    82a0:	3a 41       	pop	r10		;
+    82a2:	30 41       	ret			
+
+000082a4 <.L3>:
+    82a4:	8c 12       	call	r12		;
+    82a6:	3a 50 fe ff 	add	#65534,	r10	;#0xfffe
+    82aa:	30 40 9a 82 	br	#0x829a		;
+
+000082ae <call___do_global_ctors_aux>:
+    82ae:	b0 12 16 81 	call	#33046		;#0x8116
+    82b2:	b0 12 94 82 	call	#33428		;#0x8294
+
+000082b6 <L0>:
+    82b6:	b0 12 4e 80 	call	#32846		;#0x804e
+
+000082ba <.Loc.19.1>:
+    82ba:	b0 12 40 80 	call	#32832		;#0x8040
+
+000082be <.Loc.20.1>:
+    82be:	30 41       	ret			
+
+000082c0 <__msp430_fini>:
+    82c0:	b0 12 5c 80 	call	#32860		;#0x805c
+
+000082c4 <L0>:
+    82c4:	b0 12 c8 80 	call	#32968		;#0x80c8
+
+000082c8 <L0>:
+    82c8:	30 41       	ret			

@@ -6,11 +6,11 @@ mkdir WORK
 
 # Choose GCC toolchain prefix ('msp430' for MSPGCC / 'msp430-elf' for GCC RedHat/TI)
 # Note: default to MSPGCC until GCC RedHat/TI is mature enough
-if command -v msp430-gcc >/dev/null; then
-    MSPGCC_PFX=msp430
-else
+#if command -v msp430-gcc >/dev/null; then
+#    MSPGCC_PFX=msp430
+#else
     MSPGCC_PFX=msp430-elf
-fi
+#fi
 #MSPGCC_PFX=msp430-elf
 export MSPGCC_PFX
 

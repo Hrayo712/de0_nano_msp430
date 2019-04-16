@@ -142,7 +142,6 @@ output               puc_rst;                // Main system reset
 output               smclk;                  // ASIC ONLY: SMCLK
 output               smclk_en;               // FPGA ONLY: SMCLK enable
 
-
 // INPUTs
 //============
 input                cpu_en;                 // Enable CPU code execution (asynchronous and non-glitchy)
@@ -430,7 +429,7 @@ omsp_mem_backbone mem_backbone_0 (
 // OUTPUTs
     .cpu_halt_cmd      (cpu_halt_cmd),       // Halt CPU command
     .dbg_mem_din       (dbg_mem_din),        // Debug unit Memory data input
-    .dmem_addr         (dmem_addr),          // Data Memory address
+    .dmem_addr         (dmem_addr),         // Data Memory address
     .dmem_cen          (dmem_cen),           // Data Memory chip enable (low active)
     .dmem_din          (dmem_din),           // Data Memory data input
     .dmem_wen          (dmem_wen),           // Data Memory write enable (low active)
@@ -586,7 +585,7 @@ assign  per_dout_or  =  per_dout      |
                         per_dout_clk  |
                         per_dout_sfr  |
                         per_dout_wdog |
-                        per_dout_mpy;
+                        per_dout_mpy  ;
 
 
 //=============================================================================
@@ -659,7 +658,6 @@ wire        UNUSED_dbg_i2c_scl       = dbg_i2c_scl;
 wire        UNUSED_dbg_i2c_sda_in    = dbg_i2c_sda_in;
 wire        UNUSED_dbg_uart_rxd      = dbg_uart_rxd;
 `endif
-
 
 endmodule // openMSP430
 

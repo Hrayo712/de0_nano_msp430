@@ -3,7 +3,7 @@ NAME            = leds
 OBJECTS         = main.o 
 
 # Compiler performance option (-Os / -O2 / -O3)
-PORT_CFLAGS     = -O3
+PORT_CFLAGS     = -O0
 
 # Choose GCC toolchain prefix ('msp430' for MSPGCC / 'msp430-elf' for GCC RedHat/TI)
 ifndef MSPGCC_PFX
