@@ -131,14 +131,21 @@ assign  memory_tracking_en  = (eu_addr[15:0]>=(`DMEM_BASE)) & (eu_addr[15:0]< (D
 assign tl_addr =  addr_out;
 
 always @* begin
-	if(WAR_detected)
-	addr_out <= tlb_addr[tlb_buff_ctr];
-	else if (tlb_match)
-	addr_out <= tlb_addr[tlb_addr_match];
-	else if (eu_addr == tlb_buff_busy_writing)
-	addr_out <= tlb_addr[tlb_buff_ctr];
-	else
-	addr_out <= eu_addr;
+	
+	if(WAR_detected) begin
+		case (rd_buff_addr_match) 
+		3'b000 : addr_out <= 16'h4004;
+		3'b001 : addr_out <= 16'h6002;
+		3'b010 : addr_out <= 16'h6004;
+		3'b011 : addr_out <= 16'h6006;
+		3'b100 : addr_out <= 16'h6008;
+		3'b101 : addr_out <= 16'h600A;
+		3'b110 : addr_out <= 16'h600C;
+		3'b111 : addr_out <= 16'h600E;
+		endcase 
+	end else if (~WAR_detected) begin
+	addr_out = eu_addr;
+	end
 end				
 
 				
@@ -166,7 +173,7 @@ always @(negedge mclk) begin
 end
 
 /* Write buffer Logic to Forward the writing address to the other buffer*/
-always @(wr_buff_wr_en,wr_buff_busy) begin
+always @(negedge mclk) begin
 
 	if(wr_buff_wr_en) begin
 	wr_buff_busy_writing = read_address;
@@ -177,38 +184,12 @@ always @(wr_buff_wr_en,wr_buff_busy) begin
 	end
 end
 
-
-
-
-/* TLB buffer Logic to Forward the writing address to the other buffers*/
-//always @(tlb_buff_wr_en,tlb_buff_busy) begin
-//
-//	if(tlb_buff_wr_en) begin
-//	tlb_buff_busy_writing = read_address;
-//	//busy_writing = 1;
-//	end else if (~tlb_buff_wr_en && ~tlb_buff_busy) begin
-//	//busy_writing = 0;
-//	tlb_buff_busy_writing = 16'hCAFE;
-//	end
-//end
-
-//always @(posedge mclk) begin
-//	if(WAR_detected && ~tlb_match) begin
-//	tlb_buff_wr_en <= 1;
-//	end else if (~WAR_detected)
-//	tlb_buff_wr_en <= 0;
-//end
-
 always @(posedge mclk or posedge puc_rst) begin
 	if(puc_rst)
 		begin
 			rd_buff_ctr  <=  3'b000;
 			wr_buff_ctr  <=  3'b000;
 			tlb_buff_ctr <=  3'b000;
-			//Provisional Initialization TO DO: properly implement
-			tlb_addr[0] <= 16'h4004;
-			tlb_addr[1] <= 16'h6002;
-			tlb_addr[2] <= 16'h6004;
 		end
 	else if(rd_buff_busy)
 			rd_buff_ctr  <= rd_buff_ctr + 1'b1;
@@ -217,6 +198,7 @@ always @(posedge mclk or posedge puc_rst) begin
 	else if(tlb_buff_busy)
 			tlb_buff_ctr <= tlb_buff_ctr + 1'b1;
 end
+
 //=============================================================================
 // 1)  Read Buffer Instantiation
 //=============================================================================

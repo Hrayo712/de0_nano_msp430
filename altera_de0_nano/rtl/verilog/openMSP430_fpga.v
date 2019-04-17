@@ -316,6 +316,7 @@ assign irq_bus  = {1'b0,         // Vector 13  (0xFFFA)
 //=============================================================================
 // 5)  PROGRAM AND DATA MEMORIES
 //=============================================================================
+wire [`DMEM_MSB:0] qwark_addr;
 
 ram_16x16k pmem_0 (
     .address   ( pmem_addr),
@@ -353,7 +354,6 @@ ram_16x8k dmem_0 (
 //=============================================================================
 wire war_detected;
 wire [15:0]per_dout_qwark;
-wire [`DMEM_MSB:0] qwark_addr;
 
 omsp_qwark_periph qwark_periph_0 (
 
