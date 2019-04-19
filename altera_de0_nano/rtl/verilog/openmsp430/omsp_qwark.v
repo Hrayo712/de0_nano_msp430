@@ -132,7 +132,7 @@ assign  memory_tracking_en  = (eu_addr[15:0]>=(`DMEM_BASE)) & (eu_addr[15:0]< (D
 /* Address translation Logic */	
 reg [DATA_WIDTH-1:0]addr_out;
 																
-assign tl_addr =  WAR_detected ? addr_out : eu_addr;
+assign tl_addr =  WAR ? addr_out : eu_addr;
 
 always @* begin
 
@@ -149,33 +149,71 @@ always @* begin
 end				
 
 //WAR buffering
+reg WAR;
+always @(negedge mclk) begin
+	if(pre_WAR_detected && (eu_mb_wr[0] || eu_mb_wr[1])) begin
+	WAR <= 1'b1;
+	end else begin
+	WAR <= 1'b0;
+	end
+end
 
+reg pre_WAR_detected;
 always @(posedge mclk) begin
 	  if(puc_rst) begin
-	  WAR_detected <= 1'b0;
+	  pre_WAR_detected <= 1'b0;
 	  addr_match <= 3'b000;
 	  detected <= 1'b0;
 	  end else if(en && rd_buf_out_match && ~detected) begin
-	  WAR_detected <= 1'b1;
+	  pre_WAR_detected <= 1'b1;
 	  addr_match   <= rd_buff_addr_match;
 	  end else begin
-	  WAR_detected <= 1'b0;
-	  detected <= WAR_detected;
+	  pre_WAR_detected <= 1'b0;
+	  detected <= pre_WAR_detected;
 	  addr_match <= 3'b000;
 	  end
 end
 
-				
+reg rd_buff_wr_en_pre;
+reg wr_buff_wr_en_pre;
+
 always @(posedge mclk && en) begin
+	if(puc_rst) begin
+	rd_buff_wr_en_pre <= 1'b0;
+	wr_buff_wr_en_pre <= 1'b0;
+	read_address <=  1'b0;
+	
+	end else if (en) begin
 	// The memory bus is issuing a read access, and the CAM didnt recognize the address in the buffer..Enable the Write!
-	rd_buff_wr_en <= eu_en && ~eu_mb_wr[1] && ~eu_mb_wr[0] && ~wr_buff_match_dly && ~rd_buf_out_match && ~rd_buff_busy && memory_tracking_en && (eu_addr!=wr_buff_busy_writing);
+	rd_buff_wr_en_pre <= eu_en && ~eu_mb_wr[1] && ~eu_mb_wr[0] && memory_tracking_en && (eu_addr!=wr_buff_busy_writing); 
 	
 	// The memory bus is issuing a write access, and the CAM didnt recognize the address in the buffer..Enable the Write!
-	wr_buff_wr_en <= eu_en &&  (eu_mb_wr[1] || eu_mb_wr[0])  && ~wr_buf_out_match && ~rd_buff_match_dly && ~wr_buff_busy && memory_tracking_en  && (eu_addr!=rd_buff_busy_writing);
+	wr_buff_wr_en_pre <= eu_en &&  (eu_mb_wr[1] || eu_mb_wr[0]) && memory_tracking_en  && (eu_addr!=rd_buff_busy_writing);
 	//store address of cycle
 	read_address <= eu_addr;
 	end 
+end
 
+always @(posedge mclk) begin
+
+	if(rd_buff_wr_en_pre && (~wr_buff_match_dly && ~wr_buf_out_match) && ~rd_buf_out_match && ~rd_buff_busy) begin
+	rd_buff_wr_en <= 1'b1;
+	end else begin
+	rd_buff_wr_en <= 1'b0;
+	end
+end
+
+always @(posedge mclk) begin
+
+	if(wr_buff_wr_en_pre  && (~rd_buff_match_dly && ~rd_buf_out_match) && ~wr_buf_out_match && ~wr_buff_busy ) begin
+	wr_buff_wr_en <= 1'b1;
+	end else begin
+	wr_buff_wr_en <= 1'b0;
+	end
+end
+
+
+	
 //Read buffer match buffering	
 reg rd_buff_match_dly;
 always @(posedge mclk) begin
@@ -196,7 +234,7 @@ always @(posedge mclk) begin
 	if(puc_rst) begin
 	wr_buff_match_dly <= 1'b0;
 
-	end else if(rd_buf_out_match) begin
+	end else if(wr_buf_out_match) begin
 	wr_buff_match_dly <= wr_buf_out_match;
 	
 	end else begin
@@ -208,7 +246,7 @@ end
 /* Read buffer Logic to Forward the writing address to the other buffer*/
 always @(posedge mclk) begin
 
-	if(rd_buff_wr_en) begin
+	if(rd_buff_wr_en_pre) begin
 	rd_buff_busy_writing <= read_address;
 	//busy_writing = 1;
 	end else if (~rd_buff_wr_en && ~rd_buff_busy) begin
@@ -220,7 +258,7 @@ end
 /* Write buffer Logic to Forward the writing address to the other buffer*/
 always @(posedge mclk) begin
 
-	if(wr_buff_wr_en) begin
+	if(wr_buff_wr_en_pre) begin
 	wr_buff_busy_writing <= read_address;
 	//busy_writing = 1;
 	end else if (~wr_buff_wr_en && ~wr_buff_busy) begin
@@ -263,7 +301,7 @@ end
             .clk(mclk),
             .rst(puc_rst),
             .write_addr(rd_buff_ctr),
-            .write_data(eu_addr),
+            .write_data(read_address),
             .write_delete(1'b0), //prev 1'b0
             .write_enable(rd_buff_wr_en),
             .write_busy(rd_buff_busy),
@@ -284,7 +322,7 @@ end
             .clk(mclk),
             .rst(puc_rst),
             .write_addr(wr_buff_ctr),
-            .write_data(eu_addr),
+            .write_data(read_address),
             .write_delete(1'b0),
             .write_enable(wr_buff_wr_en),
             .write_busy(wr_buff_busy),
