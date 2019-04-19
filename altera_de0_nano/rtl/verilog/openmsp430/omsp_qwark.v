@@ -148,6 +148,8 @@ always @* begin
 		endcase 
 end				
 
+//WAR buffering
+
 always @(posedge mclk) begin
 	  if(puc_rst) begin
 	  WAR_detected <= 1'b0;
@@ -163,17 +165,45 @@ always @(posedge mclk) begin
 	  end
 end
 
-
 				
 always @(posedge mclk && en) begin
 	// The memory bus is issuing a read access, and the CAM didnt recognize the address in the buffer..Enable the Write!
-	rd_buff_wr_en <= eu_en && ~eu_mb_wr[1] && ~eu_mb_wr[0] && ~wr_buf_out_match && ~rd_buf_out_match && ~rd_buff_busy && memory_tracking_en && (eu_addr!=wr_buff_busy_writing);
+	rd_buff_wr_en <= eu_en && ~eu_mb_wr[1] && ~eu_mb_wr[0] && ~wr_buff_match_dly && ~rd_buf_out_match && ~rd_buff_busy && memory_tracking_en && (eu_addr!=wr_buff_busy_writing);
 	
 	// The memory bus is issuing a write access, and the CAM didnt recognize the address in the buffer..Enable the Write!
-	wr_buff_wr_en <= eu_en &&  (eu_mb_wr[1] || eu_mb_wr[0])  && ~wr_buf_out_match && ~rd_buf_out_match && ~wr_buff_busy && memory_tracking_en  && (eu_addr!=rd_buff_busy_writing);
+	wr_buff_wr_en <= eu_en &&  (eu_mb_wr[1] || eu_mb_wr[0])  && ~wr_buf_out_match && ~rd_buff_match_dly && ~wr_buff_busy && memory_tracking_en  && (eu_addr!=rd_buff_busy_writing);
 	//store address of cycle
 	read_address <= eu_addr;
 	end 
+
+//Read buffer match buffering	
+reg rd_buff_match_dly;
+always @(posedge mclk) begin
+	if(puc_rst) begin
+	rd_buff_match_dly <= 1'b0;
+
+	end else if(rd_buf_out_match) begin
+	rd_buff_match_dly <= rd_buf_out_match;
+	
+	end else begin
+	rd_buff_match_dly <= 1'b0;
+	end
+end
+
+//Read buffer match buffering	
+reg wr_buff_match_dly;
+always @(posedge mclk) begin
+	if(puc_rst) begin
+	wr_buff_match_dly <= 1'b0;
+
+	end else if(rd_buf_out_match) begin
+	wr_buff_match_dly <= wr_buf_out_match;
+	
+	end else begin
+	wr_buff_match_dly <= 1'b0;
+	end
+
+end
 
 /* Read buffer Logic to Forward the writing address to the other buffer*/
 always @(posedge mclk) begin
@@ -191,11 +221,11 @@ end
 always @(posedge mclk) begin
 
 	if(wr_buff_wr_en) begin
-	wr_buff_busy_writing = read_address;
+	wr_buff_busy_writing <= read_address;
 	//busy_writing = 1;
 	end else if (~wr_buff_wr_en && ~wr_buff_busy) begin
 	//busy_writing = 0;
-	wr_buff_busy_writing = 16'hCAFE;
+	wr_buff_busy_writing <= 16'hCAFE;
 	end
 end
 
