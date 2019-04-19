@@ -84,7 +84,6 @@ parameter           DMEM_END      = 16'h6000;
 // Register Declaration
 //=============================================================================
 
-reg [DATA_WIDTH-1:0]addr_out;
 reg [15:0]read_address;
 
 //status for the bufffers 
@@ -124,17 +123,21 @@ reg  [DATA_WIDTH-1:0]tlb_addr[ADDR_WIDTH-1:0];
 
 // WAR detection Logic;
 assign  war = WAR_detected;
-assign  WAR_detected			 = en && (eu_mb_wr[1] || eu_mb_wr[0]) && rd_buf_out_match ? 1 : 0;
+//assign  WAR_detected			 = en && (eu_mb_wr[1] || eu_mb_wr[0]) && rd_buf_out_match ? 1 : 0;
+reg WAR_detected;
+reg detected;
+reg [2:0]addr_match;
 assign  memory_tracking_en  = (eu_addr[15:0]>=(`DMEM_BASE)) & (eu_addr[15:0]< (DMEM_END));
 
-/* Address translation Logic */																	
-assign tl_addr =  addr_out;
+/* Address translation Logic */	
+reg [DATA_WIDTH-1:0]addr_out;
+																
+assign tl_addr =  WAR_detected ? addr_out : eu_addr;
 
 always @* begin
-	
-	if(WAR_detected) begin
-		case (rd_buff_addr_match) 
-		3'b000 : addr_out <= 16'h4004;
+
+		case (addr_match) 
+		3'b000 : addr_out <= 16'h6000;
 		3'b001 : addr_out <= 16'h6002;
 		3'b010 : addr_out <= 16'h6004;
 		3'b011 : addr_out <= 16'h6006;
@@ -143,10 +146,23 @@ always @* begin
 		3'b110 : addr_out <= 16'h600C;
 		3'b111 : addr_out <= 16'h600E;
 		endcase 
-	end else if (~WAR_detected) begin
-	addr_out = eu_addr;
-	end
 end				
+
+always @(posedge mclk) begin
+	  if(puc_rst) begin
+	  WAR_detected <= 1'b0;
+	  addr_match <= 3'b000;
+	  detected <= 1'b0;
+	  end else if(en && rd_buf_out_match && ~detected) begin
+	  WAR_detected <= 1'b1;
+	  addr_match   <= rd_buff_addr_match;
+	  end else begin
+	  WAR_detected <= 1'b0;
+	  detected <= WAR_detected;
+	  addr_match <= 3'b000;
+	  end
+end
+
 
 				
 always @(posedge mclk && en) begin
@@ -157,11 +173,10 @@ always @(posedge mclk && en) begin
 	wr_buff_wr_en <= eu_en &&  (eu_mb_wr[1] || eu_mb_wr[0])  && ~wr_buf_out_match && ~rd_buf_out_match && ~wr_buff_busy && memory_tracking_en  && (eu_addr!=rd_buff_busy_writing);
 	//store address of cycle
 	read_address <= eu_addr;
-
 	end 
 
 /* Read buffer Logic to Forward the writing address to the other buffer*/
-always @(negedge mclk) begin
+always @(posedge mclk) begin
 
 	if(rd_buff_wr_en) begin
 	rd_buff_busy_writing <= read_address;
@@ -173,7 +188,7 @@ always @(negedge mclk) begin
 end
 
 /* Write buffer Logic to Forward the writing address to the other buffer*/
-always @(negedge mclk) begin
+always @(posedge mclk) begin
 
 	if(wr_buff_wr_en) begin
 	wr_buff_busy_writing = read_address;
@@ -184,21 +199,27 @@ always @(negedge mclk) begin
 	end
 end
 
-always @(posedge mclk or posedge puc_rst) begin
+always @(posedge mclk) begin
 	if(puc_rst)
 		begin
 			rd_buff_ctr  <=  3'b000;
 			wr_buff_ctr  <=  3'b000;
 			tlb_buff_ctr <=  3'b000;
 		end
-	else if(rd_buff_busy)
+	else if(rd_buff_busy && r2)
 			rd_buff_ctr  <= rd_buff_ctr + 1'b1;
-	else if(wr_buff_busy)
+	else if(wr_buff_busy && r2)
 			wr_buff_ctr  <= wr_buff_ctr + 1'b1;
-	else if(tlb_buff_busy)
+	else if(tlb_buff_busy && r2)
 			tlb_buff_ctr <= tlb_buff_ctr + 1'b1;
 end
 
+reg r1, r2;
+
+always @(posedge mclk) begin
+        r1 <= rd_buff_wr_en;    // first stage of 2-stage synchronizer
+        r2 <= r1;               // second stage of 2-stage synchronizer
+end
 //=============================================================================
 // 1)  Read Buffer Instantiation
 //=============================================================================

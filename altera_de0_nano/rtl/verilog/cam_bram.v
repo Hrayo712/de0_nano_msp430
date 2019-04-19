@@ -149,7 +149,7 @@ generate
         )
         ram_inst
         (
-            .a_clk(~clk),
+            .a_clk(clk),
             .a_we(1'b0),
             .a_addr(compare_data[SLICE_WIDTH * slice_ind +: W]), //4*0 +:4 (0-3)  4*1 +:4(4-7)  8+:4 (8-12) 12+:15 (12-15)
             .a_din({RAM_DEPTH{1'b0}}),
@@ -167,24 +167,14 @@ generate
     end
 endgenerate
 
-
-
+// erase
 always @(posedge clk) begin
-	 if (write_enable && ~write_delete) begin
-        erase_data = write_data_padded_reg;
-       // erase_ram[write_addr_next] = write_data_padded_reg;
-    end else if (write_enable && write_delete) begin
-	     erase_data = erase_ram[write_addr];
-	 end
+    erase_data <= erase_ram[write_addr_next];
+    if (erase_ram_wr_en) begin
+        erase_data <= write_data_padded_reg;
+        erase_ram[write_addr_next] <= write_data_padded_reg;
+    end
 end
-
-//always @ (posedge clk) begin
-//	if(write_enable && ~write_delete) begin
-//	     erase_ram[write_addr] <= write_data;
-//	end else if (write_enable && write_delete) begin
-//		  erase_ram[write_addr] <= 16'h0000;
-//	end
-//end
 
 // write
 always @* begin
@@ -225,11 +215,12 @@ always @* begin
 
             if (write_enable && ~write_delete) begin
                 // wait for read from erase_ram
-                state_next = STATE_WRITE_2;
+					 erase_ram_wr_en = 1'b1;
+                state_next = STATE_WRITE_1;
 					  //ram_addr = write_data;
             end else if (write_enable && write_delete) begin
 				    //ram_addr = erase_ram[write_addr_next];
-                state_next = STATE_DELETE_2;
+                state_next = STATE_DELETE_1;
             end else begin
 					 state_next = STATE_IDLE;
 				end
@@ -275,4 +266,3 @@ always @(posedge clk) begin
 end
 
 endmodule
-
