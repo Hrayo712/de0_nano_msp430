@@ -40,6 +40,7 @@ module openMSP430_fpga (
   // USER CLOCKS
   //-----------------------------
   input         FPGA_CLK1_50,
+  input			 FPGA_CLK2_50,
 
   //-----------------------------
   // USER INTERFACE (FPGA)
@@ -127,9 +128,11 @@ wire        [15:0] per_dout_tA;
 wire   pll_out;
 wire   pll_lock;
 
-//assign dco_clk    = FPGA_CLK1_50;
+wire   mclk_2;
 
-assign dco_clk    = pll_lock ? pll_out : 1'b0;
+assign dco_clk    = FPGA_CLK1_50;
+assign mclk_2     = FPGA_CLK2_50;
+//assign dco_clk    = pll_lock ? pll_out : 1'b0;
 
 
 wire   reset_in_n = KEY[0];
@@ -342,12 +345,12 @@ ram_16x8k dmem_0 (
 //=============================================================================
 // 5) Clock Division  
 //=============================================================================
-						 
-	pll pll_0(
-	.inclk0 (FPGA_CLK1_50),
-	.c0     (pll_out),
-	.locked (pll_lock)
-	);
+//						 
+//	pll pll_0(
+//	.inclk0 (FPGA_CLK1_50),
+//	.c0     (pll_out),
+//	.locked (pll_lock)
+//	);
 
 	//=============================================================================
 // 11)  QWARK
@@ -358,20 +361,21 @@ wire [15:0]per_dout_qwark;
 omsp_qwark_periph qwark_periph_0 (
 
 // OUTPUTs
-    .per_dout(per_dout_qwark),        					 // Peripheral data output
+    .per_dout(per_dout_qwark),        					 		// Peripheral data output
 	 .addr_out(qwark_addr),
 	 .war(war_detected),
 // PERIPHERAL HANDLING INPUTs
-    .mclk(mclk),                       				// Main system clock
-    .per_addr(per_addr),               				// Peripheral address
-    .per_din(per_din),                 				// Peripheral data input
-    .per_en(per_en),                   				// Peripheral enable (high active)
-    .per_we(per_we),                   				// Peripheral write enable (high active)
+    .mclk(mclk),                       						// Main system clock
+    .per_addr(per_addr),               						// Peripheral address
+    .per_din(per_din),                 						// Peripheral data input
+    .per_en(per_en),                   						// Peripheral enable (high active)
+    .per_we(per_we),                   						// Peripheral write enable (high active)
+	 .mclk_2(mclk_2),	
   //Functionality related signals  
-	 .puc_rst(puc_rst),                 				// Main system reset
-	 .eu_addr({{2{1'b0}},dmem_addr[`DMEM_MSB:0],1'b0}),  // Execution Unit Memory Address Bus    (Logical Address)
-	 .eu_en(dmem_cen),										// Execution Unit Memory Address Bus Enable  (Active High)
-	 .eu_mb_wr(dmem_wen)  				   				// Execution Unit Memory Write
+	 .puc_rst(puc_rst),              	   					// Main system reset
+	 .eu_addr({{2{1'b0}},dmem_addr[`DMEM_MSB:0],1'b0}),   // Execution Unit Memory Address Bus    (Logical Address)
+	 .eu_en(dmem_cen),												// Execution Unit Memory Address Bus Enable  (Active High)
+	 .eu_mb_wr(dmem_wen)  				   						// Execution Unit Memory Write
 );
 
 //=============================================================================

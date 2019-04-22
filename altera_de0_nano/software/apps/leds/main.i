@@ -1,5 +1,5 @@
 # 1 "main.c"
-# 1 "/home/hiram/master/de0_nano_msp430/altera_de0_nano/software/apps/leds//"
+# 1 "/home/hiram/master/Qwark/altera_de0_nano/software/apps/leds//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -2920,8 +2920,10 @@ void dummy_wait(){
 
 }
 
-volatile int u16_nv_read=1;
-volatile int redirected=0;
+volatile int u16_nv_read=7;
+volatile int redirected=1;
+volatile int var1,var2,var4,var5,var3=0xBEBE;
+
 int main()
 {
 
@@ -2929,15 +2931,15 @@ int main()
 
  (*(volatile unsigned int *) 0x0190) = 0x01;
 
- if(u16_nv_read)
- u16_nv_read=7;
 
-
- if(redirected==7){
- (*(volatile unsigned char *) 0x0090) = 0x0F;
+ if(redirected){
+   redirected = 3;
  }
 
+ var1 = redirected;
 
+
+ (*(volatile unsigned int *) 0x0190) = 0x00;
 
 
 

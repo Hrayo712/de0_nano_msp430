@@ -14,30 +14,32 @@ void dummy_wait(){
 
 }
 
-volatile int u16_nv_read=1;    //0x4016
-volatile int redirected=0;    //0x4016
+volatile int u16_nv_read=7;    //0x4002
+volatile int redirected=1;    //0x4004
+volatile int var1,var2,var4,var5,var3=0xBEBE; //4006
+//var1 = 401a, //var2 = 401c
 int main()
 {
 
-	//Enable Idempotency Tracking	
-		
+	//Enable Idempotency Tracking
+
 	QWARK_CTL = 0x01;
+	
 
-	if(u16_nv_read) //WAR!!
-	u16_nv_read=7; //redirect to known address of redirected var
-
-
-	if(redirected==7){
-	LED_CTRL = 0x0F;
+	if(redirected){
+	  redirected = 3;
 	}
-	//turn on LED
+	
+	var1 = redirected;
 
+
+	QWARK_CTL = 0x00;
 
 	//liveness
-	
+
 	while(1);
 
-  
+
 	return 0;
 }
 

@@ -11,6 +11,7 @@ initial
       $display("|                 START SIMULATION              |");
       $display(" ===============================================");
       repeat(5) @(posedge FPGA_CLK1_50);
+
       stimulus_done = 0;
 
       //repeat(100) @(posedge FPGA_CLK1_50);

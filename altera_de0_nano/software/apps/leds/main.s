@@ -48,20 +48,30 @@ dummy_wait:
 	.type	u16_nv_read, @object
 	.size	u16_nv_read, 2
 u16_nv_read:
-	.short	1
+	.short	7
 	.global	redirected
 	.balign 2
 	.type	redirected, @object
 	.size	redirected, 2
 redirected:
-	.zero	2
+	.short	1
+	.comm	var1,2,2
+	.comm	var2,2,2
+	.comm	var4,2,2
+	.comm	var5,2,2
+	.global	var3
+	.balign 2
+	.type	var3, @object
+	.size	var3, 2
+var3:
+	.short	-16706
 .text
 	.balign 2
 	.global	main
 	.type	main, @function
 main:
 .LFB2:
-	.loc 1 20 0
+	.loc 1 22 0
 ; start of function
 ; framesize_regs:     0
 ; framesize_locals:   0
@@ -72,25 +82,24 @@ main:
 ; saved regs:(none)
 	; start of prologue
 	; end of prologue
-	.loc 1 24 0
+	.loc 1 26 0
 	MOV.W	#400, R12
 	MOV.W	#1, @R12
-	.loc 1 26 0
-	MOV.W	&u16_nv_read, R12
-	CMP.W	#0, R12 { JEQ	.L5
-	.loc 1 27 0
-	MOV.W	#7, &u16_nv_read
-.L5:
-	.loc 1 30 0
+	.loc 1 29 0
 	MOV.W	&redirected, R12
-	CMP.W	#7, R12 { JNE	.L6
-	.loc 1 31 0
-	MOV.B	#144, R12
-	MOV.B	#15, @R12
+	CMP.W	#0, R12 { JEQ	.L5
+	.loc 1 30 0
+	MOV.W	#3, &redirected
+.L5:
+	.loc 1 33 0
+	MOV.W	&redirected, R12
+	MOV.W	R12, &var1
+	.loc 1 36 0
+	MOV.W	#400, R12
+	MOV.W	#0, @R12
 .L6:
-.L7:
-	.loc 1 38 0
-	BR	#.L7
+	.loc 1 40 0
+	BR	#.L6
 .LFE2:
 	.size	main, .-main
 	.section	.debug_frame,"",@progbits
@@ -138,15 +147,15 @@ main:
 	.file 5 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/sys/reent.h"
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.4byte	0x8ed
+	.4byte	0x947
 	.2byte	0x3
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF122
+	.4byte	.LASF127
 	.byte	0xc
-	.4byte	.LASF123
-	.4byte	.LASF124
+	.4byte	.LASF128
+	.4byte	.LASF129
 	.4byte	.Ltext0
 	.4byte	.Letext0
 	.4byte	.Ldebug_line0
@@ -1218,11 +1227,56 @@ main:
 	.byte	0x5
 	.byte	0x3
 	.4byte	redirected
-	.uleb128 0x1b
+	.uleb128 0x1a
+	.4byte	.LASF122
 	.byte	0x1
+	.byte	0x13
+	.4byte	0x6f
+	.byte	0x1
+	.byte	0x5
+	.byte	0x3
+	.4byte	var1
+	.uleb128 0x1a
+	.4byte	.LASF123
+	.byte	0x1
+	.byte	0x13
+	.4byte	0x6f
+	.byte	0x1
+	.byte	0x5
+	.byte	0x3
+	.4byte	var2
+	.uleb128 0x1a
+	.4byte	.LASF124
+	.byte	0x1
+	.byte	0x13
+	.4byte	0x6f
+	.byte	0x1
+	.byte	0x5
+	.byte	0x3
+	.4byte	var4
+	.uleb128 0x1a
 	.4byte	.LASF125
 	.byte	0x1
 	.byte	0x13
+	.4byte	0x6f
+	.byte	0x1
+	.byte	0x5
+	.byte	0x3
+	.4byte	var5
+	.uleb128 0x1a
+	.4byte	.LASF126
+	.byte	0x1
+	.byte	0x13
+	.4byte	0x6f
+	.byte	0x1
+	.byte	0x5
+	.byte	0x3
+	.4byte	var3
+	.uleb128 0x1b
+	.byte	0x1
+	.4byte	.LASF130
+	.byte	0x1
+	.byte	0x15
 	.4byte	0x68
 	.4byte	.LFB2
 	.4byte	.LFE2
@@ -1230,7 +1284,7 @@ main:
 	.byte	0x9c
 	.uleb128 0x1c
 	.byte	0x1
-	.4byte	.LASF126
+	.4byte	.LASF131
 	.byte	0x1
 	.byte	0xa
 	.4byte	.LFB1
@@ -4759,6 +4813,8 @@ main:
 	.string	"_size"
 .LASF93:
 	.string	"_rand48"
+.LASF129:
+	.string	"/home/hiram/master/Qwark/altera_de0_nano/software/apps/leds"
 .LASF58:
 	.string	"_emergency"
 .LASF51:
@@ -4777,7 +4833,7 @@ main:
 	.string	"_wctomb_state"
 .LASF26:
 	.string	"__tm_sec"
-.LASF122:
+.LASF127:
 	.string	"GNU C99 7.3.1 -mcpu=msp430 -mhwmult=16bit -msmall -mcode-region=none -mdata-region=none -mdevices-csv-loc=/opt/ti/ccsv8/ccs_base/msp430/include_gcc/devices.csv -g3 -gdwarf-3 -gstrict-dwarf -O0 -std=c99 -fstrict-aliasing -fstack-usage"
 .LASF7:
 	.string	"long long int"
@@ -4847,8 +4903,14 @@ main:
 	.string	"_stdout"
 .LASF64:
 	.string	"_cvtlen"
+.LASF122:
+	.string	"var1"
+.LASF123:
+	.string	"var2"
 .LASF6:
 	.string	"long unsigned int"
+.LASF124:
+	.string	"var4"
 .LASF47:
 	.string	"__sFILE_fake"
 .LASF120:
@@ -4869,7 +4931,7 @@ main:
 	.string	"_result"
 .LASF13:
 	.string	"__wch"
-.LASF123:
+.LASF128:
 	.string	"main.c"
 .LASF12:
 	.string	"wint_t"
@@ -4895,7 +4957,7 @@ main:
 	.string	"__sdidinit"
 .LASF10:
 	.string	"_off_t"
-.LASF126:
+.LASF131:
 	.string	"dummy_wait"
 .LASF102:
 	.string	"_freelist"
@@ -4955,8 +5017,12 @@ main:
 	.string	"__tm_min"
 .LASF95:
 	.string	"_mult"
+.LASF126:
+	.string	"var3"
 .LASF20:
 	.string	"_next"
+.LASF125:
+	.string	"var5"
 .LASF104:
 	.string	"_strtok_last"
 .LASF38:
@@ -4969,8 +5035,6 @@ main:
 	.string	"__ULong"
 .LASF109:
 	.string	"_getdate_err"
-.LASF124:
-	.string	"/home/hiram/master/de0_nano_msp430/altera_de0_nano/software/apps/leds"
 .LASF119:
 	.string	"_global_impure_ptr"
 .LASF60:
@@ -5003,7 +5067,7 @@ main:
 	.string	"_mbtowc_state"
 .LASF101:
 	.string	"_p5s"
-.LASF125:
+.LASF130:
 	.string	"main"
 .LASF29:
 	.string	"__tm_mday"

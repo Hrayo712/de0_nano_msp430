@@ -103,6 +103,8 @@
 
 //Included 
 ../../../rtl/verilog/cam_bram.v
+../../../rtl/verilog/cam_rd.v
+../../../rtl/verilog/rd_fifo.v
 ../../../rtl/verilog/priority_encoder.v
 ../../../rtl/verilog/ram_dp.v
 ../../../rtl/verilog/openmsp430/omsp_qwark.v

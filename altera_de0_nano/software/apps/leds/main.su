@@ -1,2 +1,2 @@
 main.c:10:6:dummy_wait	2	static
-main.c:19:5:main	0	static
+main.c:21:5:main	0	static
