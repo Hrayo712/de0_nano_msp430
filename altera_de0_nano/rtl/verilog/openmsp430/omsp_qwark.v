@@ -105,6 +105,8 @@ reg rd_buff_wr_en = 1'b0;
 reg wr_buff_wr_en = 1'b0;
 reg tlb_buff_wr_en = 1'b0;
 
+reg rd_buff_delete;
+
 /*Index counter for the CAMs*/
 reg [ADDR_WIDTH-1:0]rd_buff_ctr;
 reg [ADDR_WIDTH-1:0]wr_buff_ctr;
@@ -220,13 +222,13 @@ always @(posedge mclk) begin
 	rd_buff_wr_en <= 1'b0;
 	wr_buff_wr_en <= 1'b0;
 	read_address <=  1'b0;
-	
+	rd_buff_delete <= 1'b0;
 	end else if (en) begin
 	// The memory bus is issuing a read access, and the CAM didnt recognize the address in the buffer..Enable the Write!
 	rd_buff_wr_en <= eu_en && ~eu_mb_wr[1] && ~eu_mb_wr[0] && mem_track_en && (eu_addr!=wr_buff_busy_writing) && ~wr_buf_out_match && ~rd_buf_out_match && ~tlb_match; 
 	
 	// The memory bus is issuing a write access, and the CAM didnt recognize the address in the buffer..Enable the Write!
-	wr_buff_wr_en <= eu_en &&  (eu_mb_wr[1] || eu_mb_wr[0]) && mem_track_en  && (eu_addr!=rd_buff_busy_writing) && ~rd_buf_out_match && ~wr_buf_out_match && ~wr_buff_busy && ~tlb_match;
+	wr_buff_wr_en <= eu_en &&  (eu_mb_wr[1] || eu_mb_wr[0]) && mem_track_en  && (eu_addr!=rd_buff_busy_writing) && ~rd_buf_out_match && ~wr_buf_out_match && ~tlb_match;
 	
 	//Enable the TLB write upon WAR detection
 	tlb_buff_wr_en <= WAR;
@@ -268,40 +270,34 @@ always @(posedge mclk) begin
 		begin
 			wr_buff_ctr  <=  3'b000;
 			tlb_buff_ctr <=  3'b000;
-		   rd_buff_ctr <= 3'b000;			
+		   rd_buff_ctr  <=  3'b000;			
 		end
-	else if(rd_buff_busy && r1)
-			rd_buff_ctr  <= rd_buff_ctr + 1'b1;
-	else if(wr_buff_busy  && r5)
-			wr_buff_ctr  <= wr_buff_ctr + 1'b1;
-	else if(tlb_buff_busy && r7)
+	else if(rd_buff_busy  && r2)
+			rd_buff_ctr  <= rd_buff_ctr  + 1'b1;
+	else if(wr_buff_busy  && r4)
+			wr_buff_ctr  <= wr_buff_ctr  + 1'b1;
+	else if(tlb_buff_busy && r6)
 			tlb_buff_ctr <= tlb_buff_ctr + 1'b1;
 end
 
 
 //Synchronizer for the Read Buffer
-reg r1, r2, r3, r4;
+reg r1;
+reg r2;
+reg r3;
+reg r4;
+reg r5;
+reg r6;
+
 always @(posedge mclk) begin
         r1 <= rd_buff_wr_en;    // first stage  of 2-stage synchronizer
-        r2 <= r1;               // second stage of 2-stage synchronizer
-        r3 <= r2;               // Third stage  of 2-stage synchronizer
-        r4 <= r3;               // Fourth stage of 2-stage synchronizer
-		  end
-
-//Synchronizer for the Write Buffer
-
-reg r5, r6;
-always @(posedge mclk) begin
-        r5 <= wr_buff_wr_en;    // first stage of 2-stage synchronizer
-        r6 <= r5;               // second stage of 2-stage synchronizer
-end
-
-//Synchronizer for the TLB Buffer
-
-reg r7, r8;
-always @(posedge mclk) begin
-        r7 <= tlb_buff_wr_en;    // first stage of 2-stage synchronizer
-        r8 <= r7;               // second stage of 2-stage synchronizer
+		  r2 <= r1;
+        
+		  r3 <= wr_buff_wr_en;    // first stage of 2-stage synchronizer
+		  r4 <= r3;
+		  
+		  r5 <= tlb_buff_wr_en;    // first stage of 2-stage synchronizer
+		  r6 <= r5;
 end
 
 

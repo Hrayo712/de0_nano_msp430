@@ -1,10 +1,2 @@
-main.c:37:6:init	0	static
-main.c:45:5:btbl_bitcnt	6	static
-main.c:53:5:bit_count	6	static
-main.c:62:5:bitcount	34	static
-main.c:71:5:ntbl_bitcount	6	static
-main.c:83:5:BW_btbl_bitcount	8	static
-main.c:96:5:AR_btbl_bitcount	8	static
-main.c:107:5:ntbl_bitcnt	6	static
-main.c:117:12:bit_shifter	8	static
-main.c:126:5:main	22	static
+main.c:10:6:dummy_wait	2	static
+main.c:23:5:main	0	static

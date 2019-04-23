@@ -14,9 +14,11 @@ void dummy_wait(){
 
 }
 
-volatile int u16_nv_read=7;    //0x4002
+volatile int var1=7;    		 //0x4002
+volatile int var2=7;    		 //0x4002
+volatile int var3=7;    		 //0x4002
 volatile int redirected=1;    //0x4004
-volatile int var1,var2,var4,var5,var3=0xBEBE; //4006
+
 //var1 = 401a, //var2 = 401c
 int main()
 {
@@ -25,18 +27,16 @@ int main()
 
 	QWARK_CTL = 0x01;
 
-
 	if(redirected){
-	  redirected = 9;
+	  redirected = 502;
 	}
 
-	var1 = redirected;
+	if(var1){
+	  var1 = 502;
+	}
 
-
-
-	if(redirected ==1)
-		var2=5;
-	//liveness
+	var2 =	var1;
+	var3 = redirected;
 	QWARK_CTL = 0x00;
 
 	while(1);
@@ -44,3 +44,4 @@ int main()
 
 	return 0;
 }
+

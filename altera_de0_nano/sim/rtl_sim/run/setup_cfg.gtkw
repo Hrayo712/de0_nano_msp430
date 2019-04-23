@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
-[*] Tue Apr 23 09:15:00 2019
+[*] Tue Apr 23 13:56:27 2019
 [*]
 [dumpfile] "/home/hiram/master/Qwark/altera_de0_nano/sim/rtl_sim/run/tb_openMSP430_fpga.vcd"
-[dumpfile_mtime] "Tue Apr 23 09:13:43 2019"
-[dumpfile_size] 3793126
+[dumpfile_mtime] "Tue Apr 23 13:51:08 2019"
+[dumpfile_size] 3888417
 [savefile] "/home/hiram/master/Qwark/altera_de0_nano/sim/rtl_sim/run/setup_cfg.gtkw"
-[timestart] 532140000
+[timestart] 595440000
 [size] 1851 874
-[pos] -67 -67
-*-22.441099 539510000 3470000 3390000 3650000 3550000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -29 -29
+*-22.441099 609500000 3470000 3390000 3650000 3550000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_openMSP430_fpga.
 [treeopen] tb_openMSP430_fpga.dut.
 [treeopen] tb_openMSP430_fpga.dut.openmsp430_0.
@@ -23,7 +23,7 @@
 [sst_width] 309
 [signals_width] 326
 [sst_expanded] 1
-[sst_vpaned_height] 390
+[sst_vpaned_height] 352
 @28
 tb_openMSP430_fpga.dut.openmsp430_0.puc_rst
 @22
@@ -88,6 +88,7 @@ tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.rd_buf_out_match
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.rd_buff_addr_match[2:0]
 [color] 2
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.rd_buff_wr_en
+tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.rd_buff_delete
 [color] 2
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.rd_buff_busy
 @22
@@ -108,9 +109,12 @@ tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.cam_read_buff.slice[0].ram_inst.b_
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.cam_read_buff.slice[1].ram_inst.b_addr[3:0]
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.cam_read_buff.slice[2].ram_inst.b_addr[3:0]
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.cam_read_buff.slice[3].ram_inst.b_addr[3:0]
-@29
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.r1
 @28
+tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.r1
+@29
+tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.addr_mux[2:0]
+@28
+tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.cam_read_buff.write_addr[2:0]
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.cam_read_buff.write_addr_next[2:0]
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.cam_read_buff.write_addr_reg[2:0]
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.cam_read_buff.erase_ram_wr_en

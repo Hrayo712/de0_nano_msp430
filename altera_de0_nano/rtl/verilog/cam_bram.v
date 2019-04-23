@@ -100,7 +100,7 @@ reg erase_ram_wr_en;
 
 integer i;
 
-// This statement is used to initialize the RAM during simulation. This is non-synthesizable
+ //This statement is used to initialize the RAM during simulation. This is non-synthesizable
 initial begin
     for (i = 0; i < RAM_DEPTH; i = i + 1) begin
         erase_ram[i] = {SLICE_COUNT*SLICE_WIDTH{1'b0}};
@@ -171,18 +171,14 @@ always @ (posedge clk) begin
 	synchro <= erase_ram_wr_en;
 	
 end
+
 // erase
-always @* begin
-   // erase_data <= erase_ram[write_addr_next];
+always @(posedge clk) begin
     if (erase_ram_wr_en) begin
         erase_data <= write_data_padded_reg;
         erase_ram[write_addr_next] <= write_data_padded_reg;
-		  
-    end else if (synchro)begin
-		  erase_data <= write_data_padded_reg_dly;
-		  
 	 end else begin
-			erase_data <= 16'h0000;
+	     erase_data <= erase_ram[write_addr_next];
 	 end
 end
 
@@ -226,7 +222,7 @@ always @* begin
             if (write_enable && ~write_delete) begin
                 // wait for read from erase_ram
 					 erase_ram_wr_en = 1'b1;
-                state_next = STATE_WRITE_2;
+                state_next = STATE_WRITE_1;
 
 					 end else if (~write_enable && write_delete) begin
 
