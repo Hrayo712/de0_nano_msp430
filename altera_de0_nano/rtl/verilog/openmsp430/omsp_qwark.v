@@ -140,9 +140,9 @@ wire [2:0] rd_out_fifo;
 // Address Translation Logic
 //=============================================================================
 
-assign tl_addr =  tlb_match 	  ? addr_out_tlb		 : // Prioritize TLB match, over WAR detection	
-						tlb_buff_busy ? addr_out_rd		 :
-						WAR 		 	  ? addr_out_war		 : 
+assign tl_addr =  tlb_match 	  							 ? addr_out_tlb		 : // Prioritize TLB match, over WAR detection	
+						tlb_buff_busy && rd_buf_out_match ? addr_out_rd			 :
+						WAR 		 	  							 ? addr_out_war		 : 
 						eu_addr;
 
 always @* begin
@@ -270,11 +270,11 @@ always @(posedge mclk) begin
 			tlb_buff_ctr <=  3'b000;
 		   rd_buff_ctr <= 3'b000;			
 		end
-	else if(rd_buff_busy && r4)
+	else if(rd_buff_busy && r1)
 			rd_buff_ctr  <= rd_buff_ctr + 1'b1;
-	else if(wr_buff_busy  && r6)
+	else if(wr_buff_busy  && r5)
 			wr_buff_ctr  <= wr_buff_ctr + 1'b1;
-	else if(tlb_buff_busy && r8)
+	else if(tlb_buff_busy && r7)
 			tlb_buff_ctr <= tlb_buff_ctr + 1'b1;
 end
 
@@ -309,7 +309,7 @@ end
 // 1) CAM Read Buffer Instantiation (4 stage Write)
 //=============================================================================
 
-        cam_rd #(
+        cam_bram #(
             .DATA_WIDTH(DATA_WIDTH),
             .ADDR_WIDTH(ADDR_WIDTH),
             .SLICE_WIDTH(SLICE_WIDTH)
@@ -318,7 +318,7 @@ end
             .clk(mclk),
             .rst(puc_rst),
             .write_addr(rd_buff_ctr), 
-            .write_data(read_address),
+            .write_data(eu_addr),
             .write_delete(1'b0), 
             .write_enable(rd_buff_wr_en),
             .write_busy(rd_buff_busy),

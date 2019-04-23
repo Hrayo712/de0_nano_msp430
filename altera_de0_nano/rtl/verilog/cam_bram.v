@@ -1,17 +1,13 @@
 /*
-
 Copyright (c) 2015-2016 Alex Forencich
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
 The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -19,7 +15,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 */
 
 // Language: Verilog 2001
@@ -167,13 +162,28 @@ generate
     end
 endgenerate
 
+reg [15:0]write_data_padded_reg_dly;
+reg synchro;
+always @ (posedge clk) begin
+	
+	write_data_padded_reg_dly <= write_data_padded_reg;
+
+	synchro <= erase_ram_wr_en;
+	
+end
 // erase
-always @(posedge clk) begin
-    erase_data <= erase_ram[write_addr_next];
+always @* begin
+   // erase_data <= erase_ram[write_addr_next];
     if (erase_ram_wr_en) begin
         erase_data <= write_data_padded_reg;
         erase_ram[write_addr_next] <= write_data_padded_reg;
-    end
+		  
+    end else if (synchro)begin
+		  erase_data <= write_data_padded_reg_dly;
+		  
+	 end else begin
+			erase_data <= 16'h0000;
+	 end
 end
 
 // write
@@ -216,7 +226,7 @@ always @* begin
             if (write_enable && ~write_delete) begin
                 // wait for read from erase_ram
 					 erase_ram_wr_en = 1'b1;
-                state_next = STATE_WRITE_1;
+                state_next = STATE_WRITE_2;
 
 					 end else if (~write_enable && write_delete) begin
 

@@ -128,10 +128,8 @@ wire        [15:0] per_dout_tA;
 wire   pll_out;
 wire   pll_lock;
 
-wire   mclk_2;
 
 assign dco_clk    = FPGA_CLK1_50;
-assign mclk_2     = FPGA_CLK2_50;
 //assign dco_clk    = pll_lock ? pll_out : 1'b0;
 
 
@@ -345,7 +343,7 @@ ram_16x8k dmem_0 (
 //=============================================================================
 // 5) Clock Division  
 //=============================================================================
-//						 
+						 
 //	pll pll_0(
 //	.inclk0 (FPGA_CLK1_50),
 //	.c0     (pll_out),
@@ -370,7 +368,6 @@ omsp_qwark_periph qwark_periph_0 (
     .per_din(per_din),                 						// Peripheral data input
     .per_en(per_en),                   						// Peripheral enable (high active)
     .per_we(per_we),                   						// Peripheral write enable (high active)
-	 .mclk_2(mclk_2),	
   //Functionality related signals  
 	 .puc_rst(puc_rst),              	   					// Main system reset
 	 .eu_addr({{2{1'b0}},dmem_addr[`DMEM_MSB:0],1'b0}),   // Execution Unit Memory Address Bus    (Logical Address)

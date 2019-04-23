@@ -57,7 +57,6 @@ module  omsp_qwark_periph (
     per_din,                        // Peripheral data input
     per_en,                         // Peripheral enable (high active)
     per_we,                         // Peripheral write enable (high active)
-	 mclk_2,	
     puc_rst,                        // Main system reset
 	 eu_addr,          		   		// Execution Unit Memory Address Bus 			(Logical Address)
 	 eu_en,									// Execution Unit Memory Address Bus Enable  (Active High)
@@ -84,7 +83,6 @@ input        [15:0] eu_addr;      // Execution Unit Memory Address Bus 			(Logic
 
 input       		  eu_en;          // Execution Unit Memory Address Bus Enable  (Active High)
 input        [1:0]  eu_mb_wr;       // Execution Unit Memory Write					(Active High)
-input					  mclk_2;	
 
 //=============================================================================
 // 1)  PARAMETER DECLARATION
@@ -221,7 +219,6 @@ omsp_qwark qwark_0 (
 
 // INPUTs
     .mclk				 (mclk),				// Master Clock (synchronized to EU and FE)
-	 .mclk_2				 (mclk_2),	
 	 .en					 (cntrl1[0]),		// Enable Idempotency Tracking 
 	 .puc_rst			 (puc_rst),		   // PUC Reset    (synchronized to EU and FE)
 	 .eu_addr          (dmem_addr),     // Execution Unit Memory Address Bus 			(Logical Address)

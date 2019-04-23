@@ -24,22 +24,23 @@ int main()
 	//Enable Idempotency Tracking
 
 	QWARK_CTL = 0x01;
-	
+
 
 	if(redirected){
-	  redirected = 3;
+	  redirected = 9;
 	}
-	
+
 	var1 = redirected;
 
 
-	QWARK_CTL = 0x00;
 
+	if(redirected ==1)
+		var2=5;
 	//liveness
+	QWARK_CTL = 0x00;
 
 	while(1);
 
 
 	return 0;
 }
-
