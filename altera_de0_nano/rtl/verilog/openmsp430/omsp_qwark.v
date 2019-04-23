@@ -272,11 +272,11 @@ always @(posedge mclk) begin
 			tlb_buff_ctr <=  3'b000;
 		   rd_buff_ctr  <=  3'b000;			
 		end
-	else if(rd_buff_busy  && r2)
+	else if(rd_buff_busy  && r1)
 			rd_buff_ctr  <= rd_buff_ctr  + 1'b1;
-	else if(wr_buff_busy  && r4)
+	else if(wr_buff_busy  && r3)
 			wr_buff_ctr  <= wr_buff_ctr  + 1'b1;
-	else if(tlb_buff_busy && r6)
+	else if(tlb_buff_busy && r5)
 			tlb_buff_ctr <= tlb_buff_ctr + 1'b1;
 end
 

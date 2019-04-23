@@ -14,10 +14,10 @@ void dummy_wait(){
 
 }
 
-volatile int var1=7;    		 //0x4002
-volatile int var2=7;    		 //0x4002
-volatile int var3=7;    		 //0x4002
-volatile int redirected=1;    //0x4004
+volatile long var1=0xCAFEBEBE;    		 //0x4002
+volatile long var2=7;    				 //0x4002
+volatile int var3=7;    		 		 //0x4002
+volatile char redirected=1;    			 //0x4004
 
 //var1 = 401a, //var2 = 401c
 int main()
@@ -27,16 +27,17 @@ int main()
 
 	QWARK_CTL = 0x01;
 
-	if(redirected){
-	  redirected = 502;
-	}
+//	if(redirected){
+//	  redirected = 200;
+//	}
 
 	if(var1){
-	  var1 = 502;
+	  var1 = 505;
 	}
 
 	var2 =	var1;
-	var3 = redirected;
+	//var3 = redirected;
+
 	QWARK_CTL = 0x00;
 
 	while(1);

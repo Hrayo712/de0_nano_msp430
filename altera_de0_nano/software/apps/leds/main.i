@@ -2920,10 +2920,10 @@ void dummy_wait(){
 
 }
 
-volatile int var1=7;
-volatile int var2=7;
+volatile long var1=0xCAFEBEBE;
+volatile long var2=7;
 volatile int var3=7;
-volatile int redirected=1;
+volatile char redirected=1;
 
 
 int main()
@@ -2933,16 +2933,17 @@ int main()
 
  (*(volatile unsigned int *) 0x0190) = 0x01;
 
- if(redirected){
-   redirected = 502;
- }
+
+
+
 
  if(var1){
-   var1 = 502;
+   var1 = 505;
  }
 
  var2 = var1;
- var3 = redirected;
+
+
  (*(volatile unsigned int *) 0x0190) = 0x00;
 
  while(1);
