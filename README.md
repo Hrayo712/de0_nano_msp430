@@ -1,5 +1,5 @@
 # de0_nano_msp430
-This project is based on **openMSP430** open core project by **Olivier Girard**.
+This project is based on **openMSP430** open soft processor project by **Olivier Girard**.
 
 This has been tested with
 
@@ -7,7 +7,7 @@ This has been tested with
 
 **Quartus Version:** Quartus prime lite edition 18.1
 
-**gccmsp430** 4.6.3
+**Compiler** msp430-gcc-7.3.1.24
 
 **Eclipse IDE for C/C++ Developers**
 
@@ -21,8 +21,6 @@ The following packages are necessary
 build-essentials
 
 openocd
-
-gccmsp430 (and dependencies)
 
 icarus verilog (iverilog)
 
