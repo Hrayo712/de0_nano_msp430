@@ -55,7 +55,10 @@ module  omsp_qwark (
 	 eu_en,							// Execution Unit Memory Address Bus Enable  (Active High)
 	 eu_mb_wr,						// Execution Unit Memory Write
 	 tl_addr,
-	 war
+	 //Peripheral register handling
+	 per_dout,
+	 per_wr,
+	 irq_out
 );
 
 // INPUTs
@@ -68,10 +71,13 @@ input        [15:0] eu_addr;        // Execution Unit Memory Address Bus 			(Log
 input       		  eu_en;          // Execution Unit Memory Address Bus Enable  (Active High)
 input        [1:0]  eu_mb_wr;       // Execution Unit Memory Write					(Active High)
 
+
 // OUTPUTs
 //=========
 output  	[DATA_WIDTH-1:0] tl_addr;
-output	war;
+output	[3:0]per_dout;
+output   per_wr;
+output   irq_out;
 //=============================================================================
 // Parameter Declaration
 //=============================================================================
@@ -87,6 +93,7 @@ parameter           DMEM_END      = 16'h6000;
 //=============================================================================
 
 reg [15:0]read_address;
+reg irq_flag;
 
 //status for the bufffers 
 wire rd_buf_out_match;
@@ -105,6 +112,7 @@ reg rd_buff_wr_en = 1'b0;
 reg wr_buff_wr_en = 1'b0;
 reg tlb_buff_wr_en = 1'b0;
 
+reg [3:0]war_ctr;
 reg rd_buff_delete;
 
 /*Index counter for the CAMs*/
@@ -121,8 +129,13 @@ wire   tlb_match;
 wire [ADDR_WIDTH-1:0]tlb_addr_match;									
 reg  [DATA_WIDTH-1:0]tlb_addr[ADDR_WIDTH-1:0];
 
+
+assign  per_dout	  = war_ctr;
+assign  per_wr      = tlb_buff_wr_en;
+assign  irq_out	  = irq_flag;
+
 // WAR detection Logic;
-assign  war = WAR;
+
 reg WAR;
 
 assign  mem_track_en  = (eu_addr[15:0]>=(`DMEM_BASE)) & (eu_addr[15:0]< (DMEM_END));
@@ -158,7 +171,8 @@ always @* begin
 		3'b101 : addr_out_war <= 16'h600A;
 		3'b110 : addr_out_war <= 16'h600C;
 		3'b111 : addr_out_war <= 16'h600E;
-		endcase 
+	  default : addr_out_war <= 16'h7000;
+		endcase  
 end		
 
 always @* begin
@@ -189,13 +203,32 @@ always @* begin
 		endcase 
 end			
 
+//=============================================================================
+// IRQ flag trigger
+//=============================================================================
 
-reg [2:0]war_ctr;
+always @(posedge mclk) begin
+	if(puc_rst) begin
+	irq_flag <= 1'b0;
+	end else if(war_ctr == 8) begin
+	irq_flag <= 1'b1;
+	end else begin
+	irq_flag <= 1'b0;
+	end
+end
+
+//=============================================================================
+// Write After Read (WAR) counters to translate and perform interruptions
+//=============================================================================
+
+
 always @(posedge mclk) begin
 	if(puc_rst) begin
 	war_ctr <= 1'b0;
-	end else if(WAR) begin
+	end else if(WAR && ~tlb_match) begin
 	war_ctr <= 	war_ctr + 1;
+	end else if (war_ctr == 8) begin
+	war_ctr <= 1'b0;
 	end
 end
 
@@ -231,7 +264,7 @@ always @(posedge mclk) begin
 	wr_buff_wr_en <= eu_en &&  (eu_mb_wr[1] || eu_mb_wr[0]) && mem_track_en  && (eu_addr!=rd_buff_busy_writing) && ~rd_buf_out_match && ~wr_buf_out_match && ~tlb_match;
 	
 	//Enable the TLB write upon WAR detection
-	tlb_buff_wr_en <= WAR;
+	tlb_buff_wr_en <= WAR && ~tlb_match;
 	
 	//store address of cycle
 	read_address <= eu_addr;

@@ -2913,41 +2913,81 @@ extern long double strtold (const char *restrict, char **restrict);
 
 
 # 10 "main.c"
-void dummy_wait(){
- volatile int i=0;
-
- for(i=0;i<500;i++);
-
-}
-
-volatile long var1=0xCAFEBEBE;
-volatile long var2=7;
+volatile int var1=1;
+volatile int var2=7;
 volatile int var3=7;
-volatile char redirected=1;
+volatile int var4=1;
+volatile int var5=1;
+volatile int var6=1;
+volatile int var7=1;
+volatile int var8=1;
 
+#define QWARK_VECTOR (5)
+
+
+
+
+void __attribute__((interrupt ((5)))) INT_Qwark(void) {
+
+
+ (*(volatile unsigned int *) 0x0190) = 0x00;
+ (*(volatile unsigned char *) 0x0090) = 0x0F;
+
+
+ (*(volatile unsigned int *) 0x4002) = (*(volatile unsigned int *) 0x6000);
+ (*(volatile unsigned int *) 0x4004) = (*(volatile unsigned int *) 0x6002);
+ (*(volatile unsigned int *) 0x4006) = (*(volatile unsigned int *) 0x6004);
+ (*(volatile unsigned int *) 0x4008) = (*(volatile unsigned int *) 0x6006);
+ (*(volatile unsigned int *) 0x400A) = (*(volatile unsigned int *) 0x6008);
+ (*(volatile unsigned int *) 0x400C) = (*(volatile unsigned int *) 0x600A);
+ (*(volatile unsigned int *) 0x400E) = (*(volatile unsigned int *) 0x600C);
+ (*(volatile unsigned int *) 0x4010) = (*(volatile unsigned int *) 0x600E);
+ (*(volatile unsigned char *) 0x0090) = 0xF0;
+}
 
 int main()
 {
 
 
-
+   __asm__ __volatile__ ("eint { nop");
  (*(volatile unsigned int *) 0x0190) = 0x01;
 
 
 
-
-
  if(var1){
-   var1 = 505;
+   var1 = 0xAA;
  }
 
- var2 = var1;
+ if(var2){
+   var2 = 0xBB;
+ }
 
+ if(var3){
+   var3 = 0xCC;
+ }
 
- (*(volatile unsigned int *) 0x0190) = 0x00;
+ if(var4){
+   var4 = 0xDD;
+ }
+
+ if(var5){
+   var5 = 0xEE;
+ }
+
+ if(var6){
+   var6 = 0xFF;
+ }
+
+ if(var7){
+   var7 = 0x55;
+ }
+
+ if(var8){
+   var8 = 0x66;
+ }
+
 
  while(1);
 
 
- return 0;
 }

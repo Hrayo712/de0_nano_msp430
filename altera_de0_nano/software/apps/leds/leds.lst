@@ -2,12 +2,13 @@
 leds.elf:     file format elf32-msp430
 
 SYMBOL TABLE:
+0000ffe8 l    d  __interrupt_vector_5	00000000 __interrupt_vector_5
 0000fffe l    d  __reset_vector	00000000 __reset_vector
 00008000 l    d  .rodata	00000000 .rodata
 00008010 l    d  .text	00000000 .text
 00004000 l    d  .data	00000000 .data
-0000400e l    d  .bss	00000000 .bss
-00004020 l    d  .noinit	00000000 .noinit
+00004012 l    d  .bss	00000000 .bss
+00004024 l    d  .noinit	00000000 .noinit
 00000000 l    d  .MP430.attributes	00000000 .MP430.attributes
 00000000 l    d  .comment	00000000 .comment
 00000000 l    d  .debug_aranges	00000000 .debug_aranges
@@ -17,6 +18,7 @@ SYMBOL TABLE:
 00000000 l    d  .debug_frame	00000000 .debug_frame
 00000000 l    d  .debug_str	00000000 .debug_str
 00000000 l    d  .debug_macinfo	00000000 .debug_macinfo
+00000000 l    df *ABS*	00000000 main.c
 00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o
 0000fffe l       __reset_vector	00000000 __msp430_resetvec_hook
 0000806c l       .text	00000000 _msp430_run_array
@@ -25,117 +27,125 @@ SYMBOL TABLE:
 00008008 l     O .rodata	00000000 __CTOR_LIST__
 0000800c l     O .rodata	00000000 __DTOR_LIST__
 00008000 l     O .rodata	00000000 __EH_FRAME_BEGIN__
-000082da l     O .text	00000000 __TMC_LIST__
+0000838e l     O .text	00000000 __TMC_LIST__
 00008080 l     F .text	00000000 deregister_tm_clones
 0000809a l     F .text	00000000 register_tm_clones
 000080c8 l     F .text	00000000 __do_global_dtors_aux
-0000400e l     O .bss	00000000 completed.3056
-00004010 l     O .bss	00000000 dtor_idx.3058
+00004012 l     O .bss	00000000 completed.3056
+00004014 l     O .bss	00000000 dtor_idx.3058
 00008116 l     F .text	00000000 call___do_global_dtors_aux
 00008116 l     F .text	00000000 frame_dummy
-00004012 l     O .bss	00000000 object.3071
+00004016 l     O .bss	00000000 object.3071
 0000812e l     F .text	00000000 call_frame_dummy
 00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
 0000800a l     O .rodata	00000000 __CTOR_END__
 00008000 l     O .rodata	00000000 __FRAME_END__
-000082a4 l     F .text	00000000 __do_global_ctors_aux
-000082be l     F .text	00000000 call___do_global_ctors_aux
+00008358 l     F .text	00000000 __do_global_ctors_aux
+00008372 l     F .text	00000000 call___do_global_ctors_aux
 00000000 l    df *ABS*	00000000 crt_bss.o
 00000000 l    df *ABS*	00000000 crt_movedata.o
 00000000 l    df *ABS*	00000000 crt_main.o
-00000000 l    df *ABS*	00000000 main.c
 00000000 l    df *ABS*	00000000 srli.o
 00000000 l    df *ABS*	00000000 lib_a-memmove.o
 00000000 l    df *ABS*	00000000 lib_a-memset.o
 00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crtn.o
-000081ba g       .text	00000000 .hidden __mspabi_srli_9
-0000820a g       .text	00000000 .hidden __mspabi_srll_10
-000081b6 g       .text	00000000 .hidden __mspabi_srli_10
-0000812e g     F .text	00000026 dummy_wait
-000081a2 g       .text	00000000 .hidden __mspabi_srli_15
-00008256 g     F .text	00000038 memmove
-000081ce g       .text	00000000 .hidden __mspabi_srli_4
-000081c2 g       .text	00000000 .hidden __mspabi_srli_7
-0000821c g       .text	00000000 .hidden __mspabi_srll_7
-00008234 g       .text	00000000 .hidden __mspabi_srll_3
-00008194 g       .text	00000000 .hidden __mspabi_func_epilog_6
-000082da g     O .text	00000000 .hidden __TMC_END__
-000081f8 g       .text	00000000 .hidden __mspabi_srll_13
+0000400a g     O .data	00000002 var5
+0000826e g       .text	00000000 .hidden __mspabi_srli_9
+000082be g       .text	00000000 .hidden __mspabi_srll_10
+0000826a g       .text	00000000 .hidden __mspabi_srli_10
+00008256 g       .text	00000000 .hidden __mspabi_srli_15
+0000830a g     F .text	00000038 memmove
+00008282 g       .text	00000000 .hidden __mspabi_srli_4
+00008276 g       .text	00000000 .hidden __mspabi_srli_7
+000082d0 g       .text	00000000 .hidden __mspabi_srll_7
+000082e8 g       .text	00000000 .hidden __mspabi_srll_3
+00008248 g       .text	00000000 .hidden __mspabi_func_epilog_6
+0000838e g     O .text	00000000 .hidden __TMC_END__
+000082ac g       .text	00000000 .hidden __mspabi_srll_13
 0000800e g     O .rodata	00000000 .hidden __DTOR_END__
 00008004 g       .rodata	00000000 __fini_array_end
-000081ae g       .text	00000000 .hidden __mspabi_srli_12
+00008262 g       .text	00000000 .hidden __mspabi_srli_12
 00008010 g     F .text	00000004 __crt0_start
 00004000 g     O .data	00000000 .hidden __dso_handle
 00008014 g     F .text	0000000e __crt0_init_bss
 00000012 g       *ABS*	00000000 __bsssize
 00008036 g     F .text	0000000a __crt0_call_init_then_main
-00004002 g     O .data	00000004 var1
-0000819e g       .text	00000000 .hidden __mspabi_func_epilog_1
-0000819a g       .text	00000000 .hidden __mspabi_func_epilog_3
-00008228 g       .text	00000000 .hidden __mspabi_srll_5
-000081e6 g       .text	00000000 .hidden __mspabi_srli
-00008204 g       .text	00000000 .hidden __mspabi_srll_11
-000081ca g       .text	00000000 .hidden __mspabi_srli_5
+00004002 g     O .data	00000002 var1
+00008252 g       .text	00000000 .hidden __mspabi_func_epilog_1
+0000824e g       .text	00000000 .hidden __mspabi_func_epilog_3
+000082dc g       .text	00000000 .hidden __mspabi_srll_5
+0000829a g       .text	00000000 .hidden __mspabi_srli
+00004008 g     O .data	00000002 var4
+000082b8 g       .text	00000000 .hidden __mspabi_srll_11
+00004010 g     O .data	00000002 var8
+0000827e g       .text	00000000 .hidden __mspabi_srli_5
 00000000  w      *UND*	00000000 __deregister_frame_info
-00004020 g       .noinit	00000000 end
+00004024 g       .noinit	00000000 end
 00000000  w      *UND*	00000000 _ITM_registerTMCloneTable
-00008222 g       .text	00000000 .hidden __mspabi_srll_6
+000082d6 g       .text	00000000 .hidden __mspabi_srll_6
 00008010 g       .text	00000000 _start
 0000805c g     F .text	00000000 _msp430_run_fini_array
-000081da g       .text	00000000 .hidden __mspabi_srli_1
-000081f2 g       .text	00000000 .hidden __mspabi_srll_14
-000081a6 g       .text	00000000 .hidden __mspabi_srli_14
-0000000e g       *ABS*	00000000 __romdatacopysize
-000081b2 g       .text	00000000 .hidden __mspabi_srli_11
+0000828e g       .text	00000000 .hidden __mspabi_srli_1
+000082a6 g       .text	00000000 .hidden __mspabi_srll_14
+0000825a g       .text	00000000 .hidden __mspabi_srli_14
+00000012 g       *ABS*	00000000 __romdatacopysize
+00008266 g       .text	00000000 .hidden __mspabi_srli_11
 00000000  w      *UND*	00000000 _ITM_deregisterTMCloneTable
 00008004 g       .rodata	00000000 __fini_array_start
 00000000  w      *ABS*	00000000 __rom_highdatacopysize
-000082be g       .text	00000000 __msp430_init
-0000828e g     F .text	00000014 memset
-00008154 g     F .text	0000003e main
-0000822e g       .text	00000000 .hidden __mspabi_srll_4
+00008372 g       .text	00000000 __msp430_init
+00008342 g     F .text	00000014 memset
+000081c6 g     F .text	00000080 main
+000082e2 g       .text	00000000 .hidden __mspabi_srll_4
 00008004 g       .rodata	00000000 __init_array_end
-000081d6 g       .text	00000000 .hidden __mspabi_srli_2
+0000828a g       .text	00000000 .hidden __mspabi_srli_2
 00000000  w      *ABS*	00000000 __high_bsssize
-00004006 g     O .data	00000004 var2
+00004004 g     O .data	00000002 var2
+0000400c g     O .data	00000002 var6
 00000000  w      *ABS*	00000000 __rom_highdatastart
-0000400a g     O .data	00000002 var3
-000082da g       .text	00000000 __msp430_fini_end
-000081fe g       .text	00000000 .hidden __mspabi_srll_12
-000082da g       *ABS*	00000000 __romdatastart
+00004006 g     O .data	00000002 var3
+0000838e g       .text	00000000 __msp430_fini_end
+000082b2 g       .text	00000000 .hidden __mspabi_srll_12
+0000838e g       *ABS*	00000000 __romdatastart
+0000400e g     O .data	00000002 var7
 00008040 g     F .text	00000000 _msp430_run_init_array
-000081c6 g       .text	00000000 .hidden __mspabi_srli_6
+0000827a g       .text	00000000 .hidden __mspabi_srli_6
 00008004 g       .rodata	00000000 __preinit_array_end
-000081d2 g       .text	00000000 .hidden __mspabi_srli_3
+00008286 g       .text	00000000 .hidden __mspabi_srli_3
 00000000  w      *ABS*	00000000 __high_datastart
 00000000  w      *ABS*	00000000 __upper_data_init
-0000400e g       .bss	00000000 __bssstart
-00008196 g       .text	00000000 .hidden __mspabi_func_epilog_5
-0000400c g     O .data	00000001 redirected
+00004012 g       .bss	00000000 __bssstart
+0000824a g       .text	00000000 .hidden __mspabi_func_epilog_5
 00008000 g       .noinit	00000000 __stack
-00008210 g       .text	00000000 .hidden __mspabi_srll_9
-0000400e g       .data	00000000 _edata
-000082d0 g       .text	00000000 __msp430_init_end
-00008250 g       .text	00000000 .hidden __mspabi_srll
+0000812e g     F .text	00000098 INT_Qwark
+000082c4 g       .text	00000000 .hidden __mspabi_srll_9
+00004012 g       .data	00000000 _edata
+00008384 g       .text	00000000 __msp430_init_end
+00008304 g       .text	00000000 .hidden __mspabi_srll
 00000000  w      *ABS*	00000000 __high_bssstart
-000081ec g       .text	00000000 .hidden __mspabi_srll_15
+000082a0 g       .text	00000000 .hidden __mspabi_srll_15
 00008004 g       .rodata	00000000 __init_array_start
-000081aa g       .text	00000000 .hidden __mspabi_srli_13
+0000825e g       .text	00000000 .hidden __mspabi_srli_13
 00004000 g       .data	00000000 __datastart
-00008216 g       .text	00000000 .hidden __mspabi_srll_8
-00008240 g       .text	00000000 .hidden __mspabi_srll_1
+000082ca g       .text	00000000 .hidden __mspabi_srll_8
+000082f4 g       .text	00000000 .hidden __mspabi_srll_1
 00008004 g       .rodata	00000000 __preinit_array_start
 00008022 g     F .text	00000014 __crt0_movedata
-0000819c g       .text	00000000 .hidden __mspabi_func_epilog_2
+00008250 g       .text	00000000 .hidden __mspabi_func_epilog_2
 00000000  w      *UND*	00000000 __register_frame_info
 0000804e g     F .text	00000000 _msp430_run_preinit_array
-00008192 g       .text	00000000 .hidden __mspabi_func_epilog_7
-00008198 g       .text	00000000 .hidden __mspabi_func_epilog_4
-0000823a g       .text	00000000 .hidden __mspabi_srll_2
-000082d0 g       .text	00000000 __msp430_fini
-000081be g       .text	00000000 .hidden __mspabi_srli_8
+00008246 g       .text	00000000 .hidden __mspabi_func_epilog_7
+0000824c g       .text	00000000 .hidden __mspabi_func_epilog_4
+000082ee g       .text	00000000 .hidden __mspabi_srll_2
+00008384 g       .text	00000000 __msp430_fini
+00008272 g       .text	00000000 .hidden __mspabi_srli_8
 
 
+
+Disassembly of section __interrupt_vector_5:
+
+0000ffe8 <__interrupt_vector_5>:
+    ffe8:	2e 81       	interrupt service routine at 0x812e
 
 Disassembly of section .text:
 
@@ -143,7 +153,7 @@ Disassembly of section .text:
     8010:	31 40 00 80 	mov	#32768,	r1	;#0x8000
 
 00008014 <__crt0_init_bss>:
-    8014:	3c 40 0e 40 	mov	#16398,	r12	;#0x400e
+    8014:	3c 40 12 40 	mov	#16402,	r12	;#0x4012
 
 00008018 <.Loc.74.1>:
     8018:	0d 43       	clr	r13		;
@@ -152,13 +162,13 @@ Disassembly of section .text:
     801a:	3e 40 12 00 	mov	#18,	r14	;#0x0012
 
 0000801e <.Loc.79.1>:
-    801e:	b0 12 8e 82 	call	#33422		;#0x828e
+    801e:	b0 12 42 83 	call	#33602		;#0x8342
 
 00008022 <__crt0_movedata>:
     8022:	3c 40 00 40 	mov	#16384,	r12	;#0x4000
 
 00008026 <.Loc.116.1>:
-    8026:	3d 40 da 82 	mov	#33498,	r13	;#0x82da
+    8026:	3d 40 8e 83 	mov	#33678,	r13	;#0x838e
 
 0000802a <.Loc.119.1>:
     802a:	0d 9c       	cmp	r12,	r13	;
@@ -167,19 +177,19 @@ Disassembly of section .text:
     802c:	04 24       	jz	$+10     	;abs 0x8036
 
 0000802e <.Loc.122.1>:
-    802e:	3e 40 0e 00 	mov	#14,	r14	;#0x000e
+    802e:	3e 40 12 00 	mov	#18,	r14	;#0x0012
 
 00008032 <.Loc.124.1>:
-    8032:	b0 12 56 82 	call	#33366		;#0x8256
+    8032:	b0 12 0a 83 	call	#33546		;#0x830a
 
 00008036 <__crt0_call_init_then_main>:
-    8036:	b0 12 be 82 	call	#33470		;#0x82be
+    8036:	b0 12 72 83 	call	#33650		;#0x8372
 
 0000803a <.Loc.196.1>:
     803a:	0c 43       	clr	r12		;
 
 0000803c <.Loc.197.1>:
-    803c:	b0 12 54 81 	call	#33108		;#0x8154
+    803c:	b0 12 c6 81 	call	#33222		;#0x81c6
 
 00008040 <_msp430_run_init_array>:
     8040:	34 40 04 80 	mov	#32772,	r4	;#0x8004
@@ -243,13 +253,13 @@ Disassembly of section .text:
     807e:	30 41       	ret			
 
 00008080 <deregister_tm_clones>:
-    8080:	3c 40 da 82 	mov	#33498,	r12	;#0x82da
-    8084:	3c 90 da 82 	cmp	#33498,	r12	;#0x82da
+    8080:	3c 40 8e 83 	mov	#33678,	r12	;#0x838e
+    8084:	3c 90 8e 83 	cmp	#33678,	r12	;#0x838e
     8088:	07 24       	jz	$+16     	;abs 0x8098
     808a:	3d 40 00 00 	mov	#0,	r13	;
     808e:	0d 93       	cmp	#0,	r13	;r3 As==00
     8090:	03 24       	jz	$+8      	;abs 0x8098
-    8092:	3c 40 da 82 	mov	#33498,	r12	;#0x82da
+    8092:	3c 40 8e 83 	mov	#33678,	r12	;#0x838e
     8096:	8d 12       	call	r13		;
 
 00008098 <.L1>:
@@ -257,11 +267,11 @@ Disassembly of section .text:
 
 0000809a <register_tm_clones>:
     809a:	0a 12       	push	r10		;
-    809c:	3a 40 da 82 	mov	#33498,	r10	;#0x82da
-    80a0:	3a 80 da 82 	sub	#33498,	r10	;#0x82da
+    809c:	3a 40 8e 83 	mov	#33678,	r10	;#0x838e
+    80a0:	3a 80 8e 83 	sub	#33678,	r10	;#0x838e
     80a4:	0a 11       	rra	r10		;
     80a6:	0c 4a       	mov	r10,	r12	;
-    80a8:	b0 12 a2 81 	call	#33186		;#0x81a2
+    80a8:	b0 12 56 82 	call	#33366		;#0x8256
     80ac:	0c 5a       	add	r10,	r12	;
     80ae:	0d 4c       	mov	r12,	r13	;
     80b0:	0d 11       	rra	r13		;
@@ -270,7 +280,7 @@ Disassembly of section .text:
     80b6:	3e 40 00 00 	mov	#0,	r14	;
     80ba:	0e 93       	cmp	#0,	r14	;r3 As==00
     80bc:	03 24       	jz	$+8      	;abs 0x80c4
-    80be:	3c 40 da 82 	mov	#33498,	r12	;#0x82da
+    80be:	3c 40 8e 83 	mov	#33678,	r12	;#0x838e
     80c2:	8e 12       	call	r14		;
 
 000080c4 <.L9>:
@@ -280,7 +290,7 @@ Disassembly of section .text:
 000080c8 <__do_global_dtors_aux>:
     80c8:	0a 12       	push	r10		;
     80ca:	09 12       	push	r9		;
-    80cc:	c2 93 0e 40 	cmp.b	#0,	&0x400e	;r3 As==00
+    80cc:	c2 93 12 40 	cmp.b	#0,	&0x4012	;r3 As==00
     80d0:	17 20       	jnz	$+48     	;abs 0x8100
     80d2:	3a 40 0e 80 	mov	#32782,	r10	;#0x800e
     80d6:	3a 80 0c 80 	sub	#32780,	r10	;#0x800c
@@ -289,7 +299,7 @@ Disassembly of section .text:
     80de:	39 40 0c 80 	mov	#32780,	r9	;#0x800c
 
 000080e2 <.L19>:
-    80e2:	1c 42 10 40 	mov	&0x4010,r12	;0x4010
+    80e2:	1c 42 14 40 	mov	&0x4014,r12	;0x4014
     80e6:	0c 9a       	cmp	r10,	r12	;
     80e8:	0d 28       	jnc	$+28     	;abs 0x8104
     80ea:	b0 12 80 80 	call	#32896		;#0x8080
@@ -300,14 +310,14 @@ Disassembly of section .text:
     80fa:	8d 12       	call	r13		;
 
 000080fc <.L21>:
-    80fc:	d2 43 0e 40 	mov.b	#1,	&0x400e	;r3 As==01
+    80fc:	d2 43 12 40 	mov.b	#1,	&0x4012	;r3 As==01
 
 00008100 <.L17>:
-    8100:	30 40 9c 81 	br	#0x819c		;
+    8100:	30 40 50 82 	br	#0x8250		;
 
 00008104 <.L20>:
     8104:	1c 53       	inc	r12		;
-    8106:	82 4c 10 40 	mov	r12,	&0x4010	;
+    8106:	82 4c 14 40 	mov	r12,	&0x4014	;
     810a:	0c 5c       	rla	r12		;
     810c:	0c 59       	add	r9,	r12	;
     810e:	2c 4c       	mov	@r12,	r12	;
@@ -318,7 +328,7 @@ Disassembly of section .text:
     8116:	3e 40 00 00 	mov	#0,	r14	;
     811a:	0e 93       	cmp	#0,	r14	;r3 As==00
     811c:	05 24       	jz	$+12     	;abs 0x8128
-    811e:	3d 40 12 40 	mov	#16402,	r13	;#0x4012
+    811e:	3d 40 16 40 	mov	#16406,	r13	;#0x4016
     8122:	3c 40 00 80 	mov	#32768,	r12	;#0x8000
     8126:	8e 12       	call	r14		;
 
@@ -326,373 +336,508 @@ Disassembly of section .text:
     8128:	b0 12 9a 80 	call	#32922		;#0x809a
     812c:	30 41       	ret			
 
-0000812e <dummy_wait>:
-#include <stdio.h>
-#include <stdlib.h>
+0000812e <INT_Qwark>:
+#define QWARK_VECTOR (5)
 
-#define  QWARK_CTL      (*(volatile unsigned int  *) 0x0190)
-
-void dummy_wait(){
-    812e:	21 83       	decd	r1		;
+//--------------------------------------------------//
+//    Checkpoint Procedure                          //
+//--------------------------------------------------//
+interrupt (QWARK_VECTOR) INT_Qwark(void) {
+    812e:	0d 12       	push	r13		;
 
 00008130 <.LCFI0>:
-	volatile int i=0;
-    8130:	81 43 00 00 	mov	#0,	0(r1)	;r3 As==00
+    8130:	0c 12       	push	r12		;
 
-00008134 <.Loc.13.1>:
+00008132 <.LCFI1>:
+	
+	//Disable Idempotency Tracking
+	QWARK_CTL = 0x00;
+    8132:	3c 40 90 01 	mov	#400,	r12	;#0x0190
+    8136:	8c 43 00 00 	mov	#0,	0(r12)	;r3 As==00
 
-	for(i=0;i<500;i++);
-    8134:	81 43 00 00 	mov	#0,	0(r1)	;r3 As==00
-    8138:	30 40 44 81 	br	#0x8144		;
+0000813a <.Loc.28.1>:
+	LED_CTRL = 0x0F;
+    813a:	7c 40 90 00 	mov.b	#144,	r12	;#0x0090
+    813e:	fc 40 0f 00 	mov.b	#15,	0(r12)	;#0x000f
+    8142:	00 00 
 
-0000813c <.L3>:
-    813c:	2c 41       	mov	@r1,	r12	;
-    813e:	1c 53       	inc	r12		;
-    8140:	81 4c 00 00 	mov	r12,	0(r1)	;
+00008144 <.Loc.31.1>:
 
-00008144 <.L2>:
-    8144:	2d 41       	mov	@r1,	r13	;
-    8146:	3c 40 f3 01 	mov	#499,	r12	;#0x01f3
-    814a:	0c 9d       	cmp	r13,	r12	;
-    814c:	f7 37       	jge	$-16     	;abs 0x813c
+	// Write back values into memory
+	(*(volatile unsigned int  *) 0x4002) = (*(volatile unsigned int  *) 0x6000);
+    8144:	3d 40 00 60 	mov	#24576,	r13	;#0x6000
+    8148:	3c 40 02 40 	mov	#16386,	r12	;#0x4002
+    814c:	2d 4d       	mov	@r13,	r13	;
+    814e:	8c 4d 00 00 	mov	r13,	0(r12)	;
 
-0000814e <.Loc.15.1>:
+00008152 <.Loc.32.1>:
+	(*(volatile unsigned int  *) 0x4004) = (*(volatile unsigned int  *) 0x6002);
+    8152:	3d 40 02 60 	mov	#24578,	r13	;#0x6002
+    8156:	3c 40 04 40 	mov	#16388,	r12	;#0x4004
+    815a:	2d 4d       	mov	@r13,	r13	;
+    815c:	8c 4d 00 00 	mov	r13,	0(r12)	;
 
+00008160 <.Loc.33.1>:
+	(*(volatile unsigned int  *) 0x4006) = (*(volatile unsigned int  *) 0x6004);
+    8160:	3d 40 04 60 	mov	#24580,	r13	;#0x6004
+    8164:	3c 40 06 40 	mov	#16390,	r12	;#0x4006
+    8168:	2d 4d       	mov	@r13,	r13	;
+    816a:	8c 4d 00 00 	mov	r13,	0(r12)	;
+
+0000816e <.Loc.34.1>:
+	(*(volatile unsigned int  *) 0x4008) = (*(volatile unsigned int  *) 0x6006);
+    816e:	3d 40 06 60 	mov	#24582,	r13	;#0x6006
+    8172:	3c 40 08 40 	mov	#16392,	r12	;#0x4008
+    8176:	2d 4d       	mov	@r13,	r13	;
+    8178:	8c 4d 00 00 	mov	r13,	0(r12)	;
+
+0000817c <.Loc.35.1>:
+	(*(volatile unsigned int  *) 0x400A) = (*(volatile unsigned int  *) 0x6008);
+    817c:	3d 40 08 60 	mov	#24584,	r13	;#0x6008
+    8180:	3c 40 0a 40 	mov	#16394,	r12	;#0x400a
+    8184:	2d 4d       	mov	@r13,	r13	;
+    8186:	8c 4d 00 00 	mov	r13,	0(r12)	;
+
+0000818a <.Loc.36.1>:
+	(*(volatile unsigned int  *) 0x400C) = (*(volatile unsigned int  *) 0x600A);
+    818a:	3d 40 0a 60 	mov	#24586,	r13	;#0x600a
+    818e:	3c 40 0c 40 	mov	#16396,	r12	;#0x400c
+    8192:	2d 4d       	mov	@r13,	r13	;
+    8194:	8c 4d 00 00 	mov	r13,	0(r12)	;
+
+00008198 <.Loc.37.1>:
+	(*(volatile unsigned int  *) 0x400E) = (*(volatile unsigned int  *) 0x600C);
+    8198:	3d 40 0c 60 	mov	#24588,	r13	;#0x600c
+    819c:	3c 40 0e 40 	mov	#16398,	r12	;#0x400e
+    81a0:	2d 4d       	mov	@r13,	r13	;
+    81a2:	8c 4d 00 00 	mov	r13,	0(r12)	;
+
+000081a6 <.Loc.38.1>:
+	(*(volatile unsigned int  *) 0x4010) = (*(volatile unsigned int  *) 0x600E);
+    81a6:	3d 40 0e 60 	mov	#24590,	r13	;#0x600e
+    81aa:	3c 40 10 40 	mov	#16400,	r12	;#0x4010
+    81ae:	2d 4d       	mov	@r13,	r13	;
+    81b0:	8c 4d 00 00 	mov	r13,	0(r12)	;
+
+000081b4 <.Loc.39.1>:
+	LED_CTRL = 0xF0;
+    81b4:	7c 40 90 00 	mov.b	#144,	r12	;#0x0090
+    81b8:	fc 40 f0 ff 	mov.b	#65520,	0(r12)	;#0xfff0
+    81bc:	00 00 
+
+000081be <.Loc.40.1>:
 }
-    814e:	03 43       	nop			
-    8150:	21 53       	incd	r1		;
-    8152:	30 41       	ret			
+    81be:	03 43       	nop			
+    81c0:	3c 41       	pop	r12		;
+    81c2:	3d 41       	pop	r13		;
+    81c4:	00 13       	reti			
 
-00008154 <main>:
+000081c6 <main>:
+
 int main()
 {
 
 	//Enable Idempotency Tracking
+  	eint();
+    81c6:	32 d2       	eint			
+    81c8:	03 43       	nop			
 
+000081ca <.Loc.47.1>:
 	QWARK_CTL = 0x01;
-    8154:	3c 40 90 01 	mov	#400,	r12	;#0x0190
-    8158:	9c 43 00 00 	mov	#1,	0(r12)	;r3 As==01
+    81ca:	3c 40 90 01 	mov	#400,	r12	;#0x0190
+    81ce:	9c 43 00 00 	mov	#1,	0(r12)	;r3 As==01
 
-0000815c <.Loc.34.1>:
+000081d2 <.Loc.51.1>:
 
-//	if(redirected){
-//	  redirected = 200;
-//	}
+
 
 	if(var1){
-    815c:	1d 42 02 40 	mov	&0x4002,r13	;0x4002
-    8160:	1e 42 04 40 	mov	&0x4004,r14	;0x4004
-    8164:	0c 4d       	mov	r13,	r12	;
-    8166:	0c de       	bis	r14,	r12	;
-    8168:	0c 93       	cmp	#0,	r12	;r3 As==00
-    816a:	05 24       	jz	$+12     	;abs 0x8176
+    81d2:	1c 42 02 40 	mov	&0x4002,r12	;0x4002
+    81d6:	0c 93       	cmp	#0,	r12	;r3 As==00
+    81d8:	03 24       	jz	$+8      	;abs 0x81e0
 
-0000816c <.Loc.35.1>:
-	  var1 = 505;
-    816c:	b2 40 f9 01 	mov	#505,	&0x4002	;#0x01f9
-    8170:	02 40 
-    8172:	82 43 04 40 	mov	#0,	&0x4004	;r3 As==00
+000081da <.Loc.52.1>:
+	  var1 = 0xAA;
+    81da:	b2 40 aa 00 	mov	#170,	&0x4002	;#0x00aa
+    81de:	02 40 
 
-00008176 <.L5>:
+000081e0 <.L3>:
 	}
 
-	var2 =	var1;
-    8176:	1c 42 02 40 	mov	&0x4002,r12	;0x4002
-    817a:	1d 42 04 40 	mov	&0x4004,r13	;0x4004
-    817e:	82 4c 06 40 	mov	r12,	&0x4006	;
-    8182:	82 4d 08 40 	mov	r13,	&0x4008	;
+	if(var2){
+    81e0:	1c 42 04 40 	mov	&0x4004,r12	;0x4004
+    81e4:	0c 93       	cmp	#0,	r12	;r3 As==00
+    81e6:	03 24       	jz	$+8      	;abs 0x81ee
 
-00008186 <.Loc.41.1>:
-	//var3 = redirected;
+000081e8 <.Loc.56.1>:
+	  var2 = 0xBB;
+    81e8:	b2 40 bb 00 	mov	#187,	&0x4004	;#0x00bb
+    81ec:	04 40 
 
-	QWARK_CTL = 0x00;
-    8186:	3c 40 90 01 	mov	#400,	r12	;#0x0190
-    818a:	8c 43 00 00 	mov	#0,	0(r12)	;r3 As==00
+000081ee <.L4>:
+	}
 
-0000818e <.L7>:
+	if(var3){
+    81ee:	1c 42 06 40 	mov	&0x4006,r12	;0x4006
+    81f2:	0c 93       	cmp	#0,	r12	;r3 As==00
+    81f4:	03 24       	jz	$+8      	;abs 0x81fc
 
+000081f6 <.Loc.60.1>:
+	  var3 = 0xCC;
+    81f6:	b2 40 cc 00 	mov	#204,	&0x4006	;#0x00cc
+    81fa:	06 40 
+
+000081fc <.L5>:
+	}
+
+	if(var4){
+    81fc:	1c 42 08 40 	mov	&0x4008,r12	;0x4008
+    8200:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8202:	03 24       	jz	$+8      	;abs 0x820a
+
+00008204 <.Loc.64.1>:
+	  var4 = 0xDD;
+    8204:	b2 40 dd 00 	mov	#221,	&0x4008	;#0x00dd
+    8208:	08 40 
+
+0000820a <.L6>:
+	}
+
+	if(var5){
+    820a:	1c 42 0a 40 	mov	&0x400a,r12	;0x400a
+    820e:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8210:	03 24       	jz	$+8      	;abs 0x8218
+
+00008212 <.Loc.68.1>:
+	  var5 = 0xEE;
+    8212:	b2 40 ee 00 	mov	#238,	&0x400a	;#0x00ee
+    8216:	0a 40 
+
+00008218 <.L7>:
+	}
+
+	if(var6){
+    8218:	1c 42 0c 40 	mov	&0x400c,r12	;0x400c
+    821c:	0c 93       	cmp	#0,	r12	;r3 As==00
+    821e:	03 24       	jz	$+8      	;abs 0x8226
+
+00008220 <.Loc.72.1>:
+	  var6 = 0xFF;
+    8220:	b2 40 ff 00 	mov	#255,	&0x400c	;#0x00ff
+    8224:	0c 40 
+
+00008226 <.L8>:
+	}
+
+	if(var7){
+    8226:	1c 42 0e 40 	mov	&0x400e,r12	;0x400e
+    822a:	0c 93       	cmp	#0,	r12	;r3 As==00
+    822c:	03 24       	jz	$+8      	;abs 0x8234
+
+0000822e <.Loc.76.1>:
+	  var7 = 0x55;
+    822e:	b2 40 55 00 	mov	#85,	&0x400e	;#0x0055
+    8232:	0e 40 
+
+00008234 <.L9>:
+	}
+
+	if(var8){
+    8234:	1c 42 10 40 	mov	&0x4010,r12	;0x4010
+    8238:	0c 93       	cmp	#0,	r12	;r3 As==00
+    823a:	03 24       	jz	$+8      	;abs 0x8242
+
+0000823c <.Loc.80.1>:
+	  var8 = 0x66;
+    823c:	b2 40 66 00 	mov	#102,	&0x4010	;#0x0066
+    8240:	10 40 
+
+00008242 <.L10>:
+	}
+
+	
 	while(1);
-    818e:	30 40 8e 81 	br	#0x818e		;
+    8242:	30 40 42 82 	br	#0x8242		;
 
-00008192 <__mspabi_func_epilog_7>:
-    8192:	34 41       	pop	r4		;
+00008246 <__mspabi_func_epilog_7>:
+    8246:	34 41       	pop	r4		;
 
-00008194 <__mspabi_func_epilog_6>:
-    8194:	35 41       	pop	r5		;
+00008248 <__mspabi_func_epilog_6>:
+    8248:	35 41       	pop	r5		;
 
-00008196 <__mspabi_func_epilog_5>:
-    8196:	36 41       	pop	r6		;
+0000824a <__mspabi_func_epilog_5>:
+    824a:	36 41       	pop	r6		;
 
-00008198 <__mspabi_func_epilog_4>:
-    8198:	37 41       	pop	r7		;
+0000824c <__mspabi_func_epilog_4>:
+    824c:	37 41       	pop	r7		;
 
-0000819a <__mspabi_func_epilog_3>:
-    819a:	38 41       	pop	r8		;
+0000824e <__mspabi_func_epilog_3>:
+    824e:	38 41       	pop	r8		;
 
-0000819c <__mspabi_func_epilog_2>:
-    819c:	39 41       	pop	r9		;
+00008250 <__mspabi_func_epilog_2>:
+    8250:	39 41       	pop	r9		;
 
-0000819e <__mspabi_func_epilog_1>:
-    819e:	3a 41       	pop	r10		;
-    81a0:	30 41       	ret			
-
-000081a2 <__mspabi_srli_15>:
-    81a2:	12 c3       	clrc			
-    81a4:	0c 10       	rrc	r12		;
-
-000081a6 <__mspabi_srli_14>:
-    81a6:	12 c3       	clrc			
-    81a8:	0c 10       	rrc	r12		;
-
-000081aa <__mspabi_srli_13>:
-    81aa:	12 c3       	clrc			
-    81ac:	0c 10       	rrc	r12		;
-
-000081ae <__mspabi_srli_12>:
-    81ae:	12 c3       	clrc			
-    81b0:	0c 10       	rrc	r12		;
-
-000081b2 <__mspabi_srli_11>:
-    81b2:	12 c3       	clrc			
-    81b4:	0c 10       	rrc	r12		;
-
-000081b6 <__mspabi_srli_10>:
-    81b6:	12 c3       	clrc			
-    81b8:	0c 10       	rrc	r12		;
-
-000081ba <__mspabi_srli_9>:
-    81ba:	12 c3       	clrc			
-    81bc:	0c 10       	rrc	r12		;
-
-000081be <__mspabi_srli_8>:
-    81be:	12 c3       	clrc			
-    81c0:	0c 10       	rrc	r12		;
-
-000081c2 <__mspabi_srli_7>:
-    81c2:	12 c3       	clrc			
-    81c4:	0c 10       	rrc	r12		;
-
-000081c6 <__mspabi_srli_6>:
-    81c6:	12 c3       	clrc			
-    81c8:	0c 10       	rrc	r12		;
-
-000081ca <__mspabi_srli_5>:
-    81ca:	12 c3       	clrc			
-    81cc:	0c 10       	rrc	r12		;
-
-000081ce <__mspabi_srli_4>:
-    81ce:	12 c3       	clrc			
-    81d0:	0c 10       	rrc	r12		;
-
-000081d2 <__mspabi_srli_3>:
-    81d2:	12 c3       	clrc			
-    81d4:	0c 10       	rrc	r12		;
-
-000081d6 <__mspabi_srli_2>:
-    81d6:	12 c3       	clrc			
-    81d8:	0c 10       	rrc	r12		;
-
-000081da <__mspabi_srli_1>:
-    81da:	12 c3       	clrc			
-    81dc:	0c 10       	rrc	r12		;
-    81de:	30 41       	ret			
-
-000081e0 <.L11>:
-    81e0:	3d 53       	add	#-1,	r13	;r3 As==11
-    81e2:	12 c3       	clrc			
-    81e4:	0c 10       	rrc	r12		;
-
-000081e6 <__mspabi_srli>:
-    81e6:	0d 93       	cmp	#0,	r13	;r3 As==00
-    81e8:	fb 23       	jnz	$-8      	;abs 0x81e0
-    81ea:	30 41       	ret			
-
-000081ec <__mspabi_srll_15>:
-    81ec:	12 c3       	clrc			
-    81ee:	0d 10       	rrc	r13		;
-    81f0:	0c 10       	rrc	r12		;
-
-000081f2 <__mspabi_srll_14>:
-    81f2:	12 c3       	clrc			
-    81f4:	0d 10       	rrc	r13		;
-    81f6:	0c 10       	rrc	r12		;
-
-000081f8 <__mspabi_srll_13>:
-    81f8:	12 c3       	clrc			
-    81fa:	0d 10       	rrc	r13		;
-    81fc:	0c 10       	rrc	r12		;
-
-000081fe <__mspabi_srll_12>:
-    81fe:	12 c3       	clrc			
-    8200:	0d 10       	rrc	r13		;
-    8202:	0c 10       	rrc	r12		;
-
-00008204 <__mspabi_srll_11>:
-    8204:	12 c3       	clrc			
-    8206:	0d 10       	rrc	r13		;
-    8208:	0c 10       	rrc	r12		;
-
-0000820a <__mspabi_srll_10>:
-    820a:	12 c3       	clrc			
-    820c:	0d 10       	rrc	r13		;
-    820e:	0c 10       	rrc	r12		;
-
-00008210 <__mspabi_srll_9>:
-    8210:	12 c3       	clrc			
-    8212:	0d 10       	rrc	r13		;
-    8214:	0c 10       	rrc	r12		;
-
-00008216 <__mspabi_srll_8>:
-    8216:	12 c3       	clrc			
-    8218:	0d 10       	rrc	r13		;
-    821a:	0c 10       	rrc	r12		;
-
-0000821c <__mspabi_srll_7>:
-    821c:	12 c3       	clrc			
-    821e:	0d 10       	rrc	r13		;
-    8220:	0c 10       	rrc	r12		;
-
-00008222 <__mspabi_srll_6>:
-    8222:	12 c3       	clrc			
-    8224:	0d 10       	rrc	r13		;
-    8226:	0c 10       	rrc	r12		;
-
-00008228 <__mspabi_srll_5>:
-    8228:	12 c3       	clrc			
-    822a:	0d 10       	rrc	r13		;
-    822c:	0c 10       	rrc	r12		;
-
-0000822e <__mspabi_srll_4>:
-    822e:	12 c3       	clrc			
-    8230:	0d 10       	rrc	r13		;
-    8232:	0c 10       	rrc	r12		;
-
-00008234 <__mspabi_srll_3>:
-    8234:	12 c3       	clrc			
-    8236:	0d 10       	rrc	r13		;
-    8238:	0c 10       	rrc	r12		;
-
-0000823a <__mspabi_srll_2>:
-    823a:	12 c3       	clrc			
-    823c:	0d 10       	rrc	r13		;
-    823e:	0c 10       	rrc	r12		;
-
-00008240 <__mspabi_srll_1>:
-    8240:	12 c3       	clrc			
-    8242:	0d 10       	rrc	r13		;
-    8244:	0c 10       	rrc	r12		;
-    8246:	30 41       	ret			
-
-00008248 <.L12>:
-    8248:	3e 53       	add	#-1,	r14	;r3 As==11
-    824a:	12 c3       	clrc			
-    824c:	0d 10       	rrc	r13		;
-    824e:	0c 10       	rrc	r12		;
-
-00008250 <__mspabi_srll>:
-    8250:	0e 93       	cmp	#0,	r14	;r3 As==00
-    8252:	fa 23       	jnz	$-10     	;abs 0x8248
+00008252 <__mspabi_func_epilog_1>:
+    8252:	3a 41       	pop	r10		;
     8254:	30 41       	ret			
 
-00008256 <memmove>:
-    8256:	0d 9c       	cmp	r12,	r13	;
-    8258:	0a 28       	jnc	$+22     	;abs 0x826e
+00008256 <__mspabi_srli_15>:
+    8256:	12 c3       	clrc			
+    8258:	0c 10       	rrc	r12		;
 
-0000825a <.L5>:
-    825a:	0f 4c       	mov	r12,	r15	;
-    825c:	0e 5c       	add	r12,	r14	;
+0000825a <__mspabi_srli_14>:
+    825a:	12 c3       	clrc			
+    825c:	0c 10       	rrc	r12		;
 
-0000825e <.L3>:
-    825e:	0e 9f       	cmp	r15,	r14	;
-    8260:	0d 24       	jz	$+28     	;abs 0x827c
+0000825e <__mspabi_srli_13>:
+    825e:	12 c3       	clrc			
+    8260:	0c 10       	rrc	r12		;
 
-00008262 <.LVL3>:
-    8262:	ef 4d 00 00 	mov.b	@r13,	0(r15)	;
-    8266:	1f 53       	inc	r15		;
+00008262 <__mspabi_srli_12>:
+    8262:	12 c3       	clrc			
+    8264:	0c 10       	rrc	r12		;
 
-00008268 <.LVL4>:
-    8268:	1d 53       	inc	r13		;
-    826a:	30 40 5e 82 	br	#0x825e		;
+00008266 <__mspabi_srli_11>:
+    8266:	12 c3       	clrc			
+    8268:	0c 10       	rrc	r12		;
 
-0000826e <.L2>:
-    826e:	0f 4d       	mov	r13,	r15	;
-    8270:	0f 5e       	add	r14,	r15	;
-    8272:	0c 9f       	cmp	r15,	r12	;
-    8274:	f2 2f       	jc	$-26     	;abs 0x825a
+0000826a <__mspabi_srli_10>:
+    826a:	12 c3       	clrc			
+    826c:	0c 10       	rrc	r12		;
 
-00008276 <.L4>:
-    8276:	3e 53       	add	#-1,	r14	;r3 As==11
+0000826e <__mspabi_srli_9>:
+    826e:	12 c3       	clrc			
+    8270:	0c 10       	rrc	r12		;
 
-00008278 <.LVL7>:
-    8278:	3e 93       	cmp	#-1,	r14	;r3 As==11
-    827a:	01 20       	jnz	$+4      	;abs 0x827e
+00008272 <__mspabi_srli_8>:
+    8272:	12 c3       	clrc			
+    8274:	0c 10       	rrc	r12		;
 
-0000827c <.L10>:
-    827c:	30 41       	ret			
+00008276 <__mspabi_srli_7>:
+    8276:	12 c3       	clrc			
+    8278:	0c 10       	rrc	r12		;
 
-0000827e <.L6>:
-    827e:	0b 4c       	mov	r12,	r11	;
-    8280:	0b 5e       	add	r14,	r11	;
-    8282:	0f 4d       	mov	r13,	r15	;
-    8284:	0f 5e       	add	r14,	r15	;
-    8286:	eb 4f 00 00 	mov.b	@r15,	0(r11)	;
-    828a:	30 40 76 82 	br	#0x8276		;
+0000827a <__mspabi_srli_6>:
+    827a:	12 c3       	clrc			
+    827c:	0c 10       	rrc	r12		;
 
-0000828e <memset>:
-    828e:	0f 4c       	mov	r12,	r15	;
-    8290:	0e 5c       	add	r12,	r14	;
+0000827e <__mspabi_srli_5>:
+    827e:	12 c3       	clrc			
+    8280:	0c 10       	rrc	r12		;
 
-00008292 <.L2>:
-    8292:	0f 9e       	cmp	r14,	r15	;
-    8294:	01 20       	jnz	$+4      	;abs 0x8298
+00008282 <__mspabi_srli_4>:
+    8282:	12 c3       	clrc			
+    8284:	0c 10       	rrc	r12		;
 
-00008296 <.Loc.104.1>:
-    8296:	30 41       	ret			
+00008286 <__mspabi_srli_3>:
+    8286:	12 c3       	clrc			
+    8288:	0c 10       	rrc	r12		;
 
-00008298 <.L3>:
-    8298:	cf 4d 00 00 	mov.b	r13,	0(r15)	;
-    829c:	1f 53       	inc	r15		;
+0000828a <__mspabi_srli_2>:
+    828a:	12 c3       	clrc			
+    828c:	0c 10       	rrc	r12		;
 
-0000829e <.LVL4>:
-    829e:	30 40 92 82 	br	#0x8292		;
+0000828e <__mspabi_srli_1>:
+    828e:	12 c3       	clrc			
+    8290:	0c 10       	rrc	r12		;
+    8292:	30 41       	ret			
 
-000082a2 <L0>:
-    82a2:	30 41       	ret			
+00008294 <.L11>:
+    8294:	3d 53       	add	#-1,	r13	;r3 As==11
+    8296:	12 c3       	clrc			
+    8298:	0c 10       	rrc	r12		;
 
-000082a4 <__do_global_ctors_aux>:
-    82a4:	0a 12       	push	r10		;
-    82a6:	3a 40 08 80 	mov	#32776,	r10	;#0x8008
+0000829a <__mspabi_srli>:
+    829a:	0d 93       	cmp	#0,	r13	;r3 As==00
+    829c:	fb 23       	jnz	$-8      	;abs 0x8294
+    829e:	30 41       	ret			
 
-000082aa <.L2>:
-    82aa:	2c 4a       	mov	@r10,	r12	;
-    82ac:	3c 93       	cmp	#-1,	r12	;r3 As==11
-    82ae:	02 20       	jnz	$+6      	;abs 0x82b4
-    82b0:	3a 41       	pop	r10		;
-    82b2:	30 41       	ret			
+000082a0 <__mspabi_srll_15>:
+    82a0:	12 c3       	clrc			
+    82a2:	0d 10       	rrc	r13		;
+    82a4:	0c 10       	rrc	r12		;
 
-000082b4 <.L3>:
-    82b4:	8c 12       	call	r12		;
-    82b6:	3a 50 fe ff 	add	#65534,	r10	;#0xfffe
-    82ba:	30 40 aa 82 	br	#0x82aa		;
+000082a6 <__mspabi_srll_14>:
+    82a6:	12 c3       	clrc			
+    82a8:	0d 10       	rrc	r13		;
+    82aa:	0c 10       	rrc	r12		;
 
-000082be <call___do_global_ctors_aux>:
-    82be:	b0 12 16 81 	call	#33046		;#0x8116
-    82c2:	b0 12 a4 82 	call	#33444		;#0x82a4
+000082ac <__mspabi_srll_13>:
+    82ac:	12 c3       	clrc			
+    82ae:	0d 10       	rrc	r13		;
+    82b0:	0c 10       	rrc	r12		;
 
-000082c6 <L0>:
-    82c6:	b0 12 4e 80 	call	#32846		;#0x804e
+000082b2 <__mspabi_srll_12>:
+    82b2:	12 c3       	clrc			
+    82b4:	0d 10       	rrc	r13		;
+    82b6:	0c 10       	rrc	r12		;
 
-000082ca <.Loc.19.1>:
-    82ca:	b0 12 40 80 	call	#32832		;#0x8040
+000082b8 <__mspabi_srll_11>:
+    82b8:	12 c3       	clrc			
+    82ba:	0d 10       	rrc	r13		;
+    82bc:	0c 10       	rrc	r12		;
 
-000082ce <.Loc.20.1>:
-    82ce:	30 41       	ret			
+000082be <__mspabi_srll_10>:
+    82be:	12 c3       	clrc			
+    82c0:	0d 10       	rrc	r13		;
+    82c2:	0c 10       	rrc	r12		;
 
-000082d0 <__msp430_fini>:
-    82d0:	b0 12 5c 80 	call	#32860		;#0x805c
+000082c4 <__mspabi_srll_9>:
+    82c4:	12 c3       	clrc			
+    82c6:	0d 10       	rrc	r13		;
+    82c8:	0c 10       	rrc	r12		;
 
-000082d4 <L0>:
-    82d4:	b0 12 c8 80 	call	#32968		;#0x80c8
+000082ca <__mspabi_srll_8>:
+    82ca:	12 c3       	clrc			
+    82cc:	0d 10       	rrc	r13		;
+    82ce:	0c 10       	rrc	r12		;
 
-000082d8 <L0>:
-    82d8:	30 41       	ret			
+000082d0 <__mspabi_srll_7>:
+    82d0:	12 c3       	clrc			
+    82d2:	0d 10       	rrc	r13		;
+    82d4:	0c 10       	rrc	r12		;
+
+000082d6 <__mspabi_srll_6>:
+    82d6:	12 c3       	clrc			
+    82d8:	0d 10       	rrc	r13		;
+    82da:	0c 10       	rrc	r12		;
+
+000082dc <__mspabi_srll_5>:
+    82dc:	12 c3       	clrc			
+    82de:	0d 10       	rrc	r13		;
+    82e0:	0c 10       	rrc	r12		;
+
+000082e2 <__mspabi_srll_4>:
+    82e2:	12 c3       	clrc			
+    82e4:	0d 10       	rrc	r13		;
+    82e6:	0c 10       	rrc	r12		;
+
+000082e8 <__mspabi_srll_3>:
+    82e8:	12 c3       	clrc			
+    82ea:	0d 10       	rrc	r13		;
+    82ec:	0c 10       	rrc	r12		;
+
+000082ee <__mspabi_srll_2>:
+    82ee:	12 c3       	clrc			
+    82f0:	0d 10       	rrc	r13		;
+    82f2:	0c 10       	rrc	r12		;
+
+000082f4 <__mspabi_srll_1>:
+    82f4:	12 c3       	clrc			
+    82f6:	0d 10       	rrc	r13		;
+    82f8:	0c 10       	rrc	r12		;
+    82fa:	30 41       	ret			
+
+000082fc <.L12>:
+    82fc:	3e 53       	add	#-1,	r14	;r3 As==11
+    82fe:	12 c3       	clrc			
+    8300:	0d 10       	rrc	r13		;
+    8302:	0c 10       	rrc	r12		;
+
+00008304 <__mspabi_srll>:
+    8304:	0e 93       	cmp	#0,	r14	;r3 As==00
+    8306:	fa 23       	jnz	$-10     	;abs 0x82fc
+    8308:	30 41       	ret			
+
+0000830a <memmove>:
+    830a:	0d 9c       	cmp	r12,	r13	;
+    830c:	0a 28       	jnc	$+22     	;abs 0x8322
+
+0000830e <.L5>:
+    830e:	0f 4c       	mov	r12,	r15	;
+    8310:	0e 5c       	add	r12,	r14	;
+
+00008312 <.L3>:
+    8312:	0e 9f       	cmp	r15,	r14	;
+    8314:	0d 24       	jz	$+28     	;abs 0x8330
+
+00008316 <.LVL3>:
+    8316:	ef 4d 00 00 	mov.b	@r13,	0(r15)	;
+    831a:	1f 53       	inc	r15		;
+
+0000831c <.LVL4>:
+    831c:	1d 53       	inc	r13		;
+    831e:	30 40 12 83 	br	#0x8312		;
+
+00008322 <.L2>:
+    8322:	0f 4d       	mov	r13,	r15	;
+    8324:	0f 5e       	add	r14,	r15	;
+    8326:	0c 9f       	cmp	r15,	r12	;
+    8328:	f2 2f       	jc	$-26     	;abs 0x830e
+
+0000832a <.L4>:
+    832a:	3e 53       	add	#-1,	r14	;r3 As==11
+
+0000832c <.LVL7>:
+    832c:	3e 93       	cmp	#-1,	r14	;r3 As==11
+    832e:	01 20       	jnz	$+4      	;abs 0x8332
+
+00008330 <.L10>:
+    8330:	30 41       	ret			
+
+00008332 <.L6>:
+    8332:	0b 4c       	mov	r12,	r11	;
+    8334:	0b 5e       	add	r14,	r11	;
+    8336:	0f 4d       	mov	r13,	r15	;
+    8338:	0f 5e       	add	r14,	r15	;
+    833a:	eb 4f 00 00 	mov.b	@r15,	0(r11)	;
+    833e:	30 40 2a 83 	br	#0x832a		;
+
+00008342 <memset>:
+    8342:	0f 4c       	mov	r12,	r15	;
+    8344:	0e 5c       	add	r12,	r14	;
+
+00008346 <.L2>:
+    8346:	0f 9e       	cmp	r14,	r15	;
+    8348:	01 20       	jnz	$+4      	;abs 0x834c
+
+0000834a <.Loc.104.1>:
+    834a:	30 41       	ret			
+
+0000834c <.L3>:
+    834c:	cf 4d 00 00 	mov.b	r13,	0(r15)	;
+    8350:	1f 53       	inc	r15		;
+
+00008352 <.LVL4>:
+    8352:	30 40 46 83 	br	#0x8346		;
+
+00008356 <L0>:
+    8356:	30 41       	ret			
+
+00008358 <__do_global_ctors_aux>:
+    8358:	0a 12       	push	r10		;
+    835a:	3a 40 08 80 	mov	#32776,	r10	;#0x8008
+
+0000835e <.L2>:
+    835e:	2c 4a       	mov	@r10,	r12	;
+    8360:	3c 93       	cmp	#-1,	r12	;r3 As==11
+    8362:	02 20       	jnz	$+6      	;abs 0x8368
+    8364:	3a 41       	pop	r10		;
+    8366:	30 41       	ret			
+
+00008368 <.L3>:
+    8368:	8c 12       	call	r12		;
+    836a:	3a 50 fe ff 	add	#65534,	r10	;#0xfffe
+    836e:	30 40 5e 83 	br	#0x835e		;
+
+00008372 <call___do_global_ctors_aux>:
+    8372:	b0 12 16 81 	call	#33046		;#0x8116
+    8376:	b0 12 58 83 	call	#33624		;#0x8358
+
+0000837a <L0>:
+    837a:	b0 12 4e 80 	call	#32846		;#0x804e
+
+0000837e <.Loc.19.1>:
+    837e:	b0 12 40 80 	call	#32832		;#0x8040
+
+00008382 <.Loc.20.1>:
+    8382:	30 41       	ret			
+
+00008384 <__msp430_fini>:
+    8384:	b0 12 5c 80 	call	#32860		;#0x805c
+
+00008388 <L0>:
+    8388:	b0 12 c8 80 	call	#32968		;#0x80c8
+
+0000838c <L0>:
+    838c:	30 41       	ret			

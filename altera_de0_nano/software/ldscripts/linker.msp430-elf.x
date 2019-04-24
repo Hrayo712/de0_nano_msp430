@@ -67,7 +67,7 @@ SECTIONS
   __interrupt_vector_2   : { KEEP (*(__interrupt_vector_2 )) } > VECT2
   __interrupt_vector_3   : { KEEP (*(__interrupt_vector_3 )) KEEP (*(__interrupt_vector_port1)) } > VECT3
   __interrupt_vector_4   : { KEEP (*(__interrupt_vector_4 )) KEEP (*(__interrupt_vector_port2)) } > VECT4
-  __interrupt_vector_5   : { KEEP (*(__interrupt_vector_5 )) } > VECT5
+  __interrupt_vector_5   : { KEEP (*(__interrupt_vector_5 )) KEEP (*(__interrupt_vector_qwark)) } > VECT5
   __interrupt_vector_6   : { KEEP (*(__interrupt_vector_6 )) } > VECT6
   __interrupt_vector_7   : { KEEP (*(__interrupt_vector_7 )) } > VECT7
   __interrupt_vector_8   : { KEEP (*(__interrupt_vector_8 )) } > VECT8

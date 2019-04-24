@@ -129,8 +129,8 @@ wire   pll_out;
 wire   pll_lock;
 
 
-//assign dco_clk    = FPGA_CLK1_50;
-assign dco_clk    = pll_lock ? pll_out : 1'b0;
+assign dco_clk    = FPGA_CLK1_50;
+//assign dco_clk    = pll_lock ? pll_out : 1'b0;
 
 
 wire   reset_in_n = KEY[0];
@@ -305,9 +305,9 @@ assign irq_bus  = {1'b0,         // Vector 13  (0xFFFA)
                    irq_ta0,      // Vector  9  (0xFFF2)
                    irq_ta1,      // Vector  8  (0xFFF0)
                    1'b0,         // Vector  7  (0xFFEE)
-                   1'b0,      // Vector  6  (0xFFEC)
+                   1'b0,         // Vector  6  (0xFFEC)
                    1'b0,         // Vector  5  (0xFFEA)
-                   1'b0,         // Vector  4  (0xFFE8)
+                   qwark_irq,    // Vector  4  (0xFFE8)
                    irq_key,      // Vector  3  (0xFFE6)
                    irq_sw,       // Vector  2  (0xFFE4)
                    1'b0,         // Vector  1  (0xFFE2)
@@ -344,24 +344,25 @@ ram_16x8k dmem_0 (
 // 5) Clock Division  
 //=============================================================================
 						 
-	pll pll_0(
-	.inclk0 (FPGA_CLK1_50),
-	.c0     (pll_out),
-	.locked (pll_lock)
-	);
+//	pll pll_0(
+//	.inclk0 (FPGA_CLK1_50),
+//	.c0     (pll_out),
+//	.locked (pll_lock)
+//	);
 
 	//=============================================================================
 // 11)  QWARK
 //=============================================================================
-wire war_detected;
+
 wire [15:0]per_dout_qwark;
+wire qwark_irq;
 
 omsp_qwark_periph qwark_periph_0 (
 
 // OUTPUTs
     .per_dout(per_dout_qwark),        					 		// Peripheral data output
 	 .addr_out(qwark_addr),
-	 .war(war_detected),
+	 .qwark_irq(qwark_irq),
 // PERIPHERAL HANDLING INPUTs
     .mclk(mclk),                       						// Main system clock
     .per_addr(per_addr),               						// Peripheral address
@@ -387,5 +388,5 @@ assign  ADDR[0] 	   = dmem_addr[0];
 assign  ADDR[1] 	   = dmem_addr[1];
 assign  TL_ADDR[0]   = qwark_addr[0];
 assign  TL_ADDR[1]   = qwark_addr[1];
-assign  WAR 			= war_detected;
+
 endmodule

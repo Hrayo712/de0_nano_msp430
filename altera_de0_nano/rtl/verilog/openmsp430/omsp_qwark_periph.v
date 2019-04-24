@@ -50,7 +50,7 @@ module  omsp_qwark_periph (
 // OUTPUTs
     per_dout,                       // Peripheral data output
 	 addr_out,								// Memory Access address translated
-	 war,										// WAR violation signal out
+	 qwark_irq,
 // INPUTs
     mclk,                           // Main system clock
     per_addr,                       // Peripheral address
@@ -68,7 +68,7 @@ module  omsp_qwark_periph (
 //=========
 output        [15:0] per_dout;      // Peripheral data output
 output [`DMEM_MSB:0] addr_out;    // Address Out
-output					war;
+output					qwark_irq;
 
 // INPUTs
 //=========
@@ -139,6 +139,9 @@ wire [DEC_SZ-1:0] reg_rd    = reg_dec & {DEC_SZ{reg_read}};
 //============================================================================
 // 3) REGISTERS
 //============================================================================
+wire qwark_reg_wr;
+wire [3:0]qwark_dout;
+wire irq_flag;
 
 // CNTRL1 Register
 //-----------------
@@ -146,11 +149,15 @@ reg  [15:0] cntrl1;
 
 wire        cntrl1_wr = reg_wr[CNTRL1];
 
+assign      qwark_irq     = qwark_irq_req;
+wire        qwark_irq_req = cntrl1[5];
+
 always @ (posedge mclk or posedge puc_rst)
-  if (puc_rst)        cntrl1 <=  16'h0000;
-  else if (cntrl1_wr) cntrl1 <=  per_din;
-
-
+  if (puc_rst)       	 cntrl1 <=  16'h0000;
+  else if (cntrl1_wr) 	 cntrl1 <=  per_din;
+  else if (qwark_reg_wr) cntrl1 <=  {{11{1'b0}},qwark_dout[3:0],cntrl1[0]};
+  else if (irq_flag)		 cntrl1 <=  {{10{1'b0}},1'b1,cntrl1[4:0]};
+  
 // CNTRL2 Register
 //-----------------
 reg  [15:0] cntrl2;
@@ -203,12 +210,9 @@ wire [15:0] per_dout   =  cntrl1_rd  |
 // 5) QWARK PERIPHERAL FUNCTIONALITY
 //============================================================================
 
-wire war_found;
 wire [15:0] tl_addr;
 wire  [15:0] dmem_addr = eu_addr[15:0] + (`DMEM_BASE);
 
-
-assign war = war_found;
 
 assign addr_out = cntrl1[0] ? tl_addr_format : eu_addr[13:1];
 
@@ -225,7 +229,9 @@ omsp_qwark qwark_0 (
 	 .eu_en				 (~eu_en),			// Execution Unit Memory Address Bus Enable  (Active High)
 	 .eu_mb_wr			 (~eu_mb_wr),		// Execution Unit Memory Write	
 	 .tl_addr			 (tl_addr),			// Translated address output
-	 .war					 (war_found)		// WAR violation signal out
+	 .per_dout		    (qwark_dout),					
+	 .per_wr		 	    (qwark_reg_wr),
+	 .irq_out			 (irq_flag)
 	 );
 
 
