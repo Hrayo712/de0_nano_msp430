@@ -1,2 +1,2 @@
-main.c:24:39:INT_Qwark	4	static
-main.c:42:5:main	0	static
+main.c:36:39:INT_Qwark	6	static
+main.c:100:5:main	0	static

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for openMSP430_fpga
-Wed Apr 24 09:45:10 2019
+Fri Apr 26 02:58:30 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -156,15 +156,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr 24 09:45:10 2019       ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 26 02:58:30 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; openMSP430_fpga                             ;
 ; Top-level Entity Name              ; openMSP430_fpga                             ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4,170                                       ;
-;     Total combinational functions  ; 3,893                                       ;
-;     Dedicated logic registers      ; 1,236                                       ;
-; Total registers                    ; 1236                                        ;
+; Total logic elements               ; 4,326                                       ;
+;     Total combinational functions  ; 4,097                                       ;
+;     Dedicated logic registers      ; 1,303                                       ;
+; Total registers                    ; 1303                                        ;
 ; Total pins                         ; 25                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 394,752                                     ;
@@ -325,20 +325,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------+
 ; Resource                                    ; Usage   ;
 +---------------------------------------------+---------+
-; Estimated Total logic elements              ; 4,170   ;
+; Estimated Total logic elements              ; 4,326   ;
 ;                                             ;         ;
-; Total combinational functions               ; 3893    ;
+; Total combinational functions               ; 4097    ;
 ; Logic element usage by number of LUT inputs ;         ;
-;     -- 4 input functions                    ; 2234    ;
-;     -- 3 input functions                    ; 1198    ;
-;     -- <=2 input functions                  ; 461     ;
+;     -- 4 input functions                    ; 2306    ;
+;     -- 3 input functions                    ; 1327    ;
+;     -- <=2 input functions                  ; 464     ;
 ;                                             ;         ;
 ; Logic elements by mode                      ;         ;
-;     -- normal mode                          ; 3544    ;
+;     -- normal mode                          ; 3748    ;
 ;     -- arithmetic mode                      ; 349     ;
 ;                                             ;         ;
-; Total registers                             ; 1236    ;
-;     -- Dedicated logic registers            ; 1236    ;
+; Total registers                             ; 1303    ;
+;     -- Dedicated logic registers            ; 1303    ;
 ;     -- I/O registers                        ; 0       ;
 ;                                             ;         ;
 ; I/O pins                                    ; 25      ;
@@ -350,9 +350,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1       ;
 ;                                             ;         ;
 ; Maximum fan-out node                        ; dco_clk ;
-; Maximum fan-out                             ; 1380    ;
-; Total fan-out                               ; 20098   ;
-; Average fan-out                             ; 3.77    ;
+; Maximum fan-out                             ; 1447    ;
+; Total fan-out                               ; 21036   ;
+; Average fan-out                             ; 3.76    ;
 +---------------------------------------------+---------+
 
 
@@ -361,7 +361,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
 ; Compilation Hierarchy Node                                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                ; Entity Name                  ; Library Name ;
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
-; |openMSP430_fpga                                            ; 3893 (35)           ; 1236 (17)                 ; 394752      ; 2            ; 0       ; 1         ; 25   ; 0            ; |openMSP430_fpga                                                                                                                                                                                                   ; openMSP430_fpga              ; work         ;
+; |openMSP430_fpga                                            ; 4097 (35)           ; 1303 (17)                 ; 394752      ; 2            ; 0       ; 1         ; 25   ; 0            ; |openMSP430_fpga                                                                                                                                                                                                   ; openMSP430_fpga              ; work         ;
 ;    |omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0| ; 184 (22)            ; 164 (32)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0                                                                                                                                            ; omsp_de0_nano_soc_led_key_sw ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_key0|        ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key0                                                                                               ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_key1|        ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key1                                                                                               ; sync_debouncer_10ms          ; work         ;
@@ -369,8 +369,8 @@ refer to the applicable agreement for further details.
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_sw1|         ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw1                                                                                                ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_sw2|         ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw2                                                                                                ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_sw3|         ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw3                                                                                                ; sync_debouncer_10ms          ; work         ;
-;    |omsp_qwark_periph:qwark_periph_0|                       ; 982 (55)            ; 235 (64)                  ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0                                                                                                                                                                  ; omsp_qwark_periph            ; work         ;
-;       |omsp_qwark:qwark_0|                                  ; 927 (107)           ; 171 (64)                  ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0                                                                                                                                               ; omsp_qwark                   ; work         ;
+;    |omsp_qwark_periph:qwark_periph_0|                       ; 1132 (191)          ; 302 (128)                 ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0                                                                                                                                                                  ; omsp_qwark_periph            ; work         ;
+;       |omsp_qwark:qwark_0|                                  ; 941 (119)           ; 174 (67)                  ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0                                                                                                                                               ; omsp_qwark                   ; work         ;
 ;          |cam_bram:cam_read_buff|                           ; 280 (274)           ; 39 (39)                   ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff                                                                                                                        ; cam_bram                     ; work         ;
 ;             |priority_encoder:priority_encoder_inst|        ; 6 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|priority_encoder:priority_encoder_inst                                                                                 ; priority_encoder             ; work         ;
 ;                |priority_encoder:priority_encoder_inst1|    ; 3 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|priority_encoder:priority_encoder_inst|priority_encoder:priority_encoder_inst1                                         ; priority_encoder             ; work         ;
@@ -389,7 +389,7 @@ refer to the applicable agreement for further details.
 ;             |ram_dp:slice[3].ram_inst|                      ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_dp:slice[3].ram_inst                                                                                               ; ram_dp                       ; work         ;
 ;                |altsyncram:mem_rtl_0|                       ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_dp:slice[3].ram_inst|altsyncram:mem_rtl_0                                                                          ; altsyncram                   ; work         ;
 ;                   |altsyncram_9kr1:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_dp:slice[3].ram_inst|altsyncram:mem_rtl_0|altsyncram_9kr1:auto_generated                                           ; altsyncram_9kr1              ; work         ;
-;          |cam_bram:cam_tlb|                                 ; 272 (266)           ; 34 (34)                   ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb                                                                                                                              ; cam_bram                     ; work         ;
+;          |cam_bram:cam_tlb|                                 ; 274 (268)           ; 34 (34)                   ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb                                                                                                                              ; cam_bram                     ; work         ;
 ;             |priority_encoder:priority_encoder_inst|        ; 6 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|priority_encoder:priority_encoder_inst                                                                                       ; priority_encoder             ; work         ;
 ;                |priority_encoder:priority_encoder_inst1|    ; 3 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|priority_encoder:priority_encoder_inst|priority_encoder:priority_encoder_inst1                                               ; priority_encoder             ; work         ;
 ;                   |priority_encoder:priority_encoder_inst1| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|priority_encoder:priority_encoder_inst|priority_encoder:priority_encoder_inst1|priority_encoder:priority_encoder_inst1       ; priority_encoder             ; work         ;
@@ -420,28 +420,28 @@ refer to the applicable agreement for further details.
 ;             |ram_dp:slice[3].ram_inst|                      ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|ram_dp:slice[3].ram_inst                                                                                              ; ram_dp                       ; work         ;
 ;                |altsyncram:mem_rtl_0|                       ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|ram_dp:slice[3].ram_inst|altsyncram:mem_rtl_0                                                                         ; altsyncram                   ; work         ;
 ;                   |altsyncram_9kr1:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|ram_dp:slice[3].ram_inst|altsyncram:mem_rtl_0|altsyncram_9kr1:auto_generated                                          ; altsyncram_9kr1              ; work         ;
-;    |omsp_timerA:timerA_0|                                   ; 293 (293)           ; 136 (130)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0                                                                                                                                                                              ; omsp_timerA                  ; work         ;
+;    |omsp_timerA:timerA_0|                                   ; 295 (295)           ; 136 (130)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0                                                                                                                                                                              ; omsp_timerA                  ; work         ;
 ;       |omsp_sync_cell:sync_cell_cci0|                       ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci0                                                                                                                                                ; omsp_sync_cell               ; work         ;
 ;       |omsp_sync_cell:sync_cell_cci1|                       ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci1                                                                                                                                                ; omsp_sync_cell               ; work         ;
 ;       |omsp_sync_cell:sync_cell_cci2|                       ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci2                                                                                                                                                ; omsp_sync_cell               ; work         ;
-;    |openMSP430:openmsp430_0|                                ; 2381 (230)          ; 683 (0)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0                                                                                                                                                                           ; openMSP430                   ; work         ;
+;    |openMSP430:openmsp430_0|                                ; 2433 (278)          ; 683 (0)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0                                                                                                                                                                           ; openMSP430                   ; work         ;
 ;       |omsp_clock_module:clock_module_0|                    ; 28 (28)             ; 21 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0                                                                                                                                          ; omsp_clock_module            ; work         ;
 ;          |omsp_sync_cell:sync_cell_lfxt_clk|                ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_lfxt_clk                                                                                                        ; omsp_sync_cell               ; work         ;
 ;          |omsp_sync_cell:sync_cell_puc|                     ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_puc                                                                                                             ; omsp_sync_cell               ; work         ;
 ;          |omsp_sync_reset:sync_reset_por|                   ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por                                                                                                           ; omsp_sync_reset              ; work         ;
-;       |omsp_dbg:dbg_0|                                      ; 338 (197)           ; 148 (69)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0                                                                                                                                                            ; omsp_dbg                     ; work         ;
+;       |omsp_dbg:dbg_0|                                      ; 339 (198)           ; 148 (69)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0                                                                                                                                                            ; omsp_dbg                     ; work         ;
 ;          |omsp_dbg_uart:dbg_uart_0|                         ; 141 (140)           ; 79 (77)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0                                                                                                                                   ; omsp_dbg_uart                ; work         ;
 ;             |omsp_sync_cell:sync_cell_uart_rxd|             ; 1 (1)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|omsp_sync_cell:sync_cell_uart_rxd                                                                                                 ; omsp_sync_cell               ; work         ;
-;       |omsp_execution_unit:execution_unit_0|                ; 1133 (211)          ; 266 (35)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0                                                                                                                                      ; omsp_execution_unit          ; work         ;
-;          |omsp_alu:alu_0|                                   ; 275 (275)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0                                                                                                                       ; omsp_alu                     ; work         ;
-;          |omsp_register_file:register_file_0|               ; 647 (647)           ; 231 (231)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0                                                                                                   ; omsp_register_file           ; work         ;
-;       |omsp_frontend:frontend_0|                            ; 316 (316)           ; 116 (116)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0                                                                                                                                                  ; omsp_frontend                ; work         ;
-;       |omsp_mem_backbone:mem_backbone_0|                    ; 140 (140)           ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0                                                                                                                                          ; omsp_mem_backbone            ; work         ;
-;       |omsp_multiplier:multiplier_0|                        ; 137 (137)           ; 70 (70)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0                                                                                                                                              ; omsp_multiplier              ; work         ;
+;       |omsp_execution_unit:execution_unit_0|                ; 1136 (218)          ; 266 (35)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0                                                                                                                                      ; omsp_execution_unit          ; work         ;
+;          |omsp_alu:alu_0|                                   ; 269 (269)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0                                                                                                                       ; omsp_alu                     ; work         ;
+;          |omsp_register_file:register_file_0|               ; 649 (649)           ; 231 (231)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0                                                                                                   ; omsp_register_file           ; work         ;
+;       |omsp_frontend:frontend_0|                            ; 317 (317)           ; 116 (116)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0                                                                                                                                                  ; omsp_frontend                ; work         ;
+;       |omsp_mem_backbone:mem_backbone_0|                    ; 139 (139)           ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0                                                                                                                                          ; omsp_mem_backbone            ; work         ;
+;       |omsp_multiplier:multiplier_0|                        ; 135 (135)           ; 70 (70)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0                                                                                                                                              ; omsp_multiplier              ; work         ;
 ;          |lpm_mult:Mult0|                                   ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0                                                                                                                               ; lpm_mult                     ; work         ;
 ;             |mult_p4t:auto_generated|                       ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0|mult_p4t:auto_generated                                                                                                       ; mult_p4t                     ; work         ;
-;       |omsp_sfr:sfr_0|                                      ; 5 (5)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_sfr:sfr_0                                                                                                                                                            ; omsp_sfr                     ; work         ;
-;       |omsp_watchdog:watchdog_0|                            ; 54 (54)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0                                                                                                                                                  ; omsp_watchdog                ; work         ;
+;       |omsp_sfr:sfr_0|                                      ; 8 (8)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_sfr:sfr_0                                                                                                                                                            ; omsp_sfr                     ; work         ;
+;       |omsp_watchdog:watchdog_0|                            ; 53 (53)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0                                                                                                                                                  ; omsp_watchdog                ; work         ;
 ;    |pll:pll_0|                                              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|pll:pll_0                                                                                                                                                                                         ; pll                          ; work         ;
 ;       |altpll:altpll_component|                             ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|pll:pll_0|altpll:altpll_component                                                                                                                                                                 ; altpll                       ; work         ;
 ;          |pll_altpll:auto_generated|                        ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|pll:pll_0|altpll:altpll_component|pll_altpll:auto_generated                                                                                                                                       ; pll_altpll                   ; work         ;
@@ -780,18 +780,21 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                    ;
-+---------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------+
-; Register name                                                       ; Reason for Removal        ; Registers Removed due to This Register                                       ;
-+---------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------+
-; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[0]    ; Stuck at GND              ; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[1],            ;
-;                                                                     ; due to stuck port data_in ; omsp_timerA:timerA_0|taclk_dly, omsp_timerA:timerA_0|inclk_dly               ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|read_address[0] ; Stuck at GND              ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_busy_writing[0], ;
-;                                                                     ; due to stuck port data_in ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_busy_writing[0]  ;
-; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[0]    ; Stuck at GND              ; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[1]             ;
-;                                                                     ; due to stuck port data_in ;                                                                              ;
-+---------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                              ;
++---------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
+; Register name                                                       ; Reason for Removal        ; Registers Removed due to This Register                                                                 ;
++---------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[0]    ; Stuck at GND              ; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[1],                                      ;
+;                                                                     ; due to stuck port data_in ; omsp_timerA:timerA_0|taclk_dly, omsp_timerA:timerA_0|inclk_dly                                         ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[5]         ; Stuck at VCC              ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|write_data_padded_reg[15],        ;
+;                                                                     ; due to stuck port data_in ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|write_data_padded_reg[15], ;
+;                                                                     ;                           ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|write_data_padded_reg[15]   ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|read_address[0] ; Stuck at GND              ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_busy_writing[0],                           ;
+;                                                                     ; due to stuck port data_in ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_busy_writing[0]                            ;
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[0]    ; Stuck at GND              ; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[1]                                       ;
+;                                                                     ; due to stuck port data_in ;                                                                                                        ;
++---------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -799,12 +802,12 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1236  ;
-; Number of registers using Synchronous Clear  ; 128   ;
-; Number of registers using Synchronous Load   ; 116   ;
-; Number of registers using Asynchronous Clear ; 1064  ;
+; Total registers                              ; 1303  ;
+; Number of registers using Synchronous Clear  ; 122   ;
+; Number of registers using Synchronous Load   ; 117   ;
+; Number of registers using Asynchronous Clear ; 1128  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 801   ;
+; Number of registers using Clock Enable       ; 863   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -835,21 +838,21 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_irq_rst                                        ; 2       ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|write_busy_reg                  ; 25      ;
 ; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|dbg_rst_noscan                              ; 149     ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[0]                                          ; 3       ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[1]                                          ; 3       ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[2]                                          ; 3       ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[3]                                          ; 3       ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[0]                                          ; 4       ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[1]                                          ; 4       ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[2]                                          ; 4       ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[3]                                          ; 4       ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[0]              ; 14      ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[1]              ; 15      ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[2]              ; 15      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[3]              ; 15      ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[3]              ; 14      ;
 ; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por|data_sync[1] ; 7       ;
 ; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|rxd_maj                              ; 6       ;
 ; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|rxd_buf[0]                           ; 2       ;
 ; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|rxd_buf[1]                           ; 1       ;
 ; openMSP430:openmsp430_0|omsp_dbg:dbg_0|cpu_ctl[4]                                                    ; 4       ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|write_busy_reg           ; 26      ;
 ; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por|data_sync[0] ; 1       ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|write_busy_reg           ; 25      ;
 ; Total number of inverted registers = 36                                                              ;         ;
 +------------------------------------------------------------------------------------------------------+---------+
 
@@ -891,74 +894,88 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|read_address[1]                                             ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl1[4]                                                                      ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r2[5]           ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_buf[9]                                     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_buf[4]                                     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r4[6]           ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r5[15]          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r6[6]           ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r7[6]           ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r8[15]          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r9[8]           ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r10[0]          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r11[12]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r12[4]          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r13[8]          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r14[12]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r15[14]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0|wdtcnt[10]                                                     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr0[11]                                                                                 ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr1[3]                                                                                  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr2[14]                                                                                 ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_out_nxt[4]                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|read_address[9]                                             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl1[2]                                                                      ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r2[7]           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_buf[0]                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_buf[18]                                    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r4[5]           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r5[13]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r6[11]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r7[8]           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r8[4]           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r9[6]           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r10[2]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r11[14]         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r12[8]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r13[0]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r14[7]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r15[5]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0|wdtcnt[2]                                                      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr0[0]                                                                                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr1[11]                                                                                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr2[10]                                                                                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_out_nxt[3]                                     ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|sumext_s[1]                                                ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|clk_div[0]                                                                                 ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_ctr[0]                                              ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|tlb_buff_ctr[0]                                             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_ctr[2]                                              ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_busy_writing[12]                                    ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_busy_writing[2]                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl2[15]                                                                     ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl2[10]                                                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl3[0]                                                                      ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl3[2]                                                                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl4[0]                                                                      ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl4[8]                                                                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl5[15]                                                                     ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl5[11]                                                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl6[15]                                                                     ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl6[12]                                                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl7[15]                                                                     ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl7[12]                                                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl8[0]                                                                      ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl8[9]                                                                      ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|clk_div[1]                                                                                 ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_busy_writing[8]                                     ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_busy_writing[5]                                     ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_bit[1]                                     ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_sext[13]                                                  ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r1[7]           ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|war_ctr[2]                                                  ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl1[6]                                                                      ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_cnt[11]                                    ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reslo[13]                                                  ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reshi[9]                                                   ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|tar[11]                                                                                    ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[15]                                                             ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[0]                                                              ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|count_reg[1]                               ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_sext[7]                                                   ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r1[4]           ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl1[14]                                                                     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|war_ctr[3]                                                  ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_cnt[14]                                    ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reslo[15]                                                  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reshi[10]                                                  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|tar[10]                                                                                    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_ctr[1]                                              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_ctr[3]                                              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|tlb_buff_ctr[0]                                             ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[14]                                                             ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[4]                                                              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|count_reg[2]                               ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|count_reg[3]                        ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|dbg_mem_dout[8]                                                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|eu_mdb_in[11]                                          ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[0]                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|dbg_mem_dout[15]                                                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|eu_mdb_in[14]                                          ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[8]                      ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[12]                                                ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|pmem_addr[7]                                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|dbg_mem_din[14]                                        ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|pmem_addr[6]                                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|dbg_mem_din[15]                                        ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mb_wr_msk[1]                                       ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|mab[13]                                                        ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|mab[3]                                                         ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_dest[2]                                                   ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_in_bw[0]                                       ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|mab[0]                                                         ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|mab[1]                                                         ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_dest[14]                                                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_in_bw[7]                                       ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[8]                                                 ;
-; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_addr[8]                          ;
-; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|ram_addr[4]                                ;
-; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|ram_addr[1]                         ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[3]                      ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[7]                      ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_addr[5]                          ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|ram_addr[14]                               ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|ram_addr[3]                         ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[1]                      ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[5]                      ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[9]                      ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[13]                     ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 45 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|op_dst[10]                                         ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|addr_out[12]                                                                   ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 45 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|op_dst[14]                                         ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|addr_out[11]                                                                   ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[5]                                                 ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[1]                                                 ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|inst_src_in[12] ;
-; 7:1                ; 16 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|op_src[8]                                          ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[3]                                                 ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|inst_src_in[13] ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|op_src[0]                                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1829,22 +1846,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +-------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: omsp_qwark_periph:qwark_periph_0 ;
-+----------------+-----------------+--------------------------------------------+
-; Parameter Name ; Value           ; Type                                       ;
-+----------------+-----------------+--------------------------------------------+
-; BASE_ADDR      ; 000000110010000 ; Unsigned Binary                            ;
-; DEC_WD         ; 3               ; Signed Integer                             ;
-; CNTRL1         ; 000             ; Unsigned Binary                            ;
-; CNTRL2         ; 010             ; Unsigned Binary                            ;
-; CNTRL3         ; 100             ; Unsigned Binary                            ;
-; CNTRL4         ; 110             ; Unsigned Binary                            ;
-; DEC_SZ         ; 8               ; Signed Integer                             ;
-; BASE_REG       ; 00000001        ; Unsigned Binary                            ;
-; CNTRL1_D       ; 00000001        ; Unsigned Binary                            ;
-; CNTRL2_D       ; 00000100        ; Unsigned Binary                            ;
-; CNTRL3_D       ; 00010000        ; Unsigned Binary                            ;
-; CNTRL4_D       ; 01000000        ; Unsigned Binary                            ;
-+----------------+-----------------+--------------------------------------------+
++----------------+------------------+-------------------------------------------+
+; Parameter Name ; Value            ; Type                                      ;
++----------------+------------------+-------------------------------------------+
+; BASE_ADDR      ; 000000110010000  ; Unsigned Binary                           ;
+; DEC_WD         ; 4                ; Signed Integer                            ;
+; CNTRL1         ; 0000             ; Unsigned Binary                           ;
+; CNTRL2         ; 0010             ; Unsigned Binary                           ;
+; CNTRL3         ; 0100             ; Unsigned Binary                           ;
+; CNTRL4         ; 0110             ; Unsigned Binary                           ;
+; CNTRL5         ; 1000             ; Unsigned Binary                           ;
+; CNTRL6         ; 1010             ; Unsigned Binary                           ;
+; CNTRL7         ; 1100             ; Unsigned Binary                           ;
+; CNTRL8         ; 1110             ; Unsigned Binary                           ;
+; DEC_SZ         ; 16               ; Signed Integer                            ;
+; BASE_REG       ; 0000000000000001 ; Unsigned Binary                           ;
+; CNTRL1_D       ; 0000000000000001 ; Unsigned Binary                           ;
+; CNTRL2_D       ; 0000000000000100 ; Unsigned Binary                           ;
+; CNTRL3_D       ; 0000000000010000 ; Unsigned Binary                           ;
+; CNTRL4_D       ; 0000000001000000 ; Unsigned Binary                           ;
+; CNTRL5_D       ; 0000000100000000 ; Unsigned Binary                           ;
+; CNTRL6_D       ; 0000010000000000 ; Unsigned Binary                           ;
+; CNTRL7_D       ; 0001000000000000 ; Unsigned Binary                           ;
+; CNTRL8_D       ; 0100000000000000 ; Unsigned Binary                           ;
++----------------+------------------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -3411,7 +3436,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; dco_enable        ; Output ; Info     ; Explicitly unconnected                                                              ;
 ; dco_wkup          ; Output ; Info     ; Explicitly unconnected                                                              ;
 ; irq_acc[13..10]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; irq_acc[8..0]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; irq_acc[8..5]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; irq_acc[3..0]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; lfxt_enable       ; Output ; Info     ; Explicitly unconnected                                                              ;
 ; lfxt_wkup         ; Output ; Info     ; Explicitly unconnected                                                              ;
 ; dma_dout          ; Output ; Info     ; Explicitly unconnected                                                              ;
@@ -3446,34 +3472,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 25                          ;
-; cycloneiii_ff         ; 1236                        ;
+; cycloneiii_ff         ; 1303                        ;
 ;     CLR               ; 201                         ;
 ;     CLR SCLR          ; 114                         ;
 ;     CLR SCLR SLD      ; 4                           ;
-;     CLR SLD           ; 36                          ;
-;     ENA               ; 84                          ;
-;     ENA CLR           ; 633                         ;
+;     CLR SLD           ; 37                          ;
+;     ENA               ; 89                          ;
+;     ENA CLR           ; 696                         ;
 ;     ENA CLR SLD       ; 76                          ;
-;     ENA SCLR          ; 8                           ;
+;     ENA SCLR          ; 2                           ;
 ;     SCLR              ; 2                           ;
-;     plain             ; 78                          ;
-; cycloneiii_lcell_comb ; 3895                        ;
+;     plain             ; 82                          ;
+; cycloneiii_lcell_comb ; 4099                        ;
 ;     arith             ; 349                         ;
 ;         2 data inputs ; 215                         ;
 ;         3 data inputs ; 134                         ;
-;     normal            ; 3546                        ;
+;     normal            ; 3750                        ;
 ;         0 data inputs ; 7                           ;
-;         1 data inputs ; 21                          ;
-;         2 data inputs ; 220                         ;
-;         3 data inputs ; 1064                        ;
-;         4 data inputs ; 2234                        ;
+;         1 data inputs ; 20                          ;
+;         2 data inputs ; 224                         ;
+;         3 data inputs ; 1193                        ;
+;         4 data inputs ; 2306                        ;
 ; cycloneiii_mac_mult   ; 1                           ;
 ; cycloneiii_mac_out    ; 1                           ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 144                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 25.40                       ;
-; Average LUT depth     ; 11.25                       ;
+; Max LUT depth         ; 24.40                       ;
+; Average LUT depth     ; 11.37                       ;
 +-----------------------+-----------------------------+
 
 
@@ -3482,7 +3508,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:08     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -3492,7 +3518,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Apr 24 09:44:45 2019
+    Info: Processing started: Fri Apr 26 02:58:03 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off openMSP430_fpga -c openMSP430_fpga
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20029): Only one processor detected - disabling parallel compilation
@@ -3604,7 +3630,7 @@ Info (12021): Found 54 design units, including 54 entities, in source file /home
     Info (12023): Found entity 52: ogfx_gpu_dma File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 43
     Info (12023): Found entity 53: ogfx_gpu_dma_addr File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma_addr.v Line: 43
     Info (12023): Found entity 54: ogfx_ram_arbiter File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/opengfx430/ogfx_ram_arbiter.v Line: 53
-Warning (10236): Verilog HDL Implicit Net warning at omsp_qwark.v(141): created implicit net for "mem_track_en" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 141
+Warning (10236): Verilog HDL Implicit Net warning at omsp_qwark.v(160): created implicit net for "mem_track_en" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 160
 Warning (10222): Verilog HDL Parameter Declaration warning at priority_encoder.v(46): Parameter Declaration in module "priority_encoder" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/priority_encoder.v Line: 46
 Warning (10222): Verilog HDL Parameter Declaration warning at priority_encoder.v(47): Parameter Declaration in module "priority_encoder" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/priority_encoder.v Line: 47
 Info (12127): Elaborating entity "openMSP430_fpga" for the top level hierarchy
@@ -3815,26 +3841,22 @@ Info (12133): Instantiated megafunction "pll:pll_0|altpll:altpll_component" with
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
     Info (12023): Found entity 1: pll_altpll File: /home/hiram/master/Qwark/altera_de0_nano/synthesis/altera/WORK/db/pll_altpll.v Line: 29
 Info (12128): Elaborating entity "pll_altpll" for hierarchy "pll:pll_0|altpll:altpll_component|pll_altpll:auto_generated" File: /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "omsp_qwark_periph" for hierarchy "omsp_qwark_periph:qwark_periph_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 377
-Warning (10230): Verilog HDL assignment warning at omsp_qwark_periph.v(214): truncated value with size 32 to match size of target (16) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 214
-Warning (10230): Verilog HDL assignment warning at omsp_qwark_periph.v(220): truncated value with size 32 to match size of target (13) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 220
-Info (12128): Elaborating entity "omsp_qwark" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 235
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(116): object "rd_buff_delete" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 116
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(319): object "r2" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 319
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(321): object "r4" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 321
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(323): object "r6" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 323
-Warning (10230): Verilog HDL assignment warning at omsp_qwark.v(229): truncated value with size 32 to match size of target (4) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 229
-Warning (10235): Verilog HDL Always Construct warning at omsp_qwark.v(241): variable "en" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 241
-Info (12128): Elaborating entity "cam_bram" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 357
-Warning (10036): Verilog HDL or VHDL warning at cam_bram.v(70): object "compare_data_padded" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/cam_bram.v Line: 70
-Warning (10230): Verilog HDL assignment warning at cam_bram.v(215): truncated value with size 32 to match size of target (4) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/cam_bram.v Line: 215
-Info (12128): Elaborating entity "priority_encoder" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|priority_encoder:priority_encoder_inst" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/cam_bram.v Line: 129
+Info (12128): Elaborating entity "omsp_qwark_periph" for hierarchy "omsp_qwark_periph:qwark_periph_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 378
+Warning (10230): Verilog HDL assignment warning at omsp_qwark_periph.v(291): truncated value with size 32 to match size of target (16) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 291
+Warning (10230): Verilog HDL assignment warning at omsp_qwark_periph.v(297): truncated value with size 32 to match size of target (13) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 297
+Info (12128): Elaborating entity "omsp_qwark" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 314
+Warning (10230): Verilog HDL assignment warning at omsp_qwark.v(236): truncated value with size 32 to match size of target (4) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 236
+Warning (10235): Verilog HDL Always Construct warning at omsp_qwark.v(248): variable "en" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 248
+Info (12128): Elaborating entity "cam_bram" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 374
+Warning (10036): Verilog HDL or VHDL warning at cam_bram.v(71): object "compare_data_padded" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/cam_bram.v Line: 71
+Warning (10230): Verilog HDL assignment warning at cam_bram.v(216): truncated value with size 32 to match size of target (4) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/cam_bram.v Line: 216
+Info (12128): Elaborating entity "priority_encoder" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|priority_encoder:priority_encoder_inst" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/cam_bram.v Line: 130
 Warning (10230): Verilog HDL assignment warning at priority_encoder.v(92): truncated value with size 32 to match size of target (8) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/priority_encoder.v Line: 92
 Info (12128): Elaborating entity "priority_encoder" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|priority_encoder:priority_encoder_inst|priority_encoder:priority_encoder_inst1" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/priority_encoder.v Line: 71
 Warning (10230): Verilog HDL assignment warning at priority_encoder.v(92): truncated value with size 32 to match size of target (4) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/priority_encoder.v Line: 92
 Info (12128): Elaborating entity "priority_encoder" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|priority_encoder:priority_encoder_inst|priority_encoder:priority_encoder_inst1|priority_encoder:priority_encoder_inst1" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/priority_encoder.v Line: 71
 Warning (10230): Verilog HDL assignment warning at priority_encoder.v(92): truncated value with size 32 to match size of target (2) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/priority_encoder.v Line: 92
-Info (12128): Elaborating entity "ram_dp" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_dp:slice[0].ram_inst" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/cam_bram.v Line: 157
+Info (12128): Elaborating entity "ram_dp" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_dp:slice[0].ram_inst" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/cam_bram.v Line: 158
 Info (19000): Inferred 12 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_dp:slice[0].ram_inst|mem_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to BIDIR_DUAL_PORT
@@ -4154,17 +4176,17 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (15899): PLL "pll:pll_0|altpll:altpll_component|pll_altpll:auto_generated|pll1" has parameters clk1_multiply_by and clk1_divide_by specified but port CLK[1] is not connected File: /home/hiram/master/Qwark/altera_de0_nano/synthesis/altera/WORK/db/pll_altpll.v Line: 45
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "FPGA_CLK2_50" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 43
-Info (21057): Implemented 4516 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4672 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 4344 logic cells
+    Info (21061): Implemented 4500 logic cells
     Info (21064): Implemented 144 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 2 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 149 warnings
-    Info: Peak virtual memory: 1049 megabytes
-    Info: Processing ended: Wed Apr 24 09:45:10 2019
-    Info: Elapsed time: 00:00:25
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 145 warnings
+    Info: Peak virtual memory: 1044 megabytes
+    Info: Processing ended: Fri Apr 26 02:58:30 2019
+    Info: Elapsed time: 00:00:27
     Info: Total CPU time (on all processors): 00:00:23
 
 

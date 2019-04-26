@@ -50,6 +50,12 @@ var7:
 	.size	var8, 2
 var8:
 	.short	1
+	.global	var9
+	.balign 2
+	.type	var9, @object
+	.size	var9, 2
+var9:
+	.short	1
 .text
 	.balign 2
 	.global	INT_Qwark
@@ -60,74 +66,256 @@ var8:
 INT_Qwark:
 .LFB1:
 	.file 1 "main.c"
-	.loc 1 24 0
+	.loc 1 36 0
 ; start of function
 ; attributes: interrupt 
 ; framesize_regs:     4
-; framesize_locals:   0
+; framesize_locals:   2
 ; framesize_outgoing: 0
-; framesize:          4
+; framesize:          6
 ; elim ap -> fp       6
-; elim fp -> sp       0
+; elim fp -> sp       2
 ; saved regs: R12 R13
 	; start of prologue
 	PUSH	R13
 .LCFI0:
 	PUSH	R12
 .LCFI1:
+	SUB.W	#2, R1
+.LCFI2:
 	; end of prologue
-	.loc 1 27 0
-	MOV.W	#400, R12
-	MOV.W	#0, @R12
-	.loc 1 28 0
+	.loc 1 41 0
 	MOV.B	#144, R12
 	MOV.B	#15, @R12
-	.loc 1 31 0
-	MOV.W	#24576, R13
-	MOV.W	#16386, R12
-	MOV.W	@R13, R13
+	.loc 1 42 0
+	MOV.W	#400, R12
+	MOV.W	@R12, R12
+	CLRC { RRC.W	R12
+	MOV.W	R12, R13
+	AND.B	#7, R13
+	MOV.W	R13, @R1
+	.loc 1 44 0
+	MOV.W	@R1, R12
+	CMP.W	#3, R12 { JEQ	.L3
+	MOV.B	#3, R13
+	CMP.W	R12, R13 { JL	.L4
+	CMP.W	#1, R12 { JEQ	.L5
+	MOV.B	#1, R13
+	CMP.W	R12, R13 { JL	.L6
+	CMP.W	#0, R12 { JEQ	.L13
+	.loc 1 91 0
+	BR	#.L12
+.L4:
+	.loc 1 44 0
+	CMP.W	#5, R12 { JEQ	.L8
+	CMP.W	#5, R12 { JL	.L9
+	CMP.W	#6, R12 { JEQ	.L10
+	CMP.W	#7, R12 { JEQ	.L11
+	.loc 1 91 0
+	BR	#.L12
+.L5:
+	.loc 1 49 0
+	MOV.W	#24576, R12
+	MOV.W	@R12, R13
+	MOV.W	#402, R12
+	MOV.W	@R12, R12
 	MOV.W	R13, @R12
-	.loc 1 32 0
-	MOV.W	#24578, R13
-	MOV.W	#16388, R12
-	MOV.W	@R13, R13
+	.loc 1 51 0
+	BR	#.L12
+.L6:
+	.loc 1 53 0
+	MOV.W	#24576, R12
+	MOV.W	@R12, R13
+	MOV.W	#402, R12
+	MOV.W	@R12, R12
 	MOV.W	R13, @R12
-	.loc 1 33 0
-	MOV.W	#24580, R13
-	MOV.W	#16390, R12
-	MOV.W	@R13, R13
+	.loc 1 54 0
+	MOV.W	#24578, R12
+	MOV.W	@R12, R13
+	MOV.W	#404, R12
+	MOV.W	@R12, R12
 	MOV.W	R13, @R12
-	.loc 1 34 0
-	MOV.W	#24582, R13
-	MOV.W	#16392, R12
-	MOV.W	@R13, R13
+	.loc 1 55 0
+	BR	#.L12
+.L3:
+	.loc 1 57 0
+	MOV.W	#24576, R12
+	MOV.W	@R12, R13
+	MOV.W	#402, R12
+	MOV.W	@R12, R12
 	MOV.W	R13, @R12
-	.loc 1 35 0
-	MOV.W	#24584, R13
-	MOV.W	#16394, R12
-	MOV.W	@R13, R13
+	.loc 1 58 0
+	MOV.W	#24578, R12
+	MOV.W	@R12, R13
+	MOV.W	#404, R12
+	MOV.W	@R12, R12
 	MOV.W	R13, @R12
-	.loc 1 36 0
-	MOV.W	#24586, R13
-	MOV.W	#16396, R12
-	MOV.W	@R13, R13
+	.loc 1 59 0
+	MOV.W	#24580, R12
+	MOV.W	@R12, R13
+	MOV.W	#406, R12
+	MOV.W	@R12, R12
 	MOV.W	R13, @R12
-	.loc 1 37 0
-	MOV.W	#24588, R13
-	MOV.W	#16398, R12
-	MOV.W	@R13, R13
+	.loc 1 60 0
+	BR	#.L12
+.L9:
+	.loc 1 62 0
+	MOV.W	#24576, R12
+	MOV.W	@R12, R13
+	MOV.W	#402, R12
+	MOV.W	@R12, R12
 	MOV.W	R13, @R12
-	.loc 1 38 0
-	MOV.W	#24590, R13
-	MOV.W	#16400, R12
-	MOV.W	@R13, R13
+	.loc 1 63 0
+	MOV.W	#24578, R12
+	MOV.W	@R12, R13
+	MOV.W	#404, R12
+	MOV.W	@R12, R12
 	MOV.W	R13, @R12
-	.loc 1 39 0
+	.loc 1 64 0
+	MOV.W	#24580, R12
+	MOV.W	@R12, R13
+	MOV.W	#406, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 65 0
+	MOV.W	#24582, R12
+	MOV.W	@R12, R13
+	MOV.W	#408, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 66 0
+	BR	#.L12
+.L8:
+	.loc 1 67 0
+	MOV.W	#24576, R12
+	MOV.W	@R12, R13
+	MOV.W	#402, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 68 0
+	MOV.W	#24578, R12
+	MOV.W	@R12, R13
+	MOV.W	#404, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 69 0
+	MOV.W	#24580, R12
+	MOV.W	@R12, R13
+	MOV.W	#406, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 70 0
+	MOV.W	#24582, R12
+	MOV.W	@R12, R13
+	MOV.W	#408, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 71 0
+	MOV.W	#24584, R12
+	MOV.W	@R12, R13
+	MOV.W	#410, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 72 0
+	BR	#.L12
+.L10:
+	.loc 1 74 0
+	MOV.W	#24576, R12
+	MOV.W	@R12, R13
+	MOV.W	#402, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 75 0
+	MOV.W	#24578, R12
+	MOV.W	@R12, R13
+	MOV.W	#404, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 76 0
+	MOV.W	#24580, R12
+	MOV.W	@R12, R13
+	MOV.W	#406, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 77 0
+	MOV.W	#24582, R12
+	MOV.W	@R12, R13
+	MOV.W	#408, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 78 0
+	MOV.W	#24584, R12
+	MOV.W	@R12, R13
+	MOV.W	#410, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 79 0
+	MOV.W	#24586, R12
+	MOV.W	@R12, R13
+	MOV.W	#412, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 80 0
+	BR	#.L12
+.L11:
+	.loc 1 82 0
+	MOV.W	#24576, R12
+	MOV.W	@R12, R13
+	MOV.W	#402, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 83 0
+	MOV.W	#24578, R12
+	MOV.W	@R12, R13
+	MOV.W	#404, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 84 0
+	MOV.W	#24580, R12
+	MOV.W	@R12, R13
+	MOV.W	#406, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 85 0
+	MOV.W	#24582, R12
+	MOV.W	@R12, R13
+	MOV.W	#408, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 86 0
+	MOV.W	#24584, R12
+	MOV.W	@R12, R13
+	MOV.W	#410, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 87 0
+	MOV.W	#24586, R12
+	MOV.W	@R12, R13
+	MOV.W	#412, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 88 0
+	MOV.W	#24588, R12
+	MOV.W	@R12, R13
+	MOV.W	#414, R12
+	MOV.W	@R12, R12
+	MOV.W	R13, @R12
+	.loc 1 89 0
+	BR	#.L12
+.L13:
+	.loc 1 47 0
+	NOP
+.L12:
+	.loc 1 94 0
 	MOV.B	#144, R12
 	MOV.B	#-16, @R12
-	.loc 1 40 0
+	.loc 1 97 0
+	MOV.W	#400, R12
+	MOV.W	#1, @R12
+	.loc 1 98 0
 	NOP
 	; start of epilogue
+	ADD.W	#2, R1
 	POP	R12
 	POP	R13
 	RETI
@@ -138,7 +326,7 @@ INT_Qwark:
 	.type	main, @function
 main:
 .LFB2:
-	.loc 1 43 0
+	.loc 1 101 0
 ; start of function
 ; framesize_regs:     0
 ; framesize_locals:   0
@@ -149,64 +337,121 @@ main:
 ; saved regs:(none)
 	; start of prologue
 	; end of prologue
-	.loc 1 46 0
- ; 46 "main.c" 1
+	.loc 1 102 0
+	MOV.W	#288, R12
+	MOV.W	#23168, @R12
+	.loc 1 104 0
+ ; 104 "main.c" 1
 	eint { nop
  ; 0 "" 2
-	.loc 1 47 0
+	.loc 1 105 0
 	MOV.W	#400, R12
 	MOV.W	#1, @R12
-	.loc 1 51 0
+	.loc 1 108 0
 	MOV.W	&var1, R12
-	CMP.W	#0, R12 { JEQ	.L3
-	.loc 1 52 0
-	MOV.W	#170, &var1
-.L3:
-	.loc 1 55 0
+	CMP.W	#0, R12 { JEQ	.L15
+	.loc 1 109 0
+	MOV.W	#1, &var1
+.L15:
+	.loc 1 112 0
 	MOV.W	&var2, R12
-	CMP.W	#0, R12 { JEQ	.L4
-	.loc 1 56 0
-	MOV.W	#187, &var2
-.L4:
-	.loc 1 59 0
+	CMP.W	#0, R12 { JEQ	.L16
+	.loc 1 113 0
+	MOV.W	#1, &var2
+.L16:
+	.loc 1 116 0
 	MOV.W	&var3, R12
-	CMP.W	#0, R12 { JEQ	.L5
-	.loc 1 60 0
+	CMP.W	#0, R12 { JEQ	.L17
+	.loc 1 117 0
 	MOV.W	#204, &var3
-.L5:
-	.loc 1 63 0
+.L17:
+	.loc 1 120 0
 	MOV.W	&var4, R12
-	CMP.W	#0, R12 { JEQ	.L6
-	.loc 1 64 0
+	CMP.W	#0, R12 { JEQ	.L18
+	.loc 1 121 0
 	MOV.W	#221, &var4
-.L6:
-	.loc 1 67 0
+.L18:
+	.loc 1 124 0
 	MOV.W	&var5, R12
-	CMP.W	#0, R12 { JEQ	.L7
-	.loc 1 68 0
+	CMP.W	#0, R12 { JEQ	.L19
+	.loc 1 125 0
 	MOV.W	#238, &var5
-.L7:
-	.loc 1 71 0
+.L19:
+	.loc 1 128 0
 	MOV.W	&var6, R12
-	CMP.W	#0, R12 { JEQ	.L8
-	.loc 1 72 0
+	CMP.W	#0, R12 { JEQ	.L20
+	.loc 1 129 0
 	MOV.W	#255, &var6
-.L8:
-	.loc 1 75 0
+.L20:
+	.loc 1 132 0
 	MOV.W	&var7, R12
-	CMP.W	#0, R12 { JEQ	.L9
-	.loc 1 76 0
+	CMP.W	#0, R12 { JEQ	.L21
+	.loc 1 133 0
 	MOV.W	#85, &var7
-.L9:
-	.loc 1 79 0
+.L21:
+	.loc 1 136 0
 	MOV.W	&var8, R12
-	CMP.W	#0, R12 { JEQ	.L10
-	.loc 1 80 0
-	MOV.W	#102, &var8
-.L10:
-.L11:
-	.loc 1 84 0
-	BR	#.L11
+	CMP.W	#0, R12 { JEQ	.L22
+	.loc 1 137 0
+	MOV.W	#170, &var8
+.L22:
+	.loc 1 141 0
+	MOV.W	&var1, R12
+	CMP.W	#0, R12 { JEQ	.L23
+	.loc 1 142 0
+	MOV.W	#1, &var1
+.L23:
+	.loc 1 145 0
+	MOV.W	&var2, R12
+	CMP.W	#0, R12 { JEQ	.L24
+	.loc 1 146 0
+	MOV.W	#1, &var2
+.L24:
+	.loc 1 149 0
+	MOV.W	&var3, R12
+	CMP.W	#0, R12 { JEQ	.L25
+	.loc 1 150 0
+	MOV.W	#204, &var3
+.L25:
+	.loc 1 153 0
+	MOV.W	&var4, R12
+	CMP.W	#0, R12 { JEQ	.L26
+	.loc 1 154 0
+	MOV.W	#221, &var4
+.L26:
+	.loc 1 157 0
+	MOV.W	&var5, R12
+	CMP.W	#0, R12 { JEQ	.L27
+	.loc 1 158 0
+	MOV.W	#238, &var5
+.L27:
+	.loc 1 161 0
+	MOV.W	&var6, R12
+	CMP.W	#0, R12 { JEQ	.L28
+	.loc 1 162 0
+	MOV.W	#255, &var6
+.L28:
+	.loc 1 165 0
+	MOV.W	&var7, R12
+	CMP.W	#0, R12 { JEQ	.L29
+	.loc 1 166 0
+	MOV.W	#85, &var7
+.L29:
+	.loc 1 169 0
+	MOV.W	&var8, R12
+	CMP.W	#0, R12 { JEQ	.L30
+	.loc 1 170 0
+	MOV.W	#170, &var8
+.L30:
+	.loc 1 173 0
+	MOV.W	&var9, R12
+	CMP.W	#0, R12 { JEQ	.L31
+	.loc 1 174 0
+	MOV.W	#170, &var9
+.L31:
+.L32:
+	.loc 1 177 0
+	BR	#.L32
 .LFE2:
 	.size	main, .-main
 	.section	.debug_frame,"",@progbits
@@ -244,6 +489,10 @@ main:
 	.uleb128 0x6
 	.byte	0x8c
 	.uleb128 0x3
+	.byte	0x4
+	.4byte	.LCFI2-.LCFI1
+	.byte	0xe
+	.uleb128 0x8
 	.balign 4
 .LEFDE0:
 .LSFDE2:
@@ -262,15 +511,15 @@ main:
 	.file 5 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/sys/reent.h"
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.4byte	0x94d
+	.4byte	0x96e
 	.2byte	0x3
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF130
+	.4byte	.LASF129
 	.byte	0xc
+	.4byte	.LASF130
 	.4byte	.LASF131
-	.4byte	.LASF132
 	.4byte	.Ltext0
 	.4byte	.Letext0
 	.4byte	.Ldebug_line0
@@ -1327,7 +1576,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF120
 	.byte	0x1
-	.byte	0xa
+	.byte	0x16
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1336,7 +1585,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF121
 	.byte	0x1
-	.byte	0xb
+	.byte	0x17
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1345,7 +1594,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF122
 	.byte	0x1
-	.byte	0xc
+	.byte	0x18
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1354,7 +1603,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF123
 	.byte	0x1
-	.byte	0xd
+	.byte	0x19
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1363,7 +1612,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF124
 	.byte	0x1
-	.byte	0xe
+	.byte	0x1a
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1372,7 +1621,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF125
 	.byte	0x1
-	.byte	0xf
+	.byte	0x1b
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1381,7 +1630,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF126
 	.byte	0x1
-	.byte	0x10
+	.byte	0x1c
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1390,17 +1639,26 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF127
 	.byte	0x1
-	.byte	0x11
+	.byte	0x1d
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
 	.byte	0x3
 	.4byte	var8
-	.uleb128 0x1b
-	.byte	0x1
+	.uleb128 0x1a
 	.4byte	.LASF128
 	.byte	0x1
-	.byte	0x2a
+	.byte	0x1e
+	.4byte	0x6f
+	.byte	0x1
+	.byte	0x5
+	.byte	0x3
+	.4byte	var9
+	.uleb128 0x1b
+	.byte	0x1
+	.4byte	.LASF132
+	.byte	0x1
+	.byte	0x64
 	.4byte	0x68
 	.4byte	.LFB2
 	.4byte	.LFE2
@@ -1408,14 +1666,23 @@ main:
 	.byte	0x9c
 	.uleb128 0x1c
 	.byte	0x1
-	.4byte	.LASF129
+	.4byte	.LASF133
 	.byte	0x1
-	.byte	0x18
+	.byte	0x24
 	.byte	0x1
 	.4byte	.LFB1
 	.4byte	.LFE1
 	.byte	0x1
 	.byte	0x9c
+	.uleb128 0x1d
+	.4byte	.LASF134
+	.byte	0x1
+	.byte	0x2a
+	.4byte	0x68
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -8
+	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",@progbits
 .Ldebug_abbrev0:
@@ -1756,7 +2023,7 @@ main:
 	.byte	0
 	.uleb128 0x1c
 	.uleb128 0x2e
-	.byte	0
+	.byte	0x1
 	.uleb128 0x3f
 	.uleb128 0xc
 	.uleb128 0x3
@@ -1772,6 +2039,21 @@ main:
 	.uleb128 0x12
 	.uleb128 0x1
 	.uleb128 0x40
+	.uleb128 0xa
+	.byte	0
+	.byte	0
+	.uleb128 0x1d
+	.uleb128 0x34
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
 	.uleb128 0xa
 	.byte	0
 	.byte	0
@@ -4906,8 +5188,35 @@ main:
 	.uleb128 0x8
 	.string	"QWARK_CTL (*(volatile unsigned int *) 0x0190)"
 	.byte	0x1
-	.uleb128 0x13
+	.uleb128 0x9
 	.string	"QWARK_VECTOR (5)"
+	.byte	0x1
+	.uleb128 0xa
+	.string	"QWARK_WAR_CTR (((QWARK_CTL)&(0x000E))>>1)"
+	.byte	0x1
+	.uleb128 0xb
+	.string	"QWARK_ENABLE() ((QWARK_CTL) | (0x0001))"
+	.byte	0x1
+	.uleb128 0xc
+	.string	"QWARK_ADDR1 (**((int**) (0x0192)))"
+	.byte	0x1
+	.uleb128 0xd
+	.string	"QWARK_ADDR2 (**((int**) (0x0194)))"
+	.byte	0x1
+	.uleb128 0xe
+	.string	"QWARK_ADDR3 (**((int**) (0x0196)))"
+	.byte	0x1
+	.uleb128 0xf
+	.string	"QWARK_ADDR4 (**((int**) (0x0198)))"
+	.byte	0x1
+	.uleb128 0x10
+	.string	"QWARK_ADDR5 (**((int**) (0x019A)))"
+	.byte	0x1
+	.uleb128 0x11
+	.string	"QWARK_ADDR6 (**((int**) (0x019C)))"
+	.byte	0x1
+	.uleb128 0x12
+	.string	"QWARK_ADDR7 (**((int**) (0x019E)))"
 	.byte	0x4
 	.byte	0
 	.section	.debug_line,"",@progbits
@@ -4919,7 +5228,7 @@ main:
 	.string	"_size"
 .LASF93:
 	.string	"_rand48"
-.LASF132:
+.LASF131:
 	.string	"/home/hiram/master/Qwark/altera_de0_nano/software/apps/leds"
 .LASF58:
 	.string	"_emergency"
@@ -4933,7 +5242,7 @@ main:
 	.string	"long long unsigned int"
 .LASF50:
 	.string	"_lbfsize"
-.LASF129:
+.LASF133:
 	.string	"INT_Qwark"
 .LASF111:
 	.string	"_mbrtowc_state"
@@ -4941,7 +5250,7 @@ main:
 	.string	"_wctomb_state"
 .LASF26:
 	.string	"__tm_sec"
-.LASF130:
+.LASF129:
 	.string	"GNU C99 7.3.1 -mcpu=msp430 -mhwmult=16bit -msmall -mcode-region=none -mdata-region=none -mdevices-csv-loc=/opt/ti/ccsv8/ccs_base/msp430/include_gcc/devices.csv -g3 -gdwarf-3 -gstrict-dwarf -O0 -std=c99 -fstrict-aliasing -fstack-usage"
 .LASF7:
 	.string	"long long int"
@@ -5027,6 +5336,8 @@ main:
 	.string	"var7"
 .LASF127:
 	.string	"var8"
+.LASF128:
+	.string	"var9"
 .LASF91:
 	.string	"_niobs"
 .LASF4:
@@ -5041,7 +5352,7 @@ main:
 	.string	"_result"
 .LASF13:
 	.string	"__wch"
-.LASF131:
+.LASF130:
 	.string	"main.c"
 .LASF12:
 	.string	"wint_t"
@@ -5105,6 +5416,8 @@ main:
 	.string	"_maxwds"
 .LASF52:
 	.string	"_reent"
+.LASF134:
+	.string	"war_index"
 .LASF94:
 	.string	"_seed"
 .LASF15:
@@ -5175,7 +5488,7 @@ main:
 	.string	"_mbtowc_state"
 .LASF101:
 	.string	"_p5s"
-.LASF128:
+.LASF132:
 	.string	"main"
 .LASF29:
 	.string	"__tm_mday"

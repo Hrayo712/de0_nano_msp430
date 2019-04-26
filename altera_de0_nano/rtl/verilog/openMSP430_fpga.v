@@ -373,7 +373,8 @@ omsp_qwark_periph qwark_periph_0 (
 	 .puc_rst(puc_rst),              	   					// Main system reset
 	 .eu_addr({{2{1'b0}},dmem_addr[`DMEM_MSB:0],1'b0}),   // Execution Unit Memory Address Bus    (Logical Address)
 	 .eu_en(dmem_cen),												// Execution Unit Memory Address Bus Enable  (Active High)
-	 .eu_mb_wr(dmem_wen)  				   						// Execution Unit Memory Write
+	 .eu_mb_wr(dmem_wen),  				   						// Execution Unit Memory Write
+	 .irq_qwark_acc(irq_acc[4])
 );
 
 //=============================================================================

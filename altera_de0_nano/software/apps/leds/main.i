@@ -2910,9 +2910,21 @@ extern long double strtold (const char *restrict, char **restrict);
 # 7 "main.c" 2
 
 #define QWARK_CTL (*(volatile unsigned int *) 0x0190)
+#define QWARK_VECTOR (5)
+#define QWARK_WAR_CTR (((QWARK_CTL)&(0x000E))>>1)
+#define QWARK_ENABLE() ((QWARK_CTL) | (0x0001))
+#define QWARK_ADDR1 (**((int**) (0x0192)))
+#define QWARK_ADDR2 (**((int**) (0x0194)))
+#define QWARK_ADDR3 (**((int**) (0x0196)))
+#define QWARK_ADDR4 (**((int**) (0x0198)))
+#define QWARK_ADDR5 (**((int**) (0x019A)))
+#define QWARK_ADDR6 (**((int**) (0x019C)))
+#define QWARK_ADDR7 (**((int**) (0x019E)))
 
 
-# 10 "main.c"
+
+
+# 22 "main.c"
 volatile int var1=1;
 volatile int var2=7;
 volatile int var3=7;
@@ -2921,8 +2933,8 @@ volatile int var5=1;
 volatile int var6=1;
 volatile int var7=1;
 volatile int var8=1;
+volatile int var9=1;
 
-#define QWARK_VECTOR (5)
 
 
 
@@ -2930,36 +2942,81 @@ volatile int var8=1;
 void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 
- (*(volatile unsigned int *) 0x0190) = 0x00;
+
+
  (*(volatile unsigned char *) 0x0090) = 0x0F;
+ int war_index = ((((*(volatile unsigned int *) 0x0190))&(0x000E))>>1);
 
+ switch(war_index){
 
- (*(volatile unsigned int *) 0x4002) = (*(volatile unsigned int *) 0x6000);
- (*(volatile unsigned int *) 0x4004) = (*(volatile unsigned int *) 0x6002);
- (*(volatile unsigned int *) 0x4006) = (*(volatile unsigned int *) 0x6004);
- (*(volatile unsigned int *) 0x4008) = (*(volatile unsigned int *) 0x6006);
- (*(volatile unsigned int *) 0x400A) = (*(volatile unsigned int *) 0x6008);
- (*(volatile unsigned int *) 0x400C) = (*(volatile unsigned int *) 0x600A);
- (*(volatile unsigned int *) 0x400E) = (*(volatile unsigned int *) 0x600C);
- (*(volatile unsigned int *) 0x4010) = (*(volatile unsigned int *) 0x600E);
+ case 0 :
+    break;
+
+ case 1 : (**((int**) (0x0192))) = (*(volatile unsigned int *) 0x6000);
+
+    break;
+
+ case 2 : (**((int**) (0x0192))) = (*(volatile unsigned int *) 0x6000);
+    (**((int**) (0x0194))) = (*(volatile unsigned int *) 0x6002);
+    break;
+
+ case 3 : (**((int**) (0x0192))) = (*(volatile unsigned int *) 0x6000);
+    (**((int**) (0x0194))) = (*(volatile unsigned int *) 0x6002);
+    (**((int**) (0x0196))) = (*(volatile unsigned int *) 0x6004);
+    break;
+
+ case 4 : (**((int**) (0x0192))) = (*(volatile unsigned int *) 0x6000);
+      (**((int**) (0x0194))) = (*(volatile unsigned int *) 0x6002);
+      (**((int**) (0x0196))) = (*(volatile unsigned int *) 0x6004);
+      (**((int**) (0x0198))) = (*(volatile unsigned int *) 0x6006);
+      break;
+ case 5 : (**((int**) (0x0192))) = (*(volatile unsigned int *) 0x6000);
+      (**((int**) (0x0194))) = (*(volatile unsigned int *) 0x6002);
+      (**((int**) (0x0196))) = (*(volatile unsigned int *) 0x6004);
+      (**((int**) (0x0198))) = (*(volatile unsigned int *) 0x6006);
+      (**((int**) (0x019A))) = (*(volatile unsigned int *) 0x6008);
+      break;
+
+ case 6 : (**((int**) (0x0192))) = (*(volatile unsigned int *) 0x6000);
+      (**((int**) (0x0194))) = (*(volatile unsigned int *) 0x6002);
+      (**((int**) (0x0196))) = (*(volatile unsigned int *) 0x6004);
+      (**((int**) (0x0198))) = (*(volatile unsigned int *) 0x6006);
+      (**((int**) (0x019A))) = (*(volatile unsigned int *) 0x6008);
+      (**((int**) (0x019C))) = (*(volatile unsigned int *) 0x600A);
+      break;
+
+ case 7 : (**((int**) (0x0192))) = (*(volatile unsigned int *) 0x6000);
+      (**((int**) (0x0194))) = (*(volatile unsigned int *) 0x6002);
+      (**((int**) (0x0196))) = (*(volatile unsigned int *) 0x6004);
+      (**((int**) (0x0198))) = (*(volatile unsigned int *) 0x6006);
+      (**((int**) (0x019A))) = (*(volatile unsigned int *) 0x6008);
+      (**((int**) (0x019C))) = (*(volatile unsigned int *) 0x600A);
+      (**((int**) (0x019E))) = (*(volatile unsigned int *) 0x600C);
+      break;
+
+ default: break;
+ }
+
  (*(volatile unsigned char *) 0x0090) = 0xF0;
+
+
+ (*(volatile unsigned int *) 0x0190) = 0x01;
 }
 
 int main()
 {
-
+     (*(volatile unsigned int *) 0x0120) = (0x5A00) | (0x0080);
 
    __asm__ __volatile__ ("eint { nop");
  (*(volatile unsigned int *) 0x0190) = 0x01;
 
 
-
  if(var1){
-   var1 = 0xAA;
+    var1 = 1;
  }
 
  if(var2){
-   var2 = 0xBB;
+    var2 = 1;
  }
 
  if(var3){
@@ -2983,9 +3040,45 @@ int main()
  }
 
  if(var8){
-   var8 = 0x66;
+   var8 = 0xAA;
  }
 
+
+ if(var1){
+    var1 = 1;
+ }
+
+ if(var2){
+    var2 = 1;
+ }
+
+ if(var3){
+   var3 = 0xCC;
+ }
+
+ if(var4){
+   var4 = 0xDD;
+ }
+
+ if(var5){
+   var5 = 0xEE;
+ }
+
+ if(var6){
+   var6 = 0xFF;
+ }
+
+ if(var7){
+   var7 = 0x55;
+ }
+
+ if(var8){
+   var8 = 0xAA;
+ }
+
+ if(var9){
+   var9 = 0xAA;
+ }
 
  while(1);
 

@@ -35,6 +35,7 @@ module cam_bram #(
 (
     input  wire                     clk,
     input  wire                     rst,
+	 input  wire							rst_clr,
     input  wire [ADDR_WIDTH-1:0]    write_addr,
     input  wire [DATA_WIDTH-1:0]    write_data,
     input  wire                     write_delete,
@@ -259,7 +260,7 @@ always @* begin
 end
 
 always @(posedge clk) begin
-    if (rst) begin
+    if (rst || rst_clr) begin
         state_reg <= STATE_INIT;
         count_reg <= {SLICE_WIDTH{1'b1}};
         write_busy_reg <= 1'b1;
