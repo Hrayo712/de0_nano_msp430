@@ -72,7 +72,7 @@ input               puc_rst;        // PUC Reset    (synchronized to EU and FE)
 input        [15:0] eu_addr;        // Execution Unit Memory Address Bus 			(Logical Address)
 input       		  eu_en;          // Execution Unit Memory Address Bus Enable  (Active High)
 input        [1:0]  eu_mb_wr;       // Execution Unit Memory Write					(Active High)
-input						buff_rst;
+input					  buff_rst;
 
 // OUTPUTs
 //=========
@@ -259,10 +259,10 @@ end
 
 always @(posedge mclk) begin
 	if(puc_rst) begin
-	rd_buff_wr_en <= 1'b0;
-	wr_buff_wr_en <= 1'b0;
-	read_address <=  1'b0;
-	tlb_buff_wr_en <=  1'b0;
+	rd_buff_wr_en   <= 1'b0;
+	wr_buff_wr_en   <= 1'b0;
+	read_address    <= 1'b0;
+	tlb_buff_wr_en  <= 1'b0;
 	end else if (en) begin
 	// The memory bus is issuing a read access, and the CAM didnt recognize the address in the buffer..Enable the Write!
 	rd_buff_wr_en <= eu_en && ~eu_mb_wr[1] && ~eu_mb_wr[0] && mem_track_en && (eu_addr!=wr_buff_busy_writing) && ~wr_buf_out_match && ~rd_buf_out_match && ~tlb_match; 
@@ -304,7 +304,10 @@ always @(posedge mclk) begin
 	end
 end
 
-//Read buffer counter
+//=============================================================================
+// Buffer Counters
+//=============================================================================
+
 always @(posedge mclk) begin
 	if(puc_rst) begin
 			rd_buff_ctr <=  4'b000;
@@ -315,7 +318,6 @@ always @(posedge mclk) begin
 	end
 end
 
-//Write buffer counter
 always @(posedge mclk) begin
 	if(puc_rst) begin
 			wr_buff_ctr <=  4'b000;
@@ -325,8 +327,6 @@ always @(posedge mclk) begin
 		   wr_buff_ctr <= 4'b000;
 	end
 end
-
-//TLB buffer counter
 
 always @(posedge mclk) begin
 	if(puc_rst) begin
@@ -339,14 +339,14 @@ always @(posedge mclk) begin
 end
 
 
-//Synchronizer for the Read Buffer
+//Synchronizer for the Buffers
 reg r1;
 reg r3;
 reg r5;
 always @(posedge mclk) begin
-        r1 <= rd_buff_wr_en;    // first stage  of 2-stage synchronizer
-		  r3 <= wr_buff_wr_en;    // first stage of 2-stage synchronizer
-		  r5 <= tlb_buff_wr_en;    // first stage of 2-stage synchronizer
+        r1 <= rd_buff_wr_en;    
+		  r3 <= wr_buff_wr_en;    
+		  r5 <= tlb_buff_wr_en;   
 end
 
 

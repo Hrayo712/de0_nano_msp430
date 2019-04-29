@@ -395,63 +395,9 @@ main:
 	.loc 1 137 0
 	MOV.W	#170, &var8
 .L22:
-	.loc 1 141 0
-	MOV.W	&var1, R12
-	CMP.W	#0, R12 { JEQ	.L23
-	.loc 1 142 0
-	MOV.W	#1, &var1
 .L23:
-	.loc 1 145 0
-	MOV.W	&var2, R12
-	CMP.W	#0, R12 { JEQ	.L24
-	.loc 1 146 0
-	MOV.W	#1, &var2
-.L24:
-	.loc 1 149 0
-	MOV.W	&var3, R12
-	CMP.W	#0, R12 { JEQ	.L25
-	.loc 1 150 0
-	MOV.W	#204, &var3
-.L25:
-	.loc 1 153 0
-	MOV.W	&var4, R12
-	CMP.W	#0, R12 { JEQ	.L26
-	.loc 1 154 0
-	MOV.W	#221, &var4
-.L26:
-	.loc 1 157 0
-	MOV.W	&var5, R12
-	CMP.W	#0, R12 { JEQ	.L27
-	.loc 1 158 0
-	MOV.W	#238, &var5
-.L27:
-	.loc 1 161 0
-	MOV.W	&var6, R12
-	CMP.W	#0, R12 { JEQ	.L28
-	.loc 1 162 0
-	MOV.W	#255, &var6
-.L28:
-	.loc 1 165 0
-	MOV.W	&var7, R12
-	CMP.W	#0, R12 { JEQ	.L29
-	.loc 1 166 0
-	MOV.W	#85, &var7
-.L29:
-	.loc 1 169 0
-	MOV.W	&var8, R12
-	CMP.W	#0, R12 { JEQ	.L30
-	.loc 1 170 0
-	MOV.W	#170, &var8
-.L30:
-	.loc 1 173 0
-	MOV.W	&var9, R12
-	CMP.W	#0, R12 { JEQ	.L31
-	.loc 1 174 0
-	MOV.W	#170, &var9
-.L31:
-.L32:
-	.loc 1 177 0
-	BR	#.L32
+	.loc 1 143 0
+	BR	#.L23
 .LFE2:
 	.size	main, .-main
 	.section	.debug_frame,"",@progbits

@@ -170,6 +170,7 @@ pmem_wen[1] <= omsp_mem_backbone:mem_backbone_0.pmem_wen
 puc_rst <= puc_rst.DB_MAX_OUTPUT_PORT_TYPE
 smclk <= smclk.DB_MAX_OUTPUT_PORT_TYPE
 smclk_en <= smclk_en.DB_MAX_OUTPUT_PORT_TYPE
+dbg_mem_en <= dbg_mem_en.DB_MAX_OUTPUT_PORT_TYPE
 cpu_en => cpu_en.IN1
 dbg_en => dbg_en.IN1
 dbg_i2c_addr[0] => dbg_i2c_addr[0].IN1
@@ -6697,6 +6698,8 @@ eu_en => _.IN1
 eu_mb_wr[0] => _.IN1
 eu_mb_wr[1] => _.IN1
 irq_qwark_acc => irq_qwark_acc.IN1
+dbg_acc => comb.OUTPUTSELECT
+dbg_acc => addr_out.IN1
 
 
 |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0

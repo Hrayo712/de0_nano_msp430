@@ -50,7 +50,7 @@ module  omsp_qwark_periph (
 // OUTPUTs
     per_dout,                       // Peripheral data output
 	 addr_out,								// Memory Access address translated
-	 qwark_irq,
+	 qwark_irq,								// Qwark Interrupt request signal
 // INPUTs
     mclk,                           // Main system clock
     per_addr,                       // Peripheral address
@@ -61,30 +61,31 @@ module  omsp_qwark_periph (
 	 eu_addr,          		   		// Execution Unit Memory Address Bus 			(Logical Address)
 	 eu_en,									// Execution Unit Memory Address Bus Enable  (Active High)
 	 eu_mb_wr,								// Execution Unit Memory Write
-	 irq_qwark_acc
-	 
+	 irq_qwark_acc,						// Interrupt request accepted signal 			(from the Front-End)
+	 dbg_acc									// Debug Access signal 								(from omsp debugger)
 );
 
 // OUTPUTs
 //=========
 output        [15:0] per_dout;      // Peripheral data output
 output [`DMEM_MSB:0] addr_out;      // Address Out
-output					qwark_irq;
+output					qwark_irq;		// Qwark Interrupt request signal
 
 // INPUTs
 //=========
-input               mclk;           // Main system clock
+input                   mclk;       // Main system clock
 input        [13:0] per_addr;       // Peripheral address
-input        [15:0] per_din;        // Peripheral data input
-input               per_en;         // Peripheral enable (high active)
-input         [1:0] per_we;         // Peripheral write enable (high active)
-input               puc_rst;        // Main system reset
+input        [15:0]  per_din;       // Peripheral data input
+input                 per_en;       // Peripheral enable (high active)
+input         [1:0]   per_we;       // Peripheral write enable (high active)
+input                puc_rst;       // Main system reset
 
-input        [15:0] eu_addr;      // Execution Unit Memory Address Bus 			(Logical Address)
-
-input       		  eu_en;          // Execution Unit Memory Address Bus Enable  (Active High)
+input        [15:0]  eu_addr;       // Execution Unit Memory Address Bus 			(Logical Address)
+input       		     eu_en;       // Execution Unit Memory Address Bus Enable  (Active High)
 input        [1:0]  eu_mb_wr;       // Execution Unit Memory Write					(Active High)
-input					  irq_qwark_acc;
+input			   irq_qwark_acc;			// Interrupt request accepted signal         (from the Front-End)
+input 					dbg_acc;			// Debug Access signal 								(from omsp debugger)
+
 //=============================================================================
 // 1)  PARAMETER DECLARATION
 //=============================================================================
@@ -151,6 +152,7 @@ wire [DEC_SZ-1:0] reg_rd    = reg_dec & {DEC_SZ{reg_read}};
 //============================================================================
 // 3) REGISTERS
 //============================================================================
+
 wire qwark_reg_wr;
 wire [3:0]qwark_dout;
 wire irq_flag;
@@ -290,22 +292,21 @@ wire [15:0] per_dout   =  cntrl1_rd  |
 wire [15:0] tl_addr;
 wire  [15:0] dmem_addr = eu_addr[15:0] + (`DMEM_BASE);
 
+assign addr_out = cntrl1[0] && ~dbg_acc ? tl_addr_format : eu_addr[13:1];
 
-assign addr_out = cntrl1[0] ? tl_addr_format : eu_addr[13:1];
-
-
+wire  qwark_en = dbg_acc ? 1'b0 : cntrl1[0];
 wire [`DMEM_MSB:0] tl_addr_format = ({1'b0,tl_addr[15:1]})-(`DMEM_BASE);
 
 omsp_qwark qwark_0 (
 
 // INPUTs
-    .mclk				 (mclk),				// Master Clock (synchronized to EU and FE)
-	 .en					 (cntrl1[0]),		// Enable Idempotency Tracking 
-	 .puc_rst			 (puc_rst),		   // PUC Reset    (synchronized to EU and FE)
-	 .eu_addr          (dmem_addr),     // Execution Unit Memory Address Bus 			(Logical Address)
-	 .eu_en				 (~eu_en),			// Execution Unit Memory Address Bus Enable  (Active High)
-	 .eu_mb_wr			 (~eu_mb_wr),		// Execution Unit Memory Write	
-	 .tl_addr			 (tl_addr),			// Translated address output
+    .mclk				 (mclk),								// Master Clock (synchronized to EU and FE)
+	 .en					 (qwark_en),						// Enable Idempotency Tracking 
+	 .puc_rst			 (puc_rst),						   // PUC Reset    (synchronized to EU and FE)
+	 .eu_addr          (dmem_addr),     				// Execution Unit Memory Address Bus 			(Logical Address)
+	 .eu_en				 (~eu_en),							// Execution Unit Memory Address Bus Enable  (Active High)
+	 .eu_mb_wr			 (~eu_mb_wr),						// Execution Unit Memory Write	
+	 .tl_addr			 (tl_addr),							// Translated address output
 	 .per_dout		    (qwark_dout),					
 	 .per_wr		 	    (qwark_reg_wr),
 	 .irq_out			 (irq_flag),

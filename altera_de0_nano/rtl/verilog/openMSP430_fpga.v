@@ -129,8 +129,8 @@ wire   pll_out;
 wire   pll_lock;
 
 
-assign dco_clk    = FPGA_CLK1_50;
-//assign dco_clk    = pll_lock ? pll_out : 1'b0;
+//assign dco_clk    = FPGA_CLK1_50;
+assign dco_clk    = pll_lock ? pll_out : 1'b0;
 
 
 wire   reset_in_n = KEY[0];
@@ -155,7 +155,7 @@ assign lfxt_clk = lfxt_clk_cnt[8];
 //=============================================================================
 // 3)  OPENMSP430
 //=============================================================================
-
+wire dbg_mem_en;
 openMSP430 openmsp430_0 (
 
 // OUTPUTs
@@ -188,7 +188,7 @@ openMSP430 openmsp430_0 (
     .puc_rst           (puc_rst),             // Main system reset
     .smclk             (),                    // ASIC ONLY: SMCLK
     .smclk_en          (smclk_en),            // FPGA ONLY: SMCLK enable
-
+	 .dbg_mem_en		  (dbg_mem_en),
 // INPUTs
     .cpu_en            (1'b1),                // Enable CPU code execution (asynchronous and non-glitchy)
     .dbg_en            (1'b1),                // Debug interface enable (asynchronous and non-glitchy)
@@ -344,11 +344,11 @@ ram_16x8k dmem_0 (
 // 5) Clock Division  
 //=============================================================================
 						 
-//	pll pll_0(
-//	.inclk0 (FPGA_CLK1_50),
-//	.c0     (pll_out),
-//	.locked (pll_lock)
-//	);
+	pll pll_0(
+	.inclk0 (FPGA_CLK1_50),
+	.c0     (pll_out),
+	.locked (pll_lock)
+	);
 
 	//=============================================================================
 // 11)  QWARK
@@ -356,6 +356,8 @@ ram_16x8k dmem_0 (
 
 wire [15:0]per_dout_qwark;
 wire qwark_irq;
+
+//Note: To simulate dbg_acc has to be set to 0 (1'b0), since the signal is indeterminate (XXX) under simulation.
 
 omsp_qwark_periph qwark_periph_0 (
 
@@ -368,7 +370,8 @@ omsp_qwark_periph qwark_periph_0 (
     .per_addr(per_addr),               						// Peripheral address
     .per_din(per_din),                 						// Peripheral data input
     .per_en(per_en),                   						// Peripheral enable (high active)
-    .per_we(per_we),                   						// Peripheral write enable (high active)
+    .dbg_acc(1'b0/*dbg_mem_en*/),
+	 .per_we(per_we),                   						// Peripheral write enable (high active)
   //Functionality related signals  
 	 .puc_rst(puc_rst),              	   					// Main system reset
 	 .eu_addr({{2{1'b0}},dmem_addr[`DMEM_MSB:0],1'b0}),   // Execution Unit Memory Address Bus    (Logical Address)

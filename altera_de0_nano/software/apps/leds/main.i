@@ -3044,41 +3044,7 @@ int main()
  }
 
 
- if(var1){
-    var1 = 1;
- }
 
- if(var2){
-    var2 = 1;
- }
-
- if(var3){
-   var3 = 0xCC;
- }
-
- if(var4){
-   var4 = 0xDD;
- }
-
- if(var5){
-   var5 = 0xEE;
- }
-
- if(var6){
-   var6 = 0xFF;
- }
-
- if(var7){
-   var7 = 0x55;
- }
-
- if(var8){
-   var8 = 0xAA;
- }
-
- if(var9){
-   var9 = 0xAA;
- }
 
  while(1);
 
