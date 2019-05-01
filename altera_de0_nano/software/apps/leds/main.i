@@ -2909,6 +2909,9 @@ extern long double strtold (const char *restrict, char **restrict);
 
 # 7 "main.c" 2
 
+
+
+
 #define QWARK_CTL (*(volatile unsigned int *) 0x0190)
 #define QWARK_VECTOR (5)
 #define QWARK_WAR_CTR (((QWARK_CTL)&(0x000E))>>1)
@@ -2922,10 +2925,8 @@ extern long double strtold (const char *restrict, char **restrict);
 #define QWARK_ADDR7 (**((int**) (0x019E)))
 
 
-
-
-# 22 "main.c"
-volatile int var1=1;
+# 23 "main.c"
+volatile int var1=2;
 volatile int var2=7;
 volatile int var3=7;
 volatile int var4=1;
@@ -2934,117 +2935,165 @@ volatile int var6=1;
 volatile int var7=1;
 volatile int var8=1;
 volatile int var9=1;
-
-
-
-
-
+# 94 "main.c"
 void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 
-
-
  (*(volatile unsigned char *) 0x0090) = 0x0F;
- int war_index = ((((*(volatile unsigned int *) 0x0190))&(0x000E))>>1);
 
- switch(war_index){
 
- case 0 :
-    break;
 
- case 1 : (**((int**) (0x0192))) = (*(volatile unsigned int *) 0x6000);
 
-    break;
+ __asm__ __volatile__ ("mov r1,&0x6020");
+ __asm__ __volatile__ ("add #0x06,&0x6020");
+ __asm__ __volatile__ ("mov 4(r1),&0x6022");
+ __asm__ __volatile__ ("mov 2(r1),&0x6024");
+ __asm__ __volatile__ ("mov r13 ,&0x6026");
+ __asm__ __volatile__ ("mov 0(r1),&0x6028");
+ __asm__ __volatile__ ("mov r4,&0x602A");
+ __asm__ __volatile__ ("mov r5,&0x602C");
+ __asm__ __volatile__ ("mov r6,&0x602E");
+ __asm__ __volatile__ ("mov r7,&0x6030");
+ __asm__ __volatile__ ("mov r8,&0x6032");
+ __asm__ __volatile__ ("mov r9,&0x6034");
+ __asm__ __volatile__ ("mov r10,&0x6036");
+ __asm__ __volatile__ ("mov r11,&0x6038");
 
- case 2 : (**((int**) (0x0192))) = (*(volatile unsigned int *) 0x6000);
-    (**((int**) (0x0194))) = (*(volatile unsigned int *) 0x6002);
-    break;
+ __asm__ __volatile__ ("mov r14,&0x603E");
+ __asm__ __volatile__ ("mov r15,&0x6040");
 
- case 3 : (**((int**) (0x0192))) = (*(volatile unsigned int *) 0x6000);
-    (**((int**) (0x0194))) = (*(volatile unsigned int *) 0x6002);
-    (**((int**) (0x0196))) = (*(volatile unsigned int *) 0x6004);
-    break;
 
- case 4 : (**((int**) (0x0192))) = (*(volatile unsigned int *) 0x6000);
-      (**((int**) (0x0194))) = (*(volatile unsigned int *) 0x6002);
-      (**((int**) (0x0196))) = (*(volatile unsigned int *) 0x6004);
-      (**((int**) (0x0198))) = (*(volatile unsigned int *) 0x6006);
-      break;
- case 5 : (**((int**) (0x0192))) = (*(volatile unsigned int *) 0x6000);
-      (**((int**) (0x0194))) = (*(volatile unsigned int *) 0x6002);
-      (**((int**) (0x0196))) = (*(volatile unsigned int *) 0x6004);
-      (**((int**) (0x0198))) = (*(volatile unsigned int *) 0x6006);
-      (**((int**) (0x019A))) = (*(volatile unsigned int *) 0x6008);
-      break;
 
- case 6 : (**((int**) (0x0192))) = (*(volatile unsigned int *) 0x6000);
-      (**((int**) (0x0194))) = (*(volatile unsigned int *) 0x6002);
-      (**((int**) (0x0196))) = (*(volatile unsigned int *) 0x6004);
-      (**((int**) (0x0198))) = (*(volatile unsigned int *) 0x6006);
-      (**((int**) (0x019A))) = (*(volatile unsigned int *) 0x6008);
-      (**((int**) (0x019C))) = (*(volatile unsigned int *) 0x600A);
-      break;
+ __asm__ __volatile__ ("mov &0x0192, &0x6010");
+ __asm__ __volatile__ ("mov &0x0194, &0x6012");
+ __asm__ __volatile__ ("mov &0x0196, &0x6014");
+     __asm__ __volatile__ ("mov &0x0198, &0x6016");
+ __asm__ __volatile__ ("mov &0x019A, &0x6018");
+ __asm__ __volatile__ ("mov &0x019C, &0x601A");
+ __asm__ __volatile__ ("mov &0x019E, &0x601C");
 
- case 7 : (**((int**) (0x0192))) = (*(volatile unsigned int *) 0x6000);
-      (**((int**) (0x0194))) = (*(volatile unsigned int *) 0x6002);
-      (**((int**) (0x0196))) = (*(volatile unsigned int *) 0x6004);
-      (**((int**) (0x0198))) = (*(volatile unsigned int *) 0x6006);
-      (**((int**) (0x019A))) = (*(volatile unsigned int *) 0x6008);
-      (**((int**) (0x019C))) = (*(volatile unsigned int *) 0x600A);
-      (**((int**) (0x019E))) = (*(volatile unsigned int *) 0x600C);
-      break;
+ __asm__ __volatile__ ("mov &0x0190, &0x601E");
+ __asm__ __volatile__ ("and #0x000E, &0x601E");
+ __asm__ __volatile__ ("RRA &0x601E");
+# 141 "main.c"
+ __asm__ __volatile__ ("mov #0x01, &0x600E");
 
- default: break;
- }
 
+ __asm__ __volatile__ ("mov #0x6010,  r12 ");
+ __asm__ __volatile__ ("mov @r12,     r13 ");
+ __asm__ __volatile__ ("mov &0x6000, @r13 ");
+
+ __asm__ __volatile__ ("mov #0x6012,  r12 ");
+ __asm__ __volatile__ ("mov @r12,     r13 ");
+ __asm__ __volatile__ ("mov &0x6002, @r13 ");
+
+ __asm__ __volatile__ ("mov #0x6014,  r12 ");
+ __asm__ __volatile__ ("mov @r12,     r13 ");
+ __asm__ __volatile__ ("mov &0x6004, @r13 ");
+
+ __asm__ __volatile__ ("mov #0x6016,  r12 ");
+ __asm__ __volatile__ ("mov @r12,     r13 ");
+ __asm__ __volatile__ ("mov &0x6006, @r13 ");
+
+ __asm__ __volatile__ ("mov #0x6018,  r12 ");
+ __asm__ __volatile__ ("mov @r12,     r13 ");
+ __asm__ __volatile__ ("mov &0x6008, @r13 ");
+
+ __asm__ __volatile__ ("mov #0x601A,  r12 ");
+ __asm__ __volatile__ ("mov @r12,     r13 ");
+ __asm__ __volatile__ ("mov &0x600A, @r13 ");
+
+ __asm__ __volatile__ ("mov #0x601C,  r12 ");
+ __asm__ __volatile__ ("mov @r12,     r13 ");
+ __asm__ __volatile__ ("mov &0x600C, @r13 ");
+
+
+
+ __asm__ __volatile__ ("mov #0x0001, &0x0190");
  (*(volatile unsigned char *) 0x0090) = 0xF0;
 
-
- (*(volatile unsigned int *) 0x0190) = 0x01;
 }
 
 int main()
 {
-     (*(volatile unsigned int *) 0x0120) = (0x5A00) | (0x0080);
+
 
    __asm__ __volatile__ ("eint { nop");
+
+
  (*(volatile unsigned int *) 0x0190) = 0x01;
 
 
  if(var1){
-    var1 = 1;
+   var1 = 0x01;
  }
 
  if(var2){
-    var2 = 1;
+   var2 = 0x02;
  }
 
  if(var3){
-   var3 = 0xCC;
+   var3 = 0x03;
  }
 
  if(var4){
-   var4 = 0xDD;
+   var4 = 0x04;
  }
 
  if(var5){
-   var5 = 0xEE;
+   var5 = 0x05;
  }
 
  if(var6){
-   var6 = 0xFF;
+   var6 = 0x06;
  }
 
  if(var7){
-   var7 = 0x55;
+   var7 = 0x07;
  }
 
  if(var8){
-   var8 = 0xAA;
+     var8 = 0x08;
  }
 
 
 
+
+ if(var9){
+   var9 = 0xAA;
+ }
+
+ if(var1){
+    var1 = 0x01;
+  }
+
+  if(var2){
+    var2 = 0x02;
+  }
+
+  if(var3){
+    var3 = 0x03;
+  }
+
+  if(var4){
+    var4 = 0x04;
+  }
+
+  if(var5){
+    var5 = 0x05;
+  }
+
+  if(var6){
+    var6 = 0x06;
+  }
+
+  if(var7){
+    var7 = 0x07;
+  }
+
+  if(var8){
+      var8 = 0x08;
+  }
 
  while(1);
 

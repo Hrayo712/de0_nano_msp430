@@ -27,7 +27,7 @@ SYMBOL TABLE:
 00008008 l     O .rodata	00000000 __CTOR_LIST__
 0000800c l     O .rodata	00000000 __DTOR_LIST__
 00008000 l     O .rodata	00000000 __EH_FRAME_BEGIN__
-00008558 l     O .text	00000000 __TMC_LIST__
+0000845c l     O .text	00000000 __TMC_LIST__
 00008080 l     F .text	00000000 deregister_tm_clones
 0000809a l     F .text	00000000 register_tm_clones
 000080c8 l     F .text	00000000 __do_global_dtors_aux
@@ -40,8 +40,8 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
 0000800a l     O .rodata	00000000 __CTOR_END__
 00008000 l     O .rodata	00000000 __FRAME_END__
-00008522 l     F .text	00000000 __do_global_ctors_aux
-0000853c l     F .text	00000000 call___do_global_ctors_aux
+00008426 l     F .text	00000000 __do_global_ctors_aux
+00008440 l     F .text	00000000 call___do_global_ctors_aux
 00000000 l    df *ABS*	00000000 crt_bss.o
 00000000 l    df *ABS*	00000000 crt_movedata.o
 00000000 l    df *ABS*	00000000 crt_main.o
@@ -50,96 +50,96 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 lib_a-memset.o
 00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crtn.o
 0000400a g     O .data	00000002 var5
-00008438 g       .text	00000000 .hidden __mspabi_srli_9
-00008488 g       .text	00000000 .hidden __mspabi_srll_10
-00008434 g       .text	00000000 .hidden __mspabi_srli_10
-00008420 g       .text	00000000 .hidden __mspabi_srli_15
-000084d4 g     F .text	00000038 memmove
-0000844c g       .text	00000000 .hidden __mspabi_srli_4
-00008440 g       .text	00000000 .hidden __mspabi_srli_7
-0000849a g       .text	00000000 .hidden __mspabi_srll_7
-000084b2 g       .text	00000000 .hidden __mspabi_srll_3
-00008412 g       .text	00000000 .hidden __mspabi_func_epilog_6
-00008558 g     O .text	00000000 .hidden __TMC_END__
-00008476 g       .text	00000000 .hidden __mspabi_srll_13
+0000833c g       .text	00000000 .hidden __mspabi_srli_9
+0000838c g       .text	00000000 .hidden __mspabi_srll_10
+00008338 g       .text	00000000 .hidden __mspabi_srli_10
+00008324 g       .text	00000000 .hidden __mspabi_srli_15
+000083d8 g     F .text	00000038 memmove
+00008350 g       .text	00000000 .hidden __mspabi_srli_4
+00008344 g       .text	00000000 .hidden __mspabi_srli_7
+0000839e g       .text	00000000 .hidden __mspabi_srll_7
+000083b6 g       .text	00000000 .hidden __mspabi_srll_3
+00008316 g       .text	00000000 .hidden __mspabi_func_epilog_6
+0000845c g     O .text	00000000 .hidden __TMC_END__
+0000837a g       .text	00000000 .hidden __mspabi_srll_13
 0000800e g     O .rodata	00000000 .hidden __DTOR_END__
 00008004 g       .rodata	00000000 __fini_array_end
-0000842c g       .text	00000000 .hidden __mspabi_srli_12
+00008330 g       .text	00000000 .hidden __mspabi_srli_12
 00008010 g     F .text	00000004 __crt0_start
 00004000 g     O .data	00000000 .hidden __dso_handle
 00008014 g     F .text	0000000e __crt0_init_bss
 00000012 g       *ABS*	00000000 __bsssize
 00008036 g     F .text	0000000a __crt0_call_init_then_main
 00004002 g     O .data	00000002 var1
-0000841c g       .text	00000000 .hidden __mspabi_func_epilog_1
-00008418 g       .text	00000000 .hidden __mspabi_func_epilog_3
-000084a6 g       .text	00000000 .hidden __mspabi_srll_5
-00008464 g       .text	00000000 .hidden __mspabi_srli
+00008320 g       .text	00000000 .hidden __mspabi_func_epilog_1
+0000831c g       .text	00000000 .hidden __mspabi_func_epilog_3
+000083aa g       .text	00000000 .hidden __mspabi_srll_5
+00008368 g       .text	00000000 .hidden __mspabi_srli
 00004008 g     O .data	00000002 var4
-00008482 g       .text	00000000 .hidden __mspabi_srll_11
+00008386 g       .text	00000000 .hidden __mspabi_srll_11
 00004010 g     O .data	00000002 var8
-00008448 g       .text	00000000 .hidden __mspabi_srli_5
+0000834c g       .text	00000000 .hidden __mspabi_srli_5
 00000000  w      *UND*	00000000 __deregister_frame_info
 00004026 g       .noinit	00000000 end
 00000000  w      *UND*	00000000 _ITM_registerTMCloneTable
-000084a0 g       .text	00000000 .hidden __mspabi_srll_6
+000083a4 g       .text	00000000 .hidden __mspabi_srll_6
 00004012 g     O .data	00000002 var9
 00008010 g       .text	00000000 _start
 0000805c g     F .text	00000000 _msp430_run_fini_array
-00008458 g       .text	00000000 .hidden __mspabi_srli_1
-00008470 g       .text	00000000 .hidden __mspabi_srll_14
-00008424 g       .text	00000000 .hidden __mspabi_srli_14
+0000835c g       .text	00000000 .hidden __mspabi_srli_1
+00008374 g       .text	00000000 .hidden __mspabi_srll_14
+00008328 g       .text	00000000 .hidden __mspabi_srli_14
 00000014 g       *ABS*	00000000 __romdatacopysize
-00008430 g       .text	00000000 .hidden __mspabi_srli_11
+00008334 g       .text	00000000 .hidden __mspabi_srli_11
 00000000  w      *UND*	00000000 _ITM_deregisterTMCloneTable
 00008004 g       .rodata	00000000 __fini_array_start
 00000000  w      *ABS*	00000000 __rom_highdatacopysize
-0000853c g       .text	00000000 __msp430_init
-0000850c g     F .text	00000014 memset
-0000838a g     F .text	00000086 main
-000084ac g       .text	00000000 .hidden __mspabi_srll_4
+00008440 g       .text	00000000 __msp430_init
+00008410 g     F .text	00000014 memset
+00008226 g     F .text	000000ee main
+000083b0 g       .text	00000000 .hidden __mspabi_srll_4
 00008004 g       .rodata	00000000 __init_array_end
-00008454 g       .text	00000000 .hidden __mspabi_srli_2
+00008358 g       .text	00000000 .hidden __mspabi_srli_2
 00000000  w      *ABS*	00000000 __high_bsssize
 00004004 g     O .data	00000002 var2
 0000400c g     O .data	00000002 var6
 00000000  w      *ABS*	00000000 __rom_highdatastart
 00004006 g     O .data	00000002 var3
-00008558 g       .text	00000000 __msp430_fini_end
-0000847c g       .text	00000000 .hidden __mspabi_srll_12
-00008558 g       *ABS*	00000000 __romdatastart
+0000845c g       .text	00000000 __msp430_fini_end
+00008380 g       .text	00000000 .hidden __mspabi_srll_12
+0000845c g       *ABS*	00000000 __romdatastart
 0000400e g     O .data	00000002 var7
 00008040 g     F .text	00000000 _msp430_run_init_array
-00008444 g       .text	00000000 .hidden __mspabi_srli_6
+00008348 g       .text	00000000 .hidden __mspabi_srli_6
 00008004 g       .rodata	00000000 __preinit_array_end
-00008450 g       .text	00000000 .hidden __mspabi_srli_3
+00008354 g       .text	00000000 .hidden __mspabi_srli_3
 00000000  w      *ABS*	00000000 __high_datastart
 00000000  w      *ABS*	00000000 __upper_data_init
 00004014 g       .bss	00000000 __bssstart
-00008414 g       .text	00000000 .hidden __mspabi_func_epilog_5
+00008318 g       .text	00000000 .hidden __mspabi_func_epilog_5
 00008000 g       .noinit	00000000 __stack
-0000812e g     F .text	0000025c INT_Qwark
-0000848e g       .text	00000000 .hidden __mspabi_srll_9
+0000812e g     F .text	000000f8 INT_Qwark
+00008392 g       .text	00000000 .hidden __mspabi_srll_9
 00004014 g       .data	00000000 _edata
-0000854e g       .text	00000000 __msp430_init_end
-000084ce g       .text	00000000 .hidden __mspabi_srll
+00008452 g       .text	00000000 __msp430_init_end
+000083d2 g       .text	00000000 .hidden __mspabi_srll
 00000000  w      *ABS*	00000000 __high_bssstart
-0000846a g       .text	00000000 .hidden __mspabi_srll_15
+0000836e g       .text	00000000 .hidden __mspabi_srll_15
 00008004 g       .rodata	00000000 __init_array_start
-00008428 g       .text	00000000 .hidden __mspabi_srli_13
+0000832c g       .text	00000000 .hidden __mspabi_srli_13
 00004000 g       .data	00000000 __datastart
-00008494 g       .text	00000000 .hidden __mspabi_srll_8
-000084be g       .text	00000000 .hidden __mspabi_srll_1
+00008398 g       .text	00000000 .hidden __mspabi_srll_8
+000083c2 g       .text	00000000 .hidden __mspabi_srll_1
 00008004 g       .rodata	00000000 __preinit_array_start
 00008022 g     F .text	00000014 __crt0_movedata
-0000841a g       .text	00000000 .hidden __mspabi_func_epilog_2
+0000831e g       .text	00000000 .hidden __mspabi_func_epilog_2
 00000000  w      *UND*	00000000 __register_frame_info
 0000804e g     F .text	00000000 _msp430_run_preinit_array
-00008410 g       .text	00000000 .hidden __mspabi_func_epilog_7
-00008416 g       .text	00000000 .hidden __mspabi_func_epilog_4
-000084b8 g       .text	00000000 .hidden __mspabi_srll_2
-0000854e g       .text	00000000 __msp430_fini
-0000843c g       .text	00000000 .hidden __mspabi_srli_8
+00008314 g       .text	00000000 .hidden __mspabi_func_epilog_7
+0000831a g       .text	00000000 .hidden __mspabi_func_epilog_4
+000083bc g       .text	00000000 .hidden __mspabi_srll_2
+00008452 g       .text	00000000 __msp430_fini
+00008340 g       .text	00000000 .hidden __mspabi_srli_8
 
 
 
@@ -163,13 +163,13 @@ Disassembly of section .text:
     801a:	3e 40 12 00 	mov	#18,	r14	;#0x0012
 
 0000801e <.Loc.79.1>:
-    801e:	b0 12 0c 85 	call	#34060		;#0x850c
+    801e:	b0 12 10 84 	call	#33808		;#0x8410
 
 00008022 <__crt0_movedata>:
     8022:	3c 40 00 40 	mov	#16384,	r12	;#0x4000
 
 00008026 <.Loc.116.1>:
-    8026:	3d 40 58 85 	mov	#34136,	r13	;#0x8558
+    8026:	3d 40 5c 84 	mov	#33884,	r13	;#0x845c
 
 0000802a <.Loc.119.1>:
     802a:	0d 9c       	cmp	r12,	r13	;
@@ -181,16 +181,16 @@ Disassembly of section .text:
     802e:	3e 40 14 00 	mov	#20,	r14	;#0x0014
 
 00008032 <.Loc.124.1>:
-    8032:	b0 12 d4 84 	call	#34004		;#0x84d4
+    8032:	b0 12 d8 83 	call	#33752		;#0x83d8
 
 00008036 <__crt0_call_init_then_main>:
-    8036:	b0 12 3c 85 	call	#34108		;#0x853c
+    8036:	b0 12 40 84 	call	#33856		;#0x8440
 
 0000803a <.Loc.196.1>:
     803a:	0c 43       	clr	r12		;
 
 0000803c <.Loc.197.1>:
-    803c:	b0 12 8a 83 	call	#33674		;#0x838a
+    803c:	b0 12 26 82 	call	#33318		;#0x8226
 
 00008040 <_msp430_run_init_array>:
     8040:	34 40 04 80 	mov	#32772,	r4	;#0x8004
@@ -254,13 +254,13 @@ Disassembly of section .text:
     807e:	30 41       	ret			
 
 00008080 <deregister_tm_clones>:
-    8080:	3c 40 58 85 	mov	#34136,	r12	;#0x8558
-    8084:	3c 90 58 85 	cmp	#34136,	r12	;#0x8558
+    8080:	3c 40 5c 84 	mov	#33884,	r12	;#0x845c
+    8084:	3c 90 5c 84 	cmp	#33884,	r12	;#0x845c
     8088:	07 24       	jz	$+16     	;abs 0x8098
     808a:	3d 40 00 00 	mov	#0,	r13	;
     808e:	0d 93       	cmp	#0,	r13	;r3 As==00
     8090:	03 24       	jz	$+8      	;abs 0x8098
-    8092:	3c 40 58 85 	mov	#34136,	r12	;#0x8558
+    8092:	3c 40 5c 84 	mov	#33884,	r12	;#0x845c
     8096:	8d 12       	call	r13		;
 
 00008098 <.L1>:
@@ -268,11 +268,11 @@ Disassembly of section .text:
 
 0000809a <register_tm_clones>:
     809a:	0a 12       	push	r10		;
-    809c:	3a 40 58 85 	mov	#34136,	r10	;#0x8558
-    80a0:	3a 80 58 85 	sub	#34136,	r10	;#0x8558
+    809c:	3a 40 5c 84 	mov	#33884,	r10	;#0x845c
+    80a0:	3a 80 5c 84 	sub	#33884,	r10	;#0x845c
     80a4:	0a 11       	rra	r10		;
     80a6:	0c 4a       	mov	r10,	r12	;
-    80a8:	b0 12 20 84 	call	#33824		;#0x8420
+    80a8:	b0 12 24 83 	call	#33572		;#0x8324
     80ac:	0c 5a       	add	r10,	r12	;
     80ae:	0d 4c       	mov	r12,	r13	;
     80b0:	0d 11       	rra	r13		;
@@ -281,7 +281,7 @@ Disassembly of section .text:
     80b6:	3e 40 00 00 	mov	#0,	r14	;
     80ba:	0e 93       	cmp	#0,	r14	;r3 As==00
     80bc:	03 24       	jz	$+8      	;abs 0x80c4
-    80be:	3c 40 58 85 	mov	#34136,	r12	;#0x8558
+    80be:	3c 40 5c 84 	mov	#33884,	r12	;#0x845c
     80c2:	8e 12       	call	r14		;
 
 000080c4 <.L9>:
@@ -314,7 +314,7 @@ Disassembly of section .text:
     80fc:	d2 43 14 40 	mov.b	#1,	&0x4014	;r3 As==01
 
 00008100 <.L17>:
-    8100:	30 40 1a 84 	br	#0x841a		;
+    8100:	30 40 1e 83 	br	#0x831e		;
 
 00008104 <.L20>:
     8104:	1c 53       	inc	r12		;
@@ -339,798 +339,792 @@ Disassembly of section .text:
 
 0000812e <INT_Qwark>:
 
-//--------------------------------------------------//
-//    QWARK Checkpoint Procedure                    //
-//--------------------------------------------------//
+//-------------------------------------------------------------------------------------------------------------//
+//    QWARK Checkpoint Procedure: without stack: 215 cycles -> First phase: 141 cycles - second phase: 74      //
+//-------------------------------------------------------------------------------------------------------------//
 
 interrupt (QWARK_VECTOR) INT_Qwark(void) {
-    812e:	0d 12       	push	r13		;
+    812e:	0c 12       	push	r12		;
 
 00008130 <.LCFI0>:
-    8130:	0c 12       	push	r12		;
 
-00008132 <.LCFI1>:
-    8132:	21 83       	decd	r1		;
-
-00008134 <.LCFI2>:
-
-	//Idempotency Tracking is disabled by default upon entering this context
-    //Toggle LED to identify Checkpoint ISR
-
+	/* Idempotency Tracking is disabled by default upon entering this context */
 	LED_CTRL = 0x0F;
-    8134:	7c 40 90 00 	mov.b	#144,	r12	;#0x0090
-    8138:	fc 40 0f 00 	mov.b	#15,	0(r12)	;#0x000f
-    813c:	00 00 
+    8130:	7c 40 90 00 	mov.b	#144,	r12	;#0x0090
+    8134:	fc 40 0f 00 	mov.b	#15,	0(r12)	;#0x000f
+    8138:	00 00 
 
-0000813e <.Loc.42.1>:
-	int war_index = QWARK_WAR_CTR;
-    813e:	3c 40 90 01 	mov	#400,	r12	;#0x0190
-    8142:	2c 4c       	mov	@r12,	r12	;
-    8144:	12 c3       	clrc			
-    8146:	0c 10       	rrc	r12		;
-    8148:	0d 4c       	mov	r12,	r13	;
-    814a:	7d f0 07 00 	and.b	#7,	r13	;
-    814e:	81 4d 00 00 	mov	r13,	0(r1)	;
+0000813a <.Loc.102.1>:
 
-00008152 <.Loc.44.1>:
+	/* First Phase of the Committ process  */
+	/*Store Registers into NV memory : Total: 73 cycles*/
 
-	switch(war_index){
-    8152:	2c 41       	mov	@r1,	r12	;
-    8154:	3c 90 03 00 	cmp	#3,	r12	;
-    8158:	37 24       	jz	$+112    	;abs 0x81c8
-    815a:	7d 40 03 00 	mov.b	#3,	r13	;
-    815e:	0d 9c       	cmp	r12,	r13	;
-    8160:	09 38       	jl	$+20     	;abs 0x8174
-    8162:	1c 93       	cmp	#1,	r12	;r3 As==01
-    8164:	15 24       	jz	$+44     	;abs 0x8190
-    8166:	5d 43       	mov.b	#1,	r13	;r3 As==01
-    8168:	0d 9c       	cmp	r12,	r13	;
-    816a:	1c 38       	jl	$+58     	;abs 0x81a4
-    816c:	0c 93       	cmp	#0,	r12	;r3 As==00
-    816e:	fe 24       	jz	$+510    	;abs 0x836c
+	__asm__ __volatile__ ("mov r1,&0x6020");   		//SP/R1   4 cycles       =  9 cycles
+    813a:	82 41 20 60 	mov	r1,	&0x6020	;
 
-00008170 <.Loc.91.1>:
-	 	 	 QWARK_ADDR5 = (*(volatile unsigned int  *) 0x6008);
-	 	 	 QWARK_ADDR6 = (*(volatile unsigned int  *) 0x600A);
-	 	 	 QWARK_ADDR7 = (*(volatile unsigned int  *) 0x600C);
-	 	 	 break;
+0000813e <.Loc.103.1>:
+	__asm__ __volatile__ ("add #0x06,&0x6020");		//	  5 cycles
+    813e:	b2 50 06 00 	add	#6,	&0x6020	;
+    8142:	20 60 
 
-	default: break;
-    8170:	30 40 6e 83 	br	#0x836e		;
+00008144 <.Loc.104.1>:
+	__asm__ __volatile__ ("mov 4(r1),&0x6022"); 		//PC/R0   6 cycles       = 24 cycles
+    8144:	92 41 04 00 	mov	4(r1),	&0x6022	;
+    8148:	22 60 
 
-00008174 <.L4>:
-    //Toggle LED to identify Checkpoint ISR
+0000814a <.Loc.105.1>:
+	__asm__ __volatile__ ("mov 2(r1),&0x6024"); 		//SR/R2   6 cycles
+    814a:	92 41 02 00 	mov	2(r1),	&0x6024	;
+    814e:	24 60 
 
-	LED_CTRL = 0x0F;
-	int war_index = QWARK_WAR_CTR;
+00008150 <.Loc.106.1>:
+	__asm__ __volatile__ ("mov r13 ,&0x6026"); 	    	//R13	  6 cycles
+    8150:	82 4d 26 60 	mov	r13,	&0x6026	;
 
-	switch(war_index){
-    8174:	3c 90 05 00 	cmp	#5,	r12	;
-    8178:	63 24       	jz	$+200    	;abs 0x8240
-    817a:	3c 90 05 00 	cmp	#5,	r12	;
-    817e:	3e 38       	jl	$+126    	;abs 0x81fc
-    8180:	3c 90 06 00 	cmp	#6,	r12	;
-    8184:	87 24       	jz	$+272    	;abs 0x8294
-    8186:	3c 90 07 00 	cmp	#7,	r12	;
-    818a:	b6 24       	jz	$+366    	;abs 0x82f8
+00008154 <.Loc.107.1>:
+	__asm__ __volatile__ ("mov 0(r1),&0x6028"); 		//R12	  6 cycles
+    8154:	a2 41 28 60 	mov	@r1,	&0x6028	;
 
-0000818c <.Loc.91.1>:
-	 	 	 QWARK_ADDR5 = (*(volatile unsigned int  *) 0x6008);
-	 	 	 QWARK_ADDR6 = (*(volatile unsigned int  *) 0x600A);
-	 	 	 QWARK_ADDR7 = (*(volatile unsigned int  *) 0x600C);
-	 	 	 break;
+00008158 <.Loc.108.1>:
+	__asm__ __volatile__ ("mov r4,&0x602A"); 		//R4	  4 cycles x 10 = 40 cycles
+    8158:	82 44 2a 60 	mov	r4,	&0x602a	;
 
-	default: break;
-    818c:	30 40 6e 83 	br	#0x836e		;
+0000815c <.Loc.109.1>:
+	__asm__ __volatile__ ("mov r5,&0x602C"); 		//R5
+    815c:	82 45 2c 60 	mov	r5,	&0x602c	;
 
-00008190 <.L5>:
-	switch(war_index){
+00008160 <.Loc.110.1>:
+	__asm__ __volatile__ ("mov r6,&0x602E"); 		//R6
+    8160:	82 46 2e 60 	mov	r6,	&0x602e	;
 
-	case 0 :
-			 break;
+00008164 <.Loc.111.1>:
+	__asm__ __volatile__ ("mov r7,&0x6030"); 		//R7
+    8164:	82 47 30 60 	mov	r7,	&0x6030	;
 
-	case 1 : QWARK_ADDR1 = (*(volatile unsigned int  *) 0x6000);
-    8190:	3c 40 00 60 	mov	#24576,	r12	;#0x6000
-    8194:	2d 4c       	mov	@r12,	r13	;
-    8196:	3c 40 92 01 	mov	#402,	r12	;#0x0192
-    819a:	2c 4c       	mov	@r12,	r12	;
-    819c:	8c 4d 00 00 	mov	r13,	0(r12)	;
+00008168 <.Loc.112.1>:
+	__asm__ __volatile__ ("mov r8,&0x6032"); 		//R8
+    8168:	82 48 32 60 	mov	r8,	&0x6032	;
 
-000081a0 <.Loc.51.1>:
+0000816c <.Loc.113.1>:
+	__asm__ __volatile__ ("mov r9,&0x6034"); 		//R9
+    816c:	82 49 34 60 	mov	r9,	&0x6034	;
 
-			 break;
-    81a0:	30 40 6e 83 	br	#0x836e		;
+00008170 <.Loc.114.1>:
+	__asm__ __volatile__ ("mov r10,&0x6036"); 		//R10
+    8170:	82 4a 36 60 	mov	r10,	&0x6036	;
 
-000081a4 <.L6>:
+00008174 <.Loc.115.1>:
+	__asm__ __volatile__ ("mov r11,&0x6038"); 		//R11
+    8174:	82 4b 38 60 	mov	r11,	&0x6038	;
 
-	case 2 : QWARK_ADDR1 = (*(volatile unsigned int  *) 0x6000);
-    81a4:	3c 40 00 60 	mov	#24576,	r12	;#0x6000
-    81a8:	2d 4c       	mov	@r12,	r13	;
-    81aa:	3c 40 92 01 	mov	#402,	r12	;#0x0192
-    81ae:	2c 4c       	mov	@r12,	r12	;
-    81b0:	8c 4d 00 00 	mov	r13,	0(r12)	;
+00008178 <.Loc.117.1>:
 
-000081b4 <.Loc.54.1>:
-			 QWARK_ADDR2 = (*(volatile unsigned int  *) 0x6002);
-    81b4:	3c 40 02 60 	mov	#24578,	r12	;#0x6002
-    81b8:	2d 4c       	mov	@r12,	r13	;
-    81ba:	3c 40 94 01 	mov	#404,	r12	;#0x0194
-    81be:	2c 4c       	mov	@r12,	r12	;
-    81c0:	8c 4d 00 00 	mov	r13,	0(r12)	;
+	__asm__ __volatile__ ("mov r14,&0x603E"); 		//R14
+    8178:	82 4e 3e 60 	mov	r14,	&0x603e	;
 
-000081c4 <.Loc.55.1>:
-			 break;
-    81c4:	30 40 6e 83 	br	#0x836e		;
+0000817c <.Loc.118.1>:
+	__asm__ __volatile__ ("mov r15,&0x6040"); 		//R15
+    817c:	82 4f 40 60 	mov	r15,	&0x6040	;
 
-000081c8 <.L3>:
+00008180 <.Loc.122.1>:
 
-	case 3 : QWARK_ADDR1 = (*(volatile unsigned int  *) 0x6000);
-    81c8:	3c 40 00 60 	mov	#24576,	r12	;#0x6000
-    81cc:	2d 4c       	mov	@r12,	r13	;
-    81ce:	3c 40 92 01 	mov	#402,	r12	;#0x0192
-    81d2:	2c 4c       	mov	@r12,	r12	;
-    81d4:	8c 4d 00 00 	mov	r13,	0(r12)	;
+	/* Copy the addresses to the scratchpad : 		Total 57 cycles */
 
-000081d8 <.Loc.58.1>:
-			 QWARK_ADDR2 = (*(volatile unsigned int  *) 0x6002);
-    81d8:	3c 40 02 60 	mov	#24578,	r12	;#0x6002
-    81dc:	2d 4c       	mov	@r12,	r13	;
-    81de:	3c 40 94 01 	mov	#404,	r12	;#0x0194
-    81e2:	2c 4c       	mov	@r12,	r12	;
-    81e4:	8c 4d 00 00 	mov	r13,	0(r12)	;
+	__asm__ __volatile__ ("mov &0x0192, &0x6010");   // 6 cycles x 7 = 42 cycles
+    8180:	92 42 92 01 	mov	&0x0192,&0x6010	;0x0192
+    8184:	10 60 
 
-000081e8 <.Loc.59.1>:
-			 QWARK_ADDR3 = (*(volatile unsigned int  *) 0x6004);
-    81e8:	3c 40 04 60 	mov	#24580,	r12	;#0x6004
-    81ec:	2d 4c       	mov	@r12,	r13	;
-    81ee:	3c 40 96 01 	mov	#406,	r12	;#0x0196
-    81f2:	2c 4c       	mov	@r12,	r12	;
-    81f4:	8c 4d 00 00 	mov	r13,	0(r12)	;
+00008186 <.Loc.123.1>:
+	__asm__ __volatile__ ("mov &0x0194, &0x6012");
+    8186:	92 42 94 01 	mov	&0x0194,&0x6012	;0x0194
+    818a:	12 60 
 
-000081f8 <.Loc.60.1>:
-			 break;
-    81f8:	30 40 6e 83 	br	#0x836e		;
+0000818c <.Loc.124.1>:
+	__asm__ __volatile__ ("mov &0x0196, &0x6014");
+    818c:	92 42 96 01 	mov	&0x0196,&0x6014	;0x0196
+    8190:	14 60 
 
-000081fc <.L9>:
+00008192 <.Loc.125.1>:
+    	__asm__ __volatile__ ("mov &0x0198, &0x6016");
+    8192:	92 42 98 01 	mov	&0x0198,&0x6016	;0x0198
+    8196:	16 60 
 
-	case 4 : QWARK_ADDR1 = (*(volatile unsigned int  *) 0x6000);
-    81fc:	3c 40 00 60 	mov	#24576,	r12	;#0x6000
-    8200:	2d 4c       	mov	@r12,	r13	;
-    8202:	3c 40 92 01 	mov	#402,	r12	;#0x0192
-    8206:	2c 4c       	mov	@r12,	r12	;
-    8208:	8c 4d 00 00 	mov	r13,	0(r12)	;
+00008198 <.Loc.126.1>:
+	__asm__ __volatile__ ("mov &0x019A, &0x6018");
+    8198:	92 42 9a 01 	mov	&0x019a,&0x6018	;0x019a
+    819c:	18 60 
 
-0000820c <.Loc.63.1>:
-	 	 	 QWARK_ADDR2 = (*(volatile unsigned int  *) 0x6002);
-    820c:	3c 40 02 60 	mov	#24578,	r12	;#0x6002
-    8210:	2d 4c       	mov	@r12,	r13	;
-    8212:	3c 40 94 01 	mov	#404,	r12	;#0x0194
-    8216:	2c 4c       	mov	@r12,	r12	;
-    8218:	8c 4d 00 00 	mov	r13,	0(r12)	;
+0000819e <.Loc.127.1>:
+	__asm__ __volatile__ ("mov &0x019C, &0x601A");
+    819e:	92 42 9c 01 	mov	&0x019c,&0x601a	;0x019c
+    81a2:	1a 60 
 
-0000821c <.Loc.64.1>:
-	 	 	 QWARK_ADDR3 = (*(volatile unsigned int  *) 0x6004);
-    821c:	3c 40 04 60 	mov	#24580,	r12	;#0x6004
-    8220:	2d 4c       	mov	@r12,	r13	;
-    8222:	3c 40 96 01 	mov	#406,	r12	;#0x0196
-    8226:	2c 4c       	mov	@r12,	r12	;
-    8228:	8c 4d 00 00 	mov	r13,	0(r12)	;
+000081a4 <.Loc.128.1>:
+	__asm__ __volatile__ ("mov &0x019E, &0x601C");
+    81a4:	92 42 9e 01 	mov	&0x019e,&0x601c	;0x019e
+    81a8:	1c 60 
 
-0000822c <.Loc.65.1>:
-	 	 	 QWARK_ADDR4 = (*(volatile unsigned int  *) 0x6006);
-    822c:	3c 40 06 60 	mov	#24582,	r12	;#0x6006
-    8230:	2d 4c       	mov	@r12,	r13	;
-    8232:	3c 40 98 01 	mov	#408,	r12	;#0x0198
-    8236:	2c 4c       	mov	@r12,	r12	;
-    8238:	8c 4d 00 00 	mov	r13,	0(r12)	;
+000081aa <.Loc.130.1>:
+	//Move the index
+	__asm__ __volatile__ ("mov &0x0190, &0x601E");	// 6 cycles     = 15 cycles
+    81aa:	92 42 90 01 	mov	&0x0190,&0x601e	;0x0190
+    81ae:	1e 60 
 
-0000823c <.Loc.66.1>:
-	 	 	 break;
-    823c:	30 40 6e 83 	br	#0x836e		;
+000081b0 <.Loc.131.1>:
+	__asm__ __volatile__ ("and #0x000E, &0x601E");	// 5 cycles
+    81b0:	b2 f0 0e 00 	and	#14,	&0x601e	;#0x000e
+    81b4:	1e 60 
 
-00008240 <.L8>:
-	case 5 : QWARK_ADDR1 = (*(volatile unsigned int  *) 0x6000);
-    8240:	3c 40 00 60 	mov	#24576,	r12	;#0x6000
-    8244:	2d 4c       	mov	@r12,	r13	;
-    8246:	3c 40 92 01 	mov	#402,	r12	;#0x0192
-    824a:	2c 4c       	mov	@r12,	r12	;
-    824c:	8c 4d 00 00 	mov	r13,	0(r12)	;
+000081b6 <.Loc.132.1>:
+	__asm__ __volatile__ ("RRA &0x601E");		// 4 cycles
+    81b6:	12 11 1e 60 	rra	&0x601e		;
 
-00008250 <.Loc.68.1>:
-	 	 	 QWARK_ADDR2 = (*(volatile unsigned int  *) 0x6002);
-    8250:	3c 40 02 60 	mov	#24578,	r12	;#0x6002
-    8254:	2d 4c       	mov	@r12,	r13	;
-    8256:	3c 40 94 01 	mov	#404,	r12	;#0x0194
-    825a:	2c 4c       	mov	@r12,	r12	;
-    825c:	8c 4d 00 00 	mov	r13,	0(r12)	;
+000081ba <.Loc.141.1>:
 
-00008260 <.Loc.69.1>:
-	 	 	 QWARK_ADDR3 = (*(volatile unsigned int  *) 0x6004);
-    8260:	3c 40 04 60 	mov	#24580,	r12	;#0x6004
-    8264:	2d 4c       	mov	@r12,	r13	;
-    8266:	3c 40 96 01 	mov	#406,	r12	;#0x0196
-    826a:	2c 4c       	mov	@r12,	r12	;
-    826c:	8c 4d 00 00 	mov	r13,	0(r12)	;
+	/* First phase completed */
 
-00008270 <.Loc.70.1>:
-	 	 	 QWARK_ADDR4 = (*(volatile unsigned int  *) 0x6006);
-    8270:	3c 40 06 60 	mov	#24582,	r12	;#0x6006
-    8274:	2d 4c       	mov	@r12,	r13	;
-    8276:	3c 40 98 01 	mov	#408,	r12	;#0x0198
-    827a:	2c 4c       	mov	@r12,	r12	;
-    827c:	8c 4d 00 00 	mov	r13,	0(r12)	;
+	/* Set Dirty Bit - Atomic Flag*/
+	/* after setting this bit, it is possible to reproduce the checkpoint even if it fails halfway through */
+	__asm__ __volatile__ ("mov #0x01, &0x600E"); //4 cycles
+    81ba:	92 43 0e 60 	mov	#1,	&0x600e	;r3 As==01
 
-00008280 <.Loc.71.1>:
-	 	 	 QWARK_ADDR5 = (*(volatile unsigned int  *) 0x6008);
-    8280:	3c 40 08 60 	mov	#24584,	r12	;#0x6008
-    8284:	2d 4c       	mov	@r12,	r13	;
-    8286:	3c 40 9a 01 	mov	#410,	r12	;#0x019a
-    828a:	2c 4c       	mov	@r12,	r12	;
-    828c:	8c 4d 00 00 	mov	r13,	0(r12)	;
+000081be <.Loc.144.1>:
 
-00008290 <.Loc.72.1>:
-	 	 	 break;
-    8290:	30 40 6e 83 	br	#0x836e		;
+	/* 2nd Phase of the Committ process - Copy back from the Scratchpad: 70 cycles */
+	__asm__ __volatile__ ("mov #0x6010,  r12 "); /* 1st value : 2 cycles + 2 cycles + 6 cycles = 10 cycles*/
+    81be:	3c 40 10 60 	mov	#24592,	r12	;#0x6010
 
-00008294 <.L10>:
+000081c2 <.Loc.145.1>:
+	__asm__ __volatile__ ("mov @r12,     r13 ");
+    81c2:	2d 4c       	mov	@r12,	r13	;
 
-	case 6 : QWARK_ADDR1 = (*(volatile unsigned int  *) 0x6000);
-    8294:	3c 40 00 60 	mov	#24576,	r12	;#0x6000
-    8298:	2d 4c       	mov	@r12,	r13	;
-    829a:	3c 40 92 01 	mov	#402,	r12	;#0x0192
-    829e:	2c 4c       	mov	@r12,	r12	;
-    82a0:	8c 4d 00 00 	mov	r13,	0(r12)	;
+000081c4 <.Loc.146.1>:
+	__asm__ __volatile__ ("mov &0x6000, @r13 ");
+    81c4:	9d 42 00 60 	mov	&0x6000,0(r13)	;0x6000
+    81c8:	00 00 
 
-000082a4 <.Loc.75.1>:
-	 	 	 QWARK_ADDR2 = (*(volatile unsigned int  *) 0x6002);
-    82a4:	3c 40 02 60 	mov	#24578,	r12	;#0x6002
-    82a8:	2d 4c       	mov	@r12,	r13	;
-    82aa:	3c 40 94 01 	mov	#404,	r12	;#0x0194
-    82ae:	2c 4c       	mov	@r12,	r12	;
-    82b0:	8c 4d 00 00 	mov	r13,	0(r12)	;
+000081ca <.Loc.148.1>:
 
-000082b4 <.Loc.76.1>:
-	 	 	 QWARK_ADDR3 = (*(volatile unsigned int  *) 0x6004);
-    82b4:	3c 40 04 60 	mov	#24580,	r12	;#0x6004
-    82b8:	2d 4c       	mov	@r12,	r13	;
-    82ba:	3c 40 96 01 	mov	#406,	r12	;#0x0196
-    82be:	2c 4c       	mov	@r12,	r12	;
-    82c0:	8c 4d 00 00 	mov	r13,	0(r12)	;
+	__asm__ __volatile__ ("mov #0x6012,  r12 "); /* 2nd value */
+    81ca:	3c 40 12 60 	mov	#24594,	r12	;#0x6012
 
-000082c4 <.Loc.77.1>:
-	 	 	 QWARK_ADDR4 = (*(volatile unsigned int  *) 0x6006);
-    82c4:	3c 40 06 60 	mov	#24582,	r12	;#0x6006
-    82c8:	2d 4c       	mov	@r12,	r13	;
-    82ca:	3c 40 98 01 	mov	#408,	r12	;#0x0198
-    82ce:	2c 4c       	mov	@r12,	r12	;
-    82d0:	8c 4d 00 00 	mov	r13,	0(r12)	;
+000081ce <.Loc.149.1>:
+	__asm__ __volatile__ ("mov @r12,     r13 ");
+    81ce:	2d 4c       	mov	@r12,	r13	;
 
-000082d4 <.Loc.78.1>:
-	 	 	 QWARK_ADDR5 = (*(volatile unsigned int  *) 0x6008);
-    82d4:	3c 40 08 60 	mov	#24584,	r12	;#0x6008
-    82d8:	2d 4c       	mov	@r12,	r13	;
-    82da:	3c 40 9a 01 	mov	#410,	r12	;#0x019a
-    82de:	2c 4c       	mov	@r12,	r12	;
-    82e0:	8c 4d 00 00 	mov	r13,	0(r12)	;
+000081d0 <.Loc.150.1>:
+	__asm__ __volatile__ ("mov &0x6002, @r13 ");
+    81d0:	9d 42 02 60 	mov	&0x6002,0(r13)	;0x6002
+    81d4:	00 00 
 
-000082e4 <.Loc.79.1>:
-	 	 	 QWARK_ADDR6 = (*(volatile unsigned int  *) 0x600A);
-    82e4:	3c 40 0a 60 	mov	#24586,	r12	;#0x600a
-    82e8:	2d 4c       	mov	@r12,	r13	;
-    82ea:	3c 40 9c 01 	mov	#412,	r12	;#0x019c
-    82ee:	2c 4c       	mov	@r12,	r12	;
-    82f0:	8c 4d 00 00 	mov	r13,	0(r12)	;
+000081d6 <.Loc.152.1>:
 
-000082f4 <.Loc.80.1>:
-	 	 	 break;
-    82f4:	30 40 6e 83 	br	#0x836e		;
+	__asm__ __volatile__ ("mov #0x6014,  r12 "); /* 3rd value */
+    81d6:	3c 40 14 60 	mov	#24596,	r12	;#0x6014
 
-000082f8 <.L11>:
+000081da <.Loc.153.1>:
+	__asm__ __volatile__ ("mov @r12,     r13 ");
+    81da:	2d 4c       	mov	@r12,	r13	;
 
-	case 7 : QWARK_ADDR1 = (*(volatile unsigned int  *) 0x6000);
-    82f8:	3c 40 00 60 	mov	#24576,	r12	;#0x6000
-    82fc:	2d 4c       	mov	@r12,	r13	;
-    82fe:	3c 40 92 01 	mov	#402,	r12	;#0x0192
-    8302:	2c 4c       	mov	@r12,	r12	;
-    8304:	8c 4d 00 00 	mov	r13,	0(r12)	;
+000081dc <.Loc.154.1>:
+	__asm__ __volatile__ ("mov &0x6004, @r13 ");
+    81dc:	9d 42 04 60 	mov	&0x6004,0(r13)	;0x6004
+    81e0:	00 00 
 
-00008308 <.Loc.83.1>:
-	 	 	 QWARK_ADDR2 = (*(volatile unsigned int  *) 0x6002);
-    8308:	3c 40 02 60 	mov	#24578,	r12	;#0x6002
-    830c:	2d 4c       	mov	@r12,	r13	;
-    830e:	3c 40 94 01 	mov	#404,	r12	;#0x0194
-    8312:	2c 4c       	mov	@r12,	r12	;
-    8314:	8c 4d 00 00 	mov	r13,	0(r12)	;
+000081e2 <.Loc.156.1>:
 
-00008318 <.Loc.84.1>:
-	 	 	 QWARK_ADDR3 = (*(volatile unsigned int  *) 0x6004);
-    8318:	3c 40 04 60 	mov	#24580,	r12	;#0x6004
-    831c:	2d 4c       	mov	@r12,	r13	;
-    831e:	3c 40 96 01 	mov	#406,	r12	;#0x0196
-    8322:	2c 4c       	mov	@r12,	r12	;
-    8324:	8c 4d 00 00 	mov	r13,	0(r12)	;
+	__asm__ __volatile__ ("mov #0x6016,  r12 "); /* 4th value */
+    81e2:	3c 40 16 60 	mov	#24598,	r12	;#0x6016
 
-00008328 <.Loc.85.1>:
-	 	 	 QWARK_ADDR4 = (*(volatile unsigned int  *) 0x6006);
-    8328:	3c 40 06 60 	mov	#24582,	r12	;#0x6006
-    832c:	2d 4c       	mov	@r12,	r13	;
-    832e:	3c 40 98 01 	mov	#408,	r12	;#0x0198
-    8332:	2c 4c       	mov	@r12,	r12	;
-    8334:	8c 4d 00 00 	mov	r13,	0(r12)	;
+000081e6 <.Loc.157.1>:
+	__asm__ __volatile__ ("mov @r12,     r13 ");
+    81e6:	2d 4c       	mov	@r12,	r13	;
 
-00008338 <.Loc.86.1>:
-	 	 	 QWARK_ADDR5 = (*(volatile unsigned int  *) 0x6008);
-    8338:	3c 40 08 60 	mov	#24584,	r12	;#0x6008
-    833c:	2d 4c       	mov	@r12,	r13	;
-    833e:	3c 40 9a 01 	mov	#410,	r12	;#0x019a
-    8342:	2c 4c       	mov	@r12,	r12	;
-    8344:	8c 4d 00 00 	mov	r13,	0(r12)	;
+000081e8 <.Loc.158.1>:
+	__asm__ __volatile__ ("mov &0x6006, @r13 ");
+    81e8:	9d 42 06 60 	mov	&0x6006,0(r13)	;0x6006
+    81ec:	00 00 
 
-00008348 <.Loc.87.1>:
-	 	 	 QWARK_ADDR6 = (*(volatile unsigned int  *) 0x600A);
-    8348:	3c 40 0a 60 	mov	#24586,	r12	;#0x600a
-    834c:	2d 4c       	mov	@r12,	r13	;
-    834e:	3c 40 9c 01 	mov	#412,	r12	;#0x019c
-    8352:	2c 4c       	mov	@r12,	r12	;
-    8354:	8c 4d 00 00 	mov	r13,	0(r12)	;
+000081ee <.Loc.160.1>:
 
-00008358 <.Loc.88.1>:
-	 	 	 QWARK_ADDR7 = (*(volatile unsigned int  *) 0x600C);
-    8358:	3c 40 0c 60 	mov	#24588,	r12	;#0x600c
-    835c:	2d 4c       	mov	@r12,	r13	;
-    835e:	3c 40 9e 01 	mov	#414,	r12	;#0x019e
-    8362:	2c 4c       	mov	@r12,	r12	;
-    8364:	8c 4d 00 00 	mov	r13,	0(r12)	;
+	__asm__ __volatile__ ("mov #0x6018,  r12 "); /* 5th value */
+    81ee:	3c 40 18 60 	mov	#24600,	r12	;#0x6018
 
-00008368 <.Loc.89.1>:
-	 	 	 break;
-    8368:	30 40 6e 83 	br	#0x836e		;
+000081f2 <.Loc.161.1>:
+	__asm__ __volatile__ ("mov @r12,     r13 ");
+    81f2:	2d 4c       	mov	@r12,	r13	;
 
-0000836c <.L13>:
-	int war_index = QWARK_WAR_CTR;
+000081f4 <.Loc.162.1>:
+	__asm__ __volatile__ ("mov &0x6008, @r13 ");
+    81f4:	9d 42 08 60 	mov	&0x6008,0(r13)	;0x6008
+    81f8:	00 00 
 
-	switch(war_index){
+000081fa <.Loc.164.1>:
 
-	case 0 :
-			 break;
-    836c:	03 43       	nop			
+	__asm__ __volatile__ ("mov #0x601A,  r12 "); /* 6th value */
+    81fa:	3c 40 1a 60 	mov	#24602,	r12	;#0x601a
 
-0000836e <.L12>:
-	 	 	 break;
+000081fe <.Loc.165.1>:
+	__asm__ __volatile__ ("mov @r12,     r13 ");
+    81fe:	2d 4c       	mov	@r12,	r13	;
 
-	default: break;
-	}
+00008200 <.Loc.166.1>:
+	__asm__ __volatile__ ("mov &0x600A, @r13 ");
+    8200:	9d 42 0a 60 	mov	&0x600a,0(r13)	;0x600a
+    8204:	00 00 
 
+00008206 <.Loc.168.1>:
+
+	__asm__ __volatile__ ("mov #0x601C,  r12 "); /* 7th value */
+    8206:	3c 40 1c 60 	mov	#24604,	r12	;#0x601c
+
+0000820a <.Loc.169.1>:
+	__asm__ __volatile__ ("mov @r12,     r13 ");
+    820a:	2d 4c       	mov	@r12,	r13	;
+
+0000820c <.Loc.170.1>:
+	__asm__ __volatile__ ("mov &0x600C, @r13 ");
+    820c:	9d 42 0c 60 	mov	&0x600c,0(r13)	;0x600c
+    8210:	00 00 
+
+00008212 <.Loc.174.1>:
+
+	/* Checkpoint finished! */
+	/* Clear index counter, and enable Idempotency tracking : 4 cycles*/
+	__asm__ __volatile__ ("mov #0x0001, &0x0190"); //QWARK_CTL = 0x01;
+    8212:	92 43 90 01 	mov	#1,	&0x0190	;r3 As==01
+
+00008216 <.Loc.175.1>:
 	LED_CTRL = 0xF0;
-    836e:	7c 40 90 00 	mov.b	#144,	r12	;#0x0090
-    8372:	fc 40 f0 ff 	mov.b	#65520,	0(r12)	;#0xfff0
-    8376:	00 00 
+    8216:	7c 40 90 00 	mov.b	#144,	r12	;#0x0090
+    821a:	fc 40 f0 ff 	mov.b	#65520,	0(r12)	;#0xfff0
+    821e:	00 00 
 
-00008378 <.Loc.97.1>:
+00008220 <.Loc.177.1>:
 
-	//Clear index counter, and enable idempotency tracking
-	QWARK_CTL = 0x01;
-    8378:	3c 40 90 01 	mov	#400,	r12	;#0x0190
-    837c:	9c 43 00 00 	mov	#1,	0(r12)	;r3 As==01
-
-00008380 <.Loc.98.1>:
 }
-    8380:	03 43       	nop			
-    8382:	21 53       	incd	r1		;
-    8384:	3c 41       	pop	r12		;
-    8386:	3d 41       	pop	r13		;
-    8388:	00 13       	reti			
+    8220:	03 43       	nop			
+    8222:	3c 41       	pop	r12		;
+    8224:	00 13       	reti			
 
-0000838a <main>:
+00008226 <main>:
 
 int main()
 {
-    	WDTCTL = WDTPW | WDTHOLD; // Stop WDT
-    838a:	3c 40 20 01 	mov	#288,	r12	;#0x0120
-    838e:	bc 40 80 5a 	mov	#23168,	0(r12)	;#0x5a80
-    8392:	00 00 
-
-00008394 <.Loc.104.1>:
-	//Enable Idempotency Tracking
+   	 //WDTCTL = WDTPW | WDTHOLD; // Stop WDT
+	//Enable Global Interrupts 
   	eint();
-    8394:	32 d2       	eint			
-    8396:	03 43       	nop			
+    8226:	32 d2       	eint			
+    8228:	03 43       	nop			
 
-00008398 <.Loc.105.1>:
+0000822a <.Loc.186.1>:
+	
+	//Enable Idempotency Tracking
 	QWARK_CTL = 0x01;
-    8398:	3c 40 90 01 	mov	#400,	r12	;#0x0190
-    839c:	9c 43 00 00 	mov	#1,	0(r12)	;r3 As==01
+    822a:	3c 40 90 01 	mov	#400,	r12	;#0x0190
+    822e:	9c 43 00 00 	mov	#1,	0(r12)	;r3 As==01
 
-000083a0 <.Loc.108.1>:
+00008232 <.Loc.189.1>:
 
 
 	if(var1){
-    83a0:	1c 42 02 40 	mov	&0x4002,r12	;0x4002
-    83a4:	0c 93       	cmp	#0,	r12	;r3 As==00
-    83a6:	02 24       	jz	$+6      	;abs 0x83ac
+    8232:	1c 42 02 40 	mov	&0x4002,r12	;0x4002
+    8236:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8238:	02 24       	jz	$+6      	;abs 0x823e
 
-000083a8 <.Loc.109.1>:
-	   var1 = 1;	  
-    83a8:	92 43 02 40 	mov	#1,	&0x4002	;r3 As==01
+0000823a <.Loc.190.1>:
+	  var1 = 0x01;
+    823a:	92 43 02 40 	mov	#1,	&0x4002	;r3 As==01
 
-000083ac <.L15>:
+0000823e <.L3>:
 	}
 
 	if(var2){
-    83ac:	1c 42 04 40 	mov	&0x4004,r12	;0x4004
-    83b0:	0c 93       	cmp	#0,	r12	;r3 As==00
-    83b2:	02 24       	jz	$+6      	;abs 0x83b8
+    823e:	1c 42 04 40 	mov	&0x4004,r12	;0x4004
+    8242:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8244:	02 24       	jz	$+6      	;abs 0x824a
 
-000083b4 <.Loc.113.1>:
-	   var2 = 1;	  
-    83b4:	92 43 04 40 	mov	#1,	&0x4004	;r3 As==01
+00008246 <.Loc.194.1>:
+	  var2 = 0x02;
+    8246:	a2 43 04 40 	mov	#2,	&0x4004	;r3 As==10
 
-000083b8 <.L16>:
+0000824a <.L4>:
 	}
 
 	if(var3){
-    83b8:	1c 42 06 40 	mov	&0x4006,r12	;0x4006
-    83bc:	0c 93       	cmp	#0,	r12	;r3 As==00
-    83be:	03 24       	jz	$+8      	;abs 0x83c6
+    824a:	1c 42 06 40 	mov	&0x4006,r12	;0x4006
+    824e:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8250:	03 24       	jz	$+8      	;abs 0x8258
 
-000083c0 <.Loc.117.1>:
-	  var3 = 0xCC;
-    83c0:	b2 40 cc 00 	mov	#204,	&0x4006	;#0x00cc
-    83c4:	06 40 
+00008252 <.Loc.198.1>:
+	  var3 = 0x03;
+    8252:	b2 40 03 00 	mov	#3,	&0x4006	;
+    8256:	06 40 
 
-000083c6 <.L17>:
+00008258 <.L5>:
 	}
 
 	if(var4){
-    83c6:	1c 42 08 40 	mov	&0x4008,r12	;0x4008
-    83ca:	0c 93       	cmp	#0,	r12	;r3 As==00
-    83cc:	03 24       	jz	$+8      	;abs 0x83d4
+    8258:	1c 42 08 40 	mov	&0x4008,r12	;0x4008
+    825c:	0c 93       	cmp	#0,	r12	;r3 As==00
+    825e:	02 24       	jz	$+6      	;abs 0x8264
 
-000083ce <.Loc.121.1>:
-	  var4 = 0xDD;
-    83ce:	b2 40 dd 00 	mov	#221,	&0x4008	;#0x00dd
-    83d2:	08 40 
+00008260 <.Loc.202.1>:
+	  var4 = 0x04;
+    8260:	a2 42 08 40 	mov	#4,	&0x4008	;r2 As==10
 
-000083d4 <.L18>:
+00008264 <.L6>:
 	}
 
 	if(var5){
-    83d4:	1c 42 0a 40 	mov	&0x400a,r12	;0x400a
-    83d8:	0c 93       	cmp	#0,	r12	;r3 As==00
-    83da:	03 24       	jz	$+8      	;abs 0x83e2
+    8264:	1c 42 0a 40 	mov	&0x400a,r12	;0x400a
+    8268:	0c 93       	cmp	#0,	r12	;r3 As==00
+    826a:	03 24       	jz	$+8      	;abs 0x8272
 
-000083dc <.Loc.125.1>:
-	  var5 = 0xEE;
-    83dc:	b2 40 ee 00 	mov	#238,	&0x400a	;#0x00ee
-    83e0:	0a 40 
+0000826c <.Loc.206.1>:
+	  var5 = 0x05;
+    826c:	b2 40 05 00 	mov	#5,	&0x400a	;
+    8270:	0a 40 
 
-000083e2 <.L19>:
+00008272 <.L7>:
 	}
 
 	if(var6){
-    83e2:	1c 42 0c 40 	mov	&0x400c,r12	;0x400c
-    83e6:	0c 93       	cmp	#0,	r12	;r3 As==00
-    83e8:	03 24       	jz	$+8      	;abs 0x83f0
+    8272:	1c 42 0c 40 	mov	&0x400c,r12	;0x400c
+    8276:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8278:	03 24       	jz	$+8      	;abs 0x8280
 
-000083ea <.Loc.129.1>:
-	  var6 = 0xFF;
-    83ea:	b2 40 ff 00 	mov	#255,	&0x400c	;#0x00ff
-    83ee:	0c 40 
+0000827a <.Loc.210.1>:
+	  var6 = 0x06;
+    827a:	b2 40 06 00 	mov	#6,	&0x400c	;
+    827e:	0c 40 
 
-000083f0 <.L20>:
+00008280 <.L8>:
 	}
 
 	if(var7){
-    83f0:	1c 42 0e 40 	mov	&0x400e,r12	;0x400e
-    83f4:	0c 93       	cmp	#0,	r12	;r3 As==00
-    83f6:	03 24       	jz	$+8      	;abs 0x83fe
+    8280:	1c 42 0e 40 	mov	&0x400e,r12	;0x400e
+    8284:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8286:	03 24       	jz	$+8      	;abs 0x828e
 
-000083f8 <.Loc.133.1>:
-	  var7 = 0x55;
-    83f8:	b2 40 55 00 	mov	#85,	&0x400e	;#0x0055
-    83fc:	0e 40 
+00008288 <.Loc.214.1>:
+	  var7 = 0x07;
+    8288:	b2 40 07 00 	mov	#7,	&0x400e	;
+    828c:	0e 40 
 
-000083fe <.L21>:
+0000828e <.L9>:
 	}
 
 	if(var8){
-    83fe:	1c 42 10 40 	mov	&0x4010,r12	;0x4010
-    8402:	0c 93       	cmp	#0,	r12	;r3 As==00
-    8404:	03 24       	jz	$+8      	;abs 0x840c
+    828e:	1c 42 10 40 	mov	&0x4010,r12	;0x4010
+    8292:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8294:	02 24       	jz	$+6      	;abs 0x829a
 
-00008406 <.Loc.137.1>:
-	  var8 = 0xAA;
-    8406:	b2 40 aa 00 	mov	#170,	&0x4010	;#0x00aa
-    840a:	10 40 
+00008296 <.Loc.218.1>:
+	    var8 = 0x08;
+    8296:	b2 42 10 40 	mov	#8,	&0x4010	;r2 As==11
 
-0000840c <.L22>:
+0000829a <.L10>:
 	}
 
-	
 
+
+
+	if(var9){
+    829a:	1c 42 12 40 	mov	&0x4012,r12	;0x4012
+    829e:	0c 93       	cmp	#0,	r12	;r3 As==00
+    82a0:	03 24       	jz	$+8      	;abs 0x82a8
+
+000082a2 <.Loc.225.1>:
+	  var9 = 0xAA;
+    82a2:	b2 40 aa 00 	mov	#170,	&0x4012	;#0x00aa
+    82a6:	12 40 
+
+000082a8 <.L11>:
+	}
+
+	if(var1){
+    82a8:	1c 42 02 40 	mov	&0x4002,r12	;0x4002
+    82ac:	0c 93       	cmp	#0,	r12	;r3 As==00
+    82ae:	02 24       	jz	$+6      	;abs 0x82b4
+
+000082b0 <.Loc.229.1>:
+		  var1 = 0x01;
+    82b0:	92 43 02 40 	mov	#1,	&0x4002	;r3 As==01
+
+000082b4 <.L12>:
+		}
+
+		if(var2){
+    82b4:	1c 42 04 40 	mov	&0x4004,r12	;0x4004
+    82b8:	0c 93       	cmp	#0,	r12	;r3 As==00
+    82ba:	02 24       	jz	$+6      	;abs 0x82c0
+
+000082bc <.Loc.233.1>:
+		  var2 = 0x02;
+    82bc:	a2 43 04 40 	mov	#2,	&0x4004	;r3 As==10
+
+000082c0 <.L13>:
+		}
+
+		if(var3){
+    82c0:	1c 42 06 40 	mov	&0x4006,r12	;0x4006
+    82c4:	0c 93       	cmp	#0,	r12	;r3 As==00
+    82c6:	03 24       	jz	$+8      	;abs 0x82ce
+
+000082c8 <.Loc.237.1>:
+		  var3 = 0x03;
+    82c8:	b2 40 03 00 	mov	#3,	&0x4006	;
+    82cc:	06 40 
+
+000082ce <.L14>:
+		}
+
+		if(var4){
+    82ce:	1c 42 08 40 	mov	&0x4008,r12	;0x4008
+    82d2:	0c 93       	cmp	#0,	r12	;r3 As==00
+    82d4:	02 24       	jz	$+6      	;abs 0x82da
+
+000082d6 <.Loc.241.1>:
+		  var4 = 0x04;
+    82d6:	a2 42 08 40 	mov	#4,	&0x4008	;r2 As==10
+
+000082da <.L15>:
+		}
+
+		if(var5){
+    82da:	1c 42 0a 40 	mov	&0x400a,r12	;0x400a
+    82de:	0c 93       	cmp	#0,	r12	;r3 As==00
+    82e0:	03 24       	jz	$+8      	;abs 0x82e8
+
+000082e2 <.Loc.245.1>:
+		  var5 = 0x05;
+    82e2:	b2 40 05 00 	mov	#5,	&0x400a	;
+    82e6:	0a 40 
+
+000082e8 <.L16>:
+		}
+
+		if(var6){
+    82e8:	1c 42 0c 40 	mov	&0x400c,r12	;0x400c
+    82ec:	0c 93       	cmp	#0,	r12	;r3 As==00
+    82ee:	03 24       	jz	$+8      	;abs 0x82f6
+
+000082f0 <.Loc.249.1>:
+		  var6 = 0x06;
+    82f0:	b2 40 06 00 	mov	#6,	&0x400c	;
+    82f4:	0c 40 
+
+000082f6 <.L17>:
+		}
+
+		if(var7){
+    82f6:	1c 42 0e 40 	mov	&0x400e,r12	;0x400e
+    82fa:	0c 93       	cmp	#0,	r12	;r3 As==00
+    82fc:	03 24       	jz	$+8      	;abs 0x8304
+
+000082fe <.Loc.253.1>:
+		  var7 = 0x07;
+    82fe:	b2 40 07 00 	mov	#7,	&0x400e	;
+    8302:	0e 40 
+
+00008304 <.L18>:
+		}
+
+		if(var8){
+    8304:	1c 42 10 40 	mov	&0x4010,r12	;0x4010
+    8308:	0c 93       	cmp	#0,	r12	;r3 As==00
+    830a:	02 24       	jz	$+6      	;abs 0x8310
+
+0000830c <.Loc.257.1>:
+		    var8 = 0x08;
+    830c:	b2 42 10 40 	mov	#8,	&0x4010	;r2 As==11
+
+00008310 <.L19>:
+		}
 
 	while(1);
-    840c:	30 40 0c 84 	br	#0x840c		;
+    8310:	30 40 10 83 	br	#0x8310		;
 
-00008410 <__mspabi_func_epilog_7>:
-    8410:	34 41       	pop	r4		;
+00008314 <__mspabi_func_epilog_7>:
+    8314:	34 41       	pop	r4		;
 
-00008412 <__mspabi_func_epilog_6>:
-    8412:	35 41       	pop	r5		;
+00008316 <__mspabi_func_epilog_6>:
+    8316:	35 41       	pop	r5		;
 
-00008414 <__mspabi_func_epilog_5>:
-    8414:	36 41       	pop	r6		;
+00008318 <__mspabi_func_epilog_5>:
+    8318:	36 41       	pop	r6		;
 
-00008416 <__mspabi_func_epilog_4>:
-    8416:	37 41       	pop	r7		;
-
-00008418 <__mspabi_func_epilog_3>:
-    8418:	38 41       	pop	r8		;
+0000831a <__mspabi_func_epilog_4>:
+    831a:	37 41       	pop	r7		;
+
+0000831c <__mspabi_func_epilog_3>:
+    831c:	38 41       	pop	r8		;
 
-0000841a <__mspabi_func_epilog_2>:
-    841a:	39 41       	pop	r9		;
-
-0000841c <__mspabi_func_epilog_1>:
-    841c:	3a 41       	pop	r10		;
-    841e:	30 41       	ret			
-
-00008420 <__mspabi_srli_15>:
-    8420:	12 c3       	clrc			
-    8422:	0c 10       	rrc	r12		;
-
-00008424 <__mspabi_srli_14>:
-    8424:	12 c3       	clrc			
-    8426:	0c 10       	rrc	r12		;
-
-00008428 <__mspabi_srli_13>:
-    8428:	12 c3       	clrc			
-    842a:	0c 10       	rrc	r12		;
-
-0000842c <__mspabi_srli_12>:
-    842c:	12 c3       	clrc			
-    842e:	0c 10       	rrc	r12		;
-
-00008430 <__mspabi_srli_11>:
-    8430:	12 c3       	clrc			
-    8432:	0c 10       	rrc	r12		;
-
-00008434 <__mspabi_srli_10>:
-    8434:	12 c3       	clrc			
-    8436:	0c 10       	rrc	r12		;
-
-00008438 <__mspabi_srli_9>:
-    8438:	12 c3       	clrc			
-    843a:	0c 10       	rrc	r12		;
-
-0000843c <__mspabi_srli_8>:
-    843c:	12 c3       	clrc			
-    843e:	0c 10       	rrc	r12		;
-
-00008440 <__mspabi_srli_7>:
-    8440:	12 c3       	clrc			
-    8442:	0c 10       	rrc	r12		;
-
-00008444 <__mspabi_srli_6>:
-    8444:	12 c3       	clrc			
-    8446:	0c 10       	rrc	r12		;
-
-00008448 <__mspabi_srli_5>:
-    8448:	12 c3       	clrc			
-    844a:	0c 10       	rrc	r12		;
-
-0000844c <__mspabi_srli_4>:
-    844c:	12 c3       	clrc			
-    844e:	0c 10       	rrc	r12		;
-
-00008450 <__mspabi_srli_3>:
-    8450:	12 c3       	clrc			
-    8452:	0c 10       	rrc	r12		;
-
-00008454 <__mspabi_srli_2>:
-    8454:	12 c3       	clrc			
-    8456:	0c 10       	rrc	r12		;
-
-00008458 <__mspabi_srli_1>:
-    8458:	12 c3       	clrc			
-    845a:	0c 10       	rrc	r12		;
-    845c:	30 41       	ret			
-
-0000845e <.L11>:
-    845e:	3d 53       	add	#-1,	r13	;r3 As==11
-    8460:	12 c3       	clrc			
-    8462:	0c 10       	rrc	r12		;
-
-00008464 <__mspabi_srli>:
-    8464:	0d 93       	cmp	#0,	r13	;r3 As==00
-    8466:	fb 23       	jnz	$-8      	;abs 0x845e
-    8468:	30 41       	ret			
-
-0000846a <__mspabi_srll_15>:
-    846a:	12 c3       	clrc			
-    846c:	0d 10       	rrc	r13		;
-    846e:	0c 10       	rrc	r12		;
-
-00008470 <__mspabi_srll_14>:
-    8470:	12 c3       	clrc			
-    8472:	0d 10       	rrc	r13		;
-    8474:	0c 10       	rrc	r12		;
-
-00008476 <__mspabi_srll_13>:
-    8476:	12 c3       	clrc			
-    8478:	0d 10       	rrc	r13		;
-    847a:	0c 10       	rrc	r12		;
-
-0000847c <__mspabi_srll_12>:
-    847c:	12 c3       	clrc			
-    847e:	0d 10       	rrc	r13		;
-    8480:	0c 10       	rrc	r12		;
-
-00008482 <__mspabi_srll_11>:
-    8482:	12 c3       	clrc			
-    8484:	0d 10       	rrc	r13		;
-    8486:	0c 10       	rrc	r12		;
-
-00008488 <__mspabi_srll_10>:
-    8488:	12 c3       	clrc			
-    848a:	0d 10       	rrc	r13		;
-    848c:	0c 10       	rrc	r12		;
-
-0000848e <__mspabi_srll_9>:
-    848e:	12 c3       	clrc			
-    8490:	0d 10       	rrc	r13		;
-    8492:	0c 10       	rrc	r12		;
-
-00008494 <__mspabi_srll_8>:
-    8494:	12 c3       	clrc			
-    8496:	0d 10       	rrc	r13		;
-    8498:	0c 10       	rrc	r12		;
-
-0000849a <__mspabi_srll_7>:
-    849a:	12 c3       	clrc			
-    849c:	0d 10       	rrc	r13		;
-    849e:	0c 10       	rrc	r12		;
-
-000084a0 <__mspabi_srll_6>:
-    84a0:	12 c3       	clrc			
-    84a2:	0d 10       	rrc	r13		;
-    84a4:	0c 10       	rrc	r12		;
-
-000084a6 <__mspabi_srll_5>:
-    84a6:	12 c3       	clrc			
-    84a8:	0d 10       	rrc	r13		;
-    84aa:	0c 10       	rrc	r12		;
-
-000084ac <__mspabi_srll_4>:
-    84ac:	12 c3       	clrc			
-    84ae:	0d 10       	rrc	r13		;
-    84b0:	0c 10       	rrc	r12		;
-
-000084b2 <__mspabi_srll_3>:
-    84b2:	12 c3       	clrc			
-    84b4:	0d 10       	rrc	r13		;
-    84b6:	0c 10       	rrc	r12		;
-
-000084b8 <__mspabi_srll_2>:
-    84b8:	12 c3       	clrc			
-    84ba:	0d 10       	rrc	r13		;
-    84bc:	0c 10       	rrc	r12		;
-
-000084be <__mspabi_srll_1>:
-    84be:	12 c3       	clrc			
-    84c0:	0d 10       	rrc	r13		;
-    84c2:	0c 10       	rrc	r12		;
-    84c4:	30 41       	ret			
-
-000084c6 <.L12>:
-    84c6:	3e 53       	add	#-1,	r14	;r3 As==11
-    84c8:	12 c3       	clrc			
-    84ca:	0d 10       	rrc	r13		;
-    84cc:	0c 10       	rrc	r12		;
-
-000084ce <__mspabi_srll>:
-    84ce:	0e 93       	cmp	#0,	r14	;r3 As==00
-    84d0:	fa 23       	jnz	$-10     	;abs 0x84c6
-    84d2:	30 41       	ret			
-
-000084d4 <memmove>:
-    84d4:	0d 9c       	cmp	r12,	r13	;
-    84d6:	0a 28       	jnc	$+22     	;abs 0x84ec
-
-000084d8 <.L5>:
-    84d8:	0f 4c       	mov	r12,	r15	;
-    84da:	0e 5c       	add	r12,	r14	;
-
-000084dc <.L3>:
-    84dc:	0e 9f       	cmp	r15,	r14	;
-    84de:	0d 24       	jz	$+28     	;abs 0x84fa
-
-000084e0 <.LVL3>:
-    84e0:	ef 4d 00 00 	mov.b	@r13,	0(r15)	;
-    84e4:	1f 53       	inc	r15		;
-
-000084e6 <.LVL4>:
-    84e6:	1d 53       	inc	r13		;
-    84e8:	30 40 dc 84 	br	#0x84dc		;
-
-000084ec <.L2>:
-    84ec:	0f 4d       	mov	r13,	r15	;
-    84ee:	0f 5e       	add	r14,	r15	;
-    84f0:	0c 9f       	cmp	r15,	r12	;
-    84f2:	f2 2f       	jc	$-26     	;abs 0x84d8
-
-000084f4 <.L4>:
-    84f4:	3e 53       	add	#-1,	r14	;r3 As==11
-
-000084f6 <.LVL7>:
-    84f6:	3e 93       	cmp	#-1,	r14	;r3 As==11
-    84f8:	01 20       	jnz	$+4      	;abs 0x84fc
-
-000084fa <.L10>:
-    84fa:	30 41       	ret			
-
-000084fc <.L6>:
-    84fc:	0b 4c       	mov	r12,	r11	;
-    84fe:	0b 5e       	add	r14,	r11	;
-    8500:	0f 4d       	mov	r13,	r15	;
-    8502:	0f 5e       	add	r14,	r15	;
-    8504:	eb 4f 00 00 	mov.b	@r15,	0(r11)	;
-    8508:	30 40 f4 84 	br	#0x84f4		;
-
-0000850c <memset>:
-    850c:	0f 4c       	mov	r12,	r15	;
-    850e:	0e 5c       	add	r12,	r14	;
-
-00008510 <.L2>:
-    8510:	0f 9e       	cmp	r14,	r15	;
-    8512:	01 20       	jnz	$+4      	;abs 0x8516
-
-00008514 <.Loc.104.1>:
-    8514:	30 41       	ret			
-
-00008516 <.L3>:
-    8516:	cf 4d 00 00 	mov.b	r13,	0(r15)	;
-    851a:	1f 53       	inc	r15		;
-
-0000851c <.LVL4>:
-    851c:	30 40 10 85 	br	#0x8510		;
-
-00008520 <L0>:
-    8520:	30 41       	ret			
-
-00008522 <__do_global_ctors_aux>:
-    8522:	0a 12       	push	r10		;
-    8524:	3a 40 08 80 	mov	#32776,	r10	;#0x8008
-
-00008528 <.L2>:
-    8528:	2c 4a       	mov	@r10,	r12	;
-    852a:	3c 93       	cmp	#-1,	r12	;r3 As==11
-    852c:	02 20       	jnz	$+6      	;abs 0x8532
-    852e:	3a 41       	pop	r10		;
-    8530:	30 41       	ret			
-
-00008532 <.L3>:
-    8532:	8c 12       	call	r12		;
-    8534:	3a 50 fe ff 	add	#65534,	r10	;#0xfffe
-    8538:	30 40 28 85 	br	#0x8528		;
-
-0000853c <call___do_global_ctors_aux>:
-    853c:	b0 12 16 81 	call	#33046		;#0x8116
-    8540:	b0 12 22 85 	call	#34082		;#0x8522
-
-00008544 <L0>:
-    8544:	b0 12 4e 80 	call	#32846		;#0x804e
-
-00008548 <.Loc.19.1>:
-    8548:	b0 12 40 80 	call	#32832		;#0x8040
-
-0000854c <.Loc.20.1>:
-    854c:	30 41       	ret			
-
-0000854e <__msp430_fini>:
-    854e:	b0 12 5c 80 	call	#32860		;#0x805c
-
-00008552 <L0>:
-    8552:	b0 12 c8 80 	call	#32968		;#0x80c8
-
-00008556 <L0>:
-    8556:	30 41       	ret			
+0000831e <__mspabi_func_epilog_2>:
+    831e:	39 41       	pop	r9		;
+
+00008320 <__mspabi_func_epilog_1>:
+    8320:	3a 41       	pop	r10		;
+    8322:	30 41       	ret			
+
+00008324 <__mspabi_srli_15>:
+    8324:	12 c3       	clrc			
+    8326:	0c 10       	rrc	r12		;
+
+00008328 <__mspabi_srli_14>:
+    8328:	12 c3       	clrc			
+    832a:	0c 10       	rrc	r12		;
+
+0000832c <__mspabi_srli_13>:
+    832c:	12 c3       	clrc			
+    832e:	0c 10       	rrc	r12		;
+
+00008330 <__mspabi_srli_12>:
+    8330:	12 c3       	clrc			
+    8332:	0c 10       	rrc	r12		;
+
+00008334 <__mspabi_srli_11>:
+    8334:	12 c3       	clrc			
+    8336:	0c 10       	rrc	r12		;
+
+00008338 <__mspabi_srli_10>:
+    8338:	12 c3       	clrc			
+    833a:	0c 10       	rrc	r12		;
+
+0000833c <__mspabi_srli_9>:
+    833c:	12 c3       	clrc			
+    833e:	0c 10       	rrc	r12		;
+
+00008340 <__mspabi_srli_8>:
+    8340:	12 c3       	clrc			
+    8342:	0c 10       	rrc	r12		;
+
+00008344 <__mspabi_srli_7>:
+    8344:	12 c3       	clrc			
+    8346:	0c 10       	rrc	r12		;
+
+00008348 <__mspabi_srli_6>:
+    8348:	12 c3       	clrc			
+    834a:	0c 10       	rrc	r12		;
+
+0000834c <__mspabi_srli_5>:
+    834c:	12 c3       	clrc			
+    834e:	0c 10       	rrc	r12		;
+
+00008350 <__mspabi_srli_4>:
+    8350:	12 c3       	clrc			
+    8352:	0c 10       	rrc	r12		;
+
+00008354 <__mspabi_srli_3>:
+    8354:	12 c3       	clrc			
+    8356:	0c 10       	rrc	r12		;
+
+00008358 <__mspabi_srli_2>:
+    8358:	12 c3       	clrc			
+    835a:	0c 10       	rrc	r12		;
+
+0000835c <__mspabi_srli_1>:
+    835c:	12 c3       	clrc			
+    835e:	0c 10       	rrc	r12		;
+    8360:	30 41       	ret			
+
+00008362 <.L11>:
+    8362:	3d 53       	add	#-1,	r13	;r3 As==11
+    8364:	12 c3       	clrc			
+    8366:	0c 10       	rrc	r12		;
+
+00008368 <__mspabi_srli>:
+    8368:	0d 93       	cmp	#0,	r13	;r3 As==00
+    836a:	fb 23       	jnz	$-8      	;abs 0x8362
+    836c:	30 41       	ret			
+
+0000836e <__mspabi_srll_15>:
+    836e:	12 c3       	clrc			
+    8370:	0d 10       	rrc	r13		;
+    8372:	0c 10       	rrc	r12		;
+
+00008374 <__mspabi_srll_14>:
+    8374:	12 c3       	clrc			
+    8376:	0d 10       	rrc	r13		;
+    8378:	0c 10       	rrc	r12		;
+
+0000837a <__mspabi_srll_13>:
+    837a:	12 c3       	clrc			
+    837c:	0d 10       	rrc	r13		;
+    837e:	0c 10       	rrc	r12		;
+
+00008380 <__mspabi_srll_12>:
+    8380:	12 c3       	clrc			
+    8382:	0d 10       	rrc	r13		;
+    8384:	0c 10       	rrc	r12		;
+
+00008386 <__mspabi_srll_11>:
+    8386:	12 c3       	clrc			
+    8388:	0d 10       	rrc	r13		;
+    838a:	0c 10       	rrc	r12		;
+
+0000838c <__mspabi_srll_10>:
+    838c:	12 c3       	clrc			
+    838e:	0d 10       	rrc	r13		;
+    8390:	0c 10       	rrc	r12		;
+
+00008392 <__mspabi_srll_9>:
+    8392:	12 c3       	clrc			
+    8394:	0d 10       	rrc	r13		;
+    8396:	0c 10       	rrc	r12		;
+
+00008398 <__mspabi_srll_8>:
+    8398:	12 c3       	clrc			
+    839a:	0d 10       	rrc	r13		;
+    839c:	0c 10       	rrc	r12		;
+
+0000839e <__mspabi_srll_7>:
+    839e:	12 c3       	clrc			
+    83a0:	0d 10       	rrc	r13		;
+    83a2:	0c 10       	rrc	r12		;
+
+000083a4 <__mspabi_srll_6>:
+    83a4:	12 c3       	clrc			
+    83a6:	0d 10       	rrc	r13		;
+    83a8:	0c 10       	rrc	r12		;
+
+000083aa <__mspabi_srll_5>:
+    83aa:	12 c3       	clrc			
+    83ac:	0d 10       	rrc	r13		;
+    83ae:	0c 10       	rrc	r12		;
+
+000083b0 <__mspabi_srll_4>:
+    83b0:	12 c3       	clrc			
+    83b2:	0d 10       	rrc	r13		;
+    83b4:	0c 10       	rrc	r12		;
+
+000083b6 <__mspabi_srll_3>:
+    83b6:	12 c3       	clrc			
+    83b8:	0d 10       	rrc	r13		;
+    83ba:	0c 10       	rrc	r12		;
+
+000083bc <__mspabi_srll_2>:
+    83bc:	12 c3       	clrc			
+    83be:	0d 10       	rrc	r13		;
+    83c0:	0c 10       	rrc	r12		;
+
+000083c2 <__mspabi_srll_1>:
+    83c2:	12 c3       	clrc			
+    83c4:	0d 10       	rrc	r13		;
+    83c6:	0c 10       	rrc	r12		;
+    83c8:	30 41       	ret			
+
+000083ca <.L12>:
+    83ca:	3e 53       	add	#-1,	r14	;r3 As==11
+    83cc:	12 c3       	clrc			
+    83ce:	0d 10       	rrc	r13		;
+    83d0:	0c 10       	rrc	r12		;
+
+000083d2 <__mspabi_srll>:
+    83d2:	0e 93       	cmp	#0,	r14	;r3 As==00
+    83d4:	fa 23       	jnz	$-10     	;abs 0x83ca
+    83d6:	30 41       	ret			
+
+000083d8 <memmove>:
+    83d8:	0d 9c       	cmp	r12,	r13	;
+    83da:	0a 28       	jnc	$+22     	;abs 0x83f0
+
+000083dc <.L5>:
+    83dc:	0f 4c       	mov	r12,	r15	;
+    83de:	0e 5c       	add	r12,	r14	;
+
+000083e0 <.L3>:
+    83e0:	0e 9f       	cmp	r15,	r14	;
+    83e2:	0d 24       	jz	$+28     	;abs 0x83fe
+
+000083e4 <.LVL3>:
+    83e4:	ef 4d 00 00 	mov.b	@r13,	0(r15)	;
+    83e8:	1f 53       	inc	r15		;
+
+000083ea <.LVL4>:
+    83ea:	1d 53       	inc	r13		;
+    83ec:	30 40 e0 83 	br	#0x83e0		;
+
+000083f0 <.L2>:
+    83f0:	0f 4d       	mov	r13,	r15	;
+    83f2:	0f 5e       	add	r14,	r15	;
+    83f4:	0c 9f       	cmp	r15,	r12	;
+    83f6:	f2 2f       	jc	$-26     	;abs 0x83dc
+
+000083f8 <.L4>:
+    83f8:	3e 53       	add	#-1,	r14	;r3 As==11
+
+000083fa <.LVL7>:
+    83fa:	3e 93       	cmp	#-1,	r14	;r3 As==11
+    83fc:	01 20       	jnz	$+4      	;abs 0x8400
+
+000083fe <.L10>:
+    83fe:	30 41       	ret			
+
+00008400 <.L6>:
+    8400:	0b 4c       	mov	r12,	r11	;
+    8402:	0b 5e       	add	r14,	r11	;
+    8404:	0f 4d       	mov	r13,	r15	;
+    8406:	0f 5e       	add	r14,	r15	;
+    8408:	eb 4f 00 00 	mov.b	@r15,	0(r11)	;
+    840c:	30 40 f8 83 	br	#0x83f8		;
+
+00008410 <memset>:
+    8410:	0f 4c       	mov	r12,	r15	;
+    8412:	0e 5c       	add	r12,	r14	;
+
+00008414 <.L2>:
+    8414:	0f 9e       	cmp	r14,	r15	;
+    8416:	01 20       	jnz	$+4      	;abs 0x841a
+
+00008418 <.Loc.104.1>:
+    8418:	30 41       	ret			
+
+0000841a <.L3>:
+    841a:	cf 4d 00 00 	mov.b	r13,	0(r15)	;
+    841e:	1f 53       	inc	r15		;
+
+00008420 <.LVL4>:
+    8420:	30 40 14 84 	br	#0x8414		;
+
+00008424 <L0>:
+    8424:	30 41       	ret			
+
+00008426 <__do_global_ctors_aux>:
+    8426:	0a 12       	push	r10		;
+    8428:	3a 40 08 80 	mov	#32776,	r10	;#0x8008
+
+0000842c <.L2>:
+    842c:	2c 4a       	mov	@r10,	r12	;
+    842e:	3c 93       	cmp	#-1,	r12	;r3 As==11
+    8430:	02 20       	jnz	$+6      	;abs 0x8436
+    8432:	3a 41       	pop	r10		;
+    8434:	30 41       	ret			
+
+00008436 <.L3>:
+    8436:	8c 12       	call	r12		;
+    8438:	3a 50 fe ff 	add	#65534,	r10	;#0xfffe
+    843c:	30 40 2c 84 	br	#0x842c		;
+
+00008440 <call___do_global_ctors_aux>:
+    8440:	b0 12 16 81 	call	#33046		;#0x8116
+    8444:	b0 12 26 84 	call	#33830		;#0x8426
+
+00008448 <L0>:
+    8448:	b0 12 4e 80 	call	#32846		;#0x804e
+
+0000844c <.Loc.19.1>:
+    844c:	b0 12 40 80 	call	#32832		;#0x8040
+
+00008450 <.Loc.20.1>:
+    8450:	30 41       	ret			
+
+00008452 <__msp430_fini>:
+    8452:	b0 12 5c 80 	call	#32860		;#0x805c
+
+00008456 <L0>:
+    8456:	b0 12 c8 80 	call	#32968		;#0x80c8
+
+0000845a <L0>:
+    845a:	30 41       	ret			

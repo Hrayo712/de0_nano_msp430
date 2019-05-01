@@ -7,7 +7,7 @@
 	.type	var1, @object
 	.size	var1, 2
 var1:
-	.short	1
+	.short	2
 	.global	var2
 	.balign 2
 	.type	var2, @object
@@ -66,258 +66,226 @@ var9:
 INT_Qwark:
 .LFB1:
 	.file 1 "main.c"
-	.loc 1 36 0
+	.loc 1 94 0
 ; start of function
 ; attributes: interrupt 
-; framesize_regs:     4
-; framesize_locals:   2
+; framesize_regs:     2
+; framesize_locals:   0
 ; framesize_outgoing: 0
-; framesize:          6
-; elim ap -> fp       6
-; elim fp -> sp       2
-; saved regs: R12 R13
+; framesize:          2
+; elim ap -> fp       4
+; elim fp -> sp       0
+; saved regs: R12
 	; start of prologue
-	PUSH	R13
-.LCFI0:
 	PUSH	R12
-.LCFI1:
-	SUB.W	#2, R1
-.LCFI2:
+.LCFI0:
 	; end of prologue
-	.loc 1 41 0
+	.loc 1 97 0
 	MOV.B	#144, R12
 	MOV.B	#15, @R12
-	.loc 1 42 0
-	MOV.W	#400, R12
-	MOV.W	@R12, R12
-	CLRC { RRC.W	R12
-	MOV.W	R12, R13
-	AND.B	#7, R13
-	MOV.W	R13, @R1
-	.loc 1 44 0
-	MOV.W	@R1, R12
-	CMP.W	#3, R12 { JEQ	.L3
-	MOV.B	#3, R13
-	CMP.W	R12, R13 { JL	.L4
-	CMP.W	#1, R12 { JEQ	.L5
-	MOV.B	#1, R13
-	CMP.W	R12, R13 { JL	.L6
-	CMP.W	#0, R12 { JEQ	.L13
-	.loc 1 91 0
-	BR	#.L12
-.L4:
-	.loc 1 44 0
-	CMP.W	#5, R12 { JEQ	.L8
-	CMP.W	#5, R12 { JL	.L9
-	CMP.W	#6, R12 { JEQ	.L10
-	CMP.W	#7, R12 { JEQ	.L11
-	.loc 1 91 0
-	BR	#.L12
-.L5:
-	.loc 1 49 0
-	MOV.W	#24576, R12
-	MOV.W	@R12, R13
-	MOV.W	#402, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 51 0
-	BR	#.L12
-.L6:
-	.loc 1 53 0
-	MOV.W	#24576, R12
-	MOV.W	@R12, R13
-	MOV.W	#402, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 54 0
-	MOV.W	#24578, R12
-	MOV.W	@R12, R13
-	MOV.W	#404, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 55 0
-	BR	#.L12
-.L3:
-	.loc 1 57 0
-	MOV.W	#24576, R12
-	MOV.W	@R12, R13
-	MOV.W	#402, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 58 0
-	MOV.W	#24578, R12
-	MOV.W	@R12, R13
-	MOV.W	#404, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 59 0
-	MOV.W	#24580, R12
-	MOV.W	@R12, R13
-	MOV.W	#406, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 60 0
-	BR	#.L12
-.L9:
-	.loc 1 62 0
-	MOV.W	#24576, R12
-	MOV.W	@R12, R13
-	MOV.W	#402, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 63 0
-	MOV.W	#24578, R12
-	MOV.W	@R12, R13
-	MOV.W	#404, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 64 0
-	MOV.W	#24580, R12
-	MOV.W	@R12, R13
-	MOV.W	#406, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 65 0
-	MOV.W	#24582, R12
-	MOV.W	@R12, R13
-	MOV.W	#408, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 66 0
-	BR	#.L12
-.L8:
-	.loc 1 67 0
-	MOV.W	#24576, R12
-	MOV.W	@R12, R13
-	MOV.W	#402, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 68 0
-	MOV.W	#24578, R12
-	MOV.W	@R12, R13
-	MOV.W	#404, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 69 0
-	MOV.W	#24580, R12
-	MOV.W	@R12, R13
-	MOV.W	#406, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 70 0
-	MOV.W	#24582, R12
-	MOV.W	@R12, R13
-	MOV.W	#408, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 71 0
-	MOV.W	#24584, R12
-	MOV.W	@R12, R13
-	MOV.W	#410, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 72 0
-	BR	#.L12
-.L10:
-	.loc 1 74 0
-	MOV.W	#24576, R12
-	MOV.W	@R12, R13
-	MOV.W	#402, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 75 0
-	MOV.W	#24578, R12
-	MOV.W	@R12, R13
-	MOV.W	#404, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 76 0
-	MOV.W	#24580, R12
-	MOV.W	@R12, R13
-	MOV.W	#406, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 77 0
-	MOV.W	#24582, R12
-	MOV.W	@R12, R13
-	MOV.W	#408, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 78 0
-	MOV.W	#24584, R12
-	MOV.W	@R12, R13
-	MOV.W	#410, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 79 0
-	MOV.W	#24586, R12
-	MOV.W	@R12, R13
-	MOV.W	#412, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 80 0
-	BR	#.L12
-.L11:
-	.loc 1 82 0
-	MOV.W	#24576, R12
-	MOV.W	@R12, R13
-	MOV.W	#402, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 83 0
-	MOV.W	#24578, R12
-	MOV.W	@R12, R13
-	MOV.W	#404, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 84 0
-	MOV.W	#24580, R12
-	MOV.W	@R12, R13
-	MOV.W	#406, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 85 0
-	MOV.W	#24582, R12
-	MOV.W	@R12, R13
-	MOV.W	#408, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 86 0
-	MOV.W	#24584, R12
-	MOV.W	@R12, R13
-	MOV.W	#410, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 87 0
-	MOV.W	#24586, R12
-	MOV.W	@R12, R13
-	MOV.W	#412, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 88 0
-	MOV.W	#24588, R12
-	MOV.W	@R12, R13
-	MOV.W	#414, R12
-	MOV.W	@R12, R12
-	MOV.W	R13, @R12
-	.loc 1 89 0
-	BR	#.L12
-.L13:
-	.loc 1 47 0
-	NOP
-.L12:
-	.loc 1 94 0
+	.loc 1 102 0
+ ; 102 "main.c" 1
+	mov r1,&0x6020
+ ; 0 "" 2
+	.loc 1 103 0
+ ; 103 "main.c" 1
+	add #0x06,&0x6020
+ ; 0 "" 2
+	.loc 1 104 0
+ ; 104 "main.c" 1
+	mov 4(r1),&0x6022
+ ; 0 "" 2
+	.loc 1 105 0
+ ; 105 "main.c" 1
+	mov 2(r1),&0x6024
+ ; 0 "" 2
+	.loc 1 106 0
+ ; 106 "main.c" 1
+	mov r13 ,&0x6026
+ ; 0 "" 2
+	.loc 1 107 0
+ ; 107 "main.c" 1
+	mov 0(r1),&0x6028
+ ; 0 "" 2
+	.loc 1 108 0
+ ; 108 "main.c" 1
+	mov r4,&0x602A
+ ; 0 "" 2
+	.loc 1 109 0
+ ; 109 "main.c" 1
+	mov r5,&0x602C
+ ; 0 "" 2
+	.loc 1 110 0
+ ; 110 "main.c" 1
+	mov r6,&0x602E
+ ; 0 "" 2
+	.loc 1 111 0
+ ; 111 "main.c" 1
+	mov r7,&0x6030
+ ; 0 "" 2
+	.loc 1 112 0
+ ; 112 "main.c" 1
+	mov r8,&0x6032
+ ; 0 "" 2
+	.loc 1 113 0
+ ; 113 "main.c" 1
+	mov r9,&0x6034
+ ; 0 "" 2
+	.loc 1 114 0
+ ; 114 "main.c" 1
+	mov r10,&0x6036
+ ; 0 "" 2
+	.loc 1 115 0
+ ; 115 "main.c" 1
+	mov r11,&0x6038
+ ; 0 "" 2
+	.loc 1 117 0
+ ; 117 "main.c" 1
+	mov r14,&0x603E
+ ; 0 "" 2
+	.loc 1 118 0
+ ; 118 "main.c" 1
+	mov r15,&0x6040
+ ; 0 "" 2
+	.loc 1 122 0
+ ; 122 "main.c" 1
+	mov &0x0192, &0x6010
+ ; 0 "" 2
+	.loc 1 123 0
+ ; 123 "main.c" 1
+	mov &0x0194, &0x6012
+ ; 0 "" 2
+	.loc 1 124 0
+ ; 124 "main.c" 1
+	mov &0x0196, &0x6014
+ ; 0 "" 2
+	.loc 1 125 0
+ ; 125 "main.c" 1
+	mov &0x0198, &0x6016
+ ; 0 "" 2
+	.loc 1 126 0
+ ; 126 "main.c" 1
+	mov &0x019A, &0x6018
+ ; 0 "" 2
+	.loc 1 127 0
+ ; 127 "main.c" 1
+	mov &0x019C, &0x601A
+ ; 0 "" 2
+	.loc 1 128 0
+ ; 128 "main.c" 1
+	mov &0x019E, &0x601C
+ ; 0 "" 2
+	.loc 1 130 0
+ ; 130 "main.c" 1
+	mov &0x0190, &0x601E
+ ; 0 "" 2
+	.loc 1 131 0
+ ; 131 "main.c" 1
+	and #0x000E, &0x601E
+ ; 0 "" 2
+	.loc 1 132 0
+ ; 132 "main.c" 1
+	RRA &0x601E
+ ; 0 "" 2
+	.loc 1 141 0
+ ; 141 "main.c" 1
+	mov #0x01, &0x600E
+ ; 0 "" 2
+	.loc 1 144 0
+ ; 144 "main.c" 1
+	mov #0x6010,  r12 
+ ; 0 "" 2
+	.loc 1 145 0
+ ; 145 "main.c" 1
+	mov @r12,     r13 
+ ; 0 "" 2
+	.loc 1 146 0
+ ; 146 "main.c" 1
+	mov &0x6000, @r13 
+ ; 0 "" 2
+	.loc 1 148 0
+ ; 148 "main.c" 1
+	mov #0x6012,  r12 
+ ; 0 "" 2
+	.loc 1 149 0
+ ; 149 "main.c" 1
+	mov @r12,     r13 
+ ; 0 "" 2
+	.loc 1 150 0
+ ; 150 "main.c" 1
+	mov &0x6002, @r13 
+ ; 0 "" 2
+	.loc 1 152 0
+ ; 152 "main.c" 1
+	mov #0x6014,  r12 
+ ; 0 "" 2
+	.loc 1 153 0
+ ; 153 "main.c" 1
+	mov @r12,     r13 
+ ; 0 "" 2
+	.loc 1 154 0
+ ; 154 "main.c" 1
+	mov &0x6004, @r13 
+ ; 0 "" 2
+	.loc 1 156 0
+ ; 156 "main.c" 1
+	mov #0x6016,  r12 
+ ; 0 "" 2
+	.loc 1 157 0
+ ; 157 "main.c" 1
+	mov @r12,     r13 
+ ; 0 "" 2
+	.loc 1 158 0
+ ; 158 "main.c" 1
+	mov &0x6006, @r13 
+ ; 0 "" 2
+	.loc 1 160 0
+ ; 160 "main.c" 1
+	mov #0x6018,  r12 
+ ; 0 "" 2
+	.loc 1 161 0
+ ; 161 "main.c" 1
+	mov @r12,     r13 
+ ; 0 "" 2
+	.loc 1 162 0
+ ; 162 "main.c" 1
+	mov &0x6008, @r13 
+ ; 0 "" 2
+	.loc 1 164 0
+ ; 164 "main.c" 1
+	mov #0x601A,  r12 
+ ; 0 "" 2
+	.loc 1 165 0
+ ; 165 "main.c" 1
+	mov @r12,     r13 
+ ; 0 "" 2
+	.loc 1 166 0
+ ; 166 "main.c" 1
+	mov &0x600A, @r13 
+ ; 0 "" 2
+	.loc 1 168 0
+ ; 168 "main.c" 1
+	mov #0x601C,  r12 
+ ; 0 "" 2
+	.loc 1 169 0
+ ; 169 "main.c" 1
+	mov @r12,     r13 
+ ; 0 "" 2
+	.loc 1 170 0
+ ; 170 "main.c" 1
+	mov &0x600C, @r13 
+ ; 0 "" 2
+	.loc 1 174 0
+ ; 174 "main.c" 1
+	mov #0x0001, &0x0190
+ ; 0 "" 2
+	.loc 1 175 0
 	MOV.B	#144, R12
 	MOV.B	#-16, @R12
-	.loc 1 97 0
-	MOV.W	#400, R12
-	MOV.W	#1, @R12
-	.loc 1 98 0
+	.loc 1 177 0
 	NOP
 	; start of epilogue
-	ADD.W	#2, R1
 	POP	R12
-	POP	R13
 	RETI
 .LFE1:
 	.size	INT_Qwark, .-INT_Qwark
@@ -326,7 +294,7 @@ INT_Qwark:
 	.type	main, @function
 main:
 .LFB2:
-	.loc 1 101 0
+	.loc 1 180 0
 ; start of function
 ; framesize_regs:     0
 ; framesize_locals:   0
@@ -337,67 +305,118 @@ main:
 ; saved regs:(none)
 	; start of prologue
 	; end of prologue
-	.loc 1 102 0
-	MOV.W	#288, R12
-	MOV.W	#23168, @R12
-	.loc 1 104 0
- ; 104 "main.c" 1
+	.loc 1 183 0
+ ; 183 "main.c" 1
 	eint { nop
  ; 0 "" 2
-	.loc 1 105 0
+	.loc 1 186 0
 	MOV.W	#400, R12
 	MOV.W	#1, @R12
-	.loc 1 108 0
+	.loc 1 189 0
 	MOV.W	&var1, R12
-	CMP.W	#0, R12 { JEQ	.L15
-	.loc 1 109 0
+	CMP.W	#0, R12 { JEQ	.L3
+	.loc 1 190 0
 	MOV.W	#1, &var1
-.L15:
-	.loc 1 112 0
+.L3:
+	.loc 1 193 0
 	MOV.W	&var2, R12
-	CMP.W	#0, R12 { JEQ	.L16
-	.loc 1 113 0
-	MOV.W	#1, &var2
-.L16:
-	.loc 1 116 0
+	CMP.W	#0, R12 { JEQ	.L4
+	.loc 1 194 0
+	MOV.W	#2, &var2
+.L4:
+	.loc 1 197 0
 	MOV.W	&var3, R12
-	CMP.W	#0, R12 { JEQ	.L17
-	.loc 1 117 0
-	MOV.W	#204, &var3
-.L17:
-	.loc 1 120 0
+	CMP.W	#0, R12 { JEQ	.L5
+	.loc 1 198 0
+	MOV.W	#3, &var3
+.L5:
+	.loc 1 201 0
 	MOV.W	&var4, R12
-	CMP.W	#0, R12 { JEQ	.L18
-	.loc 1 121 0
-	MOV.W	#221, &var4
-.L18:
-	.loc 1 124 0
+	CMP.W	#0, R12 { JEQ	.L6
+	.loc 1 202 0
+	MOV.W	#4, &var4
+.L6:
+	.loc 1 205 0
 	MOV.W	&var5, R12
-	CMP.W	#0, R12 { JEQ	.L19
-	.loc 1 125 0
-	MOV.W	#238, &var5
-.L19:
-	.loc 1 128 0
+	CMP.W	#0, R12 { JEQ	.L7
+	.loc 1 206 0
+	MOV.W	#5, &var5
+.L7:
+	.loc 1 209 0
 	MOV.W	&var6, R12
-	CMP.W	#0, R12 { JEQ	.L20
-	.loc 1 129 0
-	MOV.W	#255, &var6
-.L20:
-	.loc 1 132 0
+	CMP.W	#0, R12 { JEQ	.L8
+	.loc 1 210 0
+	MOV.W	#6, &var6
+.L8:
+	.loc 1 213 0
 	MOV.W	&var7, R12
-	CMP.W	#0, R12 { JEQ	.L21
-	.loc 1 133 0
-	MOV.W	#85, &var7
-.L21:
-	.loc 1 136 0
+	CMP.W	#0, R12 { JEQ	.L9
+	.loc 1 214 0
+	MOV.W	#7, &var7
+.L9:
+	.loc 1 217 0
 	MOV.W	&var8, R12
-	CMP.W	#0, R12 { JEQ	.L22
-	.loc 1 137 0
-	MOV.W	#170, &var8
-.L22:
-.L23:
-	.loc 1 143 0
-	BR	#.L23
+	CMP.W	#0, R12 { JEQ	.L10
+	.loc 1 218 0
+	MOV.W	#8, &var8
+.L10:
+	.loc 1 224 0
+	MOV.W	&var9, R12
+	CMP.W	#0, R12 { JEQ	.L11
+	.loc 1 225 0
+	MOV.W	#170, &var9
+.L11:
+	.loc 1 228 0
+	MOV.W	&var1, R12
+	CMP.W	#0, R12 { JEQ	.L12
+	.loc 1 229 0
+	MOV.W	#1, &var1
+.L12:
+	.loc 1 232 0
+	MOV.W	&var2, R12
+	CMP.W	#0, R12 { JEQ	.L13
+	.loc 1 233 0
+	MOV.W	#2, &var2
+.L13:
+	.loc 1 236 0
+	MOV.W	&var3, R12
+	CMP.W	#0, R12 { JEQ	.L14
+	.loc 1 237 0
+	MOV.W	#3, &var3
+.L14:
+	.loc 1 240 0
+	MOV.W	&var4, R12
+	CMP.W	#0, R12 { JEQ	.L15
+	.loc 1 241 0
+	MOV.W	#4, &var4
+.L15:
+	.loc 1 244 0
+	MOV.W	&var5, R12
+	CMP.W	#0, R12 { JEQ	.L16
+	.loc 1 245 0
+	MOV.W	#5, &var5
+.L16:
+	.loc 1 248 0
+	MOV.W	&var6, R12
+	CMP.W	#0, R12 { JEQ	.L17
+	.loc 1 249 0
+	MOV.W	#6, &var6
+.L17:
+	.loc 1 252 0
+	MOV.W	&var7, R12
+	CMP.W	#0, R12 { JEQ	.L18
+	.loc 1 253 0
+	MOV.W	#7, &var7
+.L18:
+	.loc 1 256 0
+	MOV.W	&var8, R12
+	CMP.W	#0, R12 { JEQ	.L19
+	.loc 1 257 0
+	MOV.W	#8, &var8
+.L19:
+.L20:
+	.loc 1 260 0
+	BR	#.L20
 .LFE2:
 	.size	main, .-main
 	.section	.debug_frame,"",@progbits
@@ -427,18 +446,8 @@ main:
 	.4byte	.LCFI0-.LFB1
 	.byte	0xe
 	.uleb128 0x4
-	.byte	0x8d
-	.uleb128 0x2
-	.byte	0x4
-	.4byte	.LCFI1-.LCFI0
-	.byte	0xe
-	.uleb128 0x6
 	.byte	0x8c
-	.uleb128 0x3
-	.byte	0x4
-	.4byte	.LCFI2-.LCFI1
-	.byte	0xe
-	.uleb128 0x8
+	.uleb128 0x2
 	.balign 4
 .LEFDE0:
 .LSFDE2:
@@ -457,15 +466,15 @@ main:
 	.file 5 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/sys/reent.h"
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.4byte	0x96e
+	.4byte	0x95f
 	.2byte	0x3
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF129
-	.byte	0xc
-	.4byte	.LASF130
 	.4byte	.LASF131
+	.byte	0xc
+	.4byte	.LASF132
+	.4byte	.LASF133
 	.4byte	.Ltext0
 	.4byte	.Letext0
 	.4byte	.Ldebug_line0
@@ -1522,7 +1531,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF120
 	.byte	0x1
-	.byte	0x16
+	.byte	0x17
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1531,7 +1540,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF121
 	.byte	0x1
-	.byte	0x17
+	.byte	0x18
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1540,7 +1549,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF122
 	.byte	0x1
-	.byte	0x18
+	.byte	0x19
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1549,7 +1558,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF123
 	.byte	0x1
-	.byte	0x19
+	.byte	0x1a
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1558,7 +1567,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF124
 	.byte	0x1
-	.byte	0x1a
+	.byte	0x1b
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1567,7 +1576,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF125
 	.byte	0x1
-	.byte	0x1b
+	.byte	0x1c
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1576,7 +1585,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF126
 	.byte	0x1
-	.byte	0x1c
+	.byte	0x1d
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1585,7 +1594,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF127
 	.byte	0x1
-	.byte	0x1d
+	.byte	0x1e
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1594,7 +1603,7 @@ main:
 	.uleb128 0x1a
 	.4byte	.LASF128
 	.byte	0x1
-	.byte	0x1e
+	.byte	0x1f
 	.4byte	0x6f
 	.byte	0x1
 	.byte	0x5
@@ -1602,9 +1611,9 @@ main:
 	.4byte	var9
 	.uleb128 0x1b
 	.byte	0x1
-	.4byte	.LASF132
+	.4byte	.LASF129
 	.byte	0x1
-	.byte	0x64
+	.byte	0xb3
 	.4byte	0x68
 	.4byte	.LFB2
 	.4byte	.LFE2
@@ -1612,23 +1621,14 @@ main:
 	.byte	0x9c
 	.uleb128 0x1c
 	.byte	0x1
-	.4byte	.LASF133
+	.4byte	.LASF130
 	.byte	0x1
-	.byte	0x24
+	.byte	0x5e
 	.byte	0x1
 	.4byte	.LFB1
 	.4byte	.LFE1
 	.byte	0x1
 	.byte	0x9c
-	.uleb128 0x1d
-	.4byte	.LASF134
-	.byte	0x1
-	.byte	0x2a
-	.4byte	0x68
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -8
-	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",@progbits
 .Ldebug_abbrev0:
@@ -1969,7 +1969,7 @@ main:
 	.byte	0
 	.uleb128 0x1c
 	.uleb128 0x2e
-	.byte	0x1
+	.byte	0
 	.uleb128 0x3f
 	.uleb128 0xc
 	.uleb128 0x3
@@ -1985,21 +1985,6 @@ main:
 	.uleb128 0x12
 	.uleb128 0x1
 	.uleb128 0x40
-	.uleb128 0xa
-	.byte	0
-	.byte	0
-	.uleb128 0x1d
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
 	.uleb128 0xa
 	.byte	0
 	.byte	0
@@ -5131,37 +5116,37 @@ main:
 	.string	"MB_CUR_MAX __locale_mb_cur_max()"
 	.byte	0x4
 	.byte	0x1
-	.uleb128 0x8
+	.uleb128 0xb
 	.string	"QWARK_CTL (*(volatile unsigned int *) 0x0190)"
 	.byte	0x1
-	.uleb128 0x9
+	.uleb128 0xc
 	.string	"QWARK_VECTOR (5)"
 	.byte	0x1
-	.uleb128 0xa
+	.uleb128 0xd
 	.string	"QWARK_WAR_CTR (((QWARK_CTL)&(0x000E))>>1)"
 	.byte	0x1
-	.uleb128 0xb
+	.uleb128 0xe
 	.string	"QWARK_ENABLE() ((QWARK_CTL) | (0x0001))"
 	.byte	0x1
-	.uleb128 0xc
+	.uleb128 0xf
 	.string	"QWARK_ADDR1 (**((int**) (0x0192)))"
 	.byte	0x1
-	.uleb128 0xd
+	.uleb128 0x10
 	.string	"QWARK_ADDR2 (**((int**) (0x0194)))"
 	.byte	0x1
-	.uleb128 0xe
+	.uleb128 0x11
 	.string	"QWARK_ADDR3 (**((int**) (0x0196)))"
 	.byte	0x1
-	.uleb128 0xf
+	.uleb128 0x12
 	.string	"QWARK_ADDR4 (**((int**) (0x0198)))"
 	.byte	0x1
-	.uleb128 0x10
+	.uleb128 0x13
 	.string	"QWARK_ADDR5 (**((int**) (0x019A)))"
 	.byte	0x1
-	.uleb128 0x11
+	.uleb128 0x14
 	.string	"QWARK_ADDR6 (**((int**) (0x019C)))"
 	.byte	0x1
-	.uleb128 0x12
+	.uleb128 0x15
 	.string	"QWARK_ADDR7 (**((int**) (0x019E)))"
 	.byte	0x4
 	.byte	0
@@ -5174,7 +5159,7 @@ main:
 	.string	"_size"
 .LASF93:
 	.string	"_rand48"
-.LASF131:
+.LASF133:
 	.string	"/home/hiram/master/Qwark/altera_de0_nano/software/apps/leds"
 .LASF58:
 	.string	"_emergency"
@@ -5188,7 +5173,7 @@ main:
 	.string	"long long unsigned int"
 .LASF50:
 	.string	"_lbfsize"
-.LASF133:
+.LASF130:
 	.string	"INT_Qwark"
 .LASF111:
 	.string	"_mbrtowc_state"
@@ -5196,7 +5181,7 @@ main:
 	.string	"_wctomb_state"
 .LASF26:
 	.string	"__tm_sec"
-.LASF129:
+.LASF131:
 	.string	"GNU C99 7.3.1 -mcpu=msp430 -mhwmult=16bit -msmall -mcode-region=none -mdata-region=none -mdevices-csv-loc=/opt/ti/ccsv8/ccs_base/msp430/include_gcc/devices.csv -g3 -gdwarf-3 -gstrict-dwarf -O0 -std=c99 -fstrict-aliasing -fstack-usage"
 .LASF7:
 	.string	"long long int"
@@ -5298,7 +5283,7 @@ main:
 	.string	"_result"
 .LASF13:
 	.string	"__wch"
-.LASF130:
+.LASF132:
 	.string	"main.c"
 .LASF12:
 	.string	"wint_t"
@@ -5362,8 +5347,6 @@ main:
 	.string	"_maxwds"
 .LASF52:
 	.string	"_reent"
-.LASF134:
-	.string	"war_index"
 .LASF94:
 	.string	"_seed"
 .LASF15:
@@ -5434,7 +5417,7 @@ main:
 	.string	"_mbtowc_state"
 .LASF101:
 	.string	"_p5s"
-.LASF132:
+.LASF129:
 	.string	"main"
 .LASF29:
 	.string	"__tm_mday"
