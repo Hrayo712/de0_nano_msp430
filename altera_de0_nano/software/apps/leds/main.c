@@ -5,8 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//#define INTERMITTENCY_ENABLED
-
+//#define INTERMITTENCY_HANDLING_ENABLED
 
 #define QWARK_CTL     				  (*(volatile unsigned int  *) 0x0190)
 #define QWARK_VECTOR				  (5)
@@ -30,7 +29,10 @@ volatile int var7=1;
 volatile int var8=1;
 volatile int var9=1;
 
-#ifdef INTERMITTENCY_ENABLED
+
+
+
+#ifdef INTERMITTENCY_HANDLING_ENABLED
 
 void qwark_restore(void) __attribute__ ((naked));
 void qwark_restore(void) __attribute__ ((used));
@@ -38,7 +40,7 @@ void qwark_restore(void) __attribute__ ((section (".crt_0001_qwark")));
 void qwark_restore(void)
 {
     /* verify if this is the first time the code executes */
-	__asm__ __volatile__ ("mov #0x0000, &0x0190"); 
+	__asm__ __volatile__ ("mov #0x0000, &0x0190"); //QWARK_CTL = 0x01;
 	__asm__ __volatile__ ("mov &0x600E, r12");		//3 cycles
 	__asm__ __volatile__ ("mov #0x01, r13");		//1 cycle (using constant generator)
 	__asm__ __volatile__ ("cmp r12, r13"); 			//1 cycle
@@ -50,17 +52,17 @@ void qwark_restore(void)
 	/* Power outage happened ! 	   */
 	/* Proceed with system restore */
 
-	/* VOLATILE STATE RESTORE 									  */
-	/* STACK RESTORE										  */
+	/* VOLATILE STATE RESTORE 												  				  */
+	/* STACK RESTORE												  				  		  */
 	/* Note: The amount of cycles depend on the addressing mode not on the instruction 		  */
 
-	/* STACK RESTORE										  */
+	/* STACK RESTORE														  				  */
 	/* TO DO */
 
-	/* SYSTEM REGISTERS RESTORE									  */
-	/* Restore registers and PC (last) 								  */
-	/* EDE -> Rm  : 3 cycles each 									  */
-	/* EDE -> PC  : 4 cycles (1 extra cycle penalty) for openMSP430 		  		  */
+	/* SYSTEM REGISTERS RESTORE												  				  */
+	/* Restore registers and PC (last) 										  				  */
+	/* EDE -> Rm  : 3 cycles each 											  				  */
+	/* EDE -> PC  : 4 cycles (1 extra cycle penalty) for openMSP430 		  				  */
 	/* Register time: 15x3 = 45 cycles + 4 cycles (PC) = 49 Cycles  (53 counting Qwark enable)*/
 
 	__asm__ __volatile__ ("mov &0x602A,r4"); 		//R4	 3 cycles x 16 = 48 + 1 = 49 cycles
@@ -73,12 +75,12 @@ void qwark_restore(void)
 	__asm__ __volatile__ ("mov &0x6038,r11"); 		//R11
 	__asm__ __volatile__ ("mov &0x603E,r14"); 		//R14
 	__asm__ __volatile__ ("mov &0x6040,r15"); 		//R15
-	__asm__ __volatile__ ("mov &0x6026,r13"); 	        //R13
+	__asm__ __volatile__ ("mov &0x6026,r13"); 	    //R13
 	__asm__ __volatile__ ("mov &0x6028,r12"); 		//R12
 	__asm__ __volatile__ ("mov &0x6020,r1");   		//SP/R1
-	__asm__ __volatile__ ("mov &0x6024,r2"); 	        //SR/R2
+	__asm__ __volatile__ ("mov &0x6024,r2"); 	    //SR/R2
 
-	/* Enable Idempotency Tracking before restarting operation 		 		  */
+	/* Enable Idempotency Tracking before restarting operation 		 				  	  */
 	__asm__ __volatile__ ("mov #0x0001 , &0x0190");	/* QWARK_CTL Enable 4 cycles 		  */
 
 	/*Restore program Counter */
@@ -88,7 +90,7 @@ void qwark_restore(void)
 #endif
 
 //-------------------------------------------------------------------------------------------------------------//
-//    QWARK Checkpoint Procedure: without stack: 215 cycles -> First phase: 141 cycles - second phase: 74      //
+//    QWARK Checkpoint Procedure: without stack: 215 cycles => First phase: 141 cycles - second phase: 74      //
 //-------------------------------------------------------------------------------------------------------------//
 
 interrupt (QWARK_VECTOR) INT_Qwark(void) {
@@ -96,15 +98,17 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 	/* Idempotency Tracking is disabled by default upon entering this context */
 	LED_CTRL = 0x0F;
 
-	/* First Phase of the Committ process  */
+	//-------------------------------------------------------------------------------------------------------------//
+	//    FIRST PHASE OF THE COMMIT PROCESS																	       //
+	//-------------------------------------------------------------------------------------------------------------//
 	/*Store Registers into NV memory : Total: 73 cycles*/
 
 	__asm__ __volatile__ ("mov r1,&0x6020");   		//SP/R1   4 cycles       =  9 cycles
-	__asm__ __volatile__ ("add #0x06,&0x6020");		//	  5 cycles
-	__asm__ __volatile__ ("mov 4(r1),&0x6022"); 		//PC/R0   6 cycles       = 24 cycles
-	__asm__ __volatile__ ("mov 2(r1),&0x6024"); 		//SR/R2   6 cycles
-	__asm__ __volatile__ ("mov r13 ,&0x6026"); 	    	//R13	  6 cycles
-	__asm__ __volatile__ ("mov 0(r1),&0x6028"); 		//R12	  6 cycles
+	__asm__ __volatile__ ("add #0x06,&0x6020");		//		  5 cycles
+	__asm__ __volatile__ ("mov 4(r1),&0x6022"); 	//PC/R0   6 cycles       = 24 cycles
+	__asm__ __volatile__ ("mov 2(r1),&0x6024"); 	//SR/R2   6 cycles
+	__asm__ __volatile__ ("mov r13 ,&0x6026"); 	    //R13	  6 cycles
+	__asm__ __volatile__ ("mov 0(r1),&0x6028"); 	//R12	  6 cycles
 	__asm__ __volatile__ ("mov r4,&0x602A"); 		//R4	  4 cycles x 10 = 40 cycles
 	__asm__ __volatile__ ("mov r5,&0x602C"); 		//R5
 	__asm__ __volatile__ ("mov r6,&0x602E"); 		//R6
@@ -117,30 +121,52 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 	__asm__ __volatile__ ("mov r14,&0x603E"); 		//R14
 	__asm__ __volatile__ ("mov r15,&0x6040"); 		//R15
 
-	/* Copy the addresses to the scratchpad : 		Total 57 cycles */
+	/* Copy the addresses to the scratchpad : 		 Total 57 cycles */
 
 	__asm__ __volatile__ ("mov &0x0192, &0x6010");   // 6 cycles x 7 = 42 cycles
 	__asm__ __volatile__ ("mov &0x0194, &0x6012");
 	__asm__ __volatile__ ("mov &0x0196, &0x6014");
-    	__asm__ __volatile__ ("mov &0x0198, &0x6016");
+    __asm__ __volatile__ ("mov &0x0198, &0x6016");
 	__asm__ __volatile__ ("mov &0x019A, &0x6018");
 	__asm__ __volatile__ ("mov &0x019C, &0x601A");
 	__asm__ __volatile__ ("mov &0x019E, &0x601C");
 	//Move the index
 	__asm__ __volatile__ ("mov &0x0190, &0x601E");	// 6 cycles     = 15 cycles
 	__asm__ __volatile__ ("and #0x000E, &0x601E");	// 5 cycles
-	__asm__ __volatile__ ("RRA &0x601E");		// 4 cycles
+	__asm__ __volatile__ ("RRA &0x601E");			// 4 cycles
 
 
 	/* 1.3 .- Save the Stack to the scratchpad (FULL COPY / no segmentation yet)*/
+	 LED_CTRL = 0x01;
 
-	/* First phase completed */
+	__asm__ __volatile__ ("mov &0X6020, r12"); //r12 has the stack pointer..r12 gets restored automatically
+	__asm__ __volatile__ ("mov #0x6042, r13");
+	__asm__ __volatile__ ("mov #0x7FFE, r14");
+
+	__asm__ __volatile__ ("__copy_stack:");
+
+	__asm__ __volatile__ ("cmp r12,r14");	   //first check if there has been any stack growth. The stack is write and decrease
+	__asm__ __volatile__ ("jz __copy_stack_complete");
+
+	__asm__ __volatile__ ("mov @r12,@r13");
+	__asm__ __volatile__ ("incd r12");
+	__asm__ __volatile__ ("incd r13");
+	__asm__ __volatile__ ("br #__copy_stack");
+
+	__asm__ __volatile__ ("__copy_stack_complete:");
+	LED_CTRL = 0x02;
+
+	//-------------------------------------------------------------------------------------------------------------//
+	//    FIRST PHASE COMPLETED															  						   //
+	//-------------------------------------------------------------------------------------------------------------//
 
 	/* Set Dirty Bit - Atomic Flag*/
 	/* after setting this bit, it is possible to reproduce the checkpoint even if it fails halfway through */
 	__asm__ __volatile__ ("mov #0x01, &0x600E"); //4 cycles
 
-	/* 2nd Phase of the Committ process - Copy back from the Scratchpad: 70 cycles */
+	//-------------------------------------------------------------------------------------------------------------//
+	//    SECOND PHASE OF THE COMMIT PROCESS																	   //
+	//-------------------------------------------------------------------------------------------------------------//
 	__asm__ __volatile__ ("mov #0x6010,  r12 "); /* 1st value : 2 cycles + 2 cycles + 6 cycles = 10 cycles*/
 	__asm__ __volatile__ ("mov @r12,     r13 ");
 	__asm__ __volatile__ ("mov &0x6000, @r13 ");
@@ -169,20 +195,36 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 	__asm__ __volatile__ ("mov @r12,     r13 ");
 	__asm__ __volatile__ ("mov &0x600C, @r13 ");
 
-	/* Checkpoint finished! */
+	//-------------------------------------------------------------------------------------------------------------//
+	//    CHECKPOINT COMPLETED																				   	   //
+	//-------------------------------------------------------------------------------------------------------------//
 	/* Clear index counter, and enable Idempotency tracking : 4 cycles*/
-	__asm__ __volatile__ ("mov #0x0001, &0x0190"); //QWARK_CTL = 0x01;
+	__asm__ __volatile__ ("mov #0x0001, &0x0190");  //QWARK_CTL = 0x01;
+	__asm__ __volatile__ ("mov &0x6026,r13"); 	    //Re-establish r13
+	__asm__ __volatile__ ("mov &0x603E,r14"); 	    //Re-establish r1
+
 	LED_CTRL = 0xF0;
 
 }
 
+void dummy_function(void){
+	int var=0xAA;
+	int array[32];
+	for(var=0;var<31;var++)
+	{
+		array[var] = 0xFECA;
+	}
+	if(var8){
+			  var8 = 0x07;
+			}
+}
+
+
 int main()
 {
-   	 //WDTCTL = WDTPW | WDTHOLD; // Stop WDT
-	//Enable Global Interrupts 
-  	eint();
-	
+    //WDTCTL = WDTPW | WDTHOLD; // Stop WDT
 	//Enable Idempotency Tracking
+  	eint();
 	QWARK_CTL = 0x01;
 
 
@@ -214,48 +256,7 @@ int main()
 	  var7 = 0x07;
 	}
 
-	if(var8){
-	    var8 = 0x08;
-	}
-
-
-
-
-	if(var9){
-	  var9 = 0xAA;
-	}
-
-	if(var1){
-		  var1 = 0x01;
-		}
-
-		if(var2){
-		  var2 = 0x02;
-		}
-
-		if(var3){
-		  var3 = 0x03;
-		}
-
-		if(var4){
-		  var4 = 0x04;
-		}
-
-		if(var5){
-		  var5 = 0x05;
-		}
-
-		if(var6){
-		  var6 = 0x06;
-		}
-
-		if(var7){
-		  var7 = 0x07;
-		}
-
-		if(var8){
-		    var8 = 0x08;
-		}
+	dummy_function();
 
 	while(1);
 

@@ -2911,7 +2911,6 @@ extern long double strtold (const char *restrict, char **restrict);
 
 
 
-
 #define QWARK_CTL (*(volatile unsigned int *) 0x0190)
 #define QWARK_VECTOR (5)
 #define QWARK_WAR_CTR (((QWARK_CTL)&(0x000E))>>1)
@@ -2925,7 +2924,7 @@ extern long double strtold (const char *restrict, char **restrict);
 #define QWARK_ADDR7 (**((int**) (0x019E)))
 
 
-# 23 "main.c"
+# 22 "main.c"
 volatile int var1=2;
 volatile int var2=7;
 volatile int var3=7;
@@ -2935,11 +2934,13 @@ volatile int var6=1;
 volatile int var7=1;
 volatile int var8=1;
 volatile int var9=1;
-# 94 "main.c"
+# 96 "main.c"
 void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 
  (*(volatile unsigned char *) 0x0090) = 0x0F;
+
+
 
 
 
@@ -2967,7 +2968,7 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
  __asm__ __volatile__ ("mov &0x0192, &0x6010");
  __asm__ __volatile__ ("mov &0x0194, &0x6012");
  __asm__ __volatile__ ("mov &0x0196, &0x6014");
-     __asm__ __volatile__ ("mov &0x0198, &0x6016");
+    __asm__ __volatile__ ("mov &0x0198, &0x6016");
  __asm__ __volatile__ ("mov &0x019A, &0x6018");
  __asm__ __volatile__ ("mov &0x019C, &0x601A");
  __asm__ __volatile__ ("mov &0x019E, &0x601C");
@@ -2975,8 +2976,37 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
  __asm__ __volatile__ ("mov &0x0190, &0x601E");
  __asm__ __volatile__ ("and #0x000E, &0x601E");
  __asm__ __volatile__ ("RRA &0x601E");
-# 141 "main.c"
+
+
+
+  (*(volatile unsigned char *) 0x0090) = 0x01;
+
+ __asm__ __volatile__ ("mov &0X6020, r12");
+ __asm__ __volatile__ ("mov #0x6042, r13");
+ __asm__ __volatile__ ("mov #0x7FFE, r14");
+
+ __asm__ __volatile__ ("__copy_stack:");
+
+ __asm__ __volatile__ ("cmp r12,r14");
+ __asm__ __volatile__ ("jz __copy_stack_complete");
+
+ __asm__ __volatile__ ("mov @r12,@r13");
+ __asm__ __volatile__ ("incd r12");
+ __asm__ __volatile__ ("incd r13");
+ __asm__ __volatile__ ("br #__copy_stack");
+
+ __asm__ __volatile__ ("__copy_stack_complete:");
+ (*(volatile unsigned char *) 0x0090) = 0x02;
+
+
+
+
+
+
+
  __asm__ __volatile__ ("mov #0x01, &0x600E");
+
+
 
 
  __asm__ __volatile__ ("mov #0x6010,  r12 ");
@@ -3009,18 +3039,34 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 
 
+
+
  __asm__ __volatile__ ("mov #0x0001, &0x0190");
+ __asm__ __volatile__ ("mov &0x6026,r13");
+ __asm__ __volatile__ ("mov &0x603E,r14");
+
  (*(volatile unsigned char *) 0x0090) = 0xF0;
 
 }
+
+void dummy_function(void){
+ int var=0xAA;
+ int array[32];
+ for(var=0;var<31;var++)
+ {
+  array[var] = 0xFECA;
+ }
+ if(var8){
+     var8 = 0x07;
+   }
+}
+
 
 int main()
 {
 
 
    __asm__ __volatile__ ("eint { nop");
-
-
  (*(volatile unsigned int *) 0x0190) = 0x01;
 
 
@@ -3052,48 +3098,7 @@ int main()
    var7 = 0x07;
  }
 
- if(var8){
-     var8 = 0x08;
- }
-
-
-
-
- if(var9){
-   var9 = 0xAA;
- }
-
- if(var1){
-    var1 = 0x01;
-  }
-
-  if(var2){
-    var2 = 0x02;
-  }
-
-  if(var3){
-    var3 = 0x03;
-  }
-
-  if(var4){
-    var4 = 0x04;
-  }
-
-  if(var5){
-    var5 = 0x05;
-  }
-
-  if(var6){
-    var6 = 0x06;
-  }
-
-  if(var7){
-    var7 = 0x07;
-  }
-
-  if(var8){
-      var8 = 0x08;
-  }
+ dummy_function();
 
  while(1);
 

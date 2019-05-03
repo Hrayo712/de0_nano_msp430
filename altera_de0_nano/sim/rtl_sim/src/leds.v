@@ -16,7 +16,7 @@ initial
 
       //repeat(100) @(posedge FPGA_CLK1_50);
 
-      #(2000000.0); //100 ms
+      #(4000000.0); //100 ms
 
 
 

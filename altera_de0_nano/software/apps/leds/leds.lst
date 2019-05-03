@@ -19,6 +19,8 @@ SYMBOL TABLE:
 00000000 l    d  .debug_str	00000000 .debug_str
 00000000 l    d  .debug_macinfo	00000000 .debug_macinfo
 00000000 l    df *ABS*	00000000 main.c
+000081ce l       .text	00000000 __copy_stack
+000081de l       .text	00000000 __copy_stack_complete
 00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o
 0000fffe l       __reset_vector	00000000 __msp430_resetvec_hook
 0000806c l       .text	00000000 _msp430_run_array
@@ -27,7 +29,7 @@ SYMBOL TABLE:
 00008008 l     O .rodata	00000000 __CTOR_LIST__
 0000800c l     O .rodata	00000000 __DTOR_LIST__
 00008000 l     O .rodata	00000000 __EH_FRAME_BEGIN__
-0000845c l     O .text	00000000 __TMC_LIST__
+00008460 l     O .text	00000000 __TMC_LIST__
 00008080 l     F .text	00000000 deregister_tm_clones
 0000809a l     F .text	00000000 register_tm_clones
 000080c8 l     F .text	00000000 __do_global_dtors_aux
@@ -40,8 +42,8 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
 0000800a l     O .rodata	00000000 __CTOR_END__
 00008000 l     O .rodata	00000000 __FRAME_END__
-00008426 l     F .text	00000000 __do_global_ctors_aux
-00008440 l     F .text	00000000 call___do_global_ctors_aux
+0000842a l     F .text	00000000 __do_global_ctors_aux
+00008444 l     F .text	00000000 call___do_global_ctors_aux
 00000000 l    df *ABS*	00000000 crt_bss.o
 00000000 l    df *ABS*	00000000 crt_movedata.o
 00000000 l    df *ABS*	00000000 crt_main.o
@@ -50,96 +52,97 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 lib_a-memset.o
 00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crtn.o
 0000400a g     O .data	00000002 var5
-0000833c g       .text	00000000 .hidden __mspabi_srli_9
-0000838c g       .text	00000000 .hidden __mspabi_srll_10
-00008338 g       .text	00000000 .hidden __mspabi_srli_10
-00008324 g       .text	00000000 .hidden __mspabi_srli_15
-000083d8 g     F .text	00000038 memmove
-00008350 g       .text	00000000 .hidden __mspabi_srli_4
-00008344 g       .text	00000000 .hidden __mspabi_srli_7
-0000839e g       .text	00000000 .hidden __mspabi_srll_7
-000083b6 g       .text	00000000 .hidden __mspabi_srll_3
-00008316 g       .text	00000000 .hidden __mspabi_func_epilog_6
-0000845c g     O .text	00000000 .hidden __TMC_END__
-0000837a g       .text	00000000 .hidden __mspabi_srll_13
+00008340 g       .text	00000000 .hidden __mspabi_srli_9
+00008390 g       .text	00000000 .hidden __mspabi_srll_10
+0000833c g       .text	00000000 .hidden __mspabi_srli_10
+00008328 g       .text	00000000 .hidden __mspabi_srli_15
+000083dc g     F .text	00000038 memmove
+00008354 g       .text	00000000 .hidden __mspabi_srli_4
+00008348 g       .text	00000000 .hidden __mspabi_srli_7
+000083a2 g       .text	00000000 .hidden __mspabi_srll_7
+000083ba g       .text	00000000 .hidden __mspabi_srll_3
+0000831a g       .text	00000000 .hidden __mspabi_func_epilog_6
+00008460 g     O .text	00000000 .hidden __TMC_END__
+0000837e g       .text	00000000 .hidden __mspabi_srll_13
 0000800e g     O .rodata	00000000 .hidden __DTOR_END__
 00008004 g       .rodata	00000000 __fini_array_end
-00008330 g       .text	00000000 .hidden __mspabi_srli_12
+00008334 g       .text	00000000 .hidden __mspabi_srli_12
 00008010 g     F .text	00000004 __crt0_start
 00004000 g     O .data	00000000 .hidden __dso_handle
 00008014 g     F .text	0000000e __crt0_init_bss
 00000012 g       *ABS*	00000000 __bsssize
 00008036 g     F .text	0000000a __crt0_call_init_then_main
 00004002 g     O .data	00000002 var1
-00008320 g       .text	00000000 .hidden __mspabi_func_epilog_1
-0000831c g       .text	00000000 .hidden __mspabi_func_epilog_3
-000083aa g       .text	00000000 .hidden __mspabi_srll_5
-00008368 g       .text	00000000 .hidden __mspabi_srli
+00008324 g       .text	00000000 .hidden __mspabi_func_epilog_1
+00008320 g       .text	00000000 .hidden __mspabi_func_epilog_3
+000083ae g       .text	00000000 .hidden __mspabi_srll_5
+0000836c g       .text	00000000 .hidden __mspabi_srli
 00004008 g     O .data	00000002 var4
-00008386 g       .text	00000000 .hidden __mspabi_srll_11
+0000838a g       .text	00000000 .hidden __mspabi_srll_11
+0000825a g     F .text	0000004e dummy_function
 00004010 g     O .data	00000002 var8
-0000834c g       .text	00000000 .hidden __mspabi_srli_5
+00008350 g       .text	00000000 .hidden __mspabi_srli_5
 00000000  w      *UND*	00000000 __deregister_frame_info
 00004026 g       .noinit	00000000 end
 00000000  w      *UND*	00000000 _ITM_registerTMCloneTable
-000083a4 g       .text	00000000 .hidden __mspabi_srll_6
+000083a8 g       .text	00000000 .hidden __mspabi_srll_6
 00004012 g     O .data	00000002 var9
 00008010 g       .text	00000000 _start
 0000805c g     F .text	00000000 _msp430_run_fini_array
-0000835c g       .text	00000000 .hidden __mspabi_srli_1
-00008374 g       .text	00000000 .hidden __mspabi_srll_14
-00008328 g       .text	00000000 .hidden __mspabi_srli_14
+00008360 g       .text	00000000 .hidden __mspabi_srli_1
+00008378 g       .text	00000000 .hidden __mspabi_srll_14
+0000832c g       .text	00000000 .hidden __mspabi_srli_14
 00000014 g       *ABS*	00000000 __romdatacopysize
-00008334 g       .text	00000000 .hidden __mspabi_srli_11
+00008338 g       .text	00000000 .hidden __mspabi_srli_11
 00000000  w      *UND*	00000000 _ITM_deregisterTMCloneTable
 00008004 g       .rodata	00000000 __fini_array_start
 00000000  w      *ABS*	00000000 __rom_highdatacopysize
-00008440 g       .text	00000000 __msp430_init
-00008410 g     F .text	00000014 memset
-00008226 g     F .text	000000ee main
-000083b0 g       .text	00000000 .hidden __mspabi_srll_4
+00008444 g       .text	00000000 __msp430_init
+00008414 g     F .text	00000014 memset
+000082a8 g     F .text	00000070 main
+000083b4 g       .text	00000000 .hidden __mspabi_srll_4
 00008004 g       .rodata	00000000 __init_array_end
-00008358 g       .text	00000000 .hidden __mspabi_srli_2
+0000835c g       .text	00000000 .hidden __mspabi_srli_2
 00000000  w      *ABS*	00000000 __high_bsssize
 00004004 g     O .data	00000002 var2
 0000400c g     O .data	00000002 var6
 00000000  w      *ABS*	00000000 __rom_highdatastart
 00004006 g     O .data	00000002 var3
-0000845c g       .text	00000000 __msp430_fini_end
-00008380 g       .text	00000000 .hidden __mspabi_srll_12
-0000845c g       *ABS*	00000000 __romdatastart
+00008460 g       .text	00000000 __msp430_fini_end
+00008384 g       .text	00000000 .hidden __mspabi_srll_12
+00008460 g       *ABS*	00000000 __romdatastart
 0000400e g     O .data	00000002 var7
 00008040 g     F .text	00000000 _msp430_run_init_array
-00008348 g       .text	00000000 .hidden __mspabi_srli_6
+0000834c g       .text	00000000 .hidden __mspabi_srli_6
 00008004 g       .rodata	00000000 __preinit_array_end
-00008354 g       .text	00000000 .hidden __mspabi_srli_3
+00008358 g       .text	00000000 .hidden __mspabi_srli_3
 00000000  w      *ABS*	00000000 __high_datastart
 00000000  w      *ABS*	00000000 __upper_data_init
 00004014 g       .bss	00000000 __bssstart
-00008318 g       .text	00000000 .hidden __mspabi_func_epilog_5
+0000831c g       .text	00000000 .hidden __mspabi_func_epilog_5
 00008000 g       .noinit	00000000 __stack
-0000812e g     F .text	000000f8 INT_Qwark
-00008392 g       .text	00000000 .hidden __mspabi_srll_9
+0000812e g     F .text	0000012c INT_Qwark
+00008396 g       .text	00000000 .hidden __mspabi_srll_9
 00004014 g       .data	00000000 _edata
-00008452 g       .text	00000000 __msp430_init_end
-000083d2 g       .text	00000000 .hidden __mspabi_srll
+00008456 g       .text	00000000 __msp430_init_end
+000083d6 g       .text	00000000 .hidden __mspabi_srll
 00000000  w      *ABS*	00000000 __high_bssstart
-0000836e g       .text	00000000 .hidden __mspabi_srll_15
+00008372 g       .text	00000000 .hidden __mspabi_srll_15
 00008004 g       .rodata	00000000 __init_array_start
-0000832c g       .text	00000000 .hidden __mspabi_srli_13
+00008330 g       .text	00000000 .hidden __mspabi_srli_13
 00004000 g       .data	00000000 __datastart
-00008398 g       .text	00000000 .hidden __mspabi_srll_8
-000083c2 g       .text	00000000 .hidden __mspabi_srll_1
+0000839c g       .text	00000000 .hidden __mspabi_srll_8
+000083c6 g       .text	00000000 .hidden __mspabi_srll_1
 00008004 g       .rodata	00000000 __preinit_array_start
 00008022 g     F .text	00000014 __crt0_movedata
-0000831e g       .text	00000000 .hidden __mspabi_func_epilog_2
+00008322 g       .text	00000000 .hidden __mspabi_func_epilog_2
 00000000  w      *UND*	00000000 __register_frame_info
 0000804e g     F .text	00000000 _msp430_run_preinit_array
-00008314 g       .text	00000000 .hidden __mspabi_func_epilog_7
-0000831a g       .text	00000000 .hidden __mspabi_func_epilog_4
-000083bc g       .text	00000000 .hidden __mspabi_srll_2
-00008452 g       .text	00000000 __msp430_fini
-00008340 g       .text	00000000 .hidden __mspabi_srli_8
+00008318 g       .text	00000000 .hidden __mspabi_func_epilog_7
+0000831e g       .text	00000000 .hidden __mspabi_func_epilog_4
+000083c0 g       .text	00000000 .hidden __mspabi_srll_2
+00008456 g       .text	00000000 __msp430_fini
+00008344 g       .text	00000000 .hidden __mspabi_srli_8
 
 
 
@@ -163,13 +166,13 @@ Disassembly of section .text:
     801a:	3e 40 12 00 	mov	#18,	r14	;#0x0012
 
 0000801e <.Loc.79.1>:
-    801e:	b0 12 10 84 	call	#33808		;#0x8410
+    801e:	b0 12 14 84 	call	#33812		;#0x8414
 
 00008022 <__crt0_movedata>:
     8022:	3c 40 00 40 	mov	#16384,	r12	;#0x4000
 
 00008026 <.Loc.116.1>:
-    8026:	3d 40 5c 84 	mov	#33884,	r13	;#0x845c
+    8026:	3d 40 60 84 	mov	#33888,	r13	;#0x8460
 
 0000802a <.Loc.119.1>:
     802a:	0d 9c       	cmp	r12,	r13	;
@@ -181,16 +184,16 @@ Disassembly of section .text:
     802e:	3e 40 14 00 	mov	#20,	r14	;#0x0014
 
 00008032 <.Loc.124.1>:
-    8032:	b0 12 d8 83 	call	#33752		;#0x83d8
+    8032:	b0 12 dc 83 	call	#33756		;#0x83dc
 
 00008036 <__crt0_call_init_then_main>:
-    8036:	b0 12 40 84 	call	#33856		;#0x8440
+    8036:	b0 12 44 84 	call	#33860		;#0x8444
 
 0000803a <.Loc.196.1>:
     803a:	0c 43       	clr	r12		;
 
 0000803c <.Loc.197.1>:
-    803c:	b0 12 26 82 	call	#33318		;#0x8226
+    803c:	b0 12 a8 82 	call	#33448		;#0x82a8
 
 00008040 <_msp430_run_init_array>:
     8040:	34 40 04 80 	mov	#32772,	r4	;#0x8004
@@ -254,13 +257,13 @@ Disassembly of section .text:
     807e:	30 41       	ret			
 
 00008080 <deregister_tm_clones>:
-    8080:	3c 40 5c 84 	mov	#33884,	r12	;#0x845c
-    8084:	3c 90 5c 84 	cmp	#33884,	r12	;#0x845c
+    8080:	3c 40 60 84 	mov	#33888,	r12	;#0x8460
+    8084:	3c 90 60 84 	cmp	#33888,	r12	;#0x8460
     8088:	07 24       	jz	$+16     	;abs 0x8098
     808a:	3d 40 00 00 	mov	#0,	r13	;
     808e:	0d 93       	cmp	#0,	r13	;r3 As==00
     8090:	03 24       	jz	$+8      	;abs 0x8098
-    8092:	3c 40 5c 84 	mov	#33884,	r12	;#0x845c
+    8092:	3c 40 60 84 	mov	#33888,	r12	;#0x8460
     8096:	8d 12       	call	r13		;
 
 00008098 <.L1>:
@@ -268,11 +271,11 @@ Disassembly of section .text:
 
 0000809a <register_tm_clones>:
     809a:	0a 12       	push	r10		;
-    809c:	3a 40 5c 84 	mov	#33884,	r10	;#0x845c
-    80a0:	3a 80 5c 84 	sub	#33884,	r10	;#0x845c
+    809c:	3a 40 60 84 	mov	#33888,	r10	;#0x8460
+    80a0:	3a 80 60 84 	sub	#33888,	r10	;#0x8460
     80a4:	0a 11       	rra	r10		;
     80a6:	0c 4a       	mov	r10,	r12	;
-    80a8:	b0 12 24 83 	call	#33572		;#0x8324
+    80a8:	b0 12 28 83 	call	#33576		;#0x8328
     80ac:	0c 5a       	add	r10,	r12	;
     80ae:	0d 4c       	mov	r12,	r13	;
     80b0:	0d 11       	rra	r13		;
@@ -281,7 +284,7 @@ Disassembly of section .text:
     80b6:	3e 40 00 00 	mov	#0,	r14	;
     80ba:	0e 93       	cmp	#0,	r14	;r3 As==00
     80bc:	03 24       	jz	$+8      	;abs 0x80c4
-    80be:	3c 40 5c 84 	mov	#33884,	r12	;#0x845c
+    80be:	3c 40 60 84 	mov	#33888,	r12	;#0x8460
     80c2:	8e 12       	call	r14		;
 
 000080c4 <.L9>:
@@ -314,7 +317,7 @@ Disassembly of section .text:
     80fc:	d2 43 14 40 	mov.b	#1,	&0x4014	;r3 As==01
 
 00008100 <.L17>:
-    8100:	30 40 1e 83 	br	#0x831e		;
+    8100:	30 40 22 83 	br	#0x8322		;
 
 00008104 <.L20>:
     8104:	1c 53       	inc	r12		;
@@ -340,7 +343,7 @@ Disassembly of section .text:
 0000812e <INT_Qwark>:
 
 //-------------------------------------------------------------------------------------------------------------//
-//    QWARK Checkpoint Procedure: without stack: 215 cycles -> First phase: 141 cycles - second phase: 74      //
+//    QWARK Checkpoint Procedure: without stack: 215 cycles => First phase: 141 cycles - second phase: 74      //
 //-------------------------------------------------------------------------------------------------------------//
 
 interrupt (QWARK_VECTOR) INT_Qwark(void) {
@@ -354,777 +357,785 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
     8134:	fc 40 0f 00 	mov.b	#15,	0(r12)	;#0x000f
     8138:	00 00 
 
-0000813a <.Loc.102.1>:
-
-	/* First Phase of the Committ process  */
+0000813a <.Loc.106.1>:
+	//-------------------------------------------------------------------------------------------------------------//
+	//    FIRST PHASE OF THE COMMIT PROCESS																	       //
+	//-------------------------------------------------------------------------------------------------------------//
 	/*Store Registers into NV memory : Total: 73 cycles*/
 
 	__asm__ __volatile__ ("mov r1,&0x6020");   		//SP/R1   4 cycles       =  9 cycles
     813a:	82 41 20 60 	mov	r1,	&0x6020	;
 
-0000813e <.Loc.103.1>:
-	__asm__ __volatile__ ("add #0x06,&0x6020");		//	  5 cycles
+0000813e <.Loc.107.1>:
+	__asm__ __volatile__ ("add #0x06,&0x6020");		//		  5 cycles
     813e:	b2 50 06 00 	add	#6,	&0x6020	;
     8142:	20 60 
 
-00008144 <.Loc.104.1>:
-	__asm__ __volatile__ ("mov 4(r1),&0x6022"); 		//PC/R0   6 cycles       = 24 cycles
+00008144 <.Loc.108.1>:
+	__asm__ __volatile__ ("mov 4(r1),&0x6022"); 	//PC/R0   6 cycles       = 24 cycles
     8144:	92 41 04 00 	mov	4(r1),	&0x6022	;
     8148:	22 60 
 
-0000814a <.Loc.105.1>:
-	__asm__ __volatile__ ("mov 2(r1),&0x6024"); 		//SR/R2   6 cycles
+0000814a <.Loc.109.1>:
+	__asm__ __volatile__ ("mov 2(r1),&0x6024"); 	//SR/R2   6 cycles
     814a:	92 41 02 00 	mov	2(r1),	&0x6024	;
     814e:	24 60 
 
-00008150 <.Loc.106.1>:
-	__asm__ __volatile__ ("mov r13 ,&0x6026"); 	    	//R13	  6 cycles
+00008150 <.Loc.110.1>:
+	__asm__ __volatile__ ("mov r13 ,&0x6026"); 	    //R13	  6 cycles
     8150:	82 4d 26 60 	mov	r13,	&0x6026	;
 
-00008154 <.Loc.107.1>:
-	__asm__ __volatile__ ("mov 0(r1),&0x6028"); 		//R12	  6 cycles
+00008154 <.Loc.111.1>:
+	__asm__ __volatile__ ("mov 0(r1),&0x6028"); 	//R12	  6 cycles
     8154:	a2 41 28 60 	mov	@r1,	&0x6028	;
 
-00008158 <.Loc.108.1>:
+00008158 <.Loc.112.1>:
 	__asm__ __volatile__ ("mov r4,&0x602A"); 		//R4	  4 cycles x 10 = 40 cycles
     8158:	82 44 2a 60 	mov	r4,	&0x602a	;
 
-0000815c <.Loc.109.1>:
+0000815c <.Loc.113.1>:
 	__asm__ __volatile__ ("mov r5,&0x602C"); 		//R5
     815c:	82 45 2c 60 	mov	r5,	&0x602c	;
 
-00008160 <.Loc.110.1>:
+00008160 <.Loc.114.1>:
 	__asm__ __volatile__ ("mov r6,&0x602E"); 		//R6
     8160:	82 46 2e 60 	mov	r6,	&0x602e	;
 
-00008164 <.Loc.111.1>:
+00008164 <.Loc.115.1>:
 	__asm__ __volatile__ ("mov r7,&0x6030"); 		//R7
     8164:	82 47 30 60 	mov	r7,	&0x6030	;
 
-00008168 <.Loc.112.1>:
+00008168 <.Loc.116.1>:
 	__asm__ __volatile__ ("mov r8,&0x6032"); 		//R8
     8168:	82 48 32 60 	mov	r8,	&0x6032	;
 
-0000816c <.Loc.113.1>:
+0000816c <.Loc.117.1>:
 	__asm__ __volatile__ ("mov r9,&0x6034"); 		//R9
     816c:	82 49 34 60 	mov	r9,	&0x6034	;
 
-00008170 <.Loc.114.1>:
+00008170 <.Loc.118.1>:
 	__asm__ __volatile__ ("mov r10,&0x6036"); 		//R10
     8170:	82 4a 36 60 	mov	r10,	&0x6036	;
 
-00008174 <.Loc.115.1>:
+00008174 <.Loc.119.1>:
 	__asm__ __volatile__ ("mov r11,&0x6038"); 		//R11
     8174:	82 4b 38 60 	mov	r11,	&0x6038	;
 
-00008178 <.Loc.117.1>:
+00008178 <.Loc.121.1>:
 
 	__asm__ __volatile__ ("mov r14,&0x603E"); 		//R14
     8178:	82 4e 3e 60 	mov	r14,	&0x603e	;
 
-0000817c <.Loc.118.1>:
+0000817c <.Loc.122.1>:
 	__asm__ __volatile__ ("mov r15,&0x6040"); 		//R15
     817c:	82 4f 40 60 	mov	r15,	&0x6040	;
 
-00008180 <.Loc.122.1>:
+00008180 <.Loc.126.1>:
 
-	/* Copy the addresses to the scratchpad : 		Total 57 cycles */
+	/* Copy the addresses to the scratchpad : 		 Total 57 cycles */
 
 	__asm__ __volatile__ ("mov &0x0192, &0x6010");   // 6 cycles x 7 = 42 cycles
     8180:	92 42 92 01 	mov	&0x0192,&0x6010	;0x0192
     8184:	10 60 
 
-00008186 <.Loc.123.1>:
+00008186 <.Loc.127.1>:
 	__asm__ __volatile__ ("mov &0x0194, &0x6012");
     8186:	92 42 94 01 	mov	&0x0194,&0x6012	;0x0194
     818a:	12 60 
 
-0000818c <.Loc.124.1>:
+0000818c <.Loc.128.1>:
 	__asm__ __volatile__ ("mov &0x0196, &0x6014");
     818c:	92 42 96 01 	mov	&0x0196,&0x6014	;0x0196
     8190:	14 60 
 
-00008192 <.Loc.125.1>:
-    	__asm__ __volatile__ ("mov &0x0198, &0x6016");
+00008192 <.Loc.129.1>:
+    __asm__ __volatile__ ("mov &0x0198, &0x6016");
     8192:	92 42 98 01 	mov	&0x0198,&0x6016	;0x0198
     8196:	16 60 
 
-00008198 <.Loc.126.1>:
+00008198 <.Loc.130.1>:
 	__asm__ __volatile__ ("mov &0x019A, &0x6018");
     8198:	92 42 9a 01 	mov	&0x019a,&0x6018	;0x019a
     819c:	18 60 
 
-0000819e <.Loc.127.1>:
+0000819e <.Loc.131.1>:
 	__asm__ __volatile__ ("mov &0x019C, &0x601A");
     819e:	92 42 9c 01 	mov	&0x019c,&0x601a	;0x019c
     81a2:	1a 60 
 
-000081a4 <.Loc.128.1>:
+000081a4 <.Loc.132.1>:
 	__asm__ __volatile__ ("mov &0x019E, &0x601C");
     81a4:	92 42 9e 01 	mov	&0x019e,&0x601c	;0x019e
     81a8:	1c 60 
 
-000081aa <.Loc.130.1>:
+000081aa <.Loc.134.1>:
 	//Move the index
 	__asm__ __volatile__ ("mov &0x0190, &0x601E");	// 6 cycles     = 15 cycles
     81aa:	92 42 90 01 	mov	&0x0190,&0x601e	;0x0190
     81ae:	1e 60 
 
-000081b0 <.Loc.131.1>:
+000081b0 <.Loc.135.1>:
 	__asm__ __volatile__ ("and #0x000E, &0x601E");	// 5 cycles
     81b0:	b2 f0 0e 00 	and	#14,	&0x601e	;#0x000e
     81b4:	1e 60 
 
-000081b6 <.Loc.132.1>:
-	__asm__ __volatile__ ("RRA &0x601E");		// 4 cycles
+000081b6 <.Loc.136.1>:
+	__asm__ __volatile__ ("RRA &0x601E");			// 4 cycles
     81b6:	12 11 1e 60 	rra	&0x601e		;
 
-000081ba <.Loc.141.1>:
+000081ba <.Loc.140.1>:
 
-	/* First phase completed */
+
+	/* 1.3 .- Save the Stack to the scratchpad (FULL COPY / no segmentation yet)*/
+	 LED_CTRL = 0x01;
+    81ba:	7c 40 90 00 	mov.b	#144,	r12	;#0x0090
+    81be:	dc 43 00 00 	mov.b	#1,	0(r12)	;r3 As==01
+
+000081c2 <.Loc.142.1>:
+
+	__asm__ __volatile__ ("mov &0X6020, r12"); //r12 has the stack pointer..r12 gets restored automatically
+    81c2:	1c 42 20 60 	mov	&0x6020,r12	;0x6020
+
+000081c6 <.Loc.143.1>:
+	__asm__ __volatile__ ("mov #0x6042, r13");
+    81c6:	3d 40 42 60 	mov	#24642,	r13	;#0x6042
+
+000081ca <.Loc.144.1>:
+	__asm__ __volatile__ ("mov #0x7FFE, r14");
+    81ca:	3e 40 fe 7f 	mov	#32766,	r14	;#0x7ffe
+
+000081ce <__copy_stack>:
+
+	__asm__ __volatile__ ("__copy_stack:");
+
+	__asm__ __volatile__ ("cmp r12,r14");	   //first check if there has been any stack growth. The stack is write and decrease
+    81ce:	0e 9c       	cmp	r12,	r14	;
+
+000081d0 <.Loc.149.1>:
+	__asm__ __volatile__ ("jz __copy_stack_complete");
+    81d0:	06 24       	jz	$+14     	;abs 0x81de
+
+000081d2 <.Loc.151.1>:
+
+	__asm__ __volatile__ ("mov @r12,@r13");
+    81d2:	ad 4c 00 00 	mov	@r12,	0(r13)	;
+
+000081d6 <.Loc.152.1>:
+	__asm__ __volatile__ ("incd r12");
+    81d6:	2c 53       	incd	r12		;
+
+000081d8 <.Loc.153.1>:
+	__asm__ __volatile__ ("incd r13");
+    81d8:	2d 53       	incd	r13		;
+
+000081da <.Loc.154.1>:
+	__asm__ __volatile__ ("br #__copy_stack");
+    81da:	30 40 ce 81 	br	#0x81ce		;
+
+000081de <__copy_stack_complete>:
+
+	__asm__ __volatile__ ("__copy_stack_complete:");
+	LED_CTRL = 0x02;
+    81de:	7c 40 90 00 	mov.b	#144,	r12	;#0x0090
+    81e2:	ec 43 00 00 	mov.b	#2,	0(r12)	;r3 As==10
+
+000081e6 <.Loc.165.1>:
+	//    FIRST PHASE COMPLETED															  						   //
+	//-------------------------------------------------------------------------------------------------------------//
 
 	/* Set Dirty Bit - Atomic Flag*/
 	/* after setting this bit, it is possible to reproduce the checkpoint even if it fails halfway through */
 	__asm__ __volatile__ ("mov #0x01, &0x600E"); //4 cycles
-    81ba:	92 43 0e 60 	mov	#1,	&0x600e	;r3 As==01
+    81e6:	92 43 0e 60 	mov	#1,	&0x600e	;r3 As==01
 
-000081be <.Loc.144.1>:
+000081ea <.Loc.170.1>:
 
-	/* 2nd Phase of the Committ process - Copy back from the Scratchpad: 70 cycles */
+	//-------------------------------------------------------------------------------------------------------------//
+	//    SECOND PHASE OF THE COMMIT PROCESS																	   //
+	//-------------------------------------------------------------------------------------------------------------//
 	__asm__ __volatile__ ("mov #0x6010,  r12 "); /* 1st value : 2 cycles + 2 cycles + 6 cycles = 10 cycles*/
-    81be:	3c 40 10 60 	mov	#24592,	r12	;#0x6010
+    81ea:	3c 40 10 60 	mov	#24592,	r12	;#0x6010
 
-000081c2 <.Loc.145.1>:
+000081ee <.Loc.171.1>:
 	__asm__ __volatile__ ("mov @r12,     r13 ");
-    81c2:	2d 4c       	mov	@r12,	r13	;
+    81ee:	2d 4c       	mov	@r12,	r13	;
 
-000081c4 <.Loc.146.1>:
+000081f0 <.Loc.172.1>:
 	__asm__ __volatile__ ("mov &0x6000, @r13 ");
-    81c4:	9d 42 00 60 	mov	&0x6000,0(r13)	;0x6000
-    81c8:	00 00 
+    81f0:	9d 42 00 60 	mov	&0x6000,0(r13)	;0x6000
+    81f4:	00 00 
 
-000081ca <.Loc.148.1>:
+000081f6 <.Loc.174.1>:
 
 	__asm__ __volatile__ ("mov #0x6012,  r12 "); /* 2nd value */
-    81ca:	3c 40 12 60 	mov	#24594,	r12	;#0x6012
+    81f6:	3c 40 12 60 	mov	#24594,	r12	;#0x6012
 
-000081ce <.Loc.149.1>:
+000081fa <.Loc.175.1>:
 	__asm__ __volatile__ ("mov @r12,     r13 ");
-    81ce:	2d 4c       	mov	@r12,	r13	;
+    81fa:	2d 4c       	mov	@r12,	r13	;
 
-000081d0 <.Loc.150.1>:
+000081fc <.Loc.176.1>:
 	__asm__ __volatile__ ("mov &0x6002, @r13 ");
-    81d0:	9d 42 02 60 	mov	&0x6002,0(r13)	;0x6002
-    81d4:	00 00 
+    81fc:	9d 42 02 60 	mov	&0x6002,0(r13)	;0x6002
+    8200:	00 00 
 
-000081d6 <.Loc.152.1>:
+00008202 <.Loc.178.1>:
 
 	__asm__ __volatile__ ("mov #0x6014,  r12 "); /* 3rd value */
-    81d6:	3c 40 14 60 	mov	#24596,	r12	;#0x6014
+    8202:	3c 40 14 60 	mov	#24596,	r12	;#0x6014
 
-000081da <.Loc.153.1>:
+00008206 <.Loc.179.1>:
 	__asm__ __volatile__ ("mov @r12,     r13 ");
-    81da:	2d 4c       	mov	@r12,	r13	;
+    8206:	2d 4c       	mov	@r12,	r13	;
 
-000081dc <.Loc.154.1>:
+00008208 <.Loc.180.1>:
 	__asm__ __volatile__ ("mov &0x6004, @r13 ");
-    81dc:	9d 42 04 60 	mov	&0x6004,0(r13)	;0x6004
-    81e0:	00 00 
+    8208:	9d 42 04 60 	mov	&0x6004,0(r13)	;0x6004
+    820c:	00 00 
 
-000081e2 <.Loc.156.1>:
+0000820e <.Loc.182.1>:
 
 	__asm__ __volatile__ ("mov #0x6016,  r12 "); /* 4th value */
-    81e2:	3c 40 16 60 	mov	#24598,	r12	;#0x6016
+    820e:	3c 40 16 60 	mov	#24598,	r12	;#0x6016
 
-000081e6 <.Loc.157.1>:
+00008212 <.Loc.183.1>:
 	__asm__ __volatile__ ("mov @r12,     r13 ");
-    81e6:	2d 4c       	mov	@r12,	r13	;
+    8212:	2d 4c       	mov	@r12,	r13	;
 
-000081e8 <.Loc.158.1>:
+00008214 <.Loc.184.1>:
 	__asm__ __volatile__ ("mov &0x6006, @r13 ");
-    81e8:	9d 42 06 60 	mov	&0x6006,0(r13)	;0x6006
-    81ec:	00 00 
+    8214:	9d 42 06 60 	mov	&0x6006,0(r13)	;0x6006
+    8218:	00 00 
 
-000081ee <.Loc.160.1>:
+0000821a <.Loc.186.1>:
 
 	__asm__ __volatile__ ("mov #0x6018,  r12 "); /* 5th value */
-    81ee:	3c 40 18 60 	mov	#24600,	r12	;#0x6018
+    821a:	3c 40 18 60 	mov	#24600,	r12	;#0x6018
 
-000081f2 <.Loc.161.1>:
+0000821e <.Loc.187.1>:
 	__asm__ __volatile__ ("mov @r12,     r13 ");
-    81f2:	2d 4c       	mov	@r12,	r13	;
+    821e:	2d 4c       	mov	@r12,	r13	;
 
-000081f4 <.Loc.162.1>:
+00008220 <.Loc.188.1>:
 	__asm__ __volatile__ ("mov &0x6008, @r13 ");
-    81f4:	9d 42 08 60 	mov	&0x6008,0(r13)	;0x6008
-    81f8:	00 00 
+    8220:	9d 42 08 60 	mov	&0x6008,0(r13)	;0x6008
+    8224:	00 00 
 
-000081fa <.Loc.164.1>:
+00008226 <.Loc.190.1>:
 
 	__asm__ __volatile__ ("mov #0x601A,  r12 "); /* 6th value */
-    81fa:	3c 40 1a 60 	mov	#24602,	r12	;#0x601a
+    8226:	3c 40 1a 60 	mov	#24602,	r12	;#0x601a
 
-000081fe <.Loc.165.1>:
+0000822a <.Loc.191.1>:
 	__asm__ __volatile__ ("mov @r12,     r13 ");
-    81fe:	2d 4c       	mov	@r12,	r13	;
+    822a:	2d 4c       	mov	@r12,	r13	;
 
-00008200 <.Loc.166.1>:
+0000822c <.Loc.192.1>:
 	__asm__ __volatile__ ("mov &0x600A, @r13 ");
-    8200:	9d 42 0a 60 	mov	&0x600a,0(r13)	;0x600a
-    8204:	00 00 
+    822c:	9d 42 0a 60 	mov	&0x600a,0(r13)	;0x600a
+    8230:	00 00 
 
-00008206 <.Loc.168.1>:
+00008232 <.Loc.194.1>:
 
 	__asm__ __volatile__ ("mov #0x601C,  r12 "); /* 7th value */
-    8206:	3c 40 1c 60 	mov	#24604,	r12	;#0x601c
+    8232:	3c 40 1c 60 	mov	#24604,	r12	;#0x601c
 
-0000820a <.Loc.169.1>:
+00008236 <.Loc.195.1>:
 	__asm__ __volatile__ ("mov @r12,     r13 ");
-    820a:	2d 4c       	mov	@r12,	r13	;
+    8236:	2d 4c       	mov	@r12,	r13	;
 
-0000820c <.Loc.170.1>:
+00008238 <.Loc.196.1>:
 	__asm__ __volatile__ ("mov &0x600C, @r13 ");
-    820c:	9d 42 0c 60 	mov	&0x600c,0(r13)	;0x600c
-    8210:	00 00 
+    8238:	9d 42 0c 60 	mov	&0x600c,0(r13)	;0x600c
+    823c:	00 00 
 
-00008212 <.Loc.174.1>:
+0000823e <.Loc.202.1>:
 
-	/* Checkpoint finished! */
+	//-------------------------------------------------------------------------------------------------------------//
+	//    CHECKPOINT COMPLETED																				   	   //
+	//-------------------------------------------------------------------------------------------------------------//
 	/* Clear index counter, and enable Idempotency tracking : 4 cycles*/
-	__asm__ __volatile__ ("mov #0x0001, &0x0190"); //QWARK_CTL = 0x01;
-    8212:	92 43 90 01 	mov	#1,	&0x0190	;r3 As==01
+	__asm__ __volatile__ ("mov #0x0001, &0x0190");  //QWARK_CTL = 0x01;
+    823e:	92 43 90 01 	mov	#1,	&0x0190	;r3 As==01
 
-00008216 <.Loc.175.1>:
+00008242 <.Loc.203.1>:
+	__asm__ __volatile__ ("mov &0x6026,r13"); 	    //Re-establish r13
+    8242:	1d 42 26 60 	mov	&0x6026,r13	;0x6026
+
+00008246 <.Loc.204.1>:
+	__asm__ __volatile__ ("mov &0x603E,r14"); 	    //Re-establish r1
+    8246:	1e 42 3e 60 	mov	&0x603e,r14	;0x603e
+
+0000824a <.Loc.206.1>:
+
 	LED_CTRL = 0xF0;
-    8216:	7c 40 90 00 	mov.b	#144,	r12	;#0x0090
-    821a:	fc 40 f0 ff 	mov.b	#65520,	0(r12)	;#0xfff0
-    821e:	00 00 
+    824a:	7c 40 90 00 	mov.b	#144,	r12	;#0x0090
+    824e:	fc 40 f0 ff 	mov.b	#65520,	0(r12)	;#0xfff0
+    8252:	00 00 
 
-00008220 <.Loc.177.1>:
+00008254 <.Loc.208.1>:
 
 }
-    8220:	03 43       	nop			
-    8222:	3c 41       	pop	r12		;
-    8224:	00 13       	reti			
+    8254:	03 43       	nop			
+    8256:	3c 41       	pop	r12		;
+    8258:	00 13       	reti			
 
-00008226 <main>:
+0000825a <dummy_function>:
+
+void dummy_function(void){
+    825a:	31 80 42 00 	sub	#66,	r1	;#0x0042
+
+0000825e <.LCFI1>:
+	int var=0xAA;
+    825e:	b1 40 aa 00 	mov	#170,	64(r1)	;#0x00aa, 0x0040
+    8262:	40 00 
+
+00008264 <.Loc.213.1>:
+	int array[32];
+	for(var=0;var<31;var++)
+    8264:	81 43 40 00 	mov	#0,	64(r1)	;r3 As==00, 0x0040
+    8268:	30 40 88 82 	br	#0x8288		;
+
+0000826c <.L4>:
+	{
+		array[var] = 0xFECA;
+    826c:	1c 41 40 00 	mov	64(r1),	r12	;0x00040
+    8270:	0c 5c       	rla	r12		;
+    8272:	7d 40 42 00 	mov.b	#66,	r13	;#0x0042
+    8276:	0d 51       	add	r1,	r13	;
+    8278:	0c 5d       	add	r13,	r12	;
+    827a:	3c 50 be ff 	add	#65470,	r12	;#0xffbe
+    827e:	bc 40 ca fe 	mov	#65226,	0(r12)	;#0xfeca
+    8282:	00 00 
+
+00008284 <.Loc.213.1>:
+}
+
+void dummy_function(void){
+	int var=0xAA;
+	int array[32];
+	for(var=0;var<31;var++)
+    8284:	91 53 40 00 	inc	64(r1)		;
+
+00008288 <.L3>:
+    8288:	7c 40 1e 00 	mov.b	#30,	r12	;#0x001e
+    828c:	1c 91 40 00 	cmp	64(r1),	r12	;0x00040
+    8290:	ed 37       	jge	$-36     	;abs 0x826c
+
+00008292 <.Loc.217.1>:
+	{
+		array[var] = 0xFECA;
+	}
+	if(var8){
+    8292:	1c 42 10 40 	mov	&0x4010,r12	;0x4010
+    8296:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8298:	03 24       	jz	$+8      	;abs 0x82a0
+
+0000829a <.Loc.218.1>:
+			  var8 = 0x07;
+    829a:	b2 40 07 00 	mov	#7,	&0x4010	;
+    829e:	10 40 
+
+000082a0 <.L6>:
+			}
+}
+    82a0:	03 43       	nop			
+    82a2:	31 50 42 00 	add	#66,	r1	;#0x0042
+    82a6:	30 41       	ret			
+
+000082a8 <main>:
 
 int main()
 {
-   	 //WDTCTL = WDTPW | WDTHOLD; // Stop WDT
-	//Enable Global Interrupts 
-  	eint();
-    8226:	32 d2       	eint			
-    8228:	03 43       	nop			
-
-0000822a <.Loc.186.1>:
-	
+    //WDTCTL = WDTPW | WDTHOLD; // Stop WDT
 	//Enable Idempotency Tracking
+  	eint();
+    82a8:	32 d2       	eint			
+    82aa:	03 43       	nop			
+
+000082ac <.Loc.228.1>:
 	QWARK_CTL = 0x01;
-    822a:	3c 40 90 01 	mov	#400,	r12	;#0x0190
-    822e:	9c 43 00 00 	mov	#1,	0(r12)	;r3 As==01
+    82ac:	3c 40 90 01 	mov	#400,	r12	;#0x0190
+    82b0:	9c 43 00 00 	mov	#1,	0(r12)	;r3 As==01
 
-00008232 <.Loc.189.1>:
+000082b4 <.Loc.231.1>:
 
 
 	if(var1){
-    8232:	1c 42 02 40 	mov	&0x4002,r12	;0x4002
-    8236:	0c 93       	cmp	#0,	r12	;r3 As==00
-    8238:	02 24       	jz	$+6      	;abs 0x823e
-
-0000823a <.Loc.190.1>:
-	  var1 = 0x01;
-    823a:	92 43 02 40 	mov	#1,	&0x4002	;r3 As==01
-
-0000823e <.L3>:
-	}
-
-	if(var2){
-    823e:	1c 42 04 40 	mov	&0x4004,r12	;0x4004
-    8242:	0c 93       	cmp	#0,	r12	;r3 As==00
-    8244:	02 24       	jz	$+6      	;abs 0x824a
-
-00008246 <.Loc.194.1>:
-	  var2 = 0x02;
-    8246:	a2 43 04 40 	mov	#2,	&0x4004	;r3 As==10
-
-0000824a <.L4>:
-	}
-
-	if(var3){
-    824a:	1c 42 06 40 	mov	&0x4006,r12	;0x4006
-    824e:	0c 93       	cmp	#0,	r12	;r3 As==00
-    8250:	03 24       	jz	$+8      	;abs 0x8258
-
-00008252 <.Loc.198.1>:
-	  var3 = 0x03;
-    8252:	b2 40 03 00 	mov	#3,	&0x4006	;
-    8256:	06 40 
-
-00008258 <.L5>:
-	}
-
-	if(var4){
-    8258:	1c 42 08 40 	mov	&0x4008,r12	;0x4008
-    825c:	0c 93       	cmp	#0,	r12	;r3 As==00
-    825e:	02 24       	jz	$+6      	;abs 0x8264
-
-00008260 <.Loc.202.1>:
-	  var4 = 0x04;
-    8260:	a2 42 08 40 	mov	#4,	&0x4008	;r2 As==10
-
-00008264 <.L6>:
-	}
-
-	if(var5){
-    8264:	1c 42 0a 40 	mov	&0x400a,r12	;0x400a
-    8268:	0c 93       	cmp	#0,	r12	;r3 As==00
-    826a:	03 24       	jz	$+8      	;abs 0x8272
-
-0000826c <.Loc.206.1>:
-	  var5 = 0x05;
-    826c:	b2 40 05 00 	mov	#5,	&0x400a	;
-    8270:	0a 40 
-
-00008272 <.L7>:
-	}
-
-	if(var6){
-    8272:	1c 42 0c 40 	mov	&0x400c,r12	;0x400c
-    8276:	0c 93       	cmp	#0,	r12	;r3 As==00
-    8278:	03 24       	jz	$+8      	;abs 0x8280
-
-0000827a <.Loc.210.1>:
-	  var6 = 0x06;
-    827a:	b2 40 06 00 	mov	#6,	&0x400c	;
-    827e:	0c 40 
-
-00008280 <.L8>:
-	}
-
-	if(var7){
-    8280:	1c 42 0e 40 	mov	&0x400e,r12	;0x400e
-    8284:	0c 93       	cmp	#0,	r12	;r3 As==00
-    8286:	03 24       	jz	$+8      	;abs 0x828e
-
-00008288 <.Loc.214.1>:
-	  var7 = 0x07;
-    8288:	b2 40 07 00 	mov	#7,	&0x400e	;
-    828c:	0e 40 
-
-0000828e <.L9>:
-	}
-
-	if(var8){
-    828e:	1c 42 10 40 	mov	&0x4010,r12	;0x4010
-    8292:	0c 93       	cmp	#0,	r12	;r3 As==00
-    8294:	02 24       	jz	$+6      	;abs 0x829a
-
-00008296 <.Loc.218.1>:
-	    var8 = 0x08;
-    8296:	b2 42 10 40 	mov	#8,	&0x4010	;r2 As==11
-
-0000829a <.L10>:
-	}
-
-
-
-
-	if(var9){
-    829a:	1c 42 12 40 	mov	&0x4012,r12	;0x4012
-    829e:	0c 93       	cmp	#0,	r12	;r3 As==00
-    82a0:	03 24       	jz	$+8      	;abs 0x82a8
-
-000082a2 <.Loc.225.1>:
-	  var9 = 0xAA;
-    82a2:	b2 40 aa 00 	mov	#170,	&0x4012	;#0x00aa
-    82a6:	12 40 
-
-000082a8 <.L11>:
-	}
-
-	if(var1){
-    82a8:	1c 42 02 40 	mov	&0x4002,r12	;0x4002
-    82ac:	0c 93       	cmp	#0,	r12	;r3 As==00
-    82ae:	02 24       	jz	$+6      	;abs 0x82b4
-
-000082b0 <.Loc.229.1>:
-		  var1 = 0x01;
-    82b0:	92 43 02 40 	mov	#1,	&0x4002	;r3 As==01
-
-000082b4 <.L12>:
-		}
-
-		if(var2){
-    82b4:	1c 42 04 40 	mov	&0x4004,r12	;0x4004
+    82b4:	1c 42 02 40 	mov	&0x4002,r12	;0x4002
     82b8:	0c 93       	cmp	#0,	r12	;r3 As==00
     82ba:	02 24       	jz	$+6      	;abs 0x82c0
 
-000082bc <.Loc.233.1>:
-		  var2 = 0x02;
-    82bc:	a2 43 04 40 	mov	#2,	&0x4004	;r3 As==10
+000082bc <.Loc.232.1>:
+	  var1 = 0x01;
+    82bc:	92 43 02 40 	mov	#1,	&0x4002	;r3 As==01
 
-000082c0 <.L13>:
-		}
+000082c0 <.L8>:
+	}
 
-		if(var3){
-    82c0:	1c 42 06 40 	mov	&0x4006,r12	;0x4006
+	if(var2){
+    82c0:	1c 42 04 40 	mov	&0x4004,r12	;0x4004
     82c4:	0c 93       	cmp	#0,	r12	;r3 As==00
-    82c6:	03 24       	jz	$+8      	;abs 0x82ce
+    82c6:	02 24       	jz	$+6      	;abs 0x82cc
 
-000082c8 <.Loc.237.1>:
-		  var3 = 0x03;
-    82c8:	b2 40 03 00 	mov	#3,	&0x4006	;
-    82cc:	06 40 
+000082c8 <.Loc.236.1>:
+	  var2 = 0x02;
+    82c8:	a2 43 04 40 	mov	#2,	&0x4004	;r3 As==10
 
-000082ce <.L14>:
-		}
+000082cc <.L9>:
+	}
 
-		if(var4){
-    82ce:	1c 42 08 40 	mov	&0x4008,r12	;0x4008
-    82d2:	0c 93       	cmp	#0,	r12	;r3 As==00
-    82d4:	02 24       	jz	$+6      	;abs 0x82da
+	if(var3){
+    82cc:	1c 42 06 40 	mov	&0x4006,r12	;0x4006
+    82d0:	0c 93       	cmp	#0,	r12	;r3 As==00
+    82d2:	03 24       	jz	$+8      	;abs 0x82da
 
-000082d6 <.Loc.241.1>:
-		  var4 = 0x04;
-    82d6:	a2 42 08 40 	mov	#4,	&0x4008	;r2 As==10
+000082d4 <.Loc.240.1>:
+	  var3 = 0x03;
+    82d4:	b2 40 03 00 	mov	#3,	&0x4006	;
+    82d8:	06 40 
 
-000082da <.L15>:
-		}
+000082da <.L10>:
+	}
 
-		if(var5){
-    82da:	1c 42 0a 40 	mov	&0x400a,r12	;0x400a
+	if(var4){
+    82da:	1c 42 08 40 	mov	&0x4008,r12	;0x4008
     82de:	0c 93       	cmp	#0,	r12	;r3 As==00
-    82e0:	03 24       	jz	$+8      	;abs 0x82e8
+    82e0:	02 24       	jz	$+6      	;abs 0x82e6
 
-000082e2 <.Loc.245.1>:
-		  var5 = 0x05;
-    82e2:	b2 40 05 00 	mov	#5,	&0x400a	;
-    82e6:	0a 40 
+000082e2 <.Loc.244.1>:
+	  var4 = 0x04;
+    82e2:	a2 42 08 40 	mov	#4,	&0x4008	;r2 As==10
 
-000082e8 <.L16>:
-		}
+000082e6 <.L11>:
+	}
 
-		if(var6){
-    82e8:	1c 42 0c 40 	mov	&0x400c,r12	;0x400c
-    82ec:	0c 93       	cmp	#0,	r12	;r3 As==00
-    82ee:	03 24       	jz	$+8      	;abs 0x82f6
+	if(var5){
+    82e6:	1c 42 0a 40 	mov	&0x400a,r12	;0x400a
+    82ea:	0c 93       	cmp	#0,	r12	;r3 As==00
+    82ec:	03 24       	jz	$+8      	;abs 0x82f4
 
-000082f0 <.Loc.249.1>:
-		  var6 = 0x06;
-    82f0:	b2 40 06 00 	mov	#6,	&0x400c	;
-    82f4:	0c 40 
+000082ee <.Loc.248.1>:
+	  var5 = 0x05;
+    82ee:	b2 40 05 00 	mov	#5,	&0x400a	;
+    82f2:	0a 40 
 
-000082f6 <.L17>:
-		}
+000082f4 <.L12>:
+	}
 
-		if(var7){
-    82f6:	1c 42 0e 40 	mov	&0x400e,r12	;0x400e
-    82fa:	0c 93       	cmp	#0,	r12	;r3 As==00
-    82fc:	03 24       	jz	$+8      	;abs 0x8304
+	if(var6){
+    82f4:	1c 42 0c 40 	mov	&0x400c,r12	;0x400c
+    82f8:	0c 93       	cmp	#0,	r12	;r3 As==00
+    82fa:	03 24       	jz	$+8      	;abs 0x8302
 
-000082fe <.Loc.253.1>:
-		  var7 = 0x07;
-    82fe:	b2 40 07 00 	mov	#7,	&0x400e	;
-    8302:	0e 40 
+000082fc <.Loc.252.1>:
+	  var6 = 0x06;
+    82fc:	b2 40 06 00 	mov	#6,	&0x400c	;
+    8300:	0c 40 
 
-00008304 <.L18>:
-		}
+00008302 <.L13>:
+	}
 
-		if(var8){
-    8304:	1c 42 10 40 	mov	&0x4010,r12	;0x4010
-    8308:	0c 93       	cmp	#0,	r12	;r3 As==00
-    830a:	02 24       	jz	$+6      	;abs 0x8310
+	if(var7){
+    8302:	1c 42 0e 40 	mov	&0x400e,r12	;0x400e
+    8306:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8308:	03 24       	jz	$+8      	;abs 0x8310
 
-0000830c <.Loc.257.1>:
-		    var8 = 0x08;
-    830c:	b2 42 10 40 	mov	#8,	&0x4010	;r2 As==11
+0000830a <.Loc.256.1>:
+	  var7 = 0x07;
+    830a:	b2 40 07 00 	mov	#7,	&0x400e	;
+    830e:	0e 40 
 
-00008310 <.L19>:
-		}
+00008310 <.L14>:
+	}
+
+	dummy_function();
+    8310:	b0 12 5a 82 	call	#33370		;#0x825a
+
+00008314 <.L15>:
 
 	while(1);
-    8310:	30 40 10 83 	br	#0x8310		;
+    8314:	30 40 14 83 	br	#0x8314		;
 
-00008314 <__mspabi_func_epilog_7>:
-    8314:	34 41       	pop	r4		;
+00008318 <__mspabi_func_epilog_7>:
+    8318:	34 41       	pop	r4		;
 
-00008316 <__mspabi_func_epilog_6>:
-    8316:	35 41       	pop	r5		;
+0000831a <__mspabi_func_epilog_6>:
+    831a:	35 41       	pop	r5		;
 
-00008318 <__mspabi_func_epilog_5>:
-    8318:	36 41       	pop	r6		;
+0000831c <__mspabi_func_epilog_5>:
+    831c:	36 41       	pop	r6		;
 
-0000831a <__mspabi_func_epilog_4>:
-    831a:	37 41       	pop	r7		;
+0000831e <__mspabi_func_epilog_4>:
+    831e:	37 41       	pop	r7		;
 
-0000831c <__mspabi_func_epilog_3>:
-    831c:	38 41       	pop	r8		;
+00008320 <__mspabi_func_epilog_3>:
+    8320:	38 41       	pop	r8		;
 
-0000831e <__mspabi_func_epilog_2>:
-    831e:	39 41       	pop	r9		;
+00008322 <__mspabi_func_epilog_2>:
+    8322:	39 41       	pop	r9		;
 
-00008320 <__mspabi_func_epilog_1>:
-    8320:	3a 41       	pop	r10		;
-    8322:	30 41       	ret			
+00008324 <__mspabi_func_epilog_1>:
+    8324:	3a 41       	pop	r10		;
+    8326:	30 41       	ret			
 
-00008324 <__mspabi_srli_15>:
-    8324:	12 c3       	clrc			
-    8326:	0c 10       	rrc	r12		;
-
-00008328 <__mspabi_srli_14>:
+00008328 <__mspabi_srli_15>:
     8328:	12 c3       	clrc			
     832a:	0c 10       	rrc	r12		;
 
-0000832c <__mspabi_srli_13>:
+0000832c <__mspabi_srli_14>:
     832c:	12 c3       	clrc			
     832e:	0c 10       	rrc	r12		;
 
-00008330 <__mspabi_srli_12>:
+00008330 <__mspabi_srli_13>:
     8330:	12 c3       	clrc			
     8332:	0c 10       	rrc	r12		;
 
-00008334 <__mspabi_srli_11>:
+00008334 <__mspabi_srli_12>:
     8334:	12 c3       	clrc			
     8336:	0c 10       	rrc	r12		;
 
-00008338 <__mspabi_srli_10>:
+00008338 <__mspabi_srli_11>:
     8338:	12 c3       	clrc			
     833a:	0c 10       	rrc	r12		;
 
-0000833c <__mspabi_srli_9>:
+0000833c <__mspabi_srli_10>:
     833c:	12 c3       	clrc			
     833e:	0c 10       	rrc	r12		;
 
-00008340 <__mspabi_srli_8>:
+00008340 <__mspabi_srli_9>:
     8340:	12 c3       	clrc			
     8342:	0c 10       	rrc	r12		;
 
-00008344 <__mspabi_srli_7>:
+00008344 <__mspabi_srli_8>:
     8344:	12 c3       	clrc			
     8346:	0c 10       	rrc	r12		;
 
-00008348 <__mspabi_srli_6>:
+00008348 <__mspabi_srli_7>:
     8348:	12 c3       	clrc			
     834a:	0c 10       	rrc	r12		;
 
-0000834c <__mspabi_srli_5>:
+0000834c <__mspabi_srli_6>:
     834c:	12 c3       	clrc			
     834e:	0c 10       	rrc	r12		;
 
-00008350 <__mspabi_srli_4>:
+00008350 <__mspabi_srli_5>:
     8350:	12 c3       	clrc			
     8352:	0c 10       	rrc	r12		;
 
-00008354 <__mspabi_srli_3>:
+00008354 <__mspabi_srli_4>:
     8354:	12 c3       	clrc			
     8356:	0c 10       	rrc	r12		;
 
-00008358 <__mspabi_srli_2>:
+00008358 <__mspabi_srli_3>:
     8358:	12 c3       	clrc			
     835a:	0c 10       	rrc	r12		;
 
-0000835c <__mspabi_srli_1>:
+0000835c <__mspabi_srli_2>:
     835c:	12 c3       	clrc			
     835e:	0c 10       	rrc	r12		;
-    8360:	30 41       	ret			
 
-00008362 <.L11>:
-    8362:	3d 53       	add	#-1,	r13	;r3 As==11
-    8364:	12 c3       	clrc			
-    8366:	0c 10       	rrc	r12		;
+00008360 <__mspabi_srli_1>:
+    8360:	12 c3       	clrc			
+    8362:	0c 10       	rrc	r12		;
+    8364:	30 41       	ret			
 
-00008368 <__mspabi_srli>:
-    8368:	0d 93       	cmp	#0,	r13	;r3 As==00
-    836a:	fb 23       	jnz	$-8      	;abs 0x8362
-    836c:	30 41       	ret			
+00008366 <.L11>:
+    8366:	3d 53       	add	#-1,	r13	;r3 As==11
+    8368:	12 c3       	clrc			
+    836a:	0c 10       	rrc	r12		;
 
-0000836e <__mspabi_srll_15>:
-    836e:	12 c3       	clrc			
-    8370:	0d 10       	rrc	r13		;
-    8372:	0c 10       	rrc	r12		;
+0000836c <__mspabi_srli>:
+    836c:	0d 93       	cmp	#0,	r13	;r3 As==00
+    836e:	fb 23       	jnz	$-8      	;abs 0x8366
+    8370:	30 41       	ret			
 
-00008374 <__mspabi_srll_14>:
-    8374:	12 c3       	clrc			
-    8376:	0d 10       	rrc	r13		;
-    8378:	0c 10       	rrc	r12		;
+00008372 <__mspabi_srll_15>:
+    8372:	12 c3       	clrc			
+    8374:	0d 10       	rrc	r13		;
+    8376:	0c 10       	rrc	r12		;
 
-0000837a <__mspabi_srll_13>:
-    837a:	12 c3       	clrc			
-    837c:	0d 10       	rrc	r13		;
-    837e:	0c 10       	rrc	r12		;
+00008378 <__mspabi_srll_14>:
+    8378:	12 c3       	clrc			
+    837a:	0d 10       	rrc	r13		;
+    837c:	0c 10       	rrc	r12		;
 
-00008380 <__mspabi_srll_12>:
-    8380:	12 c3       	clrc			
-    8382:	0d 10       	rrc	r13		;
-    8384:	0c 10       	rrc	r12		;
+0000837e <__mspabi_srll_13>:
+    837e:	12 c3       	clrc			
+    8380:	0d 10       	rrc	r13		;
+    8382:	0c 10       	rrc	r12		;
 
-00008386 <__mspabi_srll_11>:
-    8386:	12 c3       	clrc			
-    8388:	0d 10       	rrc	r13		;
-    838a:	0c 10       	rrc	r12		;
+00008384 <__mspabi_srll_12>:
+    8384:	12 c3       	clrc			
+    8386:	0d 10       	rrc	r13		;
+    8388:	0c 10       	rrc	r12		;
 
-0000838c <__mspabi_srll_10>:
-    838c:	12 c3       	clrc			
-    838e:	0d 10       	rrc	r13		;
-    8390:	0c 10       	rrc	r12		;
+0000838a <__mspabi_srll_11>:
+    838a:	12 c3       	clrc			
+    838c:	0d 10       	rrc	r13		;
+    838e:	0c 10       	rrc	r12		;
 
-00008392 <__mspabi_srll_9>:
-    8392:	12 c3       	clrc			
-    8394:	0d 10       	rrc	r13		;
-    8396:	0c 10       	rrc	r12		;
+00008390 <__mspabi_srll_10>:
+    8390:	12 c3       	clrc			
+    8392:	0d 10       	rrc	r13		;
+    8394:	0c 10       	rrc	r12		;
 
-00008398 <__mspabi_srll_8>:
-    8398:	12 c3       	clrc			
-    839a:	0d 10       	rrc	r13		;
-    839c:	0c 10       	rrc	r12		;
+00008396 <__mspabi_srll_9>:
+    8396:	12 c3       	clrc			
+    8398:	0d 10       	rrc	r13		;
+    839a:	0c 10       	rrc	r12		;
 
-0000839e <__mspabi_srll_7>:
-    839e:	12 c3       	clrc			
-    83a0:	0d 10       	rrc	r13		;
-    83a2:	0c 10       	rrc	r12		;
+0000839c <__mspabi_srll_8>:
+    839c:	12 c3       	clrc			
+    839e:	0d 10       	rrc	r13		;
+    83a0:	0c 10       	rrc	r12		;
 
-000083a4 <__mspabi_srll_6>:
-    83a4:	12 c3       	clrc			
-    83a6:	0d 10       	rrc	r13		;
-    83a8:	0c 10       	rrc	r12		;
+000083a2 <__mspabi_srll_7>:
+    83a2:	12 c3       	clrc			
+    83a4:	0d 10       	rrc	r13		;
+    83a6:	0c 10       	rrc	r12		;
 
-000083aa <__mspabi_srll_5>:
-    83aa:	12 c3       	clrc			
-    83ac:	0d 10       	rrc	r13		;
-    83ae:	0c 10       	rrc	r12		;
+000083a8 <__mspabi_srll_6>:
+    83a8:	12 c3       	clrc			
+    83aa:	0d 10       	rrc	r13		;
+    83ac:	0c 10       	rrc	r12		;
 
-000083b0 <__mspabi_srll_4>:
-    83b0:	12 c3       	clrc			
-    83b2:	0d 10       	rrc	r13		;
-    83b4:	0c 10       	rrc	r12		;
+000083ae <__mspabi_srll_5>:
+    83ae:	12 c3       	clrc			
+    83b0:	0d 10       	rrc	r13		;
+    83b2:	0c 10       	rrc	r12		;
 
-000083b6 <__mspabi_srll_3>:
-    83b6:	12 c3       	clrc			
-    83b8:	0d 10       	rrc	r13		;
-    83ba:	0c 10       	rrc	r12		;
+000083b4 <__mspabi_srll_4>:
+    83b4:	12 c3       	clrc			
+    83b6:	0d 10       	rrc	r13		;
+    83b8:	0c 10       	rrc	r12		;
 
-000083bc <__mspabi_srll_2>:
-    83bc:	12 c3       	clrc			
-    83be:	0d 10       	rrc	r13		;
-    83c0:	0c 10       	rrc	r12		;
+000083ba <__mspabi_srll_3>:
+    83ba:	12 c3       	clrc			
+    83bc:	0d 10       	rrc	r13		;
+    83be:	0c 10       	rrc	r12		;
 
-000083c2 <__mspabi_srll_1>:
-    83c2:	12 c3       	clrc			
-    83c4:	0d 10       	rrc	r13		;
-    83c6:	0c 10       	rrc	r12		;
-    83c8:	30 41       	ret			
+000083c0 <__mspabi_srll_2>:
+    83c0:	12 c3       	clrc			
+    83c2:	0d 10       	rrc	r13		;
+    83c4:	0c 10       	rrc	r12		;
 
-000083ca <.L12>:
-    83ca:	3e 53       	add	#-1,	r14	;r3 As==11
-    83cc:	12 c3       	clrc			
-    83ce:	0d 10       	rrc	r13		;
-    83d0:	0c 10       	rrc	r12		;
+000083c6 <__mspabi_srll_1>:
+    83c6:	12 c3       	clrc			
+    83c8:	0d 10       	rrc	r13		;
+    83ca:	0c 10       	rrc	r12		;
+    83cc:	30 41       	ret			
 
-000083d2 <__mspabi_srll>:
-    83d2:	0e 93       	cmp	#0,	r14	;r3 As==00
-    83d4:	fa 23       	jnz	$-10     	;abs 0x83ca
-    83d6:	30 41       	ret			
+000083ce <.L12>:
+    83ce:	3e 53       	add	#-1,	r14	;r3 As==11
+    83d0:	12 c3       	clrc			
+    83d2:	0d 10       	rrc	r13		;
+    83d4:	0c 10       	rrc	r12		;
 
-000083d8 <memmove>:
-    83d8:	0d 9c       	cmp	r12,	r13	;
-    83da:	0a 28       	jnc	$+22     	;abs 0x83f0
+000083d6 <__mspabi_srll>:
+    83d6:	0e 93       	cmp	#0,	r14	;r3 As==00
+    83d8:	fa 23       	jnz	$-10     	;abs 0x83ce
+    83da:	30 41       	ret			
 
-000083dc <.L5>:
-    83dc:	0f 4c       	mov	r12,	r15	;
-    83de:	0e 5c       	add	r12,	r14	;
+000083dc <memmove>:
+    83dc:	0d 9c       	cmp	r12,	r13	;
+    83de:	0a 28       	jnc	$+22     	;abs 0x83f4
 
-000083e0 <.L3>:
-    83e0:	0e 9f       	cmp	r15,	r14	;
-    83e2:	0d 24       	jz	$+28     	;abs 0x83fe
+000083e0 <.L5>:
+    83e0:	0f 4c       	mov	r12,	r15	;
+    83e2:	0e 5c       	add	r12,	r14	;
 
-000083e4 <.LVL3>:
-    83e4:	ef 4d 00 00 	mov.b	@r13,	0(r15)	;
-    83e8:	1f 53       	inc	r15		;
+000083e4 <.L3>:
+    83e4:	0e 9f       	cmp	r15,	r14	;
+    83e6:	0d 24       	jz	$+28     	;abs 0x8402
 
-000083ea <.LVL4>:
-    83ea:	1d 53       	inc	r13		;
-    83ec:	30 40 e0 83 	br	#0x83e0		;
+000083e8 <.LVL3>:
+    83e8:	ef 4d 00 00 	mov.b	@r13,	0(r15)	;
+    83ec:	1f 53       	inc	r15		;
 
-000083f0 <.L2>:
-    83f0:	0f 4d       	mov	r13,	r15	;
-    83f2:	0f 5e       	add	r14,	r15	;
-    83f4:	0c 9f       	cmp	r15,	r12	;
-    83f6:	f2 2f       	jc	$-26     	;abs 0x83dc
+000083ee <.LVL4>:
+    83ee:	1d 53       	inc	r13		;
+    83f0:	30 40 e4 83 	br	#0x83e4		;
 
-000083f8 <.L4>:
-    83f8:	3e 53       	add	#-1,	r14	;r3 As==11
+000083f4 <.L2>:
+    83f4:	0f 4d       	mov	r13,	r15	;
+    83f6:	0f 5e       	add	r14,	r15	;
+    83f8:	0c 9f       	cmp	r15,	r12	;
+    83fa:	f2 2f       	jc	$-26     	;abs 0x83e0
 
-000083fa <.LVL7>:
-    83fa:	3e 93       	cmp	#-1,	r14	;r3 As==11
-    83fc:	01 20       	jnz	$+4      	;abs 0x8400
+000083fc <.L4>:
+    83fc:	3e 53       	add	#-1,	r14	;r3 As==11
 
-000083fe <.L10>:
-    83fe:	30 41       	ret			
+000083fe <.LVL7>:
+    83fe:	3e 93       	cmp	#-1,	r14	;r3 As==11
+    8400:	01 20       	jnz	$+4      	;abs 0x8404
 
-00008400 <.L6>:
-    8400:	0b 4c       	mov	r12,	r11	;
-    8402:	0b 5e       	add	r14,	r11	;
-    8404:	0f 4d       	mov	r13,	r15	;
-    8406:	0f 5e       	add	r14,	r15	;
-    8408:	eb 4f 00 00 	mov.b	@r15,	0(r11)	;
-    840c:	30 40 f8 83 	br	#0x83f8		;
+00008402 <.L10>:
+    8402:	30 41       	ret			
 
-00008410 <memset>:
-    8410:	0f 4c       	mov	r12,	r15	;
-    8412:	0e 5c       	add	r12,	r14	;
+00008404 <.L6>:
+    8404:	0b 4c       	mov	r12,	r11	;
+    8406:	0b 5e       	add	r14,	r11	;
+    8408:	0f 4d       	mov	r13,	r15	;
+    840a:	0f 5e       	add	r14,	r15	;
+    840c:	eb 4f 00 00 	mov.b	@r15,	0(r11)	;
+    8410:	30 40 fc 83 	br	#0x83fc		;
 
-00008414 <.L2>:
-    8414:	0f 9e       	cmp	r14,	r15	;
-    8416:	01 20       	jnz	$+4      	;abs 0x841a
+00008414 <memset>:
+    8414:	0f 4c       	mov	r12,	r15	;
+    8416:	0e 5c       	add	r12,	r14	;
 
-00008418 <.Loc.104.1>:
-    8418:	30 41       	ret			
+00008418 <.L2>:
+    8418:	0f 9e       	cmp	r14,	r15	;
+    841a:	01 20       	jnz	$+4      	;abs 0x841e
 
-0000841a <.L3>:
-    841a:	cf 4d 00 00 	mov.b	r13,	0(r15)	;
-    841e:	1f 53       	inc	r15		;
+0000841c <.Loc.104.1>:
+    841c:	30 41       	ret			
 
-00008420 <.LVL4>:
-    8420:	30 40 14 84 	br	#0x8414		;
+0000841e <.L3>:
+    841e:	cf 4d 00 00 	mov.b	r13,	0(r15)	;
+    8422:	1f 53       	inc	r15		;
 
-00008424 <L0>:
-    8424:	30 41       	ret			
+00008424 <.LVL4>:
+    8424:	30 40 18 84 	br	#0x8418		;
 
-00008426 <__do_global_ctors_aux>:
-    8426:	0a 12       	push	r10		;
-    8428:	3a 40 08 80 	mov	#32776,	r10	;#0x8008
+00008428 <L0>:
+    8428:	30 41       	ret			
 
-0000842c <.L2>:
-    842c:	2c 4a       	mov	@r10,	r12	;
-    842e:	3c 93       	cmp	#-1,	r12	;r3 As==11
-    8430:	02 20       	jnz	$+6      	;abs 0x8436
-    8432:	3a 41       	pop	r10		;
-    8434:	30 41       	ret			
+0000842a <__do_global_ctors_aux>:
+    842a:	0a 12       	push	r10		;
+    842c:	3a 40 08 80 	mov	#32776,	r10	;#0x8008
 
-00008436 <.L3>:
-    8436:	8c 12       	call	r12		;
-    8438:	3a 50 fe ff 	add	#65534,	r10	;#0xfffe
-    843c:	30 40 2c 84 	br	#0x842c		;
+00008430 <.L2>:
+    8430:	2c 4a       	mov	@r10,	r12	;
+    8432:	3c 93       	cmp	#-1,	r12	;r3 As==11
+    8434:	02 20       	jnz	$+6      	;abs 0x843a
+    8436:	3a 41       	pop	r10		;
+    8438:	30 41       	ret			
 
-00008440 <call___do_global_ctors_aux>:
-    8440:	b0 12 16 81 	call	#33046		;#0x8116
-    8444:	b0 12 26 84 	call	#33830		;#0x8426
+0000843a <.L3>:
+    843a:	8c 12       	call	r12		;
+    843c:	3a 50 fe ff 	add	#65534,	r10	;#0xfffe
+    8440:	30 40 30 84 	br	#0x8430		;
 
-00008448 <L0>:
-    8448:	b0 12 4e 80 	call	#32846		;#0x804e
+00008444 <call___do_global_ctors_aux>:
+    8444:	b0 12 16 81 	call	#33046		;#0x8116
+    8448:	b0 12 2a 84 	call	#33834		;#0x842a
 
-0000844c <.Loc.19.1>:
-    844c:	b0 12 40 80 	call	#32832		;#0x8040
+0000844c <L0>:
+    844c:	b0 12 4e 80 	call	#32846		;#0x804e
 
-00008450 <.Loc.20.1>:
-    8450:	30 41       	ret			
+00008450 <.Loc.19.1>:
+    8450:	b0 12 40 80 	call	#32832		;#0x8040
 
-00008452 <__msp430_fini>:
-    8452:	b0 12 5c 80 	call	#32860		;#0x805c
+00008454 <.Loc.20.1>:
+    8454:	30 41       	ret			
 
-00008456 <L0>:
-    8456:	b0 12 c8 80 	call	#32968		;#0x80c8
+00008456 <__msp430_fini>:
+    8456:	b0 12 5c 80 	call	#32860		;#0x805c
 
 0000845a <L0>:
-    845a:	30 41       	ret			
+    845a:	b0 12 c8 80 	call	#32968		;#0x80c8
+
+0000845e <L0>:
+    845e:	30 41       	ret			
