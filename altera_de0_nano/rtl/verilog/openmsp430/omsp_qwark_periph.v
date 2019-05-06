@@ -62,14 +62,15 @@ module  omsp_qwark_periph (
 	 eu_en,									// Execution Unit Memory Address Bus Enable  (Active High)
 	 eu_mb_wr,								// Execution Unit Memory Write
 	 irq_qwark_acc,						// Interrupt request accepted signal 			(from the Front-End)
-	 dbg_acc									// Debug Access signal 								(from omsp debugger)
+	 dbg_acc,								// Debug Access signal 								(from omsp debugger)
+	 mb_rd_msk								// Memory read mask									(syncrhonized to Execution Unit - Used to detect byte accesses)
 );
 
 // OUTPUTs
 //=========
 output        [15:0] per_dout;      // Peripheral data output
 output [`DMEM_MSB:0] addr_out;      // Address Out
-output					qwark_irq;		// Qwark Interrupt request signal
+output				  qwark_irq;		// Qwark Interrupt request signal
 
 // INPUTs
 //=========
@@ -85,7 +86,7 @@ input       		     eu_en;       // Execution Unit Memory Address Bus Enable  (Ac
 input        [1:0]  eu_mb_wr;       // Execution Unit Memory Write					(Active High)
 input			   irq_qwark_acc;			// Interrupt request accepted signal         (from the Front-End)
 input 					dbg_acc;			// Debug Access signal 								(from omsp debugger)
-
+input 		  [1:0]mb_rd_msk;
 //=============================================================================
 // 1)  PARAMETER DECLARATION
 //=============================================================================
@@ -170,16 +171,17 @@ wire [6:0]wr_addr_mux = (qwark_dout-1) == 3'b000 ? 7'b0000001 :
 reg  [15:0] cntrl1;
 
 wire        cntrl1_wr	   = reg_wr[CNTRL1];
-
-assign      qwark_irq      = qwark_irq_req;
 wire        qwark_irq_req  = cntrl1[5];
+assign      qwark_irq      = qwark_irq_req;
+
 
 always @ (posedge mclk or posedge puc_rst)
   if (puc_rst)       	  cntrl1 <=  16'h0000;
   else if (cntrl1_wr) 	  cntrl1 <=  per_din;
-  else if (qwark_reg_wr)  cntrl1 <=  {{10{1'b0}},cntrl1[5],qwark_dout[3:0],cntrl1[0]};
-  else if (irq_flag)		  cntrl1 <=  {{10{1'b0}},1'b1,cntrl1[4:0]};
-  else if (irq_qwark_acc) cntrl1 <=  {cntrl1[15:6],{1{1'b0}},cntrl1[4:1],1'b0};
+  else if (qwark_reg_wr  &&  irq_qwark_acc)   cntrl1 <=   {{10{1'b0}},{1{1'b0}},qwark_dout[3:0],1'b0};
+  else if (qwark_reg_wr  && ~irq_qwark_acc)   cntrl1 <=   {{10{1'b0}},cntrl1[5],qwark_dout[3:0],cntrl1[0]};
+  else if (~qwark_reg_wr &&  irq_qwark_acc)   cntrl1 <=   {cntrl1[15:6],{1{1'b0}},cntrl1[4:1],1'b0};
+  else if (irq_flag)		  							 cntrl1 <=   {{10{1'b0}},1'b1,cntrl1[4:0]};
 
   // CNTRL2 Register
 //-----------------
@@ -299,19 +301,19 @@ wire [`DMEM_MSB:0] tl_addr_format = ({1'b0,tl_addr[15:1]})-(`DMEM_BASE);
 
 omsp_qwark qwark_0 (
 
-// INPUTs
-    .mclk				 (mclk),								// Master Clock (synchronized to EU and FE)
-	 .en					 (qwark_en),						// Enable Idempotency Tracking 
-	 .puc_rst			 (puc_rst),						   // PUC Reset    (synchronized to EU and FE)
-	 .eu_addr          (dmem_addr),     				// Execution Unit Memory Address Bus 			(Logical Address)
-	 .eu_en				 (~eu_en),							// Execution Unit Memory Address Bus Enable  (Active High)
-	 .eu_mb_wr			 (~eu_mb_wr),						// Execution Unit Memory Write	
-	 .tl_addr			 (tl_addr),							// Translated address output
-	 .per_dout		    (qwark_dout),					
+	 .tl_addr			 (tl_addr),	
+	 .per_dout		    (qwark_dout),	
 	 .per_wr		 	    (qwark_reg_wr),
 	 .irq_out			 (irq_flag),
+	 .per_dout_war_addr(qwark_war_addr),
+    .mclk				 (mclk),								
+	 .en					 (qwark_en),						
+	 .puc_rst			 (puc_rst),						  
+	 .eu_addr          (dmem_addr),     				
+	 .eu_en				 (~eu_en),							
+	 .eu_mb_wr			 (~eu_mb_wr),						
 	 .buff_rst			 (irq_qwark_acc),
-	 .per_dout_war_addr(qwark_war_addr)
+	 .mb_rd_msk			 (mb_rd_msk)
 	 );
 
 

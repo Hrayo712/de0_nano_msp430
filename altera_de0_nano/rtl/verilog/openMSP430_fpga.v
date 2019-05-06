@@ -156,6 +156,7 @@ assign lfxt_clk = lfxt_clk_cnt[8];
 // 3)  OPENMSP430
 //=============================================================================
 wire dbg_mem_en;
+wire [1:0] mb_rd_msk;
 openMSP430 openmsp430_0 (
 
 // OUTPUTs
@@ -189,6 +190,7 @@ openMSP430 openmsp430_0 (
     .smclk             (),                    // ASIC ONLY: SMCLK
     .smclk_en          (smclk_en),            // FPGA ONLY: SMCLK enable
 	 .dbg_mem_en		  (dbg_mem_en),
+	 .mb_rd_msk			  (mb_rd_msk),
 // INPUTs
     .cpu_en            (1'b1),                // Enable CPU code execution (asynchronous and non-glitchy)
     .dbg_en            (1'b1),                // Debug interface enable (asynchronous and non-glitchy)
@@ -377,7 +379,8 @@ omsp_qwark_periph qwark_periph_0 (
 	 .eu_addr({{2{1'b0}},dmem_addr[`DMEM_MSB:0],1'b0}),   // Execution Unit Memory Address Bus    (Logical Address)
 	 .eu_en(dmem_cen),												// Execution Unit Memory Address Bus Enable  (Active High)
 	 .eu_mb_wr(dmem_wen),  				   						// Execution Unit Memory Write
-	 .irq_qwark_acc(irq_acc[4])
+	 .irq_qwark_acc(irq_acc[4]),
+	 .mb_rd_msk(mb_rd_msk)
 );
 
 //=============================================================================

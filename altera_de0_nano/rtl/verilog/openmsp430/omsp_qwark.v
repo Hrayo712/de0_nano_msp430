@@ -38,7 +38,7 @@
 //----------------------------------------------------------------------------
 // $Rev$ 1.0
 // $LastChangedBy$ Hiram Rayo Torres Rodriguez
-// $LastChangedDate$ May 1st 2019
+// $LastChangedDate$ May 5th 2019
 //----------------------------------------------------------------------------
 `ifdef OMSP_NO_INCLUDE
 `else
@@ -47,41 +47,47 @@
 
 module  omsp_qwark (
 
-    mclk,							// Master Clock (synchronized to EU and FE)
-	 mclk_2,
-	 en,								// Module Enable
-	 puc_rst,						// PUC Reset    (synchronized to EU and FE)
+// OUTPUTs
+	 tl_addr,						// Translated Address Output
+	 per_dout,						// Peripheral data out
+	 per_wr,							// Peripheral register write signal
+	 irq_out,						// Interrupt request signal	
+	 per_dout_war_addr,			// Peripheral WAR Address 
+	 
+// INPUTs
+    mclk,							// Master Clock 										(synchronized to EU and FE)
+	 en,								// Peripheral Enable 		    					(synchronized to EU and FE)
+	 puc_rst,						// Power-up Clear (PUC) Reset						(synchronized to EU and FE)
 	 eu_addr,           			// Execution Unit Memory Address Bus 			(Logical Address)
 	 eu_en,							// Execution Unit Memory Address Bus Enable  (Active High)
-	 eu_mb_wr,						// Execution Unit Memory Write
-	 tl_addr,
-	 //Peripheral register handling
-	 per_dout,
-	 per_wr,
-	 irq_out,
-	 buff_rst,
-	 per_dout_war_addr
+	 eu_mb_wr,						// Execution Unit Memory Write					(Active High)
+	 buff_rst,						// Buffers reset 										(R/W/TLB reset signal - Tied to IRQ)	 
+	 mb_rd_msk						// Memory read mask									(syncrhonized to Execution Unit - Used to detect byte accesses)
 );
 
-// INPUTs
-//=========
-input               mclk;           // Master Clock (synchronized to EU and FE)
-input 				  mclk_2;
-input					  en;
-input               puc_rst;        // PUC Reset    (synchronized to EU and FE)
-input        [15:0] eu_addr;        // Execution Unit Memory Address Bus 			(Logical Address)
-input       		  eu_en;          // Execution Unit Memory Address Bus Enable  (Active High)
-input        [1:0]  eu_mb_wr;       // Execution Unit Memory Write					(Active High)
-input					  buff_rst;
 
 // OUTPUTs
 //=========
 
-output  	[DATA_WIDTH-1:0] 				 tl_addr;
-output				  [3:0]				per_dout;
-output        								  per_wr;
-output        				  				 irq_out;
-output 	[DATA_WIDTH-1:0]  per_dout_war_addr;
+output  	[DATA_WIDTH-1:0] 				 tl_addr;	// Translated Address Output
+output				  [3:0]				per_dout;	// Peripheral data out
+output        								  per_wr;	// Peripheral register write signal
+output        				  				 irq_out;	// Interrupt request signal	
+output 	[DATA_WIDTH-1:0]  per_dout_war_addr;	// Peripheral WAR Address 
+
+
+// INPUTs
+//=========
+input               	   mclk;        // Master Clock 					 					(synchronized to EU and FE)
+input					        en;			 // Peripheral Enable 		    					(synchronized to EU and FE)
+input                puc_rst;        // Power-up Clear (PUC) Reset					(synchronized to EU and FE)
+input        [15:0]  eu_addr;        // Execution Unit Memory Address Bus 			(Logical Address)
+input       		     eu_en;        // Execution Unit Memory Address Bus Enable (Active High)
+input        [1:0]  eu_mb_wr;        // Execution Unit Memory Write					(Active High)
+input					  buff_rst;			 // Buffers reset 									(R/W/TLB reset signal - Tied to IRQ)
+input			 [1:0] mb_rd_msk;			 // Memory read mask									(syncrhonized to Execution Unit - Used to detect byte accesses)
+
+
 
 //=============================================================================
 // Parameter Declaration
@@ -97,7 +103,8 @@ parameter           DMEM_END      = 16'h6000;
 // Register Declaration
 //=============================================================================
 
-//status for the bufffers 
+//status for the bufffers
+wire byte_read; 
 wire rd_buf_out_match;
 wire wr_buf_out_match;
 wire tlb_buf_out_match;
@@ -142,6 +149,10 @@ reg [DATA_WIDTH-1:0]addr_out_rd;
 reg [15:0]read_address;
 reg irq_flag;
 reg WAR;
+
+wire  [15:0] tl_eu_addr = eu_addr | byte_read;
+
+assign byte_read = mb_rd_msk[1] && ~mb_rd_msk[0] ? 1'b1: 1'b0;
 
 //=============================================================================
 // Output Assignment
@@ -211,7 +222,7 @@ always @* begin
 end			
 
 //=============================================================================
-// IRQ flag trigger
+// IRQ flag trigger (triggers on eight write)
 //=============================================================================
 
 always @(posedge mclk) begin
@@ -234,7 +245,7 @@ always @(posedge mclk) begin
 	war_ctr <= 1'b0;
 	end else if(WAR && ~tlb_match) begin
 	war_ctr <= 	war_ctr + 1;
-	end else if (irq_flag) begin
+	end else if (buff_rst) begin
 	war_ctr <= 1'b0;
 	end
 end
@@ -265,16 +276,16 @@ always @(posedge mclk) begin
 	tlb_buff_wr_en  <= 1'b0;
 	end else if (en) begin
 	// The memory bus is issuing a read access, and the CAM didnt recognize the address in the buffer..Enable the Write!
-	rd_buff_wr_en <= eu_en && ~eu_mb_wr[1] && ~eu_mb_wr[0] && mem_track_en && (eu_addr!=wr_buff_busy_writing) && ~wr_buf_out_match && ~rd_buf_out_match && ~tlb_match; 
+	rd_buff_wr_en <= eu_en && ~eu_mb_wr[1] && ~eu_mb_wr[0] && mem_track_en && (tl_eu_addr!=wr_buff_busy_writing) && ~wr_buf_out_match && ~rd_buf_out_match && ~tlb_match ; 
 	
 	// The memory bus is issuing a write access, and the CAM didnt recognize the address in the buffer..Enable the Write!
-	wr_buff_wr_en <= eu_en &&  (eu_mb_wr[1] || eu_mb_wr[0]) && mem_track_en  && (eu_addr!=rd_buff_busy_writing) && ~rd_buf_out_match && ~wr_buf_out_match && ~tlb_match;
+	wr_buff_wr_en <= eu_en &&  (eu_mb_wr[1] || eu_mb_wr[0]) && mem_track_en  && (tl_eu_addr!=rd_buff_busy_writing) && ~rd_buf_out_match && ~wr_buf_out_match && ~tlb_match;
 	
 	//Enable the TLB write upon WAR detection
 	tlb_buff_wr_en <= WAR && ~tlb_match;
 	
 	//store address of cycle
-	read_address <= eu_addr;
+	read_address <= tl_eu_addr;
 	end 
 end
 
@@ -311,7 +322,7 @@ end
 always @(posedge mclk) begin
 	if(puc_rst) begin
 			rd_buff_ctr <=  4'b000;
-	end else if(rd_buff_busy && r1) begin
+	end else if(r1 && ~buff_rst) begin
 			rd_buff_ctr <= rd_buff_ctr + 1'b1;
 	end else if(rd_buff_ctr == 8 || buff_rst) begin
 		   rd_buff_ctr <= 4'b000;
@@ -321,7 +332,7 @@ end
 always @(posedge mclk) begin
 	if(puc_rst) begin
 			wr_buff_ctr <=  4'b000;
-	end else if(wr_buff_busy && r3) begin
+	end else if(r3 && ~buff_rst) begin
 			wr_buff_ctr <= wr_buff_ctr + 1'b1;
 	end else if(wr_buff_ctr == 8 || buff_rst) begin
 		   wr_buff_ctr <= 4'b000;
@@ -364,11 +375,11 @@ end
             .rst(puc_rst),
 				.rst_clr(buff_rst),
             .write_addr(rd_buff_ctr[2:0]), 
-            .write_data(eu_addr),
+            .write_data(tl_eu_addr),
             .write_delete(1'b0), 
             .write_enable(rd_buff_wr_en),
             .write_busy(rd_buff_busy),
-            .compare_data(eu_addr),
+            .compare_data(tl_eu_addr),
             .match_addr(rd_buff_addr_match),
             .match(rd_buf_out_match)
         );
@@ -387,11 +398,11 @@ end
             .rst(puc_rst),
 				.rst_clr(buff_rst),
             .write_addr(wr_buff_ctr[2:0]),
-            .write_data(eu_addr),
+            .write_data(tl_eu_addr),
             .write_delete(1'b0),
             .write_enable(wr_buff_wr_en),
             .write_busy(wr_buff_busy),
-            .compare_data(eu_addr),
+            .compare_data(tl_eu_addr),
             .match_addr(wr_buff_addr_match),
             .match(wr_buf_out_match)
         );
@@ -409,11 +420,11 @@ end
             .rst(puc_rst),
 				.rst_clr(buff_rst),
             .write_addr(tlb_buff_ctr[2:0]),
-            .write_data(eu_addr),
+            .write_data(tl_eu_addr),
             .write_delete(1'b0),
             .write_enable(tlb_buff_wr_en), 
             .write_busy(tlb_buff_busy),
-            .compare_data(eu_addr),
+            .compare_data(tl_eu_addr),
             .match_addr(tlb_addr_match),
             .match(tlb_match)
         );

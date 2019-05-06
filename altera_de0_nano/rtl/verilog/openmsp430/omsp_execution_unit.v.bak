@@ -60,7 +60,7 @@ module  omsp_execution_unit (
     pc_sw_wr,                      // Program counter software write
     scg0,                          // System clock generator 1. Turns off the DCO
     scg1,                          // System clock generator 1. Turns off the SMCLK
-    mb_rd_msk,
+
 // INPUTs
     dbg_halt_st,                   // Halt/Run status from CPU
     dbg_mem_dout,                  // Debug unit data output
@@ -102,7 +102,7 @@ output       [15:0] pc_sw;         // Program counter software value
 output              pc_sw_wr;      // Program counter software write
 output              scg0;          // System clock generator 1. Turns off the DCO
 output              scg1;          // System clock generator 1. Turns off the SMCLK
-output		  [1:0] mb_rd_msk;
+
 // INPUTs
 //=========
 input               dbg_halt_st;   // Halt/Run status from CPU
@@ -343,7 +343,6 @@ assign      mb_en     = mb_rd_det | (mb_wr_det & ~inst_alu[`EXEC_NO_WR]);
 assign      mb_wr     = ({2{mb_wr_det}}) & mb_wr_msk;
 
 
-assign      mb_rd_msk = mb_wr_msk;
 
 // Memory address bus
 assign      mab       = alu_out_add[15:0];

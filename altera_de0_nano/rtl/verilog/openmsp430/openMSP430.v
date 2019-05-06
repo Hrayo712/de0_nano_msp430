@@ -78,6 +78,7 @@ module  openMSP430 (
     smclk,                                   // ASIC ONLY: SMCLK
     smclk_en,                                // FPGA ONLY: SMCLK enable
 	 dbg_mem_en,
+	 mb_rd_msk,
 // INPUTs
     cpu_en,                                  // Enable CPU code execution (asynchronous and non-glitchy)
     dbg_en,                                  // Debug interface enable (asynchronous and non-glitchy)
@@ -142,6 +143,7 @@ output               puc_rst;                // Main system reset
 output               smclk;                  // ASIC ONLY: SMCLK
 output               smclk_en;               // FPGA ONLY: SMCLK enable
 output					dbg_mem_en;
+output          [1:0] mb_rd_msk;
 // INPUTs
 //============
 input                cpu_en;                 // Enable CPU code execution (asynchronous and non-glitchy)
@@ -259,7 +261,10 @@ wire          [15:0] per_dout_wdog;
 wire          [15:0] per_dout_mpy;
 wire          [15:0] per_dout_clk;
 
+wire [1:0]eu_mb_rd_msk;
+
 assign dbg_mem_en = dbg_mem_en;
+assign mb_rd_msk = eu_mb_rd_msk;
 //=============================================================================
 // 2)  GLOBAL CLOCK & RESET MANAGEMENT
 //=============================================================================
@@ -390,7 +395,7 @@ omsp_execution_unit execution_unit_0 (
     .pc_sw_wr          (pc_sw_wr),           // Program counter software write
     .scg0              (scg0),               // System clock generator 1. Turns off the DCO
     .scg1              (scg1),               // System clock generator 1. Turns off the SMCLK
-
+	 .mb_rd_msk 		  (eu_mb_rd_msk),
 // INPUTs
     .dbg_halt_st       (cpu_halt_st),        // Halt/Run status from CPU
     .dbg_mem_dout      (dbg_mem_dout),       // Debug unit data output

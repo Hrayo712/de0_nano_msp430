@@ -1,5 +1,5 @@
 Analysis & Synthesis report for openMSP430_fpga
-Mon Apr 29 01:51:20 2019
+Mon May  6 04:10:14 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -156,15 +156,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 29 01:51:20 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon May  6 04:10:14 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; openMSP430_fpga                             ;
 ; Top-level Entity Name              ; openMSP430_fpga                             ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4,321                                       ;
-;     Total combinational functions  ; 4,092                                       ;
-;     Dedicated logic registers      ; 1,303                                       ;
-; Total registers                    ; 1303                                        ;
+; Total logic elements               ; 4,381                                       ;
+;     Total combinational functions  ; 4,147                                       ;
+;     Dedicated logic registers      ; 1,312                                       ;
+; Total registers                    ; 1312                                        ;
 ; Total pins                         ; 25                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 394,752                                     ;
@@ -325,20 +325,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------+
 ; Resource                                    ; Usage   ;
 +---------------------------------------------+---------+
-; Estimated Total logic elements              ; 4,321   ;
+; Estimated Total logic elements              ; 4,381   ;
 ;                                             ;         ;
-; Total combinational functions               ; 4092    ;
+; Total combinational functions               ; 4147    ;
 ; Logic element usage by number of LUT inputs ;         ;
-;     -- 4 input functions                    ; 2316    ;
-;     -- 3 input functions                    ; 1317    ;
-;     -- <=2 input functions                  ; 459     ;
+;     -- 4 input functions                    ; 2335    ;
+;     -- 3 input functions                    ; 1364    ;
+;     -- <=2 input functions                  ; 448     ;
 ;                                             ;         ;
 ; Logic elements by mode                      ;         ;
-;     -- normal mode                          ; 3743    ;
+;     -- normal mode                          ; 3798    ;
 ;     -- arithmetic mode                      ; 349     ;
 ;                                             ;         ;
-; Total registers                             ; 1303    ;
-;     -- Dedicated logic registers            ; 1303    ;
+; Total registers                             ; 1312    ;
+;     -- Dedicated logic registers            ; 1312    ;
 ;     -- I/O registers                        ; 0       ;
 ;                                             ;         ;
 ; I/O pins                                    ; 25      ;
@@ -350,8 +350,8 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1       ;
 ;                                             ;         ;
 ; Maximum fan-out node                        ; dco_clk ;
-; Maximum fan-out                             ; 1447    ;
-; Total fan-out                               ; 21036   ;
+; Maximum fan-out                             ; 1456    ;
+; Total fan-out                               ; 21270   ;
 ; Average fan-out                             ; 3.76    ;
 +---------------------------------------------+---------+
 
@@ -361,17 +361,17 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
 ; Compilation Hierarchy Node                                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                ; Entity Name                  ; Library Name ;
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
-; |openMSP430_fpga                                            ; 4092 (35)           ; 1303 (17)                 ; 394752      ; 2            ; 0       ; 1         ; 25   ; 0            ; |openMSP430_fpga                                                                                                                                                                                                   ; openMSP430_fpga              ; work         ;
-;    |omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0| ; 183 (21)            ; 164 (32)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0                                                                                                                                            ; omsp_de0_nano_soc_led_key_sw ; work         ;
+; |openMSP430_fpga                                            ; 4147 (35)           ; 1312 (17)                 ; 394752      ; 2            ; 0       ; 1         ; 25   ; 0            ; |openMSP430_fpga                                                                                                                                                                                                   ; openMSP430_fpga              ; work         ;
+;    |omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0| ; 187 (25)            ; 164 (32)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0                                                                                                                                            ; omsp_de0_nano_soc_led_key_sw ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_key0|        ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key0                                                                                               ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_key1|        ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key1                                                                                               ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_sw0|         ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw0                                                                                                ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_sw1|         ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw1                                                                                                ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_sw2|         ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw2                                                                                                ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_sw3|         ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw3                                                                                                ; sync_debouncer_10ms          ; work         ;
-;    |omsp_qwark_periph:qwark_periph_0|                       ; 1133 (192)          ; 302 (128)                 ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0                                                                                                                                                                  ; omsp_qwark_periph            ; work         ;
-;       |omsp_qwark:qwark_0|                                  ; 941 (119)           ; 174 (67)                  ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0                                                                                                                                               ; omsp_qwark                   ; work         ;
-;          |cam_bram:cam_read_buff|                           ; 280 (274)           ; 39 (39)                   ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff                                                                                                                        ; cam_bram                     ; work         ;
+;    |omsp_qwark_periph:qwark_periph_0|                       ; 1185 (196)          ; 311 (128)                 ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0                                                                                                                                                                  ; omsp_qwark_periph            ; work         ;
+;       |omsp_qwark:qwark_0|                                  ; 989 (124)           ; 183 (70)                  ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0                                                                                                                                               ; omsp_qwark                   ; work         ;
+;          |cam_bram:cam_read_buff|                           ; 294 (288)           ; 41 (41)                   ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff                                                                                                                        ; cam_bram                     ; work         ;
 ;             |priority_encoder:priority_encoder_inst|        ; 6 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|priority_encoder:priority_encoder_inst                                                                                 ; priority_encoder             ; work         ;
 ;                |priority_encoder:priority_encoder_inst1|    ; 3 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|priority_encoder:priority_encoder_inst|priority_encoder:priority_encoder_inst1                                         ; priority_encoder             ; work         ;
 ;                   |priority_encoder:priority_encoder_inst1| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|priority_encoder:priority_encoder_inst|priority_encoder:priority_encoder_inst1|priority_encoder:priority_encoder_inst1 ; priority_encoder             ; work         ;
@@ -389,7 +389,7 @@ refer to the applicable agreement for further details.
 ;             |ram_dp:slice[3].ram_inst|                      ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_dp:slice[3].ram_inst                                                                                               ; ram_dp                       ; work         ;
 ;                |altsyncram:mem_rtl_0|                       ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_dp:slice[3].ram_inst|altsyncram:mem_rtl_0                                                                          ; altsyncram                   ; work         ;
 ;                   |altsyncram_9kr1:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_dp:slice[3].ram_inst|altsyncram:mem_rtl_0|altsyncram_9kr1:auto_generated                                           ; altsyncram_9kr1              ; work         ;
-;          |cam_bram:cam_tlb|                                 ; 274 (268)           ; 34 (34)                   ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb                                                                                                                              ; cam_bram                     ; work         ;
+;          |cam_bram:cam_tlb|                                 ; 288 (282)           ; 36 (36)                   ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb                                                                                                                              ; cam_bram                     ; work         ;
 ;             |priority_encoder:priority_encoder_inst|        ; 6 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|priority_encoder:priority_encoder_inst                                                                                       ; priority_encoder             ; work         ;
 ;                |priority_encoder:priority_encoder_inst1|    ; 3 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|priority_encoder:priority_encoder_inst|priority_encoder:priority_encoder_inst1                                               ; priority_encoder             ; work         ;
 ;                   |priority_encoder:priority_encoder_inst1| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|priority_encoder:priority_encoder_inst|priority_encoder:priority_encoder_inst1|priority_encoder:priority_encoder_inst1       ; priority_encoder             ; work         ;
@@ -407,7 +407,7 @@ refer to the applicable agreement for further details.
 ;             |ram_dp:slice[3].ram_inst|                      ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|ram_dp:slice[3].ram_inst                                                                                                     ; ram_dp                       ; work         ;
 ;                |altsyncram:mem_rtl_0|                       ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|ram_dp:slice[3].ram_inst|altsyncram:mem_rtl_0                                                                                ; altsyncram                   ; work         ;
 ;                   |altsyncram_9kr1:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|ram_dp:slice[3].ram_inst|altsyncram:mem_rtl_0|altsyncram_9kr1:auto_generated                                                 ; altsyncram_9kr1              ; work         ;
-;          |cam_bram:cam_write_buff|                          ; 268 (268)           ; 34 (34)                   ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff                                                                                                                       ; cam_bram                     ; work         ;
+;          |cam_bram:cam_write_buff|                          ; 283 (283)           ; 36 (36)                   ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff                                                                                                                       ; cam_bram                     ; work         ;
 ;             |ram_dp:slice[0].ram_inst|                      ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|ram_dp:slice[0].ram_inst                                                                                              ; ram_dp                       ; work         ;
 ;                |altsyncram:mem_rtl_0|                       ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|ram_dp:slice[0].ram_inst|altsyncram:mem_rtl_0                                                                         ; altsyncram                   ; work         ;
 ;                   |altsyncram_9kr1:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|ram_dp:slice[0].ram_inst|altsyncram:mem_rtl_0|altsyncram_9kr1:auto_generated                                          ; altsyncram_9kr1              ; work         ;
@@ -420,28 +420,28 @@ refer to the applicable agreement for further details.
 ;             |ram_dp:slice[3].ram_inst|                      ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|ram_dp:slice[3].ram_inst                                                                                              ; ram_dp                       ; work         ;
 ;                |altsyncram:mem_rtl_0|                       ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|ram_dp:slice[3].ram_inst|altsyncram:mem_rtl_0                                                                         ; altsyncram                   ; work         ;
 ;                   |altsyncram_9kr1:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|ram_dp:slice[3].ram_inst|altsyncram:mem_rtl_0|altsyncram_9kr1:auto_generated                                          ; altsyncram_9kr1              ; work         ;
-;    |omsp_timerA:timerA_0|                                   ; 291 (291)           ; 136 (130)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0                                                                                                                                                                              ; omsp_timerA                  ; work         ;
+;    |omsp_timerA:timerA_0|                                   ; 290 (290)           ; 136 (130)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0                                                                                                                                                                              ; omsp_timerA                  ; work         ;
 ;       |omsp_sync_cell:sync_cell_cci0|                       ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci0                                                                                                                                                ; omsp_sync_cell               ; work         ;
 ;       |omsp_sync_cell:sync_cell_cci1|                       ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci1                                                                                                                                                ; omsp_sync_cell               ; work         ;
 ;       |omsp_sync_cell:sync_cell_cci2|                       ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci2                                                                                                                                                ; omsp_sync_cell               ; work         ;
-;    |openMSP430:openmsp430_0|                                ; 2432 (277)          ; 683 (0)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0                                                                                                                                                                           ; openMSP430                   ; work         ;
+;    |openMSP430:openmsp430_0|                                ; 2432 (276)          ; 683 (0)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0                                                                                                                                                                           ; openMSP430                   ; work         ;
 ;       |omsp_clock_module:clock_module_0|                    ; 27 (27)             ; 21 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0                                                                                                                                          ; omsp_clock_module            ; work         ;
 ;          |omsp_sync_cell:sync_cell_lfxt_clk|                ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_lfxt_clk                                                                                                        ; omsp_sync_cell               ; work         ;
 ;          |omsp_sync_cell:sync_cell_puc|                     ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_puc                                                                                                             ; omsp_sync_cell               ; work         ;
 ;          |omsp_sync_reset:sync_reset_por|                   ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por                                                                                                           ; omsp_sync_reset              ; work         ;
-;       |omsp_dbg:dbg_0|                                      ; 338 (197)           ; 148 (69)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0                                                                                                                                                            ; omsp_dbg                     ; work         ;
+;       |omsp_dbg:dbg_0|                                      ; 336 (195)           ; 148 (69)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0                                                                                                                                                            ; omsp_dbg                     ; work         ;
 ;          |omsp_dbg_uart:dbg_uart_0|                         ; 141 (140)           ; 79 (77)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0                                                                                                                                   ; omsp_dbg_uart                ; work         ;
 ;             |omsp_sync_cell:sync_cell_uart_rxd|             ; 1 (1)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|omsp_sync_cell:sync_cell_uart_rxd                                                                                                 ; omsp_sync_cell               ; work         ;
-;       |omsp_execution_unit:execution_unit_0|                ; 1137 (220)          ; 266 (35)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0                                                                                                                                      ; omsp_execution_unit          ; work         ;
-;          |omsp_alu:alu_0|                                   ; 270 (270)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0                                                                                                                       ; omsp_alu                     ; work         ;
-;          |omsp_register_file:register_file_0|               ; 647 (647)           ; 231 (231)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0                                                                                                   ; omsp_register_file           ; work         ;
-;       |omsp_frontend:frontend_0|                            ; 315 (315)           ; 116 (116)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0                                                                                                                                                  ; omsp_frontend                ; work         ;
-;       |omsp_mem_backbone:mem_backbone_0|                    ; 139 (139)           ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0                                                                                                                                          ; omsp_mem_backbone            ; work         ;
-;       |omsp_multiplier:multiplier_0|                        ; 139 (139)           ; 70 (70)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0                                                                                                                                              ; omsp_multiplier              ; work         ;
+;       |omsp_execution_unit:execution_unit_0|                ; 1140 (216)          ; 266 (35)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0                                                                                                                                      ; omsp_execution_unit          ; work         ;
+;          |omsp_alu:alu_0|                                   ; 274 (274)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0                                                                                                                       ; omsp_alu                     ; work         ;
+;          |omsp_register_file:register_file_0|               ; 650 (650)           ; 231 (231)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0                                                                                                   ; omsp_register_file           ; work         ;
+;       |omsp_frontend:frontend_0|                            ; 314 (314)           ; 116 (116)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0                                                                                                                                                  ; omsp_frontend                ; work         ;
+;       |omsp_mem_backbone:mem_backbone_0|                    ; 141 (141)           ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0                                                                                                                                          ; omsp_mem_backbone            ; work         ;
+;       |omsp_multiplier:multiplier_0|                        ; 136 (136)           ; 70 (70)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0                                                                                                                                              ; omsp_multiplier              ; work         ;
 ;          |lpm_mult:Mult0|                                   ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0                                                                                                                               ; lpm_mult                     ; work         ;
 ;             |mult_p4t:auto_generated|                       ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0|mult_p4t:auto_generated                                                                                                       ; mult_p4t                     ; work         ;
-;       |omsp_sfr:sfr_0|                                      ; 7 (7)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_sfr:sfr_0                                                                                                                                                            ; omsp_sfr                     ; work         ;
-;       |omsp_watchdog:watchdog_0|                            ; 53 (53)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0                                                                                                                                                  ; omsp_watchdog                ; work         ;
+;       |omsp_sfr:sfr_0|                                      ; 8 (8)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_sfr:sfr_0                                                                                                                                                            ; omsp_sfr                     ; work         ;
+;       |omsp_watchdog:watchdog_0|                            ; 54 (54)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0                                                                                                                                                  ; omsp_watchdog                ; work         ;
 ;    |pll:pll_0|                                              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|pll:pll_0                                                                                                                                                                                         ; pll                          ; work         ;
 ;       |altpll:altpll_component|                             ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|pll:pll_0|altpll:altpll_component                                                                                                                                                                 ; altpll                       ; work         ;
 ;          |pll_altpll:auto_generated|                        ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|pll:pll_0|altpll:altpll_component|pll_altpll:auto_generated                                                                                                                                       ; pll_altpll                   ; work         ;
@@ -590,211 +590,200 @@ Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                                                               ; Latch Enable Signal ; Free of Timing Hazards ;
 +------------------------------------------------------------------------------------------+---------------------+------------------------+
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~28  ; rtl~0               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~14  ; rtl~1               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~0   ; rtl~2               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~42  ; rtl~3               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~70  ; rtl~4               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~84  ; rtl~5               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~56  ; rtl~6               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~98  ; rtl~7               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~29  ; rtl~0               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~15  ; rtl~1               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~1   ; rtl~2               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~43  ; rtl~3               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~71  ; rtl~4               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~85  ; rtl~5               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~57  ; rtl~6               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~99  ; rtl~7               ; yes                    ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~30  ; rtl~0               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~16  ; rtl~1               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~2   ; rtl~2               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~44  ; rtl~3               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~72  ; rtl~4               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~86  ; rtl~5               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~58  ; rtl~6               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~100 ; rtl~7               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~31  ; rtl~0               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~17  ; rtl~1               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~3   ; rtl~2               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~15  ; rtl~1               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~0   ; rtl~2               ; yes                    ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~45  ; rtl~3               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~73  ; rtl~4               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~87  ; rtl~5               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~59  ; rtl~6               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~101 ; rtl~7               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~32  ; rtl~0               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~18  ; rtl~1               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~4   ; rtl~2               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~46  ; rtl~3               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~74  ; rtl~4               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~88  ; rtl~5               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~60  ; rtl~6               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~102 ; rtl~7               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~33  ; rtl~0               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~19  ; rtl~1               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~5   ; rtl~2               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~47  ; rtl~3               ; yes                    ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~75  ; rtl~4               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~89  ; rtl~5               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~61  ; rtl~6               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~103 ; rtl~7               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~34  ; rtl~0               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~20  ; rtl~1               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~6   ; rtl~2               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~48  ; rtl~3               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~76  ; rtl~4               ; yes                    ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~90  ; rtl~5               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~62  ; rtl~6               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~104 ; rtl~7               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~35  ; rtl~0               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~21  ; rtl~1               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~7   ; rtl~2               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~49  ; rtl~3               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~77  ; rtl~4               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~91  ; rtl~5               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~63  ; rtl~6               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~60  ; rtl~6               ; yes                    ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~105 ; rtl~7               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~36  ; rtl~0               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~22  ; rtl~1               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~8   ; rtl~2               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~50  ; rtl~3               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~78  ; rtl~4               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~92  ; rtl~5               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~64  ; rtl~6               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~31  ; rtl~0               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~16  ; rtl~1               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~1   ; rtl~2               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~46  ; rtl~3               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~76  ; rtl~4               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~91  ; rtl~5               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~61  ; rtl~6               ; yes                    ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~106 ; rtl~7               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~37  ; rtl~0               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~23  ; rtl~1               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~9   ; rtl~2               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~51  ; rtl~3               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~79  ; rtl~4               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~93  ; rtl~5               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~65  ; rtl~6               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~32  ; rtl~0               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~17  ; rtl~1               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~2   ; rtl~2               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~47  ; rtl~3               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~77  ; rtl~4               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~92  ; rtl~5               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~62  ; rtl~6               ; yes                    ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~107 ; rtl~7               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~38  ; rtl~0               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~24  ; rtl~1               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~10  ; rtl~2               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~52  ; rtl~3               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~80  ; rtl~4               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~94  ; rtl~5               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~66  ; rtl~6               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~33  ; rtl~0               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~18  ; rtl~1               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~3   ; rtl~2               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~48  ; rtl~3               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~78  ; rtl~4               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~93  ; rtl~5               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~63  ; rtl~6               ; yes                    ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~108 ; rtl~7               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~39  ; rtl~0               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~25  ; rtl~1               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~11  ; rtl~2               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~53  ; rtl~3               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~81  ; rtl~4               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~95  ; rtl~5               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~67  ; rtl~6               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~34  ; rtl~0               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~19  ; rtl~1               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~4   ; rtl~2               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~49  ; rtl~3               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~79  ; rtl~4               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~94  ; rtl~5               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~64  ; rtl~6               ; yes                    ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~109 ; rtl~7               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~40  ; rtl~0               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~26  ; rtl~1               ; yes                    ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~12  ; rtl~2               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~35  ; rtl~0               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~20  ; rtl~1               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~5   ; rtl~2               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~50  ; rtl~3               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~80  ; rtl~4               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~95  ; rtl~5               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~65  ; rtl~6               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~110 ; rtl~7               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~36  ; rtl~0               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~21  ; rtl~1               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~6   ; rtl~2               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~51  ; rtl~3               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~81  ; rtl~4               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~96  ; rtl~5               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~66  ; rtl~6               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~111 ; rtl~7               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~37  ; rtl~0               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~22  ; rtl~1               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~7   ; rtl~2               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~52  ; rtl~3               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~82  ; rtl~4               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~97  ; rtl~5               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~67  ; rtl~6               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~112 ; rtl~7               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~38  ; rtl~0               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~23  ; rtl~1               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~8   ; rtl~2               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~53  ; rtl~3               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~83  ; rtl~4               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~98  ; rtl~5               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~68  ; rtl~6               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~113 ; rtl~7               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~39  ; rtl~0               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~24  ; rtl~1               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~9   ; rtl~2               ; yes                    ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~54  ; rtl~3               ; yes                    ;
-; Number of user-specified and inferred latches = 336                                      ;                     ;                        ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~84  ; rtl~4               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~99  ; rtl~5               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~69  ; rtl~6               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~114 ; rtl~7               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~40  ; rtl~0               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~25  ; rtl~1               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~10  ; rtl~2               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~55  ; rtl~3               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~85  ; rtl~4               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~100 ; rtl~5               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~70  ; rtl~6               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~115 ; rtl~7               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~41  ; rtl~0               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~26  ; rtl~1               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~11  ; rtl~2               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~56  ; rtl~3               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~86  ; rtl~4               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~101 ; rtl~5               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~71  ; rtl~6               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~116 ; rtl~7               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~42  ; rtl~0               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~27  ; rtl~1               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~12  ; rtl~2               ; yes                    ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|erase_ram~57  ; rtl~3               ; yes                    ;
+; Number of user-specified and inferred latches = 360                                      ;                     ;                        ;
 +------------------------------------------------------------------------------------------+---------------------+------------------------+
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                                                        ;
-+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-; Register name                                                                                               ; Reason for Removal                                                                                          ;
-+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|write_data_padded_reg[0]               ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|write_data_padded_reg[0]        ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|write_data_padded_reg[0]         ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_timerA:timerA_0|tactl[2,3]                                                                             ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_timerA:timerA_0|tacctl0[3,9,10]                                                                        ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_timerA:timerA_0|tacctl1[3,9,10]                                                                        ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_timerA:timerA_0|tacctl2[3,9,10]                                                                        ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[0]                                            ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[0]                                            ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|key_sw_irq_en[6,7]                                   ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|key_sw_irq_edge[6,7]                                 ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|key_sw_irq_val[6,7]                                  ; Stuck at GND due to stuck port data_in                                                                      ;
-; openMSP430:openmsp430_0|omsp_watchdog:watchdog_0|wdtctl[3,5,6]                                              ; Stuck at GND due to stuck port data_in                                                                      ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r2[6,9..15] ; Stuck at GND due to stuck port data_in                                                                      ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[4,5]                                               ; Stuck at VCC due to stuck port data_in                                                                      ;
-; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|bcsctl1[0..3,6,7]                                  ; Stuck at GND due to stuck port data_in                                                                      ;
-; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|bcsctl2[0,4..7]                                    ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|write_data_padded_reg_dly[0]           ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|write_data_padded_reg_dly[0]    ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|write_data_padded_reg_dly[0]     ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[1]                                            ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[1]                                            ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_timerA:timerA_0|taclk_dly                                                                              ; Lost fanout                                                                                                 ;
-; omsp_timerA:timerA_0|inclk_dly                                                                              ; Lost fanout                                                                                                 ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|write_data_padded_reg[15]              ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|write_data_padded_reg[15]       ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|write_data_padded_reg[15]        ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|write_data_padded_reg_dly[15]          ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|write_data_padded_reg_dly[15]   ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|write_data_padded_reg_dly[15]    ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|read_address[15]                                        ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|read_address[0]                             ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_src_bin[3]                                            ; Merged with openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_jmp_bin[1]                                ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_src_bin[2]                                            ; Merged with openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_jmp_bin[0]                                ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|read_address[0]                                         ; Stuck at GND due to stuck port data_in                                                                      ;
-; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r1[0]       ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_busy_writing[0]                                 ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_busy_writing[0]                                 ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg.STATE_WRITE_1                ; Lost fanout                                                                                                 ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg.STATE_WRITE_1         ; Lost fanout                                                                                                 ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg.STATE_WRITE_1          ; Lost fanout                                                                                                 ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg~2                            ; Lost fanout                                                                                                 ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg~3                            ; Lost fanout                                                                                                 ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg~4                            ; Lost fanout                                                                                                 ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg~2                     ; Lost fanout                                                                                                 ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg~3                     ; Lost fanout                                                                                                 ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg~4                     ; Lost fanout                                                                                                 ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg~2                      ; Lost fanout                                                                                                 ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg~3                      ; Lost fanout                                                                                                 ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg~4                      ; Lost fanout                                                                                                 ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_state~4                                                          ; Lost fanout                                                                                                 ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_state~5                                                          ; Lost fanout                                                                                                 ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|uart_state~4                                ; Lost fanout                                                                                                 ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|uart_state~5                                ; Lost fanout                                                                                                 ;
-; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|uart_state~6                                ; Lost fanout                                                                                                 ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|i_state~4                                                  ; Lost fanout                                                                                                 ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|i_state~5                                                  ; Lost fanout                                                                                                 ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|i_state~6                                                  ; Lost fanout                                                                                                 ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg.STATE_DELETE_1               ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg.STATE_DELETE_1        ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg.STATE_DELETE_1         ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg.STATE_DELETE_2               ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg.STATE_DELETE_2        ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg.STATE_DELETE_2         ; Stuck at GND due to stuck port data_in                                                                      ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg.STATE_INIT                   ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg.STATE_INIT ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg.STATE_INIT            ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg.STATE_INIT ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|count_reg[0]                           ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[0]         ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|count_reg[0]                    ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[0]         ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|count_reg[1]                           ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[1]         ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|count_reg[1]                    ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[1]         ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|count_reg[2]                           ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[2]         ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|count_reg[2]                    ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[2]         ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|count_reg[3]                           ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[3]         ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|count_reg[3]                    ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[3]         ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg.STATE_IDLE                   ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|write_busy_reg             ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|write_busy_reg                   ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg.STATE_IDLE ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg.STATE_IDLE            ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|write_busy_reg      ;
-; Total Number of Removed Registers = 105                                                                     ;                                                                                                             ;
-+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                         ;
++-------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                               ; Reason for Removal                                                                                           ;
++-------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+; omsp_timerA:timerA_0|tactl[2,3]                                                                             ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_timerA:timerA_0|tacctl0[3,9,10]                                                                        ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_timerA:timerA_0|tacctl1[3,9,10]                                                                        ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_timerA:timerA_0|tacctl2[3,9,10]                                                                        ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[0]                                            ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[0]                                            ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|key_sw_irq_en[6,7]                                   ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|key_sw_irq_edge[6,7]                                 ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|key_sw_irq_val[6,7]                                  ; Stuck at GND due to stuck port data_in                                                                       ;
+; openMSP430:openmsp430_0|omsp_watchdog:watchdog_0|wdtctl[3,5,6]                                              ; Stuck at GND due to stuck port data_in                                                                       ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r2[6,9..15] ; Stuck at GND due to stuck port data_in                                                                       ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[4,5]                                               ; Stuck at VCC due to stuck port data_in                                                                       ;
+; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|bcsctl1[0..3,6,7]                                  ; Stuck at GND due to stuck port data_in                                                                       ;
+; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|bcsctl2[0,4..7]                                    ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[1]                                            ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[1]                                            ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_timerA:timerA_0|taclk_dly                                                                              ; Lost fanout                                                                                                  ;
+; omsp_timerA:timerA_0|inclk_dly                                                                              ; Lost fanout                                                                                                  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|write_data_padded_reg[15]              ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|write_data_padded_reg[15]       ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|write_data_padded_reg[15]        ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|write_data_padded_reg_dly[15]          ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|write_data_padded_reg_dly[15]   ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|write_data_padded_reg_dly[15]    ; Stuck at GND due to stuck port data_in                                                                       ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_src_bin[3]                                            ; Merged with openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_jmp_bin[1]                                 ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_src_bin[2]                                            ; Merged with openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_jmp_bin[0]                                 ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|read_address[15]                                        ; Stuck at GND due to stuck port data_in                                                                       ;
+; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r1[0]       ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg.STATE_WRITE_1                ; Lost fanout                                                                                                  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg.STATE_WRITE_1         ; Lost fanout                                                                                                  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg.STATE_WRITE_1          ; Lost fanout                                                                                                  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg~2                            ; Lost fanout                                                                                                  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg~3                            ; Lost fanout                                                                                                  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg~4                            ; Lost fanout                                                                                                  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg~2                     ; Lost fanout                                                                                                  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg~3                     ; Lost fanout                                                                                                  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg~4                     ; Lost fanout                                                                                                  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg~2                      ; Lost fanout                                                                                                  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg~3                      ; Lost fanout                                                                                                  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg~4                      ; Lost fanout                                                                                                  ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_state~4                                                          ; Lost fanout                                                                                                  ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_state~5                                                          ; Lost fanout                                                                                                  ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|uart_state~4                                ; Lost fanout                                                                                                  ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|uart_state~5                                ; Lost fanout                                                                                                  ;
+; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|uart_state~6                                ; Lost fanout                                                                                                  ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|i_state~4                                                  ; Lost fanout                                                                                                  ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|i_state~5                                                  ; Lost fanout                                                                                                  ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|i_state~6                                                  ; Lost fanout                                                                                                  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg.STATE_DELETE_1               ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg.STATE_DELETE_1        ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg.STATE_DELETE_1         ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg.STATE_DELETE_2               ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg.STATE_DELETE_2        ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg.STATE_DELETE_2         ; Stuck at GND due to stuck port data_in                                                                       ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg.STATE_INIT                   ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg.STATE_INIT  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg.STATE_INIT            ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg.STATE_INIT  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|count_reg[0]                           ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[0]          ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|count_reg[0]                    ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[0]          ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|count_reg[1]                           ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[1]          ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|count_reg[1]                    ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[1]          ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|count_reg[2]                           ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[2]          ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|count_reg[2]                    ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[2]          ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|count_reg[3]                           ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[3]          ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|count_reg[3]                    ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[3]          ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg.STATE_IDLE                   ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|write_busy_reg              ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|write_busy_reg                   ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg.STATE_IDLE  ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|write_busy_reg                  ; Merged with omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg.STATE_IDLE ;
+; Total Number of Removed Registers = 96                                                                      ;                                                                                                              ;
++-------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                              ;
-+---------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
-; Register name                                                       ; Reason for Removal        ; Registers Removed due to This Register                                                                 ;
-+---------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
-; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[0]    ; Stuck at GND              ; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[1],                                      ;
-;                                                                     ; due to stuck port data_in ; omsp_timerA:timerA_0|taclk_dly, omsp_timerA:timerA_0|inclk_dly                                         ;
-; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[5]         ; Stuck at VCC              ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|write_data_padded_reg[15],        ;
-;                                                                     ; due to stuck port data_in ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|write_data_padded_reg[15], ;
-;                                                                     ;                           ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|write_data_padded_reg[15]   ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|read_address[0] ; Stuck at GND              ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_busy_writing[0],                           ;
-;                                                                     ; due to stuck port data_in ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_busy_writing[0]                            ;
-; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[0]    ; Stuck at GND              ; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[1]                                       ;
-;                                                                     ; due to stuck port data_in ;                                                                                                        ;
-+---------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                           ;
++------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
+; Register name                                                    ; Reason for Removal        ; Registers Removed due to This Register                                                                 ;
++------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[0] ; Stuck at GND              ; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[1],                                      ;
+;                                                                  ; due to stuck port data_in ; omsp_timerA:timerA_0|taclk_dly, omsp_timerA:timerA_0|inclk_dly                                         ;
+; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[5]      ; Stuck at VCC              ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|write_data_padded_reg[15],        ;
+;                                                                  ; due to stuck port data_in ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|write_data_padded_reg[15], ;
+;                                                                  ;                           ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|write_data_padded_reg[15]   ;
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[0] ; Stuck at GND              ; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[1]                                       ;
+;                                                                  ; due to stuck port data_in ;                                                                                                        ;
++------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -802,12 +791,12 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1303  ;
+; Total registers                              ; 1312  ;
 ; Number of registers using Synchronous Clear  ; 122   ;
-; Number of registers using Synchronous Load   ; 117   ;
+; Number of registers using Synchronous Load   ; 116   ;
 ; Number of registers using Asynchronous Clear ; 1128  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 863   ;
+; Number of registers using Clock Enable       ; 862   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -836,13 +825,13 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|dbg_uart_txd                         ; 2       ;
 ; openMSP430:openmsp430_0|omsp_frontend:frontend_0|e_state[0]                                          ; 27      ;
 ; openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_irq_rst                                        ; 2       ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|write_busy_reg                  ; 24      ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|write_busy_reg                  ; 25      ;
 ; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|dbg_rst_noscan                              ; 149     ;
 ; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[0]                                          ; 4       ;
 ; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[1]                                          ; 4       ;
 ; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[2]                                          ; 4       ;
 ; openMSP430:openmsp430_0|omsp_frontend:frontend_0|irq_num[3]                                          ; 4       ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[0]              ; 14      ;
+; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[0]              ; 16      ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[1]              ; 15      ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[2]              ; 15      ;
 ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[3]              ; 14      ;
@@ -852,8 +841,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|rxd_buf[1]                           ; 1       ;
 ; openMSP430:openmsp430_0|omsp_dbg:dbg_0|cpu_ctl[4]                                                    ; 4       ;
 ; openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por|data_sync[0] ; 1       ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|write_busy_reg           ; 25      ;
-; Total number of inverted registers = 36                                                              ;         ;
+; Total number of inverted registers = 35                                                              ;         ;
 +------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -889,94 +877,86 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|read_address[6]                                             ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl1[3]                                                                      ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r2[5]           ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_buf[19]                                    ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_buf[17]                                    ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r4[4]           ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r5[10]          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r6[15]          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r7[0]           ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r8[4]           ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r9[6]           ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r10[14]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r11[12]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r12[14]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r13[2]          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r14[12]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r15[5]          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0|wdtcnt[2]                                                      ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr0[7]                                                                                  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr1[0]                                                                                  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr2[15]                                                                                 ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_out_nxt[1]                                     ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|sumext_s[0]                                                ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl2[15]                                                                     ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl2[9]                                                                      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl3[15]                                                                     ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl3[6]                                                                      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl4[0]                                                                      ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl4[7]                                                                      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl5[0]                                                                      ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl5[12]                                                                     ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl6[0]                                                                      ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl6[3]                                                                      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl7[0]                                                                      ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl7[5]                                                                      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl8[0]                                                                      ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl8[9]                                                                      ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|clk_div[2]                                                                                 ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_busy_writing[14]                                    ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_busy_writing[6]                                     ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_bit[3]                                     ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_sext[15]                                                  ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r1[1]           ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl1[14]                                                                     ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|war_ctr[0]                                                  ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_cnt[7]                                     ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reslo[14]                                                  ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reshi[15]                                                  ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|tar[15]                                                                                    ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_ctr[0]                                              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_ctr[1]                                              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|tlb_buff_ctr[2]                                             ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[14]                                                             ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[4]                                                              ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|count_reg[1]                               ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|count_reg[0]                        ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[1]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|dbg_mem_dout[15]                                                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|eu_mdb_in[11]                                          ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[0]                      ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[12]                                                ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|pmem_addr[6]                                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|dbg_mem_din[15]                                        ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mb_wr_msk[1]                                       ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|mab[0]                                                         ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|mab[1]                                                         ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_dest[14]                                                  ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_in_bw[7]                                       ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[8]                                                 ;
-; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_addr[5]                          ;
-; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|ram_addr[14]                               ;
-; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|ram_addr[3]                         ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[1]                      ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[5]                      ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[9]                      ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[13]                     ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 45 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|op_dst[14]                                         ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|addr_out[11]                                                                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[5]                                                 ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[3]                                                 ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|inst_src_in[13] ;
-; 7:1                ; 16 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|op_src[0]                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_wr_en                                              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl1[2]                                                                     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r2[3]          ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_buf[0]                                    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_buf[6]                                    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r4[1]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r5[5]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r6[1]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r7[8]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r8[6]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r9[9]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r10[5]         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r11[7]         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r12[3]         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r13[3]         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r14[7]         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r15[10]        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0|wdtcnt[7]                                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr0[7]                                                                                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr1[8]                                                                                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr2[11]                                                                                ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_out_nxt[8]                                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|sumext_s[1]                                               ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl2[5]                                                                     ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl3[7]                                                                     ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl4[7]                                                                     ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl5[10]                                                                    ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl6[11]                                                                    ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl7[1]                                                                     ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl8[13]                                                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|clk_div[1]                                                                                ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|war_ctr[1]                                                 ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_busy_writing[9]                                    ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_busy_writing[2]                                    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_bit[0]                                    ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_sext[15]                                                 ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r1[14]         ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_cnt[3]                                    ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reslo[5]                                                  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reshi[13]                                                 ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|tar[8]                                                                                    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_ctr[0]                                             ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|tlb_buff_ctr[1]                                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_ctr[3]                                             ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[15]                                                            ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[7]                                                             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|count_reg[0]                              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|count_reg[0]                       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|count_reg[0]                        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|dbg_mem_dout[11]                                                        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|eu_mdb_in[15]                                         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[8]                     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[11]                                               ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|pmem_addr[6]                                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|dbg_mem_din[9]                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mb_rd_msk[1]                                      ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|mab[0]                                                        ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|mab[1]                                                        ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_dest[0]                                                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_in_bw[4]                                      ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[8]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_addr[9]                         ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|ram_addr[3]                               ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|ram_addr[10]                       ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[1]                     ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[5]                     ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[9]                     ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[13]                    ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 45 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|op_dst[15]                                        ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|addr_out[7]                                                                   ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[4]                                                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[3]                                                ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|inst_src_in[8] ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|op_src[6]                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------+
@@ -3365,15 +3345,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+-------+----------+----------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0"                                                                                                    ;
-+-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port            ; Type   ; Severity ; Details                                                                                                                                      ;
-+-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; tl_addr[15..14] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; tl_addr[0]      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; mclk_2          ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0"                                           ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; tl_addr[15..14] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; tl_addr[0]      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------+
@@ -3472,34 +3451,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 25                          ;
-; cycloneiii_ff         ; 1303                        ;
-;     CLR               ; 201                         ;
+; cycloneiii_ff         ; 1312                        ;
+;     CLR               ; 208                         ;
 ;     CLR SCLR          ; 114                         ;
 ;     CLR SCLR SLD      ; 4                           ;
 ;     CLR SLD           ; 37                          ;
-;     ENA               ; 89                          ;
-;     ENA CLR           ; 696                         ;
-;     ENA CLR SLD       ; 76                          ;
+;     ENA               ; 95                          ;
+;     ENA CLR           ; 690                         ;
+;     ENA CLR SLD       ; 75                          ;
 ;     ENA SCLR          ; 2                           ;
 ;     SCLR              ; 2                           ;
-;     plain             ; 82                          ;
-; cycloneiii_lcell_comb ; 4094                        ;
+;     plain             ; 85                          ;
+; cycloneiii_lcell_comb ; 4149                        ;
 ;     arith             ; 349                         ;
 ;         2 data inputs ; 215                         ;
 ;         3 data inputs ; 134                         ;
-;     normal            ; 3745                        ;
+;     normal            ; 3800                        ;
 ;         0 data inputs ; 7                           ;
 ;         1 data inputs ; 20                          ;
-;         2 data inputs ; 219                         ;
-;         3 data inputs ; 1183                        ;
-;         4 data inputs ; 2316                        ;
+;         2 data inputs ; 208                         ;
+;         3 data inputs ; 1230                        ;
+;         4 data inputs ; 2335                        ;
 ; cycloneiii_mac_mult   ; 1                           ;
 ; cycloneiii_mac_out    ; 1                           ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 144                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 25.70                       ;
-; Average LUT depth     ; 11.39                       ;
+; Max LUT depth         ; 24.80                       ;
+; Average LUT depth     ; 11.26                       ;
 +-----------------------+-----------------------------+
 
 
@@ -3508,7 +3487,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:12     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -3518,7 +3497,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Apr 29 01:50:47 2019
+    Info: Processing started: Mon May  6 04:09:47 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off openMSP430_fpga -c openMSP430_fpga
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20029): Only one processor detected - disabling parallel compilation
@@ -3630,14 +3609,14 @@ Info (12021): Found 54 design units, including 54 entities, in source file /home
     Info (12023): Found entity 52: ogfx_gpu_dma File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 43
     Info (12023): Found entity 53: ogfx_gpu_dma_addr File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma_addr.v Line: 43
     Info (12023): Found entity 54: ogfx_ram_arbiter File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/opengfx430/ogfx_ram_arbiter.v Line: 53
-Warning (10236): Verilog HDL Implicit Net warning at omsp_qwark.v(160): created implicit net for "mem_track_en" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 160
+Warning (10236): Verilog HDL Implicit Net warning at omsp_qwark.v(171): created implicit net for "mem_track_en" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 171
 Warning (10222): Verilog HDL Parameter Declaration warning at priority_encoder.v(46): Parameter Declaration in module "priority_encoder" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/priority_encoder.v Line: 46
 Warning (10222): Verilog HDL Parameter Declaration warning at priority_encoder.v(47): Parameter Declaration in module "priority_encoder" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/priority_encoder.v Line: 47
 Info (12127): Elaborating entity "openMSP430_fpga" for the top level hierarchy
 Warning (10034): Output port "WAR" at openMSP430_fpga.v(67) has no driver File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 67
-Info (12128): Elaborating entity "openMSP430" for hierarchy "openMSP430:openmsp430_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 217
-Warning (10036): Verilog HDL or VHDL warning at openMSP430.v(477): object "UNUSED_fe_mab_0" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 477
-Info (12128): Elaborating entity "omsp_clock_module" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 311
+Info (12128): Elaborating entity "openMSP430" for hierarchy "openMSP430:openmsp430_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 219
+Warning (10036): Verilog HDL or VHDL warning at openMSP430.v(482): object "UNUSED_fe_mab_0" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 482
+Info (12128): Elaborating entity "omsp_clock_module" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 316
 Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(164): object "nodiv_smclk" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 164
 Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(378): object "UNUSED_cpuoff" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 378
 Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(379): object "UNUSED_mclk_enable" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 379
@@ -3654,20 +3633,20 @@ Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(960): object
 Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(961): object "UNUSED_scan_mode" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 961
 Info (12128): Elaborating entity "omsp_sync_cell" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_lfxt_clk" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 628
 Info (12128): Elaborating entity "omsp_sync_reset" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 1223
-Info (12128): Elaborating entity "omsp_frontend" for hierarchy "openMSP430:openmsp430_0|omsp_frontend:frontend_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 372
+Info (12128): Elaborating entity "omsp_frontend" for hierarchy "openMSP430:openmsp430_0|omsp_frontend:frontend_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 377
 Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(314): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 314
 Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(390): object "UNUSED_dma_en" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 390
 Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(391): object "UNUSED_wkup" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 391
 Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(392): object "UNUSED_wdt_wkup" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 392
 Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(393): object "UNUSED_nmi_wkup" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 393
 Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(394): object "UNUSED_dma_wkup" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 394
-Info (12128): Elaborating entity "omsp_execution_unit" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 420
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(419): object "UNUSED_inst_ad_idx" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 419
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(420): object "UNUSED_inst_ad_indir" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 420
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(421): object "UNUSED_inst_ad_indir_i" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 421
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(422): object "UNUSED_inst_ad_symb" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 422
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(423): object "UNUSED_inst_ad_imm" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 423
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(424): object "UNUSED_inst_ad_const" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 424
+Info (12128): Elaborating entity "omsp_execution_unit" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 425
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(420): object "UNUSED_inst_ad_idx" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 420
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(421): object "UNUSED_inst_ad_indir" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 421
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(422): object "UNUSED_inst_ad_indir_i" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 422
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(423): object "UNUSED_inst_ad_symb" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 423
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(424): object "UNUSED_inst_ad_imm" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 424
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(425): object "UNUSED_inst_ad_const" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 425
 Info (12128): Elaborating entity "omsp_register_file" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 211
 Warning (10036): Verilog HDL or VHDL warning at omsp_register_file.v(158): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v Line: 158
 Warning (10036): Verilog HDL or VHDL warning at omsp_register_file.v(172): object "UNUSED_reg_sp_val_0" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v Line: 172
@@ -3678,7 +3657,7 @@ Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(256): object "UNUSED_
 Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(257): object "UNUSED_inst_so_reti" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 257
 Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(258): object "UNUSED_inst_jmp" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 258
 Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(259): object "UNUSED_inst_alu" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 259
-Info (12128): Elaborating entity "omsp_mem_backbone" for hierarchy "openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 475
+Info (12128): Elaborating entity "omsp_mem_backbone" for hierarchy "openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 480
 Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(213): object "UNUSED_dma_addr" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 213
 Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(214): object "UNUSED_dma_din" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 214
 Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(215): object "UNUSED_dma_en" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 215
@@ -3690,7 +3669,7 @@ Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(239): tru
 Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(258): truncated value with size 32 to match size of target (16) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 258
 Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(263): truncated value with size 32 to match size of target (16) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 263
 Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(268): truncated value with size 32 to match size of target (16) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 268
-Info (12128): Elaborating entity "omsp_sfr" for hierarchy "openMSP430:openmsp430_0|omsp_sfr:sfr_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 507
+Info (12128): Elaborating entity "omsp_sfr" for hierarchy "openMSP430:openmsp430_0|omsp_sfr:sfr_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 512
 Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(367): object "UNUSED_scan_mode" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 367
 Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(368): object "UNUSED_nmi" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 368
 Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(369): object "UNUSED_nmi_acc" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 369
@@ -3699,15 +3678,15 @@ Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(374): object "UNUSED_
 Warning (10230): Verilog HDL assignment warning at omsp_sfr.v(240): truncated value with size 32 to match size of target (7) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 240
 Warning (10230): Verilog HDL assignment warning at omsp_sfr.v(246): truncated value with size 32 to match size of target (9) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 246
 Warning (10230): Verilog HDL assignment warning at omsp_sfr.v(247): truncated value with size 32 to match size of target (6) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 247
-Info (12128): Elaborating entity "omsp_watchdog" for hierarchy "openMSP430:openmsp430_0|omsp_watchdog:watchdog_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 543
+Info (12128): Elaborating entity "omsp_watchdog" for hierarchy "openMSP430:openmsp430_0|omsp_watchdog:watchdog_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 548
 Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(170): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 170
 Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(556): object "UNUSED_scan_mode" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 556
 Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(557): object "UNUSED_smclk" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 557
 Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(558): object "UNUSED_aclk" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 558
 Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(560): object "UNUSED_per_din" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 560
-Info (12128): Elaborating entity "omsp_multiplier" for hierarchy "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 575
+Info (12128): Elaborating entity "omsp_multiplier" for hierarchy "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 580
 Warning (10036): Verilog HDL or VHDL warning at omsp_multiplier.v(168): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 168
-Info (12128): Elaborating entity "omsp_dbg" for hierarchy "openMSP430:openmsp430_0|omsp_dbg:dbg_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 633
+Info (12128): Elaborating entity "omsp_dbg" for hierarchy "openMSP430:openmsp430_0|omsp_dbg:dbg_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 638
 Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(493): object "UNUSED_eu_mab" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 493
 Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(494): object "UNUSED_eu_mb_en" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 494
 Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(495): object "UNUSED_eu_mb_wr" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 495
@@ -3718,13 +3697,13 @@ Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(867): object "UNUSED_
 Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(868): object "UNUSED_dbg_i2c_sda_in" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 868
 Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(869): object "UNUSED_dbg_rd_rdy" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 869
 Info (12128): Elaborating entity "omsp_dbg_uart" for hierarchy "openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 817
-Info (12128): Elaborating entity "omsp_de0_nano_soc_led_key_sw" for hierarchy "omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 245
+Info (12128): Elaborating entity "omsp_de0_nano_soc_led_key_sw" for hierarchy "omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 247
 Info (12128): Elaborating entity "sync_debouncer_10ms" for hierarchy "omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key1" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/omsp_de0_nano_soc_led_key_sw.v Line: 158
 Warning (10230): Verilog HDL assignment warning at sync_debouncer_10ms.v(75): truncated value with size 32 to match size of target (19) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/sync_debouncer_10ms.v Line: 75
-Info (12128): Elaborating entity "omsp_timerA" for hierarchy "omsp_timerA:timerA_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 283
+Info (12128): Elaborating entity "omsp_timerA" for hierarchy "omsp_timerA:timerA_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 285
 Warning (10230): Verilog HDL assignment warning at omsp_timerA.v(179): truncated value with size 512 to match size of target (128) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v Line: 179
 Warning (10230): Verilog HDL assignment warning at omsp_timerA.v(180): truncated value with size 512 to match size of target (128) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v Line: 180
-Info (12128): Elaborating entity "ram_16x16k" for hierarchy "ram_16x16k:pmem_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 330
+Info (12128): Elaborating entity "ram_16x16k" for hierarchy "ram_16x16k:pmem_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 332
 Info (12128): Elaborating entity "altsyncram" for hierarchy "ram_16x16k:pmem_0|altsyncram:altsyncram_component" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 92
 Info (12130): Elaborated megafunction instantiation "ram_16x16k:pmem_0|altsyncram:altsyncram_component" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 92
 Info (12133): Instantiated megafunction "ram_16x16k:pmem_0|altsyncram:altsyncram_component" with the following parameter: File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 92
@@ -3753,7 +3732,7 @@ Info (12128): Elaborating entity "decode_jsa" for hierarchy "ram_16x16k:pmem_0|a
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_iob.tdf
     Info (12023): Found entity 1: mux_iob File: /home/hiram/master/Qwark/altera_de0_nano/synthesis/altera/WORK/db/mux_iob.tdf Line: 22
 Info (12128): Elaborating entity "mux_iob" for hierarchy "ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|mux_iob:mux2" File: /home/hiram/master/Qwark/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b1l1.tdf Line: 44
-Info (12128): Elaborating entity "ram_16x8k" for hierarchy "ram_16x8k:dmem_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 341
+Info (12128): Elaborating entity "ram_16x8k" for hierarchy "ram_16x8k:dmem_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 343
 Info (12128): Elaborating entity "altsyncram" for hierarchy "ram_16x8k:dmem_0|altsyncram:altsyncram_component" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 92
 Info (12130): Elaborated megafunction instantiation "ram_16x8k:dmem_0|altsyncram:altsyncram_component" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 92
 Info (12133): Instantiated megafunction "ram_16x8k:dmem_0|altsyncram:altsyncram_component" with the following parameter: File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 92
@@ -3775,7 +3754,7 @@ Info (12133): Instantiated megafunction "ram_16x8k:dmem_0|altsyncram:altsyncram_
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_b4j1.tdf
     Info (12023): Found entity 1: altsyncram_b4j1 File: /home/hiram/master/Qwark/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b4j1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_b4j1" for hierarchy "ram_16x8k:dmem_0|altsyncram:altsyncram_component|altsyncram_b4j1:auto_generated" File: /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "pll" for hierarchy "pll:pll_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 351
+Info (12128): Elaborating entity "pll" for hierarchy "pll:pll_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 353
 Info (12128): Elaborating entity "altpll" for hierarchy "pll:pll_0|altpll:altpll_component" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/mega/pll.v Line: 98
 Info (12130): Elaborated megafunction instantiation "pll:pll_0|altpll:altpll_component" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/mega/pll.v Line: 98
 Info (12133): Instantiated megafunction "pll:pll_0|altpll:altpll_component" with the following parameter: File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/mega/pll.v Line: 98
@@ -3841,13 +3820,13 @@ Info (12133): Instantiated megafunction "pll:pll_0|altpll:altpll_component" with
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
     Info (12023): Found entity 1: pll_altpll File: /home/hiram/master/Qwark/altera_de0_nano/synthesis/altera/WORK/db/pll_altpll.v Line: 29
 Info (12128): Elaborating entity "pll_altpll" for hierarchy "pll:pll_0|altpll:altpll_component|pll_altpll:auto_generated" File: /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "omsp_qwark_periph" for hierarchy "omsp_qwark_periph:qwark_periph_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 379
-Warning (10230): Verilog HDL assignment warning at omsp_qwark_periph.v(293): truncated value with size 32 to match size of target (16) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 293
+Info (12128): Elaborating entity "omsp_qwark_periph" for hierarchy "omsp_qwark_periph:qwark_periph_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 384
+Warning (10230): Verilog HDL assignment warning at omsp_qwark_periph.v(295): truncated value with size 32 to match size of target (16) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 295
 Warning (10230): Verilog HDL assignment warning at omsp_qwark_periph.v(300): truncated value with size 32 to match size of target (13) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 300
 Info (12128): Elaborating entity "omsp_qwark" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 317
-Warning (10230): Verilog HDL assignment warning at omsp_qwark.v(236): truncated value with size 32 to match size of target (4) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 236
-Warning (10235): Verilog HDL Always Construct warning at omsp_qwark.v(248): variable "en" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 248
-Info (12128): Elaborating entity "cam_bram" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 374
+Warning (10230): Verilog HDL assignment warning at omsp_qwark.v(247): truncated value with size 32 to match size of target (4) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 247
+Warning (10235): Verilog HDL Always Construct warning at omsp_qwark.v(259): variable "en" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 259
+Info (12128): Elaborating entity "cam_bram" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 385
 Warning (10036): Verilog HDL or VHDL warning at cam_bram.v(71): object "compare_data_padded" assigned a value but never read File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/cam_bram.v Line: 71
 Warning (10230): Verilog HDL assignment warning at cam_bram.v(216): truncated value with size 32 to match size of target (4) File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/cam_bram.v Line: 216
 Info (12128): Elaborating entity "priority_encoder" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|priority_encoder:priority_encoder_inst" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/cam_bram.v Line: 130
@@ -4110,26 +4089,6 @@ Info (12133): Instantiated megafunction "omsp_qwark_periph:qwark_periph_0|omsp_q
     Info (12134): Parameter "INIT_FILE" = "db/openMSP430_fpga.ram0_ram_dp_c7691df3.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_9kr1.tdf
     Info (12023): Found entity 1: altsyncram_9kr1 File: /home/hiram/master/Qwark/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_9kr1.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_dp:slice[1].ram_inst|altsyncram:mem_rtl_0"
-Info (12133): Instantiated megafunction "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_dp:slice[1].ram_inst|altsyncram:mem_rtl_0" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "BIDIR_DUAL_PORT"
-    Info (12134): Parameter "WIDTH_A" = "8"
-    Info (12134): Parameter "WIDTH_B" = "8"
-    Info (12134): Parameter "WIDTHAD_A" = "4"
-    Info (12134): Parameter "WIDTHAD_B" = "4"
-    Info (12134): Parameter "NUMWORDS_A" = "16"
-    Info (12134): Parameter "NUMWORDS_B" = "16"
-    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
-    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
-    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
-    Info (12134): Parameter "INDATA_REG_B" = "CLOCK1"
-    Info (12134): Parameter "WRCONTROL_WRADDRESS_REG_B" = "CLOCK1"
-    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
-    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
-    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
-    Info (12134): Parameter "INIT_FILE" = "db/openMSP430_fpga.ram0_ram_dp_c7691df3.hdl.mif"
 Info (12130): Elaborated megafunction instantiation "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_dp:slice[3].ram_inst|altsyncram:mem_rtl_0"
 Info (12133): Instantiated megafunction "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|ram_dp:slice[3].ram_inst|altsyncram:mem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "BIDIR_DUAL_PORT"
@@ -4163,7 +4122,7 @@ Info (12133): Instantiated megafunction "openMSP430:openmsp430_0|omsp_multiplier
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_p4t.tdf
     Info (12023): Found entity 1: mult_p4t File: /home/hiram/master/Qwark/altera_de0_nano/synthesis/altera/WORK/db/mult_p4t.tdf Line: 28
-Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13000): Registers with preset signals will power-up high File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg_uart.v Line: 75
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
@@ -4176,18 +4135,18 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (15899): PLL "pll:pll_0|altpll:altpll_component|pll_altpll:auto_generated|pll1" has parameters clk1_multiply_by and clk1_divide_by specified but port CLK[1] is not connected File: /home/hiram/master/Qwark/altera_de0_nano/synthesis/altera/WORK/db/pll_altpll.v Line: 45
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "FPGA_CLK2_50" File: /home/hiram/master/Qwark/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 43
-Info (21057): Implemented 4667 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4729 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 4495 logic cells
+    Info (21061): Implemented 4557 logic cells
     Info (21064): Implemented 144 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 2 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 145 warnings
-    Info: Peak virtual memory: 1059 megabytes
-    Info: Processing ended: Mon Apr 29 01:51:20 2019
-    Info: Elapsed time: 00:00:33
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 1054 megabytes
+    Info: Processing ended: Mon May  6 04:10:14 2019
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:23
 
 
 +------------------------------------------+
