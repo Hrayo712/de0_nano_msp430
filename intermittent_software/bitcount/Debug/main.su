@@ -1,0 +1,11 @@
+main.c:212:39:INT_Qwark	0	static
+main.c:358:6:init	0	static
+main.c:381:5:btbl_bitcnt	6	static
+main.c:389:5:bit_count	6	static
+main.c:398:5:bitcount	34	static
+main.c:407:5:ntbl_bitcount	6	static
+main.c:419:5:BW_btbl_bitcount	8	static
+main.c:432:5:AR_btbl_bitcount	8	static
+main.c:443:5:ntbl_bitcnt	6	static
+main.c:453:12:bit_shifter	8	static
+main.c:461:5:main	8	static
