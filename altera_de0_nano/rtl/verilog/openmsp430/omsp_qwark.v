@@ -145,7 +145,7 @@ reg [DATA_WIDTH-1:0]addr_out_tlb;
 reg [DATA_WIDTH-1:0]addr_out_war;
 reg [DATA_WIDTH-1:0]addr_out_rd;
 
-
+reg [1:0] rd_msk;
 reg [15:0]read_address;
 reg irq_flag;
 reg WAR;
@@ -159,7 +159,7 @@ assign byte_read = mb_rd_msk[1] && ~mb_rd_msk[0] ? 1'b1: 1'b0;
 //=============================================================================
 
 assign  per_dout	    		= war_ctr;
-assign  per_dout_war_addr  = read_address;
+assign  per_dout_war_addr  = read_address | ~( rd_msk[0] & rd_msk[1] ) << DATA_WIDTH-1;
 assign  per_wr        		= tlb_buff_wr_en;
 assign  irq_out	    		= irq_flag;
 
@@ -286,6 +286,9 @@ always @(posedge mclk) begin
 	
 	//store address of cycle
 	read_address <= tl_eu_addr;
+	
+	//store write mask 
+	rd_msk <= mb_rd_msk;
 	end 
 end
 

@@ -2933,12 +2933,11 @@ volatile int var7=1;
 volatile int var8=1;
 volatile int var9=1;
 volatile int var10=1;
-# 177 "main.c"
+# 194 "main.c"
 void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 
  (*(volatile unsigned char *) 0x0090) = 0x10;
-
 
 
 
@@ -3039,11 +3038,35 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
  __asm__ __volatile__ ("_second_phase_commit_strt:");
 
  __asm__ __volatile__ ("mov @r12+2,  r13 ");
+
+ __asm__ __volatile__ ("mov r13,  r11 ");
+
+ __asm__ __volatile__ ("and #0x8000,  r11 ");
+ __asm__ __volatile__ ("cmp #0x8000,  r11 ");
+ __asm__ __volatile__ ("jeq _byte_copy ");
+
  __asm__ __volatile__ ("mov @r14+2, @r13 ");
 
  __asm__ __volatile__ ("dec r15");
  __asm__ __volatile__ ("tst r15");
+
  __asm__ __volatile__ ("jnz  _second_phase_commit_strt");
+ __asm__ __volatile__ ("br #_chkpt_finished");
+
+ __asm__ __volatile__ ("_byte_copy:");
+ __asm__ __volatile__ ("and #0x7FFF,  r13 ");
+ __asm__ __volatile__ ("mov r13,      r11 ");
+ __asm__ __volatile__ ("and #0x01,    r11 ");
+ __asm__ __volatile__ ("bis  r11,     r14 ");
+
+ __asm__ __volatile__ ("mov.b @r14, @r13 ");
+ __asm__ __volatile__ ("incd r14 ");
+
+ __asm__ __volatile__ ("dec r15");
+ __asm__ __volatile__ ("tst r15");
+ __asm__ __volatile__ ("jnz  _second_phase_commit_strt");
+
+ (*(volatile unsigned char *) 0x0090) = 0x16;
 
 
 
@@ -3056,6 +3079,7 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 
  __asm__ __volatile__ ("mov #0x0001, &0x0190");
+ __asm__ __volatile__ ("mov &0x6038,r11");
  __asm__ __volatile__ ("mov &0x6026,r13");
  __asm__ __volatile__ ("mov &0x603E,r14");
  __asm__ __volatile__ ("mov &0x6040,r15");
@@ -3065,9 +3089,13 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 }
 
+
+
 void dummy_function(void){
  int var=0xAA;
  int array[32];
+
+
  for(var=0;var<31;var++)
  {
   array[var] = 0xFECA;
@@ -3077,6 +3105,13 @@ void dummy_function(void){
    }
 }
 
+int len;
+char buf[10];
+void append (char c){
+ len++;
+ buf[len]=c;
+
+}
 
 int main()
 {
@@ -3084,44 +3119,9 @@ int main()
 
  __asm__ __volatile__ ("nop");
    __asm__ __volatile__ ("eint { nop");
- (*(volatile unsigned int *) 0x0190) = 0x01;
-
- if(var1){
-   var1 = 0xAA;
- }
-
- if(var2){
-   var2 = 0xBB;
- }
-
- if(var2 == 0xBB)
-  (*(volatile unsigned char *) 0x0090) = 0xAA;
-
-
-  if(var3){
-    var3 = 0x03;
-  }
-
-  if(var4){
-    var4 = 0x04;
-  }
-
-  if(var5){
-    var5 = 0x05;
-  }
-
-  if(var6){
-    var6 = 0x06;
-  }
-
-  if(var7){
-    var7 = 0x07;
-  }
-
-
-  if(var8){
-    var8 = 0x07;
-  }
+ (*(volatile unsigned int *) 0x0172) = 100;
+ (*(volatile unsigned int *) 0x0160) = (0x0200) | (0x0004) | (0x0010) | (0x0002);
+  (*(volatile unsigned char *) 0x0090) = 0xBB;
  while(1);
 
 

@@ -1,31 +1,38 @@
 [*]
 [*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
-[*] Mon May  6 08:51:48 2019
+[*] Tue May  7 16:24:11 2019
 [*]
 [dumpfile] "/home/hiram/master/Qwark/altera_de0_nano/sim/rtl_sim/run/tb_openMSP430_fpga.vcd"
-[dumpfile_mtime] "Mon May  6 08:49:50 2019"
-[dumpfile_size] 4240354
+[dumpfile_mtime] "Tue May  7 16:23:11 2019"
+[dumpfile_size] 12391319
 [savefile] "/home/hiram/master/Qwark/altera_de0_nano/sim/rtl_sim/run/setup_cfg.gtkw"
-[timestart] 881720000
+[timestart] 0
 [size] 1851 873
-[pos] -29 -29
-*-23.441099 913500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -77 -77
+*-29.441099 1800500000 1288500000 1800500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_openMSP430_fpga.
 [treeopen] tb_openMSP430_fpga.dut.
 [treeopen] tb_openMSP430_fpga.dut.openmsp430_0.
-[treeopen] tb_openMSP430_fpga.dut.openmsp430_0.execution_unit_0.
-[treeopen] tb_openMSP430_fpga.dut.qwark_periph_0.
 [treeopen] tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.
 [treeopen] tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.cam_read_buff.slice[3].
 [sst_width] 309
 [signals_width] 326
 [sst_expanded] 1
-[sst_vpaned_height] 522
+[sst_vpaned_height] 375
 @28
 tb_openMSP430_fpga.dut.openmsp430_0.frontend_0.gie
+tb_openMSP430_fpga.dut.openmsp430_0.clock_module_0.dco_clk
+tb_openMSP430_fpga.dut.timerA_0.clk_div[2:0]
+tb_openMSP430_fpga.dut.timerA_0.mclk
+tb_openMSP430_fpga.dut.openmsp430_0.clock_module_0.aclk
+tb_openMSP430_fpga.dut.openmsp430_0.clock_module_0.smclk
 tb_openMSP430_fpga.dut.openmsp430_0.puc_rst
+tb_openMSP430_fpga.dut.timerA_0.tar_clk
 @22
+tb_openMSP430_fpga.dut.timerA_0.tar[15:0]
 tb_openMSP430_fpga.LED[7:0]
+@29
+tb_openMSP430_fpga.dut.openmsp430_0.clock_module_0.lfxt_clk
 @28
 tb_openMSP430_fpga.FPGA_CLK1_50
 @22
@@ -38,6 +45,9 @@ tb_openMSP430_fpga.dut.pmem_cen
 @22
 tb_openMSP430_fpga.dut.pmem_addr[13:0]
 tb_openMSP430_fpga.dut.pmem_dout[15:0]
+@28
+tb_openMSP430_fpga.dut.openmsp430_0.clock_module_0.lfxt_clk
+@22
 [color] 1
 tb_openMSP430_fpga.msp_debug_omsp.inst_pc[15:0]
 @24
@@ -190,7 +200,6 @@ tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_busy
 @22
 [color] 3
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_busy_writing[15:0]
-@23
 [color] 3
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_ctr[3:0]
 @28

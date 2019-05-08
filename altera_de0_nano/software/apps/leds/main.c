@@ -39,104 +39,121 @@ void qwark_restore(void) __attribute__ ((used));
 void qwark_restore(void) __attribute__ ((section (".crt_0001_qwark")));
 void qwark_restore(void)
 {
+	//-------------------------------------------------------------------------------------------------------------//
+	//    RESTORE HANDLING LOGIC	Total: 17 cycles															   //
+	//-------------------------------------------------------------------------------------------------------------//
+
     /* verify if this is the first time the code executes,and whether the checkpoint succeeded, failed, or was stranded on the first phase */
-	__asm__ __volatile__ ("mov #0x0000, &0x0190"); 		 //QWARK_CTL = 0x01;
-	__asm__ __volatile__ ("mov &0x600E, r12");			 //3 cycles
+	__asm__ __volatile__ ("mov #0x0000, &0x0190"); 		 //4 cycles
+	__asm__ __volatile__ ("mov.b &0x601E, r12");		 //3 cycles
 	__asm__ __volatile__ ("mov #0x02, r13");			 //1 cycle (using constant generator)
 	__asm__ __volatile__ ("cmp r12, r13"); 				 //1 cycle
 
-	/*check for the bit set on 2, it means the checkpoint completed succesfully, we can reinitialize the system*/
-	__asm__ __volatile__ ("JEQ __system_restore");		 //2 cycles  Total: 7 cycles of handling logic
+	/*check for the bit set on 2, it means the checkpoint completed successfully, we can reinitialize the system*/
+	__asm__ __volatile__ ("JEQ __system_restore");		 //2 cycles
 
-	/*If the bit is set on 1, it means the checkpoint completed succesfully, we can finalize the second stage and reinitialize the system*/
+	/*If the bit is set on 1, it means the checkpoint completed successfully, we can finalize the second stage and reinitialize the system*/
 
 	__asm__ __volatile__ ("mov #0x01, r13");		     //1 cycle (using constant generator)
 	__asm__ __volatile__ ("cmp r12, r13"); 			     //1 cycle
-	__asm__ __volatile__ ("JEQ __second_stage_retry");	 //2 cycles  Total: 7 cycles of handling logic
+	__asm__ __volatile__ ("JEQ __second_stage_retry");	 //2 cycles
 
-	__asm__ __volatile__ ("br #__crt0_init_bss");
-
+	__asm__ __volatile__ ("br #__crt0_init_bss");		 //2 cycles
 
 	//-------------------------------------------------------------------------------------------------------------//
-	//    RETRY SECOND PHASE OF THE COMMIT PROCESS																   //
+	//    RETRY SECOND PHASE OF THE COMMIT PROCESS	: 148 cycles												   //
 	//-------------------------------------------------------------------------------------------------------------//
 	__asm__ __volatile__ ("__second_stage_retry:");
 
-	__asm__ __volatile__ ("mov #0x6010,  r12 "); /* 1st value : 2 cycles + 2 cycles + 6 cycles = 10 cycles*/
-	__asm__ __volatile__ ("mov @r12,     r13 ");
-	__asm__ __volatile__ ("mov &0x6000, @r13 ");
+	__asm__ __volatile__ ("mov.b &0x601F, r15");	        // 4 cycles
 
-	__asm__ __volatile__ ("mov #0x6012,  r12 "); /* 2nd value */
-	__asm__ __volatile__ ("mov @r12,     r13 ");
-	__asm__ __volatile__ ("mov &0x6002, @r13 ");
+	__asm__ __volatile__ ("tst r15 ");     		            // 1 cycles
+	__asm__ __volatile__ ("jz  __system_restore");		    // 2 cycles
 
-	__asm__ __volatile__ ("mov #0x6014,  r12 "); /* 3rd value */
-	__asm__ __volatile__ ("mov @r12,     r13 ");
-	__asm__ __volatile__ ("mov &0x6004, @r13 ");
+	__asm__ __volatile__ ("mov #0x6010,  r12 ");		    // 2 cycles
+	__asm__ __volatile__ ("mov #0x6000,  r14 ");			// 2 cycles
 
-	__asm__ __volatile__ ("mov #0x6016,  r12 "); /* 4th value */
-	__asm__ __volatile__ ("mov @r12,     r13 ");
-	__asm__ __volatile__ ("mov &0x6006, @r13 ");
+	__asm__ __volatile__ ("_retry_second_phase_commit_strt:");    // Worst case
 
-	__asm__ __volatile__ ("mov #0x6018,  r12 "); /* 5th value */
-	__asm__ __volatile__ ("mov @r12,     r13 ");
-	__asm__ __volatile__ ("mov &0x6008, @r13 ");
+	__asm__ __volatile__ ("mov @r12+2,  r13 ");   			// 2 cycles
 
-	__asm__ __volatile__ ("mov #0x601A,  r12 "); /* 6th value */
-	__asm__ __volatile__ ("mov @r12,     r13 ");
-	__asm__ __volatile__ ("mov &0x600A, @r13 ");
+	__asm__ __volatile__ ("mov r13,  r11 ");   			    // 1 cycle
 
-	__asm__ __volatile__ ("mov #0x601C,  r12 "); /* 7th value */
-	__asm__ __volatile__ ("mov @r12,     r13 ");
-	__asm__ __volatile__ ("mov &0x600C, @r13 ");
+	__asm__ __volatile__ ("and #0x8000,  r11 ");   			// 2 cycles
+	__asm__ __volatile__ ("cmp #0x8000,  r11 ");   			// 2 cycles
+	__asm__ __volatile__ ("jeq _retry_byte_copy ");   		// 2 cycles
 
-	//Indicate this checkpoint has been finalized
-	__asm__ __volatile__ ("mov #0x02, &0x600E"); //4 cycles
+	__asm__ __volatile__ ("mov @r14+2, @r13 ");    			// 5 cycles
+
+	__asm__ __volatile__ ("dec r15");    					// 1 cycles
+	__asm__ __volatile__ ("tst r15");    					// 1 cycles
+
+	__asm__ __volatile__ ("jnz  _retry_second_phase_commit_strt");// 2 cycles
+	__asm__ __volatile__ ("br #__system_restore");		    // 2 cycle
+
+	__asm__ __volatile__ ("_retry_byte_copy:");
+	__asm__ __volatile__ ("and #0x7FFF,  r13 ");   			// mask the highest bit 2 cycles
+	__asm__ __volatile__ ("mov r13,      r11 ");   			// 1 cycle
+	__asm__ __volatile__ ("and #0x01,    r11 ");   			// detect if its a byte write - 2 cycles
+	__asm__ __volatile__ ("bis  r11,     r14 ");   			// detect if its a byte write - 2 cycles
+
+	__asm__ __volatile__ ("mov.b @r14, @r13 ");    			// 5 cycles
+	__asm__ __volatile__ ("incd r14 ");    					// 1 cycle
+
+	__asm__ __volatile__ ("dec r15");    					// 1 cycles
+	__asm__ __volatile__ ("tst r15");    					// 1 cycles
+	__asm__ __volatile__ ("jnz  _retry_second_phase_commit_strt");// 2 cycles
+
 
 	//-------------------------------------------------------------------------------------------------------------//
-	//   SYSTEM RESTORE															   								   //
+	//   SYSTEM RESTORE	 Total: 							   								   //
 	//-------------------------------------------------------------------------------------------------------------//
 	__asm__ __volatile__ ("__system_restore:");
+
+	//Indicate this checkpoint has been finalized and can be used
+	__asm__ __volatile__ ("mov.b #0x02, &0x601E"); //4 cycles
+
 	/* VOLATILE STATE RESTORE 	: STACK RESTORE											  				 		   */
 	/* Note: The amount of cycles depend on the addressing mode not on the instruction 		 					   */
 
 	/* TESTING ONLY: Wipe out the stack and restore it*/
 	/* STACK ERASE														  				  	  					   */
-	__asm__ __volatile__ ("mov &0X6020, r12"); 		//Get the current SP
-	__asm__ __volatile__ ("mov #0x7FFE, r14");
-	__asm__ __volatile__ ("mov #0x6FFE, r13");
+	__asm__ __volatile__ ("mov &0X6020, r12"); 	   //Get the current SP: 3 cycles
+	__asm__ __volatile__ ("mov #0x7FFE, r14");	   //2 cycles
+	__asm__ __volatile__ ("mov #0x6FFE, r13");	   //2 cycles
 
-	__asm__ __volatile__ ("decd r12");
-	__asm__ __volatile__ ("decd r12");
-	__asm__ __volatile__ ("decd r12");
+	__asm__ __volatile__ ("decd r12");				//1 cycle
+	__asm__ __volatile__ ("decd r12");				//1 cycle
+	__asm__ __volatile__ ("decd r12");				//1 cycle
 	__asm__ __volatile__ ("__erase_stack:");
 
-	__asm__ __volatile__ ("cmp r14,r12");	   //compare and verify if the base has been reached
-	__asm__ __volatile__ ("jz __deletion_stack_complete");
+	__asm__ __volatile__ ("cmp r14,r12");	   //compare and verify if the base has been reached 1 cycle
+	__asm__ __volatile__ ("jz __deletion_stack_complete");	//2 cycles
 
-	__asm__ __volatile__ ("mov #0x00000,@r14");
-	__asm__ __volatile__ ("decd r13");
-	__asm__ __volatile__ ("decd r14");
-	__asm__ __volatile__ ("br #__erase_stack");
+	__asm__ __volatile__ ("mov #0x00000,@r14");		//4 cycles
+	__asm__ __volatile__ ("decd r13");				//1 cycle
+	__asm__ __volatile__ ("decd r14");				//1 cycle
+	__asm__ __volatile__ ("br #__erase_stack");		//2 cycles
 
 	__asm__ __volatile__ ("__deletion_stack_complete:");
 
-	/* STACK RESTORE														  				  */
-	__asm__ __volatile__ ("mov &0X6020, r12"); 		//Get the current SP
-	__asm__ __volatile__ ("mov #0x7FFE, r14");
-	__asm__ __volatile__ ("mov #0x6FFE, r13");
+	/* STACK RESTORE		12 cycles per word		384 cycles	per 64B								 */
 
-	__asm__ __volatile__ ("decd r12");
+	__asm__ __volatile__ ("mov &0X6020, r12"); 		//Get the current SP -> 3 cycles
+	__asm__ __volatile__ ("mov #0x7FFE, r14");		//2 cycles
+	__asm__ __volatile__ ("mov #0x6FFE, r13");		//2 cycles
+
+	__asm__ __volatile__ ("decd r12");				//1 cycle
 
 	__asm__ __volatile__ ("__restore_stack:");
 
-	__asm__ __volatile__ ("cmp r14,r12");	   //compare and verify if the base has been reached
-	__asm__ __volatile__ ("jz __init_restore_stack_complete");
+	__asm__ __volatile__ ("cmp r14,r12");	   		// compare and verify if the base has been reached - 1 cycle
+	__asm__ __volatile__ ("jz __init_restore_stack_complete"); //2 cycles
 
-	__asm__ __volatile__ ("mov @r13,@r14");
-	__asm__ __volatile__ ("decd r13");
-	__asm__ __volatile__ ("decd r14");
-	__asm__ __volatile__ ("br #__restore_stack");
+	__asm__ __volatile__ ("mov @r13,@r14");					//5 cycles
+	__asm__ __volatile__ ("decd r13");						//1 cycle
+	__asm__ __volatile__ ("decd r14");						//1 cycle
+	__asm__ __volatile__ ("br #__restore_stack");			//2 cycles
 
 	__asm__ __volatile__ ("__init_restore_stack_complete:");
 
@@ -184,7 +201,6 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 	//-------------------------------------------------------------------------------------------------------------//
 
 	/*Store Registers into NV memory : Total: 70 cycles*/
-
 	__asm__ __volatile__ ("mov r1,&0x6020");   		//SP/R1   4 cycles       =  9 cycles
 	__asm__ __volatile__ ("add #0x06,&0x6020");		//		  5 cycles
 	__asm__ __volatile__ ("mov 4(r1),&0x6022"); 	//PC/R0   6 cycles       = 21 cycles
@@ -266,48 +282,77 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 	__asm__ __volatile__ ("mov.b #0x01, &0x601E"); //4 cycles
 
 	//-------------------------------------------------------------------------------------------------------------//
-	//    SECOND PHASE OF THE COMMIT PROCESS																	   //
+	//    SECOND PHASE OF THE COMMIT PROCESS : 148 cycles														   //
 	//-------------------------------------------------------------------------------------------------------------//
 	LED_CTRL = 0x15;
 
-	__asm__ __volatile__ ("tst r15 ");     		           // 2 cycles
+	__asm__ __volatile__ ("tst r15 ");     		           // 1 cycles
 	__asm__ __volatile__ ("jz  _chkpt_finished");		   // 2 cycles
 
 	__asm__ __volatile__ ("mov #0x6010,  r12 ");			// 2 cycles
 	__asm__ __volatile__ ("mov #0x6000,  r14 ");			// 2 cycles
 
-	__asm__ __volatile__ ("_second_phase_commit_strt:");    // Worst case: 84 cycles( w/o logic)
+	__asm__ __volatile__ ("_second_phase_commit_strt:");    // Worst case
 
 	__asm__ __volatile__ ("mov @r12+2,  r13 ");   			// 2 cycles
+
+	__asm__ __volatile__ ("mov r13,  r11 ");   			    // 1 cycle
+
+	__asm__ __volatile__ ("and #0x8000,  r11 ");   			// 2 cycles
+	__asm__ __volatile__ ("cmp #0x8000,  r11 ");   			// 2 cycles
+	__asm__ __volatile__ ("jeq _byte_copy ");   			// 2 cycles
+
 	__asm__ __volatile__ ("mov @r14+2, @r13 ");    			// 5 cycles
 
 	__asm__ __volatile__ ("dec r15");    					// 1 cycles
-	__asm__ __volatile__ ("tst r15");    					// 2 cycles
+	__asm__ __volatile__ ("tst r15");    					// 1 cycles
+
+	__asm__ __volatile__ ("jnz  _second_phase_commit_strt");// 2 cycles
+	__asm__ __volatile__ ("br #_chkpt_finished");		    // 2 cycle
+
+	__asm__ __volatile__ ("_byte_copy:");    				//
+	__asm__ __volatile__ ("and #0x7FFF,  r13 ");   			// mask the highest bit 2 cycles
+	__asm__ __volatile__ ("mov r13,      r11 ");   			// 1 cycle
+	__asm__ __volatile__ ("and #0x01,    r11 ");   			// detect if its a byte write - 2 cycles
+	__asm__ __volatile__ ("bis  r11,     r14 ");   			// detect if its a byte write - 2 cycles
+
+	__asm__ __volatile__ ("mov.b @r14, @r13 ");    			// 5 cycles
+	__asm__ __volatile__ ("incd r14 ");    					// 1 cycle
+
+	__asm__ __volatile__ ("dec r15");    					// 1 cycles
+	__asm__ __volatile__ ("tst r15");    					// 1 cycles
 	__asm__ __volatile__ ("jnz  _second_phase_commit_strt");// 2 cycles
 
+	LED_CTRL = 0x16;
+
 	//-------------------------------------------------------------------------------------------------------------//
-	//    CHECKPOINT COMPLETED	- Binary Semaphore set to 2														   //
+	//    CHECKPOINT COMPLETED	- Binary Semaphore set to 2	:20													   //
 	//-------------------------------------------------------------------------------------------------------------//
-	__asm__ __volatile__ ("_chkpt_finished:");// 2 cycles
+	__asm__ __volatile__ ("_chkpt_finished:");
 
 	/* Set second phase complete Bit - Atomic Flag*/
 	__asm__ __volatile__ ("mov.b #0x02, &0x601E");  //4 cycles
 
 	/* This is to continue operation. If at this point a power failure happens, the system can re-start*/
 	/* Clear index counter, and enable Idempotency tracking*/
-	__asm__ __volatile__ ("mov #0x0001, &0x0190");
-	__asm__ __volatile__ ("mov &0x6026,r13"); 	    //Re-establish r13
-	__asm__ __volatile__ ("mov &0x603E,r14"); 	    //Re-establish r14
-	__asm__ __volatile__ ("mov &0x6040,r15"); 	    //Re-establish r15 (3 cycles)
+	__asm__ __volatile__ ("mov #0x0001, &0x0190");	//4 cycles
+	__asm__ __volatile__ ("mov &0x6038,r11"); 		//3 cycles
+	__asm__ __volatile__ ("mov &0x6026,r13"); 	    //3 cycles
+	__asm__ __volatile__ ("mov &0x603E,r14"); 	    //3 cycles
+	__asm__ __volatile__ ("mov &0x6040,r15"); 	    //3 cycles
 
-	//to do: indicate checkpoint as invalid upon entering
+	//to do: indicate checkpoint as invalid upon entering,
 	LED_CTRL = 0xF0;
 
 }
 
+
+
 void dummy_function(void){
 	int var=0xAA;
 	int array[32];
+
+
 	for(var=0;var<31;var++)
 	{
 		array[var] = 0xFECA;
@@ -317,6 +362,13 @@ void dummy_function(void){
 			}
 }
 
+int len;
+char buf[10];
+void append (char c){
+	len++;
+	buf[len]=c;
+
+}
 
 int main()
 {
@@ -324,44 +376,9 @@ int main()
 	//Enable Idempotency Tracking
 	__asm__ __volatile__ ("nop");
   	eint();
-	QWARK_CTL = 0x01;
-
-	if(var1){
-	  var1 = 0xAA;
-	}
-
-	if(var2){
-	  var2 = 0xBB;
-	}
-
-	if(var2 == 0xBB)
-		LED_CTRL = 0xAA;
-
-
-		if(var3){
-		  var3 = 0x03;
-		}
-
-		if(var4){
-		  var4 = 0x04;
-		}
-
-		if(var5){
-		  var5 = 0x05;
-		}
-
-		if(var6){
-		  var6 = 0x06;
-		}
-
-		if(var7){
-		  var7 = 0x07;
-		}
-		//dummy_function();
-
-		if(var8){
-		  var8 = 0x07;
-		}
+	(*(volatile unsigned int  *) 0x0172) = 100;
+	(*(volatile unsigned int  *) 0x0160) = (0x0200) | (0x0004) | (0x0010) | (0x0002);
+		LED_CTRL = 0xBB;
 	while(1);
 
 

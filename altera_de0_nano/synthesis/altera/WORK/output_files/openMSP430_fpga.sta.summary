@@ -3,19 +3,19 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'FPGA_CLK1_50'
-Slack : -2.061
-TNS   : -19.766
+Slack : -1.365
+TNS   : -13.618
 
 Type  : Slow 1200mV 85C Model Hold 'FPGA_CLK1_50'
-Slack : 0.235
+Slack : 0.344
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'FPGA_CLK1_50'
-Slack : 995.701
+Slack : 995.630
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'FPGA_CLK1_50'
-Slack : 0.900
+Slack : 0.897
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'FPGA_CLK1_50'
@@ -23,39 +23,39 @@ Slack : 10.000
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'FPGA_CLK1_50'
-Slack : -0.783
-TNS   : -4.692
+Slack : -0.242
+TNS   : -1.020
 
 Type  : Slow 1200mV 0C Model Hold 'FPGA_CLK1_50'
-Slack : 0.247
+Slack : 0.299
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'FPGA_CLK1_50'
-Slack : 996.122
+Slack : 996.045
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'FPGA_CLK1_50'
-Slack : 0.809
+Slack : 0.808
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FPGA_CLK1_50'
-Slack : 9.985
+Slack : 10.000
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'FPGA_CLK1_50'
-Slack : 3.790
+Slack : 4.096
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'FPGA_CLK1_50'
-Slack : 0.041
+Slack : 0.179
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'FPGA_CLK1_50'
-Slack : 997.329
+Slack : 997.258
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'FPGA_CLK1_50'
-Slack : 0.493
+Slack : 0.491
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'FPGA_CLK1_50'
