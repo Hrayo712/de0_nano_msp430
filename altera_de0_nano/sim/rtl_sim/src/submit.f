@@ -107,6 +107,7 @@
 
 ../../../rtl/verilog/priority_encoder.v
 ../../../rtl/verilog/ram_dp.v
+../../../rtl/verilog/omsp_uart.v
 ../../../rtl/verilog/openmsp430/omsp_qwark.v
 ../../../rtl/verilog/openmsp430/omsp_qwark_periph.v
 //=============================================================================

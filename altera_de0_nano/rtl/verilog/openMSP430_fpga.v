@@ -40,7 +40,7 @@ module openMSP430_fpga (
   // USER CLOCKS
   //-----------------------------
   input         FPGA_CLK1_50,
-  input			 FPGA_CLK2_50,
+ 
 
   //-----------------------------
   // USER INTERFACE (FPGA)
@@ -62,7 +62,8 @@ module openMSP430_fpga (
   output [1:0] ADDR,
   output [1:0] TL_ADDR,
   output  ADDR_CE,
-  output WAR
+  output WAR,
+  output PER_UART_TX
 
 );
 
@@ -121,6 +122,13 @@ wire               irq_ta0;
 wire               irq_ta1;
 wire        [15:0] per_dout_tA;
 
+// Simple UART
+wire               irq_uart_rx;
+wire               irq_uart_tx;
+wire        [15:0] per_dout_uart;
+wire               hw_uart_txd;
+wire               hw_uart_rxd;
+
 //=============================================================================
 // 2)  CLOCK AND RESET GENERATION
 //=============================================================================
@@ -129,8 +137,8 @@ wire   pll_out;
 wire   pll_lock;
 
 
-assign dco_clk    = FPGA_CLK1_50;
-//assign dco_clk    = pll_lock ? pll_out : 1'b0;
+//assign dco_clk    = FPGA_CLK1_50;
+assign dco_clk    = pll_lock ? pll_out : 1'b0;
 
 
 wire   reset_in_n = KEY[0];
@@ -292,7 +300,8 @@ omsp_timerA timerA_0 (
 
 assign per_dout = per_dout_led_key_sw |
                   per_dout_tA         |
-						per_dout_qwark;
+						per_dout_qwark		  |
+						per_dout_uart;
 
 
 //-----------------------------
@@ -346,11 +355,11 @@ ram_16x8k dmem_0 (
 // 5) Clock Division  
 //=============================================================================
 						 
-//	pll pll_0(
-//	.inclk0 (FPGA_CLK1_50),
-//	.c0     (pll_out),
-//	.locked (pll_lock)
-//	);
+	pll pll_0(
+	.inclk0 (FPGA_CLK1_50),
+	.c0     (pll_out),
+	.locked (pll_lock)
+	);
 
 	//=============================================================================
 // 11)  QWARK
@@ -383,11 +392,39 @@ omsp_qwark_periph qwark_periph_0 (
 	 .mb_rd_msk(mb_rd_msk)
 );
 
+
+//
+// Simple full duplex UART (8N1 protocol)
+//----------------------------------------
+//IBUF  UART_RXD_PIN   (.O(hw_uart_rxd),                .I());
+
+//io_buf io_buf_uart (.datain(lt24_d_out[0]),  .oe(lt24_d_out_en), .dataout(lt24_data[0]),  .dataio(GPIO_0[8]) );
+
+omsp_uart #(.BASE_ADDR(15'h0080)) uart_0 (
+
+// OUTPUTs
+    .irq_uart_rx  (),   // UART receive interrupt
+    .irq_uart_tx  (),   // UART transmit interrupt
+    .per_dout     (per_dout_uart),  // Peripheral data output
+    .uart_txd     (hw_uart_txd),    // UART Data Transmit (TXD)
+
+// INPUTs
+    .mclk         (mclk),          // Main system clock
+    .per_addr     (per_addr),      // Peripheral address
+    .per_din      (per_din),       // Peripheral data input
+    .per_en       (per_en),        // Peripheral enable (high active)
+    .per_we       (per_we),        // Peripheral write enable (high active)
+    .puc_rst      (puc_rst),       // Main system reset
+    .smclk_en     (smclk_en),      // SMCLK enable (from CPU)
+    .uart_rxd     (hw_uart_rxd)    // UART Data Receive (RXD)
+);
+
 //=============================================================================
 // 6)  DEBUG INTERFACE
 //=============================================================================
 
 assign  UART_TX 		=  dbg_uart_txd;
+assign  PER_UART_TX  =  hw_uart_txd;
 assign  dbg_uart_rxd =  UART_RX;
 assign  OUT_PLL      = pll_out;
 assign  ADDR_CE 	   = dmem_cen;

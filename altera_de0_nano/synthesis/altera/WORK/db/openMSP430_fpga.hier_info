@@ -1,6 +1,5 @@
 |openMSP430_fpga
 FPGA_CLK1_50 => FPGA_CLK1_50.IN1
-FPGA_CLK2_50 => ~NO_FANOUT~
 KEY[0] => KEY[0].IN1
 KEY[1] => KEY[1].IN1
 SW[0] => SW[0].IN1
@@ -24,6 +23,7 @@ TL_ADDR[0] <= qwark_addr[0].DB_MAX_OUTPUT_PORT_TYPE
 TL_ADDR[1] <= qwark_addr[1].DB_MAX_OUTPUT_PORT_TYPE
 ADDR_CE <= dmem_cen.DB_MAX_OUTPUT_PORT_TYPE
 WAR <= <GND>
+PER_UART_TX <= omsp_uart:uart_0.uart_txd
 
 
 |openMSP430_fpga|openMSP430:openmsp430_0
@@ -9168,5 +9168,102 @@ b_dout[4] <= b_dout_reg[4].DB_MAX_OUTPUT_PORT_TYPE
 b_dout[5] <= b_dout_reg[5].DB_MAX_OUTPUT_PORT_TYPE
 b_dout[6] <= b_dout_reg[6].DB_MAX_OUTPUT_PORT_TYPE
 b_dout[7] <= b_dout_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|openMSP430_fpga|omsp_uart:uart_0
+irq_uart_rx <= irq_uart_rx.DB_MAX_OUTPUT_PORT_TYPE
+irq_uart_tx <= irq_uart_tx.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[1] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[2] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[3] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[4] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[5] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[6] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[7] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[8] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[9] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[10] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[11] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[12] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[13] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[14] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+per_dout[15] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+uart_txd <= txfer_buf[0].DB_MAX_OUTPUT_PORT_TYPE
+mclk => mclk.IN1
+per_addr[0] => Equal1.IN3
+per_addr[0] => Equal2.IN3
+per_addr[0] => Equal3.IN3
+per_addr[0] => Equal4.IN3
+per_addr[0] => Equal5.IN2
+per_addr[0] => Equal6.IN2
+per_addr[1] => Equal1.IN2
+per_addr[1] => Equal2.IN2
+per_addr[1] => Equal3.IN2
+per_addr[1] => Equal4.IN2
+per_addr[1] => Equal5.IN3
+per_addr[1] => Equal6.IN3
+per_addr[2] => Equal0.IN10
+per_addr[3] => Equal0.IN9
+per_addr[4] => Equal0.IN8
+per_addr[5] => Equal0.IN7
+per_addr[6] => Equal0.IN11
+per_addr[7] => Equal0.IN6
+per_addr[8] => Equal0.IN5
+per_addr[9] => Equal0.IN4
+per_addr[10] => Equal0.IN3
+per_addr[11] => Equal0.IN2
+per_addr[12] => Equal0.IN1
+per_addr[13] => Equal0.IN0
+per_din[0] => ctrl[0].DATAIN
+per_din[0] => baud_lo[0].DATAIN
+per_din[0] => data_tx[0].DATAIN
+per_din[1] => ctrl[1].DATAIN
+per_din[1] => baud_lo[1].DATAIN
+per_din[1] => data_tx[1].DATAIN
+per_din[2] => baud_lo[2].DATAIN
+per_din[2] => data_tx[2].DATAIN
+per_din[3] => baud_lo[3].DATAIN
+per_din[3] => data_tx[3].DATAIN
+per_din[4] => ctrl[4].DATAIN
+per_din[4] => baud_lo[4].DATAIN
+per_din[4] => data_tx[4].DATAIN
+per_din[5] => ctrl[5].DATAIN
+per_din[5] => baud_lo[5].DATAIN
+per_din[5] => data_tx[5].DATAIN
+per_din[6] => ctrl[6].DATAIN
+per_din[6] => baud_lo[6].DATAIN
+per_din[6] => data_tx[6].DATAIN
+per_din[7] => baud_lo[7].DATAIN
+per_din[7] => data_tx[7].DATAIN
+per_din[8] => baud_hi[0].DATAIN
+per_din[9] => baud_hi[1].DATAIN
+per_din[10] => baud_hi[2].DATAIN
+per_din[11] => baud_hi[3].DATAIN
+per_din[12] => status_rx_pnd_clr.IN1
+per_din[12] => baud_hi[4].DATAIN
+per_din[13] => status_rx_ovflw_pnd_clr.IN1
+per_din[13] => baud_hi[5].DATAIN
+per_din[14] => status_tx_pnd_clr.IN1
+per_din[14] => baud_hi[6].DATAIN
+per_din[15] => status_tx_empty_pnd_clr.IN1
+per_din[15] => baud_hi[7].DATAIN
+per_en => reg_sel.IN1
+per_we[0] => reg_lo_write.IN1
+per_we[0] => WideNor0.IN0
+per_we[1] => reg_hi_write.IN1
+per_we[1] => WideNor0.IN1
+puc_rst => puc_rst.IN1
+smclk_en => uclk_en.DATAB
+uart_rxd => _.IN1
+
+
+|openMSP430_fpga|omsp_uart:uart_0|omsp_sync_cell:sync_cell_uart_rxd
+data_out <= data_sync[1].DB_MAX_OUTPUT_PORT_TYPE
+clk => data_sync[0].CLK
+clk => data_sync[1].CLK
+data_in => data_sync[0].DATAIN
+rst => data_sync[0].ACLR
+rst => data_sync[1].ACLR
 
 

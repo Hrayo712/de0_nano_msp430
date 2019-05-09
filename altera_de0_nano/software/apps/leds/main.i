@@ -2912,216 +2912,54 @@ extern long double strtold (const char *restrict, char **restrict);
 
 #define QWARK_CTL (*(volatile unsigned int *) 0x0190)
 #define QWARK_VECTOR (5)
-#define QWARK_WAR_CTR (((QWARK_CTL)&(0x000E))>>1)
-#define QWARK_ADDR1 (**((int**) (0x0192)))
-#define QWARK_ADDR2 (**((int**) (0x0194)))
-#define QWARK_ADDR3 (**((int**) (0x0196)))
-#define QWARK_ADDR4 (**((int**) (0x0198)))
-#define QWARK_ADDR5 (**((int**) (0x019A)))
-#define QWARK_ADDR6 (**((int**) (0x019C)))
-#define QWARK_ADDR7 (**((int**) (0x019E)))
 
+#define UART_BAUD (*(volatile unsigned int *) 0x0082)
 
-# 20 "main.c"
-volatile char var1=2;
-volatile char var2=7;
-volatile int var3=7;
-volatile int var4=1;
-volatile int var5=1;
-volatile int var6=1;
-volatile int var7=1;
-volatile int var8=1;
-volatile int var9=1;
-volatile int var10=1;
-# 194 "main.c"
-void __attribute__((interrupt ((5)))) INT_Qwark(void) {
+#define UART_EN 0x01
+#define UART_STAT (*(volatile unsigned char *) 0x0081)
+#define UART_CTL (*(volatile unsigned char *) 0x0080)
+#define UART_TXD (*(volatile unsigned char *) 0x0084)
+#define UART_TX_FULL 0x08
+# 30 "main.c"
+#define BAUD 8
 
 
- (*(volatile unsigned char *) 0x0090) = 0x10;
 
 
 
 
 
+# 37 "main.c"
+int tty_putc (int txdata) {
 
- __asm__ __volatile__ ("mov r1,&0x6020");
- __asm__ __volatile__ ("add #0x06,&0x6020");
- __asm__ __volatile__ ("mov 4(r1),&0x6022");
- __asm__ __volatile__ ("mov 2(r1),&0x6024");
- __asm__ __volatile__ ("mov r13 ,&0x6026");
- __asm__ __volatile__ ("mov 0(r1),&0x6028");
- __asm__ __volatile__ ("mov r4,&0x602A");
- __asm__ __volatile__ ("mov r5,&0x602C");
- __asm__ __volatile__ ("mov r6,&0x602E");
- __asm__ __volatile__ ("mov r7,&0x6030");
- __asm__ __volatile__ ("mov r8,&0x6032");
- __asm__ __volatile__ ("mov r9,&0x6034");
- __asm__ __volatile__ ("mov r10,&0x6036");
- __asm__ __volatile__ ("mov r11,&0x6038");
 
- __asm__ __volatile__ ("mov r14,&0x603E");
- __asm__ __volatile__ ("mov r15,&0x6040");
+  while ((*(volatile unsigned char *) 0x0081) & 0x08);
 
- (*(volatile unsigned char *) 0x0090) = 0x11;
 
+  (*(volatile unsigned char *) 0x0084) = txdata;
 
-
- __asm__ __volatile__ ("mov &0x0190, r14");
- __asm__ __volatile__ ("RRA r14");
- __asm__ __volatile__ ("mov.b r14, &0x601F");
- __asm__ __volatile__ ("mov r14, r15 ");
-
- (*(volatile unsigned char *) 0x0090) = 0x12;
-
-
-
- __asm__ __volatile__ ("tst r14 ");
- __asm__ __volatile__ ("jz  _chkpt_stack");
-
-
- __asm__ __volatile__ ("mov #0x0192, r12");
- __asm__ __volatile__ ("mov #0x6010, r13");
-
- __asm__ __volatile__ ("_scratchpad_addr_cpy:");
-
- __asm__ __volatile__ ("mov @r12+2, @r13");
- __asm__ __volatile__ ("incd r13");
- __asm__ __volatile__ ("dec r14 ");
- __asm__ __volatile__ ("tst r14 ");
- __asm__ __volatile__ ("jnz  _scratchpad_addr_cpy");
-
-
-
- (*(volatile unsigned char *) 0x0090) = 0x13;
-
- __asm__ __volatile__ ("_chkpt_stack:");
-
- __asm__ __volatile__ ("mov &0X6020, r12");
- __asm__ __volatile__ ("mov #0x7FFE, r14");
- __asm__ __volatile__ ("mov #0x6FFE, r13");
-
- __asm__ __volatile__ ("decd r12");
-
- __asm__ __volatile__ ("__copy_stack:");
-
- __asm__ __volatile__ ("cmp r14,r12");
- __asm__ __volatile__ ("jz __copy_stack_complete");
-
- __asm__ __volatile__ ("mov @r14,@r13");
-
- __asm__ __volatile__ ("decd r13");
- __asm__ __volatile__ ("decd r14");
- __asm__ __volatile__ ("br #__copy_stack");
-
- __asm__ __volatile__ ("__copy_stack_complete:");
-
- (*(volatile unsigned char *) 0x0090) = 0x14;
-
-
-
-
-
-
- __asm__ __volatile__ ("mov.b #0x01, &0x601E");
-
-
-
-
- (*(volatile unsigned char *) 0x0090) = 0x15;
-
- __asm__ __volatile__ ("tst r15 ");
- __asm__ __volatile__ ("jz  _chkpt_finished");
-
- __asm__ __volatile__ ("mov #0x6010,  r12 ");
- __asm__ __volatile__ ("mov #0x6000,  r14 ");
-
- __asm__ __volatile__ ("_second_phase_commit_strt:");
-
- __asm__ __volatile__ ("mov @r12+2,  r13 ");
-
- __asm__ __volatile__ ("mov r13,  r11 ");
-
- __asm__ __volatile__ ("and #0x8000,  r11 ");
- __asm__ __volatile__ ("cmp #0x8000,  r11 ");
- __asm__ __volatile__ ("jeq _byte_copy ");
-
- __asm__ __volatile__ ("mov @r14+2, @r13 ");
-
- __asm__ __volatile__ ("dec r15");
- __asm__ __volatile__ ("tst r15");
-
- __asm__ __volatile__ ("jnz  _second_phase_commit_strt");
- __asm__ __volatile__ ("br #_chkpt_finished");
-
- __asm__ __volatile__ ("_byte_copy:");
- __asm__ __volatile__ ("and #0x7FFF,  r13 ");
- __asm__ __volatile__ ("mov r13,      r11 ");
- __asm__ __volatile__ ("and #0x01,    r11 ");
- __asm__ __volatile__ ("bis  r11,     r14 ");
-
- __asm__ __volatile__ ("mov.b @r14, @r13 ");
- __asm__ __volatile__ ("incd r14 ");
-
- __asm__ __volatile__ ("dec r15");
- __asm__ __volatile__ ("tst r15");
- __asm__ __volatile__ ("jnz  _second_phase_commit_strt");
-
- (*(volatile unsigned char *) 0x0090) = 0x16;
-
-
-
-
- __asm__ __volatile__ ("_chkpt_finished:");
-
-
- __asm__ __volatile__ ("mov.b #0x02, &0x601E");
-
-
-
- __asm__ __volatile__ ("mov #0x0001, &0x0190");
- __asm__ __volatile__ ("mov &0x6038,r11");
- __asm__ __volatile__ ("mov &0x6026,r13");
- __asm__ __volatile__ ("mov &0x603E,r14");
- __asm__ __volatile__ ("mov &0x6040,r15");
-
-
- (*(volatile unsigned char *) 0x0090) = 0xF0;
-
-}
-
-
-
-void dummy_function(void){
- int var=0xAA;
- int array[32];
-
-
- for(var=0;var<31;var++)
- {
-  array[var] = 0xFECA;
- }
- if(var9){
-     var9 = 0x07;
-   }
-}
-
-int len;
-char buf[10];
-void append (char c){
- len++;
- buf[len]=c;
-
+  return 0;
 }
 
 int main()
 {
-
+        (*(volatile unsigned int *) 0x0120) = (0x5A00) | (0x0080);
 
  __asm__ __volatile__ ("nop");
    __asm__ __volatile__ ("eint { nop");
- (*(volatile unsigned int *) 0x0172) = 100;
- (*(volatile unsigned int *) 0x0160) = (0x0200) | (0x0004) | (0x0010) | (0x0002);
-  (*(volatile unsigned char *) 0x0090) = 0xBB;
+
+ (*(volatile unsigned int *) 0x0082) = 8;
+    (*(volatile unsigned char *) 0x0080) = 0x01;
+
+ (*(volatile unsigned char *) 0x0090) = 0xAA;
+
+ tty_putc('q');
+ tty_putc('w');
+ tty_putc('a');
+ tty_putc('r');
+ tty_putc('k');
+
+
  while(1);
 
 

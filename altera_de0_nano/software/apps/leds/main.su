@@ -1,4 +1,2 @@
-main.c:194:39:INT_Qwark	2	static
-main.c:351:6:dummy_function	66	static
-main.c:367:6:append	2	static
-main.c:373:5:main	0	static
+main.c:37:5:tty_putc	2	static
+main.c:48:5:main	0	static

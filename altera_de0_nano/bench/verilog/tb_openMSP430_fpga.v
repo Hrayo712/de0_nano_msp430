@@ -49,7 +49,7 @@ module  tb_openMSP430_fpga;
 
 // User Clocks
 reg               FPGA_CLK1_50;
-reg               FPGA_CLK2_50;
+
 // User Interface (FPGA)
 reg         [1:0] KEY;
 reg         [3:0] SW;
@@ -59,7 +59,9 @@ wire        [7:0] LED;
 // UART INTERFACE 
 //-----------------------------
 wire        UART_TX;
-reg        UART_RX;
+wire        PER_UART_TX;
+
+reg         UART_RX;
 
 
 // Core debug signals
@@ -149,7 +151,7 @@ openMSP430_fpga dut (
 
      // USER CLOCKS
      .FPGA_CLK1_50    ( FPGA_CLK1_50    ),
-     .FPGA_CLK2_50    ( FPGA_CLK2_50    ),
+   
      // USER INTERFACE (FPGA)
      .KEY             ( KEY             ),
      .LED             ( LED             ),
@@ -160,7 +162,8 @@ openMSP430_fpga dut (
      .ADDR	      (),
      .TL_ADDR	      (),
      .ADDR_CE	      (),
-     .WAR	      ()
+     .WAR	      (),
+     .PER_UART_TX     (PER_UART_TX)
 );
 
 
