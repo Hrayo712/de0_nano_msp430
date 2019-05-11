@@ -381,7 +381,7 @@ omsp_qwark_periph qwark_periph_0 (
     .per_addr(per_addr),               						// Peripheral address
     .per_din(per_din),                 						// Peripheral data input
     .per_en(per_en),                   						// Peripheral enable (high active)
-    .dbg_acc(1'b0/*dbg_mem_en*/),
+    .dbg_acc(/*1'b0*/dbg_mem_en),
 	 .per_we(per_we),                   						// Peripheral write enable (high active)
   //Functionality related signals  
 	 .puc_rst(puc_rst),              	   					// Main system reset
@@ -396,9 +396,6 @@ omsp_qwark_periph qwark_periph_0 (
 //
 // Simple full duplex UART (8N1 protocol)
 //----------------------------------------
-//IBUF  UART_RXD_PIN   (.O(hw_uart_rxd),                .I());
-
-//io_buf io_buf_uart (.datain(lt24_d_out[0]),  .oe(lt24_d_out_en), .dataout(lt24_data[0]),  .dataio(GPIO_0[8]) );
 
 omsp_uart #(.BASE_ADDR(15'h0080)) uart_0 (
 

@@ -3013,15 +3013,70 @@ void ta_wait(unsigned int);
 #define COV (0x0002)
 #define CCIFG (0x0001)
 # 8 "../main.c" 2
+# 1 "../uart.h" 1
+# 9 "../uart.h"
+#define UART_H_ 
+
+
+int UART_WriteChar (char txdata);
+void UART_WriteNumber (int n);
+void UART_WriteString(char* string);
+
+
+
+
+#define UART_CTL (*(volatile unsigned char *) 0x0080)
+#define UART_STAT (*(volatile unsigned char *) 0x0081)
+#define UART_BAUD (*(volatile unsigned int *) 0x0082)
+#define UART_TXD (*(volatile unsigned char *) 0x0084)
+#define UART_RXD (*(volatile unsigned char *) 0x0085)
+
+
+
+
+
+
+
+#define UART_IEN_TX_EMPTY 0x80
+#define UART_IEN_TX 0x40
+#define UART_IEN_RX_OVFLW 0x20
+#define UART_IEN_RX 0x10
+#define UART_SMCLK_SEL 0x02
+#define UART_EN 0x01
+
+
+#define UART_TX_EMPTY_PND 0x80
+#define UART_TX_PND 0x40
+#define UART_RX_OVFLW_PND 0x20
+#define UART_RX_PND 0x10
+#define UART_TX_FULL 0x08
+#define UART_TX_BUSY 0x04
+#define UART_RX_BUSY 0x01
+
+
+
+
+
+
+#define UART_TX_VECTOR (6 *2)
+#define UART_RX_VECTOR (7 *2)
+# 68 "../uart.h"
+#define BAUD 8
+# 9 "../main.c" 2
+# 1 "../qwark.h" 1
+# 9 "../qwark.h"
+#define QWARK_H_ 
 
 #define QWARK_CTL (*(volatile unsigned int *) 0x0190)
 #define QWARK_VECTOR (5)
 #define QWARK_CHECKPOINT() QWARK_CTL |= 0x0020
+
+#define QWARK_EN 0x01
+# 10 "../main.c" 2
+
 #define SEED 4
 #define ITER 100
 #define CHAR_BIT 8
-
-
 
 volatile unsigned n_0, n_1, n_2, n_3, n_4, n_5, n_6;
 
@@ -3047,324 +3102,6 @@ char bits[256] =
 
 
 
-#define INTERMITTENCY_HANDLING_ENABLED 
-
-
-
-
-void qwark_restore(void) __attribute__ ((naked));
-void qwark_restore(void) __attribute__ ((used));
-void qwark_restore(void) __attribute__ ((section (".crt_0001_qwark")));
-void qwark_restore(void)
-{
-
-
-
-
-
- __asm__ __volatile__ ("mov #0x0000, &0x0190");
-
-
-
- __asm__ __volatile__ ("mov.b &0x601E, r12");
- __asm__ __volatile__ ("mov #0x02, r13");
- __asm__ __volatile__ ("cmp r12, r13");
-
-
- __asm__ __volatile__ ("JEQ __system_restore");
-
-
-
- __asm__ __volatile__ ("mov #0x01, r13");
- __asm__ __volatile__ ("cmp r12, r13");
- __asm__ __volatile__ ("JEQ __second_stage_retry");
-
- __asm__ __volatile__ ("br #__crt0_init_bss");
-
-
-
-
-
- __asm__ __volatile__ ("__second_stage_retry:");
-
- __asm__ __volatile__ ("mov.b &0x601F, r15");
-
- __asm__ __volatile__ ("tst r15 ");
- __asm__ __volatile__ ("jz  __system_restore");
-
- __asm__ __volatile__ ("mov #0x6010,  r12 ");
- __asm__ __volatile__ ("mov #0x6000,  r14 ");
-
- __asm__ __volatile__ ("_retry_second_phase_commit_strt:");
-
- __asm__ __volatile__ ("mov @r12+2,  r13 ");
-
- __asm__ __volatile__ ("mov r13,  r11 ");
-
- __asm__ __volatile__ ("and #0x8000,  r11 ");
- __asm__ __volatile__ ("cmp #0x8000,  r11 ");
- __asm__ __volatile__ ("jeq _retry_byte_copy ");
-
- __asm__ __volatile__ ("mov @r14+2, @r13 ");
-
- __asm__ __volatile__ ("dec r15");
- __asm__ __volatile__ ("tst r15");
-
- __asm__ __volatile__ ("jnz  _retry_second_phase_commit_strt");
- __asm__ __volatile__ ("br #__system_restore");
-
- __asm__ __volatile__ ("_retry_byte_copy:");
- __asm__ __volatile__ ("and #0x7FFF,  r13 ");
- __asm__ __volatile__ ("mov r13,      r11 ");
- __asm__ __volatile__ ("and #0x01,    r11 ");
- __asm__ __volatile__ ("bis  r11,     r14 ");
-
- __asm__ __volatile__ ("mov.b @r14, @r13 ");
- __asm__ __volatile__ ("incd r14 ");
-
- __asm__ __volatile__ ("dec r15");
- __asm__ __volatile__ ("tst r15");
- __asm__ __volatile__ ("jnz  _retry_second_phase_commit_strt");
-
-
-
-
-
- __asm__ __volatile__ ("__system_restore:");
-
-
- __asm__ __volatile__ ("mov #288, r12");
- __asm__ __volatile__ ("mov #23168, 0(r12)");
-
-
- __asm__ __volatile__ ("mov.b #0x02, &0x601E");
-
-
-
-
-
-
- __asm__ __volatile__ ("mov &0X6020, r12");
- __asm__ __volatile__ ("mov #0x7FFE, r14");
- __asm__ __volatile__ ("mov #0x6FFE, r13");
-
- __asm__ __volatile__ ("decd r12");
- __asm__ __volatile__ ("decd r12");
- __asm__ __volatile__ ("decd r12");
- __asm__ __volatile__ ("__erase_stack:");
-
- __asm__ __volatile__ ("cmp r14,r12");
- __asm__ __volatile__ ("jz __deletion_stack_complete");
-
- __asm__ __volatile__ ("mov #0x00000,@r14");
- __asm__ __volatile__ ("decd r13");
- __asm__ __volatile__ ("decd r14");
- __asm__ __volatile__ ("br #__erase_stack");
-
- __asm__ __volatile__ ("__deletion_stack_complete:");
-
-
-
- __asm__ __volatile__ ("mov &0X6020, r12");
- __asm__ __volatile__ ("mov #0x7FFE, r14");
- __asm__ __volatile__ ("mov #0x6FFE, r13");
-
- __asm__ __volatile__ ("decd r12");
-
- __asm__ __volatile__ ("__restore_stack:");
-
- __asm__ __volatile__ ("cmp r14,r12");
- __asm__ __volatile__ ("jz __init_restore_stack_complete");
-
- __asm__ __volatile__ ("mov @r13,@r14");
- __asm__ __volatile__ ("decd r13");
- __asm__ __volatile__ ("decd r14");
- __asm__ __volatile__ ("br #__restore_stack");
-
- __asm__ __volatile__ ("__init_restore_stack_complete:");
-
-
-
-
-
-
-
- __asm__ __volatile__ ("mov &0x602A,r4");
- __asm__ __volatile__ ("mov &0x602C,r5");
- __asm__ __volatile__ ("mov &0x602E,r6");
- __asm__ __volatile__ ("mov &0x6030,r7");
- __asm__ __volatile__ ("mov &0x6032,r8");
- __asm__ __volatile__ ("mov &0x6034,r9");
- __asm__ __volatile__ ("mov &0x6036,r10");
- __asm__ __volatile__ ("mov &0x6038,r11");
- __asm__ __volatile__ ("mov &0x603E,r14");
- __asm__ __volatile__ ("mov &0x6040,r15");
- __asm__ __volatile__ ("mov &0x6026,r13");
- __asm__ __volatile__ ("mov &0x6028,r12");
- __asm__ __volatile__ ("mov &0x6020,r1");
- __asm__ __volatile__ ("mov &0x6024,r2");
-
-
- __asm__ __volatile__ ("mov #0x0001 , &0x0190");
-
-
- __asm__ __volatile__ ("mov &0x6022, pc");
-
-}
-
-
-
-
-
-
-void __attribute__((interrupt ((5)))) INT_Qwark(void) {
-# 223 "../main.c"
- __asm__ __volatile__ ("mov r1,&0x6020");
- __asm__ __volatile__ ("add #0x04,&0x6020");
- __asm__ __volatile__ ("mov 2(r1),&0x6022");
- __asm__ __volatile__ ("mov 0(r1),&0x6024");
- __asm__ __volatile__ ("mov r13 ,&0x6026");
- __asm__ __volatile__ ("mov r12,&0x6028");
- __asm__ __volatile__ ("mov r4,&0x602A");
- __asm__ __volatile__ ("mov r5,&0x602C");
- __asm__ __volatile__ ("mov r6,&0x602E");
- __asm__ __volatile__ ("mov r7,&0x6030");
- __asm__ __volatile__ ("mov r8,&0x6032");
- __asm__ __volatile__ ("mov r9,&0x6034");
- __asm__ __volatile__ ("mov r10,&0x6036");
- __asm__ __volatile__ ("mov r11,&0x6038");
-
- __asm__ __volatile__ ("mov r14,&0x603E");
- __asm__ __volatile__ ("mov r15,&0x6040");
-
-
-
- __asm__ __volatile__ ("mov &0x0190, r14");
- __asm__ __volatile__ ("RRA r14");
- __asm__ __volatile__ ("mov.b r14, &0x601F");
- __asm__ __volatile__ ("mov r14, r15 ");
-
-
-
- __asm__ __volatile__ ("tst r14 ");
- __asm__ __volatile__ ("jz  _chkpt_stack");
-
-
- __asm__ __volatile__ ("mov #0x0192, r12");
- __asm__ __volatile__ ("mov #0x6010, r13");
-
- __asm__ __volatile__ ("_scratchpad_addr_cpy:");
-
- __asm__ __volatile__ ("mov @r12+2, @r13");
- __asm__ __volatile__ ("incd r13");
- __asm__ __volatile__ ("dec r14 ");
- __asm__ __volatile__ ("tst r14 ");
- __asm__ __volatile__ ("jnz  _scratchpad_addr_cpy");
-
-
-
- __asm__ __volatile__ ("_chkpt_stack:");
-
- __asm__ __volatile__ ("mov &0X6020, r12");
- __asm__ __volatile__ ("mov #0x7FFE, r14");
- __asm__ __volatile__ ("mov #0x6FFE, r13");
-
- __asm__ __volatile__ ("decd r12");
-
- __asm__ __volatile__ ("__copy_stack:");
-
- __asm__ __volatile__ ("cmp r14,r12");
- __asm__ __volatile__ ("jz __copy_stack_complete");
-
- __asm__ __volatile__ ("mov @r14,@r13");
-
- __asm__ __volatile__ ("decd r13");
- __asm__ __volatile__ ("decd r14");
- __asm__ __volatile__ ("br #__copy_stack");
-
- __asm__ __volatile__ ("__copy_stack_complete:");
-
-
-
-
-
-
- __asm__ __volatile__ ("mov.b #0x01, &0x601E");
-
-
-
-
-
- __asm__ __volatile__ ("tst r15 ");
- __asm__ __volatile__ ("jz  _chkpt_finished");
-
- __asm__ __volatile__ ("mov #0x6010,  r12 ");
- __asm__ __volatile__ ("mov #0x6000,  r14 ");
-
- __asm__ __volatile__ ("_second_phase_commit_strt:");
-
- __asm__ __volatile__ ("mov @r12+2,  r13 ");
-
- __asm__ __volatile__ ("mov r13,  r11 ");
-
- __asm__ __volatile__ ("and #0x8000,  r11 ");
- __asm__ __volatile__ ("cmp #0x8000,  r11 ");
- __asm__ __volatile__ ("jeq _byte_copy ");
-
- __asm__ __volatile__ ("mov @r14+2, @r13 ");
-
- __asm__ __volatile__ ("dec r15");
- __asm__ __volatile__ ("tst r15");
-
- __asm__ __volatile__ ("jnz  _second_phase_commit_strt");
- __asm__ __volatile__ ("br #_chkpt_finished");
-
- __asm__ __volatile__ ("_byte_copy:");
- __asm__ __volatile__ ("and #0x7FFF,  r13 ");
- __asm__ __volatile__ ("mov r13,      r11 ");
- __asm__ __volatile__ ("and #0x01,    r11 ");
- __asm__ __volatile__ ("bis  r11,     r14 ");
-
- __asm__ __volatile__ ("mov.b @r14, @r13 ");
- __asm__ __volatile__ ("incd r14 ");
-
- __asm__ __volatile__ ("dec r15");
- __asm__ __volatile__ ("tst r15");
- __asm__ __volatile__ ("jnz  _second_phase_commit_strt");
-
-
-
-
- __asm__ __volatile__ ("_chkpt_finished:");
-
-
- __asm__ __volatile__ ("mov.b #0x02, &0x601E");
-
-
-
- __asm__ __volatile__ ("mov #0x0001, &0x0190");
- __asm__ __volatile__ ("mov &0x6038,r11");
- __asm__ __volatile__ ("mov &0x6028,r12");
- __asm__ __volatile__ ("mov &0x6026,r13");
- __asm__ __volatile__ ("mov &0x603E,r14");
- __asm__ __volatile__ ("mov &0x6040,r15");
-
-
-}
-
-
-
-void init()
-{
-
-     (*(volatile unsigned int *) 0x0120) = (0x5A00) | (0x0080);
-    __asm__ __volatile__ ("nop");
-     __asm__ __volatile__ ("eint { nop");
-
-
-     (*(volatile unsigned int *) 0x0190) = 0x01;
-# 379 "../main.c"
-}
 
 int btbl_bitcnt(uint32_t x)
 {
@@ -3446,6 +3183,32 @@ static int bit_shifter(uint32_t x)
   return n;
 }
 
+
+void init()
+{
+
+     (*(volatile unsigned int *) 0x0120) = (0x5A00) | (0x0080);
+    __asm__ __volatile__ ("nop");
+     __asm__ __volatile__ ("eint { nop");
+   (*(volatile unsigned int *) 0x0082) = 8;
+     (*(volatile unsigned char *) 0x0080) = 0x01;
+
+     (*(volatile unsigned int *) 0x0190) = 0x01;
+
+
+}
+
+int var1=1;
+int var2=1;
+int var3=1;
+int var4=1;
+int var5=1;
+int var6=1;
+int var7=1;
+int var8=1;
+int var9=1;
+
+
 int main()
 {
  init();
@@ -3458,6 +3221,7 @@ int main()
 
  while(1){
  (*(volatile unsigned char *) 0x0090) ^= 0x0F;
+
 
 
  n_0=0;
@@ -3514,11 +3278,27 @@ int main()
 
     n_6 += bit_shifter(seed);
    }
-   (*(volatile unsigned int *) 0x0190) |= 0x0020;
   }
  }
-# 541 "../main.c"
+
+
+
+ UART_WriteString("Benchmark Complete! \r\n");
+ UART_WriteNumber(n_0);
+ UART_WriteString("\r\n");
+ UART_WriteNumber(n_1);
+ UART_WriteString("\r\n");
+ UART_WriteNumber(n_2);
+ UART_WriteString("\r\n");
+ UART_WriteNumber(n_3);
+ UART_WriteString("\r\n");
+ UART_WriteNumber(n_4);
+ UART_WriteString("\r\n");
+ UART_WriteNumber(n_5);
+ UART_WriteString("\r\n");
+ UART_WriteNumber(n_6);
+ UART_WriteString("\r\n");
+
    }
 
- return 0;
 }

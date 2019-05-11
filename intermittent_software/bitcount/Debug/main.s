@@ -269,732 +269,14 @@ bits:
 	.byte	7
 	.byte	7
 	.byte	8
-	.section	.crt_0001_qwark,"ax",@progbits
-	.balign 2
-	.global	qwark_restore
-	.type	qwark_restore, @function
-qwark_restore:
-.LFB1:
-	.file 1 "../main.c"
-	.loc 1 51 0
-; start of function
-; attributes: naked 
-; framesize_regs:     0
-; framesize_locals:   0
-; framesize_outgoing: 0
-; framesize:          0
-; elim ap -> fp       2
-; elim fp -> sp       0
-; saved regs:(none)
-	.loc 1 57 0
- ; 57 "../main.c" 1
-	mov #0x0000, &0x0190
- ; 0 "" 2
-	.loc 1 61 0
- ; 61 "../main.c" 1
-	mov.b &0x601E, r12
- ; 0 "" 2
-	.loc 1 62 0
- ; 62 "../main.c" 1
-	mov #0x02, r13
- ; 0 "" 2
-	.loc 1 63 0
- ; 63 "../main.c" 1
-	cmp r12, r13
- ; 0 "" 2
-	.loc 1 66 0
- ; 66 "../main.c" 1
-	JEQ __system_restore
- ; 0 "" 2
-	.loc 1 70 0
- ; 70 "../main.c" 1
-	mov #0x01, r13
- ; 0 "" 2
-	.loc 1 71 0
- ; 71 "../main.c" 1
-	cmp r12, r13
- ; 0 "" 2
-	.loc 1 72 0
- ; 72 "../main.c" 1
-	JEQ __second_stage_retry
- ; 0 "" 2
-	.loc 1 74 0
- ; 74 "../main.c" 1
-	br #__crt0_init_bss
- ; 0 "" 2
-	.loc 1 80 0
- ; 80 "../main.c" 1
-	__second_stage_retry:
- ; 0 "" 2
-	.loc 1 82 0
- ; 82 "../main.c" 1
-	mov.b &0x601F, r15
- ; 0 "" 2
-	.loc 1 84 0
- ; 84 "../main.c" 1
-	tst r15 
- ; 0 "" 2
-	.loc 1 85 0
- ; 85 "../main.c" 1
-	jz  __system_restore
- ; 0 "" 2
-	.loc 1 87 0
- ; 87 "../main.c" 1
-	mov #0x6010,  r12 
- ; 0 "" 2
-	.loc 1 88 0
- ; 88 "../main.c" 1
-	mov #0x6000,  r14 
- ; 0 "" 2
-	.loc 1 90 0
- ; 90 "../main.c" 1
-	_retry_second_phase_commit_strt:
- ; 0 "" 2
-	.loc 1 92 0
- ; 92 "../main.c" 1
-	mov @r12+2,  r13 
- ; 0 "" 2
-	.loc 1 94 0
- ; 94 "../main.c" 1
-	mov r13,  r11 
- ; 0 "" 2
-	.loc 1 96 0
- ; 96 "../main.c" 1
-	and #0x8000,  r11 
- ; 0 "" 2
-	.loc 1 97 0
- ; 97 "../main.c" 1
-	cmp #0x8000,  r11 
- ; 0 "" 2
-	.loc 1 98 0
- ; 98 "../main.c" 1
-	jeq _retry_byte_copy 
- ; 0 "" 2
-	.loc 1 100 0
- ; 100 "../main.c" 1
-	mov @r14+2, @r13 
- ; 0 "" 2
-	.loc 1 102 0
- ; 102 "../main.c" 1
-	dec r15
- ; 0 "" 2
-	.loc 1 103 0
- ; 103 "../main.c" 1
-	tst r15
- ; 0 "" 2
-	.loc 1 105 0
- ; 105 "../main.c" 1
-	jnz  _retry_second_phase_commit_strt
- ; 0 "" 2
-	.loc 1 106 0
- ; 106 "../main.c" 1
-	br #__system_restore
- ; 0 "" 2
-	.loc 1 108 0
- ; 108 "../main.c" 1
-	_retry_byte_copy:
- ; 0 "" 2
-	.loc 1 109 0
- ; 109 "../main.c" 1
-	and #0x7FFF,  r13 
- ; 0 "" 2
-	.loc 1 110 0
- ; 110 "../main.c" 1
-	mov r13,      r11 
- ; 0 "" 2
-	.loc 1 111 0
- ; 111 "../main.c" 1
-	and #0x01,    r11 
- ; 0 "" 2
-	.loc 1 112 0
- ; 112 "../main.c" 1
-	bis  r11,     r14 
- ; 0 "" 2
-	.loc 1 114 0
- ; 114 "../main.c" 1
-	mov.b @r14, @r13 
- ; 0 "" 2
-	.loc 1 115 0
- ; 115 "../main.c" 1
-	incd r14 
- ; 0 "" 2
-	.loc 1 117 0
- ; 117 "../main.c" 1
-	dec r15
- ; 0 "" 2
-	.loc 1 118 0
- ; 118 "../main.c" 1
-	tst r15
- ; 0 "" 2
-	.loc 1 119 0
- ; 119 "../main.c" 1
-	jnz  _retry_second_phase_commit_strt
- ; 0 "" 2
-	.loc 1 125 0
- ; 125 "../main.c" 1
-	__system_restore:
- ; 0 "" 2
-	.loc 1 128 0
- ; 128 "../main.c" 1
-	mov #288, r12
- ; 0 "" 2
-	.loc 1 129 0
- ; 129 "../main.c" 1
-	mov #23168, 0(r12)
- ; 0 "" 2
-	.loc 1 132 0
- ; 132 "../main.c" 1
-	mov.b #0x02, &0x601E
- ; 0 "" 2
-	.loc 1 139 0
- ; 139 "../main.c" 1
-	mov &0X6020, r12
- ; 0 "" 2
-	.loc 1 140 0
- ; 140 "../main.c" 1
-	mov #0x7FFE, r14
- ; 0 "" 2
-	.loc 1 141 0
- ; 141 "../main.c" 1
-	mov #0x6FFE, r13
- ; 0 "" 2
-	.loc 1 143 0
- ; 143 "../main.c" 1
-	decd r12
- ; 0 "" 2
-	.loc 1 144 0
- ; 144 "../main.c" 1
-	decd r12
- ; 0 "" 2
-	.loc 1 145 0
- ; 145 "../main.c" 1
-	decd r12
- ; 0 "" 2
-	.loc 1 146 0
- ; 146 "../main.c" 1
-	__erase_stack:
- ; 0 "" 2
-	.loc 1 148 0
- ; 148 "../main.c" 1
-	cmp r14,r12
- ; 0 "" 2
-	.loc 1 149 0
- ; 149 "../main.c" 1
-	jz __deletion_stack_complete
- ; 0 "" 2
-	.loc 1 151 0
- ; 151 "../main.c" 1
-	mov #0x00000,@r14
- ; 0 "" 2
-	.loc 1 152 0
- ; 152 "../main.c" 1
-	decd r13
- ; 0 "" 2
-	.loc 1 153 0
- ; 153 "../main.c" 1
-	decd r14
- ; 0 "" 2
-	.loc 1 154 0
- ; 154 "../main.c" 1
-	br #__erase_stack
- ; 0 "" 2
-	.loc 1 156 0
- ; 156 "../main.c" 1
-	__deletion_stack_complete:
- ; 0 "" 2
-	.loc 1 160 0
- ; 160 "../main.c" 1
-	mov &0X6020, r12
- ; 0 "" 2
-	.loc 1 161 0
- ; 161 "../main.c" 1
-	mov #0x7FFE, r14
- ; 0 "" 2
-	.loc 1 162 0
- ; 162 "../main.c" 1
-	mov #0x6FFE, r13
- ; 0 "" 2
-	.loc 1 164 0
- ; 164 "../main.c" 1
-	decd r12
- ; 0 "" 2
-	.loc 1 166 0
- ; 166 "../main.c" 1
-	__restore_stack:
- ; 0 "" 2
-	.loc 1 168 0
- ; 168 "../main.c" 1
-	cmp r14,r12
- ; 0 "" 2
-	.loc 1 169 0
- ; 169 "../main.c" 1
-	jz __init_restore_stack_complete
- ; 0 "" 2
-	.loc 1 171 0
- ; 171 "../main.c" 1
-	mov @r13,@r14
- ; 0 "" 2
-	.loc 1 172 0
- ; 172 "../main.c" 1
-	decd r13
- ; 0 "" 2
-	.loc 1 173 0
- ; 173 "../main.c" 1
-	decd r14
- ; 0 "" 2
-	.loc 1 174 0
- ; 174 "../main.c" 1
-	br #__restore_stack
- ; 0 "" 2
-	.loc 1 176 0
- ; 176 "../main.c" 1
-	__init_restore_stack_complete:
- ; 0 "" 2
-	.loc 1 184 0
- ; 184 "../main.c" 1
-	mov &0x602A,r4
- ; 0 "" 2
-	.loc 1 185 0
- ; 185 "../main.c" 1
-	mov &0x602C,r5
- ; 0 "" 2
-	.loc 1 186 0
- ; 186 "../main.c" 1
-	mov &0x602E,r6
- ; 0 "" 2
-	.loc 1 187 0
- ; 187 "../main.c" 1
-	mov &0x6030,r7
- ; 0 "" 2
-	.loc 1 188 0
- ; 188 "../main.c" 1
-	mov &0x6032,r8
- ; 0 "" 2
-	.loc 1 189 0
- ; 189 "../main.c" 1
-	mov &0x6034,r9
- ; 0 "" 2
-	.loc 1 190 0
- ; 190 "../main.c" 1
-	mov &0x6036,r10
- ; 0 "" 2
-	.loc 1 191 0
- ; 191 "../main.c" 1
-	mov &0x6038,r11
- ; 0 "" 2
-	.loc 1 192 0
- ; 192 "../main.c" 1
-	mov &0x603E,r14
- ; 0 "" 2
-	.loc 1 193 0
- ; 193 "../main.c" 1
-	mov &0x6040,r15
- ; 0 "" 2
-	.loc 1 194 0
- ; 194 "../main.c" 1
-	mov &0x6026,r13
- ; 0 "" 2
-	.loc 1 195 0
- ; 195 "../main.c" 1
-	mov &0x6028,r12
- ; 0 "" 2
-	.loc 1 196 0
- ; 196 "../main.c" 1
-	mov &0x6020,r1
- ; 0 "" 2
-	.loc 1 197 0
- ; 197 "../main.c" 1
-	mov &0x6024,r2
- ; 0 "" 2
-	.loc 1 200 0
- ; 200 "../main.c" 1
-	mov #0x0001 , &0x0190
- ; 0 "" 2
-	.loc 1 203 0
- ; 203 "../main.c" 1
-	mov &0x6022, pc
- ; 0 "" 2
-	.loc 1 205 0
-	NOP
-.LFE1:
-	.size	qwark_restore, .-qwark_restore
 .text
-	.balign 2
-	.global	INT_Qwark
-	.section	__interrupt_vector_5,"ax",@progbits
-	.word	INT_Qwark
-	.text
-	.type	INT_Qwark, @function
-INT_Qwark:
-.LFB2:
-	.loc 1 212 0
-; start of function
-; attributes: interrupt 
-; framesize_regs:     0
-; framesize_locals:   0
-; framesize_outgoing: 0
-; framesize:          0
-; elim ap -> fp       2
-; elim fp -> sp       0
-; saved regs:(none)
-	; start of prologue
-	; end of prologue
-	.loc 1 223 0
- ; 223 "../main.c" 1
-	mov r1,&0x6020
- ; 0 "" 2
-	.loc 1 224 0
- ; 224 "../main.c" 1
-	add #0x04,&0x6020
- ; 0 "" 2
-	.loc 1 225 0
- ; 225 "../main.c" 1
-	mov 2(r1),&0x6022
- ; 0 "" 2
-	.loc 1 226 0
- ; 226 "../main.c" 1
-	mov 0(r1),&0x6024
- ; 0 "" 2
-	.loc 1 227 0
- ; 227 "../main.c" 1
-	mov r13 ,&0x6026
- ; 0 "" 2
-	.loc 1 228 0
- ; 228 "../main.c" 1
-	mov r12,&0x6028
- ; 0 "" 2
-	.loc 1 229 0
- ; 229 "../main.c" 1
-	mov r4,&0x602A
- ; 0 "" 2
-	.loc 1 230 0
- ; 230 "../main.c" 1
-	mov r5,&0x602C
- ; 0 "" 2
-	.loc 1 231 0
- ; 231 "../main.c" 1
-	mov r6,&0x602E
- ; 0 "" 2
-	.loc 1 232 0
- ; 232 "../main.c" 1
-	mov r7,&0x6030
- ; 0 "" 2
-	.loc 1 233 0
- ; 233 "../main.c" 1
-	mov r8,&0x6032
- ; 0 "" 2
-	.loc 1 234 0
- ; 234 "../main.c" 1
-	mov r9,&0x6034
- ; 0 "" 2
-	.loc 1 235 0
- ; 235 "../main.c" 1
-	mov r10,&0x6036
- ; 0 "" 2
-	.loc 1 236 0
- ; 236 "../main.c" 1
-	mov r11,&0x6038
- ; 0 "" 2
-	.loc 1 238 0
- ; 238 "../main.c" 1
-	mov r14,&0x603E
- ; 0 "" 2
-	.loc 1 239 0
- ; 239 "../main.c" 1
-	mov r15,&0x6040
- ; 0 "" 2
-	.loc 1 243 0
- ; 243 "../main.c" 1
-	mov &0x0190, r14
- ; 0 "" 2
-	.loc 1 244 0
- ; 244 "../main.c" 1
-	RRA r14
- ; 0 "" 2
-	.loc 1 245 0
- ; 245 "../main.c" 1
-	mov.b r14, &0x601F
- ; 0 "" 2
-	.loc 1 246 0
- ; 246 "../main.c" 1
-	mov r14, r15 
- ; 0 "" 2
-	.loc 1 250 0
- ; 250 "../main.c" 1
-	tst r14 
- ; 0 "" 2
-	.loc 1 251 0
- ; 251 "../main.c" 1
-	jz  _chkpt_stack
- ; 0 "" 2
-	.loc 1 254 0
- ; 254 "../main.c" 1
-	mov #0x0192, r12
- ; 0 "" 2
-	.loc 1 255 0
- ; 255 "../main.c" 1
-	mov #0x6010, r13
- ; 0 "" 2
-	.loc 1 257 0
- ; 257 "../main.c" 1
-	_scratchpad_addr_cpy:
- ; 0 "" 2
-	.loc 1 259 0
- ; 259 "../main.c" 1
-	mov @r12+2, @r13
- ; 0 "" 2
-	.loc 1 260 0
- ; 260 "../main.c" 1
-	incd r13
- ; 0 "" 2
-	.loc 1 261 0
- ; 261 "../main.c" 1
-	dec r14 
- ; 0 "" 2
-	.loc 1 262 0
- ; 262 "../main.c" 1
-	tst r14 
- ; 0 "" 2
-	.loc 1 263 0
- ; 263 "../main.c" 1
-	jnz  _scratchpad_addr_cpy
- ; 0 "" 2
-	.loc 1 267 0
- ; 267 "../main.c" 1
-	_chkpt_stack:
- ; 0 "" 2
-	.loc 1 269 0
- ; 269 "../main.c" 1
-	mov &0X6020, r12
- ; 0 "" 2
-	.loc 1 270 0
- ; 270 "../main.c" 1
-	mov #0x7FFE, r14
- ; 0 "" 2
-	.loc 1 271 0
- ; 271 "../main.c" 1
-	mov #0x6FFE, r13
- ; 0 "" 2
-	.loc 1 273 0
- ; 273 "../main.c" 1
-	decd r12
- ; 0 "" 2
-	.loc 1 275 0
- ; 275 "../main.c" 1
-	__copy_stack:
- ; 0 "" 2
-	.loc 1 277 0
- ; 277 "../main.c" 1
-	cmp r14,r12
- ; 0 "" 2
-	.loc 1 278 0
- ; 278 "../main.c" 1
-	jz __copy_stack_complete
- ; 0 "" 2
-	.loc 1 280 0
- ; 280 "../main.c" 1
-	mov @r14,@r13
- ; 0 "" 2
-	.loc 1 282 0
- ; 282 "../main.c" 1
-	decd r13
- ; 0 "" 2
-	.loc 1 283 0
- ; 283 "../main.c" 1
-	decd r14
- ; 0 "" 2
-	.loc 1 284 0
- ; 284 "../main.c" 1
-	br #__copy_stack
- ; 0 "" 2
-	.loc 1 286 0
- ; 286 "../main.c" 1
-	__copy_stack_complete:
- ; 0 "" 2
-	.loc 1 293 0
- ; 293 "../main.c" 1
-	mov.b #0x01, &0x601E
- ; 0 "" 2
-	.loc 1 299 0
- ; 299 "../main.c" 1
-	tst r15 
- ; 0 "" 2
-	.loc 1 300 0
- ; 300 "../main.c" 1
-	jz  _chkpt_finished
- ; 0 "" 2
-	.loc 1 302 0
- ; 302 "../main.c" 1
-	mov #0x6010,  r12 
- ; 0 "" 2
-	.loc 1 303 0
- ; 303 "../main.c" 1
-	mov #0x6000,  r14 
- ; 0 "" 2
-	.loc 1 305 0
- ; 305 "../main.c" 1
-	_second_phase_commit_strt:
- ; 0 "" 2
-	.loc 1 307 0
- ; 307 "../main.c" 1
-	mov @r12+2,  r13 
- ; 0 "" 2
-	.loc 1 309 0
- ; 309 "../main.c" 1
-	mov r13,  r11 
- ; 0 "" 2
-	.loc 1 311 0
- ; 311 "../main.c" 1
-	and #0x8000,  r11 
- ; 0 "" 2
-	.loc 1 312 0
- ; 312 "../main.c" 1
-	cmp #0x8000,  r11 
- ; 0 "" 2
-	.loc 1 313 0
- ; 313 "../main.c" 1
-	jeq _byte_copy 
- ; 0 "" 2
-	.loc 1 315 0
- ; 315 "../main.c" 1
-	mov @r14+2, @r13 
- ; 0 "" 2
-	.loc 1 317 0
- ; 317 "../main.c" 1
-	dec r15
- ; 0 "" 2
-	.loc 1 318 0
- ; 318 "../main.c" 1
-	tst r15
- ; 0 "" 2
-	.loc 1 320 0
- ; 320 "../main.c" 1
-	jnz  _second_phase_commit_strt
- ; 0 "" 2
-	.loc 1 321 0
- ; 321 "../main.c" 1
-	br #_chkpt_finished
- ; 0 "" 2
-	.loc 1 323 0
- ; 323 "../main.c" 1
-	_byte_copy:
- ; 0 "" 2
-	.loc 1 324 0
- ; 324 "../main.c" 1
-	and #0x7FFF,  r13 
- ; 0 "" 2
-	.loc 1 325 0
- ; 325 "../main.c" 1
-	mov r13,      r11 
- ; 0 "" 2
-	.loc 1 326 0
- ; 326 "../main.c" 1
-	and #0x01,    r11 
- ; 0 "" 2
-	.loc 1 327 0
- ; 327 "../main.c" 1
-	bis  r11,     r14 
- ; 0 "" 2
-	.loc 1 329 0
- ; 329 "../main.c" 1
-	mov.b @r14, @r13 
- ; 0 "" 2
-	.loc 1 330 0
- ; 330 "../main.c" 1
-	incd r14 
- ; 0 "" 2
-	.loc 1 332 0
- ; 332 "../main.c" 1
-	dec r15
- ; 0 "" 2
-	.loc 1 333 0
- ; 333 "../main.c" 1
-	tst r15
- ; 0 "" 2
-	.loc 1 334 0
- ; 334 "../main.c" 1
-	jnz  _second_phase_commit_strt
- ; 0 "" 2
-	.loc 1 339 0
- ; 339 "../main.c" 1
-	_chkpt_finished:
- ; 0 "" 2
-	.loc 1 342 0
- ; 342 "../main.c" 1
-	mov.b #0x02, &0x601E
- ; 0 "" 2
-	.loc 1 346 0
- ; 346 "../main.c" 1
-	mov #0x0001, &0x0190
- ; 0 "" 2
-	.loc 1 347 0
- ; 347 "../main.c" 1
-	mov &0x6038,r11
- ; 0 "" 2
-	.loc 1 348 0
- ; 348 "../main.c" 1
-	mov &0x6028,r12
- ; 0 "" 2
-	.loc 1 349 0
- ; 349 "../main.c" 1
-	mov &0x6026,r13
- ; 0 "" 2
-	.loc 1 350 0
- ; 350 "../main.c" 1
-	mov &0x603E,r14
- ; 0 "" 2
-	.loc 1 351 0
- ; 351 "../main.c" 1
-	mov &0x6040,r15
- ; 0 "" 2
-	.loc 1 354 0
-	NOP
-	; start of epilogue
-	RETI
-.LFE2:
-	.size	INT_Qwark, .-INT_Qwark
-	.balign 2
-	.global	init
-	.type	init, @function
-init:
-.LFB3:
-	.loc 1 359 0
-; start of function
-; framesize_regs:     0
-; framesize_locals:   0
-; framesize_outgoing: 0
-; framesize:          0
-; elim ap -> fp       2
-; elim fp -> sp       0
-; saved regs:(none)
-	; start of prologue
-	; end of prologue
-	.loc 1 361 0
-	MOV.W	#288, R12
-	MOV.W	#23168, @R12
-	.loc 1 362 0
- ; 362 "../main.c" 1
-	nop
- ; 0 "" 2
-	.loc 1 363 0
- ; 363 "../main.c" 1
-	eint { nop
- ; 0 "" 2
-	.loc 1 366 0
-	MOV.W	#400, R12
-	MOV.W	#1, @R12
-	.loc 1 379 0
-	NOP
-	; start of epilogue
-	RET
-.LFE3:
-	.size	init, .-init
 	.balign 2
 	.global	btbl_bitcnt
 	.type	btbl_bitcnt, @function
 btbl_bitcnt:
-.LFB4:
-	.loc 1 382 0
+.LFB1:
+	.file 1 "../main.c"
+	.loc 1 41 0
 ; start of function
 ; framesize_regs:     0
 ; framesize_locals:   6
@@ -1009,12 +291,12 @@ btbl_bitcnt:
 	; end of prologue
 	MOV.W	R12, @R1
 	MOV.W	R13, 2(R1)
-	.loc 1 383 0
+	.loc 1 42 0
 	MOV.W	R1, R12
 	MOV.B	@R12, R12
 	MOV.B	bits(R12), R12
 	MOV.W	R12, 4(R1)
-	.loc 1 385 0
+	.loc 1 44 0
 	MOV.W	@R1, R12
 	MOV.W	2(R1), R13
 	CALL	#__mspabi_srll_8
@@ -1025,27 +307,27 @@ btbl_bitcnt:
 	MOV.W	2(R1), R14
 	MOV.W	R13, R12
 	BIS.W	R14, R12
-	CMP.W	#0, R12 { JEQ	.L5
-	.loc 1 386 0
+	CMP.W	#0, R12 { JEQ	.L2
+	.loc 1 45 0
 	MOV.W	@R1, R12
 	MOV.W	2(R1), R13
 	CALL	#btbl_bitcnt
 	ADD.W	R12, 4(R1)
-.L5:
-	.loc 1 387 0
+.L2:
+	.loc 1 46 0
 	MOV.W	4(R1), R12
-	.loc 1 388 0
+	.loc 1 47 0
 	; start of epilogue
 	ADD.W	#6, R1
 	RET
-.LFE4:
+.LFE1:
 	.size	btbl_bitcnt, .-btbl_bitcnt
 	.balign 2
 	.global	bit_count
 	.type	bit_count, @function
 bit_count:
-.LFB5:
-	.loc 1 390 0
+.LFB2:
+	.loc 1 49 0
 ; start of function
 ; framesize_regs:     0
 ; framesize_locals:   6
@@ -1060,16 +342,16 @@ bit_count:
 	; end of prologue
 	MOV.W	R12, @R1
 	MOV.W	R13, 2(R1)
-	.loc 1 391 0
+	.loc 1 50 0
 	MOV.W	#0, 4(R1)
-	.loc 1 393 0
+	.loc 1 52 0
 	MOV.W	@R1, R12
 	BIS.W	2(R1), R12
-	CMP.W	#0, R12 { JEQ	.L9
-.L11:
-	.loc 1 394 0
+	CMP.W	#0, R12 { JEQ	.L6
+.L8:
+	.loc 1 53 0
 	ADD.W	#1, 4(R1)
-	.loc 1 395 0
+	.loc 1 54 0
 	MOV.W	@R1, R14
 	ADD	#-1, R14 ; cy
 	MOV.W	2(R1), R15
@@ -1078,22 +360,22 @@ bit_count:
 	AND.W	R15, 2(R1)
 	MOV.W	@R1, R12
 	BIS.W	2(R1), R12
-	CMP.W	#0, R12 { JNE	.L11
-.L9:
-	.loc 1 396 0
+	CMP.W	#0, R12 { JNE	.L8
+.L6:
+	.loc 1 55 0
 	MOV.W	4(R1), R12
-	.loc 1 397 0
+	.loc 1 56 0
 	; start of epilogue
 	ADD.W	#6, R1
 	RET
-.LFE5:
+.LFE2:
 	.size	bit_count, .-bit_count
 	.balign 2
 	.global	bitcount
 	.type	bitcount, @function
 bitcount:
-.LFB6:
-	.loc 1 399 0
+.LFB3:
+	.loc 1 58 0
 ; start of function
 ; framesize_regs:     14
 ; framesize_locals:   20
@@ -1122,7 +404,7 @@ bitcount:
 	; end of prologue
 	MOV.W	R12, 16(R1)
 	MOV.W	R13, 18(R1)
-	.loc 1 400 0
+	.loc 1 59 0
 	MOV.W	16(R1), R12
 	MOV.W	18(R1), R13
 	CLRC { RRC.W	R13 { RRC.W	R12
@@ -1140,7 +422,7 @@ bitcount:
 	MOV.W	R11, R12
 	ADDC	R15, R12
 	MOV.W	R12, 18(R1)
-	.loc 1 401 0
+	.loc 1 60 0
 	MOV.W	16(R1), R12
 	MOV.W	18(R1), R13
 	CALL	#__mspabi_srll_2
@@ -1163,7 +445,7 @@ bitcount:
 	MOV.W	14(R1), R14
 	ADDC	10(R1), R14
 	MOV.W	R14, 18(R1)
-	.loc 1 402 0
+	.loc 1 61 0
 	MOV.W	16(R1), R12
 	MOV.W	18(R1), R13
 	CALL	#__mspabi_srll_4
@@ -1186,7 +468,7 @@ bitcount:
 	MOV.W	6(R1), R14
 	ADDC	2(R1), R14
 	MOV.W	R14, 18(R1)
-	.loc 1 403 0
+	.loc 1 62 0
 	MOV.W	16(R1), R12
 	MOV.W	18(R1), R13
 	CALL	#__mspabi_srll_8
@@ -1205,7 +487,7 @@ bitcount:
 	MOV.W	R5, R14
 	ADDC	R7, R14
 	MOV.W	R14, 18(R1)
-	.loc 1 404 0
+	.loc 1 63 0
 	MOV.W	16(R1), R12
 	MOV.W	18(R1), R13
 	MOV.B	#16, R14
@@ -1222,20 +504,20 @@ bitcount:
 	MOV.W	R13, R14
 	ADDC	R9, R14
 	MOV.W	R14, 18(R1)
-	.loc 1 405 0
+	.loc 1 64 0
 	MOV.W	16(R1), R12
-	.loc 1 406 0
+	.loc 1 65 0
 	; start of epilogue
 	ADD.W	#20, R1
 	BR	#__mspabi_func_epilog_7
-.LFE6:
+.LFE3:
 	.size	bitcount, .-bitcount
 	.balign 2
 	.global	ntbl_bitcount
 	.type	ntbl_bitcount, @function
 ntbl_bitcount:
-.LFB7:
-	.loc 1 408 0
+.LFB4:
+	.loc 1 67 0
 ; start of function
 ; framesize_regs:     2
 ; framesize_locals:   4
@@ -1252,39 +534,39 @@ ntbl_bitcount:
 	; end of prologue
 	MOV.W	R12, @R1
 	MOV.W	R13, 2(R1)
-	.loc 1 410 0
+	.loc 1 69 0
 	MOV.W	@R1, R12
 	AND.B	#15, R12
 	MOV.B	bits(R12), R12
 	MOV.W	R12, R10
-	.loc 1 411 0
+	.loc 1 70 0
 	MOV.W	@R1, R12
 	MOV.W	2(R1), R13
 	CALL	#__mspabi_srll_4
 .LVL5:
 	AND.B	#15, R12
 	MOV.B	bits(R12), R12
-	.loc 1 410 0
+	.loc 1 69 0
 	ADD.W	R12, R10
-	.loc 1 412 0
+	.loc 1 71 0
 	MOV.W	@R1, R12
 	MOV.W	2(R1), R13
 	CALL	#__mspabi_srll_8
 .LVL6:
 	AND.B	#15, R12
 	MOV.B	bits(R12), R12
-	.loc 1 411 0
+	.loc 1 70 0
 	ADD.W	R12, R10
-	.loc 1 413 0
+	.loc 1 72 0
 	MOV.W	@R1, R12
 	MOV.W	2(R1), R13
 	CALL	#__mspabi_srll_12
 .LVL7:
 	AND.B	#15, R12
 	MOV.B	bits(R12), R12
-	.loc 1 412 0
+	.loc 1 71 0
 	ADD.W	R12, R10
-	.loc 1 414 0
+	.loc 1 73 0
 	MOV.W	@R1, R12
 	MOV.W	2(R1), R13
 	MOV.B	#16, R14
@@ -1293,9 +575,9 @@ ntbl_bitcount:
 .LVL8:
 	AND.B	#15, R12
 	MOV.B	bits(R12), R12
-	.loc 1 413 0
+	.loc 1 72 0
 	ADD.W	R12, R10
-	.loc 1 415 0
+	.loc 1 74 0
 	MOV.W	@R1, R12
 	MOV.W	2(R1), R13
 	MOV.B	#20, R14
@@ -1304,9 +586,9 @@ ntbl_bitcount:
 .LVL9:
 	AND.B	#15, R12
 	MOV.B	bits(R12), R12
-	.loc 1 414 0
+	.loc 1 73 0
 	ADD.W	R12, R10
-	.loc 1 416 0
+	.loc 1 75 0
 	MOV.W	@R1, R12
 	MOV.W	2(R1), R13
 	MOV.B	#24, R14
@@ -1315,9 +597,9 @@ ntbl_bitcount:
 .LVL10:
 	AND.B	#15, R12
 	MOV.B	bits(R12), R12
-	.loc 1 415 0
+	.loc 1 74 0
 	ADD.W	R12, R10
-	.loc 1 417 0
+	.loc 1 76 0
 	MOV.W	@R1, R12
 	MOV.W	2(R1), R13
 	MOV.B	#28, R14
@@ -1325,21 +607,21 @@ ntbl_bitcount:
 	CALL	#__mspabi_srll
 .LVL11:
 	MOV.B	bits(R12), R12
-	.loc 1 416 0
+	.loc 1 75 0
 	ADD.W	R10, R12
-	.loc 1 418 0
+	.loc 1 77 0
 	; start of epilogue
 	ADD.W	#4, R1
 	POP	R10
 	RET
-.LFE7:
+.LFE4:
 	.size	ntbl_bitcount, .-ntbl_bitcount
 	.balign 2
 	.global	BW_btbl_bitcount
 	.type	BW_btbl_bitcount, @function
 BW_btbl_bitcount:
-.LFB8:
-	.loc 1 420 0
+.LFB5:
+	.loc 1 79 0
 ; start of function
 ; framesize_regs:     0
 ; framesize_locals:   8
@@ -1354,39 +636,39 @@ BW_btbl_bitcount:
 	; end of prologue
 	MOV.W	R12, @R1
 	MOV.W	R13, 2(R1)
-	.loc 1 427 0
+	.loc 1 86 0
 	MOV.W	@R1, R12
 	MOV.W	2(R1), R13
 	MOV.W	R12, 4(R1)
 	MOV.W	R13, 6(R1)
-	.loc 1 429 0
+	.loc 1 88 0
 	MOV.B	4(R1), R12
 	MOV.B	bits(R12), R12
 	MOV.W	R12, R13
 	MOV.B	5(R1), R12
 	MOV.B	bits(R12), R12
 	ADD.W	R12, R13
-	.loc 1 430 0
+	.loc 1 89 0
 	MOV.B	7(R1), R12
 	MOV.B	bits(R12), R12
-	.loc 1 429 0
+	.loc 1 88 0
 	ADD.W	R12, R13
-	.loc 1 430 0
+	.loc 1 89 0
 	MOV.B	6(R1), R12
 	MOV.B	bits(R12), R12
 	ADD.W	R13, R12
-	.loc 1 431 0
+	.loc 1 90 0
 	; start of epilogue
 	ADD.W	#8, R1
 	RET
-.LFE8:
+.LFE5:
 	.size	BW_btbl_bitcount, .-BW_btbl_bitcount
 	.balign 2
 	.global	AR_btbl_bitcount
 	.type	AR_btbl_bitcount, @function
 AR_btbl_bitcount:
-.LFB9:
-	.loc 1 433 0
+.LFB6:
+	.loc 1 92 0
 ; start of function
 ; framesize_regs:     0
 ; framesize_locals:   8
@@ -1401,12 +683,12 @@ AR_btbl_bitcount:
 	; end of prologue
 	MOV.W	R12, @R1
 	MOV.W	R13, 2(R1)
-	.loc 1 434 0
+	.loc 1 93 0
 	MOV.B	#8, R12
 	ADD.W	R1, R12
 	ADD.W	#-8, R12
 	MOV.W	R12, 6(R1)
-	.loc 1 437 0
+	.loc 1 96 0
 	MOV.W	6(R1), R12
 	MOV.W	R12, R13
 	ADD.W	#1, R13
@@ -1414,7 +696,7 @@ AR_btbl_bitcount:
 	MOV.B	@R12, R12
 	MOV.B	bits(R12), R12
 	MOV.W	R12, 4(R1)
-	.loc 1 438 0
+	.loc 1 97 0
 	MOV.W	6(R1), R12
 	MOV.W	R12, R13
 	ADD.W	#1, R13
@@ -1422,7 +704,7 @@ AR_btbl_bitcount:
 	MOV.B	@R12, R12
 	MOV.B	bits(R12), R12
 	ADD.W	R12, 4(R1)
-	.loc 1 439 0
+	.loc 1 98 0
 	MOV.W	6(R1), R12
 	MOV.W	R12, R13
 	ADD.W	#1, R13
@@ -1430,25 +712,25 @@ AR_btbl_bitcount:
 	MOV.B	@R12, R12
 	MOV.B	bits(R12), R12
 	ADD.W	R12, 4(R1)
-	.loc 1 440 0
+	.loc 1 99 0
 	MOV.W	6(R1), R12
 	MOV.B	@R12, R12
 	MOV.B	bits(R12), R12
 	ADD.W	R12, 4(R1)
-	.loc 1 441 0
+	.loc 1 100 0
 	MOV.W	4(R1), R12
-	.loc 1 442 0
+	.loc 1 101 0
 	; start of epilogue
 	ADD.W	#8, R1
 	RET
-.LFE9:
+.LFE6:
 	.size	AR_btbl_bitcount, .-AR_btbl_bitcount
 	.balign 2
 	.global	ntbl_bitcnt
 	.type	ntbl_bitcnt, @function
 ntbl_bitcnt:
-.LFB10:
-	.loc 1 444 0
+.LFB7:
+	.loc 1 103 0
 ; start of function
 ; framesize_regs:     0
 ; framesize_locals:   6
@@ -1463,12 +745,12 @@ ntbl_bitcnt:
 	; end of prologue
 	MOV.W	R12, @R1
 	MOV.W	R13, 2(R1)
-	.loc 1 445 0
+	.loc 1 104 0
 	MOV.W	@R1, R12
 	AND.B	#15, R12
 	MOV.B	bits(R12), R12
 	MOV.W	R12, 4(R1)
-	.loc 1 447 0
+	.loc 1 106 0
 	MOV.W	@R1, R12
 	MOV.W	2(R1), R13
 	CALL	#__mspabi_srll_4
@@ -1477,26 +759,26 @@ ntbl_bitcnt:
 	MOV.W	R13, 2(R1)
 	MOV.W	@R1, R12
 	BIS.W	2(R1), R12
-	CMP.W	#0, R12 { JEQ	.L22
-	.loc 1 448 0
+	CMP.W	#0, R12 { JEQ	.L19
+	.loc 1 107 0
 	MOV.W	@R1, R12
 	MOV.W	2(R1), R13
 	CALL	#ntbl_bitcnt
 	ADD.W	R12, 4(R1)
-.L22:
-	.loc 1 450 0
+.L19:
+	.loc 1 109 0
 	MOV.W	4(R1), R12
-	.loc 1 451 0
+	.loc 1 110 0
 	; start of epilogue
 	ADD.W	#6, R1
 	RET
-.LFE10:
+.LFE7:
 	.size	ntbl_bitcnt, .-ntbl_bitcnt
 	.balign 2
 	.type	bit_shifter, @function
 bit_shifter:
-.LFB11:
-	.loc 1 454 0
+.LFB8:
+	.loc 1 113 0
 ; start of function
 ; framesize_regs:     0
 ; framesize_locals:   8
@@ -1511,41 +793,144 @@ bit_shifter:
 	; end of prologue
 	MOV.W	R12, @R1
 	MOV.W	R13, 2(R1)
-	.loc 1 456 0
+	.loc 1 115 0
 	MOV.W	#0, 4(R1)
 	MOV.W	4(R1), 6(R1)
-	BR	#.L26
-.L29:
-	.loc 1 457 0
+	BR	#.L23
+.L26:
+	.loc 1 116 0
 	MOV.W	@R1, R12
 	AND.B	#1, R12
 	ADD.W	R12, 4(R1)
-	.loc 1 456 0
+	.loc 1 115 0
 	ADD.W	#1, 6(R1)
 	CLRC { RRC.W	2(R1) { RRC.W	@R1
-.L26:
-	.loc 1 456 0 is_stmt 0
+.L23:
+	.loc 1 115 0 is_stmt 0
 	MOV.W	@R1, R12
 	BIS.W	2(R1), R12
-	CMP.W	#0, R12 { JEQ	.L27
+	CMP.W	#0, R12 { JEQ	.L24
 	MOV.W	6(R1), R13
 	MOV.B	#31, R12
-	CMP.W	R13, R12 { JHS	.L29
-.L27:
-	.loc 1 458 0 is_stmt 1
+	CMP.W	R13, R12 { JHS	.L26
+.L24:
+	.loc 1 117 0 is_stmt 1
 	MOV.W	4(R1), R12
-	.loc 1 459 0
+	.loc 1 118 0
 	; start of epilogue
 	ADD.W	#8, R1
 	RET
-.LFE11:
+.LFE8:
 	.size	bit_shifter, .-bit_shifter
+	.balign 2
+	.global	init
+	.type	init, @function
+init:
+.LFB9:
+	.loc 1 122 0
+; start of function
+; framesize_regs:     0
+; framesize_locals:   0
+; framesize_outgoing: 0
+; framesize:          0
+; elim ap -> fp       2
+; elim fp -> sp       0
+; saved regs:(none)
+	; start of prologue
+	; end of prologue
+	.loc 1 124 0
+	MOV.W	#288, R12
+	MOV.W	#23168, @R12
+	.loc 1 125 0
+ ; 125 "../main.c" 1
+	nop
+ ; 0 "" 2
+	.loc 1 126 0
+ ; 126 "../main.c" 1
+	eint { nop
+ ; 0 "" 2
+	.loc 1 127 0
+	MOV.B	#130, R12
+	MOV.W	#8, @R12
+	.loc 1 128 0
+	MOV.B	#128, R12
+	MOV.B	#1, @R12
+	.loc 1 130 0
+	MOV.W	#400, R12
+	MOV.W	#1, @R12
+	.loc 1 133 0
+	NOP
+	; start of epilogue
+	RET
+.LFE9:
+	.size	init, .-init
+	.global	var1
+.data
+	.balign 2
+	.type	var1, @object
+	.size	var1, 2
+var1:
+	.short	1
+	.global	var2
+	.balign 2
+	.type	var2, @object
+	.size	var2, 2
+var2:
+	.short	1
+	.global	var3
+	.balign 2
+	.type	var3, @object
+	.size	var3, 2
+var3:
+	.short	1
+	.global	var4
+	.balign 2
+	.type	var4, @object
+	.size	var4, 2
+var4:
+	.short	1
+	.global	var5
+	.balign 2
+	.type	var5, @object
+	.size	var5, 2
+var5:
+	.short	1
+	.global	var6
+	.balign 2
+	.type	var6, @object
+	.size	var6, 2
+var6:
+	.short	1
+	.global	var7
+	.balign 2
+	.type	var7, @object
+	.size	var7, 2
+var7:
+	.short	1
+	.global	var8
+	.balign 2
+	.type	var8, @object
+	.size	var8, 2
+var8:
+	.short	1
+	.global	var9
+	.balign 2
+	.type	var9, @object
+	.size	var9, 2
+var9:
+	.short	1
+	.section	.rodata
+.LC0:
+	.string	"Benchmark Complete! \r\n"
+.LC1:
+	.string	"\r\n"
+.text
 	.balign 2
 	.global	main
 	.type	main, @function
 main:
-.LFB12:
-	.loc 1 462 0
+.LFB10:
+	.loc 1 147 0
 ; start of function
 ; framesize_regs:     0
 ; framesize_locals:   8
@@ -1558,44 +943,44 @@ main:
 	SUB.W	#8, R1
 .LCFI16:
 	; end of prologue
-	.loc 1 463 0
+	.loc 1 148 0
 	CALL	#init
-.L55:
-	.loc 1 472 0
+.L53:
+	.loc 1 157 0
 	MOV.B	#144, R12
 	MOV.B	@R12, R13
 	MOV.B	#144, R12
 	XOR.B	#15, R13
 	AND	#0xff, R13
 	MOV.B	R13, @R12
-	.loc 1 475 0
+	.loc 1 161 0
 	MOV.W	#0, &n_0
-	.loc 1 476 0
+	.loc 1 162 0
 	MOV.W	#0, &n_1
-	.loc 1 477 0
+	.loc 1 163 0
 	MOV.W	#0, &n_2
-	.loc 1 478 0
+	.loc 1 164 0
 	MOV.W	#0, &n_3
-	.loc 1 479 0
+	.loc 1 165 0
 	MOV.W	#0, &n_4
-	.loc 1 480 0
+	.loc 1 166 0
 	MOV.W	#0, &n_5
-	.loc 1 481 0
+	.loc 1 167 0
 	MOV.W	#0, &n_6
-	.loc 1 485 0
+	.loc 1 171 0
 	MOV.W	#0, @R1
-	BR	#.L32
-.L54:
-	.loc 1 487 0
+	BR	#.L30
+.L52:
+	.loc 1 173 0
 	MOV.W	#4, 4(R1)
 	MOV.W	#0, 6(R1)
-	.loc 1 488 0
-	CMP.W	#0, @R1 { JNE	.L33
-	.loc 1 489 0
+	.loc 1 174 0
+	CMP.W	#0, @R1 { JNE	.L31
+	.loc 1 175 0
 	MOV.W	#0, 2(R1)
-	BR	#.L34
-.L35:
-	.loc 1 491 0
+	BR	#.L32
+.L33:
+	.loc 1 177 0
 	MOV.W	4(R1), R12
 	MOV.W	6(R1), R13
 	CALL	#bit_count
@@ -1603,22 +988,22 @@ main:
 	MOV.W	&n_0, R12
 	ADD.W	R13, R12
 	MOV.W	R12, &n_0
-	.loc 1 489 0
+	.loc 1 175 0
 	ADD.W	#1, 2(R1)
 	ADD	#13, 4(R1) { ADDC	#0, 6(R1)
-.L34:
-	.loc 1 489 0 is_stmt 0
+.L32:
+	.loc 1 175 0 is_stmt 0
 	MOV.B	#99, R12
-	CMP.W	2(R1), R12 { JHS	.L35
-	BR	#.L36
-.L33:
-	.loc 1 494 0 is_stmt 1
-	CMP.W	#1, @R1 { JNE	.L37
-	.loc 1 495 0
+	CMP.W	2(R1), R12 { JHS	.L33
+	BR	#.L34
+.L31:
+	.loc 1 180 0 is_stmt 1
+	CMP.W	#1, @R1 { JNE	.L35
+	.loc 1 181 0
 	MOV.W	#0, 2(R1)
-	BR	#.L38
-.L39:
-	.loc 1 497 0
+	BR	#.L36
+.L37:
+	.loc 1 183 0
 	MOV.W	4(R1), R12
 	MOV.W	6(R1), R13
 	CALL	#bitcount
@@ -1626,22 +1011,22 @@ main:
 	MOV.W	&n_1, R12
 	ADD.W	R13, R12
 	MOV.W	R12, &n_1
-	.loc 1 495 0
+	.loc 1 181 0
 	ADD.W	#1, 2(R1)
 	ADD	#13, 4(R1) { ADDC	#0, 6(R1)
-.L38:
-	.loc 1 495 0 is_stmt 0
+.L36:
+	.loc 1 181 0 is_stmt 0
 	MOV.B	#99, R12
-	CMP.W	2(R1), R12 { JHS	.L39
-	BR	#.L36
-.L37:
-	.loc 1 500 0 is_stmt 1
-	CMP.W	#2, @R1 { JNE	.L40
-	.loc 1 501 0
+	CMP.W	2(R1), R12 { JHS	.L37
+	BR	#.L34
+.L35:
+	.loc 1 186 0 is_stmt 1
+	CMP.W	#2, @R1 { JNE	.L38
+	.loc 1 187 0
 	MOV.W	#0, 2(R1)
-	BR	#.L41
-.L42:
-	.loc 1 503 0
+	BR	#.L39
+.L40:
+	.loc 1 189 0
 	MOV.W	4(R1), R12
 	MOV.W	6(R1), R13
 	CALL	#ntbl_bitcnt
@@ -1649,22 +1034,22 @@ main:
 	MOV.W	&n_2, R12
 	ADD.W	R13, R12
 	MOV.W	R12, &n_2
-	.loc 1 501 0
+	.loc 1 187 0
 	ADD.W	#1, 2(R1)
 	ADD	#13, 4(R1) { ADDC	#0, 6(R1)
-.L41:
-	.loc 1 501 0 is_stmt 0
+.L39:
+	.loc 1 187 0 is_stmt 0
 	MOV.B	#99, R12
-	CMP.W	2(R1), R12 { JHS	.L42
-	BR	#.L36
-.L40:
-	.loc 1 506 0 is_stmt 1
-	CMP.W	#3, @R1 { JNE	.L43
-	.loc 1 507 0
+	CMP.W	2(R1), R12 { JHS	.L40
+	BR	#.L34
+.L38:
+	.loc 1 192 0 is_stmt 1
+	CMP.W	#3, @R1 { JNE	.L41
+	.loc 1 193 0
 	MOV.W	#0, 2(R1)
-	BR	#.L44
-.L45:
-	.loc 1 509 0
+	BR	#.L42
+.L43:
+	.loc 1 195 0
 	MOV.W	4(R1), R12
 	MOV.W	6(R1), R13
 	CALL	#ntbl_bitcount
@@ -1672,22 +1057,22 @@ main:
 	MOV.W	&n_3, R12
 	ADD.W	R13, R12
 	MOV.W	R12, &n_3
-	.loc 1 507 0
+	.loc 1 193 0
 	ADD.W	#1, 2(R1)
 	ADD	#13, 4(R1) { ADDC	#0, 6(R1)
-.L44:
-	.loc 1 507 0 is_stmt 0
+.L42:
+	.loc 1 193 0 is_stmt 0
 	MOV.B	#99, R12
-	CMP.W	2(R1), R12 { JHS	.L45
-	BR	#.L36
-.L43:
-	.loc 1 512 0 is_stmt 1
-	CMP.W	#4, @R1 { JNE	.L46
-	.loc 1 513 0
+	CMP.W	2(R1), R12 { JHS	.L43
+	BR	#.L34
+.L41:
+	.loc 1 198 0 is_stmt 1
+	CMP.W	#4, @R1 { JNE	.L44
+	.loc 1 199 0
 	MOV.W	#0, 2(R1)
-	BR	#.L47
-.L48:
-	.loc 1 515 0
+	BR	#.L45
+.L46:
+	.loc 1 201 0
 	MOV.W	4(R1), R12
 	MOV.W	6(R1), R13
 	CALL	#BW_btbl_bitcount
@@ -1695,22 +1080,22 @@ main:
 	MOV.W	&n_4, R12
 	ADD.W	R13, R12
 	MOV.W	R12, &n_4
-	.loc 1 513 0
+	.loc 1 199 0
 	ADD.W	#1, 2(R1)
 	ADD	#13, 4(R1) { ADDC	#0, 6(R1)
-.L47:
-	.loc 1 513 0 is_stmt 0
+.L45:
+	.loc 1 199 0 is_stmt 0
 	MOV.B	#99, R12
-	CMP.W	2(R1), R12 { JHS	.L48
-	BR	#.L36
-.L46:
-	.loc 1 518 0 is_stmt 1
-	CMP.W	#5, @R1 { JNE	.L49
-	.loc 1 519 0
+	CMP.W	2(R1), R12 { JHS	.L46
+	BR	#.L34
+.L44:
+	.loc 1 204 0 is_stmt 1
+	CMP.W	#5, @R1 { JNE	.L47
+	.loc 1 205 0
 	MOV.W	#0, 2(R1)
-	BR	#.L50
-.L51:
-	.loc 1 521 0
+	BR	#.L48
+.L49:
+	.loc 1 207 0
 	MOV.W	4(R1), R12
 	MOV.W	6(R1), R13
 	CALL	#AR_btbl_bitcount
@@ -1718,22 +1103,22 @@ main:
 	MOV.W	&n_5, R12
 	ADD.W	R13, R12
 	MOV.W	R12, &n_5
-	.loc 1 519 0
+	.loc 1 205 0
 	ADD.W	#1, 2(R1)
 	ADD	#13, 4(R1) { ADDC	#0, 6(R1)
-.L50:
-	.loc 1 519 0 is_stmt 0
+.L48:
+	.loc 1 205 0 is_stmt 0
 	MOV.B	#99, R12
-	CMP.W	2(R1), R12 { JHS	.L51
-	BR	#.L36
-.L49:
-	.loc 1 524 0 is_stmt 1
-	CMP.W	#6, @R1 { JNE	.L36
-	.loc 1 525 0
+	CMP.W	2(R1), R12 { JHS	.L49
+	BR	#.L34
+.L47:
+	.loc 1 210 0 is_stmt 1
+	CMP.W	#6, @R1 { JNE	.L34
+	.loc 1 211 0
 	MOV.W	#0, 2(R1)
-	BR	#.L52
-.L53:
-	.loc 1 527 0
+	BR	#.L50
+.L51:
+	.loc 1 213 0
 	MOV.W	4(R1), R12
 	MOV.W	6(R1), R13
 	CALL	#bit_shifter
@@ -1741,29 +1126,68 @@ main:
 	MOV.W	&n_6, R12
 	ADD.W	R13, R12
 	MOV.W	R12, &n_6
-	.loc 1 525 0
+	.loc 1 211 0
 	ADD.W	#1, 2(R1)
 	ADD	#13, 4(R1) { ADDC	#0, 6(R1)
-.L52:
-	.loc 1 525 0 is_stmt 0
+.L50:
+	.loc 1 211 0 is_stmt 0
 	MOV.B	#99, R12
-	CMP.W	2(R1), R12 { JHS	.L53
-	.loc 1 529 0 is_stmt 1
-	MOV.W	#400, R12
-	MOV.W	@R12, R13
-	MOV.W	#400, R12
-	BIS.W	#32, R13
-	MOV.W	R13, @R12
-.L36:
-	.loc 1 485 0
+	CMP.W	2(R1), R12 { JHS	.L51
+.L34:
+	.loc 1 171 0 is_stmt 1
 	ADD.W	#1, @R1
-.L32:
-	.loc 1 485 0 is_stmt 0
+.L30:
+	.loc 1 171 0 is_stmt 0
 	MOV.B	#6, R12
-	CMP.W	@R1, R12 { JHS	.L54
-	.loc 1 472 0 is_stmt 1
-	BR	#.L55
-.LFE12:
+	CMP.W	@R1, R12 { JHS	.L52
+	.loc 1 220 0 is_stmt 1
+	MOV.W	#.LC0, R12
+	CALL	#UART_WriteString
+	.loc 1 221 0
+	MOV.W	&n_0, R12
+	CALL	#UART_WriteNumber
+	.loc 1 222 0
+	MOV.W	#.LC1, R12
+	CALL	#UART_WriteString
+	.loc 1 223 0
+	MOV.W	&n_1, R12
+	CALL	#UART_WriteNumber
+	.loc 1 224 0
+	MOV.W	#.LC1, R12
+	CALL	#UART_WriteString
+	.loc 1 225 0
+	MOV.W	&n_2, R12
+	CALL	#UART_WriteNumber
+	.loc 1 226 0
+	MOV.W	#.LC1, R12
+	CALL	#UART_WriteString
+	.loc 1 227 0
+	MOV.W	&n_3, R12
+	CALL	#UART_WriteNumber
+	.loc 1 228 0
+	MOV.W	#.LC1, R12
+	CALL	#UART_WriteString
+	.loc 1 229 0
+	MOV.W	&n_4, R12
+	CALL	#UART_WriteNumber
+	.loc 1 230 0
+	MOV.W	#.LC1, R12
+	CALL	#UART_WriteString
+	.loc 1 231 0
+	MOV.W	&n_5, R12
+	CALL	#UART_WriteNumber
+	.loc 1 232 0
+	MOV.W	#.LC1, R12
+	CALL	#UART_WriteString
+	.loc 1 233 0
+	MOV.W	&n_6, R12
+	CALL	#UART_WriteNumber
+	.loc 1 234 0
+	MOV.W	#.LC1, R12
+	CALL	#UART_WriteString
+	.loc 1 157 0
+	BR	#.L53
+.LFE10:
 	.size	main, .-main
 	.section	.debug_frame,"",@progbits
 .Lframe0:
@@ -1788,6 +1212,10 @@ main:
 	.4byte	.Lframe0
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
+	.byte	0x4
+	.4byte	.LCFI0-.LFB1
+	.byte	0xe
+	.uleb128 0x8
 	.balign 4
 .LEFDE0:
 .LSFDE2:
@@ -1796,6 +1224,10 @@ main:
 	.4byte	.Lframe0
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
+	.byte	0x4
+	.4byte	.LCFI1-.LFB2
+	.byte	0xe
+	.uleb128 0x8
 	.balign 4
 .LEFDE2:
 .LSFDE4:
@@ -1804,40 +1236,8 @@ main:
 	.4byte	.Lframe0
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
-	.balign 4
-.LEFDE4:
-.LSFDE6:
-	.4byte	.LEFDE6-.LASFDE6
-.LASFDE6:
-	.4byte	.Lframe0
-	.4byte	.LFB4
-	.4byte	.LFE4-.LFB4
 	.byte	0x4
-	.4byte	.LCFI0-.LFB4
-	.byte	0xe
-	.uleb128 0x8
-	.balign 4
-.LEFDE6:
-.LSFDE8:
-	.4byte	.LEFDE8-.LASFDE8
-.LASFDE8:
-	.4byte	.Lframe0
-	.4byte	.LFB5
-	.4byte	.LFE5-.LFB5
-	.byte	0x4
-	.4byte	.LCFI1-.LFB5
-	.byte	0xe
-	.uleb128 0x8
-	.balign 4
-.LEFDE8:
-.LSFDE10:
-	.4byte	.LEFDE10-.LASFDE10
-.LASFDE10:
-	.4byte	.Lframe0
-	.4byte	.LFB6
-	.4byte	.LFE6-.LFB6
-	.byte	0x4
-	.4byte	.LCFI2-.LFB6
+	.4byte	.LCFI2-.LFB3
 	.byte	0xe
 	.uleb128 0x4
 	.byte	0x8a
@@ -1883,6 +1283,48 @@ main:
 	.byte	0xe
 	.uleb128 0x24
 	.balign 4
+.LEFDE4:
+.LSFDE6:
+	.4byte	.LEFDE6-.LASFDE6
+.LASFDE6:
+	.4byte	.Lframe0
+	.4byte	.LFB4
+	.4byte	.LFE4-.LFB4
+	.byte	0x4
+	.4byte	.LCFI10-.LFB4
+	.byte	0xe
+	.uleb128 0x4
+	.byte	0x8a
+	.uleb128 0x2
+	.byte	0x4
+	.4byte	.LCFI11-.LCFI10
+	.byte	0xe
+	.uleb128 0x8
+	.balign 4
+.LEFDE6:
+.LSFDE8:
+	.4byte	.LEFDE8-.LASFDE8
+.LASFDE8:
+	.4byte	.Lframe0
+	.4byte	.LFB5
+	.4byte	.LFE5-.LFB5
+	.byte	0x4
+	.4byte	.LCFI12-.LFB5
+	.byte	0xe
+	.uleb128 0xa
+	.balign 4
+.LEFDE8:
+.LSFDE10:
+	.4byte	.LEFDE10-.LASFDE10
+.LASFDE10:
+	.4byte	.Lframe0
+	.4byte	.LFB6
+	.4byte	.LFE6-.LFB6
+	.byte	0x4
+	.4byte	.LCFI13-.LFB6
+	.byte	0xe
+	.uleb128 0xa
+	.balign 4
 .LEFDE10:
 .LSFDE12:
 	.4byte	.LEFDE12-.LASFDE12
@@ -1891,13 +1333,7 @@ main:
 	.4byte	.LFB7
 	.4byte	.LFE7-.LFB7
 	.byte	0x4
-	.4byte	.LCFI10-.LFB7
-	.byte	0xe
-	.uleb128 0x4
-	.byte	0x8a
-	.uleb128 0x2
-	.byte	0x4
-	.4byte	.LCFI11-.LCFI10
+	.4byte	.LCFI14-.LFB7
 	.byte	0xe
 	.uleb128 0x8
 	.balign 4
@@ -1909,7 +1345,7 @@ main:
 	.4byte	.LFB8
 	.4byte	.LFE8-.LFB8
 	.byte	0x4
-	.4byte	.LCFI12-.LFB8
+	.4byte	.LCFI15-.LFB8
 	.byte	0xe
 	.uleb128 0xa
 	.balign 4
@@ -1920,10 +1356,6 @@ main:
 	.4byte	.Lframe0
 	.4byte	.LFB9
 	.4byte	.LFE9-.LFB9
-	.byte	0x4
-	.4byte	.LCFI13-.LFB9
-	.byte	0xe
-	.uleb128 0xa
 	.balign 4
 .LEFDE16:
 .LSFDE18:
@@ -1933,35 +1365,11 @@ main:
 	.4byte	.LFB10
 	.4byte	.LFE10-.LFB10
 	.byte	0x4
-	.4byte	.LCFI14-.LFB10
+	.4byte	.LCFI16-.LFB10
 	.byte	0xe
-	.uleb128 0x8
+	.uleb128 0xa
 	.balign 4
 .LEFDE18:
-.LSFDE20:
-	.4byte	.LEFDE20-.LASFDE20
-.LASFDE20:
-	.4byte	.Lframe0
-	.4byte	.LFB11
-	.4byte	.LFE11-.LFB11
-	.byte	0x4
-	.4byte	.LCFI15-.LFB11
-	.byte	0xe
-	.uleb128 0xa
-	.balign 4
-.LEFDE20:
-.LSFDE22:
-	.4byte	.LEFDE22-.LASFDE22
-.LASFDE22:
-	.4byte	.Lframe0
-	.4byte	.LFB12
-	.4byte	.LFE12-.LFB12
-	.byte	0x4
-	.4byte	.LCFI16-.LFB12
-	.byte	0xe
-	.uleb128 0xa
-	.balign 4
-.LEFDE22:
 .text
 .Letext0:
 	.file 2 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/machine/_default_types.h"
@@ -1972,17 +1380,17 @@ main:
 	.file 7 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/sys/reent.h"
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.4byte	0xbaa
+	.4byte	0xc02
 	.2byte	0x3
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF136
+	.4byte	.LASF144
 	.byte	0xc
-	.4byte	.LASF137
-	.4byte	.LASF138
-	.4byte	.Ldebug_ranges0+0
-	.4byte	0
+	.4byte	.LASF145
+	.4byte	.LASF146
+	.4byte	.Ltext0
+	.4byte	.Letext0
 	.4byte	.Ldebug_line0
 	.4byte	.Ldebug_macinfo0
 	.uleb128 0x2
@@ -3047,7 +2455,7 @@ main:
 	.uleb128 0x1a
 	.string	"n_0"
 	.byte	0x1
-	.byte	0x12
+	.byte	0xf
 	.4byte	0x7a
 	.byte	0x1
 	.byte	0x5
@@ -3056,7 +2464,7 @@ main:
 	.uleb128 0x1a
 	.string	"n_1"
 	.byte	0x1
-	.byte	0x12
+	.byte	0xf
 	.4byte	0x7a
 	.byte	0x1
 	.byte	0x5
@@ -3065,7 +2473,7 @@ main:
 	.uleb128 0x1a
 	.string	"n_2"
 	.byte	0x1
-	.byte	0x12
+	.byte	0xf
 	.4byte	0x7a
 	.byte	0x1
 	.byte	0x5
@@ -3074,7 +2482,7 @@ main:
 	.uleb128 0x1a
 	.string	"n_3"
 	.byte	0x1
-	.byte	0x12
+	.byte	0xf
 	.4byte	0x7a
 	.byte	0x1
 	.byte	0x5
@@ -3083,7 +2491,7 @@ main:
 	.uleb128 0x1a
 	.string	"n_4"
 	.byte	0x1
-	.byte	0x12
+	.byte	0xf
 	.4byte	0x7a
 	.byte	0x1
 	.byte	0x5
@@ -3092,7 +2500,7 @@ main:
 	.uleb128 0x1a
 	.string	"n_5"
 	.byte	0x1
-	.byte	0x12
+	.byte	0xf
 	.4byte	0x7a
 	.byte	0x1
 	.byte	0x5
@@ -3101,7 +2509,7 @@ main:
 	.uleb128 0x1a
 	.string	"n_6"
 	.byte	0x1
-	.byte	0x12
+	.byte	0xf
 	.4byte	0x7a
 	.byte	0x1
 	.byte	0x5
@@ -3117,290 +2525,351 @@ main:
 	.uleb128 0x1b
 	.4byte	.LASF122
 	.byte	0x1
-	.byte	0x14
+	.byte	0x11
 	.4byte	0x92b
 	.byte	0x1
 	.byte	0x5
 	.byte	0x3
 	.4byte	bits
-	.uleb128 0x1c
-	.byte	0x1
-	.4byte	.LASF139
-	.byte	0x1
-	.2byte	0x1cd
-	.4byte	0x6c
-	.4byte	.LFB12
-	.4byte	.LFE12
-	.byte	0x1
-	.byte	0x9c
-	.4byte	0x996
-	.uleb128 0x1d
+	.uleb128 0x1b
 	.4byte	.LASF123
 	.byte	0x1
-	.2byte	0x1d1
+	.byte	0x87
+	.4byte	0x6c
+	.byte	0x1
+	.byte	0x5
+	.byte	0x3
+	.4byte	var1
+	.uleb128 0x1b
+	.4byte	.LASF124
+	.byte	0x1
+	.byte	0x88
+	.4byte	0x6c
+	.byte	0x1
+	.byte	0x5
+	.byte	0x3
+	.4byte	var2
+	.uleb128 0x1b
+	.4byte	.LASF125
+	.byte	0x1
+	.byte	0x89
+	.4byte	0x6c
+	.byte	0x1
+	.byte	0x5
+	.byte	0x3
+	.4byte	var3
+	.uleb128 0x1b
+	.4byte	.LASF126
+	.byte	0x1
+	.byte	0x8a
+	.4byte	0x6c
+	.byte	0x1
+	.byte	0x5
+	.byte	0x3
+	.4byte	var4
+	.uleb128 0x1b
+	.4byte	.LASF127
+	.byte	0x1
+	.byte	0x8b
+	.4byte	0x6c
+	.byte	0x1
+	.byte	0x5
+	.byte	0x3
+	.4byte	var5
+	.uleb128 0x1b
+	.4byte	.LASF128
+	.byte	0x1
+	.byte	0x8c
+	.4byte	0x6c
+	.byte	0x1
+	.byte	0x5
+	.byte	0x3
+	.4byte	var6
+	.uleb128 0x1b
+	.4byte	.LASF129
+	.byte	0x1
+	.byte	0x8d
+	.4byte	0x6c
+	.byte	0x1
+	.byte	0x5
+	.byte	0x3
+	.4byte	var7
+	.uleb128 0x1b
+	.4byte	.LASF130
+	.byte	0x1
+	.byte	0x8e
+	.4byte	0x6c
+	.byte	0x1
+	.byte	0x5
+	.byte	0x3
+	.4byte	var8
+	.uleb128 0x1b
+	.4byte	.LASF131
+	.byte	0x1
+	.byte	0x8f
+	.4byte	0x6c
+	.byte	0x1
+	.byte	0x5
+	.byte	0x3
+	.4byte	var9
+	.uleb128 0x1c
+	.byte	0x1
+	.4byte	.LASF142
+	.byte	0x1
+	.byte	0x92
+	.4byte	0x6c
+	.4byte	.LFB10
+	.4byte	.LFE10
+	.byte	0x1
+	.byte	0x9c
+	.4byte	0xa34
+	.uleb128 0x1d
+	.4byte	.LASF132
+	.byte	0x1
+	.byte	0x96
 	.4byte	0x7f
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -6
 	.uleb128 0x1d
-	.4byte	.LASF124
+	.4byte	.LASF133
 	.byte	0x1
-	.2byte	0x1d2
+	.byte	0x97
 	.4byte	0x73
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -8
 	.uleb128 0x1d
-	.4byte	.LASF125
+	.4byte	.LASF134
 	.byte	0x1
-	.2byte	0x1d3
+	.byte	0x98
 	.4byte	0x73
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -10
 	.byte	0
 	.uleb128 0x1e
-	.4byte	.LASF140
 	.byte	0x1
-	.2byte	0x1c5
+	.4byte	.LASF147
 	.byte	0x1
-	.4byte	0x6c
-	.4byte	.LFB11
-	.4byte	.LFE11
-	.byte	0x1
-	.byte	0x9c
-	.4byte	0x9d9
-	.uleb128 0x1f
-	.string	"x"
-	.byte	0x1
-	.2byte	0x1c5
-	.4byte	0x7f
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -10
-	.uleb128 0x20
-	.string	"i"
-	.byte	0x1
-	.2byte	0x1c7
-	.4byte	0x6c
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -4
-	.uleb128 0x20
-	.string	"n"
-	.byte	0x1
-	.2byte	0x1c7
-	.4byte	0x6c
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -6
-	.byte	0
-	.uleb128 0x21
-	.byte	0x1
-	.4byte	.LASF126
-	.byte	0x1
-	.2byte	0x1bb
-	.byte	0x1
-	.4byte	0x6c
-	.4byte	.LFB10
-	.4byte	.LFE10
-	.byte	0x1
-	.byte	0x9c
-	.4byte	0xa12
-	.uleb128 0x1f
-	.string	"x"
-	.byte	0x1
-	.2byte	0x1bb
-	.4byte	0x7f
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -8
-	.uleb128 0x20
-	.string	"cnt"
-	.byte	0x1
-	.2byte	0x1bd
-	.4byte	0x6c
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -4
-	.byte	0
-	.uleb128 0x21
-	.byte	0x1
-	.4byte	.LASF127
-	.byte	0x1
-	.2byte	0x1b0
-	.byte	0x1
-	.4byte	0x6c
+	.byte	0x79
 	.4byte	.LFB9
 	.4byte	.LFE9
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0xa5a
 	.uleb128 0x1f
-	.string	"x"
+	.4byte	.LASF148
 	.byte	0x1
-	.2byte	0x1b0
-	.4byte	0x7f
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -10
-	.uleb128 0x20
-	.string	"Ptr"
-	.byte	0x1
-	.2byte	0x1b2
-	.4byte	0x2df
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -4
-	.uleb128 0x1d
-	.4byte	.LASF128
-	.byte	0x1
-	.2byte	0x1b3
-	.4byte	0x6c
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -6
-	.byte	0
-	.uleb128 0x21
-	.byte	0x1
-	.4byte	.LASF129
-	.byte	0x1
-	.2byte	0x1a3
+	.byte	0x70
 	.byte	0x1
 	.4byte	0x6c
 	.4byte	.LFB8
 	.4byte	.LFE8
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0xab0
-	.uleb128 0x1f
+	.4byte	0xa85
+	.uleb128 0x20
 	.string	"x"
 	.byte	0x1
-	.2byte	0x1a3
+	.byte	0x70
 	.4byte	0x7f
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -10
-	.uleb128 0x22
-	.byte	0x4
+	.uleb128 0x21
+	.string	"i"
 	.byte	0x1
-	.2byte	0x1a5
-	.4byte	0xaa2
-	.uleb128 0x23
-	.string	"ch"
+	.byte	0x72
+	.4byte	0x6c
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -4
+	.uleb128 0x21
+	.string	"n"
 	.byte	0x1
-	.2byte	0x1a7
-	.4byte	0xd6
-	.uleb128 0x23
-	.string	"y"
-	.byte	0x1
-	.2byte	0x1a8
-	.4byte	0x45
-	.byte	0
-	.uleb128 0x20
-	.string	"U"
-	.byte	0x1
-	.2byte	0x1a9
-	.4byte	0xa83
+	.byte	0x72
+	.4byte	0x6c
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -6
 	.byte	0
-	.uleb128 0x21
+	.uleb128 0x22
 	.byte	0x1
-	.4byte	.LASF130
+	.4byte	.LASF135
 	.byte	0x1
-	.2byte	0x197
+	.byte	0x66
 	.byte	0x1
 	.4byte	0x6c
 	.4byte	.LFB7
 	.4byte	.LFE7
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0xada
-	.uleb128 0x1f
+	.4byte	0xabb
+	.uleb128 0x20
 	.string	"x"
 	.byte	0x1
-	.2byte	0x197
+	.byte	0x66
 	.4byte	0x7f
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -8
-	.byte	0
 	.uleb128 0x21
+	.string	"cnt"
 	.byte	0x1
-	.4byte	.LASF131
+	.byte	0x68
+	.4byte	0x6c
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -4
+	.byte	0
+	.uleb128 0x22
 	.byte	0x1
-	.2byte	0x18e
+	.4byte	.LASF136
+	.byte	0x1
+	.byte	0x5b
 	.byte	0x1
 	.4byte	0x6c
 	.4byte	.LFB6
 	.4byte	.LFE6
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0xb04
-	.uleb128 0x1f
-	.string	"i"
+	.4byte	0xaff
+	.uleb128 0x20
+	.string	"x"
 	.byte	0x1
-	.2byte	0x18e
+	.byte	0x5b
 	.4byte	0x7f
 	.byte	0x2
 	.byte	0x91
-	.sleb128 -20
-	.byte	0
+	.sleb128 -10
 	.uleb128 0x21
+	.string	"Ptr"
 	.byte	0x1
-	.4byte	.LASF132
+	.byte	0x5d
+	.4byte	0x2df
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -4
+	.uleb128 0x1d
+	.4byte	.LASF137
 	.byte	0x1
-	.2byte	0x185
+	.byte	0x5e
+	.4byte	0x6c
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -6
+	.byte	0
+	.uleb128 0x22
+	.byte	0x1
+	.4byte	.LASF138
+	.byte	0x1
+	.byte	0x4e
 	.byte	0x1
 	.4byte	0x6c
 	.4byte	.LFB5
 	.4byte	.LFE5
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0xb3b
-	.uleb128 0x1f
+	.4byte	0xb4f
+	.uleb128 0x20
 	.string	"x"
 	.byte	0x1
-	.2byte	0x185
+	.byte	0x4e
 	.4byte	0x7f
 	.byte	0x2
 	.byte	0x91
-	.sleb128 -8
-	.uleb128 0x20
-	.string	"n"
+	.sleb128 -10
+	.uleb128 0x7
+	.byte	0x4
 	.byte	0x1
-	.2byte	0x187
-	.4byte	0x6c
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -4
+	.byte	0x50
+	.4byte	0xb42
+	.uleb128 0x23
+	.string	"ch"
+	.byte	0x1
+	.byte	0x52
+	.4byte	0xd6
+	.uleb128 0x23
+	.string	"y"
+	.byte	0x1
+	.byte	0x53
+	.4byte	0x45
 	.byte	0
 	.uleb128 0x21
+	.string	"U"
 	.byte	0x1
-	.4byte	.LASF133
+	.byte	0x54
+	.4byte	0xb26
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -6
+	.byte	0
+	.uleb128 0x22
 	.byte	0x1
-	.2byte	0x17d
+	.4byte	.LASF139
+	.byte	0x1
+	.byte	0x42
 	.byte	0x1
 	.4byte	0x6c
 	.4byte	.LFB4
 	.4byte	.LFE4
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0xb74
-	.uleb128 0x1f
+	.4byte	0xb77
+	.uleb128 0x20
 	.string	"x"
 	.byte	0x1
-	.2byte	0x17d
+	.byte	0x42
 	.4byte	0x7f
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -8
-	.uleb128 0x20
-	.string	"cnt"
+	.byte	0
+	.uleb128 0x22
 	.byte	0x1
-	.2byte	0x17f
+	.4byte	.LASF140
+	.byte	0x1
+	.byte	0x39
+	.byte	0x1
+	.4byte	0x6c
+	.4byte	.LFB3
+	.4byte	.LFE3
+	.byte	0x1
+	.byte	0x9c
+	.4byte	0xb9f
+	.uleb128 0x20
+	.string	"i"
+	.byte	0x1
+	.byte	0x39
+	.4byte	0x7f
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -20
+	.byte	0
+	.uleb128 0x22
+	.byte	0x1
+	.4byte	.LASF141
+	.byte	0x1
+	.byte	0x30
+	.byte	0x1
+	.4byte	0x6c
+	.4byte	.LFB2
+	.4byte	.LFE2
+	.byte	0x1
+	.byte	0x9c
+	.4byte	0xbd3
+	.uleb128 0x20
+	.string	"x"
+	.byte	0x1
+	.byte	0x30
+	.4byte	0x7f
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -8
+	.uleb128 0x21
+	.string	"n"
+	.byte	0x1
+	.byte	0x32
 	.4byte	0x6c
 	.byte	0x2
 	.byte	0x91
@@ -3408,33 +2877,32 @@ main:
 	.byte	0
 	.uleb128 0x24
 	.byte	0x1
-	.4byte	.LASF141
+	.4byte	.LASF143
 	.byte	0x1
-	.2byte	0x166
-	.4byte	.LFB3
-	.4byte	.LFE3
+	.byte	0x28
 	.byte	0x1
-	.byte	0x9c
-	.uleb128 0x25
-	.byte	0x1
-	.4byte	.LASF134
-	.byte	0x1
-	.byte	0xd4
-	.byte	0x1
-	.4byte	.LFB2
-	.4byte	.LFE2
-	.byte	0x1
-	.byte	0x9c
-	.uleb128 0x25
-	.byte	0x1
-	.4byte	.LASF135
-	.byte	0x1
-	.byte	0x32
-	.byte	0x1
+	.4byte	0x6c
 	.4byte	.LFB1
 	.4byte	.LFE1
 	.byte	0x1
 	.byte	0x9c
+	.uleb128 0x20
+	.string	"x"
+	.byte	0x1
+	.byte	0x28
+	.4byte	0x7f
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -8
+	.uleb128 0x21
+	.string	"cnt"
+	.byte	0x1
+	.byte	0x2a
+	.4byte	0x6c
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -4
+	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",@progbits
 .Ldebug_abbrev0:
@@ -3449,9 +2917,9 @@ main:
 	.uleb128 0xe
 	.uleb128 0x1b
 	.uleb128 0xe
-	.uleb128 0x55
-	.uleb128 0x6
 	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
 	.uleb128 0x1
 	.uleb128 0x10
 	.uleb128 0x6
@@ -3779,7 +3247,7 @@ main:
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
-	.uleb128 0x5
+	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
 	.uleb128 0x11
@@ -3800,7 +3268,7 @@ main:
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
-	.uleb128 0x5
+	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
 	.uleb128 0x2
@@ -3809,13 +3277,32 @@ main:
 	.byte	0
 	.uleb128 0x1e
 	.uleb128 0x2e
+	.byte	0
+	.uleb128 0x3f
+	.uleb128 0xc
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x1
+	.uleb128 0x40
+	.uleb128 0xa
+	.byte	0
+	.byte	0
+	.uleb128 0x1f
+	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3
 	.uleb128 0xe
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
-	.uleb128 0x5
+	.uleb128 0xb
 	.uleb128 0x27
 	.uleb128 0xc
 	.uleb128 0x49
@@ -3830,30 +3317,15 @@ main:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1f
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0x5
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0xa
-	.byte	0
-	.byte	0
 	.uleb128 0x20
-	.uleb128 0x34
+	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
 	.uleb128 0x8
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
-	.uleb128 0x5
+	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
 	.uleb128 0x2
@@ -3861,6 +3333,21 @@ main:
 	.byte	0
 	.byte	0
 	.uleb128 0x21
+	.uleb128 0x34
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0x8
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0xa
+	.byte	0
+	.byte	0
+	.uleb128 0x22
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -3870,7 +3357,7 @@ main:
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
-	.uleb128 0x5
+	.uleb128 0xb
 	.uleb128 0x27
 	.uleb128 0xc
 	.uleb128 0x49
@@ -3881,19 +3368,6 @@ main:
 	.uleb128 0x1
 	.uleb128 0x40
 	.uleb128 0xa
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x22
-	.uleb128 0x17
-	.byte	0x1
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0x5
 	.uleb128 0x1
 	.uleb128 0x13
 	.byte	0
@@ -3906,33 +3380,14 @@ main:
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
-	.uleb128 0x5
+	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x24
 	.uleb128 0x2e
-	.byte	0
-	.uleb128 0x3f
-	.uleb128 0xc
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0x5
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x1
-	.uleb128 0x40
-	.uleb128 0xa
-	.byte	0
-	.byte	0
-	.uleb128 0x25
-	.uleb128 0x2e
-	.byte	0
+	.byte	0x1
 	.uleb128 0x3f
 	.uleb128 0xc
 	.uleb128 0x3
@@ -3943,6 +3398,8 @@ main:
 	.uleb128 0xb
 	.uleb128 0x27
 	.uleb128 0xc
+	.uleb128 0x49
+	.uleb128 0x13
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
@@ -3953,7 +3410,7 @@ main:
 	.byte	0
 	.byte	0
 	.section	.debug_aranges,"",@progbits
-	.4byte	0x24
+	.4byte	0x1c
 	.2byte	0x2
 	.4byte	.Ldebug_info0
 	.byte	0x4
@@ -3962,16 +3419,6 @@ main:
 	.2byte	0
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
-	.4byte	.LFB1
-	.4byte	.LFE1-.LFB1
-	.4byte	0
-	.4byte	0
-	.section	.debug_ranges,"",@progbits
-.Ldebug_ranges0:
-	.4byte	.Ltext0
-	.4byte	.Letext0
-	.4byte	.LFB1
-	.4byte	.LFE1
 	.4byte	0
 	.4byte	0
 	.section	.debug_macinfo,"",@progbits
@@ -7292,27 +6739,106 @@ main:
 	.uleb128 0x6f
 	.string	"CCIFG (0x0001)"
 	.byte	0x4
+	.file 30 "../uart.h"
+	.byte	0x3
+	.uleb128 0x8
+	.uleb128 0x1e
 	.byte	0x1
 	.uleb128 0x9
-	.string	"QWARK_CTL (*(volatile unsigned int *) 0x0190)"
+	.string	"UART_H_ "
 	.byte	0x1
-	.uleb128 0xa
-	.string	"QWARK_VECTOR (5)"
+	.uleb128 0x13
+	.string	"UART_CTL (*(volatile unsigned char *) 0x0080)"
 	.byte	0x1
-	.uleb128 0xb
-	.string	"QWARK_CHECKPOINT() QWARK_CTL |= 0x0020"
+	.uleb128 0x14
+	.string	"UART_STAT (*(volatile unsigned char *) 0x0081)"
 	.byte	0x1
-	.uleb128 0xc
-	.string	"SEED 4"
+	.uleb128 0x15
+	.string	"UART_BAUD (*(volatile unsigned int *) 0x0082)"
 	.byte	0x1
-	.uleb128 0xd
-	.string	"ITER 100"
+	.uleb128 0x16
+	.string	"UART_TXD (*(volatile unsigned char *) 0x0084)"
 	.byte	0x1
-	.uleb128 0xe
-	.string	"CHAR_BIT 8"
+	.uleb128 0x17
+	.string	"UART_RXD (*(volatile unsigned char *) 0x0085)"
+	.byte	0x1
+	.uleb128 0x1f
+	.string	"UART_IEN_TX_EMPTY 0x80"
+	.byte	0x1
+	.uleb128 0x20
+	.string	"UART_IEN_TX 0x40"
+	.byte	0x1
+	.uleb128 0x21
+	.string	"UART_IEN_RX_OVFLW 0x20"
+	.byte	0x1
+	.uleb128 0x22
+	.string	"UART_IEN_RX 0x10"
+	.byte	0x1
+	.uleb128 0x23
+	.string	"UART_SMCLK_SEL 0x02"
+	.byte	0x1
+	.uleb128 0x24
+	.string	"UART_EN 0x01"
+	.byte	0x1
+	.uleb128 0x27
+	.string	"UART_TX_EMPTY_PND 0x80"
+	.byte	0x1
+	.uleb128 0x28
+	.string	"UART_TX_PND 0x40"
+	.byte	0x1
+	.uleb128 0x29
+	.string	"UART_RX_OVFLW_PND 0x20"
 	.byte	0x1
 	.uleb128 0x2a
-	.string	"INTERMITTENCY_HANDLING_ENABLED "
+	.string	"UART_RX_PND 0x10"
+	.byte	0x1
+	.uleb128 0x2b
+	.string	"UART_TX_FULL 0x08"
+	.byte	0x1
+	.uleb128 0x2c
+	.string	"UART_TX_BUSY 0x04"
+	.byte	0x1
+	.uleb128 0x2d
+	.string	"UART_RX_BUSY 0x01"
+	.byte	0x1
+	.uleb128 0x34
+	.string	"UART_TX_VECTOR (6 *2)"
+	.byte	0x1
+	.uleb128 0x35
+	.string	"UART_RX_VECTOR (7 *2)"
+	.byte	0x1
+	.uleb128 0x44
+	.string	"BAUD 8"
+	.byte	0x4
+	.file 31 "../qwark.h"
+	.byte	0x3
+	.uleb128 0x9
+	.uleb128 0x1f
+	.byte	0x1
+	.uleb128 0x9
+	.string	"QWARK_H_ "
+	.byte	0x1
+	.uleb128 0xb
+	.string	"QWARK_CTL (*(volatile unsigned int *) 0x0190)"
+	.byte	0x1
+	.uleb128 0xc
+	.string	"QWARK_VECTOR (5)"
+	.byte	0x1
+	.uleb128 0xd
+	.string	"QWARK_CHECKPOINT() QWARK_CTL |= 0x0020"
+	.byte	0x1
+	.uleb128 0xf
+	.string	"QWARK_EN 0x01"
+	.byte	0x4
+	.byte	0x1
+	.uleb128 0xb
+	.string	"SEED 4"
+	.byte	0x1
+	.uleb128 0xc
+	.string	"ITER 100"
+	.byte	0x1
+	.uleb128 0xd
+	.string	"CHAR_BIT 8"
 	.byte	0x4
 	.byte	0
 	.section	.debug_line,"",@progbits
@@ -7324,35 +6850,33 @@ main:
 	.string	"_size"
 .LASF95:
 	.string	"_rand48"
-.LASF132:
+.LASF141:
 	.string	"bit_count"
 .LASF60:
 	.string	"_emergency"
-.LASF140:
+.LASF148:
 	.string	"bit_shifter"
 .LASF53:
 	.string	"_data"
-.LASF141:
+.LASF147:
 	.string	"init"
 .LASF115:
 	.string	"_wcrtomb_state"
 .LASF116:
 	.string	"_wcsrtombs_state"
-.LASF137:
+.LASF145:
 	.string	"../main.c"
 .LASF7:
 	.string	"long long unsigned int"
 .LASF52:
 	.string	"_lbfsize"
-.LASF134:
-	.string	"INT_Qwark"
 .LASF113:
 	.string	"_mbrtowc_state"
 .LASF108:
 	.string	"_wctomb_state"
 .LASF28:
 	.string	"__tm_sec"
-.LASF136:
+.LASF144:
 	.string	"GNU C99 7.3.1 -mcpu=msp430 -mhwmult=16bit -msmall -mcode-region=none -mdata-region=none -mdevices-csv-loc=/opt/ti/ccsv8/ccs_base/msp430/include_gcc/devices.csv -g3 -gdwarf-3 -gstrict-dwarf -O0 -std=c99 -fstrict-aliasing -fstack-usage"
 .LASF6:
 	.string	"long long int"
@@ -7398,7 +6922,7 @@ main:
 	.string	"_fnargs"
 .LASF44:
 	.string	"_fns"
-.LASF138:
+.LASF146:
 	.string	"/home/hiram/eclipse-workspace/bitcount/Debug"
 .LASF24:
 	.string	"_sign"
@@ -7424,19 +6948,33 @@ main:
 	.string	"__wchb"
 .LASF57:
 	.string	"_stdout"
-.LASF123:
+.LASF132:
 	.string	"seed"
 .LASF66:
 	.string	"_cvtlen"
+.LASF123:
+	.string	"var1"
+.LASF124:
+	.string	"var2"
 .LASF5:
 	.string	"long unsigned int"
+.LASF126:
+	.string	"var4"
 .LASF49:
 	.string	"__sFILE_fake"
+.LASF128:
+	.string	"var6"
+.LASF129:
+	.string	"var7"
+.LASF130:
+	.string	"var8"
+.LASF131:
+	.string	"var9"
 .LASF93:
 	.string	"_niobs"
 .LASF3:
 	.string	"short unsigned int"
-.LASF130:
+.LASF139:
 	.string	"ntbl_bitcount"
 .LASF72:
 	.string	"_atexit0"
@@ -7454,13 +6992,13 @@ main:
 	.string	"_lock"
 .LASF89:
 	.string	"_flags2"
-.LASF124:
+.LASF133:
 	.string	"iter"
 .LASF80:
 	.string	"_write"
 .LASF33:
 	.string	"__tm_year"
-.LASF131:
+.LASF140:
 	.string	"bitcount"
 .LASF75:
 	.string	"_misc"
@@ -7468,7 +7006,7 @@ main:
 	.string	"__sf_fake_stdin"
 .LASF118:
 	.string	"__sf_fake_stdout"
-.LASF126:
+.LASF135:
 	.string	"ntbl_bitcnt"
 .LASF32:
 	.string	"__tm_mon"
@@ -7478,15 +7016,13 @@ main:
 	.string	"__sdidinit"
 .LASF12:
 	.string	"_off_t"
-.LASF135:
-	.string	"qwark_restore"
 .LASF104:
 	.string	"_freelist"
 .LASF11:
 	.string	"_LOCK_RECURSIVE_T"
-.LASF133:
+.LASF143:
 	.string	"btbl_bitcnt"
-.LASF129:
+.LASF138:
 	.string	"BW_btbl_bitcount"
 .LASF1:
 	.string	"unsigned char"
@@ -7498,7 +7034,7 @@ main:
 	.string	"__tm_yday"
 .LASF46:
 	.string	"__sbuf"
-.LASF128:
+.LASF137:
 	.string	"Accu"
 .LASF91:
 	.string	"__FILE"
@@ -7536,13 +7072,13 @@ main:
 	.string	"_impure_ptr"
 .LASF13:
 	.string	"_fpos_t"
-.LASF127:
+.LASF136:
 	.string	"AR_btbl_bitcount"
 .LASF55:
 	.string	"_errno"
 .LASF90:
 	.string	"char"
-.LASF125:
+.LASF134:
 	.string	"func"
 .LASF29:
 	.string	"__tm_min"
@@ -7550,8 +7086,12 @@ main:
 	.string	"__uint32_t"
 .LASF97:
 	.string	"_mult"
+.LASF125:
+	.string	"var3"
 .LASF22:
 	.string	"_next"
+.LASF127:
+	.string	"var5"
 .LASF106:
 	.string	"_strtok_last"
 .LASF18:
@@ -7598,7 +7138,7 @@ main:
 	.string	"_mbtowc_state"
 .LASF103:
 	.string	"_p5s"
-.LASF139:
+.LASF142:
 	.string	"main"
 .LASF31:
 	.string	"__tm_mday"

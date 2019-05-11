@@ -8,14 +8,16 @@
 
 #define QWARK_CTL     				  (*(volatile unsigned int  *) 0x0190)
 #define QWARK_VECTOR				  (5)
+#define QWARK_EN					  0x01
+#define QWARK_CHECKPOINT()			   QWARK_CTL |= 0x0020
 
 #define UART_BAUD         (*(volatile unsigned int  *) 0x0082)
 
-#define  UART_EN            0x01
+#define UART_EN            0x01
 #define UART_STAT         (*(volatile unsigned char *) 0x0081)  // UART Status register (8bit)
 #define UART_CTL          (*(volatile unsigned char *) 0x0080)  // UART Control register (8bit)
 #define UART_TXD          (*(volatile unsigned char *) 0x0084)  // UART Transmit data register (8bit)
-#define  UART_TX_FULL       0x08
+#define UART_TX_FULL       0x08
 
 //--------------------------------------------------
 // Diverse

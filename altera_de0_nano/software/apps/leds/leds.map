@@ -455,10 +455,10 @@ __reset_vector  0x000000000000fffe        0x2
 .debug_loc
  *(.debug_loc)
 
-.debug_macinfo  0x0000000000000000     0x8bfb
+.debug_macinfo  0x0000000000000000     0x8c34
  *(.debug_macinfo)
  .debug_macinfo
-                0x0000000000000000     0x8bfb main.o
+                0x0000000000000000     0x8c34 main.o
 
 .debug_weaknames
  *(.debug_weaknames)

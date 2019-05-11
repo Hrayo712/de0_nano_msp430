@@ -334,7 +334,7 @@ int tty_putc (int txdata) {
 00008130 <.LCFI0>:
     8130:	81 4c 00 00 	mov	r12,	0(r1)	;
 
-00008134 <.Loc.40.1>:
+00008134 <.Loc.42.1>:
 
   // Wait until the TX buffer is not full
   while (UART_STAT & UART_TX_FULL);
@@ -347,7 +347,7 @@ int tty_putc (int txdata) {
     813e:	0c 93       	cmp	#0,	r12	;r3 As==00
     8140:	fa 23       	jnz	$-10     	;abs 0x8136
 
-00008142 <.Loc.43.1>:
+00008142 <.Loc.45.1>:
 
   // Write the output character
   UART_TXD = txdata;
@@ -356,12 +356,12 @@ int tty_putc (int txdata) {
     8148:	3d f0 ff 00 	and	#255,	r13	;#0x00ff
     814c:	cc 4d 00 00 	mov.b	r13,	0(r12)	;
 
-00008150 <.Loc.45.1>:
+00008150 <.Loc.47.1>:
 
   return 0;
     8150:	4c 43       	clr.b	r12		;
 
-00008152 <.Loc.46.1>:
+00008152 <.Loc.48.1>:
 }
     8152:	21 53       	incd	r1		;
     8154:	30 41       	ret			
@@ -375,56 +375,56 @@ int main()
     815a:	bc 40 80 5a 	mov	#23168,	0(r12)	;#0x5a80
     815e:	00 00 
 
-00008160 <.Loc.52.1>:
+00008160 <.Loc.54.1>:
 	//Enable Idempotency Tracking
 	__asm__ __volatile__ ("nop");
     8160:	03 43       	nop			
 
-00008162 <.Loc.53.1>:
+00008162 <.Loc.55.1>:
   	eint();
     8162:	32 d2       	eint			
     8164:	03 43       	nop			
 
-00008166 <.Loc.55.1>:
+00008166 <.Loc.57.1>:
 
 	UART_BAUD = BAUD;                   // Init UART
     8166:	7c 40 82 00 	mov.b	#130,	r12	;#0x0082
     816a:	bc 42 00 00 	mov	#8,	0(r12)	;r2 As==11
 
-0000816e <.Loc.56.1>:
+0000816e <.Loc.58.1>:
    	UART_CTL  = UART_EN;
     816e:	7c 40 80 00 	mov.b	#128,	r12	;#0x0080
     8172:	dc 43 00 00 	mov.b	#1,	0(r12)	;r3 As==01
 
-00008176 <.Loc.58.1>:
+00008176 <.Loc.60.1>:
 
 	LED_CTRL = 0xAA;
     8176:	7c 40 90 00 	mov.b	#144,	r12	;#0x0090
     817a:	fc 40 aa ff 	mov.b	#65450,	0(r12)	;#0xffaa
     817e:	00 00 
 
-00008180 <.Loc.60.1>:
+00008180 <.Loc.62.1>:
 	
 	tty_putc('q');
     8180:	7c 40 71 00 	mov.b	#113,	r12	;#0x0071
     8184:	b0 12 2e 81 	call	#33070		;#0x812e
 
-00008188 <.Loc.61.1>:
+00008188 <.Loc.63.1>:
 	tty_putc('w');
     8188:	7c 40 77 00 	mov.b	#119,	r12	;#0x0077
     818c:	b0 12 2e 81 	call	#33070		;#0x812e
 
-00008190 <.Loc.62.1>:
+00008190 <.Loc.64.1>:
 	tty_putc('a');
     8190:	7c 40 61 00 	mov.b	#97,	r12	;#0x0061
     8194:	b0 12 2e 81 	call	#33070		;#0x812e
 
-00008198 <.Loc.63.1>:
+00008198 <.Loc.65.1>:
 	tty_putc('r');
     8198:	7c 40 72 00 	mov.b	#114,	r12	;#0x0072
     819c:	b0 12 2e 81 	call	#33070		;#0x812e
 
-000081a0 <.Loc.64.1>:
+000081a0 <.Loc.66.1>:
 	tty_putc('k');
     81a0:	7c 40 6b 00 	mov.b	#107,	r12	;#0x006b
     81a4:	b0 12 2e 81 	call	#33070		;#0x812e

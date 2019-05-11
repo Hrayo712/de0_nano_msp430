@@ -2912,6 +2912,8 @@ extern long double strtold (const char *restrict, char **restrict);
 
 #define QWARK_CTL (*(volatile unsigned int *) 0x0190)
 #define QWARK_VECTOR (5)
+#define QWARK_EN 0x01
+#define QWARK_CHECKPOINT() QWARK_CTL |= 0x0020
 
 #define UART_BAUD (*(volatile unsigned int *) 0x0082)
 
@@ -2920,7 +2922,7 @@ extern long double strtold (const char *restrict, char **restrict);
 #define UART_CTL (*(volatile unsigned char *) 0x0080)
 #define UART_TXD (*(volatile unsigned char *) 0x0084)
 #define UART_TX_FULL 0x08
-# 30 "main.c"
+# 32 "main.c"
 #define BAUD 8
 
 
@@ -2929,7 +2931,7 @@ extern long double strtold (const char *restrict, char **restrict);
 
 
 
-# 37 "main.c"
+# 39 "main.c"
 int tty_putc (int txdata) {
 
 

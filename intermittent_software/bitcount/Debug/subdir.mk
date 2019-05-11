@@ -5,15 +5,21 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../main.c \
-../timerA.c 
+../qwark.c \
+../timerA.c \
+../uart.c 
 
 OBJS += \
 ./main.o \
-./timerA.o 
+./qwark.o \
+./timerA.o \
+./uart.o 
 
 C_DEPS += \
 ./main.d \
-./timerA.d 
+./qwark.d \
+./timerA.d \
+./uart.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

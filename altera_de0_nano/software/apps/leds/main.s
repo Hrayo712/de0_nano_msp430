@@ -7,7 +7,7 @@
 tty_putc:
 .LFB1:
 	.file 1 "main.c"
-	.loc 1 37 0
+	.loc 1 39 0
 ; start of function
 ; framesize_regs:     0
 ; framesize_locals:   2
@@ -21,22 +21,22 @@ tty_putc:
 .LCFI0:
 	; end of prologue
 	MOV.W	R12, @R1
-	.loc 1 40 0
+	.loc 1 42 0
 	NOP
 .L2:
-	.loc 1 40 0 is_stmt 0
+	.loc 1 42 0 is_stmt 0
 	MOV.B	#129, R12
 	MOV.B	@R12, R12
 	AND.B	#8, R12
 	CMP.W	#0, R12 { JNE	.L2
-	.loc 1 43 0 is_stmt 1
+	.loc 1 45 0 is_stmt 1
 	MOV.B	#132, R12
 	MOV.W	@R1, R13
 	AND	#0xff, R13
 	MOV.B	R13, @R12
-	.loc 1 45 0
+	.loc 1 47 0
 	MOV.B	#0, R12
-	.loc 1 46 0
+	.loc 1 48 0
 	; start of epilogue
 	ADD.W	#2, R1
 	RET
@@ -47,7 +47,7 @@ tty_putc:
 	.type	main, @function
 main:
 .LFB2:
-	.loc 1 49 0
+	.loc 1 51 0
 ; start of function
 ; framesize_regs:     0
 ; framesize_locals:   0
@@ -58,43 +58,43 @@ main:
 ; saved regs:(none)
 	; start of prologue
 	; end of prologue
-	.loc 1 50 0
+	.loc 1 52 0
 	MOV.W	#288, R12
 	MOV.W	#23168, @R12
-	.loc 1 52 0
- ; 52 "main.c" 1
+	.loc 1 54 0
+ ; 54 "main.c" 1
 	nop
  ; 0 "" 2
-	.loc 1 53 0
- ; 53 "main.c" 1
+	.loc 1 55 0
+ ; 55 "main.c" 1
 	eint { nop
  ; 0 "" 2
-	.loc 1 55 0
+	.loc 1 57 0
 	MOV.B	#130, R12
 	MOV.W	#8, @R12
-	.loc 1 56 0
+	.loc 1 58 0
 	MOV.B	#128, R12
 	MOV.B	#1, @R12
-	.loc 1 58 0
+	.loc 1 60 0
 	MOV.B	#144, R12
 	MOV.B	#-86, @R12
-	.loc 1 60 0
+	.loc 1 62 0
 	MOV.B	#113, R12
 	CALL	#tty_putc
-	.loc 1 61 0
+	.loc 1 63 0
 	MOV.B	#119, R12
 	CALL	#tty_putc
-	.loc 1 62 0
+	.loc 1 64 0
 	MOV.B	#97, R12
 	CALL	#tty_putc
-	.loc 1 63 0
+	.loc 1 65 0
 	MOV.B	#114, R12
 	CALL	#tty_putc
-	.loc 1 64 0
+	.loc 1 66 0
 	MOV.B	#107, R12
 	CALL	#tty_putc
 .L5:
-	.loc 1 67 0
+	.loc 1 69 0
 	BR	#.L5
 .LFE2:
 	.size	main, .-main
@@ -1207,7 +1207,7 @@ main:
 	.byte	0x1
 	.4byte	.LASF123
 	.byte	0x1
-	.byte	0x30
+	.byte	0x32
 	.4byte	0x68
 	.4byte	.LFB2
 	.4byte	.LFE2
@@ -1217,7 +1217,7 @@ main:
 	.byte	0x1
 	.4byte	.LASF124
 	.byte	0x1
-	.byte	0x25
+	.byte	0x27
 	.byte	0x1
 	.4byte	0x68
 	.4byte	.LFB1
@@ -1227,7 +1227,7 @@ main:
 	.uleb128 0x1b
 	.4byte	.LASF125
 	.byte	0x1
-	.byte	0x25
+	.byte	0x27
 	.4byte	0x68
 	.byte	0x2
 	.byte	0x91
@@ -4719,25 +4719,31 @@ main:
 	.uleb128 0xa
 	.string	"QWARK_VECTOR (5)"
 	.byte	0x1
+	.uleb128 0xb
+	.string	"QWARK_EN 0x01"
+	.byte	0x1
 	.uleb128 0xc
-	.string	"UART_BAUD (*(volatile unsigned int *) 0x0082)"
+	.string	"QWARK_CHECKPOINT() QWARK_CTL |= 0x0020"
 	.byte	0x1
 	.uleb128 0xe
-	.string	"UART_EN 0x01"
-	.byte	0x1
-	.uleb128 0xf
-	.string	"UART_STAT (*(volatile unsigned char *) 0x0081)"
+	.string	"UART_BAUD (*(volatile unsigned int *) 0x0082)"
 	.byte	0x1
 	.uleb128 0x10
-	.string	"UART_CTL (*(volatile unsigned char *) 0x0080)"
+	.string	"UART_EN 0x01"
 	.byte	0x1
 	.uleb128 0x11
-	.string	"UART_TXD (*(volatile unsigned char *) 0x0084)"
+	.string	"UART_STAT (*(volatile unsigned char *) 0x0081)"
 	.byte	0x1
 	.uleb128 0x12
+	.string	"UART_CTL (*(volatile unsigned char *) 0x0080)"
+	.byte	0x1
+	.uleb128 0x13
+	.string	"UART_TXD (*(volatile unsigned char *) 0x0084)"
+	.byte	0x1
+	.uleb128 0x14
 	.string	"UART_TX_FULL 0x08"
 	.byte	0x1
-	.uleb128 0x1e
+	.uleb128 0x20
 	.string	"BAUD 8"
 	.byte	0x4
 	.byte	0
