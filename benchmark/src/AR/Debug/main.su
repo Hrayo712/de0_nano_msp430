@@ -1,0 +1,16 @@
+main.c:27:10:sqrt16	16	static
+main.c:129:6:ACCEL_singleSample	8	static
+main.c:145:6:acquire_window	16	static
+main.c:160:6:transform	4	static
+main.c:183:6:featurize	34	static
+main.c:233:9:classify	12	static
+main.c:283:6:record_stats	0	static
+main.c:310:6:print_stats	10	static
+main.c:352:6:warmup_sensor	0	static
+main.c:366:6:train	24	static
+main.c:399:6:recognize	30	static
+main.c:427:6:end_of_benchmark	0	static
+main.c:438:6:count_error	0	static
+main.c:444:12:select_mode	0	static
+main.c:497:6:init	0	static
+main.c:517:5:main	12	static

@@ -1,0 +1,585 @@
+Archive member included to satisfy reference by file (symbol)
+
+/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(lib2divHI.o)
+                              ./uart.o (__mspabi_divi)
+/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(epilogue.o)
+                              ./main.o (__mspabi_func_epilog_7)
+/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(srli.o)
+                              /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o (__mspabi_srli_15)
+/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
+                              /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o (__crt0_init_bss)
+/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
+                              /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o (__crt0_movedata)
+/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
+                              /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o (__crt0_call_init_then_main)
+/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+                              /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o) (memmove)
+/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+                              /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o) (memset)
+
+Allocating common symbols
+Common symbol       size              file
+
+n_6                 0x2               ./main.o
+n_5                 0x2               ./main.o
+n_0                 0x2               ./main.o
+n_1                 0x2               ./main.o
+n_4                 0x2               ./main.o
+n_2                 0x2               ./main.o
+n_3                 0x2               ./main.o
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o
+ .data          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o
+ .bss           0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o
+ .text          0x0000000000000000        0x4 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .data          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .bss           0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .data.__dso_handle
+                0x0000000000000000        0x2 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .text.call___do_global_dtors_aux
+                0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .text.call_frame_dummy
+                0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .bss           0x0000000000000000        0x0 ./main.o
+ .data          0x0000000000000000        0x0 ./qwark.o
+ .bss           0x0000000000000000        0x0 ./qwark.o
+ .data          0x0000000000000000        0x0 ./uart.o
+ .bss           0x0000000000000000        0x0 ./uart.o
+ .text          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(lib2divHI.o)
+ .data          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(lib2divHI.o)
+ .bss           0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(lib2divHI.o)
+ .text.__udivhi3
+                0x0000000000000000        0x8 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(lib2divHI.o)
+ .text.__umodhi3
+                0x0000000000000000        0x8 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(lib2divHI.o)
+ .data          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(epilogue.o)
+ .bss           0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(epilogue.o)
+ .data          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(srli.o)
+ .bss           0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(srli.o)
+ .text          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
+ .data          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
+ .bss           0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
+ .text          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
+ .data          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
+ .bss           0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
+ .text          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
+ .data          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
+ .bss           0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
+ .text          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+ .data          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+ .bss           0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+ .text          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .data          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .bss           0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .text          0x0000000000000000        0x2 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
+ .data          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
+ .bss           0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
+ .text.call___do_global_ctors_aux
+                0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
+ .text          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crtn.o
+ .data          0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crtn.o
+ .bss           0x0000000000000000        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+SFR              0x0000000000000000 0x0000000000000010
+PERIPHERAL_8BIT  0x0000000000000010 0x00000000000000f0
+PERIPHERAL_16BIT 0x0000000000000100 0x0000000000003f00
+RAM              0x0000000000004000 0x0000000000004000
+ROM              0x0000000000008000 0x0000000000007fe0 xr
+VECT1            0x000000000000ffe0 0x0000000000000002
+VECT2            0x000000000000ffe2 0x0000000000000002
+VECT3            0x000000000000ffe4 0x0000000000000002
+VECT4            0x000000000000ffe6 0x0000000000000002
+VECT5            0x000000000000ffe8 0x0000000000000002
+VECT6            0x000000000000ffea 0x0000000000000002
+VECT7            0x000000000000ffec 0x0000000000000002
+VECT8            0x000000000000ffee 0x0000000000000002
+VECT9            0x000000000000fff0 0x0000000000000002
+VECT10           0x000000000000fff2 0x0000000000000002
+VECT11           0x000000000000fff4 0x0000000000000002
+VECT12           0x000000000000fff6 0x0000000000000002
+VECT13           0x000000000000fff8 0x0000000000000002
+VECT14           0x000000000000fffa 0x0000000000000002
+VECT15           0x000000000000fffc 0x0000000000000002
+RESETVEC         0x000000000000fffe 0x0000000000000002
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o
+LOAD /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+LOAD ./main.o
+LOAD ./qwark.o
+LOAD ./uart.o
+LOAD /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a
+START GROUP
+LOAD /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libmul_16.a
+LOAD /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libc.a
+LOAD /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a
+LOAD /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a
+LOAD /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libnosys.a
+END GROUP
+LOAD /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a
+LOAD /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
+LOAD /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crtn.o
+LOAD /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a
+
+__interrupt_vector_1
+ *(__interrupt_vector_1)
+
+__interrupt_vector_2
+ *(__interrupt_vector_2)
+
+__interrupt_vector_3
+ *(__interrupt_vector_3)
+ *(__interrupt_vector_port1)
+
+__interrupt_vector_4
+ *(__interrupt_vector_4)
+ *(__interrupt_vector_port2)
+
+__interrupt_vector_5
+                0x000000000000ffe8        0x2
+ *(__interrupt_vector_5)
+ __interrupt_vector_5
+                0x000000000000ffe8        0x2 ./qwark.o
+ *(__interrupt_vector_qwark)
+
+__interrupt_vector_6
+ *(__interrupt_vector_6)
+
+__interrupt_vector_7
+ *(__interrupt_vector_7)
+
+__interrupt_vector_8
+ *(__interrupt_vector_8)
+
+__interrupt_vector_9
+ *(__interrupt_vector_9)
+ *(__interrupt_vector_timera1)
+
+__interrupt_vector_10
+ *(__interrupt_vector_10)
+ *(__interrupt_vector_timera0)
+
+__interrupt_vector_11
+ *(__interrupt_vector_11)
+ *(__interrupt_vector_wdt)
+
+__interrupt_vector_12
+ *(__interrupt_vector_12)
+
+__interrupt_vector_13
+ *(__interrupt_vector_13)
+
+__interrupt_vector_14
+ *(__interrupt_vector_14)
+
+__interrupt_vector_15
+ *(__interrupt_vector_15)
+ *(__interrupt_vector_nmi)
+
+__reset_vector  0x000000000000fffe        0x2
+ *(__interrupt_vector_16)
+ *(__interrupt_vector_reset)
+ *(.resetvec)
+ .resetvec      0x000000000000fffe        0x2 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o
+
+.rodata         0x0000000000008000       0x2c
+                0x0000000000008000                . = ALIGN (0x2)
+ *(.plt)
+ *(.rodata .rodata.* .gnu.linkonce.r.* .const .const:*)
+ .rodata        0x0000000000008000       0x1a ./main.o
+ *(.rodata1)
+ *(.eh_frame_hdr)
+ *(.eh_frame)
+ *fill*         0x000000000000801a        0x2 
+ .eh_frame      0x000000000000801c        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .eh_frame      0x000000000000801c        0x4 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
+ *(.gcc_except_table)
+ *(.gcc_except_table.*)
+                0x0000000000008020                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x0000000000008020                PROVIDE (__preinit_array_end, .)
+                0x0000000000008020                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x0000000000008020                PROVIDE (__init_array_end, .)
+                0x0000000000008020                PROVIDE (__fini_array_start, .)
+ *(.fini_array)
+ *(SORT(.fini_array.*))
+                0x0000000000008020                PROVIDE (__fini_array_end, .)
+                0x0000000000008020        0x4 LONG 0x0
+ *crtbegin*.o(.ctors)
+ .ctors         0x0000000000008024        0x2 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ *(EXCLUDE_FILE(*crtend*.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+ .ctors         0x0000000000008026        0x2 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
+ *crtbegin*.o(.dtors)
+ .dtors         0x0000000000008028        0x2 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ *(EXCLUDE_FILE(*crtend*.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+ .dtors         0x000000000000802a        0x2 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
+                0x000000000000802a                __DTOR_END__
+
+.text           0x000000000000802c      0xddc
+                0x000000000000802c                . = ALIGN (0x2)
+                0x000000000000802c                PROVIDE (_start, .)
+ *(SORT(.crt_*))
+ .crt_0000start
+                0x000000000000802c        0x4 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o
+                0x000000000000802c                __crt0_start
+ .crt_0001_qwark
+                0x0000000000008030      0x17a ./qwark.o
+                0x0000000000008030                qwark_restore
+ .crt_0100init_bss
+                0x00000000000081aa        0xe /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
+                0x00000000000081aa                __crt0_init_bss
+ .crt_0300movedata
+                0x00000000000081b8       0x14 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
+                0x00000000000081b8                __crt0_movedata
+ .crt_0700call_init_then_main
+                0x00000000000081cc        0xa /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
+                0x00000000000081cc                __crt0_call_init_then_main
+ .crt_0900main_init
+                0x00000000000081d6       0x3c /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o
+                0x00000000000081d6                _msp430_run_init_array
+                0x00000000000081e4                _msp430_run_preinit_array
+                0x00000000000081f2                _msp430_run_fini_array
+ *(.lowtext .text .stub .text.* .gnu.linkonce.t.* .text:*)
+ .text.deregister_tm_clones
+                0x0000000000008212       0x1a /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .text.register_tm_clones
+                0x000000000000822c       0x2e /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .text.__do_global_dtors_aux
+                0x000000000000825a       0x4e /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .text.frame_dummy
+                0x00000000000082a8       0x18 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .text          0x00000000000082c0      0x6cc ./main.o
+                0x00000000000082c0                btbl_bitcnt
+                0x0000000000008310                bit_count
+                0x0000000000008354                bitcount
+                0x00000000000084b8                ntbl_bitcount
+                0x0000000000008576                BW_btbl_bitcount
+                0x00000000000085ba                AR_btbl_bitcount
+                0x0000000000008628                ntbl_bitcnt
+                0x00000000000086c0                init
+                0x00000000000086ec                main
+ .text          0x000000000000898c      0x16e ./qwark.o
+                0x000000000000898c                INT_Qwark
+ .text          0x0000000000008afa      0x10a ./uart.o
+                0x0000000000008afa                UART_WriteChar
+                0x0000000000008b1e                UART_WriteNumber
+                0x0000000000008bd0                UART_WriteString
+ .text.udivmodhi4
+                0x0000000000008c04       0x40 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(lib2divHI.o)
+                0x0000000000008c04                udivmodhi4
+ .text.__divhi3
+                0x0000000000008c44       0x4c /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(lib2divHI.o)
+                0x0000000000008c44                __mspabi_divi
+ .text.__modhi3
+                0x0000000000008c90       0x32 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(lib2divHI.o)
+                0x0000000000008c90                __mspabi_remi
+ .text          0x0000000000008cc2       0x10 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(epilogue.o)
+                0x0000000000008cc2                __mspabi_func_epilog_7
+                0x0000000000008cc4                __mspabi_func_epilog_6
+                0x0000000000008cc6                __mspabi_func_epilog_5
+                0x0000000000008cc8                __mspabi_func_epilog_4
+                0x0000000000008cca                __mspabi_func_epilog_3
+                0x0000000000008ccc                __mspabi_func_epilog_2
+                0x0000000000008cce                __mspabi_func_epilog_1
+ .text          0x0000000000008cd2       0xb4 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(srli.o)
+                0x0000000000008cd2                __mspabi_srli_15
+                0x0000000000008cd6                __mspabi_srli_14
+                0x0000000000008cda                __mspabi_srli_13
+                0x0000000000008cde                __mspabi_srli_12
+                0x0000000000008ce2                __mspabi_srli_11
+                0x0000000000008ce6                __mspabi_srli_10
+                0x0000000000008cea                __mspabi_srli_9
+                0x0000000000008cee                __mspabi_srli_8
+                0x0000000000008cf2                __mspabi_srli_7
+                0x0000000000008cf6                __mspabi_srli_6
+                0x0000000000008cfa                __mspabi_srli_5
+                0x0000000000008cfe                __mspabi_srli_4
+                0x0000000000008d02                __mspabi_srli_3
+                0x0000000000008d06                __mspabi_srli_2
+                0x0000000000008d0a                __mspabi_srli_1
+                0x0000000000008d16                __mspabi_srli
+                0x0000000000008d1c                __mspabi_srll_15
+                0x0000000000008d22                __mspabi_srll_14
+                0x0000000000008d28                __mspabi_srll_13
+                0x0000000000008d2e                __mspabi_srll_12
+                0x0000000000008d34                __mspabi_srll_11
+                0x0000000000008d3a                __mspabi_srll_10
+                0x0000000000008d40                __mspabi_srll_9
+                0x0000000000008d46                __mspabi_srll_8
+                0x0000000000008d4c                __mspabi_srll_7
+                0x0000000000008d52                __mspabi_srll_6
+                0x0000000000008d58                __mspabi_srll_5
+                0x0000000000008d5e                __mspabi_srll_4
+                0x0000000000008d64                __mspabi_srll_3
+                0x0000000000008d6a                __mspabi_srll_2
+                0x0000000000008d70                __mspabi_srll_1
+                0x0000000000008d80                __mspabi_srll
+ .text.memmove  0x0000000000008d86       0x38 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+                0x0000000000008d86                memmove
+ .text.memset   0x0000000000008dbe       0x14 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+                0x0000000000008dbe                memset
+ .text.__do_global_ctors_aux
+                0x0000000000008dd2       0x1a /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
+ *(.text.*personality*)
+ *(.gnu.warning)
+ *(.interp .hash .dynsym .dynstr .gnu.version*)
+                [!provide]                        PROVIDE (__etext, .)
+                [!provide]                        PROVIDE (_etext, .)
+                [!provide]                        PROVIDE (etext, .)
+                0x0000000000008dec                . = ALIGN (0x2)
+ *(.init)
+ .init          0x0000000000008dec        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o
+                0x0000000000008dec                __msp430_init
+ .init          0x0000000000008dec        0x4 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .init          0x0000000000008df0        0x4 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
+ .init          0x0000000000008df4        0xa /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crtn.o
+                0x0000000000008dfe                __msp430_init_end
+ *(.fini)
+ .fini          0x0000000000008dfe        0x4 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o
+                0x0000000000008dfe                __msp430_fini
+ .fini          0x0000000000008e02        0x4 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .fini          0x0000000000008e06        0x2 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crtn.o
+                0x0000000000008e08                __msp430_fini_end
+ *(.tm_clone_table)
+ .tm_clone_table
+                0x0000000000008e08        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .tm_clone_table
+                0x0000000000008e08        0x0 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
+                0x0000000000008e08                __TMC_END__
+
+.data           0x0000000000004000      0x112 load address 0x0000000000008e08
+                0x0000000000004000                . = ALIGN (0x2)
+                0x0000000000004000                PROVIDE (__datastart, .)
+ *(.jcr)
+ *(.data.rel.ro.local)
+ *(.data.rel.ro*)
+ *(.dynamic)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000000004000      0x112 ./main.o
+                0x0000000000004000                bits
+                0x0000000000004100                var1
+                0x0000000000004102                var2
+                0x0000000000004104                var3
+                0x0000000000004106                var4
+                0x0000000000004108                var5
+                0x000000000000410a                var6
+                0x000000000000410c                var7
+                0x000000000000410e                var8
+                0x0000000000004110                var9
+ *(.gnu.linkonce.d.*personality*)
+ *(.data1)
+ *(.got.plt)
+ *(.got)
+                0x0000000000004112                . = ALIGN (0x2)
+ *(.sdata .sdata.* .gnu.linkonce.s.* D_2 D_1)
+                0x0000000000004112                . = ALIGN (0x2)
+                0x0000000000004112                _edata = .
+                [!provide]                        PROVIDE (edata, .)
+                [!provide]                        PROVIDE (__dataend, .)
+                0x0000000000008e08                PROVIDE (__romdatastart, LOADADDR (.data))
+                0x0000000000000112                PROVIDE (__romdatacopysize, SIZEOF (.data))
+
+.bss            0x0000000000004112       0x20 load address 0x0000000000008f1a
+                0x0000000000004112                . = ALIGN (0x2)
+                0x0000000000004112                PROVIDE (__bssstart, .)
+ *(.dynbss)
+ *(.sbss .sbss.*)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss.completed.3056
+                0x0000000000004112        0x1 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ *fill*         0x0000000000004113        0x1 
+ .bss.dtor_idx.3058
+                0x0000000000004114        0x2 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .bss.object.3071
+                0x0000000000004116        0xe /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+                0x0000000000004124                . = ALIGN (0x2)
+ *(COMMON)
+ COMMON         0x0000000000004124        0xe ./main.o
+                0x0000000000004124                n_6
+                0x0000000000004126                n_5
+                0x0000000000004128                n_0
+                0x000000000000412a                n_1
+                0x000000000000412c                n_4
+                0x000000000000412e                n_2
+                0x0000000000004130                n_3
+                [!provide]                        PROVIDE (__bssend, .)
+                0x0000000000000020                PROVIDE (__bsssize, SIZEOF (.bss))
+
+.noinit         0x0000000000004132        0x0 load address 0x0000000000008f1a
+                0x0000000000004132                . = ALIGN (0x2)
+                [!provide]                        PROVIDE (__noinit_start, .)
+ *(.noinit)
+                0x0000000000004132                . = ALIGN (0x2)
+                [!provide]                        PROVIDE (__noinit_end, .)
+                0x0000000000004132                end = .
+
+.stack          0x0000000000008000        0x0
+                0x0000000000008000                PROVIDE (__stack, .)
+ *(.stack)
+
+.MP430.attributes
+                0x0000000000000000      0x159
+ *(.MSP430.attributes)
+ .MSP430.attributes
+                0x0000000000000000       0x17 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o
+ .MSP430.attributes
+                0x0000000000000017       0x17 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+ .MSP430.attributes
+                0x000000000000002e       0x17 ./main.o
+ .MSP430.attributes
+                0x0000000000000045       0x17 ./qwark.o
+ .MSP430.attributes
+                0x000000000000005c       0x17 ./uart.o
+ .MSP430.attributes
+                0x0000000000000073       0x17 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(lib2divHI.o)
+ .MSP430.attributes
+                0x000000000000008a       0x17 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(epilogue.o)
+ .MSP430.attributes
+                0x00000000000000a1       0x17 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(srli.o)
+ .MSP430.attributes
+                0x00000000000000b8       0x17 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_bss.o)
+ .MSP430.attributes
+                0x00000000000000cf       0x17 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_movedata.o)
+ .MSP430.attributes
+                0x00000000000000e6       0x17 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libcrt.a(crt_main.o)
+ .MSP430.attributes
+                0x00000000000000fd       0x17 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+ .MSP430.attributes
+                0x0000000000000114       0x17 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .MSP430.attributes
+                0x000000000000012b       0x17 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
+ .MSP430.attributes
+                0x0000000000000142       0x17 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crtn.o
+ *(.gnu.attributes)
+ *(__TI_build_attributes)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x39
+ *(.comment)
+ .comment       0x0000000000000000       0x39 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+                                         0x3a (size before relaxing)
+ .comment       0x0000000000000039       0x3a ./main.o
+ .comment       0x0000000000000039       0x3a ./qwark.o
+ .comment       0x0000000000000039       0x3a ./uart.o
+ .comment       0x0000000000000039       0x3a /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/libgcc.a(lib2divHI.o)
+ .comment       0x0000000000000039       0x3a /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memmove.o)
+ .comment       0x0000000000000039       0x3a /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/libc.a(lib_a-memset.o)
+ .comment       0x0000000000000039       0x3a /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000       0x68
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 ./main.o
+ .debug_aranges
+                0x0000000000000020       0x28 ./qwark.o
+ .debug_aranges
+                0x0000000000000048       0x20 ./uart.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000      0xd48
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000      0xc06 ./main.o
+ .debug_info    0x0000000000000c06       0x57 ./qwark.o
+ .debug_info    0x0000000000000c5d       0xeb ./uart.o
+
+.debug_abbrev   0x0000000000000000      0x2cf
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x1f7 ./main.o
+ .debug_abbrev  0x00000000000001f7       0x36 ./qwark.o
+ .debug_abbrev  0x000000000000022d       0xa2 ./uart.o
+
+.debug_line     0x0000000000000000      0xebc
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x0000000000000000      0x6a5 ./main.o
+ .debug_line    0x00000000000006a5      0x6b7 ./qwark.o
+ .debug_line    0x0000000000000d5c      0x160 ./uart.o
+
+.debug_frame    0x0000000000000000      0x1d4
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000      0x144 ./main.o
+ .debug_frame   0x0000000000000144       0x34 ./qwark.o
+ .debug_frame   0x0000000000000178       0x5c ./uart.o
+
+.debug_str      0x0000000000000000      0x684
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x618 ./main.o
+                                        0x6a2 (size before relaxing)
+ .debug_str     0x0000000000000618       0x23 ./qwark.o
+                                        0x168 (size before relaxing)
+ .debug_str     0x000000000000063b       0x49 ./uart.o
+                                        0x193 (size before relaxing)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo  0x0000000000000000    0x10dd9
+ *(.debug_macinfo)
+ .debug_macinfo
+                0x0000000000000000     0x8d91 ./main.o
+ .debug_macinfo
+                0x0000000000008d91     0x3f56 ./qwark.o
+ .debug_macinfo
+                0x000000000000cce7     0x40f2 ./uart.o
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+/DISCARD/
+ *(.note.GNU-stack)
+OUTPUT(int_bitcount.elf elf32-msp430)
+
+.debug_ranges   0x0000000000000000       0x18
+ .debug_ranges  0x0000000000000000       0x18 ./qwark.o

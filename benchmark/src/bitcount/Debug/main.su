@@ -1,0 +1,10 @@
+main.c:45:6:init	0	static
+main.c:63:5:btbl_bitcnt	6	static
+main.c:71:5:bit_count	0	static
+main.c:80:5:bitcount	8	static
+main.c:89:5:ntbl_bitcount	8	static
+main.c:101:5:BW_btbl_bitcount	6	static
+main.c:114:5:AR_btbl_bitcount	6	static
+main.c:125:5:ntbl_bitcnt	6	static
+main.c:135:5:bit_shifter	0	static
+main.c:144:5:main	40	static

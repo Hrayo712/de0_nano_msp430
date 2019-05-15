@@ -1,0 +1,3500 @@
+
+AR.elf:     file format elf32-msp430
+
+SYMBOL TABLE:
+0000fffe l    d  __reset_vector	00000000 __reset_vector
+00008000 l    d  .rodata	00000000 .rodata
+00008014 l    d  .text	00000000 .text
+00004000 l    d  .data	00000000 .data
+00004080 l    d  .bss	00000000 .bss
+00004118 l    d  .noinit	00000000 .noinit
+00000000 l    d  .MP430.attributes	00000000 .MP430.attributes
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_macinfo	00000000 .debug_macinfo
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o
+0000fffe l       __reset_vector	00000000 __msp430_resetvec_hook
+00008070 l       .text	00000000 _msp430_run_array
+0000807e l       .text	00000000 _msp430_run_done
+00000000 l    df *ABS*	00000000 lib_a-impure.o
+00004008 l     O .data	00000078 impure_data
+00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+0000800c l     O .rodata	00000000 __CTOR_LIST__
+00008010 l     O .rodata	00000000 __DTOR_LIST__
+00008004 l     O .rodata	00000000 __EH_FRAME_BEGIN__
+00008d7c l     O .text	00000000 __TMC_LIST__
+00008084 l     F .text	00000000 deregister_tm_clones
+0000809e l     F .text	00000000 register_tm_clones
+000080cc l     F .text	00000000 __do_global_dtors_aux
+00004080 l     O .bss	00000000 completed.3056
+00004082 l     O .bss	00000000 dtor_idx.3058
+0000811a l     F .text	00000000 call___do_global_dtors_aux
+0000811a l     F .text	00000000 frame_dummy
+00004084 l     O .bss	00000000 object.3071
+00008132 l     F .text	00000000 call_frame_dummy
+00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
+0000800e l     O .rodata	00000000 __CTOR_END__
+00008004 l     O .rodata	00000000 __FRAME_END__
+00008d46 l     F .text	00000000 __do_global_ctors_aux
+00008d60 l     F .text	00000000 call___do_global_ctors_aux
+00000000 l    df *ABS*	00000000 crt_bss.o
+00000000 l    df *ABS*	00000000 crt_movedata.o
+00000000 l    df *ABS*	00000000 crt_main.o
+00000000 l    df *ABS*	00000000 main.c
+00004002 l     O .data	00000002 _v_seed.2299
+00000000 l    df *ABS*	00000000 lib2divHI.o
+00000000 l    df *ABS*	00000000 srli.o
+00000000 l    df *ABS*	00000000 lib2hw_mul_16.o
+00000130 l       *ABS*	00000000 MPY_OP1
+00000132 l       *ABS*	00000000 MPY_OP1_S
+00000134 l       *ABS*	00000000 MAC_OP1
+00000138 l       *ABS*	00000000 MPY_OP2
+00000138 l       *ABS*	00000000 MAC_OP2
+0000013a l       *ABS*	00000000 RESULT_LO
+0000013c l       *ABS*	00000000 RESULT_HI
+00000000 l    df *ABS*	00000000 lib2_mul_16bit.o
+00000000 l    df *ABS*	00000000 lib_a-exit.o
+00000000 l    df *ABS*	00000000 lib_a-__call_atexit.o
+00000000 l    df *ABS*	00000000 _muldi3.o
+00000000 l    df *ABS*	00000000 slli.o
+00000000 l    df *ABS*	00000000 srai.o
+00000000 l    df *ABS*	00000000 ciosyscalls.o
+00000000 l    df *ABS*	00000000 lib_a-errno.o
+00000000 l    df *ABS*	00000000 lib_a-memmove.o
+00000000 l    df *ABS*	00000000 lib_a-memset.o
+00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crtn.o
+0000887a g     F .text	00000000 __mspabi_mpyl
+00008bea g       .text	00000000 .hidden __mspabi_slll_9
+00008bda g       .text	00000000 .hidden __mspabi_slll_13
+000085e6 g     F .text	0000000a end_of_benchmark
+0000884a g     F .text	00000018 __mulsihi2
+0000879a g       .text	00000000 .hidden __mspabi_srli_9
+00008c2e g       .text	00000000 .hidden __mspabi_srai_6
+00008c38 g       .text	00000000 .hidden __mspabi_srai_1
+000087ea g       .text	00000000 .hidden __mspabi_srll_10
+00008262 g     F .text	00000062 transform
+000088ac g     F .text	00000000 __mspabi_mpyull_hw
+00008796 g       .text	00000000 .hidden __mspabi_srli_10
+00008530 g     F .text	00000050 train
+00008c5a g       .text	00000000 .hidden __mspabi_sral_10
+00008c4a g       .text	00000000 .hidden __mspabi_sral_14
+0000884a g     F .text	00000000 __mspabi_mpysl_hw
+00008bb4 g       .text	00000000 .hidden __mspabi_slli_9
+00008782 g       .text	00000000 .hidden __mspabi_srli_15
+00008cf8 g     F .text	00000038 memmove
+000088b0 g     F .text	00000000 __mspabi_mpyll_hw
+000087ae g       .text	00000000 .hidden __mspabi_srli_4
+00008bae g       .text	00000000 .hidden __mspabi_slli_12
+000086a4 g     F .text	00000040 .hidden udivmodhi4
+00008cf2 g     F .text	00000006 __errno
+00008c5e g       .text	00000000 .hidden __mspabi_sral_9
+000087a2 g       .text	00000000 .hidden __mspabi_srli_7
+000087fc g       .text	00000000 .hidden __mspabi_srll_7
+00008814 g       .text	00000000 .hidden __mspabi_srll_3
+00008c6a g       .text	00000000 .hidden __mspabi_sral_6
+00008c7e g       .text	00000000 .hidden __mspabi_sral_1
+0000884a g     F .text	00000000 __mspabi_mpysl
+0000887a g     F .text	0000002e __mulsi2
+00008774 g       .text	00000000 .hidden __mspabi_func_epilog_6
+00008c98  w    F .text	00000006 getpid
+00008c1c g       .text	00000000 .hidden __mspabi_srai_15
+00008d7c g     O .text	00000000 .hidden __TMC_END__
+000087d8 g       .text	00000000 .hidden __mspabi_srll_13
+00008012 g     O .rodata	00000000 .hidden __DTOR_END__
+00008008 g       .rodata	00000000 __fini_array_end
+000084c8 g     F .text	00000048 print_stats
+0000878e g       .text	00000000 .hidden __mspabi_srli_12
+00008c94  w    F .text	00000004 isatty
+00008c36 g       .text	00000000 .hidden __mspabi_srai_2
+00008c34 g       .text	00000000 .hidden __mspabi_srai_3
+00004092 g     O .bss	00000002 sum
+0000887a g     F .text	00000000 __mspabi_mpyl_hw
+00008014 g     F .text	00000004 __crt0_start
+00008be2 g       .text	00000000 .hidden __mspabi_slll_11
+00008bd2 g       .text	00000000 .hidden __mspabi_slll_15
+00004000 g     O .data	00000000 .hidden __dso_handle
+00008baa g       .text	00000000 .hidden __mspabi_slli_14
+00008bbe g       .text	00000000 .hidden __mspabi_slli_4
+00008018 g     F .text	0000000e __crt0_init_bss
+00000098 g       *ABS*	00000000 __bsssize
+00008c06 g       .text	00000000 .hidden __mspabi_slll_2
+00008c26 g       .text	00000000 .hidden __mspabi_srai_10
+00008730 g     F .text	00000032 .hidden __mspabi_remi
+0000803a g     F .text	0000000a __crt0_call_init_then_main
+0000877e g       .text	00000000 .hidden __mspabi_func_epilog_1
+00008bcc g       .text	00000000 .hidden __mspabi_slli
+00004094 g     O .bss	00000080 model
+00008cd6  w    F .text	0000000e lseek
+00008c94  w    F .text	00000004 _isatty
+0000877a g       .text	00000000 .hidden __mspabi_func_epilog_3
+00008000 g     O .rodata	00000002 _global_impure_ptr
+00008808 g       .text	00000000 .hidden __mspabi_srll_5
+000087c6 g       .text	00000000 .hidden __mspabi_srli
+000088a8 g     F .text	00000000 __mspabi_mpysll_hw
+00008836 g     F .text	00000000 __mspabi_mpyi_hw
+00008836 g     F .text	00000014 __mulhi2
+00008862 g     F .text	00000000 __mspabi_mpyul
+000087e4 g       .text	00000000 .hidden __mspabi_srll_11
+000088a8 g     F .text	00000004 __muldisi2
+00008bfa g       .text	00000000 .hidden __mspabi_slll_5
+00008bb0 g       .text	00000000 .hidden __mspabi_slli_11
+00008bc0 g       .text	00000000 .hidden __mspabi_slli_3
+000087aa g       .text	00000000 .hidden __mspabi_srli_5
+00008cc8  w    F .text	0000000e fstat
+000082c4 g     F .text	00000150 featurize
+00008ce4  w    F .text	0000000e kill
+00000000  w      *UND*	00000000 __sf_fake_stderr
+00000000  w      *UND*	00000000 __deregister_frame_info
+00004118 g       .noinit	00000000 end
+00008c56 g       .text	00000000 .hidden __mspabi_sral_11
+00008c46 g       .text	00000000 .hidden __mspabi_sral_15
+00008c2c g       .text	00000000 .hidden __mspabi_srai_7
+00000000  w      *UND*	00000000 _ITM_registerTMCloneTable
+00008bc2 g       .text	00000000 .hidden __mspabi_slli_2
+00004114 g     O .bss	00000002 resultStationaryPct
+0000876a g     F .text	00000008 .hidden __mspabi_remu
+00008802 g       .text	00000000 .hidden __mspabi_srll_6
+00008c72 g       .text	00000000 .hidden __mspabi_sral_4
+00008926 g     F .text	0000013a __call_exitprocs
+00008bf6 g       .text	00000000 .hidden __mspabi_slll_6
+00008014 g       .text	00000000 _start
+00008a60 g     F .text	00000148 .hidden __mspabi_mpyll
+00008cba  w    F .text	0000000e read
+00008bfe g       .text	00000000 .hidden __mspabi_slll_4
+00008bee g       .text	00000000 .hidden __mspabi_slll_8
+00008060 g     F .text	00000000 _msp430_run_fini_array
+000087ba g       .text	00000000 .hidden __mspabi_srli_1
+000087d2 g       .text	00000000 .hidden __mspabi_srll_14
+00008bba g       .text	00000000 .hidden __mspabi_slli_6
+00008c40 g       .text	00000000 .hidden __mspabi_srai
+00008836 g     F .text	00000000 __mspabi_mpyi
+00004116 g     O .bss	00000002 resultMovingPct
+00008c22 g       .text	00000000 .hidden __mspabi_srai_12
+00008786 g       .text	00000000 .hidden __mspabi_srli_14
+00000080 g       *ABS*	00000000 __romdatacopysize
+0000864a g     F .text	00000008 init
+00008bd6 g       .text	00000000 .hidden __mspabi_slll_14
+00008c66 g       .text	00000000 .hidden __mspabi_sral_7
+00008c2a g       .text	00000000 .hidden __mspabi_srai_8
+00008792 g       .text	00000000 .hidden __mspabi_srli_11
+00008c7a g       .text	00000000 .hidden __mspabi_sral_2
+00008bf2 g       .text	00000000 .hidden __mspabi_slll_7
+00000000  w      *UND*	00000000 _ITM_deregisterTMCloneTable
+00008008 g       .rodata	00000000 __fini_array_start
+000086e4 g     F .text	0000004c .hidden __mspabi_divi
+00000000  w      *UND*	00000000 __sf_fake_stdin
+00000000  w      *ABS*	00000000 __rom_highdatacopysize
+00008d60 g       .text	00000000 __msp430_init
+00008d30 g     F .text	00000014 memset
+00008bde g       .text	00000000 .hidden __mspabi_slll_12
+00008652 g     F .text	00000052 main
+00008862 g     F .text	00000018 __umulsihi2
+00008c28 g       .text	00000000 .hidden __mspabi_srai_9
+00008c24 g       .text	00000000 .hidden __mspabi_srai_11
+0000880e g       .text	00000000 .hidden __mspabi_srll_4
+00008008 g       .rodata	00000000 __init_array_end
+000087b6 g       .text	00000000 .hidden __mspabi_srli_2
+00008c8a g       .text	00000000 .hidden __mspabi_sral
+00008bc4 g       .text	00000000 .hidden __mspabi_slli_1
+00008762 g     F .text	00000008 .hidden __mspabi_divu
+00000000  w      *ABS*	00000000 __high_bsssize
+00008c02 g       .text	00000000 .hidden __mspabi_slll_3
+00000000  w      *ABS*	00000000 __rom_highdatastart
+00008d7c g       .text	00000000 __msp430_fini_end
+00008c62 g       .text	00000000 .hidden __mspabi_sral_8
+000084ae g     F .text	0000001a record_stats
+00008c4e g       .text	00000000 .hidden __mspabi_sral_13
+000085f0 g     F .text	00000002 count_error
+00004004 g     O .data	00000002 count
+000087de g       .text	00000000 .hidden __mspabi_srll_12
+00008bbc g       .text	00000000 .hidden __mspabi_slli_5
+00008510 g     F .text	00000020 warmup_sensor
+000088ac g     F .text	00000004 __umuldisi2
+00008862 g     F .text	00000000 _mspabi_mpyul_hw
+00008d7c g       *ABS*	00000000 __romdatastart
+00008bac g       .text	00000000 .hidden __mspabi_slli_13
+00008c32 g       .text	00000000 .hidden __mspabi_srai_4
+00008132 g     F .text	0000007c sqrt16
+00008044 g     F .text	00000000 _msp430_run_init_array
+000087a6 g       .text	00000000 .hidden __mspabi_srli_6
+00004006 g     O .data	00000002 _impure_ptr
+00008008 g       .rodata	00000000 __preinit_array_end
+000081ae g     F .text	0000005a ACCEL_singleSample
+00008bb2 g       .text	00000000 .hidden __mspabi_slli_10
+000087b2 g       .text	00000000 .hidden __mspabi_srli_3
+00000000  w      *ABS*	00000000 __high_datastart
+00000000  w      *ABS*	00000000 __upper_data_init
+00004080 g       .bss	00000000 __bssstart
+00008414 g     F .text	0000009a classify
+000085f2 g     F .text	00000058 select_mode
+00008776 g       .text	00000000 .hidden __mspabi_func_epilog_5
+00008c1e g       .text	00000000 .hidden __mspabi_srai_14
+00008c16 g       .text	00000000 .hidden __mspabi_slll
+00008000 g       .noinit	00000000 __stack
+000087f0 g       .text	00000000 .hidden __mspabi_srll_9
+00008c76 g       .text	00000000 .hidden __mspabi_sral_3
+00004080 g       .data	00000000 _edata
+00008c52 g       .text	00000000 .hidden __mspabi_sral_12
+00008d72 g       .text	00000000 __msp430_init_end
+00008830 g       .text	00000000 .hidden __mspabi_srll
+00008908 g     F .text	0000001e exit
+00000000  w      *ABS*	00000000 __high_bssstart
+00008bb6 g       .text	00000000 .hidden __mspabi_slli_8
+000087cc g       .text	00000000 .hidden __mspabi_srll_15
+00008be6 g       .text	00000000 .hidden __mspabi_slll_10
+00000000  w      *UND*	00000000 __sf_fake_stdout
+00008ba8 g       .text	00000000 .hidden __mspabi_slli_15
+00008008 g       .rodata	00000000 __init_array_start
+00008c90  w    F .text	00000004 _exit
+000088b0 g     F .text	00000004 __muldi3
+00008c30 g       .text	00000000 .hidden __mspabi_srai_5
+00008c9e  w    F .text	0000000e open
+00008c20 g       .text	00000000 .hidden __mspabi_srai_13
+000088b4 g     F .text	00000036 __mspabi_mpysll
+0000878a g       .text	00000000 .hidden __mspabi_srli_13
+00004000 g       .data	00000000 __datastart
+00008c0a g       .text	00000000 .hidden __mspabi_slll_1
+000087f6 g       .text	00000000 .hidden __mspabi_srll_8
+00008820 g       .text	00000000 .hidden __mspabi_srll_1
+00008bb8 g       .text	00000000 .hidden __mspabi_slli_7
+00008008 g       .rodata	00000000 __preinit_array_start
+00008026 g     F .text	00000014 __crt0_movedata
+0000877c g       .text	00000000 .hidden __mspabi_func_epilog_2
+000088ea g     F .text	0000001e __mspabi_mpyull
+00000000  w      *UND*	00000000 __register_frame_info
+00008c6e g       .text	00000000 .hidden __mspabi_sral_5
+00008052 g     F .text	00000000 _msp430_run_preinit_array
+00008208 g     F .text	0000005a acquire_window
+00008cac  w    F .text	0000000e close
+00008772 g       .text	00000000 .hidden __mspabi_func_epilog_7
+00008778 g       .text	00000000 .hidden __mspabi_func_epilog_4
+0000881a g       .text	00000000 .hidden __mspabi_srll_2
+00008d72 g       .text	00000000 __msp430_fini
+0000879e g       .text	00000000 .hidden __mspabi_srli_8
+00008580 g     F .text	00000066 recognize
+00000000  w      *UND*	00000000 free
+
+
+
+Disassembly of section .text:
+
+00008014 <__crt0_start>:
+    8014:	31 40 00 80 	mov	#32768,	r1	;#0x8000
+
+00008018 <__crt0_init_bss>:
+    8018:	3c 40 80 40 	mov	#16512,	r12	;#0x4080
+
+0000801c <.Loc.74.1>:
+    801c:	0d 43       	clr	r13		;
+
+0000801e <.Loc.75.1>:
+    801e:	3e 40 98 00 	mov	#152,	r14	;#0x0098
+
+00008022 <.Loc.79.1>:
+    8022:	b0 12 30 8d 	call	#36144		;#0x8d30
+
+00008026 <__crt0_movedata>:
+    8026:	3c 40 00 40 	mov	#16384,	r12	;#0x4000
+
+0000802a <.Loc.116.1>:
+    802a:	3d 40 7c 8d 	mov	#36220,	r13	;#0x8d7c
+
+0000802e <.Loc.119.1>:
+    802e:	0d 9c       	cmp	r12,	r13	;
+
+00008030 <.Loc.120.1>:
+    8030:	04 24       	jz	$+10     	;abs 0x803a
+
+00008032 <.Loc.122.1>:
+    8032:	3e 40 80 00 	mov	#128,	r14	;#0x0080
+
+00008036 <.Loc.124.1>:
+    8036:	b0 12 f8 8c 	call	#36088		;#0x8cf8
+
+0000803a <__crt0_call_init_then_main>:
+    803a:	b0 12 60 8d 	call	#36192		;#0x8d60
+
+0000803e <.Loc.196.1>:
+    803e:	0c 43       	clr	r12		;
+
+00008040 <.Loc.197.1>:
+    8040:	b0 12 52 86 	call	#34386		;#0x8652
+
+00008044 <_msp430_run_init_array>:
+    8044:	34 40 08 80 	mov	#32776,	r4	;#0x8008
+
+00008048 <.Loc.224.1>:
+    8048:	35 40 08 80 	mov	#32776,	r5	;#0x8008
+
+0000804c <.Loc.225.1>:
+    804c:	26 43       	mov	#2,	r6	;r3 As==10
+
+0000804e <.Loc.226.1>:
+    804e:	30 40 70 80 	br	#0x8070		;
+
+00008052 <_msp430_run_preinit_array>:
+    8052:	34 40 08 80 	mov	#32776,	r4	;#0x8008
+
+00008056 <.Loc.232.1>:
+    8056:	35 40 08 80 	mov	#32776,	r5	;#0x8008
+
+0000805a <.Loc.233.1>:
+    805a:	26 43       	mov	#2,	r6	;r3 As==10
+
+0000805c <.Loc.234.1>:
+    805c:	30 40 70 80 	br	#0x8070		;
+
+00008060 <_msp430_run_fini_array>:
+    8060:	34 40 08 80 	mov	#32776,	r4	;#0x8008
+
+00008064 <.Loc.240.1>:
+    8064:	35 40 08 80 	mov	#32776,	r5	;#0x8008
+
+00008068 <.Loc.241.1>:
+    8068:	36 40 fe ff 	mov	#65534,	r6	;#0xfffe
+
+0000806c <.Loc.242.1>:
+    806c:	30 40 70 80 	br	#0x8070		;
+
+00008070 <_msp430_run_array>:
+    8070:	05 94       	cmp	r4,	r5	;
+
+00008072 <.Loc.246.1>:
+    8072:	05 24       	jz	$+12     	;abs 0x807e
+
+00008074 <.Loc.247.1>:
+    8074:	27 44       	mov	@r4,	r7	;
+
+00008076 <.Loc.248.1>:
+    8076:	04 56       	add	r6,	r4	;
+
+00008078 <.Loc.249.1>:
+    8078:	a7 12       	call	@r7		;
+
+0000807a <.Loc.250.1>:
+    807a:	10 40 f4 ff 	br	0xfff4		;PC rel. 0x8070
+
+0000807e <_msp430_run_done>:
+    807e:	30 41       	ret			
+
+00008080 <L0>:
+    8080:	30 41       	ret			
+    8082:	30 41       	ret			
+
+00008084 <deregister_tm_clones>:
+    8084:	3c 40 7c 8d 	mov	#36220,	r12	;#0x8d7c
+    8088:	3c 90 7c 8d 	cmp	#36220,	r12	;#0x8d7c
+    808c:	07 24       	jz	$+16     	;abs 0x809c
+    808e:	3d 40 00 00 	mov	#0,	r13	;
+    8092:	0d 93       	cmp	#0,	r13	;r3 As==00
+    8094:	03 24       	jz	$+8      	;abs 0x809c
+    8096:	3c 40 7c 8d 	mov	#36220,	r12	;#0x8d7c
+    809a:	8d 12       	call	r13		;
+
+0000809c <.L1>:
+    809c:	30 41       	ret			
+
+0000809e <register_tm_clones>:
+    809e:	0a 12       	push	r10		;
+    80a0:	3a 40 7c 8d 	mov	#36220,	r10	;#0x8d7c
+    80a4:	3a 80 7c 8d 	sub	#36220,	r10	;#0x8d7c
+    80a8:	0a 11       	rra	r10		;
+    80aa:	0c 4a       	mov	r10,	r12	;
+    80ac:	b0 12 82 87 	call	#34690		;#0x8782
+    80b0:	0c 5a       	add	r10,	r12	;
+    80b2:	0d 4c       	mov	r12,	r13	;
+    80b4:	0d 11       	rra	r13		;
+    80b6:	0d 93       	cmp	#0,	r13	;r3 As==00
+    80b8:	07 24       	jz	$+16     	;abs 0x80c8
+    80ba:	3e 40 00 00 	mov	#0,	r14	;
+    80be:	0e 93       	cmp	#0,	r14	;r3 As==00
+    80c0:	03 24       	jz	$+8      	;abs 0x80c8
+    80c2:	3c 40 7c 8d 	mov	#36220,	r12	;#0x8d7c
+    80c6:	8e 12       	call	r14		;
+
+000080c8 <.L9>:
+    80c8:	3a 41       	pop	r10		;
+    80ca:	30 41       	ret			
+
+000080cc <__do_global_dtors_aux>:
+    80cc:	0a 12       	push	r10		;
+    80ce:	09 12       	push	r9		;
+    80d0:	c2 93 80 40 	cmp.b	#0,	&0x4080	;r3 As==00
+    80d4:	17 20       	jnz	$+48     	;abs 0x8104
+    80d6:	3a 40 12 80 	mov	#32786,	r10	;#0x8012
+    80da:	3a 80 10 80 	sub	#32784,	r10	;#0x8010
+    80de:	0a 11       	rra	r10		;
+    80e0:	3a 53       	add	#-1,	r10	;r3 As==11
+    80e2:	39 40 10 80 	mov	#32784,	r9	;#0x8010
+
+000080e6 <.L19>:
+    80e6:	1c 42 82 40 	mov	&0x4082,r12	;0x4082
+    80ea:	0c 9a       	cmp	r10,	r12	;
+    80ec:	0d 28       	jnc	$+28     	;abs 0x8108
+    80ee:	b0 12 84 80 	call	#32900		;#0x8084
+    80f2:	3d 40 00 00 	mov	#0,	r13	;
+    80f6:	0d 93       	cmp	#0,	r13	;r3 As==00
+    80f8:	03 24       	jz	$+8      	;abs 0x8100
+    80fa:	3c 40 04 80 	mov	#32772,	r12	;#0x8004
+    80fe:	8d 12       	call	r13		;
+
+00008100 <.L21>:
+    8100:	d2 43 80 40 	mov.b	#1,	&0x4080	;r3 As==01
+
+00008104 <.L17>:
+    8104:	30 40 7c 87 	br	#0x877c		;
+
+00008108 <.L20>:
+    8108:	1c 53       	inc	r12		;
+    810a:	82 4c 82 40 	mov	r12,	&0x4082	;
+    810e:	0c 5c       	rla	r12		;
+    8110:	0c 59       	add	r9,	r12	;
+    8112:	2c 4c       	mov	@r12,	r12	;
+    8114:	8c 12       	call	r12		;
+    8116:	30 40 e6 80 	br	#0x80e6		;
+
+0000811a <call___do_global_dtors_aux>:
+    811a:	3e 40 00 00 	mov	#0,	r14	;
+    811e:	0e 93       	cmp	#0,	r14	;r3 As==00
+    8120:	05 24       	jz	$+12     	;abs 0x812c
+    8122:	3d 40 84 40 	mov	#16516,	r13	;#0x4084
+    8126:	3c 40 04 80 	mov	#32772,	r12	;#0x8004
+    812a:	8e 12       	call	r14		;
+
+0000812c <.L27>:
+    812c:	b0 12 9e 80 	call	#32926		;#0x809e
+    8130:	30 41       	ret			
+
+00008132 <sqrt16>:
+
+
+/* Sqrt.c */
+/* Square root by Newton's method */
+uint16_t sqrt16(uint32_t x)
+{
+    8132:	0a 12       	push	r10		;
+
+00008134 <.LCFI0>:
+    8134:	09 12       	push	r9		;
+
+00008136 <.LCFI1>:
+    8136:	08 12       	push	r8		;
+
+00008138 <.LCFI2>:
+    8138:	07 12       	push	r7		;
+
+0000813a <.LCFI3>:
+    813a:	06 12       	push	r6		;
+
+0000813c <.LCFI4>:
+    813c:	05 12       	push	r5		;
+
+0000813e <.LCFI5>:
+    813e:	04 12       	push	r4		;
+
+00008140 <.LCFI6>:
+    8140:	21 83       	decd	r1		;
+
+00008142 <.LCFI7>:
+    8142:	81 4c 00 00 	mov	r12,	0(r1)	;
+    8146:	07 4d       	mov	r13,	r7	;
+
+00008148 <.Loc.32.1>:
+    uint16_t hi = 0xffff;
+    uint16_t lo = 0;
+    uint16_t mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+    uint32_t s = 0;
+
+    while (s != x && hi - lo > 1) {
+    8148:	0c dd       	bis	r13,	r12	;
+
+0000814a <.LVL2>:
+    814a:	0c 93       	cmp	#0,	r12	;r3 As==00
+    814c:	2a 24       	jz	$+86     	;abs 0x81a2
+
+0000814e <.Loc.28.1>:
+/* Sqrt.c */
+/* Square root by Newton's method */
+uint16_t sqrt16(uint32_t x)
+{
+    uint16_t hi = 0xffff;
+    uint16_t lo = 0;
+    814e:	4a 43       	clr.b	r10		;
+
+00008150 <.Loc.27.1>:
+
+/* Sqrt.c */
+/* Square root by Newton's method */
+uint16_t sqrt16(uint32_t x)
+{
+    uint16_t hi = 0xffff;
+    8150:	39 43       	mov	#-1,	r9	;r3 As==11
+
+00008152 <.Loc.34.1>:
+    uint16_t mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+    uint32_t s = 0;
+
+    while (s != x && hi - lo > 1) {
+        mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+        s = (uint32_t)mid* (uint32_t)mid;
+    8152:	36 40 7a 88 	mov	#34938,	r6	;#0x887a
+    8156:	30 40 6e 81 	br	#0x816e		;
+
+0000815a <.L14>:
+    uint16_t hi = 0xffff;
+    uint16_t lo = 0;
+    uint16_t mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+    uint32_t s = 0;
+
+    while (s != x && hi - lo > 1) {
+    815a:	07 9d       	cmp	r13,	r7	;
+    815c:	1f 20       	jnz	$+64     	;abs 0x819c
+    815e:	30 40 a6 81 	br	#0x81a6		;
+
+00008162 <.L9>:
+        mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+    8162:	0a 48       	mov	r8,	r10	;
+
+00008164 <.L4>:
+    uint16_t hi = 0xffff;
+    uint16_t lo = 0;
+    uint16_t mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+    uint32_t s = 0;
+
+    while (s != x && hi - lo > 1) {
+    8164:	0c 49       	mov	r9,	r12	;
+    8166:	0c 8a       	sub	r10,	r12	;
+
+00008168 <.LVL6>:
+    8168:	5d 43       	mov.b	#1,	r13	;r3 As==01
+    816a:	0d 9c       	cmp	r12,	r13	;
+    816c:	1c 2c       	jc	$+58     	;abs 0x81a6
+
+0000816e <.L7>:
+        mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+    816e:	04 49       	mov	r9,	r4	;
+    8170:	04 5a       	add	r10,	r4	;
+    8172:	4d 43       	clr.b	r13		;
+    8174:	05 4d       	mov	r13,	r5	;
+    8176:	05 6d       	addc	r13,	r5	;
+    8178:	0c 44       	mov	r4,	r12	;
+    817a:	0d 45       	mov	r5,	r13	;
+    817c:	12 c3       	clrc			
+    817e:	0d 10       	rrc	r13		;
+    8180:	0c 10       	rrc	r12		;
+    8182:	08 4c       	mov	r12,	r8	;
+
+00008184 <.Loc.34.1>:
+        s = (uint32_t)mid* (uint32_t)mid;
+    8184:	0e 4c       	mov	r12,	r14	;
+    8186:	0f 4d       	mov	r13,	r15	;
+    8188:	86 12       	call	r6		;
+
+0000818a <.LVL9>:
+        if (s < x)
+    818a:	0d 97       	cmp	r7,	r13	;
+    818c:	ea 2b       	jnc	$-42     	;abs 0x8162
+    818e:	07 9d       	cmp	r13,	r7	;
+    8190:	02 20       	jnz	$+6      	;abs 0x8196
+    8192:	2c 91       	cmp	@r1,	r12	;
+    8194:	e6 2b       	jnc	$-50     	;abs 0x8162
+
+00008196 <.L10>:
+    uint16_t hi = 0xffff;
+    uint16_t lo = 0;
+    uint16_t mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+    uint32_t s = 0;
+
+    while (s != x && hi - lo > 1) {
+    8196:	81 9c 00 00 	cmp	r12,	0(r1)	;
+    819a:	df 27       	jz	$-64     	;abs 0x815a
+
+0000819c <.L11>:
+        mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+    819c:	09 48       	mov	r8,	r9	;
+    819e:	30 40 64 81 	br	#0x8164		;
+
+000081a2 <.L8>:
+/* Square root by Newton's method */
+uint16_t sqrt16(uint32_t x)
+{
+    uint16_t hi = 0xffff;
+    uint16_t lo = 0;
+    uint16_t mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+    81a2:	38 40 ff 7f 	mov	#32767,	r8	;#0x7fff
+
+000081a6 <.L1>:
+        else
+            hi = mid;
+    }
+
+    return mid;
+}
+    81a6:	0c 48       	mov	r8,	r12	;
+    81a8:	21 53       	incd	r1		;
+    81aa:	30 40 72 87 	br	#0x8772		;
+
+000081ae <ACCEL_singleSample>:
+//NVM model_t model;
+
+unsigned int count = 1;
+model_t model;
+
+void ACCEL_singleSample(threeAxis_t_8* result){
+    81ae:	0a 12       	push	r10		;
+
+000081b0 <.LCFI8>:
+    81b0:	09 12       	push	r9		;
+
+000081b2 <.LCFI9>:
+    81b2:	08 12       	push	r8		;
+
+000081b4 <.LCFI10>:
+    81b4:	07 12       	push	r7		;
+
+000081b6 <.LCFI11>:
+    81b6:	09 4c       	mov	r12,	r9	;
+
+000081b8 <.Loc.132.1>:
+
+    //NVM static unsigned int _v_seed = 1;
+    static unsigned int _v_seed = 1;
+
+    unsigned int seed = _v_seed;
+    81b8:	1a 42 02 40 	mov	&0x4002,r10	;0x4002
+
+000081bc <.LVL14>:
+
+    result->x = (seed*17)%85;
+    81bc:	0c 4a       	mov	r10,	r12	;
+
+000081be <.LVL15>:
+    81be:	0c 5a       	add	r10,	r12	;
+    81c0:	0c 5c       	rla	r12		;
+    81c2:	0c 5c       	rla	r12		;
+    81c4:	0c 5c       	rla	r12		;
+    81c6:	38 40 6a 87 	mov	#34666,	r8	;#0x876a
+    81ca:	7d 40 55 00 	mov.b	#85,	r13	;#0x0055
+    81ce:	0c 5a       	add	r10,	r12	;
+    81d0:	88 12       	call	r8		;
+    81d2:	c9 4c 00 00 	mov.b	r12,	0(r9)	;
+
+000081d6 <.Loc.135.1>:
+    result->y = (seed*17*17)%85;
+    81d6:	37 40 36 88 	mov	#34870,	r7	;#0x8836
+    81da:	3d 40 21 01 	mov	#289,	r13	;#0x0121
+    81de:	0c 4a       	mov	r10,	r12	;
+    81e0:	87 12       	call	r7		;
+    81e2:	7d 40 55 00 	mov.b	#85,	r13	;#0x0055
+    81e6:	88 12       	call	r8		;
+    81e8:	c9 4c 01 00 	mov.b	r12,	1(r9)	;
+
+000081ec <.Loc.136.1>:
+    result->z = (seed*17*17*17)%85;
+    81ec:	3d 40 31 13 	mov	#4913,	r13	;#0x1331
+    81f0:	0c 4a       	mov	r10,	r12	;
+    81f2:	87 12       	call	r7		;
+    81f4:	7d 40 55 00 	mov.b	#85,	r13	;#0x0055
+    81f8:	88 12       	call	r8		;
+    81fa:	c9 4c 02 00 	mov.b	r12,	2(r9)	;
+
+000081fe <.LVL21>:
+    _v_seed = ++seed;
+    81fe:	1a 53       	inc	r10		;
+
+00008200 <.LVL22>:
+    8200:	82 4a 02 40 	mov	r10,	&0x4002	;
+
+00008204 <.Loc.138.1>:
+}
+    8204:	30 40 78 87 	br	#0x8778		;
+
+00008208 <acquire_window>:
+
+
+#define accel_sample ACCEL_singleSample
+
+void acquire_window(accelWindow window)
+{
+    8208:	0a 12       	push	r10		;
+
+0000820a <.LCFI12>:
+    820a:	09 12       	push	r9		;
+
+0000820c <.LCFI13>:
+    820c:	21 82       	sub	#4,	r1	;r2 As==10
+
+0000820e <.LCFI14>:
+    820e:	0a 4c       	mov	r12,	r10	;
+
+00008210 <.Loc.151.1>:
+    unsigned samplesInWindow = 0;
+
+    TASK_CHECKPOINT();
+
+    while (samplesInWindow < ACCEL_WINDOW_SIZE) {
+        accel_sample(&sample);
+    8210:	39 40 ae 81 	mov	#33198,	r9	;#0x81ae
+    8214:	0c 41       	mov	r1,	r12	;
+
+00008216 <.LVL25>:
+    8216:	1c 53       	inc	r12		;
+    8218:	89 12       	call	r9		;
+
+0000821a <.Loc.154.1>:
+        LOG("acquire: sample %u %u %u\r\n", sample.x, sample.y, sample.z);
+
+        window[samplesInWindow++] = sample;
+    821a:	da 41 01 00 	mov.b	1(r1),	0(r10)	;
+    821e:	00 00 
+    8220:	da 41 02 00 	mov.b	2(r1),	1(r10)	;
+    8224:	01 00 
+    8226:	da 41 03 00 	mov.b	3(r1),	2(r10)	;
+    822a:	02 00 
+
+0000822c <.Loc.151.1>:
+    unsigned samplesInWindow = 0;
+
+    TASK_CHECKPOINT();
+
+    while (samplesInWindow < ACCEL_WINDOW_SIZE) {
+        accel_sample(&sample);
+    822c:	0c 41       	mov	r1,	r12	;
+    822e:	1c 53       	inc	r12		;
+    8230:	89 12       	call	r9		;
+
+00008232 <.Loc.154.1>:
+        LOG("acquire: sample %u %u %u\r\n", sample.x, sample.y, sample.z);
+
+        window[samplesInWindow++] = sample;
+    8232:	da 41 01 00 	mov.b	1(r1),	3(r10)	;
+    8236:	03 00 
+    8238:	da 41 02 00 	mov.b	2(r1),	4(r10)	;
+    823c:	04 00 
+    823e:	da 41 03 00 	mov.b	3(r1),	5(r10)	;
+    8242:	05 00 
+
+00008244 <.Loc.151.1>:
+    unsigned samplesInWindow = 0;
+
+    TASK_CHECKPOINT();
+
+    while (samplesInWindow < ACCEL_WINDOW_SIZE) {
+        accel_sample(&sample);
+    8244:	0c 41       	mov	r1,	r12	;
+    8246:	1c 53       	inc	r12		;
+    8248:	89 12       	call	r9		;
+
+0000824a <.Loc.154.1>:
+        LOG("acquire: sample %u %u %u\r\n", sample.x, sample.y, sample.z);
+
+        window[samplesInWindow++] = sample;
+    824a:	da 41 01 00 	mov.b	1(r1),	6(r10)	;
+    824e:	06 00 
+    8250:	da 41 02 00 	mov.b	2(r1),	7(r10)	;
+    8254:	07 00 
+    8256:	da 41 03 00 	mov.b	3(r1),	8(r10)	;
+    825a:	08 00 
+
+0000825c <.Loc.156.1>:
+    }
+}
+    825c:	21 52       	add	#4,	r1	;r2 As==10
+    825e:	30 40 7c 87 	br	#0x877c		;
+
+00008262 <transform>:
+
+void transform(accelWindow window)
+{
+    8262:	0a 12       	push	r10		;
+
+00008264 <.LCFI15>:
+    8264:	09 12       	push	r9		;
+
+00008266 <.LCFI16>:
+    8266:	09 4c       	mov	r12,	r9	;
+    8268:	39 50 09 00 	add	#9,	r9	;
+
+0000826c <.LBB2>:
+    LOG("transform\r\n");
+
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+        accelReading *sample = &window[i];
+
+        if (sample->x < SAMPLE_NOISE_FLOOR ||
+    826c:	7b 40 09 00 	mov.b	#9,	r11	;
+
+00008270 <.Loc.174.1>:
+            sample->z < SAMPLE_NOISE_FLOOR) {
+
+            LOG("transform: sample %u %u %u\r\n",
+                sample->x, sample->y, sample->z);
+
+            sample->x = (sample->x > SAMPLE_NOISE_FLOOR) ? sample->x : 0;
+    8270:	7f 40 0a 00 	mov.b	#10,	r15	;#0x000a
+
+00008274 <.Loc.176.1>:
+            sample->y = (sample->y > SAMPLE_NOISE_FLOOR) ? sample->y : 0;
+            sample->z = (sample->z > SAMPLE_NOISE_FLOOR) ? sample->z : 0;
+    8274:	4a 43       	clr.b	r10		;
+    8276:	30 40 a8 82 	br	#0x82a8		;
+
+0000827a <.L18>:
+            sample->z < SAMPLE_NOISE_FLOOR) {
+
+            LOG("transform: sample %u %u %u\r\n",
+                sample->x, sample->y, sample->z);
+
+            sample->x = (sample->x > SAMPLE_NOISE_FLOOR) ? sample->x : 0;
+    827a:	4f 9e       	cmp.b	r14,	r15	;
+    827c:	01 28       	jnc	$+4      	;abs 0x8280
+    827e:	0e 4a       	mov	r10,	r14	;
+
+00008280 <.L20>:
+    8280:	cd 4e 00 00 	mov.b	r14,	0(r13)	;
+
+00008284 <.Loc.175.1>:
+            sample->y = (sample->y > SAMPLE_NOISE_FLOOR) ? sample->y : 0;
+    8284:	5e 4d 01 00 	mov.b	1(r13),	r14	;
+    8288:	4f 9e       	cmp.b	r14,	r15	;
+    828a:	01 28       	jnc	$+4      	;abs 0x828e
+
+0000828c <.Loc.175.1>:
+    828c:	0e 4a       	mov	r10,	r14	;
+
+0000828e <.L21>:
+    828e:	cd 4e 01 00 	mov.b	r14,	1(r13)	;
+
+00008292 <.Loc.176.1>:
+            sample->z = (sample->z > SAMPLE_NOISE_FLOOR) ? sample->z : 0;
+    8292:	5e 4d 02 00 	mov.b	2(r13),	r14	;
+    8296:	4f 9e       	cmp.b	r14,	r15	;
+    8298:	01 28       	jnc	$+4      	;abs 0x829c
+
+0000829a <.Loc.176.1>:
+    829a:	0e 4a       	mov	r10,	r14	;
+
+0000829c <.L22>:
+    829c:	cd 4e 02 00 	mov.b	r14,	2(r13)	;
+
+000082a0 <.L19>:
+    82a0:	3c 50 03 00 	add	#3,	r12	;
+
+000082a4 <.LBE2>:
+{
+    unsigned i = 0;
+
+    LOG("transform\r\n");
+
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+    82a4:	0c 99       	cmp	r9,	r12	;
+    82a6:	0c 24       	jz	$+26     	;abs 0x82c0
+
+000082a8 <.L23>:
+    82a8:	0d 4c       	mov	r12,	r13	;
+
+000082aa <.LBB3>:
+        accelReading *sample = &window[i];
+
+        if (sample->x < SAMPLE_NOISE_FLOOR ||
+    82aa:	6e 4c       	mov.b	@r12,	r14	;
+    82ac:	4b 9e       	cmp.b	r14,	r11	;
+    82ae:	e5 2f       	jc	$-52     	;abs 0x827a
+
+000082b0 <.Loc.167.1>:
+    82b0:	5b 9c 01 00 	cmp.b	1(r12),	r11	;
+    82b4:	e2 2f       	jc	$-58     	;abs 0x827a
+
+000082b6 <.Loc.168.1>:
+            sample->y < SAMPLE_NOISE_FLOOR ||
+    82b6:	5b 9c 02 00 	cmp.b	2(r12),	r11	;
+    82ba:	f2 2b       	jnc	$-26     	;abs 0x82a0
+    82bc:	30 40 7a 82 	br	#0x827a		;
+
+000082c0 <.L28>:
+            sample->x = (sample->x > SAMPLE_NOISE_FLOOR) ? sample->x : 0;
+            sample->y = (sample->y > SAMPLE_NOISE_FLOOR) ? sample->y : 0;
+            sample->z = (sample->z > SAMPLE_NOISE_FLOOR) ? sample->z : 0;
+        }
+    }
+}
+    82c0:	30 40 7c 87 	br	#0x877c		;
+
+000082c4 <featurize>:
+
+void featurize(features_t *features, accelWindow aWin)
+{
+    82c4:	0a 12       	push	r10		;
+
+000082c6 <.LCFI17>:
+    82c6:	09 12       	push	r9		;
+
+000082c8 <.LCFI18>:
+    82c8:	08 12       	push	r8		;
+
+000082ca <.LCFI19>:
+    82ca:	07 12       	push	r7		;
+
+000082cc <.LCFI20>:
+    82cc:	06 12       	push	r6		;
+
+000082ce <.LCFI21>:
+    82ce:	05 12       	push	r5		;
+
+000082d0 <.LCFI22>:
+    82d0:	04 12       	push	r4		;
+
+000082d2 <.LCFI23>:
+    82d2:	31 80 06 00 	sub	#6,	r1	;
+
+000082d6 <.LCFI24>:
+    82d6:	81 4c 04 00 	mov	r12,	4(r1)	;
+    82da:	07 4d       	mov	r13,	r7	;
+    82dc:	3d 50 09 00 	add	#9,	r13	;
+
+000082e0 <.LVL37>:
+    82e0:	08 47       	mov	r7,	r8	;
+
+000082e2 <.Loc.188.1>:
+    TASK_CHECKPOINT();
+
+    accelReading mean;
+    accelReading stddev;
+
+    mean.x = mean.y = mean.z = 0;
+    82e2:	4a 43       	clr.b	r10		;
+    82e4:	09 4a       	mov	r10,	r9	;
+    82e6:	0c 4a       	mov	r10,	r12	;
+
+000082e8 <.L30>:
+    stddev.x = stddev.y = stddev.z = 0;
+    int i;
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+        mean.x += aWin[i].x;  // x
+    82e8:	6c 58       	add.b	@r8,	r12	;
+
+000082ea <.LVL39>:
+    82ea:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
+
+000082ee <.LVL40>:
+        mean.y += aWin[i].y;  // y
+    82ee:	59 58 01 00 	add.b	1(r8),	r9	;
+
+000082f2 <.LVL41>:
+    82f2:	39 f0 ff 00 	and	#255,	r9	;#0x00ff
+
+000082f6 <.LVL42>:
+        mean.z += aWin[i].z;  // z
+    82f6:	5a 58 02 00 	add.b	2(r8),	r10	;
+
+000082fa <.LVL43>:
+    82fa:	3a f0 ff 00 	and	#255,	r10	;#0x00ff
+
+000082fe <.LVL44>:
+    82fe:	38 50 03 00 	add	#3,	r8	;
+
+00008302 <.Loc.191.1>:
+    accelReading stddev;
+
+    mean.x = mean.y = mean.z = 0;
+    stddev.x = stddev.y = stddev.z = 0;
+    int i;
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+    8302:	08 9d       	cmp	r13,	r8	;
+    8304:	f1 23       	jnz	$-28     	;abs 0x82e8
+
+00008306 <.Loc.201.1>:
+    /*
+       mean.x = mean.x / ACCEL_WINDOW_SIZE;
+       mean.y = mean.y / ACCEL_WINDOW_SIZE;
+       mean.z = mean.z / ACCEL_WINDOW_SIZE;
+       */
+    mean.x >>= 2;
+    8306:	b0 12 b6 87 	call	#34742		;#0x87b6
+
+0000830a <.LVL45>:
+    830a:	44 4c       	mov.b	r12,	r4	;
+
+0000830c <.LVL46>:
+    mean.y >>= 2;
+    830c:	0c 49       	mov	r9,	r12	;
+
+0000830e <.LVL47>:
+    830e:	b0 12 b6 87 	call	#34742		;#0x87b6
+    8312:	45 4c       	mov.b	r12,	r5	;
+
+00008314 <.LVL49>:
+    mean.z >>= 2;
+    8314:	0c 4a       	mov	r10,	r12	;
+
+00008316 <.LVL50>:
+    8316:	b0 12 b6 87 	call	#34742		;#0x87b6
+    831a:	46 4c       	mov.b	r12,	r6	;
+
+0000831c <.LVL52>:
+
+    accelReading mean;
+    accelReading stddev;
+
+    mean.x = mean.y = mean.z = 0;
+    stddev.x = stddev.y = stddev.z = 0;
+    831c:	4a 43       	clr.b	r10		;
+    831e:	09 4a       	mov	r10,	r9	;
+    8320:	0c 4a       	mov	r10,	r12	;
+
+00008322 <.LVL53>:
+    mean.x >>= 2;
+    mean.y >>= 2;
+    mean.z >>= 2;
+
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+        stddev.x += aWin[i].x > mean.x ? aWin[i].x - mean.x
+    8322:	4b 44       	mov.b	r4,	r11	;
+
+00008324 <.Loc.208.1>:
+            : mean.x - aWin[i].x;  // x
+        stddev.y += aWin[i].y > mean.y ? aWin[i].y - mean.y
+    8324:	c1 45 02 00 	mov.b	r5,	2(r1)	;
+
+00008328 <.Loc.210.1>:
+            : mean.y - aWin[i].y;  // y
+        stddev.z += aWin[i].z > mean.z ? aWin[i].z - mean.z
+    8328:	c1 46 03 00 	mov.b	r6,	3(r1)	;
+    832c:	81 48 00 00 	mov	r8,	0(r1)	;
+    8330:	30 40 62 83 	br	#0x8362		;
+
+00008334 <.L31>:
+    mean.x >>= 2;
+    mean.y >>= 2;
+    mean.z >>= 2;
+
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+        stddev.x += aWin[i].x > mean.x ? aWin[i].x - mean.x
+    8334:	4e 44       	mov.b	r4,	r14	;
+    8336:	4e 8d       	sub.b	r13,	r14	;
+    8338:	3e f0 ff 00 	and	#255,	r14	;#0x00ff
+    833c:	30 40 72 83 	br	#0x8372		;
+
+00008340 <.L33>:
+            : mean.x - aWin[i].x;  // x
+        stddev.y += aWin[i].y > mean.y ? aWin[i].y - mean.y
+    8340:	4d 45       	mov.b	r5,	r13	;
+    8342:	4d 8e       	sub.b	r14,	r13	;
+    8344:	3d f0 ff 00 	and	#255,	r13	;#0x00ff
+    8348:	30 40 88 83 	br	#0x8388		;
+
+0000834c <.L35>:
+            : mean.y - aWin[i].y;  // y
+        stddev.z += aWin[i].z > mean.z ? aWin[i].z - mean.z
+    834c:	4d 46       	mov.b	r6,	r13	;
+    834e:	4d 8e       	sub.b	r14,	r13	;
+    8350:	3d f0 ff 00 	and	#255,	r13	;#0x00ff
+
+00008354 <.L36>:
+    8354:	4a 5d       	add.b	r13,	r10	;
+
+00008356 <.LVL57>:
+    8356:	3a f0 ff 00 	and	#255,	r10	;#0x00ff
+
+0000835a <.LVL58>:
+    835a:	37 50 03 00 	add	#3,	r7	;
+
+0000835e <.Loc.205.1>:
+       */
+    mean.x >>= 2;
+    mean.y >>= 2;
+    mean.z >>= 2;
+
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+    835e:	27 91       	cmp	@r1,	r7	;
+    8360:	20 24       	jz	$+66     	;abs 0x83a2
+
+00008362 <.L37>:
+    8362:	0f 47       	mov	r7,	r15	;
+
+00008364 <.Loc.206.1>:
+        stddev.x += aWin[i].x > mean.x ? aWin[i].x - mean.x
+    8364:	6d 47       	mov.b	@r7,	r13	;
+    8366:	4b 9d       	cmp.b	r13,	r11	;
+    8368:	e5 2f       	jc	$-52     	;abs 0x8334
+
+0000836a <.Loc.206.1>:
+    836a:	4e 4d       	mov.b	r13,	r14	;
+    836c:	4e 84       	sub.b	r4,	r14	;
+    836e:	3e f0 ff 00 	and	#255,	r14	;#0x00ff
+
+00008372 <.L32>:
+    8372:	4e 5c       	add.b	r12,	r14	;
+    8374:	4c 4e       	mov.b	r14,	r12	;
+
+00008376 <.LVL60>:
+            : mean.x - aWin[i].x;  // x
+        stddev.y += aWin[i].y > mean.y ? aWin[i].y - mean.y
+    8376:	5e 4f 01 00 	mov.b	1(r15),	r14	;
+    837a:	c1 9e 02 00 	cmp.b	r14,	2(r1)	;
+    837e:	e0 2f       	jc	$-62     	;abs 0x8340
+
+00008380 <.Loc.208.1>:
+    8380:	4d 4e       	mov.b	r14,	r13	;
+    8382:	4d 85       	sub.b	r5,	r13	;
+    8384:	3d f0 ff 00 	and	#255,	r13	;#0x00ff
+
+00008388 <.L34>:
+    8388:	4d 59       	add.b	r9,	r13	;
+    838a:	49 4d       	mov.b	r13,	r9	;
+
+0000838c <.LVL61>:
+            : mean.y - aWin[i].y;  // y
+        stddev.z += aWin[i].z > mean.z ? aWin[i].z - mean.z
+    838c:	5e 4f 02 00 	mov.b	2(r15),	r14	;
+    8390:	c1 9e 03 00 	cmp.b	r14,	3(r1)	;
+    8394:	db 2f       	jc	$-72     	;abs 0x834c
+
+00008396 <.Loc.210.1>:
+    8396:	4d 4e       	mov.b	r14,	r13	;
+    8398:	4d 86       	sub.b	r6,	r13	;
+    839a:	3d f0 ff 00 	and	#255,	r13	;#0x00ff
+    839e:	30 40 54 83 	br	#0x8354		;
+
+000083a2 <.L40>:
+    /*
+       stddev.x = stddev.x / (ACCEL_WINDOW_SIZE - 1);
+       stddev.y = stddev.y / (ACCEL_WINDOW_SIZE - 1);
+       stddev.z = stddev.z / (ACCEL_WINDOW_SIZE - 1);
+       */
+    stddev.x >>= 2;
+    83a2:	b0 12 b6 87 	call	#34742		;#0x87b6
+
+000083a6 <.Loc.223.1>:
+    stddev.y >>= 2;
+    stddev.z >>= 2;
+
+    unsigned meanmag = mean.x*mean.x + mean.y*mean.y + mean.z*mean.z;
+    unsigned stddevmag = stddev.x*stddev.x + stddev.y*stddev.y + stddev.z*stddev.z;
+    83a6:	48 4c       	mov.b	r12,	r8	;
+
+000083a8 <.Loc.219.1>:
+       stddev.x = stddev.x / (ACCEL_WINDOW_SIZE - 1);
+       stddev.y = stddev.y / (ACCEL_WINDOW_SIZE - 1);
+       stddev.z = stddev.z / (ACCEL_WINDOW_SIZE - 1);
+       */
+    stddev.x >>= 2;
+    stddev.y >>= 2;
+    83a8:	0c 49       	mov	r9,	r12	;
+    83aa:	b0 12 b6 87 	call	#34742		;#0x87b6
+
+000083ae <.Loc.223.1>:
+    stddev.z >>= 2;
+
+    unsigned meanmag = mean.x*mean.x + mean.y*mean.y + mean.z*mean.z;
+    unsigned stddevmag = stddev.x*stddev.x + stddev.y*stddev.y + stddev.z*stddev.z;
+    83ae:	49 4c       	mov.b	r12,	r9	;
+
+000083b0 <.Loc.220.1>:
+       stddev.y = stddev.y / (ACCEL_WINDOW_SIZE - 1);
+       stddev.z = stddev.z / (ACCEL_WINDOW_SIZE - 1);
+       */
+    stddev.x >>= 2;
+    stddev.y >>= 2;
+    stddev.z >>= 2;
+    83b0:	0c 4a       	mov	r10,	r12	;
+    83b2:	b0 12 b6 87 	call	#34742		;#0x87b6
+
+000083b6 <.Loc.223.1>:
+
+    unsigned meanmag = mean.x*mean.x + mean.y*mean.y + mean.z*mean.z;
+    unsigned stddevmag = stddev.x*stddev.x + stddev.y*stddev.y + stddev.z*stddev.z;
+    83b6:	47 4c       	mov.b	r12,	r7	;
+
+000083b8 <.Loc.222.1>:
+       */
+    stddev.x >>= 2;
+    stddev.y >>= 2;
+    stddev.z >>= 2;
+
+    unsigned meanmag = mean.x*mean.x + mean.y*mean.y + mean.z*mean.z;
+    83b8:	3a 40 36 88 	mov	#34870,	r10	;#0x8836
+    83bc:	0d 44       	mov	r4,	r13	;
+    83be:	0c 44       	mov	r4,	r12	;
+    83c0:	8a 12       	call	r10		;
+    83c2:	04 4c       	mov	r12,	r4	;
+
+000083c4 <.LVL70>:
+    83c4:	0d 45       	mov	r5,	r13	;
+    83c6:	0c 45       	mov	r5,	r12	;
+    83c8:	8a 12       	call	r10		;
+    83ca:	05 44       	mov	r4,	r5	;
+
+000083cc <.LVL72>:
+    83cc:	05 5c       	add	r12,	r5	;
+    83ce:	0d 46       	mov	r6,	r13	;
+    83d0:	0c 46       	mov	r6,	r12	;
+    83d2:	8a 12       	call	r10		;
+
+000083d4 <.Loc.225.1>:
+    unsigned stddevmag = stddev.x*stddev.x + stddev.y*stddev.y + stddev.z*stddev.z;
+
+    features->meanmag   = sqrt16(meanmag);
+    83d4:	44 43       	clr.b	r4		;
+    83d6:	36 40 32 81 	mov	#33074,	r6	;#0x8132
+
+000083da <.LVL74>:
+    83da:	0c 55       	add	r5,	r12	;
+    83dc:	0d 44       	mov	r4,	r13	;
+    83de:	86 12       	call	r6		;
+    83e0:	1d 41 04 00 	mov	4(r1),	r13	;
+    83e4:	8d 4c 00 00 	mov	r12,	0(r13)	;
+
+000083e8 <.Loc.223.1>:
+    stddev.x >>= 2;
+    stddev.y >>= 2;
+    stddev.z >>= 2;
+
+    unsigned meanmag = mean.x*mean.x + mean.y*mean.y + mean.z*mean.z;
+    unsigned stddevmag = stddev.x*stddev.x + stddev.y*stddev.y + stddev.z*stddev.z;
+    83e8:	0d 48       	mov	r8,	r13	;
+    83ea:	0c 48       	mov	r8,	r12	;
+    83ec:	8a 12       	call	r10		;
+    83ee:	08 4c       	mov	r12,	r8	;
+    83f0:	0d 49       	mov	r9,	r13	;
+    83f2:	0c 49       	mov	r9,	r12	;
+    83f4:	8a 12       	call	r10		;
+    83f6:	08 5c       	add	r12,	r8	;
+    83f8:	0d 47       	mov	r7,	r13	;
+    83fa:	0c 47       	mov	r7,	r12	;
+    83fc:	8a 12       	call	r10		;
+
+000083fe <.Loc.226.1>:
+
+    features->meanmag   = sqrt16(meanmag);
+    features->stddevmag = sqrt16(stddevmag);
+    83fe:	0c 58       	add	r8,	r12	;
+    8400:	0d 44       	mov	r4,	r13	;
+    8402:	86 12       	call	r6		;
+    8404:	18 41 04 00 	mov	4(r1),	r8	;
+    8408:	88 4c 02 00 	mov	r12,	2(r8)	;
+
+0000840c <.Loc.229.1>:
+
+    LOG("featurize: mean %u sd %u\r\n", features->meanmag, features->stddevmag);
+}
+    840c:	31 50 06 00 	add	#6,	r1	;
+    8410:	30 40 72 87 	br	#0x8772		;
+
+00008414 <classify>:
+
+class_t classify(features_t *features, model_t *model)
+{
+    8414:	0a 12       	push	r10		;
+
+00008416 <.LCFI25>:
+    8416:	09 12       	push	r9		;
+
+00008418 <.LCFI26>:
+    8418:	08 12       	push	r8		;
+
+0000841a <.LCFI27>:
+    841a:	07 12       	push	r7		;
+
+0000841c <.LCFI28>:
+    841c:	06 12       	push	r6		;
+
+0000841e <.LCFI29>:
+    841e:	05 12       	push	r5		;
+
+00008420 <.LBB4>:
+    TASK_CHECKPOINT();
+
+    for (i = 0; i < MODEL_SIZE; ++i) {
+        model_features = &model->stationary[i];
+
+        long int stat_mean_err = (model_features->meanmag > features->meanmag)
+    8420:	2f 4c       	mov	@r12,	r15	;
+
+00008422 <.Loc.247.1>:
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+
+        long int stat_sd_err = (model_features->stddevmag > features->stddevmag)
+    8422:	1e 4c 02 00 	mov	2(r12),	r14	;
+    8426:	0c 4d       	mov	r13,	r12	;
+
+00008428 <.LVL83>:
+    8428:	3d 50 40 00 	add	#64,	r13	;#0x0040
+
+0000842c <.LBE4>:
+}
+
+class_t classify(features_t *features, model_t *model)
+{
+    int move_less_error = 0;
+    int stat_less_error = 0;
+    842c:	49 43       	clr.b	r9		;
+
+0000842e <.Loc.233.1>:
+    LOG("featurize: mean %u sd %u\r\n", features->meanmag, features->stddevmag);
+}
+
+class_t classify(features_t *features, model_t *model)
+{
+    int move_less_error = 0;
+    842e:	08 49       	mov	r9,	r8	;
+    8430:	30 40 62 84 	br	#0x8462		;
+
+00008434 <.L42>:
+    for (i = 0; i < MODEL_SIZE; ++i) {
+        model_features = &model->stationary[i];
+
+        long int stat_mean_err = (model_features->meanmag > features->meanmag)
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+    8434:	07 4f       	mov	r15,	r7	;
+    8436:	07 8a       	sub	r10,	r7	;
+    8438:	30 40 6e 84 	br	#0x846e		;
+
+0000843c <.L44>:
+
+        long int stat_sd_err = (model_features->stddevmag > features->stddevmag)
+            ? (model_features->stddevmag - features->stddevmag)
+            : (features->stddevmag - model_features->stddevmag);
+    843c:	06 4e       	mov	r14,	r6	;
+    843e:	06 8a       	sub	r10,	r6	;
+    8440:	30 40 7a 84 	br	#0x847a		;
+
+00008444 <.L46>:
+
+        model_features = &model->moving[i];
+
+        long int move_mean_err = (model_features->meanmag > features->meanmag)
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+    8444:	05 4f       	mov	r15,	r5	;
+    8446:	05 8a       	sub	r10,	r5	;
+    8448:	30 40 86 84 	br	#0x8486		;
+
+0000844c <.L48>:
+
+        long int move_sd_err = (model_features->stddevmag > features->stddevmag)
+            ? (model_features->stddevmag - features->stddevmag)
+            : (features->stddevmag - model_features->stddevmag);
+    844c:	0a 4e       	mov	r14,	r10	;
+    844e:	0a 8b       	sub	r11,	r10	;
+    8450:	30 40 92 84 	br	#0x8492		;
+
+00008454 <.L50>:
+
+        if (move_mean_err < stat_mean_err) {
+            move_less_error++;
+        } else {
+            stat_less_error++;
+    8454:	19 53       	inc	r9		;
+    8456:	30 40 98 84 	br	#0x8498		;
+
+0000845a <.L52>:
+        }
+
+        if (move_sd_err < stat_sd_err) {
+            move_less_error++;
+        } else {
+            stat_less_error++;
+    845a:	19 53       	inc	r9		;
+
+0000845c <.L53>:
+    845c:	2c 52       	add	#4,	r12	;r2 As==10
+
+0000845e <.LBE5>:
+    features_t *model_features;
+    int i;
+
+    TASK_CHECKPOINT();
+
+    for (i = 0; i < MODEL_SIZE; ++i) {
+    845e:	0c 9d       	cmp	r13,	r12	;
+    8460:	20 24       	jz	$+66     	;abs 0x84a2
+
+00008462 <.L54>:
+    8462:	0b 4c       	mov	r12,	r11	;
+
+00008464 <.LBB6>:
+        model_features = &model->stationary[i];
+
+        long int stat_mean_err = (model_features->meanmag > features->meanmag)
+    8464:	2a 4c       	mov	@r12,	r10	;
+
+00008466 <.Loc.245.1>:
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+    8466:	0f 9a       	cmp	r10,	r15	;
+    8468:	e5 2f       	jc	$-52     	;abs 0x8434
+
+0000846a <.Loc.245.1>:
+    846a:	07 4a       	mov	r10,	r7	;
+    846c:	07 8f       	sub	r15,	r7	;
+
+0000846e <.L43>:
+
+        long int stat_sd_err = (model_features->stddevmag > features->stddevmag)
+    846e:	1a 4b 02 00 	mov	2(r11),	r10	;
+
+00008472 <.Loc.249.1>:
+            ? (model_features->stddevmag - features->stddevmag)
+            : (features->stddevmag - model_features->stddevmag);
+    8472:	0e 9a       	cmp	r10,	r14	;
+    8474:	e3 2f       	jc	$-56     	;abs 0x843c
+
+00008476 <.Loc.249.1>:
+    8476:	06 4a       	mov	r10,	r6	;
+    8478:	06 8e       	sub	r14,	r6	;
+
+0000847a <.L45>:
+
+        model_features = &model->moving[i];
+
+        long int move_mean_err = (model_features->meanmag > features->meanmag)
+    847a:	1a 4b 40 00 	mov	64(r11),r10	;0x00040
+
+0000847e <.Loc.255.1>:
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+    847e:	0f 9a       	cmp	r10,	r15	;
+    8480:	e1 2f       	jc	$-60     	;abs 0x8444
+
+00008482 <.Loc.255.1>:
+    8482:	05 4a       	mov	r10,	r5	;
+    8484:	05 8f       	sub	r15,	r5	;
+
+00008486 <.L47>:
+
+        long int move_sd_err = (model_features->stddevmag > features->stddevmag)
+    8486:	1b 4b 42 00 	mov	66(r11),r11	;0x00042
+
+0000848a <.Loc.259.1>:
+            ? (model_features->stddevmag - features->stddevmag)
+            : (features->stddevmag - model_features->stddevmag);
+    848a:	0e 9b       	cmp	r11,	r14	;
+    848c:	df 2f       	jc	$-64     	;abs 0x844c
+
+0000848e <.Loc.259.1>:
+    848e:	0a 4b       	mov	r11,	r10	;
+    8490:	0a 8e       	sub	r14,	r10	;
+
+00008492 <.L49>:
+
+        if (move_mean_err < stat_mean_err) {
+    8492:	05 97       	cmp	r7,	r5	;
+    8494:	df 2f       	jc	$-64     	;abs 0x8454
+
+00008496 <.Loc.262.1>:
+            move_less_error++;
+    8496:	18 53       	inc	r8		;
+
+00008498 <.L51>:
+        } else {
+            stat_less_error++;
+        }
+
+        if (move_sd_err < stat_sd_err) {
+    8498:	0a 96       	cmp	r6,	r10	;
+    849a:	df 2f       	jc	$-64     	;abs 0x845a
+
+0000849c <.Loc.268.1>:
+            move_less_error++;
+    849c:	18 53       	inc	r8		;
+    849e:	30 40 5c 84 	br	#0x845c		;
+
+000084a2 <.L57>:
+            stat_less_error++;
+        }
+    }
+
+    class_t class = move_less_error > stat_less_error ?
+                        CLASS_MOVING : CLASS_STATIONARY;
+    84a2:	5c 43       	mov.b	#1,	r12	;r3 As==01
+    84a4:	09 98       	cmp	r8,	r9	;
+    84a6:	01 38       	jl	$+4      	;abs 0x84aa
+    84a8:	4c 43       	clr.b	r12		;
+
+000084aa <.L55>:
+    LOG("classify: class %u\r\n", class);
+
+    return class;
+}
+    84aa:	30 40 74 87 	br	#0x8774		;
+
+000084ae <record_stats>:
+    TASK_CHECKPOINT();
+
+    /* stats->totalCount, stats->movingCount, and stats->stationaryCount have an
+     * nv-internal consistency requirement.  This code should be atomic. */
+
+    stats->totalCount++;
+    84ae:	9c 53 00 00 	inc	0(r12)		;
+
+000084b2 <.Loc.290.1>:
+
+    switch (class) {
+    84b2:	0d 93       	cmp	#0,	r13	;r3 As==00
+    84b4:	05 24       	jz	$+12     	;abs 0x84c0
+    84b6:	1d 93       	cmp	#1,	r13	;r3 As==01
+    84b8:	02 20       	jnz	$+6      	;abs 0x84be
+
+000084ba <.Loc.292.1>:
+        case CLASS_MOVING:
+            stats->movingCount++;
+    84ba:	9c 53 02 00 	inc	2(r12)		;
+
+000084be <.L58>:
+            break;
+    }
+
+    LOG("stats: s %u m %u t %u\r\n",
+        stats->stationaryCount, stats->movingCount, stats->totalCount);
+}
+    84be:	30 41       	ret			
+
+000084c0 <.L60>:
+        case CLASS_MOVING:
+            stats->movingCount++;
+            break;
+
+        case CLASS_STATIONARY:
+            stats->stationaryCount++;
+    84c0:	9c 53 04 00 	inc	4(r12)		;
+
+000084c4 <.Loc.302.1>:
+            break;
+    }
+
+    LOG("stats: s %u m %u t %u\r\n",
+        stats->stationaryCount, stats->movingCount, stats->totalCount);
+}
+    84c4:	30 40 be 84 	br	#0x84be		;
+
+000084c8 <print_stats>:
+ unsigned resultStationaryPct;
+ unsigned resultMovingPct;
+ unsigned sum;
+
+void print_stats(stats_t *stats)
+{
+    84c8:	0a 12       	push	r10		;
+
+000084ca <.LCFI31>:
+    84ca:	09 12       	push	r9		;
+
+000084cc <.LCFI32>:
+    84cc:	08 12       	push	r8		;
+
+000084ce <.LCFI33>:
+    84ce:	07 12       	push	r7		;
+
+000084d0 <.LCFI34>:
+    84d0:	06 12       	push	r6		;
+
+000084d2 <.LCFI35>:
+    84d2:	0a 4c       	mov	r12,	r10	;
+
+000084d4 <.Loc.314.1>:
+   // unsigned resultStationaryPct = stats->stationaryCount * 100 / stats->totalCount;
+   // unsigned resultMovingPct = stats->movingCount * 100 / stats->totalCount;
+   // unsigned sum = stats->stationaryCount + stats->movingCount;
+
+	resultStationaryPct = stats->stationaryCount * 100 / stats->totalCount;
+    84d4:	19 4c 04 00 	mov	4(r12),	r9	;
+    84d8:	27 4c       	mov	@r12,	r7	;
+    84da:	36 40 36 88 	mov	#34870,	r6	;#0x8836
+    84de:	7d 40 64 00 	mov.b	#100,	r13	;#0x0064
+    84e2:	0c 49       	mov	r9,	r12	;
+
+000084e4 <.LVL102>:
+    84e4:	86 12       	call	r6		;
+    84e6:	38 40 62 87 	mov	#34658,	r8	;#0x8762
+    84ea:	0d 47       	mov	r7,	r13	;
+    84ec:	88 12       	call	r8		;
+    84ee:	82 4c 14 41 	mov	r12,	&0x4114	;
+
+000084f2 <.Loc.315.1>:
+	resultMovingPct = stats->movingCount * 100 / stats->totalCount;
+    84f2:	1a 4a 02 00 	mov	2(r10),	r10	;
+
+000084f6 <.LVL105>:
+    84f6:	7d 40 64 00 	mov.b	#100,	r13	;#0x0064
+    84fa:	0c 4a       	mov	r10,	r12	;
+    84fc:	86 12       	call	r6		;
+    84fe:	0d 47       	mov	r7,	r13	;
+    8500:	88 12       	call	r8		;
+    8502:	82 4c 16 41 	mov	r12,	&0x4116	;
+
+00008506 <.Loc.316.1>:
+	sum = stats->stationaryCount + stats->movingCount;
+    8506:	09 5a       	add	r10,	r9	;
+    8508:	82 49 92 40 	mov	r9,	&0x4092	;
+
+0000850c <.Loc.323.1>:
+    PRINTF("stats: s %u (%u%%) m %u (%u%%) sum/tot %u/%u: %c\r\n",
+           stats->stationaryCount, resultStationaryPct,
+           stats->movingCount, resultMovingPct,
+           stats->totalCount, sum,
+           sum == stats->totalCount && sum == SAMPLES_TO_COLLECT ? 'V' : 'X');
+}
+    850c:	30 40 76 87 	br	#0x8776		;
+
+00008510 <warmup_sensor>:
+
+void warmup_sensor(void)
+{
+    8510:	0a 12       	push	r10		;
+
+00008512 <.LCFI36>:
+    8512:	21 82       	sub	#4,	r1	;r2 As==10
+
+00008514 <.LCFI37>:
+    TASK_CHECKPOINT();
+
+    LOG("warmup\r\n");
+
+    while (discardedSamplesCount++ < NUM_WARMUP_SAMPLES) {
+        accel_sample(&sample);
+    8514:	3a 40 ae 81 	mov	#33198,	r10	;#0x81ae
+    8518:	0c 41       	mov	r1,	r12	;
+    851a:	1c 53       	inc	r12		;
+    851c:	8a 12       	call	r10		;
+    851e:	0c 41       	mov	r1,	r12	;
+    8520:	1c 53       	inc	r12		;
+    8522:	8a 12       	call	r10		;
+    8524:	0c 41       	mov	r1,	r12	;
+    8526:	1c 53       	inc	r12		;
+    8528:	8a 12       	call	r10		;
+
+0000852a <.Loc.337.1>:
+    }
+}
+    852a:	21 52       	add	#4,	r1	;r2 As==10
+    852c:	3a 41       	pop	r10		;
+    852e:	30 41       	ret			
+
+00008530 <train>:
+
+void train(features_t *classModel)
+{
+    8530:	0a 12       	push	r10		;
+
+00008532 <.LCFI38>:
+    8532:	09 12       	push	r9		;
+
+00008534 <.LCFI39>:
+    8534:	08 12       	push	r8		;
+
+00008536 <.LCFI40>:
+    8536:	31 80 0e 00 	sub	#14,	r1	;#0x000e
+
+0000853a <.LCFI41>:
+    853a:	09 4c       	mov	r12,	r9	;
+
+0000853c <.Loc.345.1>:
+    accelWindow sampleWindow;
+    features_t features;
+    unsigned i;
+
+    warmup_sensor();
+    853c:	b0 12 10 85 	call	#34064		;#0x8510
+
+00008540 <.LVL113>:
+    8540:	0a 49       	mov	r9,	r10	;
+    8542:	39 50 40 00 	add	#64,	r9	;#0x0040
+
+00008546 <.LVL114>:
+
+    for (i = 0; i < MODEL_SIZE; ++i) {
+        acquire_window(sampleWindow);
+    8546:	38 40 08 82 	mov	#33288,	r8	;#0x8208
+
+0000854a <.L65>:
+    854a:	0c 41       	mov	r1,	r12	;
+    854c:	3c 50 05 00 	add	#5,	r12	;
+    8550:	88 12       	call	r8		;
+
+00008552 <.Loc.349.1>:
+        transform(sampleWindow);
+    8552:	0c 41       	mov	r1,	r12	;
+    8554:	3c 50 05 00 	add	#5,	r12	;
+    8558:	b0 12 62 82 	call	#33378		;#0x8262
+
+0000855c <.Loc.350.1>:
+        featurize(&features, sampleWindow);
+    855c:	0d 41       	mov	r1,	r13	;
+    855e:	3d 50 05 00 	add	#5,	r13	;
+    8562:	0c 41       	mov	r1,	r12	;
+    8564:	b0 12 c4 82 	call	#33476		;#0x82c4
+
+00008568 <.Loc.354.1>:
+
+        TASK_CHECKPOINT();
+
+        classModel[i] = features;
+    8568:	aa 41 00 00 	mov	@r1,	0(r10)	;
+    856c:	9a 41 02 00 	mov	2(r1),	2(r10)	;
+    8570:	02 00 
+    8572:	2a 52       	add	#4,	r10	;r2 As==10
+
+00008574 <.Loc.347.1>:
+    features_t features;
+    unsigned i;
+
+    warmup_sensor();
+
+    for (i = 0; i < MODEL_SIZE; ++i) {
+    8574:	0a 99       	cmp	r9,	r10	;
+    8576:	e9 23       	jnz	$-44     	;abs 0x854a
+
+00008578 <.Loc.359.1>:
+        classModel[i] = features;
+    }
+
+    PRINTF("train: done: mn %u sd %u\r\n",
+           features.meanmag, features.stddevmag);
+}
+    8578:	31 50 0e 00 	add	#14,	r1	;#0x000e
+    857c:	30 40 7a 87 	br	#0x877a		;
+
+00008580 <recognize>:
+
+void recognize(model_t *model)
+{
+    8580:	0a 12       	push	r10		;
+
+00008582 <.LCFI42>:
+    8582:	09 12       	push	r9		;
+
+00008584 <.LCFI43>:
+    8584:	31 80 14 00 	sub	#20,	r1	;#0x0014
+
+00008588 <.LCFI44>:
+    8588:	09 4c       	mov	r12,	r9	;
+
+0000858a <.Loc.374.1>:
+    accelWindow sampleWindow;
+    features_t features;
+    class_t class;
+    unsigned i;
+
+    stats.totalCount = 0;
+    858a:	81 43 0e 00 	mov	#0,	14(r1)	;r3 As==00, 0x000e
+
+0000858e <.Loc.375.1>:
+    stats.stationaryCount = 0;
+    858e:	81 43 12 00 	mov	#0,	18(r1)	;r3 As==00, 0x0012
+
+00008592 <.Loc.376.1>:
+    stats.movingCount = 0;
+    8592:	81 43 10 00 	mov	#0,	16(r1)	;r3 As==00, 0x0010
+    8596:	7a 40 80 00 	mov.b	#128,	r10	;#0x0080
+
+0000859a <.L68>:
+
+    for (i = 0; i < SAMPLES_TO_COLLECT; ++i) {
+        acquire_window(sampleWindow);
+    859a:	0c 41       	mov	r1,	r12	;
+    859c:	3c 50 05 00 	add	#5,	r12	;
+    85a0:	b0 12 08 82 	call	#33288		;#0x8208
+
+000085a4 <.Loc.380.1>:
+        transform(sampleWindow);
+    85a4:	0c 41       	mov	r1,	r12	;
+    85a6:	3c 50 05 00 	add	#5,	r12	;
+    85aa:	b0 12 62 82 	call	#33378		;#0x8262
+
+000085ae <.Loc.381.1>:
+        featurize(&features, sampleWindow);
+    85ae:	0d 41       	mov	r1,	r13	;
+    85b0:	3d 50 05 00 	add	#5,	r13	;
+    85b4:	0c 41       	mov	r1,	r12	;
+    85b6:	b0 12 c4 82 	call	#33476		;#0x82c4
+
+000085ba <.Loc.382.1>:
+        class = classify(&features, model);
+    85ba:	0d 49       	mov	r9,	r13	;
+    85bc:	0c 41       	mov	r1,	r12	;
+    85be:	b0 12 14 84 	call	#33812		;#0x8414
+
+000085c2 <.LVL125>:
+        record_stats(&stats, class);
+    85c2:	0d 4c       	mov	r12,	r13	;
+    85c4:	0c 41       	mov	r1,	r12	;
+
+000085c6 <.LVL126>:
+    85c6:	3c 50 0e 00 	add	#14,	r12	;#0x000e
+    85ca:	b0 12 ae 84 	call	#33966		;#0x84ae
+
+000085ce <.LVL127>:
+    85ce:	3a 53       	add	#-1,	r10	;r3 As==11
+
+000085d0 <.Loc.378.1>:
+
+    stats.totalCount = 0;
+    stats.stationaryCount = 0;
+    stats.movingCount = 0;
+
+    for (i = 0; i < SAMPLES_TO_COLLECT; ++i) {
+    85d0:	0a 93       	cmp	#0,	r10	;r3 As==00
+    85d2:	e3 23       	jnz	$-56     	;abs 0x859a
+
+000085d4 <.Loc.386.1>:
+        featurize(&features, sampleWindow);
+        class = classify(&features, model);
+        record_stats(&stats, class);
+    }
+
+    print_stats(&stats);
+    85d4:	0c 41       	mov	r1,	r12	;
+    85d6:	3c 50 0e 00 	add	#14,	r12	;#0x000e
+    85da:	b0 12 c8 84 	call	#33992		;#0x84c8
+
+000085de <.Loc.387.1>:
+}
+    85de:	31 50 14 00 	add	#20,	r1	;#0x0014
+    85e2:	30 40 7c 87 	br	#0x877c		;
+
+000085e6 <end_of_benchmark>:
+
+void end_of_benchmark(void)
+{
+    LED_CTRL = 0x00;
+    85e6:	c2 43 90 00 	mov.b	#0,	&0x0090	;r3 As==00
+
+000085ea <.Loc.393.1>:
+    PRINTF("This is the end of the AR benchmark\n");
+    exit(0);
+    85ea:	4c 43       	clr.b	r12		;
+    85ec:	b0 12 08 89 	call	#35080		;#0x8908
+
+000085f0 <count_error>:
+}
+
+void count_error(void)
+{
+    PRINTF("An error occured during count, count = %d\n", count);
+}
+    85f0:	30 41       	ret			
+
+000085f2 <select_mode>:
+{
+    uint8_t pin_state;
+
+    TASK_CHECKPOINT();
+
+    count = count + 1;
+    85f2:	1d 42 04 40 	mov	&0x4004,r13	;0x4004
+    85f6:	1d 53       	inc	r13		;
+    85f8:	82 4d 04 40 	mov	r13,	&0x4004	;
+
+000085fc <.Loc.418.1>:
+     *      1,2 = MODE_TRAIN_MOVING
+     *      3,4 = MODE_TRAIN_STATIONARY
+     *      5,6 = MODE_RECOGNIZE
+     *      7   = END OF BENCHMARK
+     */
+    switch(count) {
+    85fc:	6e 42       	mov.b	#4,	r14	;r2 As==10
+    85fe:	0e 9d       	cmp	r13,	r14	;
+    8600:	08 28       	jnc	$+18     	;abs 0x8612
+    8602:	3d 90 03 00 	cmp	#3,	r13	;
+    8606:	13 2c       	jc	$+40     	;abs 0x862e
+    8608:	0d 93       	cmp	#0,	r13	;r3 As==00
+    860a:	0d 24       	jz	$+28     	;abs 0x8626
+
+0000860c <.Loc.421.1>:
+        case 1:
+        case 2:
+            pin_state = MODE_TRAIN_MOVING;
+    860c:	5d 43       	mov.b	#1,	r13	;r3 As==01
+    860e:	30 40 30 86 	br	#0x8630		;
+
+00008612 <.L74>:
+     *      1,2 = MODE_TRAIN_MOVING
+     *      3,4 = MODE_TRAIN_STATIONARY
+     *      5,6 = MODE_RECOGNIZE
+     *      7   = END OF BENCHMARK
+     */
+    switch(count) {
+    8612:	7e 40 06 00 	mov.b	#6,	r14	;
+    8616:	0e 9d       	cmp	r13,	r14	;
+    8618:	03 28       	jnc	$+8      	;abs 0x8620
+
+0000861a <.Loc.429.1>:
+        case 4:
+            pin_state = MODE_TRAIN_STATIONARY;
+            break;
+        case 5:
+        case 6:
+            pin_state = MODE_RECOGNIZE;
+    861a:	4d 43       	clr.b	r13		;
+    861c:	30 40 36 86 	br	#0x8636		;
+
+00008620 <.L86>:
+     *      1,2 = MODE_TRAIN_MOVING
+     *      3,4 = MODE_TRAIN_STATIONARY
+     *      5,6 = MODE_RECOGNIZE
+     *      7   = END OF BENCHMARK
+     */
+    switch(count) {
+    8620:	3d 90 07 00 	cmp	#7,	r13	;
+    8624:	0c 24       	jz	$+26     	;abs 0x863e
+
+00008626 <.L73>:
+            break;
+        case 7:
+            end_of_benchmark();
+            break;
+        default:
+            pin_state = MODE_IDLE;
+    8626:	7d 40 03 00 	mov.b	#3,	r13	;
+    862a:	30 40 36 86 	br	#0x8636		;
+
+0000862e <.L75>:
+        case 2:
+            pin_state = MODE_TRAIN_MOVING;
+            break;
+        case 3:
+        case 4:
+            pin_state = MODE_TRAIN_STATIONARY;
+    862e:	6d 43       	mov.b	#2,	r13	;r3 As==10
+
+00008630 <.L76>:
+    //pin_state = GPIO(PORT_AUX, IN) & (BIT(PIN_AUX_1) | BIT(PIN_AUX_2));
+
+    // Don't re-launch training after finishing training
+    // Vito: could have done this while assigning pin_state. But keep is the same as the original
+    if ((pin_state == MODE_TRAIN_STATIONARY ||
+        pin_state == MODE_TRAIN_MOVING) &&
+    8630:	cc 9d 00 00 	cmp.b	r13,	0(r12)	;
+    8634:	06 24       	jz	$+14     	;abs 0x8642
+
+00008636 <.L80>:
+        pin_state == *prev_pin_state) {
+        pin_state = MODE_IDLE;
+    } else {
+        *prev_pin_state = pin_state;
+    8636:	cc 4d 00 00 	mov.b	r13,	0(r12)	;
+
+0000863a <.L85>:
+    }
+
+    LOG("selectMode: pins %04x\r\n", pin_state);
+
+    return (run_mode_t)pin_state;
+}
+    863a:	0c 4d       	mov	r13,	r12	;
+
+0000863c <.LVL136>:
+    863c:	30 41       	ret			
+
+0000863e <.L87>:
+        case 5:
+        case 6:
+            pin_state = MODE_RECOGNIZE;
+            break;
+        case 7:
+            end_of_benchmark();
+    863e:	b0 12 e6 85 	call	#34278		;#0x85e6
+
+00008642 <.L83>:
+    // Don't re-launch training after finishing training
+    // Vito: could have done this while assigning pin_state. But keep is the same as the original
+    if ((pin_state == MODE_TRAIN_STATIONARY ||
+        pin_state == MODE_TRAIN_MOVING) &&
+        pin_state == *prev_pin_state) {
+        pin_state = MODE_IDLE;
+    8642:	7d 40 03 00 	mov.b	#3,	r13	;
+
+00008646 <.Loc.453.1>:
+        *prev_pin_state = pin_state;
+    }
+
+    LOG("selectMode: pins %04x\r\n", pin_state);
+
+    return (run_mode_t)pin_state;
+    8646:	30 40 3a 86 	br	#0x863a		;
+
+0000864a <init>:
+}
+
+void init()
+{
+    WDTCTL = WDTPW | WDTHOLD; // Stop WDT
+    864a:	b2 40 80 5a 	mov	#23168,	&0x0120	;#0x5a80
+    864e:	20 01 
+
+00008650 <.Loc.472.1>:
+    // init timer
+#ifdef CHECKPOINT_TIMER
+    checkpoint_timer_init();
+#endif
+
+}
+    8650:	30 41       	ret			
+
+00008652 <main>:
+
+int main()
+{
+    8652:	0a 12       	push	r10		;
+
+00008654 <.LCFI45>:
+    8654:	09 12       	push	r9		;
+
+00008656 <.LCFI46>:
+    8656:	21 83       	decd	r1		;
+
+00008658 <.LCFI47>:
+    // "Globals" must be on the stack because Mementos doesn't handle real
+    // globals correctly
+    uint8_t prev_pin_state = MODE_IDLE;
+    8658:	f1 40 03 00 	mov.b	#3,	1(r1)	;
+    865c:	01 00 
+
+0000865e <.LBB10>:
+    return (run_mode_t)pin_state;
+}
+
+void init()
+{
+    WDTCTL = WDTPW | WDTHOLD; // Stop WDT
+    865e:	b2 40 80 5a 	mov	#23168,	&0x0120	;#0x5a80
+    8662:	20 01 
+
+00008664 <.LBE10>:
+    uint8_t prev_pin_state = MODE_IDLE;
+
+    init();
+
+    //count = 1;
+    LED_CTRL = 0xFF;
+    8664:	f2 43 90 00 	mov.b	#-1,	&0x0090	;r3 As==11
+
+00008668 <.LBB12>:
+    while (1)
+    {
+        run_mode_t mode = select_mode(&prev_pin_state);
+    8668:	3a 40 f2 85 	mov	#34290,	r10	;#0x85f2
+
+0000866c <.Loc.494.1>:
+                LOG("mode: stationary\r\n");
+                train(model.stationary);
+                break;
+            case MODE_TRAIN_MOVING:
+                LOG("mode: moving\r\n");
+                train(model.moving);
+    866c:	39 40 d4 40 	mov	#16596,	r9	;#0x40d4
+    8670:	30 40 7a 86 	br	#0x867a		;
+
+00008674 <.L92>:
+    8674:	0c 49       	mov	r9,	r12	;
+
+00008676 <.LVL141>:
+    8676:	b0 12 30 85 	call	#34096		;#0x8530
+
+0000867a <.L91>:
+
+    //count = 1;
+    LED_CTRL = 0xFF;
+    while (1)
+    {
+        run_mode_t mode = select_mode(&prev_pin_state);
+    867a:	0c 41       	mov	r1,	r12	;
+    867c:	1c 53       	inc	r12		;
+    867e:	8a 12       	call	r10		;
+
+00008680 <.LVL143>:
+        switch (mode) {
+    8680:	1c 93       	cmp	#1,	r12	;r3 As==01
+    8682:	f8 27       	jz	$-14     	;abs 0x8674
+    8684:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8686:	08 24       	jz	$+18     	;abs 0x8698
+    8688:	2c 93       	cmp	#2,	r12	;r3 As==10
+    868a:	f7 23       	jnz	$-16     	;abs 0x867a
+
+0000868c <.Loc.490.1>:
+            case MODE_TRAIN_STATIONARY:
+                LOG("mode: stationary\r\n");
+                train(model.stationary);
+    868c:	3c 40 94 40 	mov	#16532,	r12	;#0x4094
+
+00008690 <.LVL144>:
+    8690:	b0 12 30 85 	call	#34096		;#0x8530
+
+00008694 <.Loc.491.1>:
+                break;
+    8694:	30 40 7a 86 	br	#0x867a		;
+
+00008698 <.L93>:
+                LOG("mode: moving\r\n");
+                train(model.moving);
+                break;
+            case MODE_RECOGNIZE:
+                LOG("mode: recognize\r\n");
+                recognize(&model);
+    8698:	3c 40 94 40 	mov	#16532,	r12	;#0x4094
+
+0000869c <.LVL147>:
+    869c:	b0 12 80 85 	call	#34176		;#0x8580
+
+000086a0 <.Loc.499.1>:
+                break;
+    86a0:	30 40 7a 86 	br	#0x867a		;
+
+000086a4 <udivmodhi4>:
+    86a4:	7f 40 11 00 	mov.b	#17,	r15	;#0x0011
+
+000086a8 <.Loc.35.1>:
+    86a8:	5b 43       	mov.b	#1,	r11	;r3 As==01
+
+000086aa <.L2>:
+    86aa:	0d 9c       	cmp	r12,	r13	;
+    86ac:	08 28       	jnc	$+18     	;abs 0x86be
+
+000086ae <.L15>:
+    86ae:	4f 43       	clr.b	r15		;
+
+000086b0 <.L4>:
+    86b0:	0b 93       	cmp	#0,	r11	;r3 As==00
+    86b2:	0e 20       	jnz	$+30     	;abs 0x86d0
+
+000086b4 <.L5>:
+    86b4:	0e 93       	cmp	#0,	r14	;r3 As==00
+    86b6:	01 24       	jz	$+4      	;abs 0x86ba
+    86b8:	0f 4c       	mov	r12,	r15	;
+
+000086ba <.L1>:
+    86ba:	0c 4f       	mov	r15,	r12	;
+    86bc:	30 41       	ret			
+
+000086be <.L3>:
+    86be:	3f 53       	add	#-1,	r15	;r3 As==11
+
+000086c0 <.Loc.38.1>:
+    86c0:	0f 93       	cmp	#0,	r15	;r3 As==00
+    86c2:	f8 27       	jz	$-14     	;abs 0x86b4
+
+000086c4 <.Loc.38.1>:
+    86c4:	0d 93       	cmp	#0,	r13	;r3 As==00
+    86c6:	f3 3b       	jl	$-24     	;abs 0x86ae
+
+000086c8 <.Loc.40.1>:
+    86c8:	0d 5d       	rla	r13		;
+
+000086ca <.Loc.41.1>:
+    86ca:	0b 5b       	rla	r11		;
+    86cc:	30 40 aa 86 	br	#0x86aa		;
+
+000086d0 <.L9>:
+    86d0:	0c 9d       	cmp	r13,	r12	;
+    86d2:	02 28       	jnc	$+6      	;abs 0x86d8
+
+000086d4 <.Loc.47.1>:
+    86d4:	0c 8d       	sub	r13,	r12	;
+
+000086d6 <.Loc.48.1>:
+    86d6:	0f db       	bis	r11,	r15	;
+
+000086d8 <.L8>:
+    86d8:	12 c3       	clrc			
+    86da:	0b 10       	rrc	r11		;
+
+000086dc <.Loc.51.1>:
+    86dc:	12 c3       	clrc			
+    86de:	0d 10       	rrc	r13		;
+    86e0:	30 40 b0 86 	br	#0x86b0		;
+
+000086e4 <__mspabi_divi>:
+    86e4:	0a 12       	push	r10		;
+
+000086e6 <.LCFI0>:
+    86e6:	0f 4c       	mov	r12,	r15	;
+    86e8:	0e 4d       	mov	r13,	r14	;
+
+000086ea <.LVL14>:
+    86ea:	3b 40 a4 86 	mov	#34468,	r11	;#0x86a4
+
+000086ee <.Loc.64.1>:
+    86ee:	0c 93       	cmp	#0,	r12	;r3 As==00
+    86f0:	1a 34       	jge	$+54     	;abs 0x8726
+
+000086f2 <.Loc.66.1>:
+    86f2:	4c 43       	clr.b	r12		;
+
+000086f4 <.LVL15>:
+    86f4:	0c 8f       	sub	r15,	r12	;
+    86f6:	0f 4c       	mov	r12,	r15	;
+
+000086f8 <.LVL16>:
+    86f8:	0d 93       	cmp	#0,	r13	;r3 As==00
+    86fa:	0d 34       	jge	$+28     	;abs 0x8716
+
+000086fc <.Loc.67.1>:
+    86fc:	5a 43       	mov.b	#1,	r10	;r3 As==01
+
+000086fe <.L21>:
+    86fe:	0d 43       	clr	r13		;
+    8700:	0d 8e       	sub	r14,	r13	;
+
+00008702 <.LVL18>:
+    8702:	4e 43       	clr.b	r14		;
+
+00008704 <.LVL19>:
+    8704:	0c 4f       	mov	r15,	r12	;
+
+00008706 <.LVL20>:
+    8706:	8b 12       	call	r11		;
+
+00008708 <.LVL21>:
+    8708:	1a 93       	cmp	#1,	r10	;r3 As==01
+    870a:	03 24       	jz	$+8      	;abs 0x8712
+
+0000870c <.L20>:
+    870c:	4d 43       	clr.b	r13		;
+    870e:	0d 8c       	sub	r12,	r13	;
+    8710:	0c 4d       	mov	r13,	r12	;
+
+00008712 <.L16>:
+    8712:	3a 41       	pop	r10		;
+    8714:	30 41       	ret			
+
+00008716 <.L18>:
+    8716:	4e 43       	clr.b	r14		;
+    8718:	8b 12       	call	r11		;
+
+0000871a <.LVL25>:
+    871a:	30 40 0c 87 	br	#0x870c		;
+
+0000871e <.L27>:
+    871e:	4e 43       	clr.b	r14		;
+    8720:	8b 12       	call	r11		;
+
+00008722 <.LVL27>:
+    8722:	30 40 12 87 	br	#0x8712		;
+
+00008726 <.L17>:
+    8726:	0d 93       	cmp	#0,	r13	;r3 As==00
+    8728:	fa 37       	jge	$-10     	;abs 0x871e
+
+0000872a <.Loc.61.1>:
+    872a:	4a 43       	clr.b	r10		;
+    872c:	30 40 fe 86 	br	#0x86fe		;
+
+00008730 <__mspabi_remi>:
+    8730:	0a 12       	push	r10		;
+
+00008732 <.LCFI1>:
+    8732:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8734:	13 34       	jge	$+40     	;abs 0x875c
+
+00008736 <.Loc.92.1>:
+    8736:	4e 43       	clr.b	r14		;
+    8738:	0e 8c       	sub	r12,	r14	;
+    873a:	0c 4e       	mov	r14,	r12	;
+
+0000873c <.LVL31>:
+    873c:	5a 43       	mov.b	#1,	r10	;r3 As==01
+
+0000873e <.L29>:
+    873e:	0d 93       	cmp	#0,	r13	;r3 As==00
+    8740:	03 34       	jge	$+8      	;abs 0x8748
+    8742:	4e 43       	clr.b	r14		;
+    8744:	0e 8d       	sub	r13,	r14	;
+    8746:	0d 4e       	mov	r14,	r13	;
+
+00008748 <.L30>:
+    8748:	5e 43       	mov.b	#1,	r14	;r3 As==01
+    874a:	b0 12 a4 86 	call	#34468		;#0x86a4
+
+0000874e <.LVL34>:
+    874e:	0a 93       	cmp	#0,	r10	;r3 As==00
+    8750:	03 24       	jz	$+8      	;abs 0x8758
+
+00008752 <.LVL35>:
+    8752:	4d 43       	clr.b	r13		;
+    8754:	0d 8c       	sub	r12,	r13	;
+    8756:	0c 4d       	mov	r13,	r12	;
+
+00008758 <.L28>:
+    8758:	3a 41       	pop	r10		;
+    875a:	30 41       	ret			
+
+0000875c <.L32>:
+    875c:	4a 43       	clr.b	r10		;
+    875e:	30 40 3e 87 	br	#0x873e		;
+
+00008762 <__mspabi_divu>:
+    8762:	4e 43       	clr.b	r14		;
+    8764:	b0 12 a4 86 	call	#34468		;#0x86a4
+
+00008768 <.LVL39>:
+    8768:	30 41       	ret			
+
+0000876a <__mspabi_remu>:
+    876a:	5e 43       	mov.b	#1,	r14	;r3 As==01
+    876c:	b0 12 a4 86 	call	#34468		;#0x86a4
+
+00008770 <.LVL41>:
+    8770:	30 41       	ret			
+
+00008772 <__mspabi_func_epilog_7>:
+    8772:	34 41       	pop	r4		;
+
+00008774 <__mspabi_func_epilog_6>:
+    8774:	35 41       	pop	r5		;
+
+00008776 <__mspabi_func_epilog_5>:
+    8776:	36 41       	pop	r6		;
+
+00008778 <__mspabi_func_epilog_4>:
+    8778:	37 41       	pop	r7		;
+
+0000877a <__mspabi_func_epilog_3>:
+    877a:	38 41       	pop	r8		;
+
+0000877c <__mspabi_func_epilog_2>:
+    877c:	39 41       	pop	r9		;
+
+0000877e <__mspabi_func_epilog_1>:
+    877e:	3a 41       	pop	r10		;
+    8780:	30 41       	ret			
+
+00008782 <__mspabi_srli_15>:
+    8782:	12 c3       	clrc			
+    8784:	0c 10       	rrc	r12		;
+
+00008786 <__mspabi_srli_14>:
+    8786:	12 c3       	clrc			
+    8788:	0c 10       	rrc	r12		;
+
+0000878a <__mspabi_srli_13>:
+    878a:	12 c3       	clrc			
+    878c:	0c 10       	rrc	r12		;
+
+0000878e <__mspabi_srli_12>:
+    878e:	12 c3       	clrc			
+    8790:	0c 10       	rrc	r12		;
+
+00008792 <__mspabi_srli_11>:
+    8792:	12 c3       	clrc			
+    8794:	0c 10       	rrc	r12		;
+
+00008796 <__mspabi_srli_10>:
+    8796:	12 c3       	clrc			
+    8798:	0c 10       	rrc	r12		;
+
+0000879a <__mspabi_srli_9>:
+    879a:	12 c3       	clrc			
+    879c:	0c 10       	rrc	r12		;
+
+0000879e <__mspabi_srli_8>:
+    879e:	12 c3       	clrc			
+    87a0:	0c 10       	rrc	r12		;
+
+000087a2 <__mspabi_srli_7>:
+    87a2:	12 c3       	clrc			
+    87a4:	0c 10       	rrc	r12		;
+
+000087a6 <__mspabi_srli_6>:
+    87a6:	12 c3       	clrc			
+    87a8:	0c 10       	rrc	r12		;
+
+000087aa <__mspabi_srli_5>:
+    87aa:	12 c3       	clrc			
+    87ac:	0c 10       	rrc	r12		;
+
+000087ae <__mspabi_srli_4>:
+    87ae:	12 c3       	clrc			
+    87b0:	0c 10       	rrc	r12		;
+
+000087b2 <__mspabi_srli_3>:
+    87b2:	12 c3       	clrc			
+    87b4:	0c 10       	rrc	r12		;
+
+000087b6 <__mspabi_srli_2>:
+    87b6:	12 c3       	clrc			
+    87b8:	0c 10       	rrc	r12		;
+
+000087ba <__mspabi_srli_1>:
+    87ba:	12 c3       	clrc			
+    87bc:	0c 10       	rrc	r12		;
+    87be:	30 41       	ret			
+
+000087c0 <.L11>:
+    87c0:	3d 53       	add	#-1,	r13	;r3 As==11
+    87c2:	12 c3       	clrc			
+    87c4:	0c 10       	rrc	r12		;
+
+000087c6 <__mspabi_srli>:
+    87c6:	0d 93       	cmp	#0,	r13	;r3 As==00
+    87c8:	fb 23       	jnz	$-8      	;abs 0x87c0
+    87ca:	30 41       	ret			
+
+000087cc <__mspabi_srll_15>:
+    87cc:	12 c3       	clrc			
+    87ce:	0d 10       	rrc	r13		;
+    87d0:	0c 10       	rrc	r12		;
+
+000087d2 <__mspabi_srll_14>:
+    87d2:	12 c3       	clrc			
+    87d4:	0d 10       	rrc	r13		;
+    87d6:	0c 10       	rrc	r12		;
+
+000087d8 <__mspabi_srll_13>:
+    87d8:	12 c3       	clrc			
+    87da:	0d 10       	rrc	r13		;
+    87dc:	0c 10       	rrc	r12		;
+
+000087de <__mspabi_srll_12>:
+    87de:	12 c3       	clrc			
+    87e0:	0d 10       	rrc	r13		;
+    87e2:	0c 10       	rrc	r12		;
+
+000087e4 <__mspabi_srll_11>:
+    87e4:	12 c3       	clrc			
+    87e6:	0d 10       	rrc	r13		;
+    87e8:	0c 10       	rrc	r12		;
+
+000087ea <__mspabi_srll_10>:
+    87ea:	12 c3       	clrc			
+    87ec:	0d 10       	rrc	r13		;
+    87ee:	0c 10       	rrc	r12		;
+
+000087f0 <__mspabi_srll_9>:
+    87f0:	12 c3       	clrc			
+    87f2:	0d 10       	rrc	r13		;
+    87f4:	0c 10       	rrc	r12		;
+
+000087f6 <__mspabi_srll_8>:
+    87f6:	12 c3       	clrc			
+    87f8:	0d 10       	rrc	r13		;
+    87fa:	0c 10       	rrc	r12		;
+
+000087fc <__mspabi_srll_7>:
+    87fc:	12 c3       	clrc			
+    87fe:	0d 10       	rrc	r13		;
+    8800:	0c 10       	rrc	r12		;
+
+00008802 <__mspabi_srll_6>:
+    8802:	12 c3       	clrc			
+    8804:	0d 10       	rrc	r13		;
+    8806:	0c 10       	rrc	r12		;
+
+00008808 <__mspabi_srll_5>:
+    8808:	12 c3       	clrc			
+    880a:	0d 10       	rrc	r13		;
+    880c:	0c 10       	rrc	r12		;
+
+0000880e <__mspabi_srll_4>:
+    880e:	12 c3       	clrc			
+    8810:	0d 10       	rrc	r13		;
+    8812:	0c 10       	rrc	r12		;
+
+00008814 <__mspabi_srll_3>:
+    8814:	12 c3       	clrc			
+    8816:	0d 10       	rrc	r13		;
+    8818:	0c 10       	rrc	r12		;
+
+0000881a <__mspabi_srll_2>:
+    881a:	12 c3       	clrc			
+    881c:	0d 10       	rrc	r13		;
+    881e:	0c 10       	rrc	r12		;
+
+00008820 <__mspabi_srll_1>:
+    8820:	12 c3       	clrc			
+    8822:	0d 10       	rrc	r13		;
+    8824:	0c 10       	rrc	r12		;
+    8826:	30 41       	ret			
+
+00008828 <.L12>:
+    8828:	3e 53       	add	#-1,	r14	;r3 As==11
+    882a:	12 c3       	clrc			
+    882c:	0d 10       	rrc	r13		;
+    882e:	0c 10       	rrc	r12		;
+
+00008830 <__mspabi_srll>:
+    8830:	0e 93       	cmp	#0,	r14	;r3 As==00
+    8832:	fa 23       	jnz	$-10     	;abs 0x8828
+    8834:	30 41       	ret			
+
+00008836 <__mspabi_mpyi>:
+    8836:	02 12       	push	r2		;
+    8838:	32 c2       	dint			
+    883a:	03 43       	nop			
+    883c:	82 4c 30 01 	mov	r12,	&0x0130	;
+    8840:	82 4d 38 01 	mov	r13,	&0x0138	;
+    8844:	1c 42 3a 01 	mov	&0x013a,r12	;0x013a
+    8848:	00 13       	reti			
+
+0000884a <__mspabi_mpysl>:
+    884a:	02 12       	push	r2		;
+    884c:	32 c2       	dint			
+    884e:	03 43       	nop			
+    8850:	82 4c 32 01 	mov	r12,	&0x0132	;
+    8854:	82 4d 38 01 	mov	r13,	&0x0138	;
+    8858:	1c 42 3a 01 	mov	&0x013a,r12	;0x013a
+    885c:	1d 42 3c 01 	mov	&0x013c,r13	;0x013c
+    8860:	00 13       	reti			
+
+00008862 <__mspabi_mpyul>:
+    8862:	02 12       	push	r2		;
+    8864:	32 c2       	dint			
+    8866:	03 43       	nop			
+    8868:	82 4c 30 01 	mov	r12,	&0x0130	;
+    886c:	82 4d 38 01 	mov	r13,	&0x0138	;
+    8870:	1c 42 3a 01 	mov	&0x013a,r12	;0x013a
+    8874:	1d 42 3c 01 	mov	&0x013c,r13	;0x013c
+    8878:	00 13       	reti			
+
+0000887a <__mspabi_mpyl>:
+    887a:	02 12       	push	r2		;
+    887c:	32 c2       	dint			
+    887e:	03 43       	nop			
+    8880:	82 4c 30 01 	mov	r12,	&0x0130	;
+    8884:	82 4e 38 01 	mov	r14,	&0x0138	;
+    8888:	82 4c 34 01 	mov	r12,	&0x0134	;
+    888c:	1c 42 3a 01 	mov	&0x013a,r12	;0x013a
+    8890:	92 42 3c 01 	mov	&0x013c,&0x013a	;0x013c
+    8894:	3a 01 
+    8896:	82 4f 38 01 	mov	r15,	&0x0138	;
+    889a:	82 4d 34 01 	mov	r13,	&0x0134	;
+    889e:	82 4e 38 01 	mov	r14,	&0x0138	;
+    88a2:	1d 42 3a 01 	mov	&0x013a,r13	;0x013a
+    88a6:	00 13       	reti			
+
+000088a8 <__mspabi_mpysll_hw>:
+    88a8:	10 40 0a 00 	br	0x000a		;PC rel. 0x88b4
+
+000088ac <__mspabi_mpyull_hw>:
+    88ac:	10 40 3c 00 	br	0x003c		;PC rel. 0x88ea
+
+000088b0 <__mspabi_mpyll_hw>:
+    88b0:	10 40 ae 01 	br	0x01ae		;PC rel. 0x8a60
+
+000088b4 <__mspabi_mpysll>:
+    88b4:	0a 12       	push	r10		;
+
+000088b6 <.LCFI0>:
+    88b6:	09 12       	push	r9		;
+
+000088b8 <.LCFI1>:
+    88b8:	08 12       	push	r8		;
+
+000088ba <.LCFI2>:
+    88ba:	07 12       	push	r7		;
+
+000088bc <.LCFI3>:
+    88bc:	06 12       	push	r6		;
+
+000088be <.LCFI4>:
+    88be:	05 12       	push	r5		;
+
+000088c0 <.LCFI5>:
+    88c0:	09 4d       	mov	r13,	r9	;
+    88c2:	05 4e       	mov	r14,	r5	;
+    88c4:	07 4f       	mov	r15,	r7	;
+
+000088c6 <.Loc.52.1>:
+    88c6:	08 4c       	mov	r12,	r8	;
+    88c8:	0c 4d       	mov	r13,	r12	;
+
+000088ca <.LVL1>:
+    88ca:	b0 12 1c 8c 	call	#35868		;#0x8c1c
+
+000088ce <.LVL2>:
+    88ce:	0a 4c       	mov	r12,	r10	;
+    88d0:	06 45       	mov	r5,	r6	;
+    88d2:	0c 47       	mov	r7,	r12	;
+    88d4:	b0 12 1c 8c 	call	#35868		;#0x8c1c
+    88d8:	0e 4c       	mov	r12,	r14	;
+    88da:	0c 45       	mov	r5,	r12	;
+    88dc:	0d 47       	mov	r7,	r13	;
+    88de:	0f 4e       	mov	r14,	r15	;
+    88e0:	0b 4a       	mov	r10,	r11	;
+    88e2:	b0 12 60 8a 	call	#35424		;#0x8a60
+
+000088e6 <.Loc.53.1>:
+    88e6:	30 40 74 87 	br	#0x8774		;
+
+000088ea <__mspabi_mpyull>:
+    88ea:	0a 12       	push	r10		;
+
+000088ec <.LCFI6>:
+    88ec:	09 12       	push	r9		;
+
+000088ee <.LCFI7>:
+    88ee:	08 12       	push	r8		;
+
+000088f0 <.LCFI8>:
+    88f0:	08 4c       	mov	r12,	r8	;
+    88f2:	0c 4e       	mov	r14,	r12	;
+
+000088f4 <.LVL6>:
+    88f4:	09 4d       	mov	r13,	r9	;
+    88f6:	0d 4f       	mov	r15,	r13	;
+    88f8:	4e 43       	clr.b	r14		;
+
+000088fa <.LVL7>:
+    88fa:	0f 4e       	mov	r14,	r15	;
+    88fc:	0a 4e       	mov	r14,	r10	;
+    88fe:	0b 4e       	mov	r14,	r11	;
+    8900:	b0 12 60 8a 	call	#35424		;#0x8a60
+
+00008904 <.Loc.59.1>:
+    8904:	30 40 7a 87 	br	#0x877a		;
+
+00008908 <exit>:
+    8908:	0a 12       	push	r10		;
+
+0000890a <.LCFI0>:
+    890a:	0a 4c       	mov	r12,	r10	;
+
+0000890c <.Loc.66.1>:
+    890c:	4d 43       	clr.b	r13		;
+    890e:	b0 12 26 89 	call	#35110		;#0x8926
+
+00008912 <.LVL1>:
+    8912:	1c 42 00 80 	mov	&0x8000,r12	;0x8000
+    8916:	1d 4c 14 00 	mov	20(r12),r13	;0x00014
+    891a:	0d 93       	cmp	#0,	r13	;r3 As==00
+    891c:	01 24       	jz	$+4      	;abs 0x8920
+
+0000891e <.Loc.69.1>:
+    891e:	8d 12       	call	r13		;
+
+00008920 <.L2>:
+    8920:	0c 4a       	mov	r10,	r12	;
+    8922:	b0 12 90 8c 	call	#35984		;#0x8c90
+
+00008926 <__call_exitprocs>:
+    8926:	0a 12       	push	r10		;
+
+00008928 <.LCFI0>:
+    8928:	09 12       	push	r9		;
+
+0000892a <.LCFI1>:
+    892a:	08 12       	push	r8		;
+
+0000892c <.LCFI2>:
+    892c:	07 12       	push	r7		;
+
+0000892e <.LCFI3>:
+    892e:	06 12       	push	r6		;
+
+00008930 <.LCFI4>:
+    8930:	05 12       	push	r5		;
+
+00008932 <.LCFI5>:
+    8932:	04 12       	push	r4		;
+
+00008934 <.LCFI6>:
+    8934:	31 80 0c 00 	sub	#12,	r1	;#0x000c
+
+00008938 <.LCFI7>:
+    8938:	81 4c 08 00 	mov	r12,	8(r1)	;
+    893c:	05 4d       	mov	r13,	r5	;
+
+0000893e <.Loc.84.1>:
+    893e:	1e 42 00 80 	mov	&0x8000,r14	;0x8000
+    8942:	3e 50 24 00 	add	#36,	r14	;#0x0024
+    8946:	81 4e 0a 00 	mov	r14,	10(r1)	; 0x000a
+
+0000894a <.L31>:
+    894a:	1e 42 00 80 	mov	&0x8000,r14	;0x8000
+    894e:	1a 4e 24 00 	mov	36(r14),r10	;0x00024
+
+00008952 <.LVL2>:
+    8952:	17 41 0a 00 	mov	10(r1),	r7	;0x0000a
+
+00008956 <.LVL3>:
+    8956:	36 40 00 00 	mov	#0,	r6	;
+
+0000895a <.L2>:
+    895a:	0a 93       	cmp	#0,	r10	;r3 As==00
+    895c:	04 20       	jnz	$+10     	;abs 0x8966
+
+0000895e <.L1>:
+    895e:	31 50 0c 00 	add	#12,	r1	;#0x000c
+    8962:	30 40 72 87 	br	#0x8772		;
+
+00008966 <.L19>:
+    8966:	14 4a 44 00 	mov	68(r10),r4	;0x00044
+
+0000896a <.Loc.92.1>:
+    896a:	19 4a 02 00 	mov	2(r10),	r9	;
+    896e:	08 49       	mov	r9,	r8	;
+    8970:	38 53       	add	#-1,	r8	;r3 As==11
+    8972:	09 59       	rla	r9		;
+
+00008974 <.L3>:
+    8974:	08 93       	cmp	#0,	r8	;r3 As==00
+    8976:	14 34       	jge	$+42     	;abs 0x89a0
+
+00008978 <.Loc.136.1>:
+    8978:	06 93       	cmp	#0,	r6	;r3 As==00
+    897a:	f1 27       	jz	$-28     	;abs 0x895e
+    897c:	2c 4a       	mov	@r10,	r12	;
+
+0000897e <.Loc.141.1>:
+    897e:	8a 93 02 00 	cmp	#0,	2(r10)	;r3 As==00
+    8982:	6b 20       	jnz	$+216    	;abs 0x8a5a
+
+00008984 <.Loc.141.1>:
+    8984:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8986:	69 24       	jz	$+212    	;abs 0x8a5a
+
+00008988 <.Loc.144.1>:
+    8988:	87 4c 00 00 	mov	r12,	0(r7)	;
+
+0000898c <.Loc.146.1>:
+    898c:	04 93       	cmp	#0,	r4	;r3 As==00
+    898e:	02 24       	jz	$+6      	;abs 0x8994
+
+00008990 <.Loc.147.1>:
+    8990:	0c 44       	mov	r4,	r12	;
+    8992:	86 12       	call	r6		;
+
+00008994 <.L17>:
+    8994:	0c 4a       	mov	r10,	r12	;
+    8996:	86 12       	call	r6		;
+
+00008998 <.LVL8>:
+    8998:	2c 47       	mov	@r7,	r12	;
+
+0000899a <.L18>:
+    899a:	0a 4c       	mov	r12,	r10	;
+    899c:	30 40 5a 89 	br	#0x895a		;
+
+000089a0 <.L14>:
+    89a0:	05 93       	cmp	#0,	r5	;r3 As==00
+    89a2:	0c 24       	jz	$+26     	;abs 0x89bc
+
+000089a4 <.Loc.99.1>:
+    89a4:	04 93       	cmp	#0,	r4	;r3 As==00
+    89a6:	05 20       	jnz	$+12     	;abs 0x89b2
+
+000089a8 <.L6>:
+    89a8:	38 53       	add	#-1,	r8	;r3 As==11
+
+000089aa <.LVL11>:
+    89aa:	39 50 fe ff 	add	#65534,	r9	;#0xfffe
+    89ae:	30 40 74 89 	br	#0x8974		;
+
+000089b2 <.L5>:
+    89b2:	0c 44       	mov	r4,	r12	;
+    89b4:	0c 59       	add	r9,	r12	;
+    89b6:	8c 95 3e 00 	cmp	r5,	62(r12)	; 0x003e
+    89ba:	f6 23       	jnz	$-18     	;abs 0x89a8
+
+000089bc <.L4>:
+    89bc:	0c 4a       	mov	r10,	r12	;
+    89be:	0c 59       	add	r9,	r12	;
+
+000089c0 <.Loc.104.1>:
+    89c0:	1f 4c 02 00 	mov	2(r12),	r15	;
+
+000089c4 <.LVL13>:
+    89c4:	1d 4a 02 00 	mov	2(r10),	r13	;
+    89c8:	3d 53       	add	#-1,	r13	;r3 As==11
+    89ca:	0d 98       	cmp	r8,	r13	;
+    89cc:	2c 20       	jnz	$+90     	;abs 0x8a26
+
+000089ce <.Loc.106.1>:
+    89ce:	8a 48 02 00 	mov	r8,	2(r10)	;
+
+000089d2 <.L8>:
+    89d2:	0f 93       	cmp	#0,	r15	;r3 As==00
+    89d4:	e9 27       	jz	$-44     	;abs 0x89a8
+
+000089d6 <.Loc.114.1>:
+    89d6:	91 4a 02 00 	mov	2(r10),	6(r1)	;
+    89da:	06 00 
+
+000089dc <.LVL14>:
+    89dc:	04 93       	cmp	#0,	r4	;r3 As==00
+    89de:	19 24       	jz	$+52     	;abs 0x8a12
+
+000089e0 <.Loc.96.1>:
+    89e0:	5c 43       	mov.b	#1,	r12	;r3 As==01
+    89e2:	0d 48       	mov	r8,	r13	;
+    89e4:	81 4f 00 00 	mov	r15,	0(r1)	;
+    89e8:	b0 12 cc 8b 	call	#35788		;#0x8bcc
+
+000089ec <.LVL15>:
+    89ec:	0d 4c       	mov	r12,	r13	;
+    89ee:	3d b0 00 80 	bit	#32768,	r13	;#0x8000
+    89f2:	0e 7e       	subc	r14,	r14	;
+    89f4:	3e e3       	inv	r14		;
+    89f6:	81 4d 02 00 	mov	r13,	2(r1)	;
+    89fa:	81 4e 04 00 	mov	r14,	4(r1)	;
+    89fe:	1b 44 80 00 	mov	128(r4),r11	;0x00080
+    8a02:	0b fc       	and	r12,	r11	;
+    8a04:	1d 44 82 00 	mov	130(r4),r13	;0x00082
+    8a08:	0d fe       	and	r14,	r13	;
+    8a0a:	0d db       	bis	r11,	r13	;
+    8a0c:	2f 41       	mov	@r1,	r15	;
+
+00008a0e <.LVL16>:
+    8a0e:	0d 93       	cmp	#0,	r13	;r3 As==00
+    8a10:	0e 20       	jnz	$+30     	;abs 0x8a2e
+
+00008a12 <.L9>:
+    8a12:	8f 12       	call	r15		;
+
+00008a14 <.L11>:
+    8a14:	9a 91 06 00 	cmp	6(r1),	2(r10)	;
+    8a18:	02 00 
+    8a1a:	97 23       	jnz	$-208    	;abs 0x894a
+
+00008a1c <.Loc.127.1>:
+    8a1c:	87 9a 00 00 	cmp	r10,	0(r7)	;
+    8a20:	c3 27       	jz	$-120    	;abs 0x89a8
+    8a22:	30 40 4a 89 	br	#0x894a		;
+
+00008a26 <.L7>:
+    8a26:	8c 43 02 00 	mov	#0,	2(r12)	;r3 As==00
+    8a2a:	30 40 d2 89 	br	#0x89d2		;
+
+00008a2e <.L10>:
+    8a2e:	0d 44       	mov	r4,	r13	;
+    8a30:	0d 59       	add	r9,	r13	;
+    8a32:	1d 4d fe ff 	mov	-2(r13),r13	;
+
+00008a36 <.Loc.119.1>:
+    8a36:	1c f4 84 00 	and	132(r4),r12	;0x00084
+    8a3a:	1b 44 86 00 	mov	134(r4),r11	;0x00086
+    8a3e:	1b f1 04 00 	and	4(r1),	r11	;
+    8a42:	0c db       	bis	r11,	r12	;
+    8a44:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8a46:	05 20       	jnz	$+12     	;abs 0x8a52
+
+00008a48 <.Loc.120.1>:
+    8a48:	1c 41 08 00 	mov	8(r1),	r12	;
+    8a4c:	8f 12       	call	r15		;
+
+00008a4e <.LVL20>:
+    8a4e:	30 40 14 8a 	br	#0x8a14		;
+
+00008a52 <.L12>:
+    8a52:	0c 4d       	mov	r13,	r12	;
+    8a54:	8f 12       	call	r15		;
+
+00008a56 <.LVL22>:
+    8a56:	30 40 14 8a 	br	#0x8a14		;
+
+00008a5a <.L16>:
+    8a5a:	07 4a       	mov	r10,	r7	;
+
+00008a5c <.LVL24>:
+    8a5c:	30 40 9a 89 	br	#0x899a		;
+
+00008a60 <__mspabi_mpyll>:
+    8a60:	0a 12       	push	r10		;
+
+00008a62 <.LCFI0>:
+    8a62:	09 12       	push	r9		;
+
+00008a64 <.LCFI1>:
+    8a64:	08 12       	push	r8		;
+
+00008a66 <.LCFI2>:
+    8a66:	07 12       	push	r7		;
+
+00008a68 <.LCFI3>:
+    8a68:	06 12       	push	r6		;
+
+00008a6a <.LCFI4>:
+    8a6a:	05 12       	push	r5		;
+
+00008a6c <.LCFI5>:
+    8a6c:	04 12       	push	r4		;
+
+00008a6e <.LCFI6>:
+    8a6e:	31 80 18 00 	sub	#24,	r1	;#0x0018
+
+00008a72 <.LCFI7>:
+    8a72:	81 49 08 00 	mov	r9,	8(r1)	;
+    8a76:	81 4a 10 00 	mov	r10,	16(r1)	; 0x0010
+    8a7a:	81 4b 12 00 	mov	r11,	18(r1)	; 0x0012
+    8a7e:	07 4c       	mov	r12,	r7	;
+    8a80:	81 4d 0a 00 	mov	r13,	10(r1)	; 0x000a
+    8a84:	81 4e 14 00 	mov	r14,	20(r1)	; 0x0014
+    8a88:	81 4f 16 00 	mov	r15,	22(r1)	; 0x0016
+
+00008a8c <.LBB2>:
+    8a8c:	09 48       	mov	r8,	r9	;
+    8a8e:	81 48 0c 00 	mov	r8,	12(r1)	; 0x000c
+    8a92:	0c 48       	mov	r8,	r12	;
+
+00008a94 <.LVL2>:
+    8a94:	1d 41 08 00 	mov	8(r1),	r13	;
+    8a98:	7e 40 10 00 	mov.b	#16,	r14	;#0x0010
+    8a9c:	b0 12 30 88 	call	#34864		;#0x8830
+    8aa0:	81 4c 00 00 	mov	r12,	0(r1)	;
+    8aa4:	81 4d 02 00 	mov	r13,	2(r1)	;
+
+00008aa8 <.LVL4>:
+    8aa8:	81 47 0e 00 	mov	r7,	14(r1)	; 0x000e
+    8aac:	0c 47       	mov	r7,	r12	;
+    8aae:	1d 41 0a 00 	mov	10(r1),	r13	;0x0000a
+    8ab2:	7e 40 10 00 	mov.b	#16,	r14	;#0x0010
+    8ab6:	b0 12 30 88 	call	#34864		;#0x8830
+    8aba:	81 4c 04 00 	mov	r12,	4(r1)	;
+    8abe:	81 4d 06 00 	mov	r13,	6(r1)	;
+    8ac2:	38 40 7a 88 	mov	#34938,	r8	;#0x887a
+
+00008ac6 <.LVL8>:
+    8ac6:	0e 47       	mov	r7,	r14	;
+    8ac8:	4f 43       	clr.b	r15		;
+    8aca:	0c 49       	mov	r9,	r12	;
+    8acc:	0d 4f       	mov	r15,	r13	;
+    8ace:	88 12       	call	r8		;
+
+00008ad0 <.LVL9>:
+    8ad0:	04 4c       	mov	r12,	r4	;
+    8ad2:	06 4c       	mov	r12,	r6	;
+    8ad4:	05 4d       	mov	r13,	r5	;
+
+00008ad6 <.LVL10>:
+    8ad6:	0e 47       	mov	r7,	r14	;
+    8ad8:	4f 43       	clr.b	r15		;
+    8ada:	2c 41       	mov	@r1,	r12	;
+    8adc:	1d 41 02 00 	mov	2(r1),	r13	;
+    8ae0:	88 12       	call	r8		;
+
+00008ae2 <.LVL11>:
+    8ae2:	07 4c       	mov	r12,	r7	;
+    8ae4:	0a 4d       	mov	r13,	r10	;
+
+00008ae6 <.LVL13>:
+    8ae6:	1e 41 04 00 	mov	4(r1),	r14	;
+    8aea:	1f 41 06 00 	mov	6(r1),	r15	;
+    8aee:	2c 41       	mov	@r1,	r12	;
+    8af0:	1d 41 02 00 	mov	2(r1),	r13	;
+    8af4:	88 12       	call	r8		;
+
+00008af6 <.LVL14>:
+    8af6:	81 4c 00 00 	mov	r12,	0(r1)	;
+
+00008afa <.LVL15>:
+    8afa:	81 4d 02 00 	mov	r13,	2(r1)	;
+
+00008afe <.LVL16>:
+    8afe:	1e 41 04 00 	mov	4(r1),	r14	;
+    8b02:	1f 41 06 00 	mov	6(r1),	r15	;
+    8b06:	0c 49       	mov	r9,	r12	;
+    8b08:	4d 43       	clr.b	r13		;
+    8b0a:	88 12       	call	r8		;
+
+00008b0c <.LVL17>:
+    8b0c:	09 4c       	mov	r12,	r9	;
+    8b0e:	09 57       	add	r7,	r9	;
+    8b10:	08 4d       	mov	r13,	r8	;
+    8b12:	08 6a       	addc	r10,	r8	;
+    8b14:	0c 44       	mov	r4,	r12	;
+    8b16:	0d 45       	mov	r5,	r13	;
+    8b18:	7e 40 10 00 	mov.b	#16,	r14	;#0x0010
+    8b1c:	b0 12 30 88 	call	#34864		;#0x8830
+    8b20:	09 5c       	add	r12,	r9	;
+    8b22:	0d 68       	addc	r8,	r13	;
+
+00008b24 <.LVL21>:
+    8b24:	0d 9a       	cmp	r10,	r13	;
+    8b26:	04 28       	jnc	$+10     	;abs 0x8b30
+    8b28:	0a 9d       	cmp	r13,	r10	;
+    8b2a:	06 20       	jnz	$+14     	;abs 0x8b38
+    8b2c:	09 97       	cmp	r7,	r9	;
+    8b2e:	04 2c       	jc	$+10     	;abs 0x8b38
+
+00008b30 <.L4>:
+    8b30:	81 53 00 00 	add	#0,	0(r1)	;r3 As==00
+    8b34:	91 63 02 00 	addc	#1,	2(r1)	;r3 As==01
+
+00008b38 <.L2>:
+    8b38:	0c 49       	mov	r9,	r12	;
+    8b3a:	7e 40 10 00 	mov.b	#16,	r14	;#0x0010
+    8b3e:	b0 12 30 88 	call	#34864		;#0x8830
+
+00008b42 <.LVL23>:
+    8b42:	28 41       	mov	@r1,	r8	;
+    8b44:	08 5c       	add	r12,	r8	;
+    8b46:	1d 61 02 00 	addc	2(r1),	r13	;
+    8b4a:	0a 4d       	mov	r13,	r10	;
+
+00008b4c <.LVL24>:
+    8b4c:	47 43       	clr.b	r7		;
+    8b4e:	0c 49       	mov	r9,	r12	;
+    8b50:	0d 47       	mov	r7,	r13	;
+    8b52:	7e 40 10 00 	mov.b	#16,	r14	;#0x0010
+    8b56:	b0 12 16 8c 	call	#35862		;#0x8c16
+    8b5a:	0c 56       	add	r6,	r12	;
+    8b5c:	0d 67       	addc	r7,	r13	;
+
+00008b5e <.LBE3>:
+    8b5e:	04 4c       	mov	r12,	r4	;
+
+00008b60 <.LVL26>:
+    8b60:	05 4d       	mov	r13,	r5	;
+
+00008b62 <.LVL27>:
+    8b62:	06 48       	mov	r8,	r6	;
+    8b64:	07 4a       	mov	r10,	r7	;
+
+00008b66 <.LBE2>:
+    8b66:	3a 40 7a 88 	mov	#34938,	r10	;#0x887a
+    8b6a:	1e 41 14 00 	mov	20(r1),	r14	;0x00014
+    8b6e:	1f 41 16 00 	mov	22(r1),	r15	;0x00016
+    8b72:	1c 41 0c 00 	mov	12(r1),	r12	;0x0000c
+    8b76:	1d 41 08 00 	mov	8(r1),	r13	;
+    8b7a:	8a 12       	call	r10		;
+
+00008b7c <.LVL28>:
+    8b7c:	09 47       	mov	r7,	r9	;
+    8b7e:	08 5c       	add	r12,	r8	;
+    8b80:	09 6d       	addc	r13,	r9	;
+
+00008b82 <.Loc.555.1>:
+    8b82:	1e 41 10 00 	mov	16(r1),	r14	;0x00010
+    8b86:	1f 41 12 00 	mov	18(r1),	r15	;0x00012
+    8b8a:	1c 41 0e 00 	mov	14(r1),	r12	;0x0000e
+    8b8e:	1d 41 0a 00 	mov	10(r1),	r13	;0x0000a
+    8b92:	8a 12       	call	r10		;
+
+00008b94 <.LVL29>:
+    8b94:	0e 48       	mov	r8,	r14	;
+    8b96:	0e 5c       	add	r12,	r14	;
+    8b98:	0d 69       	addc	r9,	r13	;
+    8b9a:	0f 4d       	mov	r13,	r15	;
+
+00008b9c <.Loc.558.1>:
+    8b9c:	0c 44       	mov	r4,	r12	;
+    8b9e:	0d 45       	mov	r5,	r13	;
+    8ba0:	31 50 18 00 	add	#24,	r1	;#0x0018
+
+00008ba4 <.LVL31>:
+    8ba4:	30 40 72 87 	br	#0x8772		;
+
+00008ba8 <__mspabi_slli_15>:
+    8ba8:	0c 5c       	rla	r12		;
+
+00008baa <__mspabi_slli_14>:
+    8baa:	0c 5c       	rla	r12		;
+
+00008bac <__mspabi_slli_13>:
+    8bac:	0c 5c       	rla	r12		;
+
+00008bae <__mspabi_slli_12>:
+    8bae:	0c 5c       	rla	r12		;
+
+00008bb0 <__mspabi_slli_11>:
+    8bb0:	0c 5c       	rla	r12		;
+
+00008bb2 <__mspabi_slli_10>:
+    8bb2:	0c 5c       	rla	r12		;
+
+00008bb4 <__mspabi_slli_9>:
+    8bb4:	0c 5c       	rla	r12		;
+
+00008bb6 <__mspabi_slli_8>:
+    8bb6:	0c 5c       	rla	r12		;
+
+00008bb8 <__mspabi_slli_7>:
+    8bb8:	0c 5c       	rla	r12		;
+
+00008bba <__mspabi_slli_6>:
+    8bba:	0c 5c       	rla	r12		;
+
+00008bbc <__mspabi_slli_5>:
+    8bbc:	0c 5c       	rla	r12		;
+
+00008bbe <__mspabi_slli_4>:
+    8bbe:	0c 5c       	rla	r12		;
+
+00008bc0 <__mspabi_slli_3>:
+    8bc0:	0c 5c       	rla	r12		;
+
+00008bc2 <__mspabi_slli_2>:
+    8bc2:	0c 5c       	rla	r12		;
+
+00008bc4 <__mspabi_slli_1>:
+    8bc4:	0c 5c       	rla	r12		;
+    8bc6:	30 41       	ret			
+
+00008bc8 <.L11>:
+    8bc8:	3d 53       	add	#-1,	r13	;r3 As==11
+    8bca:	0c 5c       	rla	r12		;
+
+00008bcc <__mspabi_slli>:
+    8bcc:	0d 93       	cmp	#0,	r13	;r3 As==00
+    8bce:	fc 23       	jnz	$-6      	;abs 0x8bc8
+    8bd0:	30 41       	ret			
+
+00008bd2 <__mspabi_slll_15>:
+    8bd2:	0c 5c       	rla	r12		;
+    8bd4:	0d 6d       	rlc	r13		;
+
+00008bd6 <__mspabi_slll_14>:
+    8bd6:	0c 5c       	rla	r12		;
+    8bd8:	0d 6d       	rlc	r13		;
+
+00008bda <__mspabi_slll_13>:
+    8bda:	0c 5c       	rla	r12		;
+    8bdc:	0d 6d       	rlc	r13		;
+
+00008bde <__mspabi_slll_12>:
+    8bde:	0c 5c       	rla	r12		;
+    8be0:	0d 6d       	rlc	r13		;
+
+00008be2 <__mspabi_slll_11>:
+    8be2:	0c 5c       	rla	r12		;
+    8be4:	0d 6d       	rlc	r13		;
+
+00008be6 <__mspabi_slll_10>:
+    8be6:	0c 5c       	rla	r12		;
+    8be8:	0d 6d       	rlc	r13		;
+
+00008bea <__mspabi_slll_9>:
+    8bea:	0c 5c       	rla	r12		;
+    8bec:	0d 6d       	rlc	r13		;
+
+00008bee <__mspabi_slll_8>:
+    8bee:	0c 5c       	rla	r12		;
+    8bf0:	0d 6d       	rlc	r13		;
+
+00008bf2 <__mspabi_slll_7>:
+    8bf2:	0c 5c       	rla	r12		;
+    8bf4:	0d 6d       	rlc	r13		;
+
+00008bf6 <__mspabi_slll_6>:
+    8bf6:	0c 5c       	rla	r12		;
+    8bf8:	0d 6d       	rlc	r13		;
+
+00008bfa <__mspabi_slll_5>:
+    8bfa:	0c 5c       	rla	r12		;
+    8bfc:	0d 6d       	rlc	r13		;
+
+00008bfe <__mspabi_slll_4>:
+    8bfe:	0c 5c       	rla	r12		;
+    8c00:	0d 6d       	rlc	r13		;
+
+00008c02 <__mspabi_slll_3>:
+    8c02:	0c 5c       	rla	r12		;
+    8c04:	0d 6d       	rlc	r13		;
+
+00008c06 <__mspabi_slll_2>:
+    8c06:	0c 5c       	rla	r12		;
+    8c08:	0d 6d       	rlc	r13		;
+
+00008c0a <__mspabi_slll_1>:
+    8c0a:	0c 5c       	rla	r12		;
+    8c0c:	0d 6d       	rlc	r13		;
+    8c0e:	30 41       	ret			
+
+00008c10 <.L12>:
+    8c10:	3e 53       	add	#-1,	r14	;r3 As==11
+    8c12:	0c 5c       	rla	r12		;
+    8c14:	0d 6d       	rlc	r13		;
+
+00008c16 <__mspabi_slll>:
+    8c16:	0e 93       	cmp	#0,	r14	;r3 As==00
+    8c18:	fb 23       	jnz	$-8      	;abs 0x8c10
+    8c1a:	30 41       	ret			
+
+00008c1c <__mspabi_srai_15>:
+    8c1c:	0c 11       	rra	r12		;
+
+00008c1e <__mspabi_srai_14>:
+    8c1e:	0c 11       	rra	r12		;
+
+00008c20 <__mspabi_srai_13>:
+    8c20:	0c 11       	rra	r12		;
+
+00008c22 <__mspabi_srai_12>:
+    8c22:	0c 11       	rra	r12		;
+
+00008c24 <__mspabi_srai_11>:
+    8c24:	0c 11       	rra	r12		;
+
+00008c26 <__mspabi_srai_10>:
+    8c26:	0c 11       	rra	r12		;
+
+00008c28 <__mspabi_srai_9>:
+    8c28:	0c 11       	rra	r12		;
+
+00008c2a <__mspabi_srai_8>:
+    8c2a:	0c 11       	rra	r12		;
+
+00008c2c <__mspabi_srai_7>:
+    8c2c:	0c 11       	rra	r12		;
+
+00008c2e <__mspabi_srai_6>:
+    8c2e:	0c 11       	rra	r12		;
+
+00008c30 <__mspabi_srai_5>:
+    8c30:	0c 11       	rra	r12		;
+
+00008c32 <__mspabi_srai_4>:
+    8c32:	0c 11       	rra	r12		;
+
+00008c34 <__mspabi_srai_3>:
+    8c34:	0c 11       	rra	r12		;
+
+00008c36 <__mspabi_srai_2>:
+    8c36:	0c 11       	rra	r12		;
+
+00008c38 <__mspabi_srai_1>:
+    8c38:	0c 11       	rra	r12		;
+    8c3a:	30 41       	ret			
+
+00008c3c <.L11>:
+    8c3c:	3d 53       	add	#-1,	r13	;r3 As==11
+    8c3e:	0c 11       	rra	r12		;
+
+00008c40 <__mspabi_srai>:
+    8c40:	0d 93       	cmp	#0,	r13	;r3 As==00
+    8c42:	fc 23       	jnz	$-6      	;abs 0x8c3c
+    8c44:	30 41       	ret			
+
+00008c46 <__mspabi_sral_15>:
+    8c46:	0d 11       	rra	r13		;
+    8c48:	0c 10       	rrc	r12		;
+
+00008c4a <__mspabi_sral_14>:
+    8c4a:	0d 11       	rra	r13		;
+    8c4c:	0c 10       	rrc	r12		;
+
+00008c4e <__mspabi_sral_13>:
+    8c4e:	0d 11       	rra	r13		;
+    8c50:	0c 10       	rrc	r12		;
+
+00008c52 <__mspabi_sral_12>:
+    8c52:	0d 11       	rra	r13		;
+    8c54:	0c 10       	rrc	r12		;
+
+00008c56 <__mspabi_sral_11>:
+    8c56:	0d 11       	rra	r13		;
+    8c58:	0c 10       	rrc	r12		;
+
+00008c5a <__mspabi_sral_10>:
+    8c5a:	0d 11       	rra	r13		;
+    8c5c:	0c 10       	rrc	r12		;
+
+00008c5e <__mspabi_sral_9>:
+    8c5e:	0d 11       	rra	r13		;
+    8c60:	0c 10       	rrc	r12		;
+
+00008c62 <__mspabi_sral_8>:
+    8c62:	0d 11       	rra	r13		;
+    8c64:	0c 10       	rrc	r12		;
+
+00008c66 <__mspabi_sral_7>:
+    8c66:	0d 11       	rra	r13		;
+    8c68:	0c 10       	rrc	r12		;
+
+00008c6a <__mspabi_sral_6>:
+    8c6a:	0d 11       	rra	r13		;
+    8c6c:	0c 10       	rrc	r12		;
+
+00008c6e <__mspabi_sral_5>:
+    8c6e:	0d 11       	rra	r13		;
+    8c70:	0c 10       	rrc	r12		;
+
+00008c72 <__mspabi_sral_4>:
+    8c72:	0d 11       	rra	r13		;
+    8c74:	0c 10       	rrc	r12		;
+
+00008c76 <__mspabi_sral_3>:
+    8c76:	0d 11       	rra	r13		;
+    8c78:	0c 10       	rrc	r12		;
+
+00008c7a <__mspabi_sral_2>:
+    8c7a:	0d 11       	rra	r13		;
+    8c7c:	0c 10       	rrc	r12		;
+
+00008c7e <__mspabi_sral_1>:
+    8c7e:	0d 11       	rra	r13		;
+    8c80:	0c 10       	rrc	r12		;
+    8c82:	30 41       	ret			
+
+00008c84 <.L12>:
+    8c84:	3e 53       	add	#-1,	r14	;r3 As==11
+    8c86:	0d 11       	rra	r13		;
+    8c88:	0c 10       	rrc	r12		;
+
+00008c8a <__mspabi_sral>:
+    8c8a:	0e 93       	cmp	#0,	r14	;r3 As==00
+    8c8c:	fb 23       	jnz	$-8      	;abs 0x8c84
+    8c8e:	30 41       	ret			
+
+00008c90 <_exit>:
+    8c90:	30 40 90 8c 	br	#0x8c90		;
+
+00008c94 <_isatty>:
+    8c94:	1c 43       	mov	#1,	r12	;r3 As==01
+
+00008c96 <.Loc.59.1>:
+    8c96:	30 41       	ret			
+
+00008c98 <getpid>:
+    8c98:	3c 40 2a 00 	mov	#42,	r12	;#0x002a
+
+00008c9c <.Loc.65.1>:
+    8c9c:	30 41       	ret			
+
+00008c9e <open>:
+    8c9e:	b0 12 f2 8c 	call	#36082		;#0x8cf2
+    8ca2:	bc 40 58 00 	mov	#88,	0(r12)	;#0x0058
+    8ca6:	00 00 
+    8ca8:	3c 43       	mov	#-1,	r12	;r3 As==11
+    8caa:	30 41       	ret			
+
+00008cac <close>:
+    8cac:	b0 12 f2 8c 	call	#36082		;#0x8cf2
+    8cb0:	bc 40 58 00 	mov	#88,	0(r12)	;#0x0058
+    8cb4:	00 00 
+    8cb6:	3c 43       	mov	#-1,	r12	;r3 As==11
+    8cb8:	30 41       	ret			
+
+00008cba <read>:
+    8cba:	b0 12 f2 8c 	call	#36082		;#0x8cf2
+    8cbe:	bc 40 58 00 	mov	#88,	0(r12)	;#0x0058
+    8cc2:	00 00 
+    8cc4:	3c 43       	mov	#-1,	r12	;r3 As==11
+    8cc6:	30 41       	ret			
+
+00008cc8 <fstat>:
+    8cc8:	b0 12 f2 8c 	call	#36082		;#0x8cf2
+    8ccc:	bc 40 58 00 	mov	#88,	0(r12)	;#0x0058
+    8cd0:	00 00 
+    8cd2:	3c 43       	mov	#-1,	r12	;r3 As==11
+    8cd4:	30 41       	ret			
+
+00008cd6 <lseek>:
+    8cd6:	b0 12 f2 8c 	call	#36082		;#0x8cf2
+    8cda:	bc 40 58 00 	mov	#88,	0(r12)	;#0x0058
+    8cde:	00 00 
+    8ce0:	3c 43       	mov	#-1,	r12	;r3 As==11
+    8ce2:	30 41       	ret			
+
+00008ce4 <kill>:
+    8ce4:	b0 12 f2 8c 	call	#36082		;#0x8cf2
+    8ce8:	bc 40 58 00 	mov	#88,	0(r12)	;#0x0058
+    8cec:	00 00 
+    8cee:	3c 43       	mov	#-1,	r12	;r3 As==11
+    8cf0:	30 41       	ret			
+
+00008cf2 <__errno>:
+    8cf2:	1c 42 06 40 	mov	&0x4006,r12	;0x4006
+    8cf6:	30 41       	ret			
+
+00008cf8 <memmove>:
+    8cf8:	0d 9c       	cmp	r12,	r13	;
+    8cfa:	0a 28       	jnc	$+22     	;abs 0x8d10
+
+00008cfc <.L5>:
+    8cfc:	0f 4c       	mov	r12,	r15	;
+    8cfe:	0e 5c       	add	r12,	r14	;
+
+00008d00 <.L3>:
+    8d00:	0e 9f       	cmp	r15,	r14	;
+    8d02:	0d 24       	jz	$+28     	;abs 0x8d1e
+
+00008d04 <.LVL3>:
+    8d04:	ef 4d 00 00 	mov.b	@r13,	0(r15)	;
+    8d08:	1f 53       	inc	r15		;
+
+00008d0a <.LVL4>:
+    8d0a:	1d 53       	inc	r13		;
+    8d0c:	30 40 00 8d 	br	#0x8d00		;
+
+00008d10 <.L2>:
+    8d10:	0f 4d       	mov	r13,	r15	;
+    8d12:	0f 5e       	add	r14,	r15	;
+    8d14:	0c 9f       	cmp	r15,	r12	;
+    8d16:	f2 2f       	jc	$-26     	;abs 0x8cfc
+
+00008d18 <.L4>:
+    8d18:	3e 53       	add	#-1,	r14	;r3 As==11
+
+00008d1a <.LVL7>:
+    8d1a:	3e 93       	cmp	#-1,	r14	;r3 As==11
+    8d1c:	01 20       	jnz	$+4      	;abs 0x8d20
+
+00008d1e <.L10>:
+    8d1e:	30 41       	ret			
+
+00008d20 <.L6>:
+    8d20:	0b 4c       	mov	r12,	r11	;
+    8d22:	0b 5e       	add	r14,	r11	;
+    8d24:	0f 4d       	mov	r13,	r15	;
+    8d26:	0f 5e       	add	r14,	r15	;
+    8d28:	eb 4f 00 00 	mov.b	@r15,	0(r11)	;
+    8d2c:	30 40 18 8d 	br	#0x8d18		;
+
+00008d30 <memset>:
+    8d30:	0f 4c       	mov	r12,	r15	;
+    8d32:	0e 5c       	add	r12,	r14	;
+
+00008d34 <.L2>:
+    8d34:	0f 9e       	cmp	r14,	r15	;
+    8d36:	01 20       	jnz	$+4      	;abs 0x8d3a
+
+00008d38 <.Loc.104.1>:
+    8d38:	30 41       	ret			
+
+00008d3a <.L3>:
+    8d3a:	cf 4d 00 00 	mov.b	r13,	0(r15)	;
+    8d3e:	1f 53       	inc	r15		;
+
+00008d40 <.LVL4>:
+    8d40:	30 40 34 8d 	br	#0x8d34		;
+
+00008d44 <L0>:
+    8d44:	30 41       	ret			
+
+00008d46 <__do_global_ctors_aux>:
+    8d46:	0a 12       	push	r10		;
+    8d48:	3a 40 0c 80 	mov	#32780,	r10	;#0x800c
+
+00008d4c <.L2>:
+    8d4c:	2c 4a       	mov	@r10,	r12	;
+    8d4e:	3c 93       	cmp	#-1,	r12	;r3 As==11
+    8d50:	02 20       	jnz	$+6      	;abs 0x8d56
+    8d52:	3a 41       	pop	r10		;
+    8d54:	30 41       	ret			
+
+00008d56 <.L3>:
+    8d56:	8c 12       	call	r12		;
+    8d58:	3a 50 fe ff 	add	#65534,	r10	;#0xfffe
+    8d5c:	30 40 4c 8d 	br	#0x8d4c		;
+
+00008d60 <call___do_global_ctors_aux>:
+    8d60:	b0 12 1a 81 	call	#33050		;#0x811a
+    8d64:	b0 12 46 8d 	call	#36166		;#0x8d46
+
+00008d68 <L0>:
+    8d68:	b0 12 52 80 	call	#32850		;#0x8052
+
+00008d6c <.Loc.19.1>:
+    8d6c:	b0 12 44 80 	call	#32836		;#0x8044
+
+00008d70 <.Loc.20.1>:
+    8d70:	30 41       	ret			
+
+00008d72 <__msp430_fini>:
+    8d72:	b0 12 60 80 	call	#32864		;#0x8060
+
+00008d76 <L0>:
+    8d76:	b0 12 cc 80 	call	#32972		;#0x80cc
+
+00008d7a <L0>:
+    8d7a:	30 41       	ret			

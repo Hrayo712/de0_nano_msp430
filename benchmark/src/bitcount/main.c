@@ -1,16 +1,16 @@
-#include <omsp_system.h>
+//#include <msp430fr5969.h>
 
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SEED 4
+#include <omsp_system.h>
+#include "uart.h"
+
+#define SEED 4L
 #define ITER 100
 #define CHAR_BIT 8
-
-//typedef unsigned long uint32_t;
-
 
 static char bits[256] =
 {
@@ -32,20 +32,31 @@ static char bits[256] =
       4, 5, 5, 6, 5, 6, 6, 7, 5, 6, 6, 7, 6, 7, 7, 8   /* 240 - 255 */
 };
 
-
+void init(void);
+int btbl_bitcnt(uint32_t x);
+int bit_count(uint32_t x);
+int bitcount(uint32_t i);
+int ntbl_bitcount(uint32_t x);
+int BW_btbl_bitcount(uint32_t x);
+int AR_btbl_bitcount(uint32_t x);
+int ntbl_bitcnt(uint32_t x);
+int bit_shifter(uint32_t x);
 
 void init()
 {
 
      WDTCTL = WDTPW | WDTHOLD; // Stop WDT
-   //  PM5CTL0 &= ~LOCKLPM5;     // Disable the GPIO power-on default high-impedance mode
+	 UART_BAUD = BAUD;                   // Init UART
+     UART_CTL  = UART_EN;
+     //PM5CTL0 &= ~LOCKLPM5;     // Disable the GPIO power-on default high-impedance mode
+     // P1DIR |= 0x09;            // Set P1.0 and P1.3 to output direction
 
-	// Disable FRAM wait cycles to allow clock operation over 8MHz
-	//FRCTL0 = 0xA500 | ((1) << 4); // FRCTLPW | NWAITS_1;
-   // __delay_cycles(3);
+     // Disable FRAM wait cycles to allow clock operation over 8MHz
+     //FRCTL0 = 0xA500 | ((1) << 4); // FRCTLPW | NWAITS_1;
+     //__delay_cycles(3);
 
-	/* init FRAM */
-  //  FRCTL0_H |= (FWPW) >> 8;
+     /* init FRAM */
+     //FRCTL0_H |= (FWPW) >> 8;
 
 }
 
@@ -121,7 +132,7 @@ int ntbl_bitcnt(uint32_t x)
       return cnt;
 }
 
-static int bit_shifter(uint32_t x)
+int bit_shifter(uint32_t x)
 {
   int i, n;
   for (i = n = 0; x && (i < (sizeof(uint32_t) * CHAR_BIT)); ++i, x >>= 1)
@@ -132,85 +143,94 @@ static int bit_shifter(uint32_t x)
 
 int main()
 {
-	init();
+    init();
 
-	uint32_t seed;
-	unsigned  iter;
-	unsigned  func;
-	volatile unsigned  n_0, n_1, n_2, n_3, n_4, n_5, n_6;
+    volatile unsigned  n_0, n_1, n_2, n_3, n_4, n_5, n_6;
+    uint32_t seed;
+    unsigned iter;
+    unsigned func;
 
-	/* Iterate through the 7 func statements 0 - 7*/
-	/* Each statement executes a different bitcount routine, with a different seed value, a 100 times*/
-	while(1){
-	LED_CTRL ^= 0x0F;
+    /* Iterate through the 7 func statements 0 - 7*/
+    /* Each statement executes a different bitcount routine, with a different seed value, a 100 times*/
+    while(1){
 
-	//Initialize the variables upon every loop
-	n_0=0;
-	n_1=0;
-	n_2=0;
-	n_3=0;
-	n_4=0;
-	n_5=0;
-	n_6=0;
+    //Initialize the variables upon every loop
+    n_0=0;
+    n_1=0;
+    n_2=0;
+    n_3=0;
+    n_4=0;
+    n_5=0;
+    n_6=0;
 
-	//Toggle LED upon every execution
+    //Toggle LED upon every execution
 
-	for (func = 0; func < 7; func++) {
 
-		seed = (uint32_t)SEED;
-		if(func == 0){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
+	LED_CTRL = 0x0F;
 
-				n_0 += bit_count(seed);
-			}
-		}
-		else if(func == 1){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
+    for (func = 0; func < 7; func++) {
 
-				n_1 += bitcount(seed);
-			}
-		}
-		else if(func == 2){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
+        seed = (uint32_t)SEED;
+        if(func == 0){
+            for(iter = 0; iter < ITER; ++iter, seed += 13){
 
-				n_2 += ntbl_bitcnt(seed);
-			}
-		}
-		else if(func == 3){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
+                n_0 += bit_count(seed);
+            }
+        }
+        else if(func == 1){
+            for(iter = 0; iter < ITER; ++iter, seed += 13){
 
-				n_3 += ntbl_bitcount(seed);
-			}
-		}
-		else if(func == 4){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
+                n_1 += bitcount(seed);
+            }
+        }
+        else if(func == 2){
+            for(iter = 0; iter < ITER; ++iter, seed += 13){
 
-				n_4 += BW_btbl_bitcount(seed);
-			}
-		}
-		else if(func == 5){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
+                n_2 += ntbl_bitcnt(seed);
+            }
+        }
+        else if(func == 3){
+            for(iter = 0; iter < ITER; ++iter, seed += 13){
 
-				n_5 += AR_btbl_bitcount(seed);
-			}
-		}
-		else if(func == 6){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
+                n_3 += ntbl_bitcount(seed);
+            }
+        }
+        else if(func == 4){
+            for(iter = 0; iter < ITER; ++iter, seed += 13){
 
-				n_6 += bit_shifter(seed);
-			}
-		}
-	}
-	/*
-	    printf("%u\r\n", n_0);
-	    printf("%u\r\n", n_1);
-	    printf("%u\r\n", n_2);
-	    printf("%u\r\n", n_3);
-	    printf("%u\r\n", n_4);
-	    printf("%u\r\n", n_5);
-	    printf("%u\r\n", n_6);
-   */
-   }//while 1
+                n_4 += BW_btbl_bitcount(seed);
+            }
+        }
+        else if(func == 5){
+            for(iter = 0; iter < ITER; ++iter, seed += 13){
 
-	return 0;
+                n_5 += AR_btbl_bitcount(seed);
+            }
+        }
+        else if(func == 6){
+            for(iter = 0; iter < ITER; ++iter, seed += 13){
+
+                n_6 += bit_shifter(seed);
+            }
+        }
+    }
+
+    	UART_WriteString("Benchmark Complete! \r\n");
+    	UART_WriteNumber(n_0);
+    	UART_WriteString("\r\n");
+    	UART_WriteNumber(n_1);
+    	UART_WriteString("\r\n");
+    	UART_WriteNumber(n_2);
+    	UART_WriteString("\r\n");
+    	UART_WriteNumber(n_3);
+    	UART_WriteString("\r\n");
+    	UART_WriteNumber(n_4);
+    	UART_WriteString("\r\n");
+    	UART_WriteNumber(n_5);
+    	UART_WriteString("\r\n");
+    	UART_WriteNumber(n_6);
+    	UART_WriteString("\r\n");
+   } //while 1
+
+    return 0;
 }

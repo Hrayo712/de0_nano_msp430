@@ -1,0 +1,3706 @@
+
+AR.elf:     file format elf32-msp430
+
+SYMBOL TABLE:
+0000fffe l    d  __reset_vector	00000000 __reset_vector
+00008000 l    d  .rodata	00000000 .rodata
+00008014 l    d  .text	00000000 .text
+00004000 l    d  .data	00000000 .data
+00004080 l    d  .bss	00000000 .bss
+00004118 l    d  .noinit	00000000 .noinit
+00000000 l    d  .MP430.attributes	00000000 .MP430.attributes
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_macinfo	00000000 .debug_macinfo
+00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crt0.o
+0000fffe l       __reset_vector	00000000 __msp430_resetvec_hook
+00008070 l       .text	00000000 _msp430_run_array
+0000807e l       .text	00000000 _msp430_run_done
+00000000 l    df *ABS*	00000000 lib_a-impure.o
+00004008 l     O .data	00000078 impure_data
+00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtbegin.o
+0000800c l     O .rodata	00000000 __CTOR_LIST__
+00008010 l     O .rodata	00000000 __DTOR_LIST__
+00008004 l     O .rodata	00000000 __EH_FRAME_BEGIN__
+000091fe l     O .text	00000000 __TMC_LIST__
+00008084 l     F .text	00000000 deregister_tm_clones
+0000809e l     F .text	00000000 register_tm_clones
+000080cc l     F .text	00000000 __do_global_dtors_aux
+00004080 l     O .bss	00000000 completed.3056
+00004082 l     O .bss	00000000 dtor_idx.3058
+0000811a l     F .text	00000000 call___do_global_dtors_aux
+0000811a l     F .text	00000000 frame_dummy
+00004084 l     O .bss	00000000 object.3071
+00008132 l     F .text	00000000 call_frame_dummy
+00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/430/crtend.o
+0000800e l     O .rodata	00000000 __CTOR_END__
+00008004 l     O .rodata	00000000 __FRAME_END__
+000091c8 l     F .text	00000000 __do_global_ctors_aux
+000091e2 l     F .text	00000000 call___do_global_ctors_aux
+00000000 l    df *ABS*	00000000 crt_bss.o
+00000000 l    df *ABS*	00000000 crt_movedata.o
+00000000 l    df *ABS*	00000000 crt_main.o
+00000000 l    df *ABS*	00000000 main.c
+00004004 l     O .data	00000002 _v_seed.2299
+00000000 l    df *ABS*	00000000 lib2divHI.o
+00000000 l    df *ABS*	00000000 srli.o
+00000000 l    df *ABS*	00000000 lib2hw_mul_16.o
+00000130 l       *ABS*	00000000 MPY_OP1
+00000132 l       *ABS*	00000000 MPY_OP1_S
+00000134 l       *ABS*	00000000 MAC_OP1
+00000138 l       *ABS*	00000000 MPY_OP2
+00000138 l       *ABS*	00000000 MAC_OP2
+0000013a l       *ABS*	00000000 RESULT_LO
+0000013c l       *ABS*	00000000 RESULT_HI
+00000000 l    df *ABS*	00000000 lib2_mul_16bit.o
+00000000 l    df *ABS*	00000000 lib_a-exit.o
+00000000 l    df *ABS*	00000000 lib_a-__call_atexit.o
+00000000 l    df *ABS*	00000000 _muldi3.o
+00000000 l    df *ABS*	00000000 slli.o
+00000000 l    df *ABS*	00000000 srai.o
+00000000 l    df *ABS*	00000000 ciosyscalls.o
+00000000 l    df *ABS*	00000000 lib_a-errno.o
+00000000 l    df *ABS*	00000000 lib_a-memmove.o
+00000000 l    df *ABS*	00000000 lib_a-memset.o
+00000000 l    df *ABS*	00000000 /opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/../lib/gcc/msp430-elf/7.3.1/../../../../msp430-elf/lib/430/crtn.o
+00008cfc g     F .text	00000000 __mspabi_mpyl
+0000906c g       .text	00000000 .hidden __mspabi_slll_9
+0000905c g       .text	00000000 .hidden __mspabi_slll_13
+00008a18 g     F .text	0000000e end_of_benchmark
+00008ccc g     F .text	00000018 __mulsihi2
+00008c1c g       .text	00000000 .hidden __mspabi_srli_9
+000090b0 g       .text	00000000 .hidden __mspabi_srai_6
+000090ba g       .text	00000000 .hidden __mspabi_srai_1
+00008c6c g       .text	00000000 .hidden __mspabi_srll_10
+00008306 g     F .text	000000d6 transform
+00008d2e g     F .text	00000000 __mspabi_mpyull_hw
+00008c18 g       .text	00000000 .hidden __mspabi_srli_10
+0000893c g     F .text	00000062 train
+000090dc g       .text	00000000 .hidden __mspabi_sral_10
+000090cc g       .text	00000000 .hidden __mspabi_sral_14
+00008ccc g     F .text	00000000 __mspabi_mpysl_hw
+00009036 g       .text	00000000 .hidden __mspabi_slli_9
+00008c04 g       .text	00000000 .hidden __mspabi_srli_15
+0000917a g     F .text	00000038 memmove
+00008d32 g     F .text	00000000 __mspabi_mpyll_hw
+00008c30 g       .text	00000000 .hidden __mspabi_srli_4
+00009030 g       .text	00000000 .hidden __mspabi_slli_12
+00008b26 g     F .text	00000040 .hidden udivmodhi4
+00009174 g     F .text	00000006 __errno
+000090e0 g       .text	00000000 .hidden __mspabi_sral_9
+00008c24 g       .text	00000000 .hidden __mspabi_srli_7
+00008c7e g       .text	00000000 .hidden __mspabi_srll_7
+00008c96 g       .text	00000000 .hidden __mspabi_srll_3
+000090ec g       .text	00000000 .hidden __mspabi_sral_6
+00009100 g       .text	00000000 .hidden __mspabi_sral_1
+00008ccc g     F .text	00000000 __mspabi_mpysl
+00008cfc g     F .text	0000002e __mulsi2
+00008bf6 g       .text	00000000 .hidden __mspabi_func_epilog_6
+0000911a  w    F .text	00000006 getpid
+0000909e g       .text	00000000 .hidden __mspabi_srai_15
+000091fe g     O .text	00000000 .hidden __TMC_END__
+00008c5a g       .text	00000000 .hidden __mspabi_srll_13
+00008012 g     O .rodata	00000000 .hidden __DTOR_END__
+00008008 g       .rodata	00000000 __fini_array_end
+000088bc g     F .text	00000052 print_stats
+00008c10 g       .text	00000000 .hidden __mspabi_srli_12
+00009116  w    F .text	00000004 isatty
+000090b8 g       .text	00000000 .hidden __mspabi_srai_2
+000090b6 g       .text	00000000 .hidden __mspabi_srai_3
+00004092 g     O .bss	00000002 sum
+00008cfc g     F .text	00000000 __mspabi_mpyl_hw
+00008014 g     F .text	00000004 __crt0_start
+00009064 g       .text	00000000 .hidden __mspabi_slll_11
+00009054 g       .text	00000000 .hidden __mspabi_slll_15
+00004000 g     O .data	00000000 .hidden __dso_handle
+0000902c g       .text	00000000 .hidden __mspabi_slli_14
+00009040 g       .text	00000000 .hidden __mspabi_slli_4
+00008018 g     F .text	0000000e __crt0_init_bss
+00000098 g       *ABS*	00000000 __bsssize
+00009088 g       .text	00000000 .hidden __mspabi_slll_2
+000090a8 g       .text	00000000 .hidden __mspabi_srai_10
+00008bb2 g     F .text	00000032 .hidden __mspabi_remi
+0000803a g     F .text	0000000a __crt0_call_init_then_main
+00008c00 g       .text	00000000 .hidden __mspabi_func_epilog_1
+0000904e g       .text	00000000 .hidden __mspabi_slli
+00004094 g     O .bss	00000080 model
+00009158  w    F .text	0000000e lseek
+00009116  w    F .text	00000004 _isatty
+00008bfc g       .text	00000000 .hidden __mspabi_func_epilog_3
+00008000 g     O .rodata	00000002 _global_impure_ptr
+00008c8a g       .text	00000000 .hidden __mspabi_srll_5
+00008c48 g       .text	00000000 .hidden __mspabi_srli
+00008d2a g     F .text	00000000 __mspabi_mpysll_hw
+00008cb8 g     F .text	00000000 __mspabi_mpyi_hw
+00008cb8 g     F .text	00000014 __mulhi2
+00008ce4 g     F .text	00000000 __mspabi_mpyul
+00008c66 g       .text	00000000 .hidden __mspabi_srll_11
+00008d2a g     F .text	00000004 __muldisi2
+0000907c g       .text	00000000 .hidden __mspabi_slll_5
+00009032 g       .text	00000000 .hidden __mspabi_slli_11
+00009042 g       .text	00000000 .hidden __mspabi_slli_3
+00008c2c g       .text	00000000 .hidden __mspabi_srli_5
+0000914a  w    F .text	0000000e fstat
+000083dc g     F .text	000002c6 featurize
+00009166  w    F .text	0000000e kill
+00000000  w      *UND*	00000000 __sf_fake_stderr
+00000000  w      *UND*	00000000 __deregister_frame_info
+00004118 g       .noinit	00000000 end
+000090d8 g       .text	00000000 .hidden __mspabi_sral_11
+000090c8 g       .text	00000000 .hidden __mspabi_sral_15
+000090ae g       .text	00000000 .hidden __mspabi_srai_7
+00000000  w      *UND*	00000000 _ITM_registerTMCloneTable
+00009044 g       .text	00000000 .hidden __mspabi_slli_2
+00004114 g     O .bss	00000002 resultStationaryPct
+00008bec g     F .text	00000008 .hidden __mspabi_remu
+00008c84 g       .text	00000000 .hidden __mspabi_srll_6
+000090f4 g       .text	00000000 .hidden __mspabi_sral_4
+00008da8 g     F .text	0000013a __call_exitprocs
+00009078 g       .text	00000000 .hidden __mspabi_slll_6
+00008014 g       .text	00000000 _start
+00008ee2 g     F .text	00000148 .hidden __mspabi_mpyll
+0000913c  w    F .text	0000000e read
+00009080 g       .text	00000000 .hidden __mspabi_slll_4
+00009070 g       .text	00000000 .hidden __mspabi_slll_8
+00008060 g     F .text	00000000 _msp430_run_fini_array
+00008c3c g       .text	00000000 .hidden __mspabi_srli_1
+00008c54 g       .text	00000000 .hidden __mspabi_srll_14
+0000903c g       .text	00000000 .hidden __mspabi_slli_6
+000090c2 g       .text	00000000 .hidden __mspabi_srai
+00008cb8 g     F .text	00000000 __mspabi_mpyi
+00004116 g     O .bss	00000002 resultMovingPct
+000090a4 g       .text	00000000 .hidden __mspabi_srai_12
+00008c08 g       .text	00000000 .hidden __mspabi_srli_14
+00000080 g       *ABS*	00000000 __romdatacopysize
+00008abe g     F .text	0000000e init
+00009058 g       .text	00000000 .hidden __mspabi_slll_14
+000090e8 g       .text	00000000 .hidden __mspabi_sral_7
+000090ac g       .text	00000000 .hidden __mspabi_srai_8
+00008c14 g       .text	00000000 .hidden __mspabi_srli_11
+000090fc g       .text	00000000 .hidden __mspabi_sral_2
+00009074 g       .text	00000000 .hidden __mspabi_slll_7
+00000000  w      *UND*	00000000 _ITM_deregisterTMCloneTable
+00008008 g       .rodata	00000000 __fini_array_start
+00008b66 g     F .text	0000004c .hidden __mspabi_divi
+00000000  w      *UND*	00000000 __sf_fake_stdin
+00000000  w      *ABS*	00000000 __rom_highdatacopysize
+000091e2 g       .text	00000000 __msp430_init
+000091b2 g     F .text	00000014 memset
+00009060 g       .text	00000000 .hidden __mspabi_slll_12
+00008acc g     F .text	0000005a main
+00008ce4 g     F .text	00000018 __umulsihi2
+000090aa g       .text	00000000 .hidden __mspabi_srai_9
+000090a6 g       .text	00000000 .hidden __mspabi_srai_11
+00008c90 g       .text	00000000 .hidden __mspabi_srll_4
+00008008 g       .rodata	00000000 __init_array_end
+00008c38 g       .text	00000000 .hidden __mspabi_srli_2
+0000910c g       .text	00000000 .hidden __mspabi_sral
+00009046 g       .text	00000000 .hidden __mspabi_slli_1
+00008be4 g     F .text	00000008 .hidden __mspabi_divu
+00000000  w      *ABS*	00000000 __high_bsssize
+00009084 g       .text	00000000 .hidden __mspabi_slll_3
+00000000  w      *ABS*	00000000 __rom_highdatastart
+000091fe g       .text	00000000 __msp430_fini_end
+000090e4 g       .text	00000000 .hidden __mspabi_sral_8
+0000885e g     F .text	0000005e record_stats
+000090d0 g       .text	00000000 .hidden __mspabi_sral_13
+00008a26 g     F .text	00000004 count_error
+00004002 g     O .data	00000002 count
+00008c60 g       .text	00000000 .hidden __mspabi_srll_12
+0000903e g       .text	00000000 .hidden __mspabi_slli_5
+0000890e g     F .text	0000002e warmup_sensor
+00008d2e g     F .text	00000004 __umuldisi2
+00008ce4 g     F .text	00000000 _mspabi_mpyul_hw
+000091fe g       *ABS*	00000000 __romdatastart
+0000902e g       .text	00000000 .hidden __mspabi_slli_13
+000090b4 g       .text	00000000 .hidden __mspabi_srai_4
+00008132 g     F .text	00000114 sqrt16
+00008044 g     F .text	00000000 _msp430_run_init_array
+00008c28 g       .text	00000000 .hidden __mspabi_srli_6
+00004006 g     O .data	00000002 _impure_ptr
+00008008 g       .rodata	00000000 __preinit_array_end
+00008246 g     F .text	00000074 ACCEL_singleSample
+00009034 g       .text	00000000 .hidden __mspabi_slli_10
+00008c34 g       .text	00000000 .hidden __mspabi_srli_3
+00000000  w      *ABS*	00000000 __high_datastart
+00000000  w      *ABS*	00000000 __upper_data_init
+00004080 g       .bss	00000000 __bssstart
+000086a2 g     F .text	000001bc classify
+00008a2a g     F .text	00000094 select_mode
+00008bf8 g       .text	00000000 .hidden __mspabi_func_epilog_5
+000090a0 g       .text	00000000 .hidden __mspabi_srai_14
+00009098 g       .text	00000000 .hidden __mspabi_slll
+00008000 g       .noinit	00000000 __stack
+00008c72 g       .text	00000000 .hidden __mspabi_srll_9
+000090f8 g       .text	00000000 .hidden __mspabi_sral_3
+00004080 g       .data	00000000 _edata
+000090d4 g       .text	00000000 .hidden __mspabi_sral_12
+000091f4 g       .text	00000000 __msp430_init_end
+00008cb2 g       .text	00000000 .hidden __mspabi_srll
+00008d8a g     F .text	0000001e exit
+00000000  w      *ABS*	00000000 __high_bssstart
+00009038 g       .text	00000000 .hidden __mspabi_slli_8
+00008c4e g       .text	00000000 .hidden __mspabi_srll_15
+00009068 g       .text	00000000 .hidden __mspabi_slll_10
+00000000  w      *UND*	00000000 __sf_fake_stdout
+0000902a g       .text	00000000 .hidden __mspabi_slli_15
+00008008 g       .rodata	00000000 __init_array_start
+00009112  w    F .text	00000004 _exit
+00008d32 g     F .text	00000004 __muldi3
+000090b2 g       .text	00000000 .hidden __mspabi_srai_5
+00009120  w    F .text	0000000e open
+000090a2 g       .text	00000000 .hidden __mspabi_srai_13
+00008d36 g     F .text	00000036 __mspabi_mpysll
+00008c0c g       .text	00000000 .hidden __mspabi_srli_13
+00004000 g       .data	00000000 __datastart
+0000908c g       .text	00000000 .hidden __mspabi_slll_1
+00008c78 g       .text	00000000 .hidden __mspabi_srll_8
+00008ca2 g       .text	00000000 .hidden __mspabi_srll_1
+0000903a g       .text	00000000 .hidden __mspabi_slli_7
+00008008 g       .rodata	00000000 __preinit_array_start
+00008026 g     F .text	00000014 __crt0_movedata
+00008bfe g       .text	00000000 .hidden __mspabi_func_epilog_2
+00008d6c g     F .text	0000001e __mspabi_mpyull
+00000000  w      *UND*	00000000 __register_frame_info
+000090f0 g       .text	00000000 .hidden __mspabi_sral_5
+00008052 g     F .text	00000000 _msp430_run_preinit_array
+000082ba g     F .text	0000004c acquire_window
+0000912e  w    F .text	0000000e close
+00008bf4 g       .text	00000000 .hidden __mspabi_func_epilog_7
+00008bfa g       .text	00000000 .hidden __mspabi_func_epilog_4
+00008c9c g       .text	00000000 .hidden __mspabi_srll_2
+000091f4 g       .text	00000000 __msp430_fini
+00008c20 g       .text	00000000 .hidden __mspabi_srli_8
+0000899e g     F .text	0000007a recognize
+00000000  w      *UND*	00000000 free
+
+
+
+Disassembly of section .text:
+
+00008014 <__crt0_start>:
+    8014:	31 40 00 80 	mov	#32768,	r1	;#0x8000
+
+00008018 <__crt0_init_bss>:
+    8018:	3c 40 80 40 	mov	#16512,	r12	;#0x4080
+
+0000801c <.Loc.74.1>:
+    801c:	0d 43       	clr	r13		;
+
+0000801e <.Loc.75.1>:
+    801e:	3e 40 98 00 	mov	#152,	r14	;#0x0098
+
+00008022 <.Loc.79.1>:
+    8022:	b0 12 b2 91 	call	#37298		;#0x91b2
+
+00008026 <__crt0_movedata>:
+    8026:	3c 40 00 40 	mov	#16384,	r12	;#0x4000
+
+0000802a <.Loc.116.1>:
+    802a:	3d 40 fe 91 	mov	#37374,	r13	;#0x91fe
+
+0000802e <.Loc.119.1>:
+    802e:	0d 9c       	cmp	r12,	r13	;
+
+00008030 <.Loc.120.1>:
+    8030:	04 24       	jz	$+10     	;abs 0x803a
+
+00008032 <.Loc.122.1>:
+    8032:	3e 40 80 00 	mov	#128,	r14	;#0x0080
+
+00008036 <.Loc.124.1>:
+    8036:	b0 12 7a 91 	call	#37242		;#0x917a
+
+0000803a <__crt0_call_init_then_main>:
+    803a:	b0 12 e2 91 	call	#37346		;#0x91e2
+
+0000803e <.Loc.196.1>:
+    803e:	0c 43       	clr	r12		;
+
+00008040 <.Loc.197.1>:
+    8040:	b0 12 cc 8a 	call	#35532		;#0x8acc
+
+00008044 <_msp430_run_init_array>:
+    8044:	34 40 08 80 	mov	#32776,	r4	;#0x8008
+
+00008048 <.Loc.224.1>:
+    8048:	35 40 08 80 	mov	#32776,	r5	;#0x8008
+
+0000804c <.Loc.225.1>:
+    804c:	26 43       	mov	#2,	r6	;r3 As==10
+
+0000804e <.Loc.226.1>:
+    804e:	30 40 70 80 	br	#0x8070		;
+
+00008052 <_msp430_run_preinit_array>:
+    8052:	34 40 08 80 	mov	#32776,	r4	;#0x8008
+
+00008056 <.Loc.232.1>:
+    8056:	35 40 08 80 	mov	#32776,	r5	;#0x8008
+
+0000805a <.Loc.233.1>:
+    805a:	26 43       	mov	#2,	r6	;r3 As==10
+
+0000805c <.Loc.234.1>:
+    805c:	30 40 70 80 	br	#0x8070		;
+
+00008060 <_msp430_run_fini_array>:
+    8060:	34 40 08 80 	mov	#32776,	r4	;#0x8008
+
+00008064 <.Loc.240.1>:
+    8064:	35 40 08 80 	mov	#32776,	r5	;#0x8008
+
+00008068 <.Loc.241.1>:
+    8068:	36 40 fe ff 	mov	#65534,	r6	;#0xfffe
+
+0000806c <.Loc.242.1>:
+    806c:	30 40 70 80 	br	#0x8070		;
+
+00008070 <_msp430_run_array>:
+    8070:	05 94       	cmp	r4,	r5	;
+
+00008072 <.Loc.246.1>:
+    8072:	05 24       	jz	$+12     	;abs 0x807e
+
+00008074 <.Loc.247.1>:
+    8074:	27 44       	mov	@r4,	r7	;
+
+00008076 <.Loc.248.1>:
+    8076:	04 56       	add	r6,	r4	;
+
+00008078 <.Loc.249.1>:
+    8078:	a7 12       	call	@r7		;
+
+0000807a <.Loc.250.1>:
+    807a:	10 40 f4 ff 	br	0xfff4		;PC rel. 0x8070
+
+0000807e <_msp430_run_done>:
+    807e:	30 41       	ret			
+
+00008080 <L0>:
+    8080:	30 41       	ret			
+    8082:	30 41       	ret			
+
+00008084 <deregister_tm_clones>:
+    8084:	3c 40 fe 91 	mov	#37374,	r12	;#0x91fe
+    8088:	3c 90 fe 91 	cmp	#37374,	r12	;#0x91fe
+    808c:	07 24       	jz	$+16     	;abs 0x809c
+    808e:	3d 40 00 00 	mov	#0,	r13	;
+    8092:	0d 93       	cmp	#0,	r13	;r3 As==00
+    8094:	03 24       	jz	$+8      	;abs 0x809c
+    8096:	3c 40 fe 91 	mov	#37374,	r12	;#0x91fe
+    809a:	8d 12       	call	r13		;
+
+0000809c <.L1>:
+    809c:	30 41       	ret			
+
+0000809e <register_tm_clones>:
+    809e:	0a 12       	push	r10		;
+    80a0:	3a 40 fe 91 	mov	#37374,	r10	;#0x91fe
+    80a4:	3a 80 fe 91 	sub	#37374,	r10	;#0x91fe
+    80a8:	0a 11       	rra	r10		;
+    80aa:	0c 4a       	mov	r10,	r12	;
+    80ac:	b0 12 04 8c 	call	#35844		;#0x8c04
+    80b0:	0c 5a       	add	r10,	r12	;
+    80b2:	0d 4c       	mov	r12,	r13	;
+    80b4:	0d 11       	rra	r13		;
+    80b6:	0d 93       	cmp	#0,	r13	;r3 As==00
+    80b8:	07 24       	jz	$+16     	;abs 0x80c8
+    80ba:	3e 40 00 00 	mov	#0,	r14	;
+    80be:	0e 93       	cmp	#0,	r14	;r3 As==00
+    80c0:	03 24       	jz	$+8      	;abs 0x80c8
+    80c2:	3c 40 fe 91 	mov	#37374,	r12	;#0x91fe
+    80c6:	8e 12       	call	r14		;
+
+000080c8 <.L9>:
+    80c8:	3a 41       	pop	r10		;
+    80ca:	30 41       	ret			
+
+000080cc <__do_global_dtors_aux>:
+    80cc:	0a 12       	push	r10		;
+    80ce:	09 12       	push	r9		;
+    80d0:	c2 93 80 40 	cmp.b	#0,	&0x4080	;r3 As==00
+    80d4:	17 20       	jnz	$+48     	;abs 0x8104
+    80d6:	3a 40 12 80 	mov	#32786,	r10	;#0x8012
+    80da:	3a 80 10 80 	sub	#32784,	r10	;#0x8010
+    80de:	0a 11       	rra	r10		;
+    80e0:	3a 53       	add	#-1,	r10	;r3 As==11
+    80e2:	39 40 10 80 	mov	#32784,	r9	;#0x8010
+
+000080e6 <.L19>:
+    80e6:	1c 42 82 40 	mov	&0x4082,r12	;0x4082
+    80ea:	0c 9a       	cmp	r10,	r12	;
+    80ec:	0d 28       	jnc	$+28     	;abs 0x8108
+    80ee:	b0 12 84 80 	call	#32900		;#0x8084
+    80f2:	3d 40 00 00 	mov	#0,	r13	;
+    80f6:	0d 93       	cmp	#0,	r13	;r3 As==00
+    80f8:	03 24       	jz	$+8      	;abs 0x8100
+    80fa:	3c 40 04 80 	mov	#32772,	r12	;#0x8004
+    80fe:	8d 12       	call	r13		;
+
+00008100 <.L21>:
+    8100:	d2 43 80 40 	mov.b	#1,	&0x4080	;r3 As==01
+
+00008104 <.L17>:
+    8104:	30 40 fe 8b 	br	#0x8bfe		;
+
+00008108 <.L20>:
+    8108:	1c 53       	inc	r12		;
+    810a:	82 4c 82 40 	mov	r12,	&0x4082	;
+    810e:	0c 5c       	rla	r12		;
+    8110:	0c 59       	add	r9,	r12	;
+    8112:	2c 4c       	mov	@r12,	r12	;
+    8114:	8c 12       	call	r12		;
+    8116:	30 40 e6 80 	br	#0x80e6		;
+
+0000811a <call___do_global_dtors_aux>:
+    811a:	3e 40 00 00 	mov	#0,	r14	;
+    811e:	0e 93       	cmp	#0,	r14	;r3 As==00
+    8120:	05 24       	jz	$+12     	;abs 0x812c
+    8122:	3d 40 84 40 	mov	#16516,	r13	;#0x4084
+    8126:	3c 40 04 80 	mov	#32772,	r12	;#0x8004
+    812a:	8e 12       	call	r14		;
+
+0000812c <.L27>:
+    812c:	b0 12 9e 80 	call	#32926		;#0x809e
+    8130:	30 41       	ret			
+
+00008132 <sqrt16>:
+
+
+/* Sqrt.c */
+/* Square root by Newton's method */
+uint16_t sqrt16(uint32_t x)
+{
+    8132:	0a 12       	push	r10		;
+
+00008134 <.LCFI0>:
+    8134:	09 12       	push	r9		;
+
+00008136 <.LCFI1>:
+    8136:	08 12       	push	r8		;
+
+00008138 <.LCFI2>:
+    8138:	07 12       	push	r7		;
+
+0000813a <.LCFI3>:
+    813a:	06 12       	push	r6		;
+
+0000813c <.LCFI4>:
+    813c:	05 12       	push	r5		;
+
+0000813e <.LCFI5>:
+    813e:	31 80 1e 00 	sub	#30,	r1	;#0x001e
+
+00008142 <.LCFI6>:
+    8142:	81 4c 10 00 	mov	r12,	16(r1)	; 0x0010
+    8146:	81 4d 12 00 	mov	r13,	18(r1)	; 0x0012
+
+0000814a <.Loc.27.1>:
+    uint16_t hi = 0xffff;
+    814a:	b1 43 1c 00 	mov	#-1,	28(r1)	;r3 As==11, 0x001c
+
+0000814e <.Loc.28.1>:
+    uint16_t lo = 0;
+    814e:	81 43 1a 00 	mov	#0,	26(r1)	;r3 As==00, 0x001a
+
+00008152 <.Loc.29.1>:
+    uint16_t mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+    8152:	1c 41 1c 00 	mov	28(r1),	r12	;0x0001c
+    8156:	05 4c       	mov	r12,	r5	;
+    8158:	46 43       	clr.b	r6		;
+    815a:	1c 41 1a 00 	mov	26(r1),	r12	;0x0001a
+    815e:	0e 4c       	mov	r12,	r14	;
+    8160:	4f 43       	clr.b	r15		;
+    8162:	0c 45       	mov	r5,	r12	;
+    8164:	0c 5e       	add	r14,	r12	;
+    8166:	81 4c 0c 00 	mov	r12,	12(r1)	; 0x000c
+    816a:	0c 46       	mov	r6,	r12	;
+    816c:	0c 6f       	addc	r15,	r12	;
+    816e:	81 4c 0e 00 	mov	r12,	14(r1)	; 0x000e
+    8172:	1c 41 0c 00 	mov	12(r1),	r12	;0x0000c
+    8176:	1d 41 0e 00 	mov	14(r1),	r13	;0x0000e
+    817a:	12 c3       	clrc			
+    817c:	0d 10       	rrc	r13		;
+    817e:	0c 10       	rrc	r12		;
+    8180:	81 4c 18 00 	mov	r12,	24(r1)	; 0x0018
+
+00008184 <.Loc.30.1>:
+    uint32_t s = 0;
+    8184:	81 43 14 00 	mov	#0,	20(r1)	;r3 As==00, 0x0014
+    8188:	81 43 16 00 	mov	#0,	22(r1)	;r3 As==00, 0x0016
+
+0000818c <.Loc.32.1>:
+
+    while (s != x && hi - lo > 1) {
+    818c:	30 40 1c 82 	br	#0x821c		;
+
+00008190 <.L7>:
+        mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+    8190:	1c 41 1c 00 	mov	28(r1),	r12	;0x0001c
+    8194:	09 4c       	mov	r12,	r9	;
+    8196:	4a 43       	clr.b	r10		;
+    8198:	1c 41 1a 00 	mov	26(r1),	r12	;0x0001a
+    819c:	07 4c       	mov	r12,	r7	;
+    819e:	48 43       	clr.b	r8		;
+    81a0:	0c 49       	mov	r9,	r12	;
+    81a2:	0c 57       	add	r7,	r12	;
+    81a4:	81 4c 08 00 	mov	r12,	8(r1)	;
+    81a8:	0c 4a       	mov	r10,	r12	;
+    81aa:	0c 68       	addc	r8,	r12	;
+    81ac:	81 4c 0a 00 	mov	r12,	10(r1)	; 0x000a
+    81b0:	1c 41 08 00 	mov	8(r1),	r12	;
+    81b4:	1d 41 0a 00 	mov	10(r1),	r13	;0x0000a
+    81b8:	12 c3       	clrc			
+    81ba:	0d 10       	rrc	r13		;
+    81bc:	0c 10       	rrc	r12		;
+    81be:	81 4c 18 00 	mov	r12,	24(r1)	; 0x0018
+
+000081c2 <.Loc.34.1>:
+        s = (uint32_t)mid* (uint32_t)mid;
+    81c2:	1c 41 18 00 	mov	24(r1),	r12	;0x00018
+    81c6:	81 4c 04 00 	mov	r12,	4(r1)	;
+    81ca:	81 43 06 00 	mov	#0,	6(r1)	;r3 As==00
+    81ce:	1c 41 18 00 	mov	24(r1),	r12	;0x00018
+    81d2:	81 4c 00 00 	mov	r12,	0(r1)	;
+    81d6:	81 43 02 00 	mov	#0,	2(r1)	;r3 As==00
+    81da:	2e 41       	mov	@r1,	r14	;
+    81dc:	1f 41 02 00 	mov	2(r1),	r15	;
+    81e0:	1c 41 04 00 	mov	4(r1),	r12	;
+    81e4:	1d 41 06 00 	mov	6(r1),	r13	;
+    81e8:	b0 12 fc 8c 	call	#36092		;#0x8cfc
+    81ec:	81 4c 14 00 	mov	r12,	20(r1)	; 0x0014
+    81f0:	81 4d 16 00 	mov	r13,	22(r1)	; 0x0016
+
+000081f4 <.Loc.35.1>:
+        if (s < x)
+    81f4:	91 91 12 00 	cmp	18(r1),	22(r1)	;0x00012, 0x0016
+    81f8:	16 00 
+    81fa:	08 28       	jnc	$+18     	;abs 0x820c
+    81fc:	91 91 16 00 	cmp	22(r1),	18(r1)	;0x00016, 0x0012
+    8200:	12 00 
+    8202:	09 20       	jnz	$+20     	;abs 0x8216
+    8204:	91 91 10 00 	cmp	16(r1),	20(r1)	;0x00010, 0x0014
+    8208:	14 00 
+    820a:	05 2c       	jc	$+12     	;abs 0x8216
+
+0000820c <.L9>:
+            lo = mid;
+    820c:	91 41 18 00 	mov	24(r1),	26(r1)	;0x00018, 0x001a
+    8210:	1a 00 
+    8212:	30 40 1c 82 	br	#0x821c		;
+
+00008216 <.L3>:
+        else
+            hi = mid;
+    8216:	91 41 18 00 	mov	24(r1),	28(r1)	;0x00018, 0x001c
+    821a:	1c 00 
+
+0000821c <.L2>:
+    uint16_t hi = 0xffff;
+    uint16_t lo = 0;
+    uint16_t mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+    uint32_t s = 0;
+
+    while (s != x && hi - lo > 1) {
+    821c:	91 91 10 00 	cmp	16(r1),	20(r1)	;0x00010, 0x0014
+    8220:	14 00 
+    8222:	04 20       	jnz	$+10     	;abs 0x822c
+    8224:	91 91 12 00 	cmp	18(r1),	22(r1)	;0x00012, 0x0016
+    8228:	16 00 
+    822a:	07 24       	jz	$+16     	;abs 0x823a
+
+0000822c <.L10>:
+    822c:	1d 41 1c 00 	mov	28(r1),	r13	;0x0001c
+    8230:	1d 81 1a 00 	sub	26(r1),	r13	;0x0001a
+    8234:	5c 43       	mov.b	#1,	r12	;r3 As==01
+    8236:	0c 9d       	cmp	r13,	r12	;
+    8238:	ab 2b       	jnc	$-168    	;abs 0x8190
+
+0000823a <.L5>:
+            lo = mid;
+        else
+            hi = mid;
+    }
+
+    return mid;
+    823a:	1c 41 18 00 	mov	24(r1),	r12	;0x00018
+
+0000823e <.Loc.42.1>:
+}
+    823e:	31 50 1e 00 	add	#30,	r1	;#0x001e
+    8242:	30 40 f6 8b 	br	#0x8bf6		;
+
+00008246 <ACCEL_singleSample>:
+//NVM model_t model;
+
+unsigned int count = 1;
+model_t model;
+
+void ACCEL_singleSample(threeAxis_t_8* result){
+    8246:	21 82       	sub	#4,	r1	;r2 As==10
+
+00008248 <.LCFI7>:
+    8248:	81 4c 00 00 	mov	r12,	0(r1)	;
+
+0000824c <.Loc.132.1>:
+
+    //NVM static unsigned int _v_seed = 1;
+    static unsigned int _v_seed = 1;
+
+    unsigned int seed = _v_seed;
+    824c:	91 42 04 40 	mov	&0x4004,2(r1)	;0x4004
+    8250:	02 00 
+
+00008252 <.Loc.134.1>:
+
+    result->x = (seed*17)%85;
+    8252:	1d 41 02 00 	mov	2(r1),	r13	;
+    8256:	0c 4d       	mov	r13,	r12	;
+    8258:	0c 5c       	rla	r12		;
+    825a:	0c 5c       	rla	r12		;
+    825c:	0c 5c       	rla	r12		;
+    825e:	0c 5c       	rla	r12		;
+    8260:	0c 5d       	add	r13,	r12	;
+    8262:	7d 40 55 00 	mov.b	#85,	r13	;#0x0055
+    8266:	b0 12 ec 8b 	call	#35820		;#0x8bec
+    826a:	4d 4c       	mov.b	r12,	r13	;
+    826c:	2c 41       	mov	@r1,	r12	;
+    826e:	cc 4d 00 00 	mov.b	r13,	0(r12)	;
+
+00008272 <.Loc.135.1>:
+    result->y = (seed*17*17)%85;
+    8272:	3d 40 21 01 	mov	#289,	r13	;#0x0121
+    8276:	1c 41 02 00 	mov	2(r1),	r12	;
+    827a:	b0 12 b8 8c 	call	#36024		;#0x8cb8
+    827e:	7d 40 55 00 	mov.b	#85,	r13	;#0x0055
+    8282:	b0 12 ec 8b 	call	#35820		;#0x8bec
+    8286:	4d 4c       	mov.b	r12,	r13	;
+    8288:	2c 41       	mov	@r1,	r12	;
+    828a:	cc 4d 01 00 	mov.b	r13,	1(r12)	;
+
+0000828e <.Loc.136.1>:
+    result->z = (seed*17*17*17)%85;
+    828e:	3d 40 31 13 	mov	#4913,	r13	;#0x1331
+    8292:	1c 41 02 00 	mov	2(r1),	r12	;
+    8296:	b0 12 b8 8c 	call	#36024		;#0x8cb8
+    829a:	7d 40 55 00 	mov.b	#85,	r13	;#0x0055
+    829e:	b0 12 ec 8b 	call	#35820		;#0x8bec
+    82a2:	4d 4c       	mov.b	r12,	r13	;
+    82a4:	2c 41       	mov	@r1,	r12	;
+    82a6:	cc 4d 02 00 	mov.b	r13,	2(r12)	;
+
+000082aa <.Loc.137.1>:
+    _v_seed = ++seed;
+    82aa:	91 53 02 00 	inc	2(r1)		;
+    82ae:	92 41 02 00 	mov	2(r1),	&0x4004	;
+    82b2:	04 40 
+
+000082b4 <.Loc.138.1>:
+}
+    82b4:	03 43       	nop			
+    82b6:	21 52       	add	#4,	r1	;r2 As==10
+    82b8:	30 41       	ret			
+
+000082ba <acquire_window>:
+
+
+#define accel_sample ACCEL_singleSample
+
+void acquire_window(accelWindow window)
+{
+    82ba:	31 82       	sub	#8,	r1	;r2 As==11
+
+000082bc <.LCFI8>:
+    82bc:	81 4c 00 00 	mov	r12,	0(r1)	;
+
+000082c0 <.Loc.146.1>:
+    accelReading sample;
+    unsigned samplesInWindow = 0;
+    82c0:	81 43 06 00 	mov	#0,	6(r1)	;r3 As==00
+
+000082c4 <.Loc.150.1>:
+
+    TASK_CHECKPOINT();
+
+    while (samplesInWindow < ACCEL_WINDOW_SIZE) {
+    82c4:	30 40 f8 82 	br	#0x82f8		;
+
+000082c8 <.L14>:
+        accel_sample(&sample);
+    82c8:	0c 41       	mov	r1,	r12	;
+    82ca:	3c 50 03 00 	add	#3,	r12	;
+    82ce:	b0 12 46 82 	call	#33350		;#0x8246
+
+000082d2 <.Loc.154.1>:
+        LOG("acquire: sample %u %u %u\r\n", sample.x, sample.y, sample.z);
+
+        window[samplesInWindow++] = sample;
+    82d2:	1d 41 06 00 	mov	6(r1),	r13	;
+    82d6:	0c 4d       	mov	r13,	r12	;
+    82d8:	1c 53       	inc	r12		;
+    82da:	81 4c 06 00 	mov	r12,	6(r1)	;
+    82de:	0c 4d       	mov	r13,	r12	;
+    82e0:	0c 5c       	rla	r12		;
+    82e2:	0c 5d       	add	r13,	r12	;
+    82e4:	2c 51       	add	@r1,	r12	;
+    82e6:	dc 41 03 00 	mov.b	3(r1),	0(r12)	;
+    82ea:	00 00 
+    82ec:	dc 41 04 00 	mov.b	4(r1),	1(r12)	;
+    82f0:	01 00 
+    82f2:	dc 41 05 00 	mov.b	5(r1),	2(r12)	;
+    82f6:	02 00 
+
+000082f8 <.L13>:
+    accelReading sample;
+    unsigned samplesInWindow = 0;
+
+    TASK_CHECKPOINT();
+
+    while (samplesInWindow < ACCEL_WINDOW_SIZE) {
+    82f8:	6c 43       	mov.b	#2,	r12	;r3 As==10
+    82fa:	1c 91 06 00 	cmp	6(r1),	r12	;
+    82fe:	e4 2f       	jc	$-54     	;abs 0x82c8
+
+00008300 <.Loc.156.1>:
+        accel_sample(&sample);
+        LOG("acquire: sample %u %u %u\r\n", sample.x, sample.y, sample.z);
+
+        window[samplesInWindow++] = sample;
+    }
+}
+    8300:	03 43       	nop			
+    8302:	31 52       	add	#8,	r1	;r2 As==11
+    8304:	30 41       	ret			
+
+00008306 <transform>:
+
+void transform(accelWindow window)
+{
+    8306:	31 80 06 00 	sub	#6,	r1	;
+
+0000830a <.LCFI9>:
+    830a:	81 4c 00 00 	mov	r12,	0(r1)	;
+
+0000830e <.Loc.160.1>:
+    unsigned i = 0;
+    830e:	81 43 04 00 	mov	#0,	4(r1)	;r3 As==00
+
+00008312 <.Loc.164.1>:
+
+    LOG("transform\r\n");
+
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+    8312:	81 43 04 00 	mov	#0,	4(r1)	;r3 As==00
+    8316:	30 40 cc 83 	br	#0x83cc		;
+
+0000831a <.L25>:
+        accelReading *sample = &window[i];
+    831a:	1d 41 04 00 	mov	4(r1),	r13	;
+    831e:	0c 4d       	mov	r13,	r12	;
+    8320:	0c 5c       	rla	r12		;
+    8322:	0c 5d       	add	r13,	r12	;
+    8324:	2d 41       	mov	@r1,	r13	;
+    8326:	0d 5c       	add	r12,	r13	;
+    8328:	81 4d 02 00 	mov	r13,	2(r1)	;
+
+0000832c <.Loc.167.1>:
+
+        if (sample->x < SAMPLE_NOISE_FLOOR ||
+    832c:	1c 41 02 00 	mov	2(r1),	r12	;
+    8330:	6c 4c       	mov.b	@r12,	r12	;
+    8332:	7d 40 09 00 	mov.b	#9,	r13	;
+    8336:	4d 9c       	cmp.b	r12,	r13	;
+    8338:	10 2c       	jc	$+34     	;abs 0x835a
+
+0000833a <.Loc.168.1>:
+            sample->y < SAMPLE_NOISE_FLOOR ||
+    833a:	1c 41 02 00 	mov	2(r1),	r12	;
+    833e:	5c 4c 01 00 	mov.b	1(r12),	r12	;
+
+00008342 <.Loc.167.1>:
+    LOG("transform\r\n");
+
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+        accelReading *sample = &window[i];
+
+        if (sample->x < SAMPLE_NOISE_FLOOR ||
+    8342:	7d 40 09 00 	mov.b	#9,	r13	;
+    8346:	4d 9c       	cmp.b	r12,	r13	;
+    8348:	08 2c       	jc	$+18     	;abs 0x835a
+
+0000834a <.Loc.169.1>:
+            sample->y < SAMPLE_NOISE_FLOOR ||
+            sample->z < SAMPLE_NOISE_FLOOR) {
+    834a:	1c 41 02 00 	mov	2(r1),	r12	;
+    834e:	5c 4c 02 00 	mov.b	2(r12),	r12	;
+
+00008352 <.Loc.168.1>:
+
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+        accelReading *sample = &window[i];
+
+        if (sample->x < SAMPLE_NOISE_FLOOR ||
+            sample->y < SAMPLE_NOISE_FLOOR ||
+    8352:	7d 40 09 00 	mov.b	#9,	r13	;
+    8356:	4d 9c       	cmp.b	r12,	r13	;
+    8358:	37 28       	jnc	$+112    	;abs 0x83c8
+
+0000835a <.L17>:
+            sample->z < SAMPLE_NOISE_FLOOR) {
+
+            LOG("transform: sample %u %u %u\r\n",
+                sample->x, sample->y, sample->z);
+
+            sample->x = (sample->x > SAMPLE_NOISE_FLOOR) ? sample->x : 0;
+    835a:	1c 41 02 00 	mov	2(r1),	r12	;
+    835e:	6c 4c       	mov.b	@r12,	r12	;
+    8360:	7d 40 0a 00 	mov.b	#10,	r13	;#0x000a
+    8364:	4d 9c       	cmp.b	r12,	r13	;
+    8366:	05 2c       	jc	$+12     	;abs 0x8372
+
+00008368 <.Loc.174.1>:
+    8368:	1c 41 02 00 	mov	2(r1),	r12	;
+    836c:	6c 4c       	mov.b	@r12,	r12	;
+    836e:	30 40 74 83 	br	#0x8374		;
+
+00008372 <.L19>:
+    8372:	4c 43       	clr.b	r12		;
+
+00008374 <.L20>:
+    8374:	1d 41 02 00 	mov	2(r1),	r13	;
+    8378:	cd 4c 00 00 	mov.b	r12,	0(r13)	;
+
+0000837c <.Loc.175.1>:
+            sample->y = (sample->y > SAMPLE_NOISE_FLOOR) ? sample->y : 0;
+    837c:	1c 41 02 00 	mov	2(r1),	r12	;
+    8380:	5c 4c 01 00 	mov.b	1(r12),	r12	;
+    8384:	7d 40 0a 00 	mov.b	#10,	r13	;#0x000a
+    8388:	4d 9c       	cmp.b	r12,	r13	;
+    838a:	06 2c       	jc	$+14     	;abs 0x8398
+
+0000838c <.Loc.175.1>:
+    838c:	1c 41 02 00 	mov	2(r1),	r12	;
+    8390:	5c 4c 01 00 	mov.b	1(r12),	r12	;
+    8394:	30 40 9a 83 	br	#0x839a		;
+
+00008398 <.L21>:
+    8398:	4c 43       	clr.b	r12		;
+
+0000839a <.L22>:
+    839a:	1d 41 02 00 	mov	2(r1),	r13	;
+    839e:	cd 4c 01 00 	mov.b	r12,	1(r13)	;
+
+000083a2 <.Loc.176.1>:
+            sample->z = (sample->z > SAMPLE_NOISE_FLOOR) ? sample->z : 0;
+    83a2:	1c 41 02 00 	mov	2(r1),	r12	;
+    83a6:	5c 4c 02 00 	mov.b	2(r12),	r12	;
+    83aa:	7d 40 0a 00 	mov.b	#10,	r13	;#0x000a
+    83ae:	4d 9c       	cmp.b	r12,	r13	;
+    83b0:	06 2c       	jc	$+14     	;abs 0x83be
+
+000083b2 <.Loc.176.1>:
+    83b2:	1c 41 02 00 	mov	2(r1),	r12	;
+    83b6:	5c 4c 02 00 	mov.b	2(r12),	r12	;
+    83ba:	30 40 c0 83 	br	#0x83c0		;
+
+000083be <.L23>:
+    83be:	4c 43       	clr.b	r12		;
+
+000083c0 <.L24>:
+    83c0:	1d 41 02 00 	mov	2(r1),	r13	;
+    83c4:	cd 4c 02 00 	mov.b	r12,	2(r13)	;
+
+000083c8 <.L18>:
+{
+    unsigned i = 0;
+
+    LOG("transform\r\n");
+
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+    83c8:	91 53 04 00 	inc	4(r1)		;
+
+000083cc <.L16>:
+    83cc:	6c 43       	mov.b	#2,	r12	;r3 As==10
+    83ce:	1c 91 04 00 	cmp	4(r1),	r12	;
+    83d2:	a3 2f       	jc	$-184    	;abs 0x831a
+
+000083d4 <.Loc.179.1>:
+            sample->x = (sample->x > SAMPLE_NOISE_FLOOR) ? sample->x : 0;
+            sample->y = (sample->y > SAMPLE_NOISE_FLOOR) ? sample->y : 0;
+            sample->z = (sample->z > SAMPLE_NOISE_FLOOR) ? sample->z : 0;
+        }
+    }
+}
+    83d4:	03 43       	nop			
+    83d6:	31 50 06 00 	add	#6,	r1	;
+    83da:	30 41       	ret			
+
+000083dc <featurize>:
+
+void featurize(features_t *features, accelWindow aWin)
+{
+    83dc:	0a 12       	push	r10		;
+
+000083de <.LCFI10>:
+    83de:	09 12       	push	r9		;
+
+000083e0 <.LCFI11>:
+    83e0:	08 12       	push	r8		;
+
+000083e2 <.LCFI12>:
+    83e2:	07 12       	push	r7		;
+
+000083e4 <.LCFI13>:
+    83e4:	06 12       	push	r6		;
+
+000083e6 <.LCFI14>:
+    83e6:	31 80 10 00 	sub	#16,	r1	;#0x0010
+
+000083ea <.LCFI15>:
+    83ea:	81 4c 02 00 	mov	r12,	2(r1)	;
+    83ee:	81 4d 00 00 	mov	r13,	0(r1)	;
+
+000083f2 <.Loc.188.1>:
+    TASK_CHECKPOINT();
+
+    accelReading mean;
+    accelReading stddev;
+
+    mean.x = mean.y = mean.z = 0;
+    83f2:	c1 43 09 00 	mov.b	#0,	9(r1)	;r3 As==00
+    83f6:	5c 41 09 00 	mov.b	9(r1),	r12	;
+    83fa:	c1 4c 08 00 	mov.b	r12,	8(r1)	;
+    83fe:	5c 41 08 00 	mov.b	8(r1),	r12	;
+    8402:	c1 4c 07 00 	mov.b	r12,	7(r1)	;
+
+00008406 <.Loc.189.1>:
+    stddev.x = stddev.y = stddev.z = 0;
+    8406:	c1 43 06 00 	mov.b	#0,	6(r1)	;r3 As==00
+    840a:	5c 41 06 00 	mov.b	6(r1),	r12	;
+    840e:	c1 4c 05 00 	mov.b	r12,	5(r1)	;
+    8412:	5c 41 05 00 	mov.b	5(r1),	r12	;
+    8416:	c1 4c 04 00 	mov.b	r12,	4(r1)	;
+
+0000841a <.Loc.191.1>:
+    int i;
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+    841a:	81 43 0e 00 	mov	#0,	14(r1)	;r3 As==00, 0x000e
+    841e:	30 40 7e 84 	br	#0x847e		;
+
+00008422 <.L28>:
+        mean.x += aWin[i].x;  // x
+    8422:	5e 41 07 00 	mov.b	7(r1),	r14	;
+    8426:	1d 41 0e 00 	mov	14(r1),	r13	;0x0000e
+    842a:	0c 4d       	mov	r13,	r12	;
+    842c:	0c 5c       	rla	r12		;
+    842e:	0c 5d       	add	r13,	r12	;
+    8430:	2c 51       	add	@r1,	r12	;
+    8432:	6c 4c       	mov.b	@r12,	r12	;
+    8434:	4c 5e       	add.b	r14,	r12	;
+    8436:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
+    843a:	c1 4c 07 00 	mov.b	r12,	7(r1)	;
+
+0000843e <.Loc.193.1>:
+        mean.y += aWin[i].y;  // y
+    843e:	5e 41 08 00 	mov.b	8(r1),	r14	;
+    8442:	1d 41 0e 00 	mov	14(r1),	r13	;0x0000e
+    8446:	0c 4d       	mov	r13,	r12	;
+    8448:	0c 5c       	rla	r12		;
+    844a:	0c 5d       	add	r13,	r12	;
+    844c:	2c 51       	add	@r1,	r12	;
+    844e:	5c 4c 01 00 	mov.b	1(r12),	r12	;
+    8452:	4c 5e       	add.b	r14,	r12	;
+    8454:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
+    8458:	c1 4c 08 00 	mov.b	r12,	8(r1)	;
+
+0000845c <.Loc.194.1>:
+        mean.z += aWin[i].z;  // z
+    845c:	5e 41 09 00 	mov.b	9(r1),	r14	;
+    8460:	1d 41 0e 00 	mov	14(r1),	r13	;0x0000e
+    8464:	0c 4d       	mov	r13,	r12	;
+    8466:	0c 5c       	rla	r12		;
+    8468:	0c 5d       	add	r13,	r12	;
+    846a:	2c 51       	add	@r1,	r12	;
+    846c:	5c 4c 02 00 	mov.b	2(r12),	r12	;
+    8470:	4c 5e       	add.b	r14,	r12	;
+    8472:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
+    8476:	c1 4c 09 00 	mov.b	r12,	9(r1)	;
+
+0000847a <.Loc.191.1>:
+    accelReading stddev;
+
+    mean.x = mean.y = mean.z = 0;
+    stddev.x = stddev.y = stddev.z = 0;
+    int i;
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+    847a:	91 53 0e 00 	inc	14(r1)		;
+
+0000847e <.L27>:
+    847e:	6c 43       	mov.b	#2,	r12	;r3 As==10
+    8480:	1c 91 0e 00 	cmp	14(r1),	r12	;0x0000e
+    8484:	ce 37       	jge	$-98     	;abs 0x8422
+
+00008486 <.Loc.201.1>:
+    /*
+       mean.x = mean.x / ACCEL_WINDOW_SIZE;
+       mean.y = mean.y / ACCEL_WINDOW_SIZE;
+       mean.z = mean.z / ACCEL_WINDOW_SIZE;
+       */
+    mean.x >>= 2;
+    8486:	5c 41 07 00 	mov.b	7(r1),	r12	;
+    848a:	b0 12 38 8c 	call	#35896		;#0x8c38
+    848e:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
+    8492:	c1 4c 07 00 	mov.b	r12,	7(r1)	;
+
+00008496 <.Loc.202.1>:
+    mean.y >>= 2;
+    8496:	5c 41 08 00 	mov.b	8(r1),	r12	;
+    849a:	b0 12 38 8c 	call	#35896		;#0x8c38
+    849e:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
+    84a2:	c1 4c 08 00 	mov.b	r12,	8(r1)	;
+
+000084a6 <.Loc.203.1>:
+    mean.z >>= 2;
+    84a6:	5c 41 09 00 	mov.b	9(r1),	r12	;
+    84aa:	b0 12 38 8c 	call	#35896		;#0x8c38
+    84ae:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
+    84b2:	c1 4c 09 00 	mov.b	r12,	9(r1)	;
+
+000084b6 <.Loc.205.1>:
+
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+    84b6:	81 43 0e 00 	mov	#0,	14(r1)	;r3 As==00, 0x000e
+    84ba:	30 40 d0 85 	br	#0x85d0		;
+
+000084be <.L36>:
+        stddev.x += aWin[i].x > mean.x ? aWin[i].x - mean.x
+    84be:	5e 41 04 00 	mov.b	4(r1),	r14	;
+    84c2:	1d 41 0e 00 	mov	14(r1),	r13	;0x0000e
+    84c6:	0c 4d       	mov	r13,	r12	;
+    84c8:	0c 5c       	rla	r12		;
+    84ca:	0c 5d       	add	r13,	r12	;
+    84cc:	2c 51       	add	@r1,	r12	;
+    84ce:	6c 4c       	mov.b	@r12,	r12	;
+    84d0:	5d 41 07 00 	mov.b	7(r1),	r13	;
+    84d4:	4d 9c       	cmp.b	r12,	r13	;
+    84d6:	0d 2c       	jc	$+28     	;abs 0x84f2
+
+000084d8 <.Loc.206.1>:
+    84d8:	1d 41 0e 00 	mov	14(r1),	r13	;0x0000e
+    84dc:	0c 4d       	mov	r13,	r12	;
+    84de:	0c 5c       	rla	r12		;
+    84e0:	0c 5d       	add	r13,	r12	;
+    84e2:	2c 51       	add	@r1,	r12	;
+    84e4:	6d 4c       	mov.b	@r12,	r13	;
+    84e6:	5c 41 07 00 	mov.b	7(r1),	r12	;
+    84ea:	4d 8c       	sub.b	r12,	r13	;
+    84ec:	4c 4d       	mov.b	r13,	r12	;
+    84ee:	30 40 0a 85 	br	#0x850a		;
+
+000084f2 <.L30>:
+            : mean.x - aWin[i].x;  // x
+    84f2:	5f 41 07 00 	mov.b	7(r1),	r15	;
+    84f6:	1d 41 0e 00 	mov	14(r1),	r13	;0x0000e
+    84fa:	0c 4d       	mov	r13,	r12	;
+    84fc:	0c 5c       	rla	r12		;
+    84fe:	0c 5d       	add	r13,	r12	;
+    8500:	2c 51       	add	@r1,	r12	;
+    8502:	6c 4c       	mov.b	@r12,	r12	;
+
+00008504 <.Loc.206.1>:
+    mean.x >>= 2;
+    mean.y >>= 2;
+    mean.z >>= 2;
+
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+        stddev.x += aWin[i].x > mean.x ? aWin[i].x - mean.x
+    8504:	4d 4f       	mov.b	r15,	r13	;
+    8506:	4d 8c       	sub.b	r12,	r13	;
+    8508:	4c 4d       	mov.b	r13,	r12	;
+
+0000850a <.L31>:
+    850a:	4c 5e       	add.b	r14,	r12	;
+    850c:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
+    8510:	c1 4c 04 00 	mov.b	r12,	4(r1)	;
+
+00008514 <.Loc.208.1>:
+            : mean.x - aWin[i].x;  // x
+        stddev.y += aWin[i].y > mean.y ? aWin[i].y - mean.y
+    8514:	5e 41 05 00 	mov.b	5(r1),	r14	;
+    8518:	1d 41 0e 00 	mov	14(r1),	r13	;0x0000e
+    851c:	0c 4d       	mov	r13,	r12	;
+    851e:	0c 5c       	rla	r12		;
+    8520:	0c 5d       	add	r13,	r12	;
+    8522:	2c 51       	add	@r1,	r12	;
+    8524:	5c 4c 01 00 	mov.b	1(r12),	r12	;
+    8528:	5d 41 08 00 	mov.b	8(r1),	r13	;
+    852c:	4d 9c       	cmp.b	r12,	r13	;
+    852e:	0e 2c       	jc	$+30     	;abs 0x854c
+
+00008530 <.Loc.208.1>:
+    8530:	1d 41 0e 00 	mov	14(r1),	r13	;0x0000e
+    8534:	0c 4d       	mov	r13,	r12	;
+    8536:	0c 5c       	rla	r12		;
+    8538:	0c 5d       	add	r13,	r12	;
+    853a:	2c 51       	add	@r1,	r12	;
+    853c:	5d 4c 01 00 	mov.b	1(r12),	r13	;
+    8540:	5c 41 08 00 	mov.b	8(r1),	r12	;
+    8544:	4d 8c       	sub.b	r12,	r13	;
+    8546:	4c 4d       	mov.b	r13,	r12	;
+    8548:	30 40 66 85 	br	#0x8566		;
+
+0000854c <.L32>:
+            : mean.y - aWin[i].y;  // y
+    854c:	5f 41 08 00 	mov.b	8(r1),	r15	;
+    8550:	1d 41 0e 00 	mov	14(r1),	r13	;0x0000e
+    8554:	0c 4d       	mov	r13,	r12	;
+    8556:	0c 5c       	rla	r12		;
+    8558:	0c 5d       	add	r13,	r12	;
+    855a:	2c 51       	add	@r1,	r12	;
+    855c:	5c 4c 01 00 	mov.b	1(r12),	r12	;
+
+00008560 <.Loc.208.1>:
+    mean.z >>= 2;
+
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+        stddev.x += aWin[i].x > mean.x ? aWin[i].x - mean.x
+            : mean.x - aWin[i].x;  // x
+        stddev.y += aWin[i].y > mean.y ? aWin[i].y - mean.y
+    8560:	4d 4f       	mov.b	r15,	r13	;
+    8562:	4d 8c       	sub.b	r12,	r13	;
+    8564:	4c 4d       	mov.b	r13,	r12	;
+
+00008566 <.L33>:
+    8566:	4c 5e       	add.b	r14,	r12	;
+    8568:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
+    856c:	c1 4c 05 00 	mov.b	r12,	5(r1)	;
+
+00008570 <.Loc.210.1>:
+            : mean.y - aWin[i].y;  // y
+        stddev.z += aWin[i].z > mean.z ? aWin[i].z - mean.z
+    8570:	5e 41 06 00 	mov.b	6(r1),	r14	;
+    8574:	1d 41 0e 00 	mov	14(r1),	r13	;0x0000e
+    8578:	0c 4d       	mov	r13,	r12	;
+    857a:	0c 5c       	rla	r12		;
+    857c:	0c 5d       	add	r13,	r12	;
+    857e:	2c 51       	add	@r1,	r12	;
+    8580:	5c 4c 02 00 	mov.b	2(r12),	r12	;
+    8584:	5d 41 09 00 	mov.b	9(r1),	r13	;
+    8588:	4d 9c       	cmp.b	r12,	r13	;
+    858a:	0e 2c       	jc	$+30     	;abs 0x85a8
+
+0000858c <.Loc.210.1>:
+    858c:	1d 41 0e 00 	mov	14(r1),	r13	;0x0000e
+    8590:	0c 4d       	mov	r13,	r12	;
+    8592:	0c 5c       	rla	r12		;
+    8594:	0c 5d       	add	r13,	r12	;
+    8596:	2c 51       	add	@r1,	r12	;
+    8598:	5d 4c 02 00 	mov.b	2(r12),	r13	;
+    859c:	5c 41 09 00 	mov.b	9(r1),	r12	;
+    85a0:	4d 8c       	sub.b	r12,	r13	;
+    85a2:	4c 4d       	mov.b	r13,	r12	;
+    85a4:	30 40 c2 85 	br	#0x85c2		;
+
+000085a8 <.L34>:
+            : mean.z - aWin[i].z;  // z
+    85a8:	5f 41 09 00 	mov.b	9(r1),	r15	;
+    85ac:	1d 41 0e 00 	mov	14(r1),	r13	;0x0000e
+    85b0:	0c 4d       	mov	r13,	r12	;
+    85b2:	0c 5c       	rla	r12		;
+    85b4:	0c 5d       	add	r13,	r12	;
+    85b6:	2c 51       	add	@r1,	r12	;
+    85b8:	5c 4c 02 00 	mov.b	2(r12),	r12	;
+
+000085bc <.Loc.210.1>:
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+        stddev.x += aWin[i].x > mean.x ? aWin[i].x - mean.x
+            : mean.x - aWin[i].x;  // x
+        stddev.y += aWin[i].y > mean.y ? aWin[i].y - mean.y
+            : mean.y - aWin[i].y;  // y
+        stddev.z += aWin[i].z > mean.z ? aWin[i].z - mean.z
+    85bc:	4d 4f       	mov.b	r15,	r13	;
+    85be:	4d 8c       	sub.b	r12,	r13	;
+    85c0:	4c 4d       	mov.b	r13,	r12	;
+
+000085c2 <.L35>:
+    85c2:	4c 5e       	add.b	r14,	r12	;
+    85c4:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
+    85c8:	c1 4c 06 00 	mov.b	r12,	6(r1)	;
+
+000085cc <.Loc.205.1>:
+       */
+    mean.x >>= 2;
+    mean.y >>= 2;
+    mean.z >>= 2;
+
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+    85cc:	91 53 0e 00 	inc	14(r1)		;
+
+000085d0 <.L29>:
+    85d0:	6c 43       	mov.b	#2,	r12	;r3 As==10
+    85d2:	1c 91 0e 00 	cmp	14(r1),	r12	;0x0000e
+    85d6:	73 37       	jge	$-280    	;abs 0x84be
+
+000085d8 <.Loc.218.1>:
+    /*
+       stddev.x = stddev.x / (ACCEL_WINDOW_SIZE - 1);
+       stddev.y = stddev.y / (ACCEL_WINDOW_SIZE - 1);
+       stddev.z = stddev.z / (ACCEL_WINDOW_SIZE - 1);
+       */
+    stddev.x >>= 2;
+    85d8:	5c 41 04 00 	mov.b	4(r1),	r12	;
+    85dc:	b0 12 38 8c 	call	#35896		;#0x8c38
+    85e0:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
+    85e4:	c1 4c 04 00 	mov.b	r12,	4(r1)	;
+
+000085e8 <.Loc.219.1>:
+    stddev.y >>= 2;
+    85e8:	5c 41 05 00 	mov.b	5(r1),	r12	;
+    85ec:	b0 12 38 8c 	call	#35896		;#0x8c38
+    85f0:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
+    85f4:	c1 4c 05 00 	mov.b	r12,	5(r1)	;
+
+000085f8 <.Loc.220.1>:
+    stddev.z >>= 2;
+    85f8:	5c 41 06 00 	mov.b	6(r1),	r12	;
+    85fc:	b0 12 38 8c 	call	#35896		;#0x8c38
+    8600:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
+    8604:	c1 4c 06 00 	mov.b	r12,	6(r1)	;
+
+00008608 <.Loc.222.1>:
+
+    unsigned meanmag = mean.x*mean.x + mean.y*mean.y + mean.z*mean.z;
+    8608:	5c 41 07 00 	mov.b	7(r1),	r12	;
+    860c:	5d 41 07 00 	mov.b	7(r1),	r13	;
+    8610:	b0 12 b8 8c 	call	#36024		;#0x8cb8
+    8614:	06 4c       	mov	r12,	r6	;
+    8616:	5c 41 08 00 	mov.b	8(r1),	r12	;
+    861a:	5d 41 08 00 	mov.b	8(r1),	r13	;
+    861e:	b0 12 b8 8c 	call	#36024		;#0x8cb8
+    8622:	06 5c       	add	r12,	r6	;
+    8624:	5c 41 09 00 	mov.b	9(r1),	r12	;
+    8628:	5d 41 09 00 	mov.b	9(r1),	r13	;
+    862c:	b0 12 b8 8c 	call	#36024		;#0x8cb8
+    8630:	0c 56       	add	r6,	r12	;
+    8632:	81 4c 0c 00 	mov	r12,	12(r1)	; 0x000c
+
+00008636 <.Loc.223.1>:
+    unsigned stddevmag = stddev.x*stddev.x + stddev.y*stddev.y + stddev.z*stddev.z;
+    8636:	5c 41 04 00 	mov.b	4(r1),	r12	;
+    863a:	5d 41 04 00 	mov.b	4(r1),	r13	;
+    863e:	b0 12 b8 8c 	call	#36024		;#0x8cb8
+    8642:	06 4c       	mov	r12,	r6	;
+    8644:	5c 41 05 00 	mov.b	5(r1),	r12	;
+    8648:	5d 41 05 00 	mov.b	5(r1),	r13	;
+    864c:	b0 12 b8 8c 	call	#36024		;#0x8cb8
+    8650:	06 5c       	add	r12,	r6	;
+    8652:	5c 41 06 00 	mov.b	6(r1),	r12	;
+    8656:	5d 41 06 00 	mov.b	6(r1),	r13	;
+    865a:	b0 12 b8 8c 	call	#36024		;#0x8cb8
+    865e:	0c 56       	add	r6,	r12	;
+    8660:	81 4c 0a 00 	mov	r12,	10(r1)	; 0x000a
+
+00008664 <.Loc.225.1>:
+
+    features->meanmag   = sqrt16(meanmag);
+    8664:	1c 41 0c 00 	mov	12(r1),	r12	;0x0000c
+    8668:	07 4c       	mov	r12,	r7	;
+    866a:	48 43       	clr.b	r8		;
+    866c:	0c 47       	mov	r7,	r12	;
+    866e:	0d 48       	mov	r8,	r13	;
+    8670:	b0 12 32 81 	call	#33074		;#0x8132
+    8674:	0d 4c       	mov	r12,	r13	;
+    8676:	1c 41 02 00 	mov	2(r1),	r12	;
+    867a:	8c 4d 00 00 	mov	r13,	0(r12)	;
+
+0000867e <.Loc.226.1>:
+    features->stddevmag = sqrt16(stddevmag);
+    867e:	1c 41 0a 00 	mov	10(r1),	r12	;0x0000a
+    8682:	09 4c       	mov	r12,	r9	;
+    8684:	4a 43       	clr.b	r10		;
+    8686:	0c 49       	mov	r9,	r12	;
+    8688:	0d 4a       	mov	r10,	r13	;
+    868a:	b0 12 32 81 	call	#33074		;#0x8132
+    868e:	0d 4c       	mov	r12,	r13	;
+    8690:	1c 41 02 00 	mov	2(r1),	r12	;
+    8694:	8c 4d 02 00 	mov	r13,	2(r12)	;
+
+00008698 <.Loc.229.1>:
+
+    LOG("featurize: mean %u sd %u\r\n", features->meanmag, features->stddevmag);
+}
+    8698:	03 43       	nop			
+    869a:	31 50 10 00 	add	#16,	r1	;#0x0010
+    869e:	30 40 f8 8b 	br	#0x8bf8		;
+
+000086a2 <classify>:
+
+class_t classify(features_t *features, model_t *model)
+{
+    86a2:	31 80 1e 00 	sub	#30,	r1	;#0x001e
+
+000086a6 <.LCFI16>:
+    86a6:	81 4c 02 00 	mov	r12,	2(r1)	;
+    86aa:	81 4d 00 00 	mov	r13,	0(r1)	;
+
+000086ae <.Loc.233.1>:
+    int move_less_error = 0;
+    86ae:	81 43 1c 00 	mov	#0,	28(r1)	;r3 As==00, 0x001c
+
+000086b2 <.Loc.234.1>:
+    int stat_less_error = 0;
+    86b2:	81 43 1a 00 	mov	#0,	26(r1)	;r3 As==00, 0x001a
+
+000086b6 <.Loc.240.1>:
+    features_t *model_features;
+    int i;
+
+    TASK_CHECKPOINT();
+
+    for (i = 0; i < MODEL_SIZE; ++i) {
+    86b6:	81 43 18 00 	mov	#0,	24(r1)	;r3 As==00, 0x0018
+    86ba:	30 40 36 88 	br	#0x8836		;
+
+000086be <.L53>:
+        model_features = &model->stationary[i];
+    86be:	1c 41 18 00 	mov	24(r1),	r12	;0x00018
+    86c2:	0c 5c       	rla	r12		;
+    86c4:	0c 5c       	rla	r12		;
+    86c6:	2d 41       	mov	@r1,	r13	;
+    86c8:	0d 5c       	add	r12,	r13	;
+    86ca:	81 4d 14 00 	mov	r13,	20(r1)	; 0x0014
+
+000086ce <.Loc.243.1>:
+
+        long int stat_mean_err = (model_features->meanmag > features->meanmag)
+    86ce:	1c 41 14 00 	mov	20(r1),	r12	;0x00014
+    86d2:	2d 4c       	mov	@r12,	r13	;
+    86d4:	1c 41 02 00 	mov	2(r1),	r12	;
+    86d8:	2c 4c       	mov	@r12,	r12	;
+
+000086da <.Loc.245.1>:
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+    86da:	0c 9d       	cmp	r13,	r12	;
+    86dc:	0a 2c       	jc	$+22     	;abs 0x86f2
+
+000086de <.Loc.244.1>:
+
+    for (i = 0; i < MODEL_SIZE; ++i) {
+        model_features = &model->stationary[i];
+
+        long int stat_mean_err = (model_features->meanmag > features->meanmag)
+            ? (model_features->meanmag - features->meanmag)
+    86de:	1c 41 14 00 	mov	20(r1),	r12	;0x00014
+    86e2:	2e 4c       	mov	@r12,	r14	;
+    86e4:	1c 41 02 00 	mov	2(r1),	r12	;
+    86e8:	2d 4c       	mov	@r12,	r13	;
+
+000086ea <.Loc.245.1>:
+            : (features->meanmag - model_features->meanmag);
+    86ea:	0c 4e       	mov	r14,	r12	;
+    86ec:	0c 8d       	sub	r13,	r12	;
+    86ee:	30 40 02 87 	br	#0x8702		;
+
+000086f2 <.L39>:
+    86f2:	1c 41 02 00 	mov	2(r1),	r12	;
+    86f6:	2e 4c       	mov	@r12,	r14	;
+    86f8:	1c 41 14 00 	mov	20(r1),	r12	;0x00014
+    86fc:	2d 4c       	mov	@r12,	r13	;
+    86fe:	0c 4e       	mov	r14,	r12	;
+    8700:	0c 8d       	sub	r13,	r12	;
+
+00008702 <.L40>:
+    TASK_CHECKPOINT();
+
+    for (i = 0; i < MODEL_SIZE; ++i) {
+        model_features = &model->stationary[i];
+
+        long int stat_mean_err = (model_features->meanmag > features->meanmag)
+    8702:	81 4c 10 00 	mov	r12,	16(r1)	; 0x0010
+    8706:	81 43 12 00 	mov	#0,	18(r1)	;r3 As==00, 0x0012
+
+0000870a <.Loc.247.1>:
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+
+        long int stat_sd_err = (model_features->stddevmag > features->stddevmag)
+    870a:	1c 41 14 00 	mov	20(r1),	r12	;0x00014
+    870e:	1d 4c 02 00 	mov	2(r12),	r13	;
+    8712:	1c 41 02 00 	mov	2(r1),	r12	;
+    8716:	1c 4c 02 00 	mov	2(r12),	r12	;
+
+0000871a <.Loc.249.1>:
+            ? (model_features->stddevmag - features->stddevmag)
+            : (features->stddevmag - model_features->stddevmag);
+    871a:	0c 9d       	cmp	r13,	r12	;
+    871c:	0c 2c       	jc	$+26     	;abs 0x8736
+
+0000871e <.Loc.248.1>:
+        long int stat_mean_err = (model_features->meanmag > features->meanmag)
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+
+        long int stat_sd_err = (model_features->stddevmag > features->stddevmag)
+            ? (model_features->stddevmag - features->stddevmag)
+    871e:	1c 41 14 00 	mov	20(r1),	r12	;0x00014
+    8722:	1e 4c 02 00 	mov	2(r12),	r14	;
+    8726:	1c 41 02 00 	mov	2(r1),	r12	;
+    872a:	1d 4c 02 00 	mov	2(r12),	r13	;
+
+0000872e <.Loc.249.1>:
+            : (features->stddevmag - model_features->stddevmag);
+    872e:	0c 4e       	mov	r14,	r12	;
+    8730:	0c 8d       	sub	r13,	r12	;
+    8732:	30 40 4a 87 	br	#0x874a		;
+
+00008736 <.L41>:
+    8736:	1c 41 02 00 	mov	2(r1),	r12	;
+    873a:	1e 4c 02 00 	mov	2(r12),	r14	;
+    873e:	1c 41 14 00 	mov	20(r1),	r12	;0x00014
+    8742:	1d 4c 02 00 	mov	2(r12),	r13	;
+    8746:	0c 4e       	mov	r14,	r12	;
+    8748:	0c 8d       	sub	r13,	r12	;
+
+0000874a <.L42>:
+
+        long int stat_mean_err = (model_features->meanmag > features->meanmag)
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+
+        long int stat_sd_err = (model_features->stddevmag > features->stddevmag)
+    874a:	81 4c 0c 00 	mov	r12,	12(r1)	; 0x000c
+    874e:	81 43 0e 00 	mov	#0,	14(r1)	;r3 As==00, 0x000e
+
+00008752 <.Loc.251.1>:
+            ? (model_features->stddevmag - features->stddevmag)
+            : (features->stddevmag - model_features->stddevmag);
+
+        model_features = &model->moving[i];
+    8752:	1c 41 18 00 	mov	24(r1),	r12	;0x00018
+    8756:	3c 50 10 00 	add	#16,	r12	;#0x0010
+    875a:	0c 5c       	rla	r12		;
+    875c:	0c 5c       	rla	r12		;
+    875e:	2d 41       	mov	@r1,	r13	;
+    8760:	0d 5c       	add	r12,	r13	;
+    8762:	81 4d 14 00 	mov	r13,	20(r1)	; 0x0014
+
+00008766 <.Loc.253.1>:
+
+        long int move_mean_err = (model_features->meanmag > features->meanmag)
+    8766:	1c 41 14 00 	mov	20(r1),	r12	;0x00014
+    876a:	2d 4c       	mov	@r12,	r13	;
+    876c:	1c 41 02 00 	mov	2(r1),	r12	;
+    8770:	2c 4c       	mov	@r12,	r12	;
+
+00008772 <.Loc.255.1>:
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+    8772:	0c 9d       	cmp	r13,	r12	;
+    8774:	0a 2c       	jc	$+22     	;abs 0x878a
+
+00008776 <.Loc.254.1>:
+            : (features->stddevmag - model_features->stddevmag);
+
+        model_features = &model->moving[i];
+
+        long int move_mean_err = (model_features->meanmag > features->meanmag)
+            ? (model_features->meanmag - features->meanmag)
+    8776:	1c 41 14 00 	mov	20(r1),	r12	;0x00014
+    877a:	2e 4c       	mov	@r12,	r14	;
+    877c:	1c 41 02 00 	mov	2(r1),	r12	;
+    8780:	2d 4c       	mov	@r12,	r13	;
+
+00008782 <.Loc.255.1>:
+            : (features->meanmag - model_features->meanmag);
+    8782:	0c 4e       	mov	r14,	r12	;
+    8784:	0c 8d       	sub	r13,	r12	;
+    8786:	30 40 9a 87 	br	#0x879a		;
+
+0000878a <.L43>:
+    878a:	1c 41 02 00 	mov	2(r1),	r12	;
+    878e:	2e 4c       	mov	@r12,	r14	;
+    8790:	1c 41 14 00 	mov	20(r1),	r12	;0x00014
+    8794:	2d 4c       	mov	@r12,	r13	;
+    8796:	0c 4e       	mov	r14,	r12	;
+    8798:	0c 8d       	sub	r13,	r12	;
+
+0000879a <.L44>:
+            ? (model_features->stddevmag - features->stddevmag)
+            : (features->stddevmag - model_features->stddevmag);
+
+        model_features = &model->moving[i];
+
+        long int move_mean_err = (model_features->meanmag > features->meanmag)
+    879a:	81 4c 08 00 	mov	r12,	8(r1)	;
+    879e:	81 43 0a 00 	mov	#0,	10(r1)	;r3 As==00, 0x000a
+
+000087a2 <.Loc.257.1>:
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+
+        long int move_sd_err = (model_features->stddevmag > features->stddevmag)
+    87a2:	1c 41 14 00 	mov	20(r1),	r12	;0x00014
+    87a6:	1d 4c 02 00 	mov	2(r12),	r13	;
+    87aa:	1c 41 02 00 	mov	2(r1),	r12	;
+    87ae:	1c 4c 02 00 	mov	2(r12),	r12	;
+
+000087b2 <.Loc.259.1>:
+            ? (model_features->stddevmag - features->stddevmag)
+            : (features->stddevmag - model_features->stddevmag);
+    87b2:	0c 9d       	cmp	r13,	r12	;
+    87b4:	0c 2c       	jc	$+26     	;abs 0x87ce
+
+000087b6 <.Loc.258.1>:
+        long int move_mean_err = (model_features->meanmag > features->meanmag)
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+
+        long int move_sd_err = (model_features->stddevmag > features->stddevmag)
+            ? (model_features->stddevmag - features->stddevmag)
+    87b6:	1c 41 14 00 	mov	20(r1),	r12	;0x00014
+    87ba:	1e 4c 02 00 	mov	2(r12),	r14	;
+    87be:	1c 41 02 00 	mov	2(r1),	r12	;
+    87c2:	1d 4c 02 00 	mov	2(r12),	r13	;
+
+000087c6 <.Loc.259.1>:
+            : (features->stddevmag - model_features->stddevmag);
+    87c6:	0c 4e       	mov	r14,	r12	;
+    87c8:	0c 8d       	sub	r13,	r12	;
+    87ca:	30 40 e2 87 	br	#0x87e2		;
+
+000087ce <.L45>:
+    87ce:	1c 41 02 00 	mov	2(r1),	r12	;
+    87d2:	1e 4c 02 00 	mov	2(r12),	r14	;
+    87d6:	1c 41 14 00 	mov	20(r1),	r12	;0x00014
+    87da:	1d 4c 02 00 	mov	2(r12),	r13	;
+    87de:	0c 4e       	mov	r14,	r12	;
+    87e0:	0c 8d       	sub	r13,	r12	;
+
+000087e2 <.L46>:
+
+        long int move_mean_err = (model_features->meanmag > features->meanmag)
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+
+        long int move_sd_err = (model_features->stddevmag > features->stddevmag)
+    87e2:	81 4c 04 00 	mov	r12,	4(r1)	;
+    87e6:	81 43 06 00 	mov	#0,	6(r1)	;r3 As==00
+
+000087ea <.Loc.261.1>:
+            ? (model_features->stddevmag - features->stddevmag)
+            : (features->stddevmag - model_features->stddevmag);
+
+        if (move_mean_err < stat_mean_err) {
+    87ea:	91 91 12 00 	cmp	18(r1),	10(r1)	;0x00012, 0x000a
+    87ee:	0a 00 
+    87f0:	08 38       	jl	$+18     	;abs 0x8802
+    87f2:	91 91 0a 00 	cmp	10(r1),	18(r1)	;0x0000a, 0x0012
+    87f6:	12 00 
+    87f8:	08 20       	jnz	$+18     	;abs 0x880a
+    87fa:	91 91 10 00 	cmp	16(r1),	8(r1)	;0x00010
+    87fe:	08 00 
+    8800:	04 2c       	jc	$+10     	;abs 0x880a
+
+00008802 <.L56>:
+            move_less_error++;
+    8802:	91 53 1c 00 	inc	28(r1)		;
+    8806:	30 40 0e 88 	br	#0x880e		;
+
+0000880a <.L47>:
+        } else {
+            stat_less_error++;
+    880a:	91 53 1a 00 	inc	26(r1)		;
+
+0000880e <.L49>:
+        }
+
+        if (move_sd_err < stat_sd_err) {
+    880e:	91 91 0e 00 	cmp	14(r1),	6(r1)	;0x0000e
+    8812:	06 00 
+    8814:	08 38       	jl	$+18     	;abs 0x8826
+    8816:	91 91 06 00 	cmp	6(r1),	14(r1)	; 0x000e
+    881a:	0e 00 
+    881c:	08 20       	jnz	$+18     	;abs 0x882e
+    881e:	91 91 0c 00 	cmp	12(r1),	4(r1)	;0x0000c
+    8822:	04 00 
+    8824:	04 2c       	jc	$+10     	;abs 0x882e
+
+00008826 <.L57>:
+            move_less_error++;
+    8826:	91 53 1c 00 	inc	28(r1)		;
+    882a:	30 40 32 88 	br	#0x8832		;
+
+0000882e <.L50>:
+        } else {
+            stat_less_error++;
+    882e:	91 53 1a 00 	inc	26(r1)		;
+
+00008832 <.L52>:
+    features_t *model_features;
+    int i;
+
+    TASK_CHECKPOINT();
+
+    for (i = 0; i < MODEL_SIZE; ++i) {
+    8832:	91 53 18 00 	inc	24(r1)		;
+
+00008836 <.L38>:
+    8836:	7c 40 0f 00 	mov.b	#15,	r12	;#0x000f
+    883a:	1c 91 18 00 	cmp	24(r1),	r12	;0x00018
+    883e:	3f 37       	jge	$-384    	;abs 0x86be
+
+00008840 <.Loc.275.1>:
+            stat_less_error++;
+        }
+    }
+
+    class_t class = move_less_error > stat_less_error ?
+                        CLASS_MOVING : CLASS_STATIONARY;
+    8840:	5c 43       	mov.b	#1,	r12	;r3 As==01
+    8842:	91 91 1c 00 	cmp	28(r1),	26(r1)	;0x0001c, 0x001a
+    8846:	1a 00 
+    8848:	01 38       	jl	$+4      	;abs 0x884c
+    884a:	4c 43       	clr.b	r12		;
+
+0000884c <.L54>:
+    884c:	3c f0 ff 00 	and	#255,	r12	;#0x00ff
+
+00008850 <.Loc.274.1>:
+        } else {
+            stat_less_error++;
+        }
+    }
+
+    class_t class = move_less_error > stat_less_error ?
+    8850:	81 4c 16 00 	mov	r12,	22(r1)	; 0x0016
+
+00008854 <.Loc.278.1>:
+                        CLASS_MOVING : CLASS_STATIONARY;
+    LOG("classify: class %u\r\n", class);
+
+    return class;
+    8854:	1c 41 16 00 	mov	22(r1),	r12	;0x00016
+
+00008858 <.Loc.279.1>:
+}
+    8858:	31 50 1e 00 	add	#30,	r1	;#0x001e
+    885c:	30 41       	ret			
+
+0000885e <record_stats>:
+
+void record_stats(stats_t *stats, class_t class)
+{
+    885e:	21 82       	sub	#4,	r1	;r2 As==10
+
+00008860 <.LCFI17>:
+    8860:	81 4c 02 00 	mov	r12,	2(r1)	;
+    8864:	81 4d 00 00 	mov	r13,	0(r1)	;
+
+00008868 <.Loc.288.1>:
+    TASK_CHECKPOINT();
+
+    /* stats->totalCount, stats->movingCount, and stats->stationaryCount have an
+     * nv-internal consistency requirement.  This code should be atomic. */
+
+    stats->totalCount++;
+    8868:	1c 41 02 00 	mov	2(r1),	r12	;
+    886c:	2c 4c       	mov	@r12,	r12	;
+    886e:	0d 4c       	mov	r12,	r13	;
+    8870:	1d 53       	inc	r13		;
+    8872:	1c 41 02 00 	mov	2(r1),	r12	;
+    8876:	8c 4d 00 00 	mov	r13,	0(r12)	;
+
+0000887a <.Loc.290.1>:
+
+    switch (class) {
+    887a:	2c 41       	mov	@r1,	r12	;
+    887c:	0c 93       	cmp	#0,	r12	;r3 As==00
+    887e:	10 24       	jz	$+34     	;abs 0x88a0
+    8880:	1c 93       	cmp	#1,	r12	;r3 As==01
+    8882:	02 24       	jz	$+6      	;abs 0x8888
+
+00008884 <.Loc.302.1>:
+            break;
+    }
+
+    LOG("stats: s %u m %u t %u\r\n",
+        stats->stationaryCount, stats->movingCount, stats->totalCount);
+}
+    8884:	30 40 b6 88 	br	#0x88b6		;
+
+00008888 <.L61>:
+
+    stats->totalCount++;
+
+    switch (class) {
+        case CLASS_MOVING:
+            stats->movingCount++;
+    8888:	1c 41 02 00 	mov	2(r1),	r12	;
+    888c:	1c 4c 02 00 	mov	2(r12),	r12	;
+    8890:	0d 4c       	mov	r12,	r13	;
+    8892:	1d 53       	inc	r13		;
+    8894:	1c 41 02 00 	mov	2(r1),	r12	;
+    8898:	8c 4d 02 00 	mov	r13,	2(r12)	;
+
+0000889c <.Loc.293.1>:
+            break;
+    889c:	30 40 b6 88 	br	#0x88b6		;
+
+000088a0 <.L60>:
+
+        case CLASS_STATIONARY:
+            stats->stationaryCount++;
+    88a0:	1c 41 02 00 	mov	2(r1),	r12	;
+    88a4:	1c 4c 04 00 	mov	4(r12),	r12	;
+    88a8:	0d 4c       	mov	r12,	r13	;
+    88aa:	1d 53       	inc	r13		;
+    88ac:	1c 41 02 00 	mov	2(r1),	r12	;
+    88b0:	8c 4d 04 00 	mov	r13,	4(r12)	;
+
+000088b4 <.Loc.297.1>:
+            break;
+    88b4:	03 43       	nop			
+
+000088b6 <.L59>:
+    }
+
+    LOG("stats: s %u m %u t %u\r\n",
+        stats->stationaryCount, stats->movingCount, stats->totalCount);
+}
+    88b6:	03 43       	nop			
+    88b8:	21 52       	add	#4,	r1	;r2 As==10
+    88ba:	30 41       	ret			
+
+000088bc <print_stats>:
+ unsigned resultStationaryPct;
+ unsigned resultMovingPct;
+ unsigned sum;
+
+void print_stats(stats_t *stats)
+{
+    88bc:	21 83       	decd	r1		;
+
+000088be <.LCFI18>:
+    88be:	81 4c 00 00 	mov	r12,	0(r1)	;
+
+000088c2 <.Loc.314.1>:
+   // unsigned resultStationaryPct = stats->stationaryCount * 100 / stats->totalCount;
+   // unsigned resultMovingPct = stats->movingCount * 100 / stats->totalCount;
+   // unsigned sum = stats->stationaryCount + stats->movingCount;
+
+	resultStationaryPct = stats->stationaryCount * 100 / stats->totalCount;
+    88c2:	2c 41       	mov	@r1,	r12	;
+    88c4:	1c 4c 04 00 	mov	4(r12),	r12	;
+    88c8:	7d 40 64 00 	mov.b	#100,	r13	;#0x0064
+    88cc:	b0 12 b8 8c 	call	#36024		;#0x8cb8
+    88d0:	2d 41       	mov	@r1,	r13	;
+    88d2:	2d 4d       	mov	@r13,	r13	;
+    88d4:	b0 12 e4 8b 	call	#35812		;#0x8be4
+    88d8:	82 4c 14 41 	mov	r12,	&0x4114	;
+
+000088dc <.Loc.315.1>:
+	resultMovingPct = stats->movingCount * 100 / stats->totalCount;
+    88dc:	2c 41       	mov	@r1,	r12	;
+    88de:	1c 4c 02 00 	mov	2(r12),	r12	;
+    88e2:	7d 40 64 00 	mov.b	#100,	r13	;#0x0064
+    88e6:	b0 12 b8 8c 	call	#36024		;#0x8cb8
+    88ea:	2d 41       	mov	@r1,	r13	;
+    88ec:	2d 4d       	mov	@r13,	r13	;
+    88ee:	b0 12 e4 8b 	call	#35812		;#0x8be4
+    88f2:	82 4c 16 41 	mov	r12,	&0x4116	;
+
+000088f6 <.Loc.316.1>:
+	sum = stats->stationaryCount + stats->movingCount;
+    88f6:	2c 41       	mov	@r1,	r12	;
+    88f8:	1d 4c 04 00 	mov	4(r12),	r13	;
+    88fc:	2c 41       	mov	@r1,	r12	;
+    88fe:	1c 4c 02 00 	mov	2(r12),	r12	;
+    8902:	0c 5d       	add	r13,	r12	;
+    8904:	82 4c 92 40 	mov	r12,	&0x4092	;
+
+00008908 <.Loc.323.1>:
+    PRINTF("stats: s %u (%u%%) m %u (%u%%) sum/tot %u/%u: %c\r\n",
+           stats->stationaryCount, resultStationaryPct,
+           stats->movingCount, resultMovingPct,
+           stats->totalCount, sum,
+           sum == stats->totalCount && sum == SAMPLES_TO_COLLECT ? 'V' : 'X');
+}
+    8908:	03 43       	nop			
+    890a:	21 53       	incd	r1		;
+    890c:	30 41       	ret			
+
+0000890e <warmup_sensor>:
+
+void warmup_sensor(void)
+{
+    890e:	31 80 06 00 	sub	#6,	r1	;
+
+00008912 <.LCFI19>:
+    unsigned discardedSamplesCount = 0;
+    8912:	81 43 04 00 	mov	#0,	4(r1)	;r3 As==00
+
+00008916 <.Loc.334.1>:
+
+    TASK_CHECKPOINT();
+
+    LOG("warmup\r\n");
+
+    while (discardedSamplesCount++ < NUM_WARMUP_SAMPLES) {
+    8916:	30 40 22 89 	br	#0x8922		;
+
+0000891a <.L66>:
+        accel_sample(&sample);
+    891a:	0c 41       	mov	r1,	r12	;
+    891c:	1c 53       	inc	r12		;
+    891e:	b0 12 46 82 	call	#33350		;#0x8246
+
+00008922 <.L65>:
+
+    TASK_CHECKPOINT();
+
+    LOG("warmup\r\n");
+
+    while (discardedSamplesCount++ < NUM_WARMUP_SAMPLES) {
+    8922:	1c 41 04 00 	mov	4(r1),	r12	;
+    8926:	0d 4c       	mov	r12,	r13	;
+    8928:	1d 53       	inc	r13		;
+    892a:	81 4d 04 00 	mov	r13,	4(r1)	;
+    892e:	6d 43       	mov.b	#2,	r13	;r3 As==10
+    8930:	0d 9c       	cmp	r12,	r13	;
+    8932:	f3 2f       	jc	$-24     	;abs 0x891a
+
+00008934 <.Loc.337.1>:
+        accel_sample(&sample);
+    }
+}
+    8934:	03 43       	nop			
+    8936:	31 50 06 00 	add	#6,	r1	;
+    893a:	30 41       	ret			
+
+0000893c <train>:
+
+void train(features_t *classModel)
+{
+    893c:	31 80 12 00 	sub	#18,	r1	;#0x0012
+
+00008940 <.LCFI20>:
+    8940:	81 4c 00 00 	mov	r12,	0(r1)	;
+
+00008944 <.Loc.345.1>:
+    accelWindow sampleWindow;
+    features_t features;
+    unsigned i;
+
+    warmup_sensor();
+    8944:	b0 12 0e 89 	call	#35086		;#0x890e
+
+00008948 <.Loc.347.1>:
+
+    for (i = 0; i < MODEL_SIZE; ++i) {
+    8948:	81 43 10 00 	mov	#0,	16(r1)	;r3 As==00, 0x0010
+    894c:	30 40 8c 89 	br	#0x898c		;
+
+00008950 <.L69>:
+        acquire_window(sampleWindow);
+    8950:	0c 41       	mov	r1,	r12	;
+    8952:	3c 50 07 00 	add	#7,	r12	;
+    8956:	b0 12 ba 82 	call	#33466		;#0x82ba
+
+0000895a <.Loc.349.1>:
+        transform(sampleWindow);
+    895a:	0c 41       	mov	r1,	r12	;
+    895c:	3c 50 07 00 	add	#7,	r12	;
+    8960:	b0 12 06 83 	call	#33542		;#0x8306
+
+00008964 <.Loc.350.1>:
+        featurize(&features, sampleWindow);
+    8964:	0d 41       	mov	r1,	r13	;
+    8966:	3d 50 07 00 	add	#7,	r13	;
+    896a:	0c 41       	mov	r1,	r12	;
+    896c:	2c 53       	incd	r12		;
+    896e:	b0 12 dc 83 	call	#33756		;#0x83dc
+
+00008972 <.Loc.354.1>:
+
+        TASK_CHECKPOINT();
+
+        classModel[i] = features;
+    8972:	1c 41 10 00 	mov	16(r1),	r12	;0x00010
+    8976:	0c 5c       	rla	r12		;
+    8978:	0c 5c       	rla	r12		;
+    897a:	2c 51       	add	@r1,	r12	;
+    897c:	9c 41 02 00 	mov	2(r1),	0(r12)	;
+    8980:	00 00 
+    8982:	9c 41 04 00 	mov	4(r1),	2(r12)	;
+    8986:	02 00 
+
+00008988 <.Loc.347.1>:
+    features_t features;
+    unsigned i;
+
+    warmup_sensor();
+
+    for (i = 0; i < MODEL_SIZE; ++i) {
+    8988:	91 53 10 00 	inc	16(r1)		;
+
+0000898c <.L68>:
+    898c:	7c 40 0f 00 	mov.b	#15,	r12	;#0x000f
+    8990:	1c 91 10 00 	cmp	16(r1),	r12	;0x00010
+    8994:	dd 2f       	jc	$-68     	;abs 0x8950
+
+00008996 <.Loc.359.1>:
+        classModel[i] = features;
+    }
+
+    PRINTF("train: done: mn %u sd %u\r\n",
+           features.meanmag, features.stddevmag);
+}
+    8996:	03 43       	nop			
+    8998:	31 50 12 00 	add	#18,	r1	;#0x0012
+    899c:	30 41       	ret			
+
+0000899e <recognize>:
+
+void recognize(model_t *model)
+{
+    899e:	31 80 1a 00 	sub	#26,	r1	;#0x001a
+
+000089a2 <.LCFI21>:
+    89a2:	81 4c 00 00 	mov	r12,	0(r1)	;
+
+000089a6 <.Loc.374.1>:
+    accelWindow sampleWindow;
+    features_t features;
+    class_t class;
+    unsigned i;
+
+    stats.totalCount = 0;
+    89a6:	81 43 10 00 	mov	#0,	16(r1)	;r3 As==00, 0x0010
+
+000089aa <.Loc.375.1>:
+    stats.stationaryCount = 0;
+    89aa:	81 43 14 00 	mov	#0,	20(r1)	;r3 As==00, 0x0014
+
+000089ae <.Loc.376.1>:
+    stats.movingCount = 0;
+    89ae:	81 43 12 00 	mov	#0,	18(r1)	;r3 As==00, 0x0012
+
+000089b2 <.Loc.378.1>:
+
+    for (i = 0; i < SAMPLES_TO_COLLECT; ++i) {
+    89b2:	81 43 18 00 	mov	#0,	24(r1)	;r3 As==00, 0x0018
+    89b6:	30 40 fc 89 	br	#0x89fc		;
+
+000089ba <.L72>:
+        acquire_window(sampleWindow);
+    89ba:	0c 41       	mov	r1,	r12	;
+    89bc:	3c 50 07 00 	add	#7,	r12	;
+    89c0:	b0 12 ba 82 	call	#33466		;#0x82ba
+
+000089c4 <.Loc.380.1>:
+        transform(sampleWindow);
+    89c4:	0c 41       	mov	r1,	r12	;
+    89c6:	3c 50 07 00 	add	#7,	r12	;
+    89ca:	b0 12 06 83 	call	#33542		;#0x8306
+
+000089ce <.Loc.381.1>:
+        featurize(&features, sampleWindow);
+    89ce:	0d 41       	mov	r1,	r13	;
+    89d0:	3d 50 07 00 	add	#7,	r13	;
+    89d4:	0c 41       	mov	r1,	r12	;
+    89d6:	2c 53       	incd	r12		;
+    89d8:	b0 12 dc 83 	call	#33756		;#0x83dc
+
+000089dc <.Loc.382.1>:
+        class = classify(&features, model);
+    89dc:	0c 41       	mov	r1,	r12	;
+    89de:	2c 53       	incd	r12		;
+    89e0:	2d 41       	mov	@r1,	r13	;
+    89e2:	b0 12 a2 86 	call	#34466		;#0x86a2
+    89e6:	81 4c 16 00 	mov	r12,	22(r1)	; 0x0016
+
+000089ea <.Loc.383.1>:
+        record_stats(&stats, class);
+    89ea:	0c 41       	mov	r1,	r12	;
+    89ec:	3c 50 10 00 	add	#16,	r12	;#0x0010
+    89f0:	1d 41 16 00 	mov	22(r1),	r13	;0x00016
+    89f4:	b0 12 5e 88 	call	#34910		;#0x885e
+
+000089f8 <.Loc.378.1>:
+
+    stats.totalCount = 0;
+    stats.stationaryCount = 0;
+    stats.movingCount = 0;
+
+    for (i = 0; i < SAMPLES_TO_COLLECT; ++i) {
+    89f8:	91 53 18 00 	inc	24(r1)		;
+
+000089fc <.L71>:
+    89fc:	7c 40 7f 00 	mov.b	#127,	r12	;#0x007f
+    8a00:	1c 91 18 00 	cmp	24(r1),	r12	;0x00018
+    8a04:	da 2f       	jc	$-74     	;abs 0x89ba
+
+00008a06 <.Loc.386.1>:
+        featurize(&features, sampleWindow);
+        class = classify(&features, model);
+        record_stats(&stats, class);
+    }
+
+    print_stats(&stats);
+    8a06:	0c 41       	mov	r1,	r12	;
+    8a08:	3c 50 10 00 	add	#16,	r12	;#0x0010
+    8a0c:	b0 12 bc 88 	call	#35004		;#0x88bc
+
+00008a10 <.Loc.387.1>:
+}
+    8a10:	03 43       	nop			
+    8a12:	31 50 1a 00 	add	#26,	r1	;#0x001a
+    8a16:	30 41       	ret			
+
+00008a18 <end_of_benchmark>:
+
+void end_of_benchmark(void)
+{
+    LED_CTRL = 0x00;
+    8a18:	7c 40 90 00 	mov.b	#144,	r12	;#0x0090
+    8a1c:	cc 43 00 00 	mov.b	#0,	0(r12)	;r3 As==00
+
+00008a20 <.Loc.393.1>:
+    PRINTF("This is the end of the AR benchmark\n");
+    exit(0);
+    8a20:	4c 43       	clr.b	r12		;
+    8a22:	b0 12 8a 8d 	call	#36234		;#0x8d8a
+
+00008a26 <count_error>:
+}
+
+void count_error(void)
+{
+    PRINTF("An error occured during count, count = %d\n", count);
+}
+    8a26:	03 43       	nop			
+    8a28:	30 41       	ret			
+
+00008a2a <select_mode>:
+
+
+run_mode_t select_mode(uint8_t *prev_pin_state)
+{
+    8a2a:	21 82       	sub	#4,	r1	;r2 As==10
+
+00008a2c <.LCFI22>:
+    8a2c:	81 4c 00 00 	mov	r12,	0(r1)	;
+
+00008a30 <.Loc.409.1>:
+    uint8_t pin_state;
+
+    TASK_CHECKPOINT();
+
+    count = count + 1;
+    8a30:	1c 42 02 40 	mov	&0x4002,r12	;0x4002
+    8a34:	1c 53       	inc	r12		;
+    8a36:	82 4c 02 40 	mov	r12,	&0x4002	;
+
+00008a3a <.Loc.418.1>:
+     *      1,2 = MODE_TRAIN_MOVING
+     *      3,4 = MODE_TRAIN_STATIONARY
+     *      5,6 = MODE_RECOGNIZE
+     *      7   = END OF BENCHMARK
+     */
+    switch(count) {
+    8a3a:	1c 42 02 40 	mov	&0x4002,r12	;0x4002
+    8a3e:	6d 42       	mov.b	#4,	r13	;r2 As==10
+    8a40:	0d 9c       	cmp	r12,	r13	;
+    8a42:	07 28       	jnc	$+16     	;abs 0x8a52
+    8a44:	3c 90 03 00 	cmp	#3,	r12	;
+    8a48:	11 2c       	jc	$+36     	;abs 0x8a6c
+    8a4a:	1c 93       	cmp	#1,	r12	;r3 As==01
+    8a4c:	1b 28       	jnc	$+56     	;abs 0x8a84
+    8a4e:	30 40 64 8a 	br	#0x8a64		;
+
+00008a52 <.L77>:
+    8a52:	7d 40 06 00 	mov.b	#6,	r13	;
+    8a56:	0d 9c       	cmp	r12,	r13	;
+    8a58:	0d 2c       	jc	$+28     	;abs 0x8a74
+    8a5a:	3c 90 07 00 	cmp	#7,	r12	;
+    8a5e:	0e 24       	jz	$+30     	;abs 0x8a7c
+    8a60:	30 40 84 8a 	br	#0x8a84		;
+
+00008a64 <.L87>:
+        case 1:
+        case 2:
+            pin_state = MODE_TRAIN_MOVING;
+    8a64:	d1 43 03 00 	mov.b	#1,	3(r1)	;r3 As==01
+
+00008a68 <.Loc.422.1>:
+            break;
+    8a68:	30 40 8e 8a 	br	#0x8a8e		;
+
+00008a6c <.L78>:
+        case 3:
+        case 4:
+            pin_state = MODE_TRAIN_STATIONARY;
+    8a6c:	e1 43 03 00 	mov.b	#2,	3(r1)	;r3 As==10
+
+00008a70 <.Loc.426.1>:
+            break;
+    8a70:	30 40 8e 8a 	br	#0x8a8e		;
+
+00008a74 <.L80>:
+        case 5:
+        case 6:
+            pin_state = MODE_RECOGNIZE;
+    8a74:	c1 43 03 00 	mov.b	#0,	3(r1)	;r3 As==00
+
+00008a78 <.Loc.430.1>:
+            break;
+    8a78:	30 40 8e 8a 	br	#0x8a8e		;
+
+00008a7c <.L81>:
+        case 7:
+            end_of_benchmark();
+    8a7c:	b0 12 18 8a 	call	#35352		;#0x8a18
+
+00008a80 <.Loc.433.1>:
+            break;
+    8a80:	30 40 8e 8a 	br	#0x8a8e		;
+
+00008a84 <.L76>:
+        default:
+            pin_state = MODE_IDLE;
+    8a84:	f1 40 03 00 	mov.b	#3,	3(r1)	;
+    8a88:	03 00 
+
+00008a8a <.Loc.436.1>:
+            count_error();
+    8a8a:	b0 12 26 8a 	call	#35366		;#0x8a26
+
+00008a8e <.L82>:
+
+    //pin_state = GPIO(PORT_AUX, IN) & (BIT(PIN_AUX_1) | BIT(PIN_AUX_2));
+
+    // Don't re-launch training after finishing training
+    // Vito: could have done this while assigning pin_state. But keep is the same as the original
+    if ((pin_state == MODE_TRAIN_STATIONARY ||
+    8a8e:	e1 93 03 00 	cmp.b	#2,	3(r1)	;r3 As==10
+    8a92:	03 24       	jz	$+8      	;abs 0x8a9a
+
+00008a94 <.Loc.443.1>:
+    8a94:	d1 93 03 00 	cmp.b	#1,	3(r1)	;r3 As==01
+    8a98:	0a 20       	jnz	$+22     	;abs 0x8aae
+
+00008a9a <.L83>:
+        pin_state == MODE_TRAIN_MOVING) &&
+        pin_state == *prev_pin_state) {
+    8a9a:	2c 41       	mov	@r1,	r12	;
+    8a9c:	6c 4c       	mov.b	@r12,	r12	;
+
+00008a9e <.Loc.444.1>:
+    //pin_state = GPIO(PORT_AUX, IN) & (BIT(PIN_AUX_1) | BIT(PIN_AUX_2));
+
+    // Don't re-launch training after finishing training
+    // Vito: could have done this while assigning pin_state. But keep is the same as the original
+    if ((pin_state == MODE_TRAIN_STATIONARY ||
+        pin_state == MODE_TRAIN_MOVING) &&
+    8a9e:	c1 9c 03 00 	cmp.b	r12,	3(r1)	;
+    8aa2:	05 20       	jnz	$+12     	;abs 0x8aae
+
+00008aa4 <.Loc.446.1>:
+        pin_state == *prev_pin_state) {
+        pin_state = MODE_IDLE;
+    8aa4:	f1 40 03 00 	mov.b	#3,	3(r1)	;
+    8aa8:	03 00 
+    8aaa:	30 40 b6 8a 	br	#0x8ab6		;
+
+00008aae <.L84>:
+    } else {
+        *prev_pin_state = pin_state;
+    8aae:	2c 41       	mov	@r1,	r12	;
+    8ab0:	dc 41 03 00 	mov.b	3(r1),	0(r12)	;
+    8ab4:	00 00 
+
+00008ab6 <.L85>:
+    }
+
+    LOG("selectMode: pins %04x\r\n", pin_state);
+
+    return (run_mode_t)pin_state;
+    8ab6:	5c 41 03 00 	mov.b	3(r1),	r12	;
+
+00008aba <.Loc.454.1>:
+}
+    8aba:	21 52       	add	#4,	r1	;r2 As==10
+    8abc:	30 41       	ret			
+
+00008abe <init>:
+
+void init()
+{
+    WDTCTL = WDTPW | WDTHOLD; // Stop WDT
+    8abe:	3c 40 20 01 	mov	#288,	r12	;#0x0120
+    8ac2:	bc 40 80 5a 	mov	#23168,	0(r12)	;#0x5a80
+    8ac6:	00 00 
+
+00008ac8 <.Loc.472.1>:
+    // init timer
+#ifdef CHECKPOINT_TIMER
+    checkpoint_timer_init();
+#endif
+
+}
+    8ac8:	03 43       	nop			
+    8aca:	30 41       	ret			
+
+00008acc <main>:
+
+int main()
+{
+    8acc:	21 82       	sub	#4,	r1	;r2 As==10
+
+00008ace <.LCFI23>:
+    // "Globals" must be on the stack because Mementos doesn't handle real
+    // globals correctly
+    uint8_t prev_pin_state = MODE_IDLE;
+    8ace:	f1 40 03 00 	mov.b	#3,	1(r1)	;
+    8ad2:	01 00 
+
+00008ad4 <.Loc.480.1>:
+
+    init();
+    8ad4:	b0 12 be 8a 	call	#35518		;#0x8abe
+
+00008ad8 <.Loc.483.1>:
+
+    //count = 1;
+    LED_CTRL = 0xFF;
+    8ad8:	7c 40 90 00 	mov.b	#144,	r12	;#0x0090
+    8adc:	fc 43 00 00 	mov.b	#-1,	0(r12)	;r3 As==11
+
+00008ae0 <.L95>:
+    while (1)
+    {
+        run_mode_t mode = select_mode(&prev_pin_state);
+    8ae0:	0c 41       	mov	r1,	r12	;
+    8ae2:	1c 53       	inc	r12		;
+    8ae4:	b0 12 2a 8a 	call	#35370		;#0x8a2a
+    8ae8:	81 4c 02 00 	mov	r12,	2(r1)	;
+
+00008aec <.Loc.487.1>:
+        switch (mode) {
+    8aec:	1c 41 02 00 	mov	2(r1),	r12	;
+    8af0:	1c 93       	cmp	#1,	r12	;r3 As==01
+    8af2:	0c 24       	jz	$+26     	;abs 0x8b0c
+    8af4:	1c 93       	cmp	#1,	r12	;r3 As==01
+    8af6:	10 28       	jnc	$+34     	;abs 0x8b18
+    8af8:	2c 93       	cmp	#2,	r12	;r3 As==10
+    8afa:	02 24       	jz	$+6      	;abs 0x8b00
+
+00008afc <.Loc.502.1>:
+                LOG("mode: recognize\r\n");
+                recognize(&model);
+                break;
+            default:
+                LOG("mode: idle\r\n");
+                break;
+    8afc:	30 40 22 8b 	br	#0x8b22		;
+
+00008b00 <.L93>:
+    {
+        run_mode_t mode = select_mode(&prev_pin_state);
+        switch (mode) {
+            case MODE_TRAIN_STATIONARY:
+                LOG("mode: stationary\r\n");
+                train(model.stationary);
+    8b00:	3c 40 94 40 	mov	#16532,	r12	;#0x4094
+    8b04:	b0 12 3c 89 	call	#35132		;#0x893c
+
+00008b08 <.Loc.491.1>:
+                break;
+    8b08:	30 40 22 8b 	br	#0x8b22		;
+
+00008b0c <.L91>:
+            case MODE_TRAIN_MOVING:
+                LOG("mode: moving\r\n");
+                train(model.moving);
+    8b0c:	3c 40 d4 40 	mov	#16596,	r12	;#0x40d4
+    8b10:	b0 12 3c 89 	call	#35132		;#0x893c
+
+00008b14 <.Loc.495.1>:
+                break;
+    8b14:	30 40 22 8b 	br	#0x8b22		;
+
+00008b18 <.L92>:
+            case MODE_RECOGNIZE:
+                LOG("mode: recognize\r\n");
+                recognize(&model);
+    8b18:	3c 40 94 40 	mov	#16532,	r12	;#0x4094
+    8b1c:	b0 12 9e 89 	call	#35230		;#0x899e
+
+00008b20 <.Loc.499.1>:
+                break;
+    8b20:	03 43       	nop			
+
+00008b22 <.L94>:
+    init();
+
+    //count = 1;
+    LED_CTRL = 0xFF;
+    while (1)
+    {
+    8b22:	30 40 e0 8a 	br	#0x8ae0		;
+
+00008b26 <udivmodhi4>:
+    8b26:	7f 40 11 00 	mov.b	#17,	r15	;#0x0011
+
+00008b2a <.Loc.35.1>:
+    8b2a:	5b 43       	mov.b	#1,	r11	;r3 As==01
+
+00008b2c <.L2>:
+    8b2c:	0d 9c       	cmp	r12,	r13	;
+    8b2e:	08 28       	jnc	$+18     	;abs 0x8b40
+
+00008b30 <.L15>:
+    8b30:	4f 43       	clr.b	r15		;
+
+00008b32 <.L4>:
+    8b32:	0b 93       	cmp	#0,	r11	;r3 As==00
+    8b34:	0e 20       	jnz	$+30     	;abs 0x8b52
+
+00008b36 <.L5>:
+    8b36:	0e 93       	cmp	#0,	r14	;r3 As==00
+    8b38:	01 24       	jz	$+4      	;abs 0x8b3c
+    8b3a:	0f 4c       	mov	r12,	r15	;
+
+00008b3c <.L1>:
+    8b3c:	0c 4f       	mov	r15,	r12	;
+    8b3e:	30 41       	ret			
+
+00008b40 <.L3>:
+    8b40:	3f 53       	add	#-1,	r15	;r3 As==11
+
+00008b42 <.Loc.38.1>:
+    8b42:	0f 93       	cmp	#0,	r15	;r3 As==00
+    8b44:	f8 27       	jz	$-14     	;abs 0x8b36
+
+00008b46 <.Loc.38.1>:
+    8b46:	0d 93       	cmp	#0,	r13	;r3 As==00
+    8b48:	f3 3b       	jl	$-24     	;abs 0x8b30
+
+00008b4a <.Loc.40.1>:
+    8b4a:	0d 5d       	rla	r13		;
+
+00008b4c <.Loc.41.1>:
+    8b4c:	0b 5b       	rla	r11		;
+    8b4e:	30 40 2c 8b 	br	#0x8b2c		;
+
+00008b52 <.L9>:
+    8b52:	0c 9d       	cmp	r13,	r12	;
+    8b54:	02 28       	jnc	$+6      	;abs 0x8b5a
+
+00008b56 <.Loc.47.1>:
+    8b56:	0c 8d       	sub	r13,	r12	;
+
+00008b58 <.Loc.48.1>:
+    8b58:	0f db       	bis	r11,	r15	;
+
+00008b5a <.L8>:
+    8b5a:	12 c3       	clrc			
+    8b5c:	0b 10       	rrc	r11		;
+
+00008b5e <.Loc.51.1>:
+    8b5e:	12 c3       	clrc			
+    8b60:	0d 10       	rrc	r13		;
+    8b62:	30 40 32 8b 	br	#0x8b32		;
+
+00008b66 <__mspabi_divi>:
+    8b66:	0a 12       	push	r10		;
+
+00008b68 <.LCFI0>:
+    8b68:	0f 4c       	mov	r12,	r15	;
+    8b6a:	0e 4d       	mov	r13,	r14	;
+
+00008b6c <.LVL14>:
+    8b6c:	3b 40 26 8b 	mov	#35622,	r11	;#0x8b26
+
+00008b70 <.Loc.64.1>:
+    8b70:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8b72:	1a 34       	jge	$+54     	;abs 0x8ba8
+
+00008b74 <.Loc.66.1>:
+    8b74:	4c 43       	clr.b	r12		;
+
+00008b76 <.LVL15>:
+    8b76:	0c 8f       	sub	r15,	r12	;
+    8b78:	0f 4c       	mov	r12,	r15	;
+
+00008b7a <.LVL16>:
+    8b7a:	0d 93       	cmp	#0,	r13	;r3 As==00
+    8b7c:	0d 34       	jge	$+28     	;abs 0x8b98
+
+00008b7e <.Loc.67.1>:
+    8b7e:	5a 43       	mov.b	#1,	r10	;r3 As==01
+
+00008b80 <.L21>:
+    8b80:	0d 43       	clr	r13		;
+    8b82:	0d 8e       	sub	r14,	r13	;
+
+00008b84 <.LVL18>:
+    8b84:	4e 43       	clr.b	r14		;
+
+00008b86 <.LVL19>:
+    8b86:	0c 4f       	mov	r15,	r12	;
+
+00008b88 <.LVL20>:
+    8b88:	8b 12       	call	r11		;
+
+00008b8a <.LVL21>:
+    8b8a:	1a 93       	cmp	#1,	r10	;r3 As==01
+    8b8c:	03 24       	jz	$+8      	;abs 0x8b94
+
+00008b8e <.L20>:
+    8b8e:	4d 43       	clr.b	r13		;
+    8b90:	0d 8c       	sub	r12,	r13	;
+    8b92:	0c 4d       	mov	r13,	r12	;
+
+00008b94 <.L16>:
+    8b94:	3a 41       	pop	r10		;
+    8b96:	30 41       	ret			
+
+00008b98 <.L18>:
+    8b98:	4e 43       	clr.b	r14		;
+    8b9a:	8b 12       	call	r11		;
+
+00008b9c <.LVL25>:
+    8b9c:	30 40 8e 8b 	br	#0x8b8e		;
+
+00008ba0 <.L27>:
+    8ba0:	4e 43       	clr.b	r14		;
+    8ba2:	8b 12       	call	r11		;
+
+00008ba4 <.LVL27>:
+    8ba4:	30 40 94 8b 	br	#0x8b94		;
+
+00008ba8 <.L17>:
+    8ba8:	0d 93       	cmp	#0,	r13	;r3 As==00
+    8baa:	fa 37       	jge	$-10     	;abs 0x8ba0
+
+00008bac <.Loc.61.1>:
+    8bac:	4a 43       	clr.b	r10		;
+    8bae:	30 40 80 8b 	br	#0x8b80		;
+
+00008bb2 <__mspabi_remi>:
+    8bb2:	0a 12       	push	r10		;
+
+00008bb4 <.LCFI1>:
+    8bb4:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8bb6:	13 34       	jge	$+40     	;abs 0x8bde
+
+00008bb8 <.Loc.92.1>:
+    8bb8:	4e 43       	clr.b	r14		;
+    8bba:	0e 8c       	sub	r12,	r14	;
+    8bbc:	0c 4e       	mov	r14,	r12	;
+
+00008bbe <.LVL31>:
+    8bbe:	5a 43       	mov.b	#1,	r10	;r3 As==01
+
+00008bc0 <.L29>:
+    8bc0:	0d 93       	cmp	#0,	r13	;r3 As==00
+    8bc2:	03 34       	jge	$+8      	;abs 0x8bca
+    8bc4:	4e 43       	clr.b	r14		;
+    8bc6:	0e 8d       	sub	r13,	r14	;
+    8bc8:	0d 4e       	mov	r14,	r13	;
+
+00008bca <.L30>:
+    8bca:	5e 43       	mov.b	#1,	r14	;r3 As==01
+    8bcc:	b0 12 26 8b 	call	#35622		;#0x8b26
+
+00008bd0 <.LVL34>:
+    8bd0:	0a 93       	cmp	#0,	r10	;r3 As==00
+    8bd2:	03 24       	jz	$+8      	;abs 0x8bda
+
+00008bd4 <.LVL35>:
+    8bd4:	4d 43       	clr.b	r13		;
+    8bd6:	0d 8c       	sub	r12,	r13	;
+    8bd8:	0c 4d       	mov	r13,	r12	;
+
+00008bda <.L28>:
+    8bda:	3a 41       	pop	r10		;
+    8bdc:	30 41       	ret			
+
+00008bde <.L32>:
+    8bde:	4a 43       	clr.b	r10		;
+    8be0:	30 40 c0 8b 	br	#0x8bc0		;
+
+00008be4 <__mspabi_divu>:
+    8be4:	4e 43       	clr.b	r14		;
+    8be6:	b0 12 26 8b 	call	#35622		;#0x8b26
+
+00008bea <.LVL39>:
+    8bea:	30 41       	ret			
+
+00008bec <__mspabi_remu>:
+    8bec:	5e 43       	mov.b	#1,	r14	;r3 As==01
+    8bee:	b0 12 26 8b 	call	#35622		;#0x8b26
+
+00008bf2 <.LVL41>:
+    8bf2:	30 41       	ret			
+
+00008bf4 <__mspabi_func_epilog_7>:
+    8bf4:	34 41       	pop	r4		;
+
+00008bf6 <__mspabi_func_epilog_6>:
+    8bf6:	35 41       	pop	r5		;
+
+00008bf8 <__mspabi_func_epilog_5>:
+    8bf8:	36 41       	pop	r6		;
+
+00008bfa <__mspabi_func_epilog_4>:
+    8bfa:	37 41       	pop	r7		;
+
+00008bfc <__mspabi_func_epilog_3>:
+    8bfc:	38 41       	pop	r8		;
+
+00008bfe <__mspabi_func_epilog_2>:
+    8bfe:	39 41       	pop	r9		;
+
+00008c00 <__mspabi_func_epilog_1>:
+    8c00:	3a 41       	pop	r10		;
+    8c02:	30 41       	ret			
+
+00008c04 <__mspabi_srli_15>:
+    8c04:	12 c3       	clrc			
+    8c06:	0c 10       	rrc	r12		;
+
+00008c08 <__mspabi_srli_14>:
+    8c08:	12 c3       	clrc			
+    8c0a:	0c 10       	rrc	r12		;
+
+00008c0c <__mspabi_srli_13>:
+    8c0c:	12 c3       	clrc			
+    8c0e:	0c 10       	rrc	r12		;
+
+00008c10 <__mspabi_srli_12>:
+    8c10:	12 c3       	clrc			
+    8c12:	0c 10       	rrc	r12		;
+
+00008c14 <__mspabi_srli_11>:
+    8c14:	12 c3       	clrc			
+    8c16:	0c 10       	rrc	r12		;
+
+00008c18 <__mspabi_srli_10>:
+    8c18:	12 c3       	clrc			
+    8c1a:	0c 10       	rrc	r12		;
+
+00008c1c <__mspabi_srli_9>:
+    8c1c:	12 c3       	clrc			
+    8c1e:	0c 10       	rrc	r12		;
+
+00008c20 <__mspabi_srli_8>:
+    8c20:	12 c3       	clrc			
+    8c22:	0c 10       	rrc	r12		;
+
+00008c24 <__mspabi_srli_7>:
+    8c24:	12 c3       	clrc			
+    8c26:	0c 10       	rrc	r12		;
+
+00008c28 <__mspabi_srli_6>:
+    8c28:	12 c3       	clrc			
+    8c2a:	0c 10       	rrc	r12		;
+
+00008c2c <__mspabi_srli_5>:
+    8c2c:	12 c3       	clrc			
+    8c2e:	0c 10       	rrc	r12		;
+
+00008c30 <__mspabi_srli_4>:
+    8c30:	12 c3       	clrc			
+    8c32:	0c 10       	rrc	r12		;
+
+00008c34 <__mspabi_srli_3>:
+    8c34:	12 c3       	clrc			
+    8c36:	0c 10       	rrc	r12		;
+
+00008c38 <__mspabi_srli_2>:
+    8c38:	12 c3       	clrc			
+    8c3a:	0c 10       	rrc	r12		;
+
+00008c3c <__mspabi_srli_1>:
+    8c3c:	12 c3       	clrc			
+    8c3e:	0c 10       	rrc	r12		;
+    8c40:	30 41       	ret			
+
+00008c42 <.L11>:
+    8c42:	3d 53       	add	#-1,	r13	;r3 As==11
+    8c44:	12 c3       	clrc			
+    8c46:	0c 10       	rrc	r12		;
+
+00008c48 <__mspabi_srli>:
+    8c48:	0d 93       	cmp	#0,	r13	;r3 As==00
+    8c4a:	fb 23       	jnz	$-8      	;abs 0x8c42
+    8c4c:	30 41       	ret			
+
+00008c4e <__mspabi_srll_15>:
+    8c4e:	12 c3       	clrc			
+    8c50:	0d 10       	rrc	r13		;
+    8c52:	0c 10       	rrc	r12		;
+
+00008c54 <__mspabi_srll_14>:
+    8c54:	12 c3       	clrc			
+    8c56:	0d 10       	rrc	r13		;
+    8c58:	0c 10       	rrc	r12		;
+
+00008c5a <__mspabi_srll_13>:
+    8c5a:	12 c3       	clrc			
+    8c5c:	0d 10       	rrc	r13		;
+    8c5e:	0c 10       	rrc	r12		;
+
+00008c60 <__mspabi_srll_12>:
+    8c60:	12 c3       	clrc			
+    8c62:	0d 10       	rrc	r13		;
+    8c64:	0c 10       	rrc	r12		;
+
+00008c66 <__mspabi_srll_11>:
+    8c66:	12 c3       	clrc			
+    8c68:	0d 10       	rrc	r13		;
+    8c6a:	0c 10       	rrc	r12		;
+
+00008c6c <__mspabi_srll_10>:
+    8c6c:	12 c3       	clrc			
+    8c6e:	0d 10       	rrc	r13		;
+    8c70:	0c 10       	rrc	r12		;
+
+00008c72 <__mspabi_srll_9>:
+    8c72:	12 c3       	clrc			
+    8c74:	0d 10       	rrc	r13		;
+    8c76:	0c 10       	rrc	r12		;
+
+00008c78 <__mspabi_srll_8>:
+    8c78:	12 c3       	clrc			
+    8c7a:	0d 10       	rrc	r13		;
+    8c7c:	0c 10       	rrc	r12		;
+
+00008c7e <__mspabi_srll_7>:
+    8c7e:	12 c3       	clrc			
+    8c80:	0d 10       	rrc	r13		;
+    8c82:	0c 10       	rrc	r12		;
+
+00008c84 <__mspabi_srll_6>:
+    8c84:	12 c3       	clrc			
+    8c86:	0d 10       	rrc	r13		;
+    8c88:	0c 10       	rrc	r12		;
+
+00008c8a <__mspabi_srll_5>:
+    8c8a:	12 c3       	clrc			
+    8c8c:	0d 10       	rrc	r13		;
+    8c8e:	0c 10       	rrc	r12		;
+
+00008c90 <__mspabi_srll_4>:
+    8c90:	12 c3       	clrc			
+    8c92:	0d 10       	rrc	r13		;
+    8c94:	0c 10       	rrc	r12		;
+
+00008c96 <__mspabi_srll_3>:
+    8c96:	12 c3       	clrc			
+    8c98:	0d 10       	rrc	r13		;
+    8c9a:	0c 10       	rrc	r12		;
+
+00008c9c <__mspabi_srll_2>:
+    8c9c:	12 c3       	clrc			
+    8c9e:	0d 10       	rrc	r13		;
+    8ca0:	0c 10       	rrc	r12		;
+
+00008ca2 <__mspabi_srll_1>:
+    8ca2:	12 c3       	clrc			
+    8ca4:	0d 10       	rrc	r13		;
+    8ca6:	0c 10       	rrc	r12		;
+    8ca8:	30 41       	ret			
+
+00008caa <.L12>:
+    8caa:	3e 53       	add	#-1,	r14	;r3 As==11
+    8cac:	12 c3       	clrc			
+    8cae:	0d 10       	rrc	r13		;
+    8cb0:	0c 10       	rrc	r12		;
+
+00008cb2 <__mspabi_srll>:
+    8cb2:	0e 93       	cmp	#0,	r14	;r3 As==00
+    8cb4:	fa 23       	jnz	$-10     	;abs 0x8caa
+    8cb6:	30 41       	ret			
+
+00008cb8 <__mspabi_mpyi>:
+    8cb8:	02 12       	push	r2		;
+    8cba:	32 c2       	dint			
+    8cbc:	03 43       	nop			
+    8cbe:	82 4c 30 01 	mov	r12,	&0x0130	;
+    8cc2:	82 4d 38 01 	mov	r13,	&0x0138	;
+    8cc6:	1c 42 3a 01 	mov	&0x013a,r12	;0x013a
+    8cca:	00 13       	reti			
+
+00008ccc <__mspabi_mpysl>:
+    8ccc:	02 12       	push	r2		;
+    8cce:	32 c2       	dint			
+    8cd0:	03 43       	nop			
+    8cd2:	82 4c 32 01 	mov	r12,	&0x0132	;
+    8cd6:	82 4d 38 01 	mov	r13,	&0x0138	;
+    8cda:	1c 42 3a 01 	mov	&0x013a,r12	;0x013a
+    8cde:	1d 42 3c 01 	mov	&0x013c,r13	;0x013c
+    8ce2:	00 13       	reti			
+
+00008ce4 <__mspabi_mpyul>:
+    8ce4:	02 12       	push	r2		;
+    8ce6:	32 c2       	dint			
+    8ce8:	03 43       	nop			
+    8cea:	82 4c 30 01 	mov	r12,	&0x0130	;
+    8cee:	82 4d 38 01 	mov	r13,	&0x0138	;
+    8cf2:	1c 42 3a 01 	mov	&0x013a,r12	;0x013a
+    8cf6:	1d 42 3c 01 	mov	&0x013c,r13	;0x013c
+    8cfa:	00 13       	reti			
+
+00008cfc <__mspabi_mpyl>:
+    8cfc:	02 12       	push	r2		;
+    8cfe:	32 c2       	dint			
+    8d00:	03 43       	nop			
+    8d02:	82 4c 30 01 	mov	r12,	&0x0130	;
+    8d06:	82 4e 38 01 	mov	r14,	&0x0138	;
+    8d0a:	82 4c 34 01 	mov	r12,	&0x0134	;
+    8d0e:	1c 42 3a 01 	mov	&0x013a,r12	;0x013a
+    8d12:	92 42 3c 01 	mov	&0x013c,&0x013a	;0x013c
+    8d16:	3a 01 
+    8d18:	82 4f 38 01 	mov	r15,	&0x0138	;
+    8d1c:	82 4d 34 01 	mov	r13,	&0x0134	;
+    8d20:	82 4e 38 01 	mov	r14,	&0x0138	;
+    8d24:	1d 42 3a 01 	mov	&0x013a,r13	;0x013a
+    8d28:	00 13       	reti			
+
+00008d2a <__mspabi_mpysll_hw>:
+    8d2a:	10 40 0a 00 	br	0x000a		;PC rel. 0x8d36
+
+00008d2e <__mspabi_mpyull_hw>:
+    8d2e:	10 40 3c 00 	br	0x003c		;PC rel. 0x8d6c
+
+00008d32 <__mspabi_mpyll_hw>:
+    8d32:	10 40 ae 01 	br	0x01ae		;PC rel. 0x8ee2
+
+00008d36 <__mspabi_mpysll>:
+    8d36:	0a 12       	push	r10		;
+
+00008d38 <.LCFI0>:
+    8d38:	09 12       	push	r9		;
+
+00008d3a <.LCFI1>:
+    8d3a:	08 12       	push	r8		;
+
+00008d3c <.LCFI2>:
+    8d3c:	07 12       	push	r7		;
+
+00008d3e <.LCFI3>:
+    8d3e:	06 12       	push	r6		;
+
+00008d40 <.LCFI4>:
+    8d40:	05 12       	push	r5		;
+
+00008d42 <.LCFI5>:
+    8d42:	09 4d       	mov	r13,	r9	;
+    8d44:	05 4e       	mov	r14,	r5	;
+    8d46:	07 4f       	mov	r15,	r7	;
+
+00008d48 <.Loc.52.1>:
+    8d48:	08 4c       	mov	r12,	r8	;
+    8d4a:	0c 4d       	mov	r13,	r12	;
+
+00008d4c <.LVL1>:
+    8d4c:	b0 12 9e 90 	call	#37022		;#0x909e
+
+00008d50 <.LVL2>:
+    8d50:	0a 4c       	mov	r12,	r10	;
+    8d52:	06 45       	mov	r5,	r6	;
+    8d54:	0c 47       	mov	r7,	r12	;
+    8d56:	b0 12 9e 90 	call	#37022		;#0x909e
+    8d5a:	0e 4c       	mov	r12,	r14	;
+    8d5c:	0c 45       	mov	r5,	r12	;
+    8d5e:	0d 47       	mov	r7,	r13	;
+    8d60:	0f 4e       	mov	r14,	r15	;
+    8d62:	0b 4a       	mov	r10,	r11	;
+    8d64:	b0 12 e2 8e 	call	#36578		;#0x8ee2
+
+00008d68 <.Loc.53.1>:
+    8d68:	30 40 f6 8b 	br	#0x8bf6		;
+
+00008d6c <__mspabi_mpyull>:
+    8d6c:	0a 12       	push	r10		;
+
+00008d6e <.LCFI6>:
+    8d6e:	09 12       	push	r9		;
+
+00008d70 <.LCFI7>:
+    8d70:	08 12       	push	r8		;
+
+00008d72 <.LCFI8>:
+    8d72:	08 4c       	mov	r12,	r8	;
+    8d74:	0c 4e       	mov	r14,	r12	;
+
+00008d76 <.LVL6>:
+    8d76:	09 4d       	mov	r13,	r9	;
+    8d78:	0d 4f       	mov	r15,	r13	;
+    8d7a:	4e 43       	clr.b	r14		;
+
+00008d7c <.LVL7>:
+    8d7c:	0f 4e       	mov	r14,	r15	;
+    8d7e:	0a 4e       	mov	r14,	r10	;
+    8d80:	0b 4e       	mov	r14,	r11	;
+    8d82:	b0 12 e2 8e 	call	#36578		;#0x8ee2
+
+00008d86 <.Loc.59.1>:
+    8d86:	30 40 fc 8b 	br	#0x8bfc		;
+
+00008d8a <exit>:
+    8d8a:	0a 12       	push	r10		;
+
+00008d8c <.LCFI0>:
+    8d8c:	0a 4c       	mov	r12,	r10	;
+
+00008d8e <.Loc.66.1>:
+    8d8e:	4d 43       	clr.b	r13		;
+    8d90:	b0 12 a8 8d 	call	#36264		;#0x8da8
+
+00008d94 <.LVL1>:
+    8d94:	1c 42 00 80 	mov	&0x8000,r12	;0x8000
+    8d98:	1d 4c 14 00 	mov	20(r12),r13	;0x00014
+    8d9c:	0d 93       	cmp	#0,	r13	;r3 As==00
+    8d9e:	01 24       	jz	$+4      	;abs 0x8da2
+
+00008da0 <.Loc.69.1>:
+    8da0:	8d 12       	call	r13		;
+
+00008da2 <.L2>:
+    8da2:	0c 4a       	mov	r10,	r12	;
+    8da4:	b0 12 12 91 	call	#37138		;#0x9112
+
+00008da8 <__call_exitprocs>:
+    8da8:	0a 12       	push	r10		;
+
+00008daa <.LCFI0>:
+    8daa:	09 12       	push	r9		;
+
+00008dac <.LCFI1>:
+    8dac:	08 12       	push	r8		;
+
+00008dae <.LCFI2>:
+    8dae:	07 12       	push	r7		;
+
+00008db0 <.LCFI3>:
+    8db0:	06 12       	push	r6		;
+
+00008db2 <.LCFI4>:
+    8db2:	05 12       	push	r5		;
+
+00008db4 <.LCFI5>:
+    8db4:	04 12       	push	r4		;
+
+00008db6 <.LCFI6>:
+    8db6:	31 80 0c 00 	sub	#12,	r1	;#0x000c
+
+00008dba <.LCFI7>:
+    8dba:	81 4c 08 00 	mov	r12,	8(r1)	;
+    8dbe:	05 4d       	mov	r13,	r5	;
+
+00008dc0 <.Loc.84.1>:
+    8dc0:	1e 42 00 80 	mov	&0x8000,r14	;0x8000
+    8dc4:	3e 50 24 00 	add	#36,	r14	;#0x0024
+    8dc8:	81 4e 0a 00 	mov	r14,	10(r1)	; 0x000a
+
+00008dcc <.L31>:
+    8dcc:	1e 42 00 80 	mov	&0x8000,r14	;0x8000
+    8dd0:	1a 4e 24 00 	mov	36(r14),r10	;0x00024
+
+00008dd4 <.LVL2>:
+    8dd4:	17 41 0a 00 	mov	10(r1),	r7	;0x0000a
+
+00008dd8 <.LVL3>:
+    8dd8:	36 40 00 00 	mov	#0,	r6	;
+
+00008ddc <.L2>:
+    8ddc:	0a 93       	cmp	#0,	r10	;r3 As==00
+    8dde:	04 20       	jnz	$+10     	;abs 0x8de8
+
+00008de0 <.L1>:
+    8de0:	31 50 0c 00 	add	#12,	r1	;#0x000c
+    8de4:	30 40 f4 8b 	br	#0x8bf4		;
+
+00008de8 <.L19>:
+    8de8:	14 4a 44 00 	mov	68(r10),r4	;0x00044
+
+00008dec <.Loc.92.1>:
+    8dec:	19 4a 02 00 	mov	2(r10),	r9	;
+    8df0:	08 49       	mov	r9,	r8	;
+    8df2:	38 53       	add	#-1,	r8	;r3 As==11
+    8df4:	09 59       	rla	r9		;
+
+00008df6 <.L3>:
+    8df6:	08 93       	cmp	#0,	r8	;r3 As==00
+    8df8:	14 34       	jge	$+42     	;abs 0x8e22
+
+00008dfa <.Loc.136.1>:
+    8dfa:	06 93       	cmp	#0,	r6	;r3 As==00
+    8dfc:	f1 27       	jz	$-28     	;abs 0x8de0
+    8dfe:	2c 4a       	mov	@r10,	r12	;
+
+00008e00 <.Loc.141.1>:
+    8e00:	8a 93 02 00 	cmp	#0,	2(r10)	;r3 As==00
+    8e04:	6b 20       	jnz	$+216    	;abs 0x8edc
+
+00008e06 <.Loc.141.1>:
+    8e06:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8e08:	69 24       	jz	$+212    	;abs 0x8edc
+
+00008e0a <.Loc.144.1>:
+    8e0a:	87 4c 00 00 	mov	r12,	0(r7)	;
+
+00008e0e <.Loc.146.1>:
+    8e0e:	04 93       	cmp	#0,	r4	;r3 As==00
+    8e10:	02 24       	jz	$+6      	;abs 0x8e16
+
+00008e12 <.Loc.147.1>:
+    8e12:	0c 44       	mov	r4,	r12	;
+    8e14:	86 12       	call	r6		;
+
+00008e16 <.L17>:
+    8e16:	0c 4a       	mov	r10,	r12	;
+    8e18:	86 12       	call	r6		;
+
+00008e1a <.LVL8>:
+    8e1a:	2c 47       	mov	@r7,	r12	;
+
+00008e1c <.L18>:
+    8e1c:	0a 4c       	mov	r12,	r10	;
+    8e1e:	30 40 dc 8d 	br	#0x8ddc		;
+
+00008e22 <.L14>:
+    8e22:	05 93       	cmp	#0,	r5	;r3 As==00
+    8e24:	0c 24       	jz	$+26     	;abs 0x8e3e
+
+00008e26 <.Loc.99.1>:
+    8e26:	04 93       	cmp	#0,	r4	;r3 As==00
+    8e28:	05 20       	jnz	$+12     	;abs 0x8e34
+
+00008e2a <.L6>:
+    8e2a:	38 53       	add	#-1,	r8	;r3 As==11
+
+00008e2c <.LVL11>:
+    8e2c:	39 50 fe ff 	add	#65534,	r9	;#0xfffe
+    8e30:	30 40 f6 8d 	br	#0x8df6		;
+
+00008e34 <.L5>:
+    8e34:	0c 44       	mov	r4,	r12	;
+    8e36:	0c 59       	add	r9,	r12	;
+    8e38:	8c 95 3e 00 	cmp	r5,	62(r12)	; 0x003e
+    8e3c:	f6 23       	jnz	$-18     	;abs 0x8e2a
+
+00008e3e <.L4>:
+    8e3e:	0c 4a       	mov	r10,	r12	;
+    8e40:	0c 59       	add	r9,	r12	;
+
+00008e42 <.Loc.104.1>:
+    8e42:	1f 4c 02 00 	mov	2(r12),	r15	;
+
+00008e46 <.LVL13>:
+    8e46:	1d 4a 02 00 	mov	2(r10),	r13	;
+    8e4a:	3d 53       	add	#-1,	r13	;r3 As==11
+    8e4c:	0d 98       	cmp	r8,	r13	;
+    8e4e:	2c 20       	jnz	$+90     	;abs 0x8ea8
+
+00008e50 <.Loc.106.1>:
+    8e50:	8a 48 02 00 	mov	r8,	2(r10)	;
+
+00008e54 <.L8>:
+    8e54:	0f 93       	cmp	#0,	r15	;r3 As==00
+    8e56:	e9 27       	jz	$-44     	;abs 0x8e2a
+
+00008e58 <.Loc.114.1>:
+    8e58:	91 4a 02 00 	mov	2(r10),	6(r1)	;
+    8e5c:	06 00 
+
+00008e5e <.LVL14>:
+    8e5e:	04 93       	cmp	#0,	r4	;r3 As==00
+    8e60:	19 24       	jz	$+52     	;abs 0x8e94
+
+00008e62 <.Loc.96.1>:
+    8e62:	5c 43       	mov.b	#1,	r12	;r3 As==01
+    8e64:	0d 48       	mov	r8,	r13	;
+    8e66:	81 4f 00 00 	mov	r15,	0(r1)	;
+    8e6a:	b0 12 4e 90 	call	#36942		;#0x904e
+
+00008e6e <.LVL15>:
+    8e6e:	0d 4c       	mov	r12,	r13	;
+    8e70:	3d b0 00 80 	bit	#32768,	r13	;#0x8000
+    8e74:	0e 7e       	subc	r14,	r14	;
+    8e76:	3e e3       	inv	r14		;
+    8e78:	81 4d 02 00 	mov	r13,	2(r1)	;
+    8e7c:	81 4e 04 00 	mov	r14,	4(r1)	;
+    8e80:	1b 44 80 00 	mov	128(r4),r11	;0x00080
+    8e84:	0b fc       	and	r12,	r11	;
+    8e86:	1d 44 82 00 	mov	130(r4),r13	;0x00082
+    8e8a:	0d fe       	and	r14,	r13	;
+    8e8c:	0d db       	bis	r11,	r13	;
+    8e8e:	2f 41       	mov	@r1,	r15	;
+
+00008e90 <.LVL16>:
+    8e90:	0d 93       	cmp	#0,	r13	;r3 As==00
+    8e92:	0e 20       	jnz	$+30     	;abs 0x8eb0
+
+00008e94 <.L9>:
+    8e94:	8f 12       	call	r15		;
+
+00008e96 <.L11>:
+    8e96:	9a 91 06 00 	cmp	6(r1),	2(r10)	;
+    8e9a:	02 00 
+    8e9c:	97 23       	jnz	$-208    	;abs 0x8dcc
+
+00008e9e <.Loc.127.1>:
+    8e9e:	87 9a 00 00 	cmp	r10,	0(r7)	;
+    8ea2:	c3 27       	jz	$-120    	;abs 0x8e2a
+    8ea4:	30 40 cc 8d 	br	#0x8dcc		;
+
+00008ea8 <.L7>:
+    8ea8:	8c 43 02 00 	mov	#0,	2(r12)	;r3 As==00
+    8eac:	30 40 54 8e 	br	#0x8e54		;
+
+00008eb0 <.L10>:
+    8eb0:	0d 44       	mov	r4,	r13	;
+    8eb2:	0d 59       	add	r9,	r13	;
+    8eb4:	1d 4d fe ff 	mov	-2(r13),r13	;
+
+00008eb8 <.Loc.119.1>:
+    8eb8:	1c f4 84 00 	and	132(r4),r12	;0x00084
+    8ebc:	1b 44 86 00 	mov	134(r4),r11	;0x00086
+    8ec0:	1b f1 04 00 	and	4(r1),	r11	;
+    8ec4:	0c db       	bis	r11,	r12	;
+    8ec6:	0c 93       	cmp	#0,	r12	;r3 As==00
+    8ec8:	05 20       	jnz	$+12     	;abs 0x8ed4
+
+00008eca <.Loc.120.1>:
+    8eca:	1c 41 08 00 	mov	8(r1),	r12	;
+    8ece:	8f 12       	call	r15		;
+
+00008ed0 <.LVL20>:
+    8ed0:	30 40 96 8e 	br	#0x8e96		;
+
+00008ed4 <.L12>:
+    8ed4:	0c 4d       	mov	r13,	r12	;
+    8ed6:	8f 12       	call	r15		;
+
+00008ed8 <.LVL22>:
+    8ed8:	30 40 96 8e 	br	#0x8e96		;
+
+00008edc <.L16>:
+    8edc:	07 4a       	mov	r10,	r7	;
+
+00008ede <.LVL24>:
+    8ede:	30 40 1c 8e 	br	#0x8e1c		;
+
+00008ee2 <__mspabi_mpyll>:
+    8ee2:	0a 12       	push	r10		;
+
+00008ee4 <.LCFI0>:
+    8ee4:	09 12       	push	r9		;
+
+00008ee6 <.LCFI1>:
+    8ee6:	08 12       	push	r8		;
+
+00008ee8 <.LCFI2>:
+    8ee8:	07 12       	push	r7		;
+
+00008eea <.LCFI3>:
+    8eea:	06 12       	push	r6		;
+
+00008eec <.LCFI4>:
+    8eec:	05 12       	push	r5		;
+
+00008eee <.LCFI5>:
+    8eee:	04 12       	push	r4		;
+
+00008ef0 <.LCFI6>:
+    8ef0:	31 80 18 00 	sub	#24,	r1	;#0x0018
+
+00008ef4 <.LCFI7>:
+    8ef4:	81 49 08 00 	mov	r9,	8(r1)	;
+    8ef8:	81 4a 10 00 	mov	r10,	16(r1)	; 0x0010
+    8efc:	81 4b 12 00 	mov	r11,	18(r1)	; 0x0012
+    8f00:	07 4c       	mov	r12,	r7	;
+    8f02:	81 4d 0a 00 	mov	r13,	10(r1)	; 0x000a
+    8f06:	81 4e 14 00 	mov	r14,	20(r1)	; 0x0014
+    8f0a:	81 4f 16 00 	mov	r15,	22(r1)	; 0x0016
+
+00008f0e <.LBB2>:
+    8f0e:	09 48       	mov	r8,	r9	;
+    8f10:	81 48 0c 00 	mov	r8,	12(r1)	; 0x000c
+    8f14:	0c 48       	mov	r8,	r12	;
+
+00008f16 <.LVL2>:
+    8f16:	1d 41 08 00 	mov	8(r1),	r13	;
+    8f1a:	7e 40 10 00 	mov.b	#16,	r14	;#0x0010
+    8f1e:	b0 12 b2 8c 	call	#36018		;#0x8cb2
+    8f22:	81 4c 00 00 	mov	r12,	0(r1)	;
+    8f26:	81 4d 02 00 	mov	r13,	2(r1)	;
+
+00008f2a <.LVL4>:
+    8f2a:	81 47 0e 00 	mov	r7,	14(r1)	; 0x000e
+    8f2e:	0c 47       	mov	r7,	r12	;
+    8f30:	1d 41 0a 00 	mov	10(r1),	r13	;0x0000a
+    8f34:	7e 40 10 00 	mov.b	#16,	r14	;#0x0010
+    8f38:	b0 12 b2 8c 	call	#36018		;#0x8cb2
+    8f3c:	81 4c 04 00 	mov	r12,	4(r1)	;
+    8f40:	81 4d 06 00 	mov	r13,	6(r1)	;
+    8f44:	38 40 fc 8c 	mov	#36092,	r8	;#0x8cfc
+
+00008f48 <.LVL8>:
+    8f48:	0e 47       	mov	r7,	r14	;
+    8f4a:	4f 43       	clr.b	r15		;
+    8f4c:	0c 49       	mov	r9,	r12	;
+    8f4e:	0d 4f       	mov	r15,	r13	;
+    8f50:	88 12       	call	r8		;
+
+00008f52 <.LVL9>:
+    8f52:	04 4c       	mov	r12,	r4	;
+    8f54:	06 4c       	mov	r12,	r6	;
+    8f56:	05 4d       	mov	r13,	r5	;
+
+00008f58 <.LVL10>:
+    8f58:	0e 47       	mov	r7,	r14	;
+    8f5a:	4f 43       	clr.b	r15		;
+    8f5c:	2c 41       	mov	@r1,	r12	;
+    8f5e:	1d 41 02 00 	mov	2(r1),	r13	;
+    8f62:	88 12       	call	r8		;
+
+00008f64 <.LVL11>:
+    8f64:	07 4c       	mov	r12,	r7	;
+    8f66:	0a 4d       	mov	r13,	r10	;
+
+00008f68 <.LVL13>:
+    8f68:	1e 41 04 00 	mov	4(r1),	r14	;
+    8f6c:	1f 41 06 00 	mov	6(r1),	r15	;
+    8f70:	2c 41       	mov	@r1,	r12	;
+    8f72:	1d 41 02 00 	mov	2(r1),	r13	;
+    8f76:	88 12       	call	r8		;
+
+00008f78 <.LVL14>:
+    8f78:	81 4c 00 00 	mov	r12,	0(r1)	;
+
+00008f7c <.LVL15>:
+    8f7c:	81 4d 02 00 	mov	r13,	2(r1)	;
+
+00008f80 <.LVL16>:
+    8f80:	1e 41 04 00 	mov	4(r1),	r14	;
+    8f84:	1f 41 06 00 	mov	6(r1),	r15	;
+    8f88:	0c 49       	mov	r9,	r12	;
+    8f8a:	4d 43       	clr.b	r13		;
+    8f8c:	88 12       	call	r8		;
+
+00008f8e <.LVL17>:
+    8f8e:	09 4c       	mov	r12,	r9	;
+    8f90:	09 57       	add	r7,	r9	;
+    8f92:	08 4d       	mov	r13,	r8	;
+    8f94:	08 6a       	addc	r10,	r8	;
+    8f96:	0c 44       	mov	r4,	r12	;
+    8f98:	0d 45       	mov	r5,	r13	;
+    8f9a:	7e 40 10 00 	mov.b	#16,	r14	;#0x0010
+    8f9e:	b0 12 b2 8c 	call	#36018		;#0x8cb2
+    8fa2:	09 5c       	add	r12,	r9	;
+    8fa4:	0d 68       	addc	r8,	r13	;
+
+00008fa6 <.LVL21>:
+    8fa6:	0d 9a       	cmp	r10,	r13	;
+    8fa8:	04 28       	jnc	$+10     	;abs 0x8fb2
+    8faa:	0a 9d       	cmp	r13,	r10	;
+    8fac:	06 20       	jnz	$+14     	;abs 0x8fba
+    8fae:	09 97       	cmp	r7,	r9	;
+    8fb0:	04 2c       	jc	$+10     	;abs 0x8fba
+
+00008fb2 <.L4>:
+    8fb2:	81 53 00 00 	add	#0,	0(r1)	;r3 As==00
+    8fb6:	91 63 02 00 	addc	#1,	2(r1)	;r3 As==01
+
+00008fba <.L2>:
+    8fba:	0c 49       	mov	r9,	r12	;
+    8fbc:	7e 40 10 00 	mov.b	#16,	r14	;#0x0010
+    8fc0:	b0 12 b2 8c 	call	#36018		;#0x8cb2
+
+00008fc4 <.LVL23>:
+    8fc4:	28 41       	mov	@r1,	r8	;
+    8fc6:	08 5c       	add	r12,	r8	;
+    8fc8:	1d 61 02 00 	addc	2(r1),	r13	;
+    8fcc:	0a 4d       	mov	r13,	r10	;
+
+00008fce <.LVL24>:
+    8fce:	47 43       	clr.b	r7		;
+    8fd0:	0c 49       	mov	r9,	r12	;
+    8fd2:	0d 47       	mov	r7,	r13	;
+    8fd4:	7e 40 10 00 	mov.b	#16,	r14	;#0x0010
+    8fd8:	b0 12 98 90 	call	#37016		;#0x9098
+    8fdc:	0c 56       	add	r6,	r12	;
+    8fde:	0d 67       	addc	r7,	r13	;
+
+00008fe0 <.LBE3>:
+    8fe0:	04 4c       	mov	r12,	r4	;
+
+00008fe2 <.LVL26>:
+    8fe2:	05 4d       	mov	r13,	r5	;
+
+00008fe4 <.LVL27>:
+    8fe4:	06 48       	mov	r8,	r6	;
+    8fe6:	07 4a       	mov	r10,	r7	;
+
+00008fe8 <.LBE2>:
+    8fe8:	3a 40 fc 8c 	mov	#36092,	r10	;#0x8cfc
+    8fec:	1e 41 14 00 	mov	20(r1),	r14	;0x00014
+    8ff0:	1f 41 16 00 	mov	22(r1),	r15	;0x00016
+    8ff4:	1c 41 0c 00 	mov	12(r1),	r12	;0x0000c
+    8ff8:	1d 41 08 00 	mov	8(r1),	r13	;
+    8ffc:	8a 12       	call	r10		;
+
+00008ffe <.LVL28>:
+    8ffe:	09 47       	mov	r7,	r9	;
+    9000:	08 5c       	add	r12,	r8	;
+    9002:	09 6d       	addc	r13,	r9	;
+
+00009004 <.Loc.555.1>:
+    9004:	1e 41 10 00 	mov	16(r1),	r14	;0x00010
+    9008:	1f 41 12 00 	mov	18(r1),	r15	;0x00012
+    900c:	1c 41 0e 00 	mov	14(r1),	r12	;0x0000e
+    9010:	1d 41 0a 00 	mov	10(r1),	r13	;0x0000a
+    9014:	8a 12       	call	r10		;
+
+00009016 <.LVL29>:
+    9016:	0e 48       	mov	r8,	r14	;
+    9018:	0e 5c       	add	r12,	r14	;
+    901a:	0d 69       	addc	r9,	r13	;
+    901c:	0f 4d       	mov	r13,	r15	;
+
+0000901e <.Loc.558.1>:
+    901e:	0c 44       	mov	r4,	r12	;
+    9020:	0d 45       	mov	r5,	r13	;
+    9022:	31 50 18 00 	add	#24,	r1	;#0x0018
+
+00009026 <.LVL31>:
+    9026:	30 40 f4 8b 	br	#0x8bf4		;
+
+0000902a <__mspabi_slli_15>:
+    902a:	0c 5c       	rla	r12		;
+
+0000902c <__mspabi_slli_14>:
+    902c:	0c 5c       	rla	r12		;
+
+0000902e <__mspabi_slli_13>:
+    902e:	0c 5c       	rla	r12		;
+
+00009030 <__mspabi_slli_12>:
+    9030:	0c 5c       	rla	r12		;
+
+00009032 <__mspabi_slli_11>:
+    9032:	0c 5c       	rla	r12		;
+
+00009034 <__mspabi_slli_10>:
+    9034:	0c 5c       	rla	r12		;
+
+00009036 <__mspabi_slli_9>:
+    9036:	0c 5c       	rla	r12		;
+
+00009038 <__mspabi_slli_8>:
+    9038:	0c 5c       	rla	r12		;
+
+0000903a <__mspabi_slli_7>:
+    903a:	0c 5c       	rla	r12		;
+
+0000903c <__mspabi_slli_6>:
+    903c:	0c 5c       	rla	r12		;
+
+0000903e <__mspabi_slli_5>:
+    903e:	0c 5c       	rla	r12		;
+
+00009040 <__mspabi_slli_4>:
+    9040:	0c 5c       	rla	r12		;
+
+00009042 <__mspabi_slli_3>:
+    9042:	0c 5c       	rla	r12		;
+
+00009044 <__mspabi_slli_2>:
+    9044:	0c 5c       	rla	r12		;
+
+00009046 <__mspabi_slli_1>:
+    9046:	0c 5c       	rla	r12		;
+    9048:	30 41       	ret			
+
+0000904a <.L11>:
+    904a:	3d 53       	add	#-1,	r13	;r3 As==11
+    904c:	0c 5c       	rla	r12		;
+
+0000904e <__mspabi_slli>:
+    904e:	0d 93       	cmp	#0,	r13	;r3 As==00
+    9050:	fc 23       	jnz	$-6      	;abs 0x904a
+    9052:	30 41       	ret			
+
+00009054 <__mspabi_slll_15>:
+    9054:	0c 5c       	rla	r12		;
+    9056:	0d 6d       	rlc	r13		;
+
+00009058 <__mspabi_slll_14>:
+    9058:	0c 5c       	rla	r12		;
+    905a:	0d 6d       	rlc	r13		;
+
+0000905c <__mspabi_slll_13>:
+    905c:	0c 5c       	rla	r12		;
+    905e:	0d 6d       	rlc	r13		;
+
+00009060 <__mspabi_slll_12>:
+    9060:	0c 5c       	rla	r12		;
+    9062:	0d 6d       	rlc	r13		;
+
+00009064 <__mspabi_slll_11>:
+    9064:	0c 5c       	rla	r12		;
+    9066:	0d 6d       	rlc	r13		;
+
+00009068 <__mspabi_slll_10>:
+    9068:	0c 5c       	rla	r12		;
+    906a:	0d 6d       	rlc	r13		;
+
+0000906c <__mspabi_slll_9>:
+    906c:	0c 5c       	rla	r12		;
+    906e:	0d 6d       	rlc	r13		;
+
+00009070 <__mspabi_slll_8>:
+    9070:	0c 5c       	rla	r12		;
+    9072:	0d 6d       	rlc	r13		;
+
+00009074 <__mspabi_slll_7>:
+    9074:	0c 5c       	rla	r12		;
+    9076:	0d 6d       	rlc	r13		;
+
+00009078 <__mspabi_slll_6>:
+    9078:	0c 5c       	rla	r12		;
+    907a:	0d 6d       	rlc	r13		;
+
+0000907c <__mspabi_slll_5>:
+    907c:	0c 5c       	rla	r12		;
+    907e:	0d 6d       	rlc	r13		;
+
+00009080 <__mspabi_slll_4>:
+    9080:	0c 5c       	rla	r12		;
+    9082:	0d 6d       	rlc	r13		;
+
+00009084 <__mspabi_slll_3>:
+    9084:	0c 5c       	rla	r12		;
+    9086:	0d 6d       	rlc	r13		;
+
+00009088 <__mspabi_slll_2>:
+    9088:	0c 5c       	rla	r12		;
+    908a:	0d 6d       	rlc	r13		;
+
+0000908c <__mspabi_slll_1>:
+    908c:	0c 5c       	rla	r12		;
+    908e:	0d 6d       	rlc	r13		;
+    9090:	30 41       	ret			
+
+00009092 <.L12>:
+    9092:	3e 53       	add	#-1,	r14	;r3 As==11
+    9094:	0c 5c       	rla	r12		;
+    9096:	0d 6d       	rlc	r13		;
+
+00009098 <__mspabi_slll>:
+    9098:	0e 93       	cmp	#0,	r14	;r3 As==00
+    909a:	fb 23       	jnz	$-8      	;abs 0x9092
+    909c:	30 41       	ret			
+
+0000909e <__mspabi_srai_15>:
+    909e:	0c 11       	rra	r12		;
+
+000090a0 <__mspabi_srai_14>:
+    90a0:	0c 11       	rra	r12		;
+
+000090a2 <__mspabi_srai_13>:
+    90a2:	0c 11       	rra	r12		;
+
+000090a4 <__mspabi_srai_12>:
+    90a4:	0c 11       	rra	r12		;
+
+000090a6 <__mspabi_srai_11>:
+    90a6:	0c 11       	rra	r12		;
+
+000090a8 <__mspabi_srai_10>:
+    90a8:	0c 11       	rra	r12		;
+
+000090aa <__mspabi_srai_9>:
+    90aa:	0c 11       	rra	r12		;
+
+000090ac <__mspabi_srai_8>:
+    90ac:	0c 11       	rra	r12		;
+
+000090ae <__mspabi_srai_7>:
+    90ae:	0c 11       	rra	r12		;
+
+000090b0 <__mspabi_srai_6>:
+    90b0:	0c 11       	rra	r12		;
+
+000090b2 <__mspabi_srai_5>:
+    90b2:	0c 11       	rra	r12		;
+
+000090b4 <__mspabi_srai_4>:
+    90b4:	0c 11       	rra	r12		;
+
+000090b6 <__mspabi_srai_3>:
+    90b6:	0c 11       	rra	r12		;
+
+000090b8 <__mspabi_srai_2>:
+    90b8:	0c 11       	rra	r12		;
+
+000090ba <__mspabi_srai_1>:
+    90ba:	0c 11       	rra	r12		;
+    90bc:	30 41       	ret			
+
+000090be <.L11>:
+    90be:	3d 53       	add	#-1,	r13	;r3 As==11
+    90c0:	0c 11       	rra	r12		;
+
+000090c2 <__mspabi_srai>:
+    90c2:	0d 93       	cmp	#0,	r13	;r3 As==00
+    90c4:	fc 23       	jnz	$-6      	;abs 0x90be
+    90c6:	30 41       	ret			
+
+000090c8 <__mspabi_sral_15>:
+    90c8:	0d 11       	rra	r13		;
+    90ca:	0c 10       	rrc	r12		;
+
+000090cc <__mspabi_sral_14>:
+    90cc:	0d 11       	rra	r13		;
+    90ce:	0c 10       	rrc	r12		;
+
+000090d0 <__mspabi_sral_13>:
+    90d0:	0d 11       	rra	r13		;
+    90d2:	0c 10       	rrc	r12		;
+
+000090d4 <__mspabi_sral_12>:
+    90d4:	0d 11       	rra	r13		;
+    90d6:	0c 10       	rrc	r12		;
+
+000090d8 <__mspabi_sral_11>:
+    90d8:	0d 11       	rra	r13		;
+    90da:	0c 10       	rrc	r12		;
+
+000090dc <__mspabi_sral_10>:
+    90dc:	0d 11       	rra	r13		;
+    90de:	0c 10       	rrc	r12		;
+
+000090e0 <__mspabi_sral_9>:
+    90e0:	0d 11       	rra	r13		;
+    90e2:	0c 10       	rrc	r12		;
+
+000090e4 <__mspabi_sral_8>:
+    90e4:	0d 11       	rra	r13		;
+    90e6:	0c 10       	rrc	r12		;
+
+000090e8 <__mspabi_sral_7>:
+    90e8:	0d 11       	rra	r13		;
+    90ea:	0c 10       	rrc	r12		;
+
+000090ec <__mspabi_sral_6>:
+    90ec:	0d 11       	rra	r13		;
+    90ee:	0c 10       	rrc	r12		;
+
+000090f0 <__mspabi_sral_5>:
+    90f0:	0d 11       	rra	r13		;
+    90f2:	0c 10       	rrc	r12		;
+
+000090f4 <__mspabi_sral_4>:
+    90f4:	0d 11       	rra	r13		;
+    90f6:	0c 10       	rrc	r12		;
+
+000090f8 <__mspabi_sral_3>:
+    90f8:	0d 11       	rra	r13		;
+    90fa:	0c 10       	rrc	r12		;
+
+000090fc <__mspabi_sral_2>:
+    90fc:	0d 11       	rra	r13		;
+    90fe:	0c 10       	rrc	r12		;
+
+00009100 <__mspabi_sral_1>:
+    9100:	0d 11       	rra	r13		;
+    9102:	0c 10       	rrc	r12		;
+    9104:	30 41       	ret			
+
+00009106 <.L12>:
+    9106:	3e 53       	add	#-1,	r14	;r3 As==11
+    9108:	0d 11       	rra	r13		;
+    910a:	0c 10       	rrc	r12		;
+
+0000910c <__mspabi_sral>:
+    910c:	0e 93       	cmp	#0,	r14	;r3 As==00
+    910e:	fb 23       	jnz	$-8      	;abs 0x9106
+    9110:	30 41       	ret			
+
+00009112 <_exit>:
+    9112:	30 40 12 91 	br	#0x9112		;
+
+00009116 <_isatty>:
+    9116:	1c 43       	mov	#1,	r12	;r3 As==01
+
+00009118 <.Loc.59.1>:
+    9118:	30 41       	ret			
+
+0000911a <getpid>:
+    911a:	3c 40 2a 00 	mov	#42,	r12	;#0x002a
+
+0000911e <.Loc.65.1>:
+    911e:	30 41       	ret			
+
+00009120 <open>:
+    9120:	b0 12 74 91 	call	#37236		;#0x9174
+    9124:	bc 40 58 00 	mov	#88,	0(r12)	;#0x0058
+    9128:	00 00 
+    912a:	3c 43       	mov	#-1,	r12	;r3 As==11
+    912c:	30 41       	ret			
+
+0000912e <close>:
+    912e:	b0 12 74 91 	call	#37236		;#0x9174
+    9132:	bc 40 58 00 	mov	#88,	0(r12)	;#0x0058
+    9136:	00 00 
+    9138:	3c 43       	mov	#-1,	r12	;r3 As==11
+    913a:	30 41       	ret			
+
+0000913c <read>:
+    913c:	b0 12 74 91 	call	#37236		;#0x9174
+    9140:	bc 40 58 00 	mov	#88,	0(r12)	;#0x0058
+    9144:	00 00 
+    9146:	3c 43       	mov	#-1,	r12	;r3 As==11
+    9148:	30 41       	ret			
+
+0000914a <fstat>:
+    914a:	b0 12 74 91 	call	#37236		;#0x9174
+    914e:	bc 40 58 00 	mov	#88,	0(r12)	;#0x0058
+    9152:	00 00 
+    9154:	3c 43       	mov	#-1,	r12	;r3 As==11
+    9156:	30 41       	ret			
+
+00009158 <lseek>:
+    9158:	b0 12 74 91 	call	#37236		;#0x9174
+    915c:	bc 40 58 00 	mov	#88,	0(r12)	;#0x0058
+    9160:	00 00 
+    9162:	3c 43       	mov	#-1,	r12	;r3 As==11
+    9164:	30 41       	ret			
+
+00009166 <kill>:
+    9166:	b0 12 74 91 	call	#37236		;#0x9174
+    916a:	bc 40 58 00 	mov	#88,	0(r12)	;#0x0058
+    916e:	00 00 
+    9170:	3c 43       	mov	#-1,	r12	;r3 As==11
+    9172:	30 41       	ret			
+
+00009174 <__errno>:
+    9174:	1c 42 06 40 	mov	&0x4006,r12	;0x4006
+    9178:	30 41       	ret			
+
+0000917a <memmove>:
+    917a:	0d 9c       	cmp	r12,	r13	;
+    917c:	0a 28       	jnc	$+22     	;abs 0x9192
+
+0000917e <.L5>:
+    917e:	0f 4c       	mov	r12,	r15	;
+    9180:	0e 5c       	add	r12,	r14	;
+
+00009182 <.L3>:
+    9182:	0e 9f       	cmp	r15,	r14	;
+    9184:	0d 24       	jz	$+28     	;abs 0x91a0
+
+00009186 <.LVL3>:
+    9186:	ef 4d 00 00 	mov.b	@r13,	0(r15)	;
+    918a:	1f 53       	inc	r15		;
+
+0000918c <.LVL4>:
+    918c:	1d 53       	inc	r13		;
+    918e:	30 40 82 91 	br	#0x9182		;
+
+00009192 <.L2>:
+    9192:	0f 4d       	mov	r13,	r15	;
+    9194:	0f 5e       	add	r14,	r15	;
+    9196:	0c 9f       	cmp	r15,	r12	;
+    9198:	f2 2f       	jc	$-26     	;abs 0x917e
+
+0000919a <.L4>:
+    919a:	3e 53       	add	#-1,	r14	;r3 As==11
+
+0000919c <.LVL7>:
+    919c:	3e 93       	cmp	#-1,	r14	;r3 As==11
+    919e:	01 20       	jnz	$+4      	;abs 0x91a2
+
+000091a0 <.L10>:
+    91a0:	30 41       	ret			
+
+000091a2 <.L6>:
+    91a2:	0b 4c       	mov	r12,	r11	;
+    91a4:	0b 5e       	add	r14,	r11	;
+    91a6:	0f 4d       	mov	r13,	r15	;
+    91a8:	0f 5e       	add	r14,	r15	;
+    91aa:	eb 4f 00 00 	mov.b	@r15,	0(r11)	;
+    91ae:	30 40 9a 91 	br	#0x919a		;
+
+000091b2 <memset>:
+    91b2:	0f 4c       	mov	r12,	r15	;
+    91b4:	0e 5c       	add	r12,	r14	;
+
+000091b6 <.L2>:
+    91b6:	0f 9e       	cmp	r14,	r15	;
+    91b8:	01 20       	jnz	$+4      	;abs 0x91bc
+
+000091ba <.Loc.104.1>:
+    91ba:	30 41       	ret			
+
+000091bc <.L3>:
+    91bc:	cf 4d 00 00 	mov.b	r13,	0(r15)	;
+    91c0:	1f 53       	inc	r15		;
+
+000091c2 <.LVL4>:
+    91c2:	30 40 b6 91 	br	#0x91b6		;
+
+000091c6 <L0>:
+    91c6:	30 41       	ret			
+
+000091c8 <__do_global_ctors_aux>:
+    91c8:	0a 12       	push	r10		;
+    91ca:	3a 40 0c 80 	mov	#32780,	r10	;#0x800c
+
+000091ce <.L2>:
+    91ce:	2c 4a       	mov	@r10,	r12	;
+    91d0:	3c 93       	cmp	#-1,	r12	;r3 As==11
+    91d2:	02 20       	jnz	$+6      	;abs 0x91d8
+    91d4:	3a 41       	pop	r10		;
+    91d6:	30 41       	ret			
+
+000091d8 <.L3>:
+    91d8:	8c 12       	call	r12		;
+    91da:	3a 50 fe ff 	add	#65534,	r10	;#0xfffe
+    91de:	30 40 ce 91 	br	#0x91ce		;
+
+000091e2 <call___do_global_ctors_aux>:
+    91e2:	b0 12 1a 81 	call	#33050		;#0x811a
+    91e6:	b0 12 c8 91 	call	#37320		;#0x91c8
+
+000091ea <L0>:
+    91ea:	b0 12 52 80 	call	#32850		;#0x8052
+
+000091ee <.Loc.19.1>:
+    91ee:	b0 12 44 80 	call	#32836		;#0x8044
+
+000091f2 <.Loc.20.1>:
+    91f2:	30 41       	ret			
+
+000091f4 <__msp430_fini>:
+    91f4:	b0 12 60 80 	call	#32864		;#0x8060
+
+000091f8 <L0>:
+    91f8:	b0 12 cc 80 	call	#32972		;#0x80cc
+
+000091fc <L0>:
+    91fc:	30 41       	ret			

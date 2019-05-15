@@ -1,0 +1,4 @@
+main.c:103:6:print_filter	0	static
+main.c:115:6:log_filter	0	static
+main.c:131:6:print_stats	10	static
+main.c:289:5:main	24	static
