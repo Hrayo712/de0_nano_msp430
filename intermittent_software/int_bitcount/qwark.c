@@ -24,17 +24,17 @@ void qwark_restore(void)
 	//-------------------------------------------------------------------------------------------------------------//
 
 	/* Disable Qwark */
-	__asm__ __volatile__ ("mov #0x0000, &0x0190");				// 4 cycles
+	__asm__ __volatile__ ("mov #0x0000, &0x02A0");				// 4 cycles
 
-	__asm__ __volatile__ ("cmp.b #0x02, &0x603E");				// 2 cycles
+	__asm__ __volatile__ ("cmp.b #0x02, &0x6074");				// 2 cycles
 	__asm__ __volatile__ ("jz __qwark_retry_1st_setup");		// 2 cycles
 
-	__asm__ __volatile__ ("cmp.b #0x03, &0x603F");				// 3 cycles
+	__asm__ __volatile__ ("cmp.b #0x03, &0x6075");				// 3 cycles
 	__asm__ __volatile__ ("jz __qwark_restore_2nd_setup");		// 2 cycles
-	__asm__ __volatile__ ("cmp.b #0x03, &0x603E");				// 3 cycles
+	__asm__ __volatile__ ("cmp.b #0x03, &0x6074");				// 3 cycles
 	__asm__ __volatile__ ("jnz __crt0_init_bss");				// 2 cycles
 
-	__asm__ __volatile__ ("cmp.b #0x02, &0x603F");				// 2 cycles
+	__asm__ __volatile__ ("cmp.b #0x02, &0x6075");				// 2 cycles
 	__asm__ __volatile__ ("jz  __qwark_retry_2nd_setup");		// 2 cycles
 
 	__asm__ __volatile__ ("__qwark_restore_1st_setup:");
@@ -111,14 +111,14 @@ void qwark_restore(void)
 	//    END OF THE RETRY-SECOND PHASE	: Atomic Flag Set														   //
 	//	  W.C 18 Cycles																							   //
 	//-------------------------------------------------------------------------------------------------------------//
-	__asm__ __volatile__ ("cmp.b #0x02, &0x603E");		// 4 cycles
+	__asm__ __volatile__ ("cmp.b #0x02, &0x6074");		// 4 cycles
 	__asm__ __volatile__ ("jz __set_flag_complete");	// 2 cycles
 
-	__asm__ __volatile__ ("mov #0x0301, &0x603E ");		// 5 cycles
+	__asm__ __volatile__ ("mov #0x0301, &0x6074 ");		// 5 cycles
 	__asm__ __volatile__ ("br #__system_restore:");		// 2 cycles
 
 	__asm__ __volatile__ ("__set_flag_complete:");
-	__asm__ __volatile__ ("mov #0x0103, &0x603E ");		// 5 cycles
+	__asm__ __volatile__ ("mov #0x0103, &0x6074 ");		// 5 cycles
 
 	//-------------------------------------------------------------------------------------------------------------//
 	//   SYSTEM RESTORE	 WATCHDOG AND UART SETUP 							   								   	   //
@@ -190,7 +190,7 @@ void qwark_restore(void)
 	//	 																										   //
 	//-------------------------------------------------------------------------------------------------------------//
 
-	__asm__ __volatile__ ("cmp.b #0x03,&0x603F");				// 5 cycles
+	__asm__ __volatile__ ("cmp.b #0x03,&0x6075");				// 5 cycles
 	__asm__ __volatile__ ("jeq __Second_buffer_restore_stack"); // 2 cycles
 
 	/* SYSTEM REGISTERS RESTORE												  				  		      */
@@ -216,7 +216,7 @@ void qwark_restore(void)
 	__asm__ __volatile__ ("mov &0x6014,r2"); 	    //SR/R2
 
 	/* Enable Idempotency Tracking before restarting operation 		 				  	  */
-	__asm__ __volatile__ ("mov #0x0001 , &0x0190");	/* QWARK_CTL Enable 4 cycles 		  */
+	__asm__ __volatile__ ("mov #0x0001 , &0x02A0");	/* QWARK_CTL Enable 4 cycles 		  */
 
 	/*Restore program Counter */
 	__asm__ __volatile__ ("mov &0x6010, pc"); 	    //PC/R0
@@ -239,7 +239,7 @@ void qwark_restore(void)
 	__asm__ __volatile__ ("mov &0x6044,r2"); 	    //SR/R2
 
 	/* Enable Idempotency Tracking before restarting operation 		 				  	  */
-	__asm__ __volatile__ ("mov #0x0001 , &0x0190");	/* QWARK_CTL Enable 4 cycles 		  */
+	__asm__ __volatile__ ("mov #0x0001 , &0x02A0");	/* QWARK_CTL Enable 4 cycles 		  */
 
 	/*Restore program Counter */
 	__asm__ __volatile__ ("mov &0x6040, pc"); 	    //PC/R0
@@ -263,11 +263,11 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 	//---------------------------------------------------------------------------------------------------------------------------------//
 		__asm__ __volatile__ ("mov r12, &0x6072"); 			//temporal r12: 4 cycles
 
-		__asm__ __volatile__ ("cmp.b #0x01,&0x603F"); 		//4 cycles
+		__asm__ __volatile__ ("cmp.b #0x01,&0x6075"); 		//4 cycles
 		__asm__ __volatile__ ("jz __second_buffer_init");	//2 cycles
 
 		__asm__ __volatile__ ("mov #0x6010, r12"); 			//Load the base pointer of the first checkpoint buffer: 2 cycles
-		__asm__ __volatile__ ("mov.b #0x01,&0x603E");		//4 cycles
+		__asm__ __volatile__ ("mov.b #0x01,&0x6074");		//4 cycles
 		__asm__ __volatile__ ("br #__first_phase_commit");	//2 cycles
 
 		__asm__ __volatile__ ("__second_buffer_init:");
@@ -336,7 +336,7 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 		//																											   //
 		//-------------------------------------------------------------------------------------------------------------//
 
-		__asm__ __volatile__ ("mov &0x0190, r14");	// 		  3 cycles
+		__asm__ __volatile__ ("mov &0x02A0, r14");	// 		  3 cycles
 		__asm__ __volatile__ ("RRA r14");			// 		  1 cycle
 		__asm__ __volatile__ ("mov.b r14, @r12");	// 		  4 cycles
 		__asm__ __volatile__ ("mov r14, r15 ");		// 		  1 cycle (save the index for later)
@@ -353,7 +353,7 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 		__asm__ __volatile__ ("tst r14 ");     	    // 		  1 cycle
 		__asm__ __volatile__ ("jz  _chkpt_stack");	// 		  2 cycles
 
-		__asm__ __volatile__ ("mov #0x0192, r13");	// 		  2 cycles
+		__asm__ __volatile__ ("mov #0x02A2, r13");	// 		  2 cycles
 
 		__asm__ __volatile__ ("_scratchpad_addr_cpy:");   // Each iteration takes 10 cycles - Worst case 70 cycles
 
@@ -379,7 +379,7 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 		__asm__ __volatile__ ("mov &0X6042, r12"); 			 // Get the current SP - 3 cycles
 		__asm__ __volatile__ ("mov #0x6BFE, r13");			 // 2 cycles
 
-		__asm__ __volatile__ ("cmp.b #0x01,&0x603F");   	 // working with the second stack
+		__asm__ __volatile__ ("cmp.b #0x01,&0x6075");   	 // working with the second stack
 		__asm__ __volatile__ ("jz __pre_copy_stack");		 // 2 cycles
 
 		__asm__ __volatile__ ("mov &0X6012, r12"); 			 // Get the current SP - 3 cycles
@@ -407,14 +407,14 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 	//	  W.C 18 Cycles																							   //
 	//-------------------------------------------------------------------------------------------------------------//
 
-		__asm__ __volatile__ ("cmp.b #0x01,&0x603F");		 // 4 cycles
+		__asm__ __volatile__ ("cmp.b #0x01,&0x6075");		 // 4 cycles
 		__asm__ __volatile__ ("jz  __set_flag_2nd ");		 // 2 cycles
 
-		__asm__ __volatile__ ("add.b #0x01, &0x603E "); 	 //4 cycles
+		__asm__ __volatile__ ("add.b #0x01, &0x6074 "); 	 //4 cycles
 		__asm__ __volatile__ ("br  #_second_phase_commit "); //4 cycles
 
 		__asm__ __volatile__ ("__set_flag_2nd:");
-		__asm__ __volatile__ ("add.b #0x01, &0x603F "); 	 // 4 cycles		/* after setting this bit, THE RESTORE ROUTINE CAN FINALIZE THIS HALFWAY CHECKPOINT  */
+		__asm__ __volatile__ ("add.b #0x01, &0x6075 "); 	 // 4 cycles		/* after setting this bit, THE RESTORE ROUTINE CAN FINALIZE THIS HALFWAY CHECKPOINT  */
 
 	//-------------------------------------------------------------------------------------------------------------//
 	//    START OF THE SECOND PHASE OF THE COMMIT PROCESS : 148 CYCLES											   //
@@ -430,7 +430,7 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 		__asm__ __volatile__ ("mov #0x6000,  r14 ");		 // 2 cycles
 
 		__asm__ __volatile__ ("mov #0x6060,  r12 ");		 // 2 cycles
-		__asm__ __volatile__ ("cmp.b #0x02,&0x603F");		 // 4 cycles
+		__asm__ __volatile__ ("cmp.b #0x02,&0x6075");		 // 4 cycles
 		__asm__ __volatile__ ("jz _second_phase_commit_strt"); // 2 cycles
 
 		__asm__ __volatile__ ("mov #0x6030,  r12 ");		 // 2 cycles
@@ -475,29 +475,27 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 
 
 	    /* Set second phase complete Bit - Atomic Flag*/
-		__asm__ __volatile__ ("cmp.b #0x02,&0x603F");			//4 cycles
+		__asm__ __volatile__ ("cmp.b #0x02,&0x6075");			//4 cycles
 		__asm__ __volatile__ ("jeq  __pre_finish_2nd_buffer "); //2 cycles
 
-		__asm__ __volatile__ ("mov #0x0103, &0x603E "); //5 cycles	/* After setting this bit, THE RESTORE ROUTINE CAN RE-USE THE 1ST CHECKPOINT COMPLETELY  */
+		__asm__ __volatile__ ("mov #0x0103, &0x6074 "); //5 cycles	/* After setting this bit, THE RESTORE ROUTINE CAN RE-USE THE 1ST CHECKPOINT COMPLETELY  */
 
 	//-------------------------------------------------------------------------------------------------------------//
 	//    REGISTER RESTORE:	This is to continue operation and restore possibly modified registers 				   //
 	//																											   //
 	//-------------------------------------------------------------------------------------------------------------//
 
-
 		__asm__ __volatile__ ("mov &0x6024,r11"); 		//3 cycles
 		__asm__ __volatile__ ("mov &0x6026,r12"); 		//3 cycles
 		__asm__ __volatile__ ("mov &0x6028,r13"); 	    //3 cycles
 		__asm__ __volatile__ ("mov &0x602A,r14"); 	    //3 cycles
-		__asm__ __volatile__ ("mov &0x602C,r15"); 	    //3 cycles
 		__asm__ __volatile__ ("mov &0x602C,r15"); 	    //3 cycles
 
 		__asm__ __volatile__ ("br #_finish"); 	   		//3 cycles
 
 		__asm__ __volatile__ ("__pre_finish_2nd_buffer:");
 
-		__asm__ __volatile__ ("mov #0x0301, &0x603E "); //4 cycles /* After setting this bit, THE RESTORE ROUTINE CAN RE-USE THE 2ND CHECKPOINT COMPLETELY  */
+		__asm__ __volatile__ ("mov #0x0301, &0x6074 "); //4 cycles /* After setting this bit, THE RESTORE ROUTINE CAN RE-USE THE 2ND CHECKPOINT COMPLETELY  */
 
 	//-------------------------------------------------------------------------------------------------------------//
 	//    REGISTER RESTORE:	This is to continue operation and restore possibly modified registers 				   //
@@ -510,6 +508,6 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 
 		__asm__ __volatile__ ("_finish:");
 		/* Clear the counters, and re-enable Idempotency tracking*/
-		__asm__ __volatile__ ("mov #0x0001, &0x0190");	//4 cycles
+		__asm__ __volatile__ ("mov #0x0001, &0x02A0");	//4 cycles
 
 }

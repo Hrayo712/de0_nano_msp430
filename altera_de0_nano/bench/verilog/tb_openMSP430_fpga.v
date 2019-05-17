@@ -107,14 +107,8 @@ initial
   begin
      FPGA_CLK1_50 = 1'b0;
 
-     forever #500.0 FPGA_CLK1_50 <= ~FPGA_CLK1_50; // 50 MHz
+     forever #500.0 FPGA_CLK1_50 <= ~FPGA_CLK1_50; // 1 MHz
 
-  end
-
-initial
-  begin
-     FPGA_CLK2_50 = 1'b1;
-     forever #250.0 FPGA_CLK2_50 <= ~FPGA_CLK2_50; // 50 MHz
   end
 
 

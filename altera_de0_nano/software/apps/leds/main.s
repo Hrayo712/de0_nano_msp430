@@ -2,52 +2,42 @@
 .text
 .Ltext0:
 	.balign 2
-	.global	tty_putc
-	.type	tty_putc, @function
-tty_putc:
+	.global	INT_Qwark
+	.section	__interrupt_vector_5,"ax",@progbits
+	.word	INT_Qwark
+	.text
+	.type	INT_Qwark, @function
+INT_Qwark:
 .LFB1:
 	.file 1 "main.c"
-	.loc 1 39 0
+	.loc 1 41 0
 ; start of function
+; attributes: interrupt 
 ; framesize_regs:     0
-; framesize_locals:   2
+; framesize_locals:   0
 ; framesize_outgoing: 0
-; framesize:          2
+; framesize:          0
 ; elim ap -> fp       2
-; elim fp -> sp       2
+; elim fp -> sp       0
 ; saved regs:(none)
 	; start of prologue
-	SUB.W	#2, R1
-.LCFI0:
 	; end of prologue
-	MOV.W	R12, @R1
 	.loc 1 42 0
+ ; 42 "main.c" 1
+	nop
+ ; 0 "" 2
+	.loc 1 43 0
 	NOP
-.L2:
-	.loc 1 42 0 is_stmt 0
-	MOV.B	#129, R12
-	MOV.B	@R12, R12
-	AND.B	#8, R12
-	CMP.W	#0, R12 { JNE	.L2
-	.loc 1 45 0 is_stmt 1
-	MOV.B	#132, R12
-	MOV.W	@R1, R13
-	AND	#0xff, R13
-	MOV.B	R13, @R12
-	.loc 1 47 0
-	MOV.B	#0, R12
-	.loc 1 48 0
 	; start of epilogue
-	ADD.W	#2, R1
-	RET
+	RETI
 .LFE1:
-	.size	tty_putc, .-tty_putc
+	.size	INT_Qwark, .-INT_Qwark
 	.balign 2
-	.global	main
-	.type	main, @function
-main:
+	.global	init
+	.type	init, @function
+init:
 .LFB2:
-	.loc 1 51 0
+	.loc 1 46 0
 ; start of function
 ; framesize_regs:     0
 ; framesize_locals:   0
@@ -58,45 +48,48 @@ main:
 ; saved regs:(none)
 	; start of prologue
 	; end of prologue
-	.loc 1 52 0
+	.loc 1 47 0
 	MOV.W	#288, R12
 	MOV.W	#23168, @R12
-	.loc 1 54 0
- ; 54 "main.c" 1
+	.loc 1 48 0
+ ; 48 "main.c" 1
 	nop
  ; 0 "" 2
-	.loc 1 55 0
- ; 55 "main.c" 1
+	.loc 1 49 0
+ ; 49 "main.c" 1
 	eint { nop
  ; 0 "" 2
-	.loc 1 57 0
-	MOV.B	#130, R12
-	MOV.W	#8, @R12
-	.loc 1 58 0
-	MOV.B	#128, R12
-	MOV.B	#1, @R12
-	.loc 1 60 0
-	MOV.B	#144, R12
-	MOV.B	#-86, @R12
-	.loc 1 62 0
-	MOV.B	#113, R12
-	CALL	#tty_putc
-	.loc 1 63 0
-	MOV.B	#119, R12
-	CALL	#tty_putc
-	.loc 1 64 0
-	MOV.B	#97, R12
-	CALL	#tty_putc
-	.loc 1 65 0
-	MOV.B	#114, R12
-	CALL	#tty_putc
-	.loc 1 66 0
-	MOV.B	#107, R12
-	CALL	#tty_putc
-.L5:
-	.loc 1 69 0
-	BR	#.L5
+	.loc 1 56 0
+	NOP
+	; start of epilogue
+	RET
 .LFE2:
+	.size	init, .-init
+	.balign 2
+	.global	main
+	.type	main, @function
+main:
+.LFB3:
+	.loc 1 61 0
+; start of function
+; framesize_regs:     0
+; framesize_locals:   0
+; framesize_outgoing: 0
+; framesize:          0
+; elim ap -> fp       2
+; elim fp -> sp       0
+; saved regs:(none)
+	; start of prologue
+	; end of prologue
+	.loc 1 65 0
+	CALL	#init
+	.loc 1 68 0
+	MOV.B	#144, R12
+	MOV.B	#1, @R12
+.L4:
+	.loc 1 72 0
+	BR	#.L4
+.LFE3:
 	.size	main, .-main
 	.section	.debug_frame,"",@progbits
 .Lframe0:
@@ -121,10 +114,6 @@ main:
 	.4byte	.Lframe0
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
-	.byte	0x4
-	.4byte	.LCFI0-.LFB1
-	.byte	0xe
-	.uleb128 0x4
 	.balign 4
 .LEFDE0:
 .LSFDE2:
@@ -135,6 +124,14 @@ main:
 	.4byte	.LFE2-.LFB2
 	.balign 4
 .LEFDE2:
+.LSFDE4:
+	.4byte	.LEFDE4-.LASFDE4
+.LASFDE4:
+	.4byte	.Lframe0
+	.4byte	.LFB3
+	.4byte	.LFE3-.LFB3
+	.balign 4
+.LEFDE4:
 .text
 .Letext0:
 	.file 2 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/sys/lock.h"
@@ -143,15 +140,15 @@ main:
 	.file 5 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/sys/reent.h"
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.4byte	0x8cb
+	.4byte	0x8ca
 	.2byte	0x3
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF120
-	.byte	0xc
-	.4byte	.LASF121
 	.4byte	.LASF122
+	.byte	0xc
+	.4byte	.LASF123
+	.4byte	.LASF124
 	.4byte	.Ltext0
 	.4byte	.Letext0
 	.4byte	.Ldebug_line0
@@ -1205,34 +1202,33 @@ main:
 	.byte	0x1
 	.uleb128 0x19
 	.byte	0x1
-	.4byte	.LASF123
+	.4byte	.LASF120
 	.byte	0x1
-	.byte	0x32
+	.byte	0x3c
 	.4byte	0x68
-	.4byte	.LFB2
-	.4byte	.LFE2
+	.4byte	.LFB3
+	.4byte	.LFE3
 	.byte	0x1
 	.byte	0x9c
 	.uleb128 0x1a
 	.byte	0x1
-	.4byte	.LASF124
+	.4byte	.LASF125
 	.byte	0x1
-	.byte	0x27
+	.byte	0x2d
+	.4byte	.LFB2
+	.4byte	.LFE2
 	.byte	0x1
-	.4byte	0x68
+	.byte	0x9c
+	.uleb128 0x1b
+	.byte	0x1
+	.4byte	.LASF121
+	.byte	0x1
+	.byte	0x29
+	.byte	0x1
 	.4byte	.LFB1
 	.4byte	.LFE1
 	.byte	0x1
 	.byte	0x9c
-	.uleb128 0x1b
-	.4byte	.LASF125
-	.byte	0x1
-	.byte	0x27
-	.4byte	0x68
-	.byte	0x2
-	.byte	0x91
-	.sleb128 -4
-	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",@progbits
 .Ldebug_abbrev0:
@@ -1549,7 +1545,26 @@ main:
 	.byte	0
 	.uleb128 0x1a
 	.uleb128 0x2e
-	.byte	0x1
+	.byte	0
+	.uleb128 0x3f
+	.uleb128 0xc
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x1
+	.uleb128 0x40
+	.uleb128 0xa
+	.byte	0
+	.byte	0
+	.uleb128 0x1b
+	.uleb128 0x2e
+	.byte	0
 	.uleb128 0x3f
 	.uleb128 0xc
 	.uleb128 0x3
@@ -1560,28 +1575,11 @@ main:
 	.uleb128 0xb
 	.uleb128 0x27
 	.uleb128 0xc
-	.uleb128 0x49
-	.uleb128 0x13
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
 	.uleb128 0x1
 	.uleb128 0x40
-	.uleb128 0xa
-	.byte	0
-	.byte	0
-	.uleb128 0x1b
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
 	.uleb128 0xa
 	.byte	0
 	.byte	0
@@ -4714,7 +4712,7 @@ main:
 	.byte	0x4
 	.byte	0x1
 	.uleb128 0x9
-	.string	"QWARK_CTL (*(volatile unsigned int *) 0x0190)"
+	.string	"QWARK_CTL (*(volatile unsigned int *) 0x02A0)"
 	.byte	0x1
 	.uleb128 0xa
 	.string	"QWARK_VECTOR (5)"
@@ -4728,23 +4726,20 @@ main:
 	.uleb128 0xe
 	.string	"UART_BAUD (*(volatile unsigned int *) 0x0082)"
 	.byte	0x1
-	.uleb128 0x10
+	.uleb128 0xf
 	.string	"UART_EN 0x01"
 	.byte	0x1
-	.uleb128 0x11
+	.uleb128 0x10
 	.string	"UART_STAT (*(volatile unsigned char *) 0x0081)"
 	.byte	0x1
-	.uleb128 0x12
+	.uleb128 0x11
 	.string	"UART_CTL (*(volatile unsigned char *) 0x0080)"
 	.byte	0x1
-	.uleb128 0x13
+	.uleb128 0x12
 	.string	"UART_TXD (*(volatile unsigned char *) 0x0084)"
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x13
 	.string	"UART_TX_FULL 0x08"
-	.byte	0x1
-	.uleb128 0x20
-	.string	"BAUD 8"
 	.byte	0x4
 	.byte	0
 	.section	.debug_line,"",@progbits
@@ -4756,12 +4751,14 @@ main:
 	.string	"_size"
 .LASF93:
 	.string	"_rand48"
-.LASF122:
+.LASF124:
 	.string	"/home/hiram/master/Qwark/altera_de0_nano/software/apps/leds"
 .LASF58:
 	.string	"_emergency"
 .LASF51:
 	.string	"_data"
+.LASF125:
+	.string	"init"
 .LASF113:
 	.string	"_wcrtomb_state"
 .LASF114:
@@ -4770,13 +4767,15 @@ main:
 	.string	"long long unsigned int"
 .LASF50:
 	.string	"_lbfsize"
+.LASF121:
+	.string	"INT_Qwark"
 .LASF111:
 	.string	"_mbrtowc_state"
 .LASF106:
 	.string	"_wctomb_state"
 .LASF26:
 	.string	"__tm_sec"
-.LASF120:
+.LASF122:
 	.string	"GNU C99 7.3.1 -mcpu=msp430 -mhwmult=16bit -msmall -mcode-region=none -mdata-region=none -mdevices-csv-loc=/opt/ti/ccsv8/ccs_base/msp430/include_gcc/devices.csv -g3 -gdwarf-3 -gstrict-dwarf -O0 -std=c99 -fstrict-aliasing -fstack-usage"
 .LASF7:
 	.string	"long long int"
@@ -4864,7 +4863,7 @@ main:
 	.string	"_result"
 .LASF13:
 	.string	"__wch"
-.LASF121:
+.LASF123:
 	.string	"main.c"
 .LASF12:
 	.string	"wint_t"
@@ -4872,8 +4871,6 @@ main:
 	.string	"_lock"
 .LASF87:
 	.string	"_flags2"
-.LASF125:
-	.string	"txdata"
 .LASF78:
 	.string	"_write"
 .LASF31:
@@ -4900,8 +4897,6 @@ main:
 	.string	"unsigned char"
 .LASF92:
 	.string	"_iobs"
-.LASF124:
-	.string	"tty_putc"
 .LASF3:
 	.string	"short int"
 .LASF33:
@@ -4998,7 +4993,7 @@ main:
 	.string	"_mbtowc_state"
 .LASF101:
 	.string	"_p5s"
-.LASF123:
+.LASF120:
 	.string	"main"
 .LASF29:
 	.string	"__tm_mday"

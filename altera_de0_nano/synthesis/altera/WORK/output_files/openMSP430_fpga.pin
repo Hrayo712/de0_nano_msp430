@@ -82,7 +82,7 @@ LED[3]                       : A11       : output : 3.3-V LVTTL       :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : A12       :        :                   :         : 7         :                
 LED[1]                       : A13       : output : 3.3-V LVTTL       :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A14       :        :                   :         : 7         :                
-LED[0]                       : A15       : output : 3.3-V LVTTL       :         : 7         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A15       :        :                   :         : 7         :                
 VCCIO7                       : A16       : power  :                   : 3.3V    : 7         :                
 LED[6]                       : B1        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND                          : B2        : gnd    :                   :         :           :                
@@ -211,7 +211,7 @@ VCCINT                       : J12       : power  :                   : 1.2V    
 TL_ADDR[1]                   : J13       : output : 3.3-V LVTTL       :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : J14       :        :                   :         : 5         :                
 KEY[0]                       : J15       : input  : 3.3-V LVTTL       :         : 5         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : J16       :        :                   :         : 5         :                
+LED[0]                       : J16       : output : 3.3-V LVTTL       :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : K1        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K2        :        :                   :         : 2         :                
 VCCIO2                       : K3        : power  :                   : 3.3V    : 2         :                

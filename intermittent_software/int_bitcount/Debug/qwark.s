@@ -20,11 +20,11 @@ qwark_restore:
 ; saved regs:(none)
 	.loc 1 27 0
  ; 27 "../qwark.c" 1
-	mov #0x0000, &0x0190
+	mov #0x0000, &0x02A0
  ; 0 "" 2
 	.loc 1 29 0
  ; 29 "../qwark.c" 1
-	cmp.b #0x02, &0x603E
+	cmp.b #0x02, &0x6074
  ; 0 "" 2
 	.loc 1 30 0
  ; 30 "../qwark.c" 1
@@ -32,7 +32,7 @@ qwark_restore:
  ; 0 "" 2
 	.loc 1 32 0
  ; 32 "../qwark.c" 1
-	cmp.b #0x03, &0x603F
+	cmp.b #0x03, &0x6075
  ; 0 "" 2
 	.loc 1 33 0
  ; 33 "../qwark.c" 1
@@ -40,7 +40,7 @@ qwark_restore:
  ; 0 "" 2
 	.loc 1 34 0
  ; 34 "../qwark.c" 1
-	cmp.b #0x03, &0x603E
+	cmp.b #0x03, &0x6074
  ; 0 "" 2
 	.loc 1 35 0
  ; 35 "../qwark.c" 1
@@ -48,7 +48,7 @@ qwark_restore:
  ; 0 "" 2
 	.loc 1 37 0
  ; 37 "../qwark.c" 1
-	cmp.b #0x02, &0x603F
+	cmp.b #0x02, &0x6075
  ; 0 "" 2
 	.loc 1 38 0
  ; 38 "../qwark.c" 1
@@ -236,7 +236,7 @@ qwark_restore:
  ; 0 "" 2
 	.loc 1 114 0
  ; 114 "../qwark.c" 1
-	cmp.b #0x02, &0x603E
+	cmp.b #0x02, &0x6074
  ; 0 "" 2
 	.loc 1 115 0
  ; 115 "../qwark.c" 1
@@ -244,7 +244,7 @@ qwark_restore:
  ; 0 "" 2
 	.loc 1 117 0
  ; 117 "../qwark.c" 1
-	mov #0x0301, &0x603E 
+	mov #0x0301, &0x6074 
  ; 0 "" 2
 	.loc 1 118 0
  ; 118 "../qwark.c" 1
@@ -256,7 +256,7 @@ qwark_restore:
  ; 0 "" 2
 	.loc 1 121 0
  ; 121 "../qwark.c" 1
-	mov #0x0103, &0x603E 
+	mov #0x0103, &0x6074 
  ; 0 "" 2
 	.loc 1 127 0
  ; 127 "../qwark.c" 1
@@ -360,7 +360,7 @@ qwark_restore:
  ; 0 "" 2
 	.loc 1 193 0
  ; 193 "../qwark.c" 1
-	cmp.b #0x03,&0x603F
+	cmp.b #0x03,&0x6075
  ; 0 "" 2
 	.loc 1 194 0
  ; 194 "../qwark.c" 1
@@ -428,7 +428,7 @@ qwark_restore:
  ; 0 "" 2
 	.loc 1 219 0
  ; 219 "../qwark.c" 1
-	mov #0x0001 , &0x0190
+	mov #0x0001 , &0x02A0
  ; 0 "" 2
 	.loc 1 222 0
  ; 222 "../qwark.c" 1
@@ -496,7 +496,7 @@ qwark_restore:
  ; 0 "" 2
 	.loc 1 242 0
  ; 242 "../qwark.c" 1
-	mov #0x0001 , &0x0190
+	mov #0x0001 , &0x02A0
  ; 0 "" 2
 	.loc 1 245 0
  ; 245 "../qwark.c" 1
@@ -533,7 +533,7 @@ INT_Qwark:
  ; 0 "" 2
 	.loc 1 266 0
  ; 266 "../qwark.c" 1
-	cmp.b #0x01,&0x603F
+	cmp.b #0x01,&0x6075
  ; 0 "" 2
 	.loc 1 267 0
  ; 267 "../qwark.c" 1
@@ -545,7 +545,7 @@ INT_Qwark:
  ; 0 "" 2
 	.loc 1 270 0
  ; 270 "../qwark.c" 1
-	mov.b #0x01,&0x603E
+	mov.b #0x01,&0x6074
  ; 0 "" 2
 	.loc 1 271 0
  ; 271 "../qwark.c" 1
@@ -689,7 +689,7 @@ INT_Qwark:
  ; 0 "" 2
 	.loc 1 339 0
  ; 339 "../qwark.c" 1
-	mov &0x0190, r14
+	mov &0x02A0, r14
  ; 0 "" 2
 	.loc 1 340 0
  ; 340 "../qwark.c" 1
@@ -717,7 +717,7 @@ INT_Qwark:
  ; 0 "" 2
 	.loc 1 356 0
  ; 356 "../qwark.c" 1
-	mov #0x0192, r13
+	mov #0x02A2, r13
  ; 0 "" 2
 	.loc 1 358 0
  ; 358 "../qwark.c" 1
@@ -761,7 +761,7 @@ INT_Qwark:
  ; 0 "" 2
 	.loc 1 382 0
  ; 382 "../qwark.c" 1
-	cmp.b #0x01,&0x603F
+	cmp.b #0x01,&0x6075
  ; 0 "" 2
 	.loc 1 383 0
  ; 383 "../qwark.c" 1
@@ -817,7 +817,7 @@ INT_Qwark:
  ; 0 "" 2
 	.loc 1 410 0
  ; 410 "../qwark.c" 1
-	cmp.b #0x01,&0x603F
+	cmp.b #0x01,&0x6075
  ; 0 "" 2
 	.loc 1 411 0
  ; 411 "../qwark.c" 1
@@ -825,7 +825,7 @@ INT_Qwark:
  ; 0 "" 2
 	.loc 1 413 0
  ; 413 "../qwark.c" 1
-	add.b #0x01, &0x603E 
+	add.b #0x01, &0x6074 
  ; 0 "" 2
 	.loc 1 414 0
  ; 414 "../qwark.c" 1
@@ -837,7 +837,7 @@ INT_Qwark:
  ; 0 "" 2
 	.loc 1 417 0
  ; 417 "../qwark.c" 1
-	add.b #0x01, &0x603F 
+	add.b #0x01, &0x6075 
  ; 0 "" 2
 	.loc 1 425 0
  ; 425 "../qwark.c" 1
@@ -861,7 +861,7 @@ INT_Qwark:
  ; 0 "" 2
 	.loc 1 433 0
  ; 433 "../qwark.c" 1
-	cmp.b #0x02,&0x603F
+	cmp.b #0x02,&0x6075
  ; 0 "" 2
 	.loc 1 434 0
  ; 434 "../qwark.c" 1
@@ -961,7 +961,7 @@ INT_Qwark:
  ; 0 "" 2
 	.loc 1 478 0
  ; 478 "../qwark.c" 1
-	cmp.b #0x02,&0x603F
+	cmp.b #0x02,&0x6075
  ; 0 "" 2
 	.loc 1 479 0
  ; 479 "../qwark.c" 1
@@ -969,73 +969,69 @@ INT_Qwark:
  ; 0 "" 2
 	.loc 1 481 0
  ; 481 "../qwark.c" 1
-	mov #0x0103, &0x603E 
+	mov #0x0103, &0x6074 
+ ; 0 "" 2
+	.loc 1 488 0
+ ; 488 "../qwark.c" 1
+	mov &0x6024,r11
  ; 0 "" 2
 	.loc 1 489 0
  ; 489 "../qwark.c" 1
-	mov &0x6024,r11
+	mov &0x6026,r12
  ; 0 "" 2
 	.loc 1 490 0
  ; 490 "../qwark.c" 1
-	mov &0x6026,r12
+	mov &0x6028,r13
  ; 0 "" 2
 	.loc 1 491 0
  ; 491 "../qwark.c" 1
-	mov &0x6028,r13
+	mov &0x602A,r14
  ; 0 "" 2
 	.loc 1 492 0
  ; 492 "../qwark.c" 1
-	mov &0x602A,r14
- ; 0 "" 2
-	.loc 1 493 0
- ; 493 "../qwark.c" 1
 	mov &0x602C,r15
  ; 0 "" 2
 	.loc 1 494 0
  ; 494 "../qwark.c" 1
-	mov &0x602C,r15
+	br #_finish
  ; 0 "" 2
 	.loc 1 496 0
  ; 496 "../qwark.c" 1
-	br #_finish
+	__pre_finish_2nd_buffer:
  ; 0 "" 2
 	.loc 1 498 0
  ; 498 "../qwark.c" 1
-	__pre_finish_2nd_buffer:
+	mov #0x0301, &0x6074 
  ; 0 "" 2
-	.loc 1 500 0
- ; 500 "../qwark.c" 1
-	mov #0x0301, &0x603E 
+	.loc 1 503 0
+ ; 503 "../qwark.c" 1
+	mov &0x6054,r11
+ ; 0 "" 2
+	.loc 1 504 0
+ ; 504 "../qwark.c" 1
+	mov &0x6056,r12
  ; 0 "" 2
 	.loc 1 505 0
  ; 505 "../qwark.c" 1
-	mov &0x6054,r11
+	mov &0x6058,r13
  ; 0 "" 2
 	.loc 1 506 0
  ; 506 "../qwark.c" 1
-	mov &0x6056,r12
+	mov &0x605A,r14
  ; 0 "" 2
 	.loc 1 507 0
  ; 507 "../qwark.c" 1
-	mov &0x6058,r13
- ; 0 "" 2
-	.loc 1 508 0
- ; 508 "../qwark.c" 1
-	mov &0x605A,r14
+	mov &0x605C,r15
  ; 0 "" 2
 	.loc 1 509 0
  ; 509 "../qwark.c" 1
-	mov &0x605C,r15
+	_finish:
  ; 0 "" 2
 	.loc 1 511 0
  ; 511 "../qwark.c" 1
-	_finish:
+	mov #0x0001, &0x02A0
  ; 0 "" 2
 	.loc 1 513 0
- ; 513 "../qwark.c" 1
-	mov #0x0001, &0x0190
- ; 0 "" 2
-	.loc 1 515 0
 	NOP
 	; start of epilogue
 	RETI
@@ -2030,7 +2026,7 @@ INT_Qwark:
 	.byte	0x1
 	.uleb128 0x1
 	.string	"PFX_MSP430_ELF 1"
-	.file 2 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h"
+	.file 2 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h"
 	.byte	0x3
 	.uleb128 0x7
 	.uleb128 0x2
@@ -2491,7 +2487,7 @@ INT_Qwark:
 	.string	"QWARK_H_ "
 	.byte	0x1
 	.uleb128 0xb
-	.string	"QWARK_CTL (*(volatile unsigned int *) 0x0190)"
+	.string	"QWARK_CTL (*(volatile unsigned int *) 0x02A0)"
 	.byte	0x1
 	.uleb128 0xc
 	.string	"QWARK_VECTOR (5)"

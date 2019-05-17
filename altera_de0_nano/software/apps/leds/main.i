@@ -2910,59 +2910,51 @@ extern long double strtold (const char *restrict, char **restrict);
 # 7 "main.c" 2
 
 
-#define QWARK_CTL (*(volatile unsigned int *) 0x0190)
+#define QWARK_CTL (*(volatile unsigned int *) 0x02A0)
 #define QWARK_VECTOR (5)
 #define QWARK_EN 0x01
 #define QWARK_CHECKPOINT() QWARK_CTL |= 0x0020
 
 #define UART_BAUD (*(volatile unsigned int *) 0x0082)
-
 #define UART_EN 0x01
 #define UART_STAT (*(volatile unsigned char *) 0x0081)
 #define UART_CTL (*(volatile unsigned char *) 0x0080)
 #define UART_TXD (*(volatile unsigned char *) 0x0084)
 #define UART_TX_FULL 0x08
-# 32 "main.c"
-#define BAUD 8
+# 41 "main.c"
 
-
-
-
-
-
-
-# 39 "main.c"
-int tty_putc (int txdata) {
-
-
-  while ((*(volatile unsigned char *) 0x0081) & 0x08);
-
-
-  (*(volatile unsigned char *) 0x0084) = txdata;
-
-  return 0;
+# 41 "main.c"
+void __attribute__((interrupt ((5)))) INT_Qwark(void) {
+     __asm__ __volatile__ ("nop");
 }
+
+void init()
+{
+    (*(volatile unsigned int *) 0x0120) = (0x5A00) | (0x0080);
+   __asm__ __volatile__ ("nop");
+    __asm__ __volatile__ ("eint { nop");
+
+
+
+
+
+
+}
+
+
 
 int main()
 {
-        (*(volatile unsigned int *) 0x0120) = (0x5A00) | (0x0080);
-
- __asm__ __volatile__ ("nop");
-   __asm__ __volatile__ ("eint { nop");
-
- (*(volatile unsigned int *) 0x0082) = 8;
-    (*(volatile unsigned char *) 0x0080) = 0x01;
-
- (*(volatile unsigned char *) 0x0090) = 0xAA;
-
- tty_putc('q');
- tty_putc('w');
- tty_putc('a');
- tty_putc('r');
- tty_putc('k');
 
 
- while(1);
+
+    init();
 
 
+    (*(volatile unsigned char *) 0x0090) = 0x01;
+
+
+
+    while (1);
+    return 0;
 }

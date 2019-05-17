@@ -122,7 +122,7 @@ wire tlb_buff_busy;
 reg rd_buff_wr_en = 1'b0;
 reg wr_buff_wr_en = 1'b0;
 reg tlb_buff_wr_en = 1'b0;
-
+reg per_addr_wr_en = 1'b0;
 /* counter for the WAR counter*/
 reg [ADDR_WIDTH:0]war_ctr;
 
@@ -160,7 +160,8 @@ assign byte_read = mb_rd_msk[1] && ~mb_rd_msk[0] ? 1'b1: 1'b0;
 
 assign  per_dout	    		= war_ctr;
 assign  per_dout_war_addr  = read_address | ~( rd_msk[0] & rd_msk[1] ) << DATA_WIDTH-1;
-assign  per_wr        		= tlb_buff_wr_en;
+//assign  per_wr        		= tlb_buff_wr_en;
+assign  per_wr        		= per_addr_wr_en;
 assign  irq_out	    		= irq_flag;
 
 
@@ -207,7 +208,8 @@ end
 
 always @* begin
 
-		case (rd_buff_addr_match) 
+		//case (rd_buff_addr_match) 
+		case (tlb_buff_ctr[2:0]) 
 		3'b000 : addr_out_rd <= 16'h6000;
 		3'b001 : addr_out_rd <= 16'h6002;
 		3'b010 : addr_out_rd <= 16'h6004;
@@ -282,7 +284,9 @@ always @(posedge mclk) begin
 	wr_buff_wr_en <= eu_en &&  (eu_mb_wr[1] || eu_mb_wr[0]) && mem_track_en  && (tl_eu_addr!=rd_buff_busy_writing) && ~rd_buf_out_match && ~wr_buf_out_match && ~tlb_match;
 	
 	//Enable the TLB write upon WAR detection
-	tlb_buff_wr_en <= WAR && ~tlb_match;
+	tlb_buff_wr_en <= WAR && ~tlb_match &&  (tlb_buff_ctr + 1 != 8) ;
+	
+	per_addr_wr_en <= WAR && ~tlb_match;
 	
 	//store address of cycle
 	read_address <= tl_eu_addr;
@@ -345,9 +349,9 @@ end
 always @(posedge mclk) begin
 	if(puc_rst) begin
 			tlb_buff_ctr <=  4'b000;
-	end else if(tlb_buff_busy && r5) begin
+	end else if(r5 && ~buff_rst) begin
 			tlb_buff_ctr <= tlb_buff_ctr + 1'b1;
-	end else if(tlb_buff_ctr == 9 || buff_rst) begin
+	end else if(tlb_buff_ctr == 8 || buff_rst) begin
 		   tlb_buff_ctr <= 4'b000;
 	end
 end

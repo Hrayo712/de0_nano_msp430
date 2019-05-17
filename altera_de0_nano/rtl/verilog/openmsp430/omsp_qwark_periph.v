@@ -92,20 +92,21 @@ input 		  [1:0]mb_rd_msk;
 //=============================================================================
 
 // Register base address (must be aligned to decoder bit width)
-parameter       [14:0] BASE_ADDR   = 15'h0190;
+parameter       [14:0] BASE_ADDR   = 15'h0200;
 
 // Decoder bit width (defines how many bits are considered for address decoding)
-parameter              DEC_WD      =  4;
+parameter              DEC_WD      =  8;
 
 // Register addresses offset
-parameter [DEC_WD-1:0] CNTRL1      = 'h0,
-                       CNTRL2      = 'h2,
-                       CNTRL3      = 'h4,
-                       CNTRL4      = 'h6,
-							  CNTRL5      = 'h8,
-							  CNTRL6      = 'hA,
-							  CNTRL7      = 'hC,
-							  CNTRL8      = 'hE;
+parameter [DEC_WD-1:0] CNTRL1      = 'hA0,
+                       CNTRL2      = 'hA2,
+                       CNTRL3      = 'hA4,
+                       CNTRL4      = 'hA6,
+							  CNTRL5      = 'hA8,
+							  CNTRL6      = 'hAA,
+							  CNTRL7      = 'hAC,
+							  CNTRL8      = 'hAE,
+							  CNTRL9      = 'hB0;
 							  
 // Register one-hot decoder utilities
 parameter              DEC_SZ      =  (1 << DEC_WD);
@@ -119,7 +120,8 @@ parameter [DEC_SZ-1:0] CNTRL1_D    = (BASE_REG << CNTRL1),
                        CNTRL5_D    = (BASE_REG << CNTRL5),
                        CNTRL6_D    = (BASE_REG << CNTRL6),
                        CNTRL7_D    = (BASE_REG << CNTRL7),
-                       CNTRL8_D    = (BASE_REG << CNTRL8);
+                       CNTRL8_D    = (BASE_REG << CNTRL8),
+                       CNTRL9_D    = (BASE_REG << CNTRL9);
 
 //============================================================================
 // 2)  REGISTER DECODER
@@ -139,7 +141,8 @@ wire [DEC_SZ-1:0] reg_dec   =  (CNTRL1_D  &  {DEC_SZ{(reg_addr == CNTRL1 )}})  |
                                (CNTRL5_D  &  {DEC_SZ{(reg_addr == CNTRL5 )}})  |
                                (CNTRL6_D  &  {DEC_SZ{(reg_addr == CNTRL6 )}})  |
                                (CNTRL7_D  &  {DEC_SZ{(reg_addr == CNTRL7 )}})  |
-                               (CNTRL8_D  &  {DEC_SZ{(reg_addr == CNTRL8 )}});
+                               (CNTRL8_D  &  {DEC_SZ{(reg_addr == CNTRL8 )}})  |
+                               (CNTRL9_D  &  {DEC_SZ{(reg_addr == CNTRL9 )}});
 
 // Read/Write probes
 wire              reg_write =  |per_we & reg_sel;
@@ -159,13 +162,14 @@ wire [3:0]qwark_dout;
 wire irq_flag;
 wire [15:0]qwark_war_addr;
 
-wire [6:0]wr_addr_mux = (qwark_dout-1) == 3'b000 ? 7'b0000001 :
-								(qwark_dout-1) == 3'b001 ? 7'b0000010 :
-								(qwark_dout-1) == 3'b010 ? 7'b0000100 :
-								(qwark_dout-1) == 3'b011 ? 7'b0001000 :
-								(qwark_dout-1) == 3'b100 ? 7'b0010000 :
-								(qwark_dout-1) == 3'b101 ? 7'b0100000 :
-								 7'b1000000;
+wire [7:0]wr_addr_mux = (qwark_dout-1) == 3'b000 ? 8'b00000001 :
+								(qwark_dout-1) == 3'b001 ? 8'b00000010 :
+								(qwark_dout-1) == 3'b010 ? 8'b00000100 :
+								(qwark_dout-1) == 3'b011 ? 8'b00001000 :
+								(qwark_dout-1) == 3'b100 ? 8'b00010000 :
+								(qwark_dout-1) == 3'b101 ? 8'b00100000 :
+								(qwark_dout-1) == 3'b110 ? 8'b01000000 :
+								 8'b10000000;
 // CNTRL1 Register
 //-----------------
 reg  [15:0] cntrl1;
@@ -264,6 +268,16 @@ always @ (posedge mclk or posedge puc_rst)
   else if (cntrl8_wr) cntrl8 <=  per_din;
   else if (qwark_reg_wr && wr_addr_mux[6]) cntrl8 <=  qwark_war_addr;
 
+// CNTRL9 Register
+//-----------------
+reg  [15:0] cntrl9;
+
+wire        cntrl9_wr = reg_wr[CNTRL9];
+
+always @ (posedge mclk or posedge puc_rst)
+  if (puc_rst)        cntrl9 <=  16'h0000;
+  else if (cntrl9_wr) cntrl9 <=  per_din;
+  else if (qwark_reg_wr && wr_addr_mux[7]) cntrl9 <=  qwark_war_addr;
 //============================================================================
 // 4) DATA OUTPUT GENERATION
 //============================================================================
@@ -277,6 +291,7 @@ wire [15:0] cntrl5_rd  = cntrl5  & {16{reg_rd[CNTRL5]}};
 wire [15:0] cntrl6_rd  = cntrl6  & {16{reg_rd[CNTRL6]}};
 wire [15:0] cntrl7_rd  = cntrl7  & {16{reg_rd[CNTRL7]}};
 wire [15:0] cntrl8_rd  = cntrl8  & {16{reg_rd[CNTRL8]}};
+wire [15:0] cntrl9_rd  = cntrl9  & {16{reg_rd[CNTRL9]}};
 
 wire [15:0] per_dout   =  cntrl1_rd  |
                           cntrl2_rd  |
@@ -285,7 +300,8 @@ wire [15:0] per_dout   =  cntrl1_rd  |
 								  cntrl5_rd  |
 								  cntrl6_rd  |
 								  cntrl7_rd  |
-                          cntrl8_rd;
+                          cntrl8_rd  |
+								  cntrl9_rd;
 
 //============================================================================
 // 5) QWARK PERIPHERAL FUNCTIONALITY

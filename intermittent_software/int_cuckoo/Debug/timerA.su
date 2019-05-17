@@ -1,0 +1,3 @@
+timerA.c:10:6:ta_wait_no_lpm	2	static
+timerA.c:27:6:ta_wait	2	static
+timerA.c:43:63:INT_timerA1	4	static

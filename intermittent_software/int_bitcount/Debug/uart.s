@@ -1372,7 +1372,7 @@ UART_WriteString:
 	.byte	0x1
 	.uleb128 0x1
 	.string	"PFX_MSP430_ELF 1"
-	.file 2 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h"
+	.file 2 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h"
 	.byte	0x3
 	.uleb128 0x8
 	.uleb128 0x2

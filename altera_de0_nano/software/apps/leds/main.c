@@ -6,68 +6,71 @@
 #include <stdlib.h>
 
 
-#define QWARK_CTL     				  (*(volatile unsigned int  *) 0x0190)
+#define QWARK_CTL     				  (*(volatile unsigned int  *) 0x02A0)
 #define QWARK_VECTOR				  (5)
 #define QWARK_EN					  0x01
 #define QWARK_CHECKPOINT()			   QWARK_CTL |= 0x0020
 
 #define UART_BAUD         (*(volatile unsigned int  *) 0x0082)
-
 #define UART_EN            0x01
 #define UART_STAT         (*(volatile unsigned char *) 0x0081)  // UART Status register (8bit)
 #define UART_CTL          (*(volatile unsigned char *) 0x0080)  // UART Control register (8bit)
 #define UART_TXD          (*(volatile unsigned char *) 0x0084)  // UART Transmit data register (8bit)
 #define UART_TX_FULL       0x08
 
-//--------------------------------------------------
-// Diverse
-//--------------------------------------------------
+//#define LOG_PRINT
+//#define PRINTF_PRINT
 
-// BAUD = (mclk_freq/baudrate)-1
 
-//#define BAUD           2083            //   9600  @20.0MHz
-//#define BAUD           1042            //  19200  @20.0MHz
-//#define BAUD            521            //  38400  @20.0MHz
-//#define BAUD            347            //  57600  @20.0MHz
-#define BAUD                8            // 115200  @20.0MHz
-//#define BAUD             87            // 230400  @20.0MHz
+//#define UART_DBG
 
-//--------------------------------------------------//
-//                 tty_putc function                 //
-//            (Send a byte to the UART)             //
-//--------------------------------------------------//
-int tty_putc (int txdata) {
+//#include <msp430.h>
+//#include "driverlib.h"
+//#include "nvm.h"
+//#include "arch.h"
+//#include "checkpoint.h"
+//#include "stackpool.h"
+//#include "virtualaddr.h"
+//#include "virtualmem.h"
+//#include "checkpoint_timer.h"
 
-  // Wait until the TX buffer is not full
-  while (UART_STAT & UART_TX_FULL);
+//-------------------------------------------------------------------------------------------------------------------------------------------//
+//    QWARK CHECKPOINT PROCEDURE																											 //
+//-------------------------------------------------------------------------------------------------------------------------------------------//
 
-  // Write the output character
-  UART_TXD = txdata;
-
-  return 0;
+interrupt (QWARK_VECTOR) INT_Qwark(void) {
+		 	 __asm__ __volatile__ ("nop");
 }
+
+void init()
+{
+    WDTCTL = WDTPW | WDTHOLD; // Stop WDT
+ 	 __asm__ __volatile__ ("nop");
+    eint();
+    //UART_BAUD = BAUD;                   // Init UART
+    //UART_CTL  = UART_EN;
+    //Enable QWARK
+   // QWARK_CTL = QWARK_EN;
+   //ta_wait(100);
+
+}
+
+
 
 int main()
 {
-        WDTCTL = WDTPW | WDTHOLD; // Stop WDT
-	//Enable Idempotency Tracking
-	__asm__ __volatile__ ("nop");
-  	eint();
+    // "Globals" must be on the stack because Mementos doesn't handle real
+    // globals correctly
 
-	UART_BAUD = BAUD;                   // Init UART
-   	UART_CTL  = UART_EN;
+    init();
 
-	LED_CTRL = 0xAA;
-	
-	tty_putc('q');
-	tty_putc('w');
-	tty_putc('a');
-	tty_putc('r');
-	tty_putc('k');
-
-	
-	while(1);
+    //count = 1;
+    LED_CTRL = 0x01;
 
 
+
+    while (1);
+    return 0;
 }
+
 

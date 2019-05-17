@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
-[*] Thu May  9 07:50:28 2019
+[*] Thu May 16 10:52:40 2019
 [*]
 [dumpfile] "/home/hiram/master/Qwark/altera_de0_nano/sim/rtl_sim/run/tb_openMSP430_fpga.vcd"
-[dumpfile_mtime] "Thu May  9 07:48:48 2019"
-[dumpfile_size] 12016548
+[dumpfile_mtime] "Thu May 16 10:49:50 2019"
+[dumpfile_size] 4228638
 [savefile] "/home/hiram/master/Qwark/altera_de0_nano/sim/rtl_sim/run/setup_cfg.gtkw"
-[timestart] 391100000
+[timestart] 747410000
 [size] 1851 873
-[pos] -67 -67
-*-25.441099 461500000 1288500000 1800500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -89 -89
+*-22.441099 763490000 1288500000 1800500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_openMSP430_fpga.
 [treeopen] tb_openMSP430_fpga.dut.
 [treeopen] tb_openMSP430_fpga.dut.openmsp430_0.
@@ -18,7 +18,7 @@
 [sst_width] 416
 [signals_width] 326
 [sst_expanded] 1
-[sst_vpaned_height] 334
+[sst_vpaned_height] 522
 @28
 tb_openMSP430_fpga.dut.openmsp430_0.frontend_0.gie
 tb_openMSP430_fpga.dut.openmsp430_0.clock_module_0.dco_clk
@@ -33,9 +33,7 @@ tb_openMSP430_fpga.dut.timerA_0.tar[15:0]
 tb_openMSP430_fpga.LED[7:0]
 @28
 tb_openMSP430_fpga.dut.hw_uart_txd
-@29
 tb_openMSP430_fpga.dut.uart_0.data_tx_wr
-@28
 tb_openMSP430_fpga.dut.openmsp430_0.clock_module_0.lfxt_clk
 tb_openMSP430_fpga.FPGA_CLK1_50
 @22
@@ -80,6 +78,8 @@ tb_openMSP430_fpga.dut.qwark_periph_0.cntrl5[15:0]
 tb_openMSP430_fpga.dut.qwark_periph_0.cntrl6[15:0]
 tb_openMSP430_fpga.dut.qwark_periph_0.cntrl7[15:0]
 tb_openMSP430_fpga.dut.qwark_periph_0.cntrl8[15:0]
+@23
+tb_openMSP430_fpga.dut.qwark_periph_0.cntrl9[15:0]
 @28
 tb_openMSP430_fpga.dut.qwark_periph_0.irq_qwark_acc
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_irq

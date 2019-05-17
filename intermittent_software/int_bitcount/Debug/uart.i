@@ -287,8 +287,8 @@
 
 
 
-# 1 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h" 1
-# 36 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h"
+# 1 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h" 1
+# 36 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h"
 # 1 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h" 1
 # 39 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
 #define __IN430_H__ 
@@ -433,7 +433,7 @@ typedef unsigned int __istate_t;
 #define _SWAP_BYTES(x) _swap_bytes(x)
 
 #define __no_init __attribute__ ((section (".noinit")))
-# 37 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h" 2
+# 37 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h" 2
 
 
 
@@ -467,7 +467,7 @@ typedef unsigned int __istate_t;
 #define LPM3_EXIT _BIC_SR_IRQ(LPM3_bits)
 #define LPM4 _BIS_SR(LPM4_bits)
 #define LPM4_EXIT _BIC_SR_IRQ(LPM4_bits)
-# 79 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h"
+# 79 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h"
 #define IE1_set_wdtie() __asm__ __volatile__ ("bis.b #0x01, &0x0000")
 
 #define IFG1 (*(volatile unsigned char *) 0x0002)

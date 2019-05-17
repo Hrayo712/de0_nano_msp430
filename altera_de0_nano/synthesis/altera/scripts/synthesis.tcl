@@ -73,6 +73,9 @@ my_pin_assignment   SW[2]	     PIN_B9	"3.3-V LVTTL"
 my_pin_assignment   SW[3]	     PIN_M15	"3.3-V LVTTL"
 
 my_pin_assignment   LED[0]	     PIN_A15	"3.3-V LVTTL"
+
+my_pin_assignment   LED[0]	     PIN_J16	"3.3-V LVTTL"
+
 my_pin_assignment   LED[1]	     PIN_A13	"3.3-V LVTTL"
 my_pin_assignment   LED[2]	     PIN_B13	"3.3-V LVTTL"
 my_pin_assignment   LED[3]	     PIN_A11	"3.3-V LVTTL"

@@ -2643,8 +2643,8 @@ extern long double strtold (const char *restrict, char **restrict);
 # 311 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/stdlib.h" 3
 
 # 6 "../main.c" 2
-# 1 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h" 1
-# 36 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h"
+# 1 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h" 1
+# 36 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h"
 # 1 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h" 1
 # 39 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
 #define __IN430_H__ 
@@ -2791,7 +2791,7 @@ typedef unsigned int __istate_t;
 #define _SWAP_BYTES(x) _swap_bytes(x)
 
 #define __no_init __attribute__ ((section (".noinit")))
-# 37 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h" 2
+# 37 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h" 2
 
 
 
@@ -2825,7 +2825,7 @@ typedef unsigned int __istate_t;
 #define LPM3_EXIT _BIC_SR_IRQ(LPM3_bits)
 #define LPM4 _BIS_SR(LPM4_bits)
 #define LPM4_EXIT _BIC_SR_IRQ(LPM4_bits)
-# 79 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h"
+# 79 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h"
 #define IE1_set_wdtie() __asm__ __volatile__ ("bis.b #0x01, &0x0000")
 
 #define IFG1 (*(volatile unsigned char *) 0x0002)
@@ -2967,7 +2967,7 @@ void UART_WriteString(char* string);
 # 9 "../qwark.h"
 #define QWARK_H_ 
 
-#define QWARK_CTL (*(volatile unsigned int *) 0x0190)
+#define QWARK_CTL (*(volatile unsigned int *) 0x02A0)
 #define QWARK_VECTOR (5)
 #define QWARK_CHECKPOINT() QWARK_CTL |= 0x0020
 
@@ -2999,8 +2999,6 @@ char bits[256] =
       3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
       4, 5, 5, 6, 5, 6, 6, 7, 5, 6, 6, 7, 6, 7, 7, 8
 };
-
-
 
 
 int btbl_bitcnt(uint32_t x)
@@ -3093,20 +3091,11 @@ void init()
    (*(volatile unsigned int *) 0x0082) = 8;
      (*(volatile unsigned char *) 0x0080) = 0x01;
 
-     (*(volatile unsigned int *) 0x0190) = 0x01;
+     (*(volatile unsigned int *) 0x02A0) = 0x01;
 
 
 }
 
-int var1=1;
-int var2=1;
-int var3=1;
-int var4=1;
-int var5=1;
-int var6=1;
-int var7=1;
-int var8=1;
-int var9=1;
 
 
 int main()

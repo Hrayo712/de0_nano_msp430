@@ -286,8 +286,8 @@
 
 
 
-# 1 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h" 1
-# 36 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h"
+# 1 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h" 1
+# 36 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h"
 # 1 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h" 1
 # 39 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
 #define __IN430_H__ 
@@ -432,7 +432,7 @@ typedef unsigned int __istate_t;
 #define _SWAP_BYTES(x) _swap_bytes(x)
 
 #define __no_init __attribute__ ((section (".noinit")))
-# 37 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h" 2
+# 37 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h" 2
 
 
 
@@ -466,7 +466,7 @@ typedef unsigned int __istate_t;
 #define LPM3_EXIT _BIC_SR_IRQ(LPM3_bits)
 #define LPM4 _BIS_SR(LPM4_bits)
 #define LPM4_EXIT _BIC_SR_IRQ(LPM4_bits)
-# 79 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h"
+# 79 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h"
 #define IE1_set_wdtie() __asm__ __volatile__ ("bis.b #0x01, &0x0000")
 
 #define IFG1 (*(volatile unsigned char *) 0x0002)
@@ -559,7 +559,7 @@ typedef unsigned int __istate_t;
 # 9 "../qwark.h"
 #define QWARK_H_ 
 
-#define QWARK_CTL (*(volatile unsigned int *) 0x0190)
+#define QWARK_CTL (*(volatile unsigned int *) 0x02A0)
 #define QWARK_VECTOR (5)
 #define QWARK_CHECKPOINT() QWARK_CTL |= 0x0020
 
@@ -582,17 +582,17 @@ void qwark_restore(void)
 
 
 
- __asm__ __volatile__ ("mov #0x0000, &0x0190");
+ __asm__ __volatile__ ("mov #0x0000, &0x02A0");
 
- __asm__ __volatile__ ("cmp.b #0x02, &0x603E");
+ __asm__ __volatile__ ("cmp.b #0x02, &0x6074");
  __asm__ __volatile__ ("jz __qwark_retry_1st_setup");
 
- __asm__ __volatile__ ("cmp.b #0x03, &0x603F");
+ __asm__ __volatile__ ("cmp.b #0x03, &0x6075");
  __asm__ __volatile__ ("jz __qwark_restore_2nd_setup");
- __asm__ __volatile__ ("cmp.b #0x03, &0x603E");
+ __asm__ __volatile__ ("cmp.b #0x03, &0x6074");
  __asm__ __volatile__ ("jnz __crt0_init_bss");
 
- __asm__ __volatile__ ("cmp.b #0x02, &0x603F");
+ __asm__ __volatile__ ("cmp.b #0x02, &0x6075");
  __asm__ __volatile__ ("jz  __qwark_retry_2nd_setup");
 
  __asm__ __volatile__ ("__qwark_restore_1st_setup:");
@@ -669,14 +669,14 @@ void qwark_restore(void)
 
 
 
- __asm__ __volatile__ ("cmp.b #0x02, &0x603E");
+ __asm__ __volatile__ ("cmp.b #0x02, &0x6074");
  __asm__ __volatile__ ("jz __set_flag_complete");
 
- __asm__ __volatile__ ("mov #0x0301, &0x603E ");
+ __asm__ __volatile__ ("mov #0x0301, &0x6074 ");
  __asm__ __volatile__ ("br #__system_restore:");
 
  __asm__ __volatile__ ("__set_flag_complete:");
- __asm__ __volatile__ ("mov #0x0103, &0x603E ");
+ __asm__ __volatile__ ("mov #0x0103, &0x6074 ");
 
 
 
@@ -734,7 +734,7 @@ void qwark_restore(void)
 
 
 
- __asm__ __volatile__ ("cmp.b #0x03,&0x603F");
+ __asm__ __volatile__ ("cmp.b #0x03,&0x6075");
  __asm__ __volatile__ ("jeq __Second_buffer_restore_stack");
 
 
@@ -760,7 +760,7 @@ void qwark_restore(void)
  __asm__ __volatile__ ("mov &0x6014,r2");
 
 
- __asm__ __volatile__ ("mov #0x0001 , &0x0190");
+ __asm__ __volatile__ ("mov #0x0001 , &0x02A0");
 
 
  __asm__ __volatile__ ("mov &0x6010, pc");
@@ -783,7 +783,7 @@ void qwark_restore(void)
  __asm__ __volatile__ ("mov &0x6044,r2");
 
 
- __asm__ __volatile__ ("mov #0x0001 , &0x0190");
+ __asm__ __volatile__ ("mov #0x0001 , &0x02A0");
 
 
  __asm__ __volatile__ ("mov &0x6040, pc");
@@ -799,11 +799,11 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 # 264 "../qwark.c"
   __asm__ __volatile__ ("mov r12, &0x6072");
 
-  __asm__ __volatile__ ("cmp.b #0x01,&0x603F");
+  __asm__ __volatile__ ("cmp.b #0x01,&0x6075");
   __asm__ __volatile__ ("jz __second_buffer_init");
 
   __asm__ __volatile__ ("mov #0x6010, r12");
-  __asm__ __volatile__ ("mov.b #0x01,&0x603E");
+  __asm__ __volatile__ ("mov.b #0x01,&0x6074");
   __asm__ __volatile__ ("br #__first_phase_commit");
 
   __asm__ __volatile__ ("__second_buffer_init:");
@@ -864,7 +864,7 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 
 
-  __asm__ __volatile__ ("mov &0x0190, r14");
+  __asm__ __volatile__ ("mov &0x02A0, r14");
   __asm__ __volatile__ ("RRA r14");
   __asm__ __volatile__ ("mov.b r14, @r12");
   __asm__ __volatile__ ("mov r14, r15 ");
@@ -873,7 +873,7 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("tst r14 ");
   __asm__ __volatile__ ("jz  _chkpt_stack");
 
-  __asm__ __volatile__ ("mov #0x0192, r13");
+  __asm__ __volatile__ ("mov #0x02A2, r13");
 
   __asm__ __volatile__ ("_scratchpad_addr_cpy:");
 
@@ -891,7 +891,7 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("mov &0X6042, r12");
   __asm__ __volatile__ ("mov #0x6BFE, r13");
 
-  __asm__ __volatile__ ("cmp.b #0x01,&0x603F");
+  __asm__ __volatile__ ("cmp.b #0x01,&0x6075");
   __asm__ __volatile__ ("jz __pre_copy_stack");
 
   __asm__ __volatile__ ("mov &0X6012, r12");
@@ -919,14 +919,14 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 
 
-  __asm__ __volatile__ ("cmp.b #0x01,&0x603F");
+  __asm__ __volatile__ ("cmp.b #0x01,&0x6075");
   __asm__ __volatile__ ("jz  __set_flag_2nd ");
 
-  __asm__ __volatile__ ("add.b #0x01, &0x603E ");
+  __asm__ __volatile__ ("add.b #0x01, &0x6074 ");
   __asm__ __volatile__ ("br  #_second_phase_commit ");
 
   __asm__ __volatile__ ("__set_flag_2nd:");
-  __asm__ __volatile__ ("add.b #0x01, &0x603F ");
+  __asm__ __volatile__ ("add.b #0x01, &0x6075 ");
 
 
 
@@ -942,7 +942,7 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("mov #0x6000,  r14 ");
 
   __asm__ __volatile__ ("mov #0x6060,  r12 ");
-  __asm__ __volatile__ ("cmp.b #0x02,&0x603F");
+  __asm__ __volatile__ ("cmp.b #0x02,&0x6075");
   __asm__ __volatile__ ("jz _second_phase_commit_strt");
 
   __asm__ __volatile__ ("mov #0x6030,  r12 ");
@@ -987,11 +987,10 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 
 
-  __asm__ __volatile__ ("cmp.b #0x02,&0x603F");
+  __asm__ __volatile__ ("cmp.b #0x02,&0x6075");
   __asm__ __volatile__ ("jeq  __pre_finish_2nd_buffer ");
 
-  __asm__ __volatile__ ("mov #0x0103, &0x603E ");
-
+  __asm__ __volatile__ ("mov #0x0103, &0x6074 ");
 
 
 
@@ -1003,13 +1002,12 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("mov &0x6028,r13");
   __asm__ __volatile__ ("mov &0x602A,r14");
   __asm__ __volatile__ ("mov &0x602C,r15");
-  __asm__ __volatile__ ("mov &0x602C,r15");
 
   __asm__ __volatile__ ("br #_finish");
 
   __asm__ __volatile__ ("__pre_finish_2nd_buffer:");
 
-  __asm__ __volatile__ ("mov #0x0301, &0x603E ");
+  __asm__ __volatile__ ("mov #0x0301, &0x6074 ");
 
 
 
@@ -1022,6 +1020,6 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
   __asm__ __volatile__ ("_finish:");
 
-  __asm__ __volatile__ ("mov #0x0001, &0x0190");
+  __asm__ __volatile__ ("mov #0x0001, &0x02A0");
 
 }

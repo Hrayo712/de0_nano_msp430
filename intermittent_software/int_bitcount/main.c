@@ -34,8 +34,6 @@ char bits[256] =
 };
 
 
-
-
 int btbl_bitcnt(uint32_t x)
 {
       int cnt = bits[ ((char *)&x)[0] & 0xFF ];
@@ -131,15 +129,6 @@ void init()
 
 }
 
-int var1=1;
-int var2=1;
-int var3=1;
-int var4=1;
-int var5=1;
-int var6=1;
-int var7=1;
-int var8=1;
-int var9=1;
 
 
 int main()
