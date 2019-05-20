@@ -14,6 +14,7 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
+#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 2
 #define __SIZEOF_LONG__ 4
@@ -255,7 +256,6 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
-#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
 #define __CHAR_UNSIGNED__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
@@ -278,273 +278,8 @@
 #define __MSP430GENERIC__ 1
 #define __ELF__ 1
 # 1 "<command-line>"
+#define PFX_MSP430_ELF 1
 # 1 "main.c"
-# 1 "../../libs/omsp_system.h" 1
-# 36 "../../libs/omsp_system.h"
-# 1 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h" 1
-# 39 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __IN430_H__ 
-# 48 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-typedef unsigned int __istate_t;
-
-#define _no_operation() __asm__ __volatile__ ("nop")
-
-#define _get_interrupt_state() ({ unsigned int __x; __asm__ __volatile__( "mov SR, %0" : "=r" ((unsigned int) __x) :); __x; })
-# 78 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define _set_interrupt_state(x) ({ __asm__ __volatile__ ("mov %0, SR" : : "ri"((unsigned int) x) );})
-
-
-
-
-
-
-#define _enable_interrupts() __asm__ __volatile__ ("eint { nop")
-
-#define _bis_SR_register(x) __asm__ __volatile__ ("bis.w %0, SR" : : "ri"((unsigned int) x) )
-
-
-
-
-
-
-#define _disable_interrupts() __asm__ __volatile__ ("dint { nop")
-
-#define _bic_SR_register(x) __asm__ __volatile__ ("bic.w %0, SR { nop" : : "ri"((unsigned int) x) )
-
-
-
-
-#define _get_SR_register() ({ unsigned int __x; __asm__ __volatile__( "mov SR, %0" : "=r" ((unsigned int) __x) :); __x; })
-# 111 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define _swap_bytes(x) ({ unsigned int __dst = x; __asm__ __volatile__( "swpb %0" : "+r" ((unsigned int) __dst) :); __dst; })
-# 122 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define _bic_SR_register_on_exit(x) __bic_SR_register_on_exit(x)
-#define _bis_SR_register_on_exit(x) __bis_SR_register_on_exit(x)
-
-
-#define _bcd_add_short(x,y) ({ unsigned short __z = ((unsigned short) y); __asm__ __volatile__( "clrc \n\t" "dadd.w %1, %0" : "+r" ((unsigned short) __z) : "ri" ((unsigned short) x) ); __z; })
-# 138 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __bcd_add_short(x,y) _bcd_add_short(x,y)
-
-#define _bcd_add_long(x,y) ({ unsigned long __z = ((unsigned long) y); __asm__ __volatile__( "clrc \n\t" "dadd.w %L1, %L0 \n\t" "dadd.w %H1, %H0" : "+r" ((unsigned long) __z) : "ri" ((unsigned long) x) ); __z; })
-# 153 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __bcd_add_long(x,y) _bcd_add_long(x,y)
-
-#define _get_SP_register() ({ unsigned int __x; __asm__ __volatile__( "mov SP, %0" : "=r" ((unsigned int) __x) :); __x; })
-# 165 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __get_SP_register() _get_SP_register()
-
-#define _set_SP_register(x) ({ __asm__ __volatile__ ("mov %0, SP" : : "ri"((unsigned int) x) );})
-
-
-
-
-
-
-#define __set_SP_register(x) _set_SP_register(x)
-
-#define _data16_write_addr(addr,src) ({ unsigned long __src = src; __asm__ __volatile__ ( "movx.a %1, 0(%0)" : : "r"((unsigned int) addr), "m"((unsigned long) __src) ); })
-# 185 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data16_write_addr(addr,src) _data16_write_addr(addr,src)
-
-#define _data16_read_addr(addr) ({ unsigned long __dst; __asm__ __volatile__ ( "movx.a @%1, %0" : "=m"((unsigned long) __dst) : "r"((unsigned int) addr) ); __dst; })
-# 198 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data16_read_addr(addr) _data16_read_addr(addr)
-
-#define _data20_write_char(addr,src) ({ unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %1, %0 \n\t" "mov.b  %2, 0(%0)" : "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr), "ri"((char) src) ); })
-# 212 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data20_write_char(addr,src) _data20_write_char(addr,src)
-
-#define _data20_read_char(addr) ({ char __dst; unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %2, %1 \n\t" "mov.b 0(%1), %0" : "=r"((char) __dst), "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr) ); __dst ; })
-# 228 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data20_read_char(addr) _data20_read_char(addr)
-
-#define _data20_write_short(addr,src) ({ unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %1, %0 \n\t" "mov.w  %2, 0(%0)" : "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr), "ri"((short) src) ); })
-# 242 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data20_write_short(addr,src) _data20_write_short(addr,src)
-
-#define _data20_read_short(addr) ({ short __dst; unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %2, %1 \n\t" "mov.w 0(%1), %0" : "=r"((short) __dst), "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr) ); __dst ; })
-# 258 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data20_read_short(addr) _data20_read_short(addr)
-
-#define _data20_write_long(addr,src) ({ unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %1, %0 \n\t" "mov.w  %L2, 0(%0) \n\t" "mov.w  %H2, 2(%0)" : "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr), "ri"((long) src) ); })
-# 273 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data20_write_long(addr,src) _data20_write_long(addr,src)
-
-#define _data20_read_long(addr) ({ long __dst; unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %2, %1 \n\t" "mov.w  0(%1), %L0 \n\t" "mov.w  2(%1), %H0" : "=r"((long) __dst), "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr) ); __dst ; })
-# 290 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data20_read_long(addr) _data20_read_long(addr)
-
-#define _low_power_mode_0() _bis_SR_register(0x18)
-#define _low_power_mode_1() _bis_SR_register(0x58)
-#define _low_power_mode_2() _bis_SR_register(0x98)
-#define _low_power_mode_3() _bis_SR_register(0xD8)
-#define _low_power_mode_4() _bis_SR_register(0xF8)
-#define _low_power_mode_off_on_exit() _bic_SR_register_on_exit(0xF0)
-
-#define __low_power_mode_0() _low_power_mode_0()
-#define __low_power_mode_1() _low_power_mode_1()
-#define __low_power_mode_2() _low_power_mode_2()
-#define __low_power_mode_3() _low_power_mode_3()
-#define __low_power_mode_4() _low_power_mode_4()
-#define __low_power_mode_off_on_exit() _low_power_mode_off_on_exit()
-
-#define _even_in_range(x,y) (x)
-#define __even_in_range(x,y) _even_in_range(x,y)
-
-
-
-#define __no_operation() _no_operation()
-
-#define __get_interrupt_state() _get_interrupt_state()
-#define __set_interrupt_state(x) _set_interrupt_state(x)
-#define __enable_interrupt() _enable_interrupts()
-#define __disable_interrupt() _disable_interrupts()
-
-#define __bic_SR_register(x) _bic_SR_register(x)
-#define __bis_SR_register(x) _bis_SR_register(x)
-#define __get_SR_register() _get_SR_register()
-
-#define __swap_bytes(x) _swap_bytes(x)
-
-#define __nop() _no_operation()
-
-#define __eint() _enable_interrupts()
-#define __dint() _disable_interrupts()
-
-#define _NOP() _no_operation()
-#define _EINT() _enable_interrupts()
-#define _DINT() _disable_interrupts()
-
-#define _BIC_SR(x) _bic_SR_register(x)
-#define _BIC_SR_IRQ(x) _bic_SR_register_on_exit(x)
-#define _BIS_SR(x) _bis_SR_register(x)
-#define _BIS_SR_IRQ(x) _bis_SR_register_on_exit(x)
-#define _BIS_NMI_IE1(x) _bis_nmi_ie1(x)
-
-#define _SWAP_BYTES(x) _swap_bytes(x)
-
-#define __no_init __attribute__ ((section (".noinit")))
-# 37 "../../libs/omsp_system.h" 2
-
-
-
-
-
-
-#define C (0x0001)
-#define Z (0x0002)
-#define N (0x0004)
-#define V (0x0100)
-#define GIE (0x0008)
-#define CPUOFF (0x0010)
-#define OSCOFF (0x0020)
-#define SCG0 (0x0040)
-#define SCG1 (0x0080)
-
-
-#define LPM0_bits (CPUOFF)
-#define LPM1_bits (SCG0+CPUOFF)
-#define LPM2_bits (SCG1+CPUOFF)
-#define LPM3_bits (SCG1+SCG0+CPUOFF)
-#define LPM4_bits (SCG1+SCG0+OSCOFF+CPUOFF)
-
-#define LPM0 _BIS_SR(LPM0_bits)
-#define LPM0_EXIT _BIC_SR_IRQ(LPM0_bits)
-#define LPM1 _BIS_SR(LPM1_bits)
-#define LPM1_EXIT _BIC_SR_IRQ(LPM1_bits)
-#define LPM2 _BIS_SR(LPM2_bits)
-#define LPM2_EXIT _BIC_SR_IRQ(LPM2_bits)
-#define LPM3 _BIS_SR(LPM3_bits)
-#define LPM3_EXIT _BIC_SR_IRQ(LPM3_bits)
-#define LPM4 _BIS_SR(LPM4_bits)
-#define LPM4_EXIT _BIC_SR_IRQ(LPM4_bits)
-# 79 "../../libs/omsp_system.h"
-#define IE1_set_wdtie() __asm__ __volatile__ ("bis.b #0x01, &0x0000")
-
-#define IFG1 (*(volatile unsigned char *) 0x0002)
-
-#define CPU_ID_LO (*(volatile unsigned int *) 0x0004)
-#define CPU_ID_HI (*(volatile unsigned int *) 0x0006)
-#define CPU_NR (*(volatile unsigned int *) 0x0008)
-
-
-
-
-
-#define LED_CTRL (*(volatile unsigned char *) 0x0090)
-#define KEY_SW_VAL (*(volatile unsigned char *) 0x0091)
-#define KEY_SW_IRQ_EN (*(volatile unsigned char *) 0x0092)
-#define KEY_SW_IRQ_EDGE (*(volatile unsigned char *) 0x0093)
-#define KEY_SW_IRQ_VAL (*(volatile unsigned char *) 0x0094)
-
-
-
-
-
-#define DCOCTL (*(volatile unsigned char *) 0x0056)
-#define BCSCTL1 (*(volatile unsigned char *) 0x0057)
-#define BCSCTL2 (*(volatile unsigned char *) 0x0058)
-
-
-
-
-
-
-
-#define WDTCTL (*(volatile unsigned int *) 0x0120)
-
-
-#define WDTIS0 (0x0001)
-#define WDTIS1 (0x0002)
-#define WDTSSEL (0x0004)
-#define WDTCNTCL (0x0008)
-#define WDTTMSEL (0x0010)
-#define WDTNMI (0x0020)
-#define WDTNMIES (0x0040)
-#define WDTHOLD (0x0080)
-#define WDTPW (0x5A00)
-
-
-
-
-
-#define OP1_MPY (*(volatile unsigned int *) 0x0130)
-#define OP1_MPYS (*(volatile unsigned int *) 0x0132)
-#define OP1_MAC (*(volatile unsigned int *) 0x0134)
-#define OP1_MACS (*(volatile unsigned int *) 0x0136)
-#define OP2 (*(volatile unsigned int *) 0x0138)
-
-#define RESLO (*(volatile unsigned int *) 0x013A)
-#define RESHI (*(volatile unsigned int *) 0x013C)
-#define SUMEXT (*(volatile unsigned int *) 0x013E)
-
-
-
-
-
-#define interrupt(x) void __attribute__((interrupt (x)))
-#define wakeup __attribute__((wakeup))
-#define eint() __eint()
-#define dint() __dint()
-# 168 "../../libs/omsp_system.h"
-#define RESET_VECTOR (0x001E)
-#define NMI_VECTOR (0x001C)
-#define UNUSED_13_VECTOR (0x001A)
-#define UNUSED_12_VECTOR (0x0018)
-#define UNUSED_11_VECTOR (0x0016)
-#define WDT_VECTOR (0x0014)
-#define TIMERA0_VECTOR (0x0012)
-#define TIMERA1_VECTOR (0x0010)
-#define UNUSED_07_VECTOR (0x000E)
-#define UNUSED_06_VECTOR (0x000C)
-#define UNUSED_05_VECTOR (0x000A)
-#define UNUSED_04_VECTOR (0x0008)
-#define UNUSED_03_VECTOR (0x0006)
-#define PORT1_VECTOR (0x0004)
-#define UNUSED_01_VECTOR (0x0002)
-#define UNUSED_00_VECTOR (0x0000)
-# 2 "main.c" 2
 
 # 1 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/lib/gcc/msp430-elf/7.3.1/include/stdint.h" 1 3 4
 # 9 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/lib/gcc/msp430-elf/7.3.1/include/stdint.h" 3 4
@@ -1071,7 +806,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 4 "main.c" 2
+# 3 "main.c" 2
 # 1 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/lib/gcc/msp430-elf/7.3.1/include/stdbool.h" 1 3 4
 # 29 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/lib/gcc/msp430-elf/7.3.1/include/stdbool.h" 3 4
 #define _STDBOOL_H 
@@ -1083,7 +818,7 @@ typedef __uint_least64_t uint_least64_t;
 #define false 0
 # 52 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/lib/gcc/msp430-elf/7.3.1/include/stdbool.h" 3 4
 #define __bool_true_false_are_defined 1
-# 5 "main.c" 2
+# 4 "main.c" 2
 # 1 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/stdio.h" 1 3
 # 27 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/stdio.h" 3
 #define _STDIO_H_ 
@@ -2690,7 +2425,7 @@ static __inline__ int __sputc_r(struct _reent *_ptr, int _c, FILE *_p) {
 
 
 
-# 6 "main.c" 2
+# 5 "main.c" 2
 # 1 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/stdlib.h" 1 3
 
 
@@ -2907,35 +2642,555 @@ extern long double _strtold_r (struct _reent *, const char *restrict, char **res
 extern long double strtold (const char *restrict, char **restrict);
 # 311 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/stdlib.h" 3
 
-# 7 "main.c" 2
+# 6 "main.c" 2
+# 1 "../../libs/omsp_system.h" 1
+# 36 "../../libs/omsp_system.h"
+# 1 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h" 1
+# 39 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __IN430_H__ 
+# 48 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
 
+# 48 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+typedef unsigned int __istate_t;
+
+#define _no_operation() __asm__ __volatile__ ("nop")
+
+#define _get_interrupt_state() ({ unsigned int __x; __asm__ __volatile__( "mov SR, %0" : "=r" ((unsigned int) __x) :); __x; })
+# 78 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define _set_interrupt_state(x) ({ __asm__ __volatile__ ("mov %0, SR" : : "ri"((unsigned int) x) );})
+
+
+
+
+
+
+#define _enable_interrupts() __asm__ __volatile__ ("eint { nop")
+
+#define _bis_SR_register(x) __asm__ __volatile__ ("bis.w %0, SR" : : "ri"((unsigned int) x) )
+
+
+
+
+
+
+#define _disable_interrupts() __asm__ __volatile__ ("dint { nop")
+
+#define _bic_SR_register(x) __asm__ __volatile__ ("bic.w %0, SR { nop" : : "ri"((unsigned int) x) )
+
+
+
+
+#define _get_SR_register() ({ unsigned int __x; __asm__ __volatile__( "mov SR, %0" : "=r" ((unsigned int) __x) :); __x; })
+# 111 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define _swap_bytes(x) ({ unsigned int __dst = x; __asm__ __volatile__( "swpb %0" : "+r" ((unsigned int) __dst) :); __dst; })
+# 122 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define _bic_SR_register_on_exit(x) __bic_SR_register_on_exit(x)
+#define _bis_SR_register_on_exit(x) __bis_SR_register_on_exit(x)
+
+
+#define _bcd_add_short(x,y) ({ unsigned short __z = ((unsigned short) y); __asm__ __volatile__( "clrc \n\t" "dadd.w %1, %0" : "+r" ((unsigned short) __z) : "ri" ((unsigned short) x) ); __z; })
+# 138 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __bcd_add_short(x,y) _bcd_add_short(x,y)
+
+#define _bcd_add_long(x,y) ({ unsigned long __z = ((unsigned long) y); __asm__ __volatile__( "clrc \n\t" "dadd.w %L1, %L0 \n\t" "dadd.w %H1, %H0" : "+r" ((unsigned long) __z) : "ri" ((unsigned long) x) ); __z; })
+# 153 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __bcd_add_long(x,y) _bcd_add_long(x,y)
+
+#define _get_SP_register() ({ unsigned int __x; __asm__ __volatile__( "mov SP, %0" : "=r" ((unsigned int) __x) :); __x; })
+# 165 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __get_SP_register() _get_SP_register()
+
+#define _set_SP_register(x) ({ __asm__ __volatile__ ("mov %0, SP" : : "ri"((unsigned int) x) );})
+
+
+
+
+
+
+#define __set_SP_register(x) _set_SP_register(x)
+
+#define _data16_write_addr(addr,src) ({ unsigned long __src = src; __asm__ __volatile__ ( "movx.a %1, 0(%0)" : : "r"((unsigned int) addr), "m"((unsigned long) __src) ); })
+# 185 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data16_write_addr(addr,src) _data16_write_addr(addr,src)
+
+#define _data16_read_addr(addr) ({ unsigned long __dst; __asm__ __volatile__ ( "movx.a @%1, %0" : "=m"((unsigned long) __dst) : "r"((unsigned int) addr) ); __dst; })
+# 198 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data16_read_addr(addr) _data16_read_addr(addr)
+
+#define _data20_write_char(addr,src) ({ unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %1, %0 \n\t" "mov.b  %2, 0(%0)" : "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr), "ri"((char) src) ); })
+# 212 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data20_write_char(addr,src) _data20_write_char(addr,src)
+
+#define _data20_read_char(addr) ({ char __dst; unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %2, %1 \n\t" "mov.b 0(%1), %0" : "=r"((char) __dst), "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr) ); __dst ; })
+# 228 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data20_read_char(addr) _data20_read_char(addr)
+
+#define _data20_write_short(addr,src) ({ unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %1, %0 \n\t" "mov.w  %2, 0(%0)" : "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr), "ri"((short) src) ); })
+# 242 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data20_write_short(addr,src) _data20_write_short(addr,src)
+
+#define _data20_read_short(addr) ({ short __dst; unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %2, %1 \n\t" "mov.w 0(%1), %0" : "=r"((short) __dst), "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr) ); __dst ; })
+# 258 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data20_read_short(addr) _data20_read_short(addr)
+
+#define _data20_write_long(addr,src) ({ unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %1, %0 \n\t" "mov.w  %L2, 0(%0) \n\t" "mov.w  %H2, 2(%0)" : "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr), "ri"((long) src) ); })
+# 273 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data20_write_long(addr,src) _data20_write_long(addr,src)
+
+#define _data20_read_long(addr) ({ long __dst; unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %2, %1 \n\t" "mov.w  0(%1), %L0 \n\t" "mov.w  2(%1), %H0" : "=r"((long) __dst), "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr) ); __dst ; })
+# 290 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data20_read_long(addr) _data20_read_long(addr)
+
+#define _low_power_mode_0() _bis_SR_register(0x18)
+#define _low_power_mode_1() _bis_SR_register(0x58)
+#define _low_power_mode_2() _bis_SR_register(0x98)
+#define _low_power_mode_3() _bis_SR_register(0xD8)
+#define _low_power_mode_4() _bis_SR_register(0xF8)
+#define _low_power_mode_off_on_exit() _bic_SR_register_on_exit(0xF0)
+
+#define __low_power_mode_0() _low_power_mode_0()
+#define __low_power_mode_1() _low_power_mode_1()
+#define __low_power_mode_2() _low_power_mode_2()
+#define __low_power_mode_3() _low_power_mode_3()
+#define __low_power_mode_4() _low_power_mode_4()
+#define __low_power_mode_off_on_exit() _low_power_mode_off_on_exit()
+
+#define _even_in_range(x,y) (x)
+#define __even_in_range(x,y) _even_in_range(x,y)
+
+
+
+#define __no_operation() _no_operation()
+
+#define __get_interrupt_state() _get_interrupt_state()
+#define __set_interrupt_state(x) _set_interrupt_state(x)
+#define __enable_interrupt() _enable_interrupts()
+#define __disable_interrupt() _disable_interrupts()
+
+#define __bic_SR_register(x) _bic_SR_register(x)
+#define __bis_SR_register(x) _bis_SR_register(x)
+#define __get_SR_register() _get_SR_register()
+
+#define __swap_bytes(x) _swap_bytes(x)
+
+#define __nop() _no_operation()
+
+#define __eint() _enable_interrupts()
+#define __dint() _disable_interrupts()
+
+#define _NOP() _no_operation()
+#define _EINT() _enable_interrupts()
+#define _DINT() _disable_interrupts()
+
+#define _BIC_SR(x) _bic_SR_register(x)
+#define _BIC_SR_IRQ(x) _bic_SR_register_on_exit(x)
+#define _BIS_SR(x) _bis_SR_register(x)
+#define _BIS_SR_IRQ(x) _bis_SR_register_on_exit(x)
+#define _BIS_NMI_IE1(x) _bis_nmi_ie1(x)
+
+#define _SWAP_BYTES(x) _swap_bytes(x)
+
+#define __no_init __attribute__ ((section (".noinit")))
+# 37 "../../libs/omsp_system.h" 2
+
+
+
+
+
+
+#define C (0x0001)
+#define Z (0x0002)
+#define N (0x0004)
+#define V (0x0100)
+#define GIE (0x0008)
+#define CPUOFF (0x0010)
+#define OSCOFF (0x0020)
+#define SCG0 (0x0040)
+#define SCG1 (0x0080)
+
+
+#define LPM0_bits (CPUOFF)
+#define LPM1_bits (SCG0+CPUOFF)
+#define LPM2_bits (SCG1+CPUOFF)
+#define LPM3_bits (SCG1+SCG0+CPUOFF)
+#define LPM4_bits (SCG1+SCG0+OSCOFF+CPUOFF)
+
+#define LPM0 _BIS_SR(LPM0_bits)
+#define LPM0_EXIT _BIC_SR_IRQ(LPM0_bits)
+#define LPM1 _BIS_SR(LPM1_bits)
+#define LPM1_EXIT _BIC_SR_IRQ(LPM1_bits)
+#define LPM2 _BIS_SR(LPM2_bits)
+#define LPM2_EXIT _BIC_SR_IRQ(LPM2_bits)
+#define LPM3 _BIS_SR(LPM3_bits)
+#define LPM3_EXIT _BIC_SR_IRQ(LPM3_bits)
+#define LPM4 _BIS_SR(LPM4_bits)
+#define LPM4_EXIT _BIC_SR_IRQ(LPM4_bits)
+# 79 "../../libs/omsp_system.h"
+#define IE1_set_wdtie() __asm__ __volatile__ ("bis.b #0x01, &0x0000")
+
+#define IFG1 (*(volatile unsigned char *) 0x0002)
+
+#define CPU_ID_LO (*(volatile unsigned int *) 0x0004)
+#define CPU_ID_HI (*(volatile unsigned int *) 0x0006)
+#define CPU_NR (*(volatile unsigned int *) 0x0008)
+
+
+
+
+
+#define LED_CTRL (*(volatile unsigned char *) 0x0090)
+#define KEY_SW_VAL (*(volatile unsigned char *) 0x0091)
+#define KEY_SW_IRQ_EN (*(volatile unsigned char *) 0x0092)
+#define KEY_SW_IRQ_EDGE (*(volatile unsigned char *) 0x0093)
+#define KEY_SW_IRQ_VAL (*(volatile unsigned char *) 0x0094)
+
+
+
+
+
+#define DCOCTL (*(volatile unsigned char *) 0x0056)
+#define BCSCTL1 (*(volatile unsigned char *) 0x0057)
+#define BCSCTL2 (*(volatile unsigned char *) 0x0058)
+
+
+
+
+
+
+
+#define WDTCTL (*(volatile unsigned int *) 0x0120)
+
+
+#define WDTIS0 (0x0001)
+#define WDTIS1 (0x0002)
+#define WDTSSEL (0x0004)
+#define WDTCNTCL (0x0008)
+#define WDTTMSEL (0x0010)
+#define WDTNMI (0x0020)
+#define WDTNMIES (0x0040)
+#define WDTHOLD (0x0080)
+#define WDTPW (0x5A00)
+
+
+
+
+
+#define OP1_MPY (*(volatile unsigned int *) 0x0130)
+#define OP1_MPYS (*(volatile unsigned int *) 0x0132)
+#define OP1_MAC (*(volatile unsigned int *) 0x0134)
+#define OP1_MACS (*(volatile unsigned int *) 0x0136)
+#define OP2 (*(volatile unsigned int *) 0x0138)
+
+#define RESLO (*(volatile unsigned int *) 0x013A)
+#define RESHI (*(volatile unsigned int *) 0x013C)
+#define SUMEXT (*(volatile unsigned int *) 0x013E)
+
+
+
+
+
+#define interrupt(x) void __attribute__((interrupt (x)))
+#define wakeup __attribute__((wakeup))
+#define eint() __eint()
+#define dint() __dint()
+
+
+
+#define RESET_VECTOR ("reset")
+#define NMI_VECTOR (15)
+#define UNUSED_13_VECTOR (14)
+#define UNUSED_12_VECTOR (13)
+#define UNUSED_11_VECTOR (12)
+#define WDT_VECTOR (11)
+#define TIMERA0_VECTOR (10)
+#define TIMERA1_VECTOR (9)
+#define UNUSED_07_VECTOR (8)
+#define UNUSED_06_VECTOR (7)
+#define UNUSED_05_VECTOR (6)
+#define UNUSED_04_VECTOR (5)
+#define UNUSED_03_VECTOR (4)
+#define PORT1_VECTOR (3)
+#define UNUSED_01_VECTOR (2)
+#define UNUSED_00_VECTOR (1)
+# 7 "main.c" 2
+# 1 "uart.h" 1
+# 9 "uart.h"
+#define UART_H_ 
+
+
+int UART_WriteChar (char txdata);
+void UART_WriteNumber (int n);
+void UART_WriteString(char* string);
+
+
+
+
+#define UART_CTL (*(volatile unsigned char *) 0x0080)
+#define UART_STAT (*(volatile unsigned char *) 0x0081)
+#define UART_BAUD (*(volatile unsigned int *) 0x0082)
+#define UART_TXD (*(volatile unsigned char *) 0x0084)
+#define UART_RXD (*(volatile unsigned char *) 0x0085)
+
+
+
+
+
+
+
+#define UART_IEN_TX_EMPTY 0x80
+#define UART_IEN_TX 0x40
+#define UART_IEN_RX_OVFLW 0x20
+#define UART_IEN_RX 0x10
+#define UART_SMCLK_SEL 0x02
+#define UART_EN 0x01
+
+
+#define UART_TX_EMPTY_PND 0x80
+#define UART_TX_PND 0x40
+#define UART_RX_OVFLW_PND 0x20
+#define UART_RX_PND 0x10
+#define UART_TX_FULL 0x08
+#define UART_TX_BUSY 0x04
+#define UART_RX_BUSY 0x01
+
+
+
+
+
+
+#define UART_TX_VECTOR (6 *2)
+#define UART_RX_VECTOR (7 *2)
+# 68 "uart.h"
+#define BAUD 8
+# 8 "main.c" 2
+# 1 "qwark.h" 1
+# 9 "qwark.h"
+#define QWARK_H_ 
 
 #define QWARK_CTL (*(volatile unsigned int *) 0x02A0)
 #define QWARK_VECTOR (5)
-#define QWARK_EN 0x01
 #define QWARK_CHECKPOINT() QWARK_CTL |= 0x0020
 
-#define UART_BAUD (*(volatile unsigned int *) 0x0082)
-#define UART_EN 0x01
-#define UART_STAT (*(volatile unsigned char *) 0x0081)
-#define UART_CTL (*(volatile unsigned char *) 0x0080)
-#define UART_TXD (*(volatile unsigned char *) 0x0084)
-#define UART_TX_FULL 0x08
-# 41 "main.c"
+#define QWARK_EN 0x01
+# 9 "main.c" 2
+# 1 "timerA.h" 1
 
-# 41 "main.c"
-void __attribute__((interrupt ((5)))) INT_Qwark(void) {
-     __asm__ __volatile__ ("nop");
+#define TIMERA_H 
+
+
+
+
+
+
+
+void ta_wait_no_lpm(unsigned int);
+void ta_wait(unsigned int);
+
+
+
+#define DCO_CLK_PERIOD 20
+#define LFXT_CLK_PERIOD 10240
+
+
+#define WT_20US ( 20000/LFXT_CLK_PERIOD)+1
+#define WT_50US ( 50000/LFXT_CLK_PERIOD)+1
+# 35 "timerA.h"
+#define WT_100US ( 100000/LFXT_CLK_PERIOD)+1
+#define WT_200US ( 200000/LFXT_CLK_PERIOD)+1
+#define WT_500US ( 500000/LFXT_CLK_PERIOD)+1
+#define WT_1MS ( 1000000/LFXT_CLK_PERIOD)+1
+#define WT_2MS ( 2000000/LFXT_CLK_PERIOD)+1
+#define WT_5MS ( 5000000/LFXT_CLK_PERIOD)+1
+#define WT_10MS ( 10000000/LFXT_CLK_PERIOD)+1
+#define WT_20MS ( 20000000/LFXT_CLK_PERIOD)+1
+#define WT_50MS ( 50000000/LFXT_CLK_PERIOD)+1
+#define WT_100MS (100000000/LFXT_CLK_PERIOD)+1
+#define WT_200MS (200000000/LFXT_CLK_PERIOD)+1
+#define WT_500MS (500000000/LFXT_CLK_PERIOD)+1
+
+
+
+
+
+
+#define TACTL (*(volatile unsigned int *) 0x0160)
+#define TAR (*(volatile unsigned int *) 0x0170)
+#define TACCTL0 (*(volatile unsigned int *) 0x0162)
+#define TACCR0 (*(volatile unsigned int *) 0x0172)
+#define TACCTL1 (*(volatile unsigned int *) 0x0164)
+#define TACCR1 (*(volatile unsigned int *) 0x0174)
+#define TACCTL2 (*(volatile unsigned int *) 0x0166)
+#define TACCR2 (*(volatile unsigned int *) 0x0176)
+#define TAIV (*(volatile unsigned int *) 0x012E)
+
+
+
+
+
+
+#define CCTL0 TACCTL0
+#define CCTL1 TACCTL1
+#define CCR0 TACCR0
+#define CCR1 TACCR1
+
+
+#define TASSEL1 (0x0200)
+#define TASSEL0 (0x0100)
+#define ID1 (0x0080)
+#define ID0 (0x0040)
+#define MC1 (0x0020)
+#define MC0 (0x0010)
+#define TACLR (0x0004)
+#define TAIE (0x0002)
+#define TAIFG (0x0001)
+
+#define MC_0 (0x0000)
+#define MC_1 (0x0010)
+#define MC_2 (0x0020)
+#define MC_3 (0x0030)
+#define ID_0 (0x0000)
+#define ID_1 (0x0040)
+#define ID_2 (0x0080)
+#define ID_3 (0x00C0)
+#define TASSEL_0 (0x0000)
+#define TASSEL_1 (0x0100)
+#define TASSEL_2 (0x0200)
+#define TASSEL_3 (0x0300)
+
+#define CM1 (0x8000)
+#define CM0 (0x4000)
+#define CCIS1 (0x2000)
+#define CCIS0 (0x1000)
+#define SCS (0x0800)
+#define SCCI (0x0400)
+#define CAP (0x0100)
+#define OUTMOD2 (0x0080)
+#define OUTMOD1 (0x0040)
+#define OUTMOD0 (0x0020)
+#define CCIE (0x0010)
+#define CCI (0x0008)
+#define OUT (0x0004)
+#define COV (0x0002)
+#define CCIFG (0x0001)
+# 10 "main.c" 2
+
+#define SEED 4
+#define ITER 100
+#define CHAR_BIT 8
+#define UART_DBG 
+
+volatile unsigned n_0, n_1, n_2, n_3, n_4, n_5, n_6;
+
+char bits[256] =
+{
+      0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4,
+      1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,
+      1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,
+      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
+      1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,
+      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
+      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
+      3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
+      1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,
+      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
+      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
+      3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
+      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
+      3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
+      3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
+      4, 5, 5, 6, 5, 6, 6, 7, 5, 6, 6, 7, 6, 7, 7, 8
+};
+
+
+int btbl_bitcnt(uint32_t x)
+{
+      int cnt = bits[ ((char *)&x)[0] & 0xFF ];
+
+      if (0L != (x >>= 8))
+            cnt += btbl_bitcnt(x);
+      return cnt;
 }
+int bit_count(uint32_t x)
+{
+        int n = 0;
+
+        if (x) do
+              n++;
+        while (0 != (x = x&(x-1))) ;
+        return(n);
+}
+int bitcount(uint32_t i)
+{
+      i = ((i & 0xAAAAAAAAL) >> 1) + (i & 0x55555555L);
+      i = ((i & 0xCCCCCCCCL) >> 2) + (i & 0x33333333L);
+      i = ((i & 0xF0F0F0F0L) >> 4) + (i & 0x0F0F0F0FL);
+      i = ((i & 0xFF00FF00L) >> 8) + (i & 0x00FF00FFL);
+      i = ((i & 0xFFFF0000L) >> 16) + (i & 0x0000FFFFL);
+      return (int)i;
+}
+int ntbl_bitcount(uint32_t x)
+{
+      return
+            bits[ (int) (x & 0x0000000FUL) ] +
+            bits[ (int)((x & 0x000000F0UL) >> 4) ] +
+            bits[ (int)((x & 0x00000F00UL) >> 8) ] +
+            bits[ (int)((x & 0x0000F000UL) >> 12)] +
+            bits[ (int)((x & 0x000F0000UL) >> 16)] +
+            bits[ (int)((x & 0x00F00000UL) >> 20)] +
+            bits[ (int)((x & 0x0F000000UL) >> 24)] +
+            bits[ (int)((x & 0xF0000000UL) >> 28)];
+}
+int BW_btbl_bitcount(uint32_t x)
+{
+      union
+      {
+            unsigned char ch[4];
+            long y;
+      } U;
+
+      U.y = x;
+
+      return bits[ U.ch[0] ] + bits[ U.ch[1] ] +
+             bits[ U.ch[3] ] + bits[ U.ch[2] ];
+}
+int AR_btbl_bitcount(uint32_t x)
+{
+      unsigned char * Ptr = (unsigned char *) &x ;
+      int Accu ;
+
+      Accu = bits[ *Ptr++ ];
+      Accu += bits[ *Ptr++ ];
+      Accu += bits[ *Ptr++ ];
+      Accu += bits[ *Ptr ];
+      return Accu;
+}
+int ntbl_bitcnt(uint32_t x)
+{
+      int cnt = bits[(int)(x & 0x0000000FL)];
+
+      if (0L != (x >>= 4))
+            cnt += ntbl_bitcnt(x);
+
+      return cnt;
+}
+
+static int bit_shifter(uint32_t x)
+{
+  int i, n;
+  for (i = n = 0; x && (i < (sizeof(uint32_t) * 8)); ++i, x >>= 1)
+    n += (int)(x & 1L);
+  return n;
+}
+
 
 void init()
 {
-    (*(volatile unsigned int *) 0x0120) = (0x5A00) | (0x0080);
-   __asm__ __volatile__ ("nop");
-    __asm__ __volatile__ ("eint { nop");
 
-
-
+     (*(volatile unsigned int *) 0x0120) = (0x5A00) | (0x0080);
+    __asm__ __volatile__ ("nop");
+     __asm__ __volatile__ ("eint { nop");
+     (*(volatile unsigned int *) 0x0082) = 8;
+     (*(volatile unsigned char *) 0x0080) = 0x01;
 
 
 
@@ -2945,16 +3200,8 @@ void init()
 
 int main()
 {
+ init();
 
+  while(1);
 
-
-    init();
-
-
-    (*(volatile unsigned char *) 0x0090) = 0x01;
-
-
-
-    while (1);
-    return 0;
 }

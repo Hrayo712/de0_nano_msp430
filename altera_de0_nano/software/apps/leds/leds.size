@@ -1,2 +1,2 @@
    text	   data	    bss	    dec	    hex	filename
-    660	     18	     18	    696	    2b8	leds.elf
+   2072	    272	     20	   2364	    93c	leds.elf

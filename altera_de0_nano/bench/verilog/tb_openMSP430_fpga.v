@@ -98,6 +98,8 @@ initial
   begin
      // Read memory file
      #10 $readmemh("./pmem.mem", pmem);
+
+
   end
 
 //
@@ -160,7 +162,13 @@ openMSP430_fpga dut (
      .PER_UART_TX     (PER_UART_TX)
 );
 
+initial
+  begin
+     // Read memory file
 
+     #10 $readmemh("/home/hiram/master/Qwark/altera_de0_nano/sim/rtl_sim/run/dmem.mem", dut.dmem_0.altsyncram_component.mem_data);
+
+  end
 // Debug utility signals
 //----------------------------------------
 msp_debug msp_debug_omsp (

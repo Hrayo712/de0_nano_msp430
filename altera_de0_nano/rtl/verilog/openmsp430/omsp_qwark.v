@@ -173,7 +173,7 @@ assign  mem_track_en  = (eu_addr[15:0]>=(`DMEM_BASE)) & (eu_addr[15:0]< (DMEM_EN
 
 assign tl_addr =  tlb_match 	  							 ? addr_out_tlb		 : // Prioritize TLB match, over WAR detection	
 						tlb_buff_busy && rd_buf_out_match ? addr_out_rd			 :
-						WAR 		 	  							 ? addr_out_war		 : 
+						WAR || sync_WAR		 	  			 ? addr_out_war		 : 
 						eu_addr;
 
 always @(war_ctr) begin
@@ -241,11 +241,11 @@ end
 // Write After Read (WAR) counters to translate and perform interruptions
 //=============================================================================
 
-
+reg  sync_WAR;
 always @(posedge mclk) begin
 	if(puc_rst) begin
 	war_ctr <= 1'b0;
-	end else if(WAR && ~tlb_match) begin
+	end else if((WAR || sync_WAR) && ~tlb_match) begin
 	war_ctr <= 	war_ctr + 1;
 	end else if (buff_rst) begin
 	war_ctr <= 1'b0;
@@ -256,6 +256,7 @@ end
 // Write After Read (WAR) detection Logic
 //=============================================================================
 
+
 always @(rd_buf_out_match,eu_mb_wr) begin
 
     if(en && rd_buf_out_match  && (eu_mb_wr[0] || eu_mb_wr[1])) begin
@@ -265,6 +266,15 @@ always @(rd_buf_out_match,eu_mb_wr) begin
 	 end
 end
 
+
+always @(negedge mclk) begin
+
+    if(en && (eu_mb_wr[0] || eu_mb_wr[1]) && (tl_eu_addr==rd_buff_busy_writing))begin
+	  sync_WAR <= 1'b1;
+	 end else begin
+	  sync_WAR <= 1'b0;
+	 end
+end
 
 //=============================================================================
 // Address Tracking Logic
@@ -284,9 +294,9 @@ always @(posedge mclk) begin
 	wr_buff_wr_en <= eu_en &&  (eu_mb_wr[1] || eu_mb_wr[0]) && mem_track_en  && (tl_eu_addr!=rd_buff_busy_writing) && ~rd_buf_out_match && ~wr_buf_out_match && ~tlb_match;
 	
 	//Enable the TLB write upon WAR detection
-	tlb_buff_wr_en <= WAR && ~tlb_match &&  (tlb_buff_ctr + 1 != 8) ;
+	tlb_buff_wr_en <= (WAR || sync_WAR) && ~tlb_match &&  (tlb_buff_ctr + 1 != 8) ;
 	
-	per_addr_wr_en <= WAR && ~tlb_match;
+	per_addr_wr_en <= (WAR || sync_WAR) && ~tlb_match;
 	
 	//store address of cycle
 	read_address <= tl_eu_addr;

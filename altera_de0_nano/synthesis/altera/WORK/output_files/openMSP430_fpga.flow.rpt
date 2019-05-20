@@ -1,5 +1,5 @@
 Flow report for openMSP430_fpga
-Fri May 17 05:08:01 2019
+Mon May 20 00:38:38 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri May 17 05:07:52 2019       ;
+; Flow Status                        ; Successful - Mon May 20 00:38:30 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; openMSP430_fpga                             ;
 ; Top-level Entity Name              ; openMSP430_fpga                             ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 4,503 / 22,320 ( 20 % )                     ;
-;     Total combinational functions  ; 4,371 / 22,320 ( 20 % )                     ;
-;     Dedicated logic registers      ; 1,437 / 22,320 ( 6 % )                      ;
-; Total registers                    ; 1437                                        ;
+; Total logic elements               ; 4,546 / 22,320 ( 20 % )                     ;
+;     Total combinational functions  ; 4,392 / 22,320 ( 20 % )                     ;
+;     Dedicated logic registers      ; 1,438 / 22,320 ( 6 % )                      ;
+; Total registers                    ; 1438                                        ;
 ; Total pins                         ; 25 / 154 ( 16 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 394,752 / 608,256 ( 65 % )                  ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/17/2019 05:05:49 ;
+; Start date & time ; 05/20/2019 00:37:18 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; openMSP430_fpga     ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+-----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                   ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+-----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 52235801857.155809474916312             ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 52235801857.155833783802941             ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                      ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                       ; --            ; --          ; --         ;
 ; OPTIMIZATION_TECHNIQUE              ; -- (Not supported for targeted family)  ; Balanced      ; --          ; --         ;
@@ -94,11 +94,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:34     ; 1.0                     ; 1013 MB             ; 00:00:26                           ;
-; Fitter               ; 00:01:18     ; 1.0                     ; 1213 MB             ; 00:01:12                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 830 MB              ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:08     ; 1.0                     ; 862 MB              ; 00:00:07                           ;
-; Total                ; 00:02:02     ; --                      ; --                  ; 00:01:46                           ;
+; Analysis & Synthesis ; 00:00:29     ; 1.0                     ; 1013 MB             ; 00:00:24                           ;
+; Fitter               ; 00:00:38     ; 1.0                     ; 1213 MB             ; 00:00:36                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 834 MB              ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:07     ; 1.0                     ; 863 MB              ; 00:00:07                           ;
+; Total                ; 00:01:15     ; --                      ; --                  ; 00:01:08                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

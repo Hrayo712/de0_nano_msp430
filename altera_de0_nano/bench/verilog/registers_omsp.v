@@ -131,6 +131,7 @@ wire       [15:0] omsp_mem280 = dut.pmem_0.altsyncram_component.mem_data[64];
 // Program Memory cells
 //======================
 reg   [15:0] pmem [0:`PMEM_SIZE-1];
+reg   [15:0] dmem [0:`DMEM_SIZE-1];
 
 // Interrupt vectors
 wire  [15:0] irq_vect_15      = pmem[(1<<(`PMEM_MSB+1))-1];  // RESET Vector

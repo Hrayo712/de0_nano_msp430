@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
-[*] Thu May 16 10:52:40 2019
+[*] Sat May 18 14:42:26 2019
 [*]
 [dumpfile] "/home/hiram/master/Qwark/altera_de0_nano/sim/rtl_sim/run/tb_openMSP430_fpga.vcd"
-[dumpfile_mtime] "Thu May 16 10:49:50 2019"
-[dumpfile_size] 4228638
+[dumpfile_mtime] "Sat May 18 14:41:48 2019"
+[dumpfile_size] 22369604
 [savefile] "/home/hiram/master/Qwark/altera_de0_nano/sim/rtl_sim/run/setup_cfg.gtkw"
-[timestart] 747410000
-[size] 1851 873
-[pos] -89 -89
-*-22.441099 763490000 1288500000 1800500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[timestart] 4779820000
+[size] 1851 833
+[pos] -29 -29
+*-22.441099 4787500000 1288500000 1800500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_openMSP430_fpga.
 [treeopen] tb_openMSP430_fpga.dut.
 [treeopen] tb_openMSP430_fpga.dut.openmsp430_0.
@@ -18,7 +18,7 @@
 [sst_width] 416
 [signals_width] 326
 [sst_expanded] 1
-[sst_vpaned_height] 522
+[sst_vpaned_height] 493
 @28
 tb_openMSP430_fpga.dut.openmsp430_0.frontend_0.gie
 tb_openMSP430_fpga.dut.openmsp430_0.clock_module_0.dco_clk
