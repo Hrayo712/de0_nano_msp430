@@ -14,7 +14,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 2
 #define __SIZEOF_LONG__ 4
@@ -256,6 +255,7 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
+#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
 #define __CHAR_UNSIGNED__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
@@ -2976,7 +2976,109 @@ void UART_WriteString(char* string);
 # 68 "../uart.h"
 #define BAUD 8
 # 12 "../main.c" 2
-# 28 "../main.c"
+# 1 "../timerA.h" 1
+
+#define TIMERA_H 
+
+
+
+
+
+
+
+void ta_wait_no_lpm(unsigned int);
+void ta_wait(unsigned int);
+
+
+
+#define DCO_CLK_PERIOD 20
+#define LFXT_CLK_PERIOD 10240
+
+
+#define WT_20US ( 20000/LFXT_CLK_PERIOD)+1
+#define WT_50US ( 50000/LFXT_CLK_PERIOD)+1
+# 35 "../timerA.h"
+#define WT_100US ( 100000/LFXT_CLK_PERIOD)+1
+#define WT_200US ( 200000/LFXT_CLK_PERIOD)+1
+#define WT_500US ( 500000/LFXT_CLK_PERIOD)+1
+#define WT_1MS ( 1000000/LFXT_CLK_PERIOD)+1
+#define WT_2MS ( 2000000/LFXT_CLK_PERIOD)+1
+#define WT_5MS ( 5000000/LFXT_CLK_PERIOD)+1
+#define WT_10MS ( 10000000/LFXT_CLK_PERIOD)+1
+#define WT_20MS ( 20000000/LFXT_CLK_PERIOD)+1
+#define WT_50MS ( 50000000/LFXT_CLK_PERIOD)+1
+#define WT_100MS (100000000/LFXT_CLK_PERIOD)+1
+#define WT_200MS (200000000/LFXT_CLK_PERIOD)+1
+#define WT_500MS (500000000/LFXT_CLK_PERIOD)+1
+
+
+
+
+
+
+#define TACTL (*(volatile unsigned int *) 0x0160)
+#define TAR (*(volatile unsigned int *) 0x0170)
+#define TACCTL0 (*(volatile unsigned int *) 0x0162)
+#define TACCR0 (*(volatile unsigned int *) 0x0172)
+#define TACCTL1 (*(volatile unsigned int *) 0x0164)
+#define TACCR1 (*(volatile unsigned int *) 0x0174)
+#define TACCTL2 (*(volatile unsigned int *) 0x0166)
+#define TACCR2 (*(volatile unsigned int *) 0x0176)
+#define TAIV (*(volatile unsigned int *) 0x012E)
+
+
+
+
+
+
+#define CCTL0 TACCTL0
+#define CCTL1 TACCTL1
+#define CCR0 TACCR0
+#define CCR1 TACCR1
+
+
+#define TASSEL1 (0x0200)
+#define TASSEL0 (0x0100)
+#define ID1 (0x0080)
+#define ID0 (0x0040)
+#define MC1 (0x0020)
+#define MC0 (0x0010)
+#define TACLR (0x0004)
+#define TAIE (0x0002)
+#define TAIFG (0x0001)
+
+#define MC_0 (0x0000)
+#define MC_1 (0x0010)
+#define MC_2 (0x0020)
+#define MC_3 (0x0030)
+#define ID_0 (0x0000)
+#define ID_1 (0x0040)
+#define ID_2 (0x0080)
+#define ID_3 (0x00C0)
+#define TASSEL_0 (0x0000)
+#define TASSEL_1 (0x0100)
+#define TASSEL_2 (0x0200)
+#define TASSEL_3 (0x0300)
+
+#define CM1 (0x8000)
+#define CM0 (0x4000)
+#define CCIS1 (0x2000)
+#define CCIS0 (0x1000)
+#define SCS (0x0800)
+#define SCCI (0x0400)
+#define CAP (0x0100)
+#define OUTMOD2 (0x0080)
+#define OUTMOD1 (0x0040)
+#define OUTMOD0 (0x0020)
+#define CCIE (0x0010)
+#define CCI (0x0008)
+#define OUT (0x0004)
+#define COV (0x0002)
+#define CCIFG (0x0001)
+# 13 "../main.c" 2
+
+#define UART_DBG 
+# 29 "../main.c"
 uint16_t sqrt16(uint32_t x)
 {
     uint16_t hi = 0xffff;
@@ -2995,7 +3097,7 @@ uint16_t sqrt16(uint32_t x)
 
     return mid;
 }
-# 54 "../main.c"
+# 55 "../main.c"
 #define LOG(...) 
 
 
@@ -3268,7 +3370,31 @@ void print_stats(stats_t *stats)
 
 
                                                                              ;
-# 351 "../main.c"
+
+
+  UART_WriteString("stats: s ");
+  UART_WriteNumber(stats->stationaryCount);
+  UART_WriteString(" (");
+  UART_WriteNumber(resultStationaryPct);
+  UART_WriteString("%) m ");
+  UART_WriteNumber(stats->movingCount);
+  UART_WriteString(" (");
+  UART_WriteNumber(resultMovingPct);
+  UART_WriteString("%)");
+  UART_WriteString(" sum/tot ");
+  UART_WriteNumber(stats->totalCount);
+  UART_WriteString("/");
+  UART_WriteNumber(sum);
+  if(sum == stats->totalCount && sum == 128)
+  UART_WriteString(" V");
+  else
+  UART_WriteString(" X");
+
+  UART_WriteString("\r\n");
+
+
+
+
 }
 
 void warmup_sensor(void)
@@ -3305,7 +3431,17 @@ void train(features_t *classModel)
 
    
                                                 ;
-# 398 "../main.c"
+
+
+    UART_WriteString("train: done: mn ");
+    UART_WriteNumber(features.meanmag);
+    UART_WriteString(" sd ");
+    UART_WriteNumber(features.stddevmag);
+    UART_WriteString("\r\n");
+
+
+
+
 }
 
 void recognize(model_t *model)
@@ -3341,7 +3477,7 @@ void end_of_benchmark(void)
     (*(volatile unsigned char *) 0x0090) = 0x00;
     ;
 
-
+    UART_WriteString("This is the end of the AR benchmark\n\r");
 
     exit(0);
 
@@ -3360,7 +3496,7 @@ run_mode_t select_mode(uint8_t *prev_pin_state)
     ;
 
     count = count + 1;
-# 466 "../main.c"
+# 461 "../main.c"
     switch(count) {
         case 1:
         case 2:
@@ -3406,9 +3542,7 @@ void init()
     __asm__ __volatile__ ("eint { nop");
  (*(volatile unsigned int *) 0x0082) = 8;
     (*(volatile unsigned char *) 0x0080) = 0x01;
-
-    (*(volatile unsigned int *) 0x02A0) = 0x01;
-# 521 "../main.c"
+# 515 "../main.c"
 }
 
 int main()
@@ -3418,8 +3552,9 @@ int main()
     uint8_t prev_pin_state = MODE_IDLE;
 
     init();
+    ta_wait(9800);
 
-
+    count = 1;
     (*(volatile unsigned char *) 0x0090) = 0xFF;
     while (1)
     {

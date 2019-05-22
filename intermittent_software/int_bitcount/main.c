@@ -6,10 +6,14 @@
 #include <omsp_system.h>
 #include "uart.h"
 #include "qwark.h"
+#include "timerA.h"
 
 #define SEED 4
 #define ITER 100
 #define CHAR_BIT 8
+
+//#define UART_DBG
+
 
 volatile unsigned  n_0, n_1, n_2, n_3, n_4, n_5, n_6;
 
@@ -125,7 +129,6 @@ void init()
      UART_CTL  = UART_EN;
      //Enable QWARK
      QWARK_CTL = QWARK_EN;
-    //ta_wait(100);
 
 }
 
@@ -134,6 +137,7 @@ void init()
 int main()
 {
 	init();
+    ta_wait(9980); //10ms
 
 	uint32_t seed;
 	unsigned  iter;
@@ -142,7 +146,8 @@ int main()
 	/* Iterate through the 7 func statements 0 - 7*/
 	/* Each statement executes a different bitcount routine, with a different seed value, a 100 times*/
 	while(1){
-	LED_CTRL ^= 0x0F;
+
+	LED_CTRL ^= 0xFF;
 
 	//Initialize the variables upon every loop
 
@@ -202,9 +207,9 @@ int main()
 			}
 		}
 	}
+	QWARK_CHECKPOINT();
 
-	//QWARK_CHECKPOINT();
-
+#ifdef UART_DBG
 	UART_WriteString("Benchmark Complete! \r\n");
 	UART_WriteNumber(n_0);
 	UART_WriteString("\r\n");
@@ -214,13 +219,16 @@ int main()
 	UART_WriteString("\r\n");
 	UART_WriteNumber(n_3);
 	UART_WriteString("\r\n");
+
+//	QWARK_CHECKPOINT();
+
 	UART_WriteNumber(n_4);
 	UART_WriteString("\r\n");
 	UART_WriteNumber(n_5);
 	UART_WriteString("\r\n");
 	UART_WriteNumber(n_6);
 	UART_WriteString("\r\n");
-
+#endif
    }//while 1
 
 }

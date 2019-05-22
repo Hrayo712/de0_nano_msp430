@@ -3,7 +3,8 @@
 //#define PRINTF_PRINT
 //#define BLOCK_PRINT
 //#define BLOCK_LOG_PRINT
-//#define UART_DBG
+
+#define UART_DBG
 
 #ifdef MSP430
 #include <msp430.h>
@@ -16,6 +17,7 @@
 //#include "nvm.h"
 #include "uart.h"
 #include "qwark.h"
+#include "timerA.h"
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -295,6 +297,9 @@ int main()
     UART_CTL  = UART_EN;
     //Enable QWARK
     QWARK_CTL = QWARK_EN;
+    ta_wait(1000);
+
+
     //FRCTL0 = 0xA500 | ((1) << 4); // FRCTLPW | NWAITS_1;
     //__delay_cycles(3);
 

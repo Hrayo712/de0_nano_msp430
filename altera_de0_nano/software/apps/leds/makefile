@@ -3,7 +3,7 @@ NAME            = leds
 OBJECTS         = main.o qwark.o timerA.o  uart.o
 
 # Compiler performance option (-Os / -O2 / -O3)
-PORT_CFLAGS     = -O2
+PORT_CFLAGS     = -O0
 
 # Choose GCC toolchain prefix ('msp430' for MSPGCC / 'msp430-elf' for GCC RedHat/TI)
 ifndef MSPGCC_PFX

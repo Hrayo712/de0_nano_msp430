@@ -14,6 +14,7 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
+#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 2
 #define __SIZEOF_LONG__ 4
@@ -255,7 +256,6 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
-#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
 #define __CHAR_UNSIGNED__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
@@ -567,7 +567,7 @@ typedef unsigned int __istate_t;
 # 10 "../qwark.c" 2
 
 #define INTERMITTENCY_HANDLING_ENABLED 
-
+#define TIMER_TEST 
 
 
 
@@ -694,7 +694,15 @@ void qwark_restore(void)
 
  __asm__ __volatile__ ("mov.b #128, r8");
  __asm__ __volatile__ ("mov.b   #1, 0(r8)");
-# 154 "../qwark.c"
+
+
+
+ __asm__ __volatile__ ("mov  #370, r8");
+ __asm__ __volatile__ ("mov  #9980, 0(r8)");
+
+ __asm__ __volatile__ ("mov  #352, r8");
+ __asm__ __volatile__ ("mov  #534, 0(r8)");
+# 161 "../qwark.c"
  __asm__ __volatile__ ("mov #0x7FFE, r14");
 
  __asm__ __volatile__ ("__erase_stack:");
@@ -796,7 +804,7 @@ void qwark_restore(void)
 
 
 void __attribute__((interrupt ((5)))) INT_Qwark(void) {
-# 264 "../qwark.c"
+# 271 "../qwark.c"
   __asm__ __volatile__ ("mov r12, &0x6072");
 
   __asm__ __volatile__ ("cmp.b #0x01,&0x6075");
@@ -809,7 +817,7 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("__second_buffer_init:");
 
   __asm__ __volatile__ ("mov #0x6040, r12");
-# 285 "../qwark.c"
+# 292 "../qwark.c"
   __asm__ __volatile__ ("__first_phase_commit:");
 
   __asm__ __volatile__ ("mov 2(r1),@r12");
@@ -869,7 +877,7 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("mov.b r14, @r12");
   __asm__ __volatile__ ("mov r14, r15 ");
   __asm__ __volatile__ ("incd r12");
-# 353 "../qwark.c"
+# 360 "../qwark.c"
   __asm__ __volatile__ ("tst r14 ");
   __asm__ __volatile__ ("jz  _chkpt_stack");
 
@@ -882,7 +890,7 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("dec r14 ");
   __asm__ __volatile__ ("tst r14 ");
   __asm__ __volatile__ ("jnz  _scratchpad_addr_cpy");
-# 374 "../qwark.c"
+# 381 "../qwark.c"
   __asm__ __volatile__ ("_chkpt_stack:");
 
 
@@ -1021,5 +1029,8 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("_finish:");
 
   __asm__ __volatile__ ("mov #0x0001, &0x02A0");
+
+  __asm__ __volatile__ ("add #0x01, &0x6076");
+
 
 }

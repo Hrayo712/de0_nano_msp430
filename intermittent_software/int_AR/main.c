@@ -9,8 +9,9 @@
 #include <omsp_system.h>
 #include "qwark.h"
 #include "uart.h"
+#include "timerA.h"
 
-//#define UART_DBG
+#define UART_DBG
 
 //#include <msp430.h>
 //#include "driverlib.h"
@@ -449,13 +450,7 @@ run_mode_t select_mode(uint8_t *prev_pin_state)
     TASK_CHECKPOINT();
 
     count = count + 1;
-	//__asm__ __volatile__ ("nop");
 
-	//LED_CTRL = 01;
-    //QWARK_CHECKPOINT();
-
-     // UART_WriteNumber(count);
-     // UART_WriteString("\n\r");
     /* The InK order
      *  rounds:
      *      1,2 = MODE_TRAIN_MOVING
@@ -510,7 +505,6 @@ void init()
     UART_CTL  = UART_EN;
     //Enable QWARK
     QWARK_CTL = QWARK_EN;
-   //ta_wait(100);
 
 
     // init timer
@@ -527,8 +521,9 @@ int main()
     uint8_t prev_pin_state = MODE_IDLE;
 
     init();
+    ta_wait(9800);
 
-    //count = 1;
+    count = 1;
     LED_CTRL = 0xFF;
     while (1)
     {

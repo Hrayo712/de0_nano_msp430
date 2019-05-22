@@ -15,8 +15,9 @@ initial
       stimulus_done = 0;
 
       //repeat(100) @(posedge FPGA_CLK1_50);
+      
 
-      #(5000000.0); //1 ms
+        #(650000000.0); //1 ms
       // #(400000000.0);   //700 ms
 
 

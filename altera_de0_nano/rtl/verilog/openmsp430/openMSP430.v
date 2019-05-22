@@ -77,7 +77,7 @@ module  openMSP430 (
     puc_rst,                                 // Main system reset
     smclk,                                   // ASIC ONLY: SMCLK
     smclk_en,                                // FPGA ONLY: SMCLK enable
-	 dbg_mem_en,
+	 dbg_mem_en_out,
 	 mb_rd_msk,
 // INPUTs
     cpu_en,                                  // Enable CPU code execution (asynchronous and non-glitchy)
@@ -142,7 +142,7 @@ output         [1:0] pmem_wen;               // Program Memory write enable (low
 output               puc_rst;                // Main system reset
 output               smclk;                  // ASIC ONLY: SMCLK
 output               smclk_en;               // FPGA ONLY: SMCLK enable
-output					dbg_mem_en;
+output					dbg_mem_en_out;
 output          [1:0] mb_rd_msk;
 // INPUTs
 //============
@@ -263,7 +263,7 @@ wire          [15:0] per_dout_clk;
 
 wire [1:0]eu_mb_rd_msk;
 
-assign dbg_mem_en = dbg_mem_en;
+assign dbg_mem_en_out = dbg_mem_en;
 assign mb_rd_msk = eu_mb_rd_msk;
 //=============================================================================
 // 2)  GLOBAL CLOCK & RESET MANAGEMENT

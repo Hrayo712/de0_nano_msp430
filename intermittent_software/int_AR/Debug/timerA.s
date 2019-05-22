@@ -7,7 +7,7 @@
 ta_wait_no_lpm:
 .LFB0:
 	.file 1 "../timerA.c"
-	.loc 1 10 0
+	.loc 1 11 0
 ; start of function
 ; framesize_regs:     0
 ; framesize_locals:   2
@@ -21,17 +21,17 @@ ta_wait_no_lpm:
 .LCFI0:
 	; end of prologue
 	MOV.W	R12, @R1
-	.loc 1 13 0
+	.loc 1 14 0
 	MOV.W	#352, R12
 	MOV.W	#292, @R12
-	.loc 1 16 0
+	.loc 1 17 0
 	NOP
 .L2:
-	.loc 1 16 0 is_stmt 0
+	.loc 1 17 0 is_stmt 0
 	MOV.W	#368, R12
 	MOV.W	@R12, R12
 	CMP.W	@R1, R12 { JLO	.L2
-	.loc 1 18 0 is_stmt 1
+	.loc 1 19 0 is_stmt 1
 	NOP
 	; start of epilogue
 	ADD.W	#2, R1
@@ -44,7 +44,7 @@ ta_wait_no_lpm:
 	.type	ta_wait, @function
 ta_wait:
 .LFB1:
-	.loc 1 27 0
+	.loc 1 28 0
 ; start of function
 ; framesize_regs:     0
 ; framesize_locals:   2
@@ -58,15 +58,15 @@ ta_wait:
 .LCFI1:
 	; end of prologue
 	MOV.W	R12, @R1
-	.loc 1 30 0
+	.loc 1 31 0
 	MOV.W	#370, R12
 	MOV.W	@R1, @R12
-	.loc 1 31 0
+	.loc 1 32 0
 	MOV.W	@R1, &periodic_val
-	.loc 1 33 0
+	.loc 1 34 0
 	MOV.W	#352, R12
 	MOV.W	#534, @R12
-	.loc 1 38 0
+	.loc 1 39 0
 	NOP
 	; start of epilogue
 	ADD.W	#2, R1
@@ -81,7 +81,7 @@ ta_wait:
 	.type	INT_timerA1, @function
 INT_timerA1:
 .LFB2:
-	.loc 1 43 0
+	.loc 1 44 0
 ; start of function
 ; attributes: interrupt wakeup 
 ; framesize_regs:     4
@@ -97,34 +97,23 @@ INT_timerA1:
 	PUSH	R12
 .LCFI3:
 	; end of prologue
-	.loc 1 46 0
-	MOV.B	#144, R12
-	MOV.B	@R12, R13
-	MOV.B	#144, R12
-	INV.B	R13
-	AND	#0xff, R13
-	MOV.B	R13, @R12
-	.loc 1 47 0
+	.loc 1 51 0
 	MOV.W	#352, R12
 	MOV.W	#1, @R12
-	.loc 1 48 0
+	.loc 1 54 0
 	MOV.W	#370, R12
 	MOV.W	&periodic_val, R13
 	MOV.W	R13, @R12
-	.loc 1 49 0
- ; 49 "../timerA.c" 1
-	eint { nop
- ; 0 "" 2
-	.loc 1 50 0
-	MOV.W	#400, R12
-	MOV.W	@R12, R13
-	MOV.W	#400, R12
-	BIS.W	#32, R13
-	MOV.W	R13, @R12
-	.loc 1 51 0
+	.loc 1 57 0
 	MOV.W	#352, R12
 	MOV.W	#534, @R12
-	.loc 1 55 0
+	.loc 1 60 0
+	MOV.W	#672, R12
+	MOV.W	@R12, R13
+	MOV.W	#672, R12
+	BIS.W	#32, R13
+	MOV.W	R13, @R12
+	.loc 1 63 0
 	NOP
 	; start of epilogue
 	BIC.W	#240, 4(SP)
@@ -218,7 +207,7 @@ INT_timerA1:
 	.uleb128 0x3
 	.4byte	.LASF5
 	.byte	0x1
-	.byte	0x1a
+	.byte	0x1b
 	.4byte	0x29
 	.byte	0x1
 	.byte	0x5
@@ -228,7 +217,7 @@ INT_timerA1:
 	.byte	0x1
 	.4byte	.LASF6
 	.byte	0x1
-	.byte	0x2b
+	.byte	0x2c
 	.byte	0x1
 	.4byte	.LFB2
 	.4byte	.LFE2
@@ -238,7 +227,7 @@ INT_timerA1:
 	.byte	0x1
 	.4byte	.LASF7
 	.byte	0x1
-	.byte	0x1b
+	.byte	0x1c
 	.byte	0x1
 	.4byte	.LFB1
 	.4byte	.LFE1
@@ -248,7 +237,7 @@ INT_timerA1:
 	.uleb128 0x6
 	.4byte	.LASF0
 	.byte	0x1
-	.byte	0x1b
+	.byte	0x1c
 	.4byte	0x29
 	.byte	0x2
 	.byte	0x91
@@ -258,7 +247,7 @@ INT_timerA1:
 	.byte	0x1
 	.4byte	.LASF8
 	.byte	0x1
-	.byte	0xa
+	.byte	0xb
 	.byte	0x1
 	.4byte	.LFB0
 	.4byte	.LFE0
@@ -267,7 +256,7 @@ INT_timerA1:
 	.uleb128 0x6
 	.4byte	.LASF0
 	.byte	0x1
-	.byte	0xa
+	.byte	0xb
 	.4byte	0x29
 	.byte	0x2
 	.byte	0x91
@@ -1254,7 +1243,7 @@ INT_timerA1:
 	.byte	0x1
 	.uleb128 0x1
 	.string	"PFX_MSP430_ELF 1"
-	.file 2 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h"
+	.file 2 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h"
 	.byte	0x3
 	.uleb128 0x1
 	.uleb128 0x2
@@ -1909,6 +1898,26 @@ INT_timerA1:
 	.uleb128 0x6f
 	.string	"CCIFG (0x0001)"
 	.byte	0x4
+	.file 5 "../qwark.h"
+	.byte	0x3
+	.uleb128 0x3
+	.uleb128 0x5
+	.byte	0x1
+	.uleb128 0x9
+	.string	"QWARK_H_ "
+	.byte	0x1
+	.uleb128 0xb
+	.string	"QWARK_CTL (*(volatile unsigned int *) 0x02A0)"
+	.byte	0x1
+	.uleb128 0xc
+	.string	"QWARK_VECTOR (5)"
+	.byte	0x1
+	.uleb128 0xd
+	.string	"QWARK_CHECKPOINT() QWARK_CTL |= 0x0020"
+	.byte	0x1
+	.uleb128 0xf
+	.string	"QWARK_EN 0x01"
+	.byte	0x4
 	.byte	0x4
 	.byte	0
 	.section	.debug_line,"",@progbits
@@ -1920,14 +1929,15 @@ INT_timerA1:
 	.string	"ta_wait"
 .LASF8:
 	.string	"ta_wait_no_lpm"
-.LASF3:
-	.string	"/home/hiram/eclipse-workspace/bitcount/Debug"
+.LASF1:
+	.ascii	"GNU C9"
+	.string	"9 7.3.1 -mmcu=msp430 -mhwmult=16bit -msmall -mcode-region=none -mdata-region=none -mdevices-csv-loc=/opt/ti/ccsv8/ccs_base/msp430/include_gcc/devices.csv -mcpu=msp430 -g3 -g -gdwarf-3 -gstrict-dwarf -g3 -O0 -std=c99 -std=c99 -fstrict-aliasing -fstack-usage"
 .LASF2:
 	.string	"../timerA.c"
+.LASF3:
+	.string	"/home/hiram/eclipse-workspace/int_AR/Debug"
 .LASF0:
 	.string	"time_cnt"
-.LASF1:
-	.string	"GNU C99 7.3.1 -mcpu=msp430 -mhwmult=16bit -msmall -mcode-region=none -mdata-region=none -mdevices-csv-loc=/opt/ti/ccsv8/ccs_base/msp430/include_gcc/devices.csv -g3 -gdwarf-3 -gstrict-dwarf -O0 -std=c99 -fstrict-aliasing -fstack-usage"
 .LASF6:
 	.string	"INT_timerA1"
 .LASF5:

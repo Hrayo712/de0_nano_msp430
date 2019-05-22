@@ -8,8 +8,8 @@
 
 #include "qwark.h"
 
-//#define INTERMITTENCY_HANDLING_ENABLED
-
+#define INTERMITTENCY_HANDLING_ENABLED
+#define TIMER_TEST
 
 #ifdef INTERMITTENCY_HANDLING_ENABLED
 
@@ -24,7 +24,6 @@ void qwark_restore(void)
 	//-------------------------------------------------------------------------------------------------------------//
 
 	/* Disable Qwark */
-
 	__asm__ __volatile__ ("mov #0x0000, &0x02A0");				// 4 cycles
 
 	__asm__ __volatile__ ("cmp.b #0x02, &0x6074");				// 2 cycles
@@ -138,7 +137,14 @@ void qwark_restore(void)
 	__asm__ __volatile__ ("mov.b #128, r8");	// 2 cycles
 	__asm__ __volatile__ ("mov.b   #1, 0(r8)"); // 2 cycles
 
+	/* Configure the timer */
+#ifdef TIMER_TEST
+	__asm__ __volatile__ ("mov  #370, r8");		    // 2 cycles
+	__asm__ __volatile__ ("mov  #1000, 0(r8)");	// 2 cycles
 
+	__asm__ __volatile__ ("mov  #352, r8");		    // 2 cycles
+	__asm__ __volatile__ ("mov  #534, 0(r8)");	    // 2 cycles
+#endif
 	//-------------------------------------------------------------------------------------------------------------//
 	//   VOLATILE STATE RESTORE 							   								   	   				   //
 	//	 12 CYCLES																								   //
@@ -510,5 +516,8 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 		__asm__ __volatile__ ("_finish:");
 		/* Clear the counters, and re-enable Idempotency tracking*/
 		__asm__ __volatile__ ("mov #0x0001, &0x02A0");	//4 cycles
+		//Test software to measure the amount of checkpoints
+		__asm__ __volatile__ ("add #0x01, &0x6076");	//4 cycles
+
 
 }

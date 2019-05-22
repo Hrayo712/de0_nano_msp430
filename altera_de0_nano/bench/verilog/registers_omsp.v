@@ -127,6 +127,16 @@ wire       [15:0] omsp_mem27C = dut.pmem_0.altsyncram_component.mem_data[62];
 wire       [15:0] omsp_mem27E = dut.pmem_0.altsyncram_component.mem_data[63];
 wire       [15:0] omsp_mem280 = dut.pmem_0.altsyncram_component.mem_data[64];
 
+wire       [15:0] omsp_dmem4000 = dut.dmem_0.altsyncram_component.mem_data[0];
+wire       [15:0] omsp_dmem4002 = dut.dmem_0.altsyncram_component.mem_data[1];
+wire       [15:0] omsp_dmem4004 = dut.dmem_0.altsyncram_component.mem_data[2];
+wire       [15:0] omsp_dmem4006 = dut.dmem_0.altsyncram_component.mem_data[3];
+wire       [15:0] omsp_dmem4008 = dut.dmem_0.altsyncram_component.mem_data[4];
+wire       [15:0] omsp_dmem400A = dut.dmem_0.altsyncram_component.mem_data[5];
+wire       [15:0] omsp_dmem400C = dut.dmem_0.altsyncram_component.mem_data[6];
+wire       [15:0] omsp_dmem400E = dut.dmem_0.altsyncram_component.mem_data[7];
+wire       [15:0] omsp_dmem4010 = dut.dmem_0.altsyncram_component.mem_data[8];
+
 
 // Program Memory cells
 //======================

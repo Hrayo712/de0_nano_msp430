@@ -10,33 +10,37 @@ UART_WriteChar:
 	.loc 1 16 0
 ; start of function
 ; framesize_regs:     0
-; framesize_locals:   0
+; framesize_locals:   2
 ; framesize_outgoing: 0
-; framesize:          0
+; framesize:          2
 ; elim ap -> fp       2
-; elim fp -> sp       0
+; elim fp -> sp       2
 ; saved regs:(none)
-.LVL0:
 	; start of prologue
+	SUB.W	#2, R1
+.LCFI0:
 	; end of prologue
-	AND	#0xff, R12
+	MOV.B	R12, 1(R1)
 	.loc 1 19 0
-	MOV.B	#129, R13
+	NOP
 .L2:
 	.loc 1 19 0 is_stmt 0
-	BIT.B	#8, @R13 { JNE	.L2
+	MOV.B	#129, R12
+	MOV.B	@R12, R12
+	AND.B	#8, R12
+	CMP.W	#0, R12 { JNE	.L2
 	.loc 1 22 0 is_stmt 1
-	MOV.B	R12, &132
-	.loc 1 25 0
+	MOV.B	#132, R12
+	MOV.B	1(R1), @R12
+	.loc 1 24 0
 	MOV.B	#0, R12
-.LVL1:
+	.loc 1 25 0
 	; start of epilogue
+	ADD.W	#2, R1
 	RET
 .LFE0:
 	.size	UART_WriteChar, .-UART_WriteChar
-	.global	__mspabi_remu
 	.global	__mspabi_remi
-	.global	__mspabi_divu
 	.global	__mspabi_divi
 	.balign 2
 	.global	UART_WriteNumber
@@ -45,146 +49,93 @@ UART_WriteNumber:
 .LFB1:
 	.loc 1 29 0
 ; start of function
-; framesize_regs:     14
-; framesize_locals:   22
+; framesize_regs:     0
+; framesize_locals:   24
 ; framesize_outgoing: 0
-; framesize:          36
-; elim ap -> fp       16
-; elim fp -> sp       22
-; saved regs: R4 R5 R6 R7 R8 R9 R10
-.LVL2:
+; framesize:          24
+; elim ap -> fp       2
+; elim fp -> sp       24
+; saved regs:(none)
 	; start of prologue
-	PUSH	R10
-.LCFI0:
-	PUSH	R9
+	SUB.W	#24, R1
 .LCFI1:
-	PUSH	R8
-.LCFI2:
-	PUSH	R7
-.LCFI3:
-	PUSH	R6
-.LCFI4:
-	PUSH	R5
-.LCFI5:
-	PUSH	R4
-.LCFI6:
-	SUB.W	#22, R1
-.LCFI7:
 	; end of prologue
-	MOV.W	R12, R10
-.LVL3:
-	.loc 1 32 0
-	CMP.W	#0, R12 { JL	.L17
-	.loc 1 37 0
-	MOV.B	#9, R12
-.LVL4:
-	CMP.W	R10, R12 { JGE	.L12
-.L18:
-	MOV.W	R1, R12
-	ADD.W	#2, R12
 	MOV.W	R12, @R1
-	MOV.W	R12, R9
-	MOV.B	#1, R12
-	SUB.W	R9, R12
-	MOV.W	R12, R4
-	MOV.W	#__mspabi_remi, R5
-	MOV.W	#__mspabi_divi, R6
-	.loc 1 39 0
-	MOV.B	#10, R8
-.LVL5:
-.L9:
-	MOV.W	R4, R7
-	ADD.W	R9, R7
-.LVL6:
-	MOV.W	R8, R13
-	MOV.W	R10, R12
-	CALL	R5
-.LVL7:
-	ADD.B	#48, R12
-	MOV.B	R12, @R9
-	.loc 1 40 0
-	MOV.W	R8, R13
-	MOV.W	R10, R12
-	CALL	R6
-.LVL8:
-	MOV.W	R12, R10
-.LVL9:
-	ADD.W	#1, R9
-	.loc 1 37 0
-	MOV.B	#9, R12
-	CMP.W	R10, R12 { JL	.L9
-	MOV.W	R7, R13
-	ADD.W	#1, R13
-.LVL10:
-.L8:
-	.loc 1 42 0
-	ADD.W	@R1, R7
-.LVL11:
-	ADD.B	#48, R10
-.LVL12:
-	MOV.B	R10, @R7
-	ADD.W	#-1, R13
-	ADD.W	@R1, R13
-	MOV.W	R1, R10
-	ADD.W	#1, R10
-.LBB8:
-.LBB9:
-	.loc 1 19 0
-	MOV.B	#129, R12
-	.loc 1 22 0
-	MOV.B	#132, R15
-.L11:
-.LVL13:
-.LBE9:
-.LBE8:
-	.loc 1 44 0
-	MOV.B	@R13, R14
-.LVL14:
-.L10:
-.LBB11:
-.LBB10:
-	.loc 1 19 0
-	BIT.B	#8, @R12 { JNE	.L10
-	.loc 1 22 0
-	MOV.B	R14, @R15
-.LVL15:
-	ADD.W	#-1, R13
-.LVL16:
-.LBE10:
-.LBE11:
-	.loc 1 43 0
-	CMP.W	R13, R10 { JNE	.L11
-	.loc 1 45 0
-	; start of epilogue
-	ADD.W	#22, R1
-	BR	#__mspabi_func_epilog_7
-.LVL17:
-.L17:
-.LBB12:
-.LBB13:
-	.loc 1 19 0
-	MOV.B	#129, R12
-.L7:
-	BIT.B	#8, @R12 { JNE	.L7
-	.loc 1 22 0
-	MOV.B	#45, &132
-.LBE13:
-.LBE12:
+	.loc 1 31 0
+	MOV.W	#0, 22(R1)
+	.loc 1 32 0
+	CMP.W	#0, @R1 { JGE	.L6
+	.loc 1 34 0
+	MOV.B	#45, R12
+	CALL	#UART_WriteChar
 	.loc 1 35 0
 	MOV.B	#0, R12
-	SUB.W	R10, R12
-	MOV.W	R12, R10
-.LVL18:
+	SUB.W	@R1, R12
+	MOV.W	R12, @R1
+	.loc 1 37 0
+	BR	#.L6
+.L7:
+	.loc 1 39 0
+	MOV.W	@R1, R12
+	MOV.B	#10, R13
+	CALL	#__mspabi_remi
+.LVL0:
+	MOV.B	R12, R13
+	MOV.W	22(R1), R12
+	MOV.W	R12, R14
+	ADD.W	#1, R14
+	MOV.W	R14, 22(R1)
+	ADD.B	#48, R13
+	MOV.B	R13, R14
+	MOV.W	R1, R13
+	ADD.W	#2, R13
+	ADD.W	R13, R12
+	MOV.B	R14, @R12
+	.loc 1 40 0
+	MOV.W	@R1, R12
+	MOV.B	#10, R13
+	CALL	#__mspabi_divi
+.LVL1:
+	MOV.W	R12, @R1
+.L6:
 	.loc 1 37 0
 	MOV.B	#9, R12
-	CMP.W	R10, R12 { JL	.L18
-.L12:
-	MOV.B	#1, R13
-	MOV.B	#0, R7
+	CMP.W	@R1, R12 { JL	.L7
+	.loc 1 42 0
+	MOV.W	@R1, R12
+	MOV.B	#10, R13
+	CALL	#__mspabi_remi
+.LVL2:
+	MOV.B	R12, R13
+	MOV.W	22(R1), R12
+	MOV.W	R12, R14
+	ADD.W	#1, R14
+	MOV.W	R14, 22(R1)
+	ADD.B	#48, R13
+	MOV.B	R13, R14
+	MOV.W	R1, R13
+	ADD.W	#2, R13
+	ADD.W	R13, R12
+	MOV.B	R14, @R12
+	.loc 1 43 0
+	BR	#.L8
+.L9:
+	.loc 1 44 0
+	ADD.W	#-1, 22(R1)
 	MOV.W	R1, R12
 	ADD.W	#2, R12
-	MOV.W	R12, @R1
-	BR	#.L8
+	ADD.W	22(R1), R12
+	MOV.B	@R12, R12
+	CALL	#UART_WriteChar
+.L8:
+	.loc 1 43 0
+	MOV.B	#0, R12
+	CMP.W	22(R1), R12 { JL	.L9
+	.loc 1 45 0
+	NOP
+	; start of epilogue
+	ADD.W	#24, R1
+	RET
 .LFE1:
 	.size	UART_WriteNumber, .-UART_WriteNumber
 	.balign 2
@@ -195,54 +146,40 @@ UART_WriteString:
 	.loc 1 52 0
 ; start of function
 ; framesize_regs:     0
-; framesize_locals:   0
+; framesize_locals:   4
 ; framesize_outgoing: 0
-; framesize:          0
+; framesize:          4
 ; elim ap -> fp       2
-; elim fp -> sp       0
+; elim fp -> sp       4
 ; saved regs:(none)
-.LVL19:
 	; start of prologue
+	SUB.W	#4, R1
+.LCFI2:
 	; end of prologue
-.LVL20:
-	.loc 1 57 0
-	MOV.B	@R12, R15
-	CMP.W	#0, R15 { JEQ	.L19
+	MOV.W	R12, @R1
 	.loc 1 54 0
-	MOV.B	#0, R14
-.LBB14:
-.LBB15:
-	.loc 1 19 0
-	MOV.B	#129, R13
-	.loc 1 22 0
-	MOV.B	#132, R11
-.LVL21:
-.L22:
-.LBE15:
-.LBE14:
-	.loc 1 60 0
-	ADD.B	#1, R14
-.LVL22:
-	AND	#0xff, R14
-.LVL23:
-.L21:
-.LBB17:
-.LBB16:
-	.loc 1 19 0
-	BIT.B	#8, @R13 { JNE	.L21
-	.loc 1 22 0
-	MOV.B	R15, @R11
-.LBE16:
-.LBE17:
+	MOV.B	#0, 3(R1)
 	.loc 1 57 0
-	MOV.W	R12, R15
-.LVL24:
-	ADD.W	R14, R15
-	MOV.B	@R15, R15
-	CMP.W	#0, R15 { JNE	.L22
-.L19:
+	BR	#.L11
+.L12:
+	.loc 1 60 0
+	MOV.B	3(R1), R12
+	MOV.B	R12, R13
+	ADD.B	#1, R13
+	MOV.B	R13, 3(R1)
+	ADD.W	@R1, R12
+	MOV.B	@R12, R12
+	CALL	#UART_WriteChar
+.L11:
+	.loc 1 57 0
+	MOV.B	3(R1), R12
+	ADD.W	@R1, R12
+	MOV.B	@R12, R12
+	CMP.W	#0, R12 { JNE	.L12
 	.loc 1 63 0
+	NOP
 	; start of epilogue
+	ADD.W	#4, R1
 	RET
 .LFE2:
 	.size	UART_WriteString, .-UART_WriteString
@@ -269,6 +206,10 @@ UART_WriteString:
 	.4byte	.Lframe0
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
+	.byte	0x4
+	.4byte	.LCFI0-.LFB0
+	.byte	0xe
+	.uleb128 0x4
 	.balign 4
 .LEFDE0:
 .LSFDE2:
@@ -278,51 +219,9 @@ UART_WriteString:
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
 	.byte	0x4
-	.4byte	.LCFI0-.LFB1
+	.4byte	.LCFI1-.LFB1
 	.byte	0xe
-	.uleb128 0x4
-	.byte	0x8a
-	.uleb128 0x2
-	.byte	0x4
-	.4byte	.LCFI1-.LCFI0
-	.byte	0xe
-	.uleb128 0x6
-	.byte	0x89
-	.uleb128 0x3
-	.byte	0x4
-	.4byte	.LCFI2-.LCFI1
-	.byte	0xe
-	.uleb128 0x8
-	.byte	0x88
-	.uleb128 0x4
-	.byte	0x4
-	.4byte	.LCFI3-.LCFI2
-	.byte	0xe
-	.uleb128 0xa
-	.byte	0x87
-	.uleb128 0x5
-	.byte	0x4
-	.4byte	.LCFI4-.LCFI3
-	.byte	0xe
-	.uleb128 0xc
-	.byte	0x86
-	.uleb128 0x6
-	.byte	0x4
-	.4byte	.LCFI5-.LCFI4
-	.byte	0xe
-	.uleb128 0xe
-	.byte	0x85
-	.uleb128 0x7
-	.byte	0x4
-	.4byte	.LCFI6-.LCFI5
-	.byte	0xe
-	.uleb128 0x10
-	.byte	0x84
-	.uleb128 0x8
-	.byte	0x4
-	.4byte	.LCFI7-.LCFI6
-	.byte	0xe
-	.uleb128 0x26
+	.uleb128 0x1a
 	.balign 4
 .LEFDE2:
 .LSFDE4:
@@ -331,21 +230,25 @@ UART_WriteString:
 	.4byte	.Lframe0
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
+	.byte	0x4
+	.4byte	.LCFI2-.LFB2
+	.byte	0xe
+	.uleb128 0x6
 	.balign 4
 .LEFDE4:
 .text
 .Letext0:
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.4byte	0x145
+	.4byte	0xe7
 	.2byte	0x3
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF5
-	.byte	0xc
-	.4byte	.LASF6
 	.4byte	.LASF7
+	.byte	0xc
+	.4byte	.LASF8
+	.4byte	.LASF9
 	.4byte	.Ltext0
 	.4byte	.Letext0
 	.4byte	.Ldebug_line0
@@ -364,34 +267,27 @@ UART_WriteString:
 	.4byte	.LFE2
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0x7b
+	.4byte	0x62
 	.uleb128 0x4
 	.4byte	.LASF4
 	.byte	0x1
 	.byte	0x34
-	.4byte	0x7b
-	.byte	0x1
-	.byte	0x5c
+	.4byte	0x62
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -6
 	.uleb128 0x5
 	.string	"i"
 	.byte	0x1
 	.byte	0x36
-	.4byte	0x81
-	.4byte	.LLST4
-	.uleb128 0x6
-	.4byte	0x111
-	.4byte	.LBB14
-	.4byte	.Ldebug_ranges0+0x18
-	.byte	0x1
-	.byte	0x3c
-	.uleb128 0x7
-	.4byte	0x123
-	.4byte	.LLST5
-	.byte	0
-	.byte	0
-	.uleb128 0x8
+	.4byte	0x68
 	.byte	0x2
-	.4byte	0x81
+	.byte	0x91
+	.sleb128 -3
+	.byte	0
+	.uleb128 0x6
+	.byte	0x2
+	.4byte	0x68
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x8
@@ -406,83 +302,62 @@ UART_WriteString:
 	.4byte	.LFE1
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0xfa
-	.uleb128 0x9
+	.4byte	0xad
+	.uleb128 0x7
 	.string	"n"
 	.byte	0x1
 	.byte	0x1c
-	.4byte	0xfa
-	.4byte	.LLST1
-	.uleb128 0xa
+	.4byte	0xad
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -26
+	.uleb128 0x5
 	.string	"buf"
 	.byte	0x1
 	.byte	0x1e
-	.4byte	0x101
+	.4byte	0xb4
 	.byte	0x2
 	.byte	0x91
-	.sleb128 -36
+	.sleb128 -24
 	.uleb128 0x5
 	.string	"i"
 	.byte	0x1
 	.byte	0x1f
-	.4byte	0xfa
-	.4byte	.LLST2
-	.uleb128 0xb
-	.4byte	0x111
-	.4byte	.LBB8
-	.4byte	.Ldebug_ranges0+0
-	.byte	0x1
-	.byte	0x2c
-	.4byte	0xe4
-	.uleb128 0x7
-	.4byte	0x123
-	.4byte	.LLST3
+	.4byte	0xad
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -4
 	.byte	0
-	.uleb128 0xc
-	.4byte	0x111
-	.4byte	.LBB12
-	.4byte	.LBE12
-	.byte	0x1
-	.byte	0x22
-	.uleb128 0xd
-	.4byte	0x123
-	.byte	0
-	.byte	0
-	.uleb128 0xe
+	.uleb128 0x8
 	.byte	0x2
 	.byte	0x5
 	.string	"int"
-	.uleb128 0xf
-	.4byte	0x81
-	.4byte	0x111
-	.uleb128 0x10
+	.uleb128 0x9
+	.4byte	0x68
+	.4byte	0xc4
+	.uleb128 0xa
 	.4byte	0x29
 	.byte	0x13
 	.byte	0
-	.uleb128 0x11
+	.uleb128 0xb
 	.byte	0x1
-	.4byte	.LASF8
-	.byte	0x1
-	.byte	0x10
-	.byte	0x1
-	.4byte	0xfa
-	.byte	0x1
-	.4byte	0x12f
-	.uleb128 0x12
-	.4byte	.LASF9
+	.4byte	.LASF5
 	.byte	0x1
 	.byte	0x10
-	.4byte	0x81
-	.byte	0
-	.uleb128 0x13
-	.4byte	0x111
+	.byte	0x1
+	.4byte	0xad
 	.4byte	.LFB0
 	.4byte	.LFE0
 	.byte	0x1
 	.byte	0x9c
-	.uleb128 0x7
-	.4byte	0x123
-	.4byte	.LLST0
+	.uleb128 0x4
+	.4byte	.LASF6
+	.byte	0x1
+	.byte	0x10
+	.4byte	0x68
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -3
 	.byte	0
 	.byte	0
 	.section	.debug_abbrev,"",@progbits
@@ -569,34 +444,10 @@ UART_WriteString:
 	.uleb128 0x49
 	.uleb128 0x13
 	.uleb128 0x2
-	.uleb128 0x6
+	.uleb128 0xa
 	.byte	0
 	.byte	0
 	.uleb128 0x6
-	.uleb128 0x1d
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x52
-	.uleb128 0x1
-	.uleb128 0x55
-	.uleb128 0x6
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x7
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x6
-	.byte	0
-	.byte	0
-	.uleb128 0x8
 	.uleb128 0xf
 	.byte	0
 	.uleb128 0xb
@@ -605,23 +456,8 @@ UART_WriteString:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x9
+	.uleb128 0x7
 	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x6
-	.byte	0
-	.byte	0
-	.uleb128 0xa
-	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
 	.uleb128 0x8
@@ -635,46 +471,7 @@ UART_WriteString:
 	.uleb128 0xa
 	.byte	0
 	.byte	0
-	.uleb128 0xb
-	.uleb128 0x1d
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x52
-	.uleb128 0x1
-	.uleb128 0x55
-	.uleb128 0x6
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0xc
-	.uleb128 0x1d
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x1
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0xd
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0xe
+	.uleb128 0x8
 	.uleb128 0x24
 	.byte	0
 	.uleb128 0xb
@@ -685,7 +482,7 @@ UART_WriteString:
 	.uleb128 0x8
 	.byte	0
 	.byte	0
-	.uleb128 0xf
+	.uleb128 0x9
 	.uleb128 0x1
 	.byte	0x1
 	.uleb128 0x49
@@ -694,7 +491,7 @@ UART_WriteString:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x10
+	.uleb128 0xa
 	.uleb128 0x21
 	.byte	0
 	.uleb128 0x49
@@ -703,7 +500,7 @@ UART_WriteString:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x11
+	.uleb128 0xb
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -718,30 +515,6 @@ UART_WriteString:
 	.uleb128 0xc
 	.uleb128 0x49
 	.uleb128 0x13
-	.uleb128 0x20
-	.uleb128 0xb
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x12
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x13
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
@@ -751,63 +524,6 @@ UART_WriteString:
 	.byte	0
 	.byte	0
 	.byte	0
-	.section	.debug_loc,"",@progbits
-.Ldebug_loc0:
-.LLST4:
-	.4byte	.LVL21-.Ltext0
-	.4byte	.LVL22-.Ltext0
-	.2byte	0x1
-	.byte	0x5e
-	.4byte	0
-	.4byte	0
-.LLST5:
-	.4byte	.LVL23-.Ltext0
-	.4byte	.LVL24-.Ltext0
-	.2byte	0x1
-	.byte	0x5f
-	.4byte	0
-	.4byte	0
-.LLST1:
-	.4byte	.LVL2-.Ltext0
-	.4byte	.LVL4-.Ltext0
-	.2byte	0x1
-	.byte	0x5c
-	.4byte	.LVL4-.Ltext0
-	.4byte	.LVL12-.Ltext0
-	.2byte	0x1
-	.byte	0x5a
-	.4byte	.LVL17-.Ltext0
-	.4byte	.LFE1-.Ltext0
-	.2byte	0x1
-	.byte	0x5a
-	.4byte	0
-	.4byte	0
-.LLST2:
-	.4byte	.LVL6-.Ltext0
-	.4byte	.LVL10-.Ltext0
-	.2byte	0x1
-	.byte	0x57
-	.4byte	0
-	.4byte	0
-.LLST3:
-	.4byte	.LVL14-.Ltext0
-	.4byte	.LVL15-.Ltext0
-	.2byte	0x2
-	.byte	0x7d
-	.sleb128 0
-	.4byte	.LVL15-.Ltext0
-	.4byte	.LVL17-.Ltext0
-	.2byte	0x1
-	.byte	0x5e
-	.4byte	0
-	.4byte	0
-.LLST0:
-	.4byte	.LVL0-.Ltext0
-	.4byte	.LVL1-.Ltext0
-	.2byte	0x1
-	.byte	0x5c
-	.4byte	0
-	.4byte	0
 	.section	.debug_aranges,"",@progbits
 	.4byte	0x1c
 	.2byte	0x2
@@ -818,20 +534,6 @@ UART_WriteString:
 	.2byte	0
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
-	.4byte	0
-	.4byte	0
-	.section	.debug_ranges,"",@progbits
-.Ldebug_ranges0:
-	.4byte	.LBB8-.Ltext0
-	.4byte	.LBE8-.Ltext0
-	.4byte	.LBB11-.Ltext0
-	.4byte	.LBE11-.Ltext0
-	.4byte	0
-	.4byte	0
-	.4byte	.LBB14-.Ltext0
-	.4byte	.LBE14-.Ltext0
-	.4byte	.LBB17-.Ltext0
-	.4byte	.LBE17-.Ltext0
 	.4byte	0
 	.4byte	0
 	.section	.debug_macinfo,"",@progbits
@@ -880,730 +582,730 @@ UART_WriteString:
 	.string	"__ATOMIC_CONSUME 1"
 	.byte	0x1
 	.uleb128 0xe
-	.string	"__OPTIMIZE__ 1"
-	.byte	0x1
-	.uleb128 0xf
 	.string	"__FINITE_MATH_ONLY__ 0"
 	.byte	0x1
-	.uleb128 0x10
+	.uleb128 0xf
 	.string	"__SIZEOF_INT__ 2"
 	.byte	0x1
-	.uleb128 0x11
+	.uleb128 0x10
 	.string	"__SIZEOF_LONG__ 4"
 	.byte	0x1
-	.uleb128 0x12
+	.uleb128 0x11
 	.string	"__SIZEOF_LONG_LONG__ 8"
 	.byte	0x1
-	.uleb128 0x13
+	.uleb128 0x12
 	.string	"__SIZEOF_SHORT__ 2"
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x13
 	.string	"__SIZEOF_FLOAT__ 4"
 	.byte	0x1
-	.uleb128 0x15
+	.uleb128 0x14
 	.string	"__SIZEOF_DOUBLE__ 8"
 	.byte	0x1
-	.uleb128 0x16
+	.uleb128 0x15
 	.string	"__SIZEOF_LONG_DOUBLE__ 8"
 	.byte	0x1
-	.uleb128 0x17
+	.uleb128 0x16
 	.string	"__SIZEOF_SIZE_T__ 2"
 	.byte	0x1
-	.uleb128 0x18
+	.uleb128 0x17
 	.string	"__CHAR_BIT__ 8"
 	.byte	0x1
-	.uleb128 0x19
+	.uleb128 0x18
 	.string	"__BIGGEST_ALIGNMENT__ 2"
 	.byte	0x1
-	.uleb128 0x1a
+	.uleb128 0x19
 	.string	"__ORDER_LITTLE_ENDIAN__ 1234"
 	.byte	0x1
-	.uleb128 0x1b
+	.uleb128 0x1a
 	.string	"__ORDER_BIG_ENDIAN__ 4321"
 	.byte	0x1
-	.uleb128 0x1c
+	.uleb128 0x1b
 	.string	"__ORDER_PDP_ENDIAN__ 3412"
 	.byte	0x1
-	.uleb128 0x1d
+	.uleb128 0x1c
 	.string	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__"
 	.byte	0x1
-	.uleb128 0x1e
+	.uleb128 0x1d
 	.string	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__"
 	.byte	0x1
-	.uleb128 0x1f
+	.uleb128 0x1e
 	.string	"__SIZEOF_POINTER__ 2"
 	.byte	0x1
-	.uleb128 0x20
+	.uleb128 0x1f
 	.string	"__SIZE_TYPE__ unsigned int"
 	.byte	0x1
-	.uleb128 0x21
+	.uleb128 0x20
 	.string	"__PTRDIFF_TYPE__ int"
 	.byte	0x1
-	.uleb128 0x22
+	.uleb128 0x21
 	.string	"__WCHAR_TYPE__ long int"
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x22
 	.string	"__WINT_TYPE__ unsigned int"
 	.byte	0x1
-	.uleb128 0x24
+	.uleb128 0x23
 	.string	"__INTMAX_TYPE__ long long int"
 	.byte	0x1
-	.uleb128 0x25
+	.uleb128 0x24
 	.string	"__UINTMAX_TYPE__ long long unsigned int"
 	.byte	0x1
-	.uleb128 0x26
+	.uleb128 0x25
 	.string	"__CHAR16_TYPE__ short unsigned int"
 	.byte	0x1
-	.uleb128 0x27
+	.uleb128 0x26
 	.string	"__CHAR32_TYPE__ long unsigned int"
 	.byte	0x1
-	.uleb128 0x28
+	.uleb128 0x27
 	.string	"__SIG_ATOMIC_TYPE__ int"
 	.byte	0x1
-	.uleb128 0x29
+	.uleb128 0x28
 	.string	"__INT8_TYPE__ signed char"
 	.byte	0x1
-	.uleb128 0x2a
+	.uleb128 0x29
 	.string	"__INT16_TYPE__ short int"
 	.byte	0x1
-	.uleb128 0x2b
+	.uleb128 0x2a
 	.string	"__INT32_TYPE__ long int"
 	.byte	0x1
-	.uleb128 0x2c
+	.uleb128 0x2b
 	.string	"__INT64_TYPE__ long long int"
 	.byte	0x1
-	.uleb128 0x2d
+	.uleb128 0x2c
 	.string	"__UINT8_TYPE__ unsigned char"
 	.byte	0x1
-	.uleb128 0x2e
+	.uleb128 0x2d
 	.string	"__UINT16_TYPE__ short unsigned int"
 	.byte	0x1
-	.uleb128 0x2f
+	.uleb128 0x2e
 	.string	"__UINT32_TYPE__ long unsigned int"
 	.byte	0x1
-	.uleb128 0x30
+	.uleb128 0x2f
 	.string	"__UINT64_TYPE__ long long unsigned int"
 	.byte	0x1
-	.uleb128 0x31
+	.uleb128 0x30
 	.string	"__INT_LEAST8_TYPE__ signed char"
 	.byte	0x1
-	.uleb128 0x32
+	.uleb128 0x31
 	.string	"__INT_LEAST16_TYPE__ short int"
 	.byte	0x1
-	.uleb128 0x33
+	.uleb128 0x32
 	.string	"__INT_LEAST32_TYPE__ long int"
 	.byte	0x1
-	.uleb128 0x34
+	.uleb128 0x33
 	.string	"__INT_LEAST64_TYPE__ long long int"
 	.byte	0x1
-	.uleb128 0x35
+	.uleb128 0x34
 	.string	"__UINT_LEAST8_TYPE__ unsigned char"
 	.byte	0x1
-	.uleb128 0x36
+	.uleb128 0x35
 	.string	"__UINT_LEAST16_TYPE__ short unsigned int"
 	.byte	0x1
-	.uleb128 0x37
+	.uleb128 0x36
 	.string	"__UINT_LEAST32_TYPE__ long unsigned int"
 	.byte	0x1
-	.uleb128 0x38
+	.uleb128 0x37
 	.string	"__UINT_LEAST64_TYPE__ long long unsigned int"
 	.byte	0x1
-	.uleb128 0x39
+	.uleb128 0x38
 	.string	"__INT_FAST8_TYPE__ int"
 	.byte	0x1
-	.uleb128 0x3a
+	.uleb128 0x39
 	.string	"__INT_FAST16_TYPE__ int"
 	.byte	0x1
-	.uleb128 0x3b
+	.uleb128 0x3a
 	.string	"__INT_FAST32_TYPE__ long int"
 	.byte	0x1
-	.uleb128 0x3c
+	.uleb128 0x3b
 	.string	"__INT_FAST64_TYPE__ long long int"
 	.byte	0x1
-	.uleb128 0x3d
+	.uleb128 0x3c
 	.string	"__UINT_FAST8_TYPE__ unsigned int"
 	.byte	0x1
-	.uleb128 0x3e
+	.uleb128 0x3d
 	.string	"__UINT_FAST16_TYPE__ unsigned int"
 	.byte	0x1
-	.uleb128 0x3f
+	.uleb128 0x3e
 	.string	"__UINT_FAST32_TYPE__ long unsigned int"
 	.byte	0x1
-	.uleb128 0x40
+	.uleb128 0x3f
 	.string	"__UINT_FAST64_TYPE__ long long unsigned int"
 	.byte	0x1
-	.uleb128 0x41
+	.uleb128 0x40
 	.string	"__INTPTR_TYPE__ int"
 	.byte	0x1
-	.uleb128 0x42
+	.uleb128 0x41
 	.string	"__UINTPTR_TYPE__ unsigned int"
 	.byte	0x1
-	.uleb128 0x43
+	.uleb128 0x42
 	.string	"__has_include(STR) __has_include__(STR)"
 	.byte	0x1
-	.uleb128 0x44
+	.uleb128 0x43
 	.string	"__has_include_next(STR) __has_include_next__(STR)"
 	.byte	0x1
-	.uleb128 0x45
+	.uleb128 0x44
 	.string	"__GXX_ABI_VERSION 1011"
 	.byte	0x1
-	.uleb128 0x46
+	.uleb128 0x45
 	.string	"__SCHAR_MAX__ 0x7f"
 	.byte	0x1
-	.uleb128 0x47
+	.uleb128 0x46
 	.string	"__SHRT_MAX__ 0x7fff"
 	.byte	0x1
-	.uleb128 0x48
+	.uleb128 0x47
 	.string	"__INT_MAX__ 0x7fff"
 	.byte	0x1
-	.uleb128 0x49
+	.uleb128 0x48
 	.string	"__LONG_MAX__ 0x7fffffffL"
 	.byte	0x1
-	.uleb128 0x4a
+	.uleb128 0x49
 	.string	"__LONG_LONG_MAX__ 0x7fffffffffffffffLL"
 	.byte	0x1
-	.uleb128 0x4b
+	.uleb128 0x4a
 	.string	"__WCHAR_MAX__ 0x7fffffffL"
 	.byte	0x1
-	.uleb128 0x4c
+	.uleb128 0x4b
 	.string	"__WCHAR_MIN__ (-__WCHAR_MAX__ - 1)"
 	.byte	0x1
-	.uleb128 0x4d
+	.uleb128 0x4c
 	.string	"__WINT_MAX__ 0xffffU"
 	.byte	0x1
-	.uleb128 0x4e
+	.uleb128 0x4d
 	.string	"__WINT_MIN__ 0U"
 	.byte	0x1
-	.uleb128 0x4f
+	.uleb128 0x4e
 	.string	"__PTRDIFF_MAX__ 0x7fff"
 	.byte	0x1
-	.uleb128 0x50
+	.uleb128 0x4f
 	.string	"__SIZE_MAX__ 0xffffU"
 	.byte	0x1
-	.uleb128 0x51
+	.uleb128 0x50
 	.string	"__SCHAR_WIDTH__ 8"
 	.byte	0x1
-	.uleb128 0x52
+	.uleb128 0x51
 	.string	"__SHRT_WIDTH__ 16"
 	.byte	0x1
-	.uleb128 0x53
+	.uleb128 0x52
 	.string	"__INT_WIDTH__ 16"
 	.byte	0x1
-	.uleb128 0x54
+	.uleb128 0x53
 	.string	"__LONG_WIDTH__ 32"
 	.byte	0x1
-	.uleb128 0x55
+	.uleb128 0x54
 	.string	"__LONG_LONG_WIDTH__ 64"
 	.byte	0x1
-	.uleb128 0x56
+	.uleb128 0x55
 	.string	"__WCHAR_WIDTH__ 32"
 	.byte	0x1
-	.uleb128 0x57
+	.uleb128 0x56
 	.string	"__WINT_WIDTH__ 16"
 	.byte	0x1
-	.uleb128 0x58
+	.uleb128 0x57
 	.string	"__PTRDIFF_WIDTH__ 16"
 	.byte	0x1
-	.uleb128 0x59
+	.uleb128 0x58
 	.string	"__SIZE_WIDTH__ 16"
 	.byte	0x1
-	.uleb128 0x5a
+	.uleb128 0x59
 	.string	"__INTMAX_MAX__ 0x7fffffffffffffffLL"
 	.byte	0x1
-	.uleb128 0x5b
+	.uleb128 0x5a
 	.string	"__INTMAX_C(c) c ## LL"
 	.byte	0x1
-	.uleb128 0x5c
+	.uleb128 0x5b
 	.string	"__UINTMAX_MAX__ 0xffffffffffffffffULL"
 	.byte	0x1
-	.uleb128 0x5d
+	.uleb128 0x5c
 	.string	"__UINTMAX_C(c) c ## ULL"
 	.byte	0x1
-	.uleb128 0x5e
+	.uleb128 0x5d
 	.string	"__INTMAX_WIDTH__ 64"
 	.byte	0x1
-	.uleb128 0x5f
+	.uleb128 0x5e
 	.string	"__SIG_ATOMIC_MAX__ 0x7fff"
 	.byte	0x1
-	.uleb128 0x60
+	.uleb128 0x5f
 	.string	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)"
 	.byte	0x1
-	.uleb128 0x61
+	.uleb128 0x60
 	.string	"__SIG_ATOMIC_WIDTH__ 16"
 	.byte	0x1
-	.uleb128 0x62
+	.uleb128 0x61
 	.string	"__INT8_MAX__ 0x7f"
 	.byte	0x1
-	.uleb128 0x63
+	.uleb128 0x62
 	.string	"__INT16_MAX__ 0x7fff"
 	.byte	0x1
-	.uleb128 0x64
+	.uleb128 0x63
 	.string	"__INT32_MAX__ 0x7fffffffL"
 	.byte	0x1
-	.uleb128 0x65
+	.uleb128 0x64
 	.string	"__INT64_MAX__ 0x7fffffffffffffffLL"
 	.byte	0x1
-	.uleb128 0x66
+	.uleb128 0x65
 	.string	"__UINT8_MAX__ 0xff"
 	.byte	0x1
-	.uleb128 0x67
+	.uleb128 0x66
 	.string	"__UINT16_MAX__ 0xffffU"
 	.byte	0x1
-	.uleb128 0x68
+	.uleb128 0x67
 	.string	"__UINT32_MAX__ 0xffffffffUL"
 	.byte	0x1
-	.uleb128 0x69
+	.uleb128 0x68
 	.string	"__UINT64_MAX__ 0xffffffffffffffffULL"
 	.byte	0x1
-	.uleb128 0x6a
+	.uleb128 0x69
 	.string	"__INT_LEAST8_MAX__ 0x7f"
 	.byte	0x1
-	.uleb128 0x6b
+	.uleb128 0x6a
 	.string	"__INT8_C(c) c"
 	.byte	0x1
-	.uleb128 0x6c
+	.uleb128 0x6b
 	.string	"__INT_LEAST8_WIDTH__ 8"
 	.byte	0x1
-	.uleb128 0x6d
+	.uleb128 0x6c
 	.string	"__INT_LEAST16_MAX__ 0x7fff"
 	.byte	0x1
-	.uleb128 0x6e
+	.uleb128 0x6d
 	.string	"__INT16_C(c) c"
 	.byte	0x1
-	.uleb128 0x6f
+	.uleb128 0x6e
 	.string	"__INT_LEAST16_WIDTH__ 16"
 	.byte	0x1
-	.uleb128 0x70
+	.uleb128 0x6f
 	.string	"__INT_LEAST32_MAX__ 0x7fffffffL"
 	.byte	0x1
-	.uleb128 0x71
+	.uleb128 0x70
 	.string	"__INT32_C(c) c ## L"
 	.byte	0x1
-	.uleb128 0x72
+	.uleb128 0x71
 	.string	"__INT_LEAST32_WIDTH__ 32"
 	.byte	0x1
-	.uleb128 0x73
+	.uleb128 0x72
 	.string	"__INT_LEAST64_MAX__ 0x7fffffffffffffffLL"
 	.byte	0x1
-	.uleb128 0x74
+	.uleb128 0x73
 	.string	"__INT64_C(c) c ## LL"
 	.byte	0x1
-	.uleb128 0x75
+	.uleb128 0x74
 	.string	"__INT_LEAST64_WIDTH__ 64"
 	.byte	0x1
-	.uleb128 0x76
+	.uleb128 0x75
 	.string	"__UINT_LEAST8_MAX__ 0xff"
 	.byte	0x1
-	.uleb128 0x77
+	.uleb128 0x76
 	.string	"__UINT8_C(c) c"
 	.byte	0x1
-	.uleb128 0x78
+	.uleb128 0x77
 	.string	"__UINT_LEAST16_MAX__ 0xffffU"
 	.byte	0x1
-	.uleb128 0x79
+	.uleb128 0x78
 	.string	"__UINT16_C(c) c ## U"
 	.byte	0x1
-	.uleb128 0x7a
+	.uleb128 0x79
 	.string	"__UINT_LEAST32_MAX__ 0xffffffffUL"
 	.byte	0x1
-	.uleb128 0x7b
+	.uleb128 0x7a
 	.string	"__UINT32_C(c) c ## UL"
 	.byte	0x1
-	.uleb128 0x7c
+	.uleb128 0x7b
 	.string	"__UINT_LEAST64_MAX__ 0xffffffffffffffffULL"
 	.byte	0x1
-	.uleb128 0x7d
+	.uleb128 0x7c
 	.string	"__UINT64_C(c) c ## ULL"
 	.byte	0x1
-	.uleb128 0x7e
+	.uleb128 0x7d
 	.string	"__INT_FAST8_MAX__ 0x7fff"
 	.byte	0x1
-	.uleb128 0x7f
+	.uleb128 0x7e
 	.string	"__INT_FAST8_WIDTH__ 16"
 	.byte	0x1
-	.uleb128 0x80
+	.uleb128 0x7f
 	.string	"__INT_FAST16_MAX__ 0x7fff"
 	.byte	0x1
-	.uleb128 0x81
+	.uleb128 0x80
 	.string	"__INT_FAST16_WIDTH__ 16"
 	.byte	0x1
-	.uleb128 0x82
+	.uleb128 0x81
 	.string	"__INT_FAST32_MAX__ 0x7fffffffL"
 	.byte	0x1
-	.uleb128 0x83
+	.uleb128 0x82
 	.string	"__INT_FAST32_WIDTH__ 32"
 	.byte	0x1
-	.uleb128 0x84
+	.uleb128 0x83
 	.string	"__INT_FAST64_MAX__ 0x7fffffffffffffffLL"
 	.byte	0x1
-	.uleb128 0x85
+	.uleb128 0x84
 	.string	"__INT_FAST64_WIDTH__ 64"
 	.byte	0x1
-	.uleb128 0x86
+	.uleb128 0x85
 	.string	"__UINT_FAST8_MAX__ 0xffffU"
 	.byte	0x1
-	.uleb128 0x87
+	.uleb128 0x86
 	.string	"__UINT_FAST16_MAX__ 0xffffU"
 	.byte	0x1
-	.uleb128 0x88
+	.uleb128 0x87
 	.string	"__UINT_FAST32_MAX__ 0xffffffffUL"
 	.byte	0x1
-	.uleb128 0x89
+	.uleb128 0x88
 	.string	"__UINT_FAST64_MAX__ 0xffffffffffffffffULL"
 	.byte	0x1
-	.uleb128 0x8a
+	.uleb128 0x89
 	.string	"__INTPTR_MAX__ 0x7fff"
 	.byte	0x1
-	.uleb128 0x8b
+	.uleb128 0x8a
 	.string	"__INTPTR_WIDTH__ 16"
 	.byte	0x1
-	.uleb128 0x8c
+	.uleb128 0x8b
 	.string	"__UINTPTR_MAX__ 0xffffU"
 	.byte	0x1
-	.uleb128 0x8d
+	.uleb128 0x8c
 	.string	"__GCC_IEC_559 0"
 	.byte	0x1
-	.uleb128 0x8e
+	.uleb128 0x8d
 	.string	"__GCC_IEC_559_COMPLEX 0"
 	.byte	0x1
-	.uleb128 0x8f
+	.uleb128 0x8e
 	.string	"__FLT_EVAL_METHOD__ 0"
 	.byte	0x1
-	.uleb128 0x90
+	.uleb128 0x8f
 	.string	"__FLT_EVAL_METHOD_TS_18661_3__ 0"
 	.byte	0x1
-	.uleb128 0x91
+	.uleb128 0x90
 	.string	"__DEC_EVAL_METHOD__ 2"
 	.byte	0x1
-	.uleb128 0x92
+	.uleb128 0x91
 	.string	"__FLT_RADIX__ 2"
 	.byte	0x1
-	.uleb128 0x93
+	.uleb128 0x92
 	.string	"__FLT_MANT_DIG__ 24"
 	.byte	0x1
-	.uleb128 0x94
+	.uleb128 0x93
 	.string	"__FLT_DIG__ 6"
 	.byte	0x1
-	.uleb128 0x95
+	.uleb128 0x94
 	.string	"__FLT_MIN_EXP__ (-125)"
 	.byte	0x1
-	.uleb128 0x96
+	.uleb128 0x95
 	.string	"__FLT_MIN_10_EXP__ (-37)"
 	.byte	0x1
-	.uleb128 0x97
+	.uleb128 0x96
 	.string	"__FLT_MAX_EXP__ 128"
 	.byte	0x1
-	.uleb128 0x98
+	.uleb128 0x97
 	.string	"__FLT_MAX_10_EXP__ 38"
 	.byte	0x1
-	.uleb128 0x99
+	.uleb128 0x98
 	.string	"__FLT_DECIMAL_DIG__ 9"
 	.byte	0x1
-	.uleb128 0x9a
+	.uleb128 0x99
 	.string	"__FLT_MAX__ 3.4028234663852886e+38F"
 	.byte	0x1
-	.uleb128 0x9b
+	.uleb128 0x9a
 	.string	"__FLT_MIN__ 1.1754943508222875e-38F"
 	.byte	0x1
-	.uleb128 0x9c
+	.uleb128 0x9b
 	.string	"__FLT_EPSILON__ 1.1920928955078125e-7F"
 	.byte	0x1
-	.uleb128 0x9d
+	.uleb128 0x9c
 	.string	"__FLT_DENORM_MIN__ 1.4012984643248171e-45F"
 	.byte	0x1
-	.uleb128 0x9e
+	.uleb128 0x9d
 	.string	"__FLT_HAS_DENORM__ 1"
 	.byte	0x1
-	.uleb128 0x9f
+	.uleb128 0x9e
 	.string	"__FLT_HAS_INFINITY__ 1"
 	.byte	0x1
-	.uleb128 0xa0
+	.uleb128 0x9f
 	.string	"__FLT_HAS_QUIET_NAN__ 1"
 	.byte	0x1
-	.uleb128 0xa1
+	.uleb128 0xa0
 	.string	"__DBL_MANT_DIG__ 53"
 	.byte	0x1
-	.uleb128 0xa2
+	.uleb128 0xa1
 	.string	"__DBL_DIG__ 15"
 	.byte	0x1
-	.uleb128 0xa3
+	.uleb128 0xa2
 	.string	"__DBL_MIN_EXP__ (-1021)"
 	.byte	0x1
-	.uleb128 0xa4
+	.uleb128 0xa3
 	.string	"__DBL_MIN_10_EXP__ (-307)"
 	.byte	0x1
-	.uleb128 0xa5
+	.uleb128 0xa4
 	.string	"__DBL_MAX_EXP__ 1024"
 	.byte	0x1
-	.uleb128 0xa6
+	.uleb128 0xa5
 	.string	"__DBL_MAX_10_EXP__ 308"
 	.byte	0x1
-	.uleb128 0xa7
+	.uleb128 0xa6
 	.string	"__DBL_DECIMAL_DIG__ 17"
 	.byte	0x1
-	.uleb128 0xa8
+	.uleb128 0xa7
 	.string	"__DBL_MAX__ ((double)1.7976931348623157e+308L)"
 	.byte	0x1
-	.uleb128 0xa9
+	.uleb128 0xa8
 	.string	"__DBL_MIN__ ((double)2.2250738585072014e-308L)"
 	.byte	0x1
-	.uleb128 0xaa
+	.uleb128 0xa9
 	.string	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)"
 	.byte	0x1
-	.uleb128 0xab
+	.uleb128 0xaa
 	.string	"__DBL_DENORM_MIN__ ((double)4.9406564584124654e-324L)"
 	.byte	0x1
-	.uleb128 0xac
+	.uleb128 0xab
 	.string	"__DBL_HAS_DENORM__ 1"
 	.byte	0x1
-	.uleb128 0xad
+	.uleb128 0xac
 	.string	"__DBL_HAS_INFINITY__ 1"
 	.byte	0x1
-	.uleb128 0xae
+	.uleb128 0xad
 	.string	"__DBL_HAS_QUIET_NAN__ 1"
 	.byte	0x1
-	.uleb128 0xaf
+	.uleb128 0xae
 	.string	"__LDBL_MANT_DIG__ 53"
 	.byte	0x1
-	.uleb128 0xb0
+	.uleb128 0xaf
 	.string	"__LDBL_DIG__ 15"
 	.byte	0x1
-	.uleb128 0xb1
+	.uleb128 0xb0
 	.string	"__LDBL_MIN_EXP__ (-1021)"
 	.byte	0x1
-	.uleb128 0xb2
+	.uleb128 0xb1
 	.string	"__LDBL_MIN_10_EXP__ (-307)"
 	.byte	0x1
-	.uleb128 0xb3
+	.uleb128 0xb2
 	.string	"__LDBL_MAX_EXP__ 1024"
 	.byte	0x1
-	.uleb128 0xb4
+	.uleb128 0xb3
 	.string	"__LDBL_MAX_10_EXP__ 308"
 	.byte	0x1
-	.uleb128 0xb5
+	.uleb128 0xb4
 	.string	"__DECIMAL_DIG__ 17"
 	.byte	0x1
-	.uleb128 0xb6
+	.uleb128 0xb5
 	.string	"__LDBL_DECIMAL_DIG__ 17"
 	.byte	0x1
-	.uleb128 0xb7
+	.uleb128 0xb6
 	.string	"__LDBL_MAX__ 1.7976931348623157e+308L"
 	.byte	0x1
-	.uleb128 0xb8
+	.uleb128 0xb7
 	.string	"__LDBL_MIN__ 2.2250738585072014e-308L"
 	.byte	0x1
-	.uleb128 0xb9
+	.uleb128 0xb8
 	.string	"__LDBL_EPSILON__ 2.2204460492503131e-16L"
 	.byte	0x1
-	.uleb128 0xba
+	.uleb128 0xb9
 	.string	"__LDBL_DENORM_MIN__ 4.9406564584124654e-324L"
 	.byte	0x1
-	.uleb128 0xbb
+	.uleb128 0xba
 	.string	"__LDBL_HAS_DENORM__ 1"
 	.byte	0x1
-	.uleb128 0xbc
+	.uleb128 0xbb
 	.string	"__LDBL_HAS_INFINITY__ 1"
 	.byte	0x1
-	.uleb128 0xbd
+	.uleb128 0xbc
 	.string	"__LDBL_HAS_QUIET_NAN__ 1"
 	.byte	0x1
-	.uleb128 0xbe
+	.uleb128 0xbd
 	.string	"__FLT32_MANT_DIG__ 24"
 	.byte	0x1
-	.uleb128 0xbf
+	.uleb128 0xbe
 	.string	"__FLT32_DIG__ 6"
 	.byte	0x1
-	.uleb128 0xc0
+	.uleb128 0xbf
 	.string	"__FLT32_MIN_EXP__ (-125)"
 	.byte	0x1
-	.uleb128 0xc1
+	.uleb128 0xc0
 	.string	"__FLT32_MIN_10_EXP__ (-37)"
 	.byte	0x1
-	.uleb128 0xc2
+	.uleb128 0xc1
 	.string	"__FLT32_MAX_EXP__ 128"
 	.byte	0x1
-	.uleb128 0xc3
+	.uleb128 0xc2
 	.string	"__FLT32_MAX_10_EXP__ 38"
 	.byte	0x1
-	.uleb128 0xc4
+	.uleb128 0xc3
 	.string	"__FLT32_DECIMAL_DIG__ 9"
 	.byte	0x1
-	.uleb128 0xc5
+	.uleb128 0xc4
 	.string	"__FLT32_MAX__ 3.4028234663852886e+38F32"
 	.byte	0x1
-	.uleb128 0xc6
+	.uleb128 0xc5
 	.string	"__FLT32_MIN__ 1.1754943508222875e-38F32"
 	.byte	0x1
-	.uleb128 0xc7
+	.uleb128 0xc6
 	.string	"__FLT32_EPSILON__ 1.1920928955078125e-7F32"
 	.byte	0x1
-	.uleb128 0xc8
+	.uleb128 0xc7
 	.string	"__FLT32_DENORM_MIN__ 1.4012984643248171e-45F32"
 	.byte	0x1
-	.uleb128 0xc9
+	.uleb128 0xc8
 	.string	"__FLT32_HAS_DENORM__ 1"
 	.byte	0x1
-	.uleb128 0xca
+	.uleb128 0xc9
 	.string	"__FLT32_HAS_INFINITY__ 1"
 	.byte	0x1
-	.uleb128 0xcb
+	.uleb128 0xca
 	.string	"__FLT32_HAS_QUIET_NAN__ 1"
 	.byte	0x1
-	.uleb128 0xcc
+	.uleb128 0xcb
 	.string	"__FLT64_MANT_DIG__ 53"
 	.byte	0x1
-	.uleb128 0xcd
+	.uleb128 0xcc
 	.string	"__FLT64_DIG__ 15"
 	.byte	0x1
-	.uleb128 0xce
+	.uleb128 0xcd
 	.string	"__FLT64_MIN_EXP__ (-1021)"
 	.byte	0x1
-	.uleb128 0xcf
+	.uleb128 0xce
 	.string	"__FLT64_MIN_10_EXP__ (-307)"
 	.byte	0x1
-	.uleb128 0xd0
+	.uleb128 0xcf
 	.string	"__FLT64_MAX_EXP__ 1024"
 	.byte	0x1
-	.uleb128 0xd1
+	.uleb128 0xd0
 	.string	"__FLT64_MAX_10_EXP__ 308"
 	.byte	0x1
-	.uleb128 0xd2
+	.uleb128 0xd1
 	.string	"__FLT64_DECIMAL_DIG__ 17"
 	.byte	0x1
-	.uleb128 0xd3
+	.uleb128 0xd2
 	.string	"__FLT64_MAX__ 1.7976931348623157e+308F64"
 	.byte	0x1
-	.uleb128 0xd4
+	.uleb128 0xd3
 	.string	"__FLT64_MIN__ 2.2250738585072014e-308F64"
 	.byte	0x1
-	.uleb128 0xd5
+	.uleb128 0xd4
 	.string	"__FLT64_EPSILON__ 2.2204460492503131e-16F64"
 	.byte	0x1
-	.uleb128 0xd6
+	.uleb128 0xd5
 	.string	"__FLT64_DENORM_MIN__ 4.9406564584124654e-324F64"
 	.byte	0x1
-	.uleb128 0xd7
+	.uleb128 0xd6
 	.string	"__FLT64_HAS_DENORM__ 1"
 	.byte	0x1
-	.uleb128 0xd8
+	.uleb128 0xd7
 	.string	"__FLT64_HAS_INFINITY__ 1"
 	.byte	0x1
-	.uleb128 0xd9
+	.uleb128 0xd8
 	.string	"__FLT64_HAS_QUIET_NAN__ 1"
 	.byte	0x1
-	.uleb128 0xda
+	.uleb128 0xd9
 	.string	"__FLT32X_MANT_DIG__ 53"
 	.byte	0x1
-	.uleb128 0xdb
+	.uleb128 0xda
 	.string	"__FLT32X_DIG__ 15"
 	.byte	0x1
-	.uleb128 0xdc
+	.uleb128 0xdb
 	.string	"__FLT32X_MIN_EXP__ (-1021)"
 	.byte	0x1
-	.uleb128 0xdd
+	.uleb128 0xdc
 	.string	"__FLT32X_MIN_10_EXP__ (-307)"
 	.byte	0x1
-	.uleb128 0xde
+	.uleb128 0xdd
 	.string	"__FLT32X_MAX_EXP__ 1024"
 	.byte	0x1
-	.uleb128 0xdf
+	.uleb128 0xde
 	.string	"__FLT32X_MAX_10_EXP__ 308"
 	.byte	0x1
-	.uleb128 0xe0
+	.uleb128 0xdf
 	.string	"__FLT32X_DECIMAL_DIG__ 17"
 	.byte	0x1
-	.uleb128 0xe1
+	.uleb128 0xe0
 	.string	"__FLT32X_MAX__ 1.7976931348623157e+308F32x"
 	.byte	0x1
-	.uleb128 0xe2
+	.uleb128 0xe1
 	.string	"__FLT32X_MIN__ 2.2250738585072014e-308F32x"
 	.byte	0x1
-	.uleb128 0xe3
+	.uleb128 0xe2
 	.string	"__FLT32X_EPSILON__ 2.2204460492503131e-16F32x"
 	.byte	0x1
-	.uleb128 0xe4
+	.uleb128 0xe3
 	.string	"__FLT32X_DENORM_MIN__ 4.9406564584124654e-324F32x"
 	.byte	0x1
-	.uleb128 0xe5
+	.uleb128 0xe4
 	.string	"__FLT32X_HAS_DENORM__ 1"
 	.byte	0x1
-	.uleb128 0xe6
+	.uleb128 0xe5
 	.string	"__FLT32X_HAS_INFINITY__ 1"
 	.byte	0x1
-	.uleb128 0xe7
+	.uleb128 0xe6
 	.string	"__FLT32X_HAS_QUIET_NAN__ 1"
 	.byte	0x1
-	.uleb128 0xe8
+	.uleb128 0xe7
 	.string	"__DEC32_MANT_DIG__ 7"
 	.byte	0x1
-	.uleb128 0xe9
+	.uleb128 0xe8
 	.string	"__DEC32_MIN_EXP__ (-94)"
 	.byte	0x1
-	.uleb128 0xea
+	.uleb128 0xe9
 	.string	"__DEC32_MAX_EXP__ 97"
 	.byte	0x1
-	.uleb128 0xeb
+	.uleb128 0xea
 	.string	"__DEC32_MIN__ 1E-95DF"
 	.byte	0x1
-	.uleb128 0xec
+	.uleb128 0xeb
 	.string	"__DEC32_MAX__ 9.999999E96DF"
 	.byte	0x1
-	.uleb128 0xed
+	.uleb128 0xec
 	.string	"__DEC32_EPSILON__ 1E-6DF"
 	.byte	0x1
-	.uleb128 0xee
+	.uleb128 0xed
 	.string	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF"
 	.byte	0x1
-	.uleb128 0xef
+	.uleb128 0xee
 	.string	"__DEC64_MANT_DIG__ 16"
 	.byte	0x1
-	.uleb128 0xf0
+	.uleb128 0xef
 	.string	"__DEC64_MIN_EXP__ (-382)"
 	.byte	0x1
-	.uleb128 0xf1
+	.uleb128 0xf0
 	.string	"__DEC64_MAX_EXP__ 385"
 	.byte	0x1
-	.uleb128 0xf2
+	.uleb128 0xf1
 	.string	"__DEC64_MIN__ 1E-383DD"
 	.byte	0x1
-	.uleb128 0xf3
+	.uleb128 0xf2
 	.string	"__DEC64_MAX__ 9.999999999999999E384DD"
 	.byte	0x1
-	.uleb128 0xf4
+	.uleb128 0xf3
 	.string	"__DEC64_EPSILON__ 1E-15DD"
 	.byte	0x1
-	.uleb128 0xf5
+	.uleb128 0xf4
 	.string	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD"
 	.byte	0x1
-	.uleb128 0xf6
+	.uleb128 0xf5
 	.string	"__DEC128_MANT_DIG__ 34"
 	.byte	0x1
-	.uleb128 0xf7
+	.uleb128 0xf6
 	.string	"__DEC128_MIN_EXP__ (-6142)"
 	.byte	0x1
-	.uleb128 0xf8
+	.uleb128 0xf7
 	.string	"__DEC128_MAX_EXP__ 6145"
 	.byte	0x1
-	.uleb128 0xf9
+	.uleb128 0xf8
 	.string	"__DEC128_MIN__ 1E-6143DL"
 	.byte	0x1
-	.uleb128 0xfa
+	.uleb128 0xf9
 	.string	"__DEC128_MAX__ 9.999999999999999999999999999999999E6144DL"
 	.byte	0x1
-	.uleb128 0xfb
+	.uleb128 0xfa
 	.string	"__DEC128_EPSILON__ 1E-33DL"
 	.byte	0x1
-	.uleb128 0xfc
+	.uleb128 0xfb
 	.string	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL"
 	.byte	0x1
-	.uleb128 0xfd
+	.uleb128 0xfc
 	.string	"__REGISTER_PREFIX__ "
 	.byte	0x1
-	.uleb128 0xfe
+	.uleb128 0xfd
 	.string	"__USER_LABEL_PREFIX__ "
 	.byte	0x1
-	.uleb128 0xff
+	.uleb128 0xfe
 	.string	"__GNUC_STDC_INLINE__ 1"
+	.byte	0x1
+	.uleb128 0xff
+	.string	"__NO_INLINE__ 1"
 	.byte	0x1
 	.uleb128 0x100
 	.string	"__STRICT_ANSI__ 1"
@@ -2202,21 +1904,21 @@ UART_WriteString:
 	.string	"unsigned int"
 .LASF2:
 	.string	"UART_WriteString"
-.LASF9:
-	.string	"txdata"
 .LASF6:
+	.string	"txdata"
+.LASF8:
 	.string	"../uart.c"
+.LASF7:
+	.ascii	"GNU C9"
+	.string	"9 7.3.1 -mmcu=msp430 -mhwmult=16bit -msmall -mcode-region=none -mdata-region=none -mdevices-csv-loc=/opt/ti/ccsv8/ccs_base/msp430/include_gcc/devices.csv -mcpu=msp430 -g3 -g -gdwarf-3 -gstrict-dwarf -g3 -O0 -std=c99 -std=c99 -fstrict-aliasing -fstack-usage"
 .LASF1:
 	.string	"char"
-.LASF7:
+.LASF9:
 	.string	"/home/hiram/eclipse-workspace/int_cuckoo/Debug"
-.LASF5:
-	.ascii	"GNU C9"
-	.string	"9 7.3.1 -mmcu=msp430 -mhwmult=16bit -msmall -mcode-region=none -mdata-region=none -mdevices-csv-loc=/opt/ti/ccsv8/ccs_base/msp430/include_gcc/devices.csv -mcpu=msp430 -g3 -g -gdwarf-3 -gstrict-dwarf -g3 -O2 -std=c99 -std=c99 -fstrict-aliasing -fstack-usage"
 .LASF3:
 	.string	"UART_WriteNumber"
 .LASF4:
 	.string	"string"
-.LASF8:
+.LASF5:
 	.string	"UART_WriteChar"
 	.ident	"GCC: (Mitto Systems Limited - msp430-gcc 7.3.1.24) 7.3.1"

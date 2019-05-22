@@ -56,13 +56,6 @@ module openMSP430_fpga (
   input         UART_RX,
   output			 OUT_PLL,
   
-  //-----------------------------
-  // Addresses
-  //-----------------------------
-  output [1:0] ADDR,
-  output [1:0] TL_ADDR,
-  output  ADDR_CE,
-  output WAR,
   output PER_UART_TX
 
 );
@@ -163,8 +156,9 @@ assign lfxt_clk = lfxt_clk_cnt[8];
 //=============================================================================
 // 3)  OPENMSP430
 //=============================================================================
-wire dbg_mem_en;
+wire dbg_mem_en_q;
 wire [1:0] mb_rd_msk;
+
 openMSP430 openmsp430_0 (
 
 // OUTPUTs
@@ -197,7 +191,7 @@ openMSP430 openmsp430_0 (
     .puc_rst           (puc_rst),             // Main system reset
     .smclk             (),                    // ASIC ONLY: SMCLK
     .smclk_en          (smclk_en),            // FPGA ONLY: SMCLK enable
-	 .dbg_mem_en		  (dbg_mem_en),
+	 .dbg_mem_en_out	  (dbg_mem_en_q),
 	 .mb_rd_msk			  (mb_rd_msk),
 // INPUTs
     .cpu_en            (1'b1),                // Enable CPU code execution (asynchronous and non-glitchy)
@@ -381,7 +375,7 @@ omsp_qwark_periph qwark_periph_0 (
     .per_addr(per_addr),               						// Peripheral address
     .per_din(per_din),                 						// Peripheral data input
     .per_en(per_en),                   						// Peripheral enable (high active)
-    .dbg_acc(/*1'b0*/dbg_mem_en),
+    .dbg_acc(/*1'b0*/dbg_mem_en_q),
 	 .per_we(per_we),                   						// Peripheral write enable (high active)
   //Functionality related signals  
 	 .puc_rst(puc_rst),              	   					// Main system reset
@@ -423,11 +417,6 @@ omsp_uart #(.BASE_ADDR(15'h0080)) uart_0 (
 assign  UART_TX 		=  dbg_uart_txd;
 assign  PER_UART_TX  =  hw_uart_txd;
 assign  dbg_uart_rxd =  UART_RX;
-assign  OUT_PLL      = pll_out;
-assign  ADDR_CE 	   = dmem_cen;
-assign  ADDR[0] 	   = dmem_addr[0];
-assign  ADDR[1] 	   = dmem_addr[1];
-assign  TL_ADDR[0]   = qwark_addr[0];
-assign  TL_ADDR[1]   = qwark_addr[1];
+
 
 endmodule

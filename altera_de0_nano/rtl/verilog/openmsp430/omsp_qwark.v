@@ -294,7 +294,7 @@ always @(posedge mclk) begin
 	wr_buff_wr_en <= eu_en &&  (eu_mb_wr[1] || eu_mb_wr[0]) && mem_track_en  && (tl_eu_addr!=rd_buff_busy_writing) && ~rd_buf_out_match && ~wr_buf_out_match && ~tlb_match;
 	
 	//Enable the TLB write upon WAR detection
-	tlb_buff_wr_en <= (WAR || sync_WAR) && ~tlb_match &&  (tlb_buff_ctr + 1 != 8) ;
+	tlb_buff_wr_en <= (WAR || sync_WAR) && ~tlb_match &&  (tlb_buff_ctr + 1 != 8) && (rd_buff_ctr != 8);
 	
 	per_addr_wr_en <= (WAR || sync_WAR) && ~tlb_match;
 	
@@ -341,7 +341,7 @@ always @(posedge mclk) begin
 			rd_buff_ctr <=  4'b000;
 	end else if(r1 && ~buff_rst) begin
 			rd_buff_ctr <= rd_buff_ctr + 1'b1;
-	end else if(rd_buff_ctr == 8 || buff_rst) begin
+	end else if(buff_rst) begin
 		   rd_buff_ctr <= 4'b000;
 	end
 end
@@ -351,7 +351,7 @@ always @(posedge mclk) begin
 			wr_buff_ctr <=  4'b000;
 	end else if(r3 && ~buff_rst) begin
 			wr_buff_ctr <= wr_buff_ctr + 1'b1;
-	end else if(wr_buff_ctr == 8 || buff_rst) begin
+	end else if(buff_rst) begin
 		   wr_buff_ctr <= 4'b000;
 	end
 end
@@ -361,7 +361,7 @@ always @(posedge mclk) begin
 			tlb_buff_ctr <=  4'b000;
 	end else if(r5 && ~buff_rst) begin
 			tlb_buff_ctr <= tlb_buff_ctr + 1'b1;
-	end else if(tlb_buff_ctr == 8 || buff_rst) begin
+	end else if(buff_rst) begin
 		   tlb_buff_ctr <= 4'b000;
 	end
 end

@@ -155,10 +155,6 @@ openMSP430_fpga dut (
      .UART_RX	      ( UART_RX		),
      .UART_TX	      ( UART_TX		),
      .OUT_PLL	      (),
-     .ADDR	      (),
-     .TL_ADDR	      (),
-     .ADDR_CE	      (),
-     .WAR	      (),
      .PER_UART_TX     (PER_UART_TX)
 );
 

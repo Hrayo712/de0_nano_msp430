@@ -14,7 +14,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 2
 #define __SIZEOF_LONG__ 4
@@ -256,6 +255,7 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
+#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
 #define __CHAR_UNSIGNED__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
@@ -281,7 +281,13 @@
 #define PFX_MSP430_ELF 1
 # 1 "../main.c"
 #define EXIT_DONE 
-# 17 "../main.c"
+
+
+
+
+
+#define UART_DBG 
+# 18 "../main.c"
 # 1 "../uart.h" 1
 # 9 "../uart.h"
 #define UART_H_ 
@@ -331,7 +337,7 @@ void UART_WriteString(char* string);
 #define UART_RX_VECTOR (7 *2)
 # 68 "../uart.h"
 #define BAUD 8
-# 18 "../main.c" 2
+# 19 "../main.c" 2
 # 1 "../qwark.h" 1
 # 9 "../qwark.h"
 #define QWARK_H_ 
@@ -341,7 +347,251 @@ void UART_WriteString(char* string);
 #define QWARK_CHECKPOINT() QWARK_CTL |= 0x0020
 
 #define QWARK_EN 0x01
-# 19 "../main.c" 2
+# 20 "../main.c" 2
+# 1 "../timerA.h" 1
+
+#define TIMERA_H 
+
+# 1 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h" 1
+# 39 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __IN430_H__ 
+# 48 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+typedef unsigned int __istate_t;
+
+#define _no_operation() __asm__ __volatile__ ("nop")
+
+#define _get_interrupt_state() ({ unsigned int __x; __asm__ __volatile__( "mov SR, %0" : "=r" ((unsigned int) __x) :); __x; })
+# 78 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define _set_interrupt_state(x) ({ __asm__ __volatile__ ("mov %0, SR" : : "ri"((unsigned int) x) );})
+
+
+
+
+
+
+#define _enable_interrupts() __asm__ __volatile__ ("eint { nop")
+
+#define _bis_SR_register(x) __asm__ __volatile__ ("bis.w %0, SR" : : "ri"((unsigned int) x) )
+
+
+
+
+
+
+#define _disable_interrupts() __asm__ __volatile__ ("dint { nop")
+
+#define _bic_SR_register(x) __asm__ __volatile__ ("bic.w %0, SR { nop" : : "ri"((unsigned int) x) )
+
+
+
+
+#define _get_SR_register() ({ unsigned int __x; __asm__ __volatile__( "mov SR, %0" : "=r" ((unsigned int) __x) :); __x; })
+# 111 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define _swap_bytes(x) ({ unsigned int __dst = x; __asm__ __volatile__( "swpb %0" : "+r" ((unsigned int) __dst) :); __dst; })
+# 122 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define _bic_SR_register_on_exit(x) __bic_SR_register_on_exit(x)
+#define _bis_SR_register_on_exit(x) __bis_SR_register_on_exit(x)
+
+
+#define _bcd_add_short(x,y) ({ unsigned short __z = ((unsigned short) y); __asm__ __volatile__( "clrc \n\t" "dadd.w %1, %0" : "+r" ((unsigned short) __z) : "ri" ((unsigned short) x) ); __z; })
+# 138 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __bcd_add_short(x,y) _bcd_add_short(x,y)
+
+#define _bcd_add_long(x,y) ({ unsigned long __z = ((unsigned long) y); __asm__ __volatile__( "clrc \n\t" "dadd.w %L1, %L0 \n\t" "dadd.w %H1, %H0" : "+r" ((unsigned long) __z) : "ri" ((unsigned long) x) ); __z; })
+# 153 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __bcd_add_long(x,y) _bcd_add_long(x,y)
+
+#define _get_SP_register() ({ unsigned int __x; __asm__ __volatile__( "mov SP, %0" : "=r" ((unsigned int) __x) :); __x; })
+# 165 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __get_SP_register() _get_SP_register()
+
+#define _set_SP_register(x) ({ __asm__ __volatile__ ("mov %0, SP" : : "ri"((unsigned int) x) );})
+
+
+
+
+
+
+#define __set_SP_register(x) _set_SP_register(x)
+
+#define _data16_write_addr(addr,src) ({ unsigned long __src = src; __asm__ __volatile__ ( "movx.a %1, 0(%0)" : : "r"((unsigned int) addr), "m"((unsigned long) __src) ); })
+# 185 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data16_write_addr(addr,src) _data16_write_addr(addr,src)
+
+#define _data16_read_addr(addr) ({ unsigned long __dst; __asm__ __volatile__ ( "movx.a @%1, %0" : "=m"((unsigned long) __dst) : "r"((unsigned int) addr) ); __dst; })
+# 198 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data16_read_addr(addr) _data16_read_addr(addr)
+
+#define _data20_write_char(addr,src) ({ unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %1, %0 \n\t" "mov.b  %2, 0(%0)" : "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr), "ri"((char) src) ); })
+# 212 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data20_write_char(addr,src) _data20_write_char(addr,src)
+
+#define _data20_read_char(addr) ({ char __dst; unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %2, %1 \n\t" "mov.b 0(%1), %0" : "=r"((char) __dst), "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr) ); __dst ; })
+# 228 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data20_read_char(addr) _data20_read_char(addr)
+
+#define _data20_write_short(addr,src) ({ unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %1, %0 \n\t" "mov.w  %2, 0(%0)" : "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr), "ri"((short) src) ); })
+# 242 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data20_write_short(addr,src) _data20_write_short(addr,src)
+
+#define _data20_read_short(addr) ({ short __dst; unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %2, %1 \n\t" "mov.w 0(%1), %0" : "=r"((short) __dst), "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr) ); __dst ; })
+# 258 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data20_read_short(addr) _data20_read_short(addr)
+
+#define _data20_write_long(addr,src) ({ unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %1, %0 \n\t" "mov.w  %L2, 0(%0) \n\t" "mov.w  %H2, 2(%0)" : "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr), "ri"((long) src) ); })
+# 273 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data20_write_long(addr,src) _data20_write_long(addr,src)
+
+#define _data20_read_long(addr) ({ long __dst; unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %2, %1 \n\t" "mov.w  0(%1), %L0 \n\t" "mov.w  2(%1), %H0" : "=r"((long) __dst), "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr) ); __dst ; })
+# 290 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
+#define __data20_read_long(addr) _data20_read_long(addr)
+
+#define _low_power_mode_0() _bis_SR_register(0x18)
+#define _low_power_mode_1() _bis_SR_register(0x58)
+#define _low_power_mode_2() _bis_SR_register(0x98)
+#define _low_power_mode_3() _bis_SR_register(0xD8)
+#define _low_power_mode_4() _bis_SR_register(0xF8)
+#define _low_power_mode_off_on_exit() _bic_SR_register_on_exit(0xF0)
+
+#define __low_power_mode_0() _low_power_mode_0()
+#define __low_power_mode_1() _low_power_mode_1()
+#define __low_power_mode_2() _low_power_mode_2()
+#define __low_power_mode_3() _low_power_mode_3()
+#define __low_power_mode_4() _low_power_mode_4()
+#define __low_power_mode_off_on_exit() _low_power_mode_off_on_exit()
+
+#define _even_in_range(x,y) (x)
+#define __even_in_range(x,y) _even_in_range(x,y)
+
+
+
+#define __no_operation() _no_operation()
+
+#define __get_interrupt_state() _get_interrupt_state()
+#define __set_interrupt_state(x) _set_interrupt_state(x)
+#define __enable_interrupt() _enable_interrupts()
+#define __disable_interrupt() _disable_interrupts()
+
+#define __bic_SR_register(x) _bic_SR_register(x)
+#define __bis_SR_register(x) _bis_SR_register(x)
+#define __get_SR_register() _get_SR_register()
+
+#define __swap_bytes(x) _swap_bytes(x)
+
+#define __nop() _no_operation()
+
+#define __eint() _enable_interrupts()
+#define __dint() _disable_interrupts()
+
+#define _NOP() _no_operation()
+#define _EINT() _enable_interrupts()
+#define _DINT() _disable_interrupts()
+
+#define _BIC_SR(x) _bic_SR_register(x)
+#define _BIC_SR_IRQ(x) _bic_SR_register_on_exit(x)
+#define _BIS_SR(x) _bis_SR_register(x)
+#define _BIS_SR_IRQ(x) _bis_SR_register_on_exit(x)
+#define _BIS_NMI_IE1(x) _bis_nmi_ie1(x)
+
+#define _SWAP_BYTES(x) _swap_bytes(x)
+
+#define __no_init __attribute__ ((section (".noinit")))
+# 5 "../timerA.h" 2
+
+
+
+
+
+void ta_wait_no_lpm(unsigned int);
+void ta_wait(unsigned int);
+
+
+
+#define DCO_CLK_PERIOD 20
+#define LFXT_CLK_PERIOD 10240
+
+
+#define WT_20US ( 20000/LFXT_CLK_PERIOD)+1
+#define WT_50US ( 50000/LFXT_CLK_PERIOD)+1
+# 35 "../timerA.h"
+#define WT_100US ( 100000/LFXT_CLK_PERIOD)+1
+#define WT_200US ( 200000/LFXT_CLK_PERIOD)+1
+#define WT_500US ( 500000/LFXT_CLK_PERIOD)+1
+#define WT_1MS ( 1000000/LFXT_CLK_PERIOD)+1
+#define WT_2MS ( 2000000/LFXT_CLK_PERIOD)+1
+#define WT_5MS ( 5000000/LFXT_CLK_PERIOD)+1
+#define WT_10MS ( 10000000/LFXT_CLK_PERIOD)+1
+#define WT_20MS ( 20000000/LFXT_CLK_PERIOD)+1
+#define WT_50MS ( 50000000/LFXT_CLK_PERIOD)+1
+#define WT_100MS (100000000/LFXT_CLK_PERIOD)+1
+#define WT_200MS (200000000/LFXT_CLK_PERIOD)+1
+#define WT_500MS (500000000/LFXT_CLK_PERIOD)+1
+
+
+
+
+
+
+#define TACTL (*(volatile unsigned int *) 0x0160)
+#define TAR (*(volatile unsigned int *) 0x0170)
+#define TACCTL0 (*(volatile unsigned int *) 0x0162)
+#define TACCR0 (*(volatile unsigned int *) 0x0172)
+#define TACCTL1 (*(volatile unsigned int *) 0x0164)
+#define TACCR1 (*(volatile unsigned int *) 0x0174)
+#define TACCTL2 (*(volatile unsigned int *) 0x0166)
+#define TACCR2 (*(volatile unsigned int *) 0x0176)
+#define TAIV (*(volatile unsigned int *) 0x012E)
+
+
+
+
+
+
+#define CCTL0 TACCTL0
+#define CCTL1 TACCTL1
+#define CCR0 TACCR0
+#define CCR1 TACCR1
+
+
+#define TASSEL1 (0x0200)
+#define TASSEL0 (0x0100)
+#define ID1 (0x0080)
+#define ID0 (0x0040)
+#define MC1 (0x0020)
+#define MC0 (0x0010)
+#define TACLR (0x0004)
+#define TAIE (0x0002)
+#define TAIFG (0x0001)
+
+#define MC_0 (0x0000)
+#define MC_1 (0x0010)
+#define MC_2 (0x0020)
+#define MC_3 (0x0030)
+#define ID_0 (0x0000)
+#define ID_1 (0x0040)
+#define ID_2 (0x0080)
+#define ID_3 (0x00C0)
+#define TASSEL_0 (0x0000)
+#define TASSEL_1 (0x0100)
+#define TASSEL_2 (0x0200)
+#define TASSEL_3 (0x0300)
+
+#define CM1 (0x8000)
+#define CM0 (0x4000)
+#define CCIS1 (0x2000)
+#define CCIS0 (0x1000)
+#define SCS (0x0800)
+#define SCCI (0x0400)
+#define CAP (0x0100)
+#define OUTMOD2 (0x0080)
+#define OUTMOD1 (0x0040)
+#define OUTMOD0 (0x0020)
+#define CCIE (0x0010)
+#define CCI (0x0008)
+#define OUT (0x0004)
+#define COV (0x0002)
+#define CCIFG (0x0001)
+# 21 "../main.c" 2
 
 # 1 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/lib/gcc/msp430-elf/7.3.1/include/stdint.h" 1 3 4
 # 9 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/lib/gcc/msp430-elf/7.3.1/include/stdint.h" 3 4
@@ -868,7 +1118,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 21 "../main.c" 2
+# 23 "../main.c" 2
 # 1 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/lib/gcc/msp430-elf/7.3.1/include/stdbool.h" 1 3 4
 # 29 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/lib/gcc/msp430-elf/7.3.1/include/stdbool.h" 3 4
 #define _STDBOOL_H 
@@ -880,7 +1130,7 @@ typedef __uint_least64_t uint_least64_t;
 #define false 0
 # 52 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/lib/gcc/msp430-elf/7.3.1/include/stdbool.h" 3 4
 #define __bool_true_false_are_defined 1
-# 22 "../main.c" 2
+# 24 "../main.c" 2
 # 1 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/stdio.h" 1 3
 # 27 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/stdio.h" 3
 #define _STDIO_H_ 
@@ -2487,7 +2737,7 @@ static __inline__ int __sputc_r(struct _reent *_ptr, int _c, FILE *_p) {
 
 
 
-# 23 "../main.c" 2
+# 25 "../main.c" 2
 # 1 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/stdlib.h" 1 3
 
 
@@ -2704,162 +2954,9 @@ extern long double _strtold_r (struct _reent *, const char *restrict, char **res
 extern long double strtold (const char *restrict, char **restrict);
 # 311 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/stdlib.h" 3
 
-# 24 "../main.c" 2
+# 26 "../main.c" 2
 # 1 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h" 1
-# 36 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h"
-# 1 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h" 1
-# 39 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __IN430_H__ 
-# 48 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-
-# 48 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-typedef unsigned int __istate_t;
-
-#define _no_operation() __asm__ __volatile__ ("nop")
-
-#define _get_interrupt_state() ({ unsigned int __x; __asm__ __volatile__( "mov SR, %0" : "=r" ((unsigned int) __x) :); __x; })
-# 78 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define _set_interrupt_state(x) ({ __asm__ __volatile__ ("mov %0, SR" : : "ri"((unsigned int) x) );})
-
-
-
-
-
-
-#define _enable_interrupts() __asm__ __volatile__ ("eint { nop")
-
-#define _bis_SR_register(x) __asm__ __volatile__ ("bis.w %0, SR" : : "ri"((unsigned int) x) )
-
-
-
-
-
-
-#define _disable_interrupts() __asm__ __volatile__ ("dint { nop")
-
-#define _bic_SR_register(x) __asm__ __volatile__ ("bic.w %0, SR { nop" : : "ri"((unsigned int) x) )
-
-
-
-
-#define _get_SR_register() ({ unsigned int __x; __asm__ __volatile__( "mov SR, %0" : "=r" ((unsigned int) __x) :); __x; })
-# 111 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define _swap_bytes(x) ({ unsigned int __dst = x; __asm__ __volatile__( "swpb %0" : "+r" ((unsigned int) __dst) :); __dst; })
-# 122 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define _bic_SR_register_on_exit(x) __bic_SR_register_on_exit(x)
-#define _bis_SR_register_on_exit(x) __bis_SR_register_on_exit(x)
-
-
-#define _bcd_add_short(x,y) ({ unsigned short __z = ((unsigned short) y); __asm__ __volatile__( "clrc \n\t" "dadd.w %1, %0" : "+r" ((unsigned short) __z) : "ri" ((unsigned short) x) ); __z; })
-# 138 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __bcd_add_short(x,y) _bcd_add_short(x,y)
-
-#define _bcd_add_long(x,y) ({ unsigned long __z = ((unsigned long) y); __asm__ __volatile__( "clrc \n\t" "dadd.w %L1, %L0 \n\t" "dadd.w %H1, %H0" : "+r" ((unsigned long) __z) : "ri" ((unsigned long) x) ); __z; })
-# 153 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __bcd_add_long(x,y) _bcd_add_long(x,y)
-
-#define _get_SP_register() ({ unsigned int __x; __asm__ __volatile__( "mov SP, %0" : "=r" ((unsigned int) __x) :); __x; })
-# 165 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __get_SP_register() _get_SP_register()
-
-#define _set_SP_register(x) ({ __asm__ __volatile__ ("mov %0, SP" : : "ri"((unsigned int) x) );})
-
-
-
-
-
-
-#define __set_SP_register(x) _set_SP_register(x)
-
-#define _data16_write_addr(addr,src) ({ unsigned long __src = src; __asm__ __volatile__ ( "movx.a %1, 0(%0)" : : "r"((unsigned int) addr), "m"((unsigned long) __src) ); })
-# 185 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data16_write_addr(addr,src) _data16_write_addr(addr,src)
-
-#define _data16_read_addr(addr) ({ unsigned long __dst; __asm__ __volatile__ ( "movx.a @%1, %0" : "=m"((unsigned long) __dst) : "r"((unsigned int) addr) ); __dst; })
-# 198 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data16_read_addr(addr) _data16_read_addr(addr)
-
-#define _data20_write_char(addr,src) ({ unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %1, %0 \n\t" "mov.b  %2, 0(%0)" : "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr), "ri"((char) src) ); })
-# 212 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data20_write_char(addr,src) _data20_write_char(addr,src)
-
-#define _data20_read_char(addr) ({ char __dst; unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %2, %1 \n\t" "mov.b 0(%1), %0" : "=r"((char) __dst), "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr) ); __dst ; })
-# 228 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data20_read_char(addr) _data20_read_char(addr)
-
-#define _data20_write_short(addr,src) ({ unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %1, %0 \n\t" "mov.w  %2, 0(%0)" : "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr), "ri"((short) src) ); })
-# 242 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data20_write_short(addr,src) _data20_write_short(addr,src)
-
-#define _data20_read_short(addr) ({ short __dst; unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %2, %1 \n\t" "mov.w 0(%1), %0" : "=r"((short) __dst), "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr) ); __dst ; })
-# 258 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data20_read_short(addr) _data20_read_short(addr)
-
-#define _data20_write_long(addr,src) ({ unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %1, %0 \n\t" "mov.w  %L2, 0(%0) \n\t" "mov.w  %H2, 2(%0)" : "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr), "ri"((long) src) ); })
-# 273 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data20_write_long(addr,src) _data20_write_long(addr,src)
-
-#define _data20_read_long(addr) ({ long __dst; unsigned int __tmp; unsigned long __addr = addr; __asm__ __volatile__ ( "movx.a %2, %1 \n\t" "mov.w  0(%1), %L0 \n\t" "mov.w  2(%1), %H0" : "=r"((long) __dst), "=&r"((unsigned int) __tmp) : "m"((unsigned long) __addr) ); __dst ; })
-# 290 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
-#define __data20_read_long(addr) _data20_read_long(addr)
-
-#define _low_power_mode_0() _bis_SR_register(0x18)
-#define _low_power_mode_1() _bis_SR_register(0x58)
-#define _low_power_mode_2() _bis_SR_register(0x98)
-#define _low_power_mode_3() _bis_SR_register(0xD8)
-#define _low_power_mode_4() _bis_SR_register(0xF8)
-#define _low_power_mode_off_on_exit() _bic_SR_register_on_exit(0xF0)
-
-#define __low_power_mode_0() _low_power_mode_0()
-#define __low_power_mode_1() _low_power_mode_1()
-#define __low_power_mode_2() _low_power_mode_2()
-#define __low_power_mode_3() _low_power_mode_3()
-#define __low_power_mode_4() _low_power_mode_4()
-#define __low_power_mode_off_on_exit() _low_power_mode_off_on_exit()
-
-#define _even_in_range(x,y) (x)
-#define __even_in_range(x,y) _even_in_range(x,y)
-
-
-
-#define __no_operation() _no_operation()
-
-#define __get_interrupt_state() _get_interrupt_state()
-#define __set_interrupt_state(x) _set_interrupt_state(x)
-#define __enable_interrupt() _enable_interrupts()
-#define __disable_interrupt() _disable_interrupts()
-
-#define __bic_SR_register(x) _bic_SR_register(x)
-#define __bis_SR_register(x) _bis_SR_register(x)
-#define __get_SR_register() _get_SR_register()
-
-#define __swap_bytes(x) _swap_bytes(x)
-
-#define __nop() _no_operation()
-
-#define __eint() _enable_interrupts()
-#define __dint() _disable_interrupts()
-
-#define _NOP() _no_operation()
-#define _EINT() _enable_interrupts()
-#define _DINT() _disable_interrupts()
-
-#define _BIC_SR(x) _bic_SR_register(x)
-#define _BIC_SR_IRQ(x) _bic_SR_register_on_exit(x)
-#define _BIS_SR(x) _bis_SR_register(x)
-#define _BIS_SR_IRQ(x) _bis_SR_register_on_exit(x)
-#define _BIS_NMI_IE1(x) _bis_nmi_ie1(x)
-
-#define _SWAP_BYTES(x) _swap_bytes(x)
-
-#define __no_init __attribute__ ((section (".noinit")))
-# 37 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h" 2
-
-
-
-
-
-
+# 43 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h"
 #define C (0x0001)
 #define Z (0x0002)
 #define N (0x0004)
@@ -2974,7 +3071,7 @@ typedef unsigned int __istate_t;
 #define PORT1_VECTOR (3)
 #define UNUSED_01_VECTOR (2)
 #define UNUSED_00_VECTOR (1)
-# 25 "../main.c" 2
+# 27 "../main.c" 2
 
 
 
@@ -2994,17 +3091,19 @@ typedef unsigned int __istate_t;
 #define NUM_BUCKETS 256
 #define MAX_RELOCATIONS 8
 
+
+# 9 "../cuckoo.h"
 typedef uint16_t value_t;
 typedef uint16_t hash_t;
 typedef uint16_t fingerprint_t;
 typedef uint16_t index_t;
-# 36 "../main.c" 2
+# 38 "../main.c" 2
 
 
 
 #define NUM_KEYS (NUM_BUCKETS / 4)
 #define INIT_KEY 0x1
-# 51 "../main.c"
+# 53 "../main.c"
 #define LOG(...) 
 
 
@@ -3016,11 +3115,11 @@ typedef uint16_t index_t;
 
 
 #define __nv 
-# 71 "../main.c"
+# 73 "../main.c"
 #define BLOCK_PRINTF_BEGIN(...) 
 #define BLOCK_PRINTF_END(...) 
 #define BLOCK_PRINTF(...) 
-# 85 "../main.c"
+# 87 "../main.c"
 #define BLOCK_LOG_BEGIN(...) 
 #define BLOCK_LOG_END(...) 
 #define BLOCK_LOG(...) 
@@ -3031,14 +3130,14 @@ typedef uint16_t index_t;
 #define CPWS 
 
  static 
-# 94 "../main.c" 3 4
+# 96 "../main.c" 3 4
            _Bool 
-# 94 "../main.c"
+# 96 "../main.c"
                 insert(fingerprint_t *filter, value_t key);
  static 
-# 95 "../main.c" 3 4
+# 97 "../main.c" 3 4
            _Bool 
-# 95 "../main.c"
+# 97 "../main.c"
                 lookup(fingerprint_t *filter, value_t key);
 
  static hash_t djb_hash(uint8_t* data, unsigned len);
@@ -3079,7 +3178,16 @@ void print_stats(unsigned inserts, unsigned members, unsigned total)
 {
    
                                    ;
-# 145 "../main.c"
+
+ UART_WriteString("stats: inserts ");
+ UART_WriteNumber(inserts);
+ UART_WriteString(" members ");
+ UART_WriteNumber(members);
+ UART_WriteString(" total ");
+ UART_WriteNumber(total);
+ UART_WriteString(" \r\n");
+
+
 }
 
 static hash_t djb_hash(uint8_t* data, unsigned len)
@@ -3123,9 +3231,9 @@ static value_t generate_key(value_t prev_key)
 }
 
 static 
-# 187 "../main.c" 3 4
+# 189 "../main.c" 3 4
       _Bool 
-# 187 "../main.c"
+# 189 "../main.c"
            insert(fingerprint_t *filter, value_t key)
 {
     fingerprint_t fp1, fp2, fp_victim, fp_next_victim;
@@ -3191,30 +3299,30 @@ static
             if (fp_victim) {
                 ;
 
-
-
-
+      UART_WriteString("insert: lost fp ");
+      UART_WriteNumber(fp_victim);
+      UART_WriteString("\r\n");
 
                 return 
-# 256 "../main.c" 3 4
+# 258 "../main.c" 3 4
                       0
-# 256 "../main.c"
+# 258 "../main.c"
                            ;
             }
         }
     }
 
     return 
-# 261 "../main.c" 3 4
+# 263 "../main.c" 3 4
           1
-# 261 "../main.c"
+# 263 "../main.c"
               ;
 }
 
 static 
-# 264 "../main.c" 3 4
+# 266 "../main.c" 3 4
       _Bool 
-# 264 "../main.c"
+# 266 "../main.c"
            lookup(fingerprint_t *filter, value_t key)
 {
 
@@ -3249,7 +3357,8 @@ int main()
     (*(volatile unsigned char *) 0x0080) = 0x01;
 
     (*(volatile unsigned int *) 0x02A0) = 0x01;
-# 308 "../main.c"
+    ta_wait(1000);
+# 313 "../main.c"
     __asm__ __volatile__ ("eint { nop");
 
     unsigned i;
@@ -3267,17 +3376,17 @@ int main()
         for (i = 0; i < (256 / 4); ++i) {
             key = generate_key(key);
             
-# 324 "../main.c" 3 4
+# 329 "../main.c" 3 4
            _Bool 
-# 324 "../main.c"
+# 329 "../main.c"
                 success = insert(filter, key);
             ;
             if (!success){
                 ;
 
-
-
-
+    UART_WriteString("insert: key ");
+    UART_WriteNumber(key);
+    UART_WriteString("failed \r\n");
 
             }
             log_filter(filter);
@@ -3292,20 +3401,20 @@ int main()
         for (i = 0; i < (256 / 4); ++i) {
             key = generate_key(key);
             
-# 345 "../main.c" 3 4
+# 350 "../main.c" 3 4
            _Bool 
-# 345 "../main.c"
+# 350 "../main.c"
                 member = lookup(filter, key);
             ;
             if (!member) {
                  fp = hash_to_fingerprint(key);
                 ;
 
-
-
-
-
-
+                UART_WriteString("lookup: key ");
+                UART_WriteNumber(key);
+                UART_WriteString(" fp ");
+                UART_WriteNumber(fp);
+                UART_WriteString("not member\r\n");
 
             }
             members += member;

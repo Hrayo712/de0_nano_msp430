@@ -28,7 +28,7 @@ all: int_cuckoo.elf
 int_cuckoo.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross GCC Linker'
-	/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/msp430-elf-gcc  -mhwmult=16bit -O2 -g -gdwarf-3 -gstrict-dwarf -Wall -g3 -msmall -fstrict-aliasing -Wstrict-aliasing -save-temps -fstack-usage -mcode-region=none -mdata-region=none -mmcu=msp430 -Wl,-Map,"int_cuckoo.map" -Wl,--gc-sections -T/home/hiram/master/Qwark/altera_de0_nano/software/ldscripts/linker.msp430-elf.x -L/opt/ti/ccsv8/ccs_base/msp430/include_gcc -o "int_cuckoo.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/bin/msp430-elf-gcc  -mhwmult=16bit -O0 -g -gdwarf-3 -gstrict-dwarf -Wall -g3 -msmall -fstrict-aliasing -Wstrict-aliasing -save-temps -fstack-usage -mcode-region=none -mdata-region=none -mmcu=msp430 -Wl,-Map,"int_cuckoo.map" -Wl,--gc-sections -T/home/hiram/master/Qwark/altera_de0_nano/software/ldscripts/linker.msp430-elf.x -L/opt/ti/ccsv8/ccs_base/msp430/include_gcc -o "int_cuckoo.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

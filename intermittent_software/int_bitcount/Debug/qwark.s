@@ -286,224 +286,238 @@ qwark_restore:
  ; 138 "../qwark.c" 1
 	mov.b   #1, 0(r8)
  ; 0 "" 2
-	.loc 1 154 0
- ; 154 "../qwark.c" 1
-	mov #0x7FFE, r14
+	.loc 1 142 0
+ ; 142 "../qwark.c" 1
+	mov  #370, r8
  ; 0 "" 2
-	.loc 1 156 0
- ; 156 "../qwark.c" 1
-	__erase_stack:
+	.loc 1 143 0
+ ; 143 "../qwark.c" 1
+	mov  #9980, 0(r8)
  ; 0 "" 2
-	.loc 1 158 0
- ; 158 "../qwark.c" 1
-	cmp #0x7EFE,r14
+	.loc 1 145 0
+ ; 145 "../qwark.c" 1
+	mov  #352, r8
  ; 0 "" 2
-	.loc 1 159 0
- ; 159 "../qwark.c" 1
-	jz __deletion_stack_complete
+	.loc 1 146 0
+ ; 146 "../qwark.c" 1
+	mov  #534, 0(r8)
  ; 0 "" 2
 	.loc 1 161 0
  ; 161 "../qwark.c" 1
-	mov #0x00000,@r14
- ; 0 "" 2
-	.loc 1 162 0
- ; 162 "../qwark.c" 1
-	decd r14
+	mov #0x7FFE, r14
  ; 0 "" 2
 	.loc 1 163 0
  ; 163 "../qwark.c" 1
-	br #__erase_stack
+	__erase_stack:
  ; 0 "" 2
 	.loc 1 165 0
  ; 165 "../qwark.c" 1
-	__deletion_stack_complete:
+	cmp #0x7EFE,r14
+ ; 0 "" 2
+	.loc 1 166 0
+ ; 166 "../qwark.c" 1
+	jz __deletion_stack_complete
+ ; 0 "" 2
+	.loc 1 168 0
+ ; 168 "../qwark.c" 1
+	mov #0x00000,@r14
+ ; 0 "" 2
+	.loc 1 169 0
+ ; 169 "../qwark.c" 1
+	decd r14
+ ; 0 "" 2
+	.loc 1 170 0
+ ; 170 "../qwark.c" 1
+	br #__erase_stack
  ; 0 "" 2
 	.loc 1 172 0
  ; 172 "../qwark.c" 1
-	mov #0x7FFE, r14
- ; 0 "" 2
-	.loc 1 174 0
- ; 174 "../qwark.c" 1
-	decd r12
- ; 0 "" 2
-	.loc 1 176 0
- ; 176 "../qwark.c" 1
-	__restore_stack:
- ; 0 "" 2
-	.loc 1 178 0
- ; 178 "../qwark.c" 1
-	cmp r14,r12
+	__deletion_stack_complete:
  ; 0 "" 2
 	.loc 1 179 0
  ; 179 "../qwark.c" 1
-	jz __init_restore_stack_complete
+	mov #0x7FFE, r14
  ; 0 "" 2
 	.loc 1 181 0
  ; 181 "../qwark.c" 1
-	mov @r13,@r14
- ; 0 "" 2
-	.loc 1 182 0
- ; 182 "../qwark.c" 1
-	decd r13
+	decd r12
  ; 0 "" 2
 	.loc 1 183 0
  ; 183 "../qwark.c" 1
-	decd r14
+	__restore_stack:
  ; 0 "" 2
-	.loc 1 184 0
- ; 184 "../qwark.c" 1
-	br #__restore_stack
+	.loc 1 185 0
+ ; 185 "../qwark.c" 1
+	cmp r14,r12
  ; 0 "" 2
 	.loc 1 186 0
  ; 186 "../qwark.c" 1
-	__init_restore_stack_complete:
+	jz __init_restore_stack_complete
+ ; 0 "" 2
+	.loc 1 188 0
+ ; 188 "../qwark.c" 1
+	mov @r13,@r14
+ ; 0 "" 2
+	.loc 1 189 0
+ ; 189 "../qwark.c" 1
+	decd r13
+ ; 0 "" 2
+	.loc 1 190 0
+ ; 190 "../qwark.c" 1
+	decd r14
+ ; 0 "" 2
+	.loc 1 191 0
+ ; 191 "../qwark.c" 1
+	br #__restore_stack
  ; 0 "" 2
 	.loc 1 193 0
  ; 193 "../qwark.c" 1
-	cmp.b #0x03,&0x6075
+	__init_restore_stack_complete:
  ; 0 "" 2
-	.loc 1 194 0
- ; 194 "../qwark.c" 1
-	jeq __Second_buffer_restore_stack
+	.loc 1 200 0
+ ; 200 "../qwark.c" 1
+	cmp.b #0x03,&0x6075
  ; 0 "" 2
 	.loc 1 201 0
  ; 201 "../qwark.c" 1
-	__First_buffer_restore_stack:
- ; 0 "" 2
-	.loc 1 203 0
- ; 203 "../qwark.c" 1
-	mov &0x6016,r4
- ; 0 "" 2
-	.loc 1 204 0
- ; 204 "../qwark.c" 1
-	mov &0x6018,r5
- ; 0 "" 2
-	.loc 1 205 0
- ; 205 "../qwark.c" 1
-	mov &0x601A,r6
- ; 0 "" 2
-	.loc 1 206 0
- ; 206 "../qwark.c" 1
-	mov &0x601C,r7
- ; 0 "" 2
-	.loc 1 207 0
- ; 207 "../qwark.c" 1
-	mov &0x601E,r8
+	jeq __Second_buffer_restore_stack
  ; 0 "" 2
 	.loc 1 208 0
  ; 208 "../qwark.c" 1
-	mov &0x6020,r9
- ; 0 "" 2
-	.loc 1 209 0
- ; 209 "../qwark.c" 1
-	mov &0x6022,r10
+	__First_buffer_restore_stack:
  ; 0 "" 2
 	.loc 1 210 0
  ; 210 "../qwark.c" 1
-	mov &0x6024,r11
+	mov &0x6016,r4
  ; 0 "" 2
 	.loc 1 211 0
  ; 211 "../qwark.c" 1
-	mov &0x6026,r12
+	mov &0x6018,r5
  ; 0 "" 2
 	.loc 1 212 0
  ; 212 "../qwark.c" 1
-	mov &0x6028,r13
+	mov &0x601A,r6
  ; 0 "" 2
 	.loc 1 213 0
  ; 213 "../qwark.c" 1
-	mov &0x602A,r14
+	mov &0x601C,r7
  ; 0 "" 2
 	.loc 1 214 0
  ; 214 "../qwark.c" 1
-	mov &0x602C,r15
+	mov &0x601E,r8
  ; 0 "" 2
 	.loc 1 215 0
  ; 215 "../qwark.c" 1
-	mov &0x6012,r1
+	mov &0x6020,r9
  ; 0 "" 2
 	.loc 1 216 0
  ; 216 "../qwark.c" 1
-	mov &0x6014,r2
+	mov &0x6022,r10
+ ; 0 "" 2
+	.loc 1 217 0
+ ; 217 "../qwark.c" 1
+	mov &0x6024,r11
+ ; 0 "" 2
+	.loc 1 218 0
+ ; 218 "../qwark.c" 1
+	mov &0x6026,r12
  ; 0 "" 2
 	.loc 1 219 0
  ; 219 "../qwark.c" 1
-	mov #0x0001 , &0x02A0
+	mov &0x6028,r13
+ ; 0 "" 2
+	.loc 1 220 0
+ ; 220 "../qwark.c" 1
+	mov &0x602A,r14
+ ; 0 "" 2
+	.loc 1 221 0
+ ; 221 "../qwark.c" 1
+	mov &0x602C,r15
  ; 0 "" 2
 	.loc 1 222 0
  ; 222 "../qwark.c" 1
-	mov &0x6010, pc
+	mov &0x6012,r1
  ; 0 "" 2
-	.loc 1 224 0
- ; 224 "../qwark.c" 1
-	__Second_buffer_restore_stack:
+	.loc 1 223 0
+ ; 223 "../qwark.c" 1
+	mov &0x6014,r2
  ; 0 "" 2
 	.loc 1 226 0
  ; 226 "../qwark.c" 1
-	mov &0x6046,r4
- ; 0 "" 2
-	.loc 1 227 0
- ; 227 "../qwark.c" 1
-	mov &0x6048,r5
- ; 0 "" 2
-	.loc 1 228 0
- ; 228 "../qwark.c" 1
-	mov &0x604A,r6
+	mov #0x0001 , &0x02A0
  ; 0 "" 2
 	.loc 1 229 0
  ; 229 "../qwark.c" 1
-	mov &0x604C,r7
- ; 0 "" 2
-	.loc 1 230 0
- ; 230 "../qwark.c" 1
-	mov &0x604E,r8
+	mov &0x6010, pc
  ; 0 "" 2
 	.loc 1 231 0
  ; 231 "../qwark.c" 1
-	mov &0x6050,r9
- ; 0 "" 2
-	.loc 1 232 0
- ; 232 "../qwark.c" 1
-	mov &0x6052,r10
+	__Second_buffer_restore_stack:
  ; 0 "" 2
 	.loc 1 233 0
  ; 233 "../qwark.c" 1
-	mov &0x6054,r11
+	mov &0x6046,r4
  ; 0 "" 2
 	.loc 1 234 0
  ; 234 "../qwark.c" 1
-	mov &0x6056,r12
+	mov &0x6048,r5
  ; 0 "" 2
 	.loc 1 235 0
  ; 235 "../qwark.c" 1
-	mov &0x6058,r13
+	mov &0x604A,r6
  ; 0 "" 2
 	.loc 1 236 0
  ; 236 "../qwark.c" 1
-	mov &0x605A,r14
+	mov &0x604C,r7
  ; 0 "" 2
 	.loc 1 237 0
  ; 237 "../qwark.c" 1
-	mov &0x605C,r15
+	mov &0x604E,r8
  ; 0 "" 2
 	.loc 1 238 0
  ; 238 "../qwark.c" 1
-	mov &0x6042,r1
+	mov &0x6050,r9
  ; 0 "" 2
 	.loc 1 239 0
  ; 239 "../qwark.c" 1
-	mov &0x6044,r2
+	mov &0x6052,r10
+ ; 0 "" 2
+	.loc 1 240 0
+ ; 240 "../qwark.c" 1
+	mov &0x6054,r11
+ ; 0 "" 2
+	.loc 1 241 0
+ ; 241 "../qwark.c" 1
+	mov &0x6056,r12
  ; 0 "" 2
 	.loc 1 242 0
  ; 242 "../qwark.c" 1
-	mov #0x0001 , &0x02A0
+	mov &0x6058,r13
+ ; 0 "" 2
+	.loc 1 243 0
+ ; 243 "../qwark.c" 1
+	mov &0x605A,r14
+ ; 0 "" 2
+	.loc 1 244 0
+ ; 244 "../qwark.c" 1
+	mov &0x605C,r15
  ; 0 "" 2
 	.loc 1 245 0
  ; 245 "../qwark.c" 1
+	mov &0x6042,r1
+ ; 0 "" 2
+	.loc 1 246 0
+ ; 246 "../qwark.c" 1
+	mov &0x6044,r2
+ ; 0 "" 2
+	.loc 1 249 0
+ ; 249 "../qwark.c" 1
+	mov #0x0001 , &0x02A0
+ ; 0 "" 2
+	.loc 1 252 0
+ ; 252 "../qwark.c" 1
 	mov &0x6040, pc
  ; 0 "" 2
-	.loc 1 247 0
-	NOP
 .LFE0:
 	.size	qwark_restore, .-qwark_restore
 .text
@@ -515,7 +529,7 @@ qwark_restore:
 	.type	INT_Qwark, @function
 INT_Qwark:
 .LFB1:
-	.loc 1 254 0
+	.loc 1 261 0
 ; start of function
 ; attributes: interrupt 
 ; framesize_regs:     0
@@ -527,65 +541,45 @@ INT_Qwark:
 ; saved regs:(none)
 	; start of prologue
 	; end of prologue
-	.loc 1 264 0
- ; 264 "../qwark.c" 1
-	mov r12, &0x6072
- ; 0 "" 2
-	.loc 1 266 0
- ; 266 "../qwark.c" 1
-	cmp.b #0x01,&0x6075
- ; 0 "" 2
-	.loc 1 267 0
- ; 267 "../qwark.c" 1
-	jz __second_buffer_init
- ; 0 "" 2
-	.loc 1 269 0
- ; 269 "../qwark.c" 1
-	mov #0x6010, r12
- ; 0 "" 2
-	.loc 1 270 0
- ; 270 "../qwark.c" 1
-	mov.b #0x01,&0x6074
- ; 0 "" 2
 	.loc 1 271 0
  ; 271 "../qwark.c" 1
-	br #__first_phase_commit
+	mov r12, &0x6072
  ; 0 "" 2
 	.loc 1 273 0
  ; 273 "../qwark.c" 1
+	cmp.b #0x01,&0x6075
+ ; 0 "" 2
+	.loc 1 274 0
+ ; 274 "../qwark.c" 1
+	jz __second_buffer_init
+ ; 0 "" 2
+	.loc 1 276 0
+ ; 276 "../qwark.c" 1
+	mov #0x6010, r12
+ ; 0 "" 2
+	.loc 1 277 0
+ ; 277 "../qwark.c" 1
+	mov.b #0x01,&0x6074
+ ; 0 "" 2
+	.loc 1 278 0
+ ; 278 "../qwark.c" 1
+	br #__first_phase_commit
+ ; 0 "" 2
+	.loc 1 280 0
+ ; 280 "../qwark.c" 1
 	__second_buffer_init:
  ; 0 "" 2
-	.loc 1 275 0
- ; 275 "../qwark.c" 1
+	.loc 1 282 0
+ ; 282 "../qwark.c" 1
 	mov #0x6040, r12
- ; 0 "" 2
-	.loc 1 285 0
- ; 285 "../qwark.c" 1
-	__first_phase_commit:
- ; 0 "" 2
-	.loc 1 287 0
- ; 287 "../qwark.c" 1
-	mov 2(r1),@r12
- ; 0 "" 2
-	.loc 1 288 0
- ; 288 "../qwark.c" 1
-	incd r12
- ; 0 "" 2
-	.loc 1 290 0
- ; 290 "../qwark.c" 1
-	mov r1,@r12
- ; 0 "" 2
-	.loc 1 291 0
- ; 291 "../qwark.c" 1
-	add #0x04,@r12
  ; 0 "" 2
 	.loc 1 292 0
  ; 292 "../qwark.c" 1
-	incd r12
+	__first_phase_commit:
  ; 0 "" 2
 	.loc 1 294 0
  ; 294 "../qwark.c" 1
-	mov 0(r1),@r12
+	mov 2(r1),@r12
  ; 0 "" 2
 	.loc 1 295 0
  ; 295 "../qwark.c" 1
@@ -593,446 +587,469 @@ INT_Qwark:
  ; 0 "" 2
 	.loc 1 297 0
  ; 297 "../qwark.c" 1
-	mov r4,@r12
+	mov r1,@r12
  ; 0 "" 2
 	.loc 1 298 0
  ; 298 "../qwark.c" 1
-	incd r12
+	add #0x04,@r12
  ; 0 "" 2
-	.loc 1 300 0
- ; 300 "../qwark.c" 1
-	mov r5,@r12
+	.loc 1 299 0
+ ; 299 "../qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 301 0
  ; 301 "../qwark.c" 1
-	incd r12
+	mov 0(r1),@r12
  ; 0 "" 2
-	.loc 1 303 0
- ; 303 "../qwark.c" 1
-	mov r6,@r12
+	.loc 1 302 0
+ ; 302 "../qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 304 0
  ; 304 "../qwark.c" 1
-	incd r12
+	mov r4,@r12
  ; 0 "" 2
-	.loc 1 306 0
- ; 306 "../qwark.c" 1
-	mov r7,@r12
+	.loc 1 305 0
+ ; 305 "../qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 307 0
  ; 307 "../qwark.c" 1
-	incd r12
+	mov r5,@r12
  ; 0 "" 2
-	.loc 1 309 0
- ; 309 "../qwark.c" 1
-	mov r8,@r12
+	.loc 1 308 0
+ ; 308 "../qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 310 0
  ; 310 "../qwark.c" 1
-	incd r12
+	mov r6,@r12
  ; 0 "" 2
-	.loc 1 312 0
- ; 312 "../qwark.c" 1
-	mov r9,@r12
+	.loc 1 311 0
+ ; 311 "../qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 313 0
  ; 313 "../qwark.c" 1
-	incd r12
+	mov r7,@r12
  ; 0 "" 2
-	.loc 1 315 0
- ; 315 "../qwark.c" 1
-	mov r10,@r12
+	.loc 1 314 0
+ ; 314 "../qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 316 0
  ; 316 "../qwark.c" 1
-	incd r12
+	mov r8,@r12
  ; 0 "" 2
-	.loc 1 318 0
- ; 318 "../qwark.c" 1
-	mov r11,@r12
+	.loc 1 317 0
+ ; 317 "../qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 319 0
  ; 319 "../qwark.c" 1
-	incd r12
+	mov r9,@r12
  ; 0 "" 2
-	.loc 1 321 0
- ; 321 "../qwark.c" 1
-	mov &0x6072,@r12
+	.loc 1 320 0
+ ; 320 "../qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 322 0
  ; 322 "../qwark.c" 1
-	incd r12
+	mov r10,@r12
  ; 0 "" 2
-	.loc 1 324 0
- ; 324 "../qwark.c" 1
-	mov r13,@r12
+	.loc 1 323 0
+ ; 323 "../qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 325 0
  ; 325 "../qwark.c" 1
-	incd r12
+	mov r11,@r12
  ; 0 "" 2
-	.loc 1 327 0
- ; 327 "../qwark.c" 1
-	mov r14,@r12
+	.loc 1 326 0
+ ; 326 "../qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 328 0
  ; 328 "../qwark.c" 1
-	incd r12
+	mov &0x6072,@r12
  ; 0 "" 2
-	.loc 1 330 0
- ; 330 "../qwark.c" 1
-	mov r15,@r12
+	.loc 1 329 0
+ ; 329 "../qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 331 0
  ; 331 "../qwark.c" 1
+	mov r13,@r12
+ ; 0 "" 2
+	.loc 1 332 0
+ ; 332 "../qwark.c" 1
 	incd r12
  ; 0 "" 2
-	.loc 1 339 0
- ; 339 "../qwark.c" 1
+	.loc 1 334 0
+ ; 334 "../qwark.c" 1
+	mov r14,@r12
+ ; 0 "" 2
+	.loc 1 335 0
+ ; 335 "../qwark.c" 1
+	incd r12
+ ; 0 "" 2
+	.loc 1 337 0
+ ; 337 "../qwark.c" 1
+	mov r15,@r12
+ ; 0 "" 2
+	.loc 1 338 0
+ ; 338 "../qwark.c" 1
+	incd r12
+ ; 0 "" 2
+	.loc 1 346 0
+ ; 346 "../qwark.c" 1
 	mov &0x02A0, r14
  ; 0 "" 2
-	.loc 1 340 0
- ; 340 "../qwark.c" 1
+	.loc 1 347 0
+ ; 347 "../qwark.c" 1
 	RRA r14
  ; 0 "" 2
-	.loc 1 341 0
- ; 341 "../qwark.c" 1
+	.loc 1 348 0
+ ; 348 "../qwark.c" 1
 	mov.b r14, @r12
  ; 0 "" 2
-	.loc 1 342 0
- ; 342 "../qwark.c" 1
+	.loc 1 349 0
+ ; 349 "../qwark.c" 1
 	mov r14, r15 
  ; 0 "" 2
-	.loc 1 343 0
- ; 343 "../qwark.c" 1
+	.loc 1 350 0
+ ; 350 "../qwark.c" 1
 	incd r12
- ; 0 "" 2
-	.loc 1 353 0
- ; 353 "../qwark.c" 1
-	tst r14 
- ; 0 "" 2
-	.loc 1 354 0
- ; 354 "../qwark.c" 1
-	jz  _chkpt_stack
- ; 0 "" 2
-	.loc 1 356 0
- ; 356 "../qwark.c" 1
-	mov #0x02A2, r13
- ; 0 "" 2
-	.loc 1 358 0
- ; 358 "../qwark.c" 1
-	_scratchpad_addr_cpy:
  ; 0 "" 2
 	.loc 1 360 0
  ; 360 "../qwark.c" 1
-	mov @r13+2, @r12
+	tst r14 
  ; 0 "" 2
 	.loc 1 361 0
  ; 361 "../qwark.c" 1
-	incd r12
- ; 0 "" 2
-	.loc 1 362 0
- ; 362 "../qwark.c" 1
-	dec r14 
+	jz  _chkpt_stack
  ; 0 "" 2
 	.loc 1 363 0
  ; 363 "../qwark.c" 1
+	mov #0x02A2, r13
+ ; 0 "" 2
+	.loc 1 365 0
+ ; 365 "../qwark.c" 1
+	_scratchpad_addr_cpy:
+ ; 0 "" 2
+	.loc 1 367 0
+ ; 367 "../qwark.c" 1
+	mov @r13+2, @r12
+ ; 0 "" 2
+	.loc 1 368 0
+ ; 368 "../qwark.c" 1
+	incd r12
+ ; 0 "" 2
+	.loc 1 369 0
+ ; 369 "../qwark.c" 1
+	dec r14 
+ ; 0 "" 2
+	.loc 1 370 0
+ ; 370 "../qwark.c" 1
 	tst r14 
  ; 0 "" 2
-	.loc 1 364 0
- ; 364 "../qwark.c" 1
+	.loc 1 371 0
+ ; 371 "../qwark.c" 1
 	jnz  _scratchpad_addr_cpy
  ; 0 "" 2
-	.loc 1 374 0
- ; 374 "../qwark.c" 1
+	.loc 1 381 0
+ ; 381 "../qwark.c" 1
 	_chkpt_stack:
- ; 0 "" 2
-	.loc 1 378 0
- ; 378 "../qwark.c" 1
-	mov #0x7FFE, r14
- ; 0 "" 2
-	.loc 1 379 0
- ; 379 "../qwark.c" 1
-	mov &0X6042, r12
- ; 0 "" 2
-	.loc 1 380 0
- ; 380 "../qwark.c" 1
-	mov #0x6BFE, r13
- ; 0 "" 2
-	.loc 1 382 0
- ; 382 "../qwark.c" 1
-	cmp.b #0x01,&0x6075
- ; 0 "" 2
-	.loc 1 383 0
- ; 383 "../qwark.c" 1
-	jz __pre_copy_stack
  ; 0 "" 2
 	.loc 1 385 0
  ; 385 "../qwark.c" 1
-	mov &0X6012, r12
+	mov #0x7FFE, r14
  ; 0 "" 2
 	.loc 1 386 0
  ; 386 "../qwark.c" 1
-	mov #0x6FFE, r13
+	mov &0X6042, r12
  ; 0 "" 2
-	.loc 1 388 0
- ; 388 "../qwark.c" 1
-	__pre_copy_stack:
+	.loc 1 387 0
+ ; 387 "../qwark.c" 1
+	mov #0x6BFE, r13
+ ; 0 "" 2
+	.loc 1 389 0
+ ; 389 "../qwark.c" 1
+	cmp.b #0x01,&0x6075
  ; 0 "" 2
 	.loc 1 390 0
  ; 390 "../qwark.c" 1
-	decd r12
+	jz __pre_copy_stack
  ; 0 "" 2
 	.loc 1 392 0
  ; 392 "../qwark.c" 1
-	__copy_stack:
+	mov &0X6012, r12
  ; 0 "" 2
-	.loc 1 394 0
- ; 394 "../qwark.c" 1
-	cmp r14,r12
+	.loc 1 393 0
+ ; 393 "../qwark.c" 1
+	mov #0x6FFE, r13
  ; 0 "" 2
 	.loc 1 395 0
  ; 395 "../qwark.c" 1
-	jz __copy_stack_complete
+	__pre_copy_stack:
  ; 0 "" 2
 	.loc 1 397 0
  ; 397 "../qwark.c" 1
-	mov @r14,@r13
+	decd r12
  ; 0 "" 2
 	.loc 1 399 0
  ; 399 "../qwark.c" 1
-	decd r13
- ; 0 "" 2
-	.loc 1 400 0
- ; 400 "../qwark.c" 1
-	decd r14
+	__copy_stack:
  ; 0 "" 2
 	.loc 1 401 0
  ; 401 "../qwark.c" 1
-	br #__copy_stack
+	cmp r14,r12
  ; 0 "" 2
-	.loc 1 403 0
- ; 403 "../qwark.c" 1
-	__copy_stack_complete:
+	.loc 1 402 0
+ ; 402 "../qwark.c" 1
+	jz __copy_stack_complete
+ ; 0 "" 2
+	.loc 1 404 0
+ ; 404 "../qwark.c" 1
+	mov @r14,@r13
+ ; 0 "" 2
+	.loc 1 406 0
+ ; 406 "../qwark.c" 1
+	decd r13
+ ; 0 "" 2
+	.loc 1 407 0
+ ; 407 "../qwark.c" 1
+	decd r14
+ ; 0 "" 2
+	.loc 1 408 0
+ ; 408 "../qwark.c" 1
+	br #__copy_stack
  ; 0 "" 2
 	.loc 1 410 0
  ; 410 "../qwark.c" 1
-	cmp.b #0x01,&0x6075
- ; 0 "" 2
-	.loc 1 411 0
- ; 411 "../qwark.c" 1
-	jz  __set_flag_2nd 
- ; 0 "" 2
-	.loc 1 413 0
- ; 413 "../qwark.c" 1
-	add.b #0x01, &0x6074 
- ; 0 "" 2
-	.loc 1 414 0
- ; 414 "../qwark.c" 1
-	br  #_second_phase_commit 
- ; 0 "" 2
-	.loc 1 416 0
- ; 416 "../qwark.c" 1
-	__set_flag_2nd:
+	__copy_stack_complete:
  ; 0 "" 2
 	.loc 1 417 0
  ; 417 "../qwark.c" 1
+	cmp.b #0x01,&0x6075
+ ; 0 "" 2
+	.loc 1 418 0
+ ; 418 "../qwark.c" 1
+	jz  __set_flag_2nd 
+ ; 0 "" 2
+	.loc 1 420 0
+ ; 420 "../qwark.c" 1
+	add.b #0x01, &0x6074 
+ ; 0 "" 2
+	.loc 1 421 0
+ ; 421 "../qwark.c" 1
+	br  #_second_phase_commit 
+ ; 0 "" 2
+	.loc 1 423 0
+ ; 423 "../qwark.c" 1
+	__set_flag_2nd:
+ ; 0 "" 2
+	.loc 1 424 0
+ ; 424 "../qwark.c" 1
 	add.b #0x01, &0x6075 
- ; 0 "" 2
-	.loc 1 425 0
- ; 425 "../qwark.c" 1
-	_second_phase_commit:
- ; 0 "" 2
-	.loc 1 427 0
- ; 427 "../qwark.c" 1
-	tst r15 
- ; 0 "" 2
-	.loc 1 428 0
- ; 428 "../qwark.c" 1
-	jz  _chkpt_finished
- ; 0 "" 2
-	.loc 1 430 0
- ; 430 "../qwark.c" 1
-	mov #0x6000,  r14 
  ; 0 "" 2
 	.loc 1 432 0
  ; 432 "../qwark.c" 1
-	mov #0x6060,  r12 
- ; 0 "" 2
-	.loc 1 433 0
- ; 433 "../qwark.c" 1
-	cmp.b #0x02,&0x6075
+	_second_phase_commit:
  ; 0 "" 2
 	.loc 1 434 0
  ; 434 "../qwark.c" 1
-	jz _second_phase_commit_strt
+	tst r15 
  ; 0 "" 2
-	.loc 1 436 0
- ; 436 "../qwark.c" 1
-	mov #0x6030,  r12 
+	.loc 1 435 0
+ ; 435 "../qwark.c" 1
+	jz  _chkpt_finished
+ ; 0 "" 2
+	.loc 1 437 0
+ ; 437 "../qwark.c" 1
+	mov #0x6000,  r14 
  ; 0 "" 2
 	.loc 1 439 0
  ; 439 "../qwark.c" 1
-	_second_phase_commit_strt:
+	mov #0x6060,  r12 
+ ; 0 "" 2
+	.loc 1 440 0
+ ; 440 "../qwark.c" 1
+	cmp.b #0x02,&0x6075
  ; 0 "" 2
 	.loc 1 441 0
  ; 441 "../qwark.c" 1
-	mov @r12+2,  r13 
+	jz _second_phase_commit_strt
  ; 0 "" 2
 	.loc 1 443 0
  ; 443 "../qwark.c" 1
-	mov r13,  r11 
- ; 0 "" 2
-	.loc 1 445 0
- ; 445 "../qwark.c" 1
-	and #0x8000,  r11 
+	mov #0x6030,  r12 
  ; 0 "" 2
 	.loc 1 446 0
  ; 446 "../qwark.c" 1
-	cmp #0x8000,  r11 
+	_second_phase_commit_strt:
  ; 0 "" 2
-	.loc 1 447 0
- ; 447 "../qwark.c" 1
-	jeq _byte_copy 
+	.loc 1 448 0
+ ; 448 "../qwark.c" 1
+	mov @r12+2,  r13 
  ; 0 "" 2
-	.loc 1 449 0
- ; 449 "../qwark.c" 1
-	mov @r14+2, @r13 
- ; 0 "" 2
-	.loc 1 451 0
- ; 451 "../qwark.c" 1
-	dec r15
+	.loc 1 450 0
+ ; 450 "../qwark.c" 1
+	mov r13,  r11 
  ; 0 "" 2
 	.loc 1 452 0
  ; 452 "../qwark.c" 1
-	tst r15
+	and #0x8000,  r11 
+ ; 0 "" 2
+	.loc 1 453 0
+ ; 453 "../qwark.c" 1
+	cmp #0x8000,  r11 
  ; 0 "" 2
 	.loc 1 454 0
  ; 454 "../qwark.c" 1
-	jnz  _second_phase_commit_strt
+	jeq _byte_copy 
  ; 0 "" 2
-	.loc 1 455 0
- ; 455 "../qwark.c" 1
-	br #_chkpt_finished
- ; 0 "" 2
-	.loc 1 457 0
- ; 457 "../qwark.c" 1
-	_byte_copy:
+	.loc 1 456 0
+ ; 456 "../qwark.c" 1
+	mov @r14+2, @r13 
  ; 0 "" 2
 	.loc 1 458 0
  ; 458 "../qwark.c" 1
-	and #0x7FFF,  r13 
+	dec r15
  ; 0 "" 2
 	.loc 1 459 0
  ; 459 "../qwark.c" 1
-	mov r13,      r11 
- ; 0 "" 2
-	.loc 1 460 0
- ; 460 "../qwark.c" 1
-	and #0x01,    r11 
+	tst r15
  ; 0 "" 2
 	.loc 1 461 0
  ; 461 "../qwark.c" 1
-	bis  r11,     r14 
+	jnz  _second_phase_commit_strt
  ; 0 "" 2
-	.loc 1 463 0
- ; 463 "../qwark.c" 1
-	mov.b @r14, @r13 
+	.loc 1 462 0
+ ; 462 "../qwark.c" 1
+	br #_chkpt_finished
  ; 0 "" 2
 	.loc 1 464 0
  ; 464 "../qwark.c" 1
-	incd r14 
+	_byte_copy:
+ ; 0 "" 2
+	.loc 1 465 0
+ ; 465 "../qwark.c" 1
+	and #0x7FFF,  r13 
  ; 0 "" 2
 	.loc 1 466 0
  ; 466 "../qwark.c" 1
-	dec r15
+	mov r13,      r11 
  ; 0 "" 2
 	.loc 1 467 0
  ; 467 "../qwark.c" 1
-	tst r15
+	and #0x01,    r11 
  ; 0 "" 2
 	.loc 1 468 0
  ; 468 "../qwark.c" 1
-	jnz  _second_phase_commit_strt
+	bis  r11,     r14 
+ ; 0 "" 2
+	.loc 1 470 0
+ ; 470 "../qwark.c" 1
+	mov.b @r14, @r13 
+ ; 0 "" 2
+	.loc 1 471 0
+ ; 471 "../qwark.c" 1
+	incd r14 
+ ; 0 "" 2
+	.loc 1 473 0
+ ; 473 "../qwark.c" 1
+	dec r15
  ; 0 "" 2
 	.loc 1 474 0
  ; 474 "../qwark.c" 1
-	_chkpt_finished:
+	tst r15
  ; 0 "" 2
-	.loc 1 478 0
- ; 478 "../qwark.c" 1
-	cmp.b #0x02,&0x6075
- ; 0 "" 2
-	.loc 1 479 0
- ; 479 "../qwark.c" 1
-	jeq  __pre_finish_2nd_buffer 
+	.loc 1 475 0
+ ; 475 "../qwark.c" 1
+	jnz  _second_phase_commit_strt
  ; 0 "" 2
 	.loc 1 481 0
  ; 481 "../qwark.c" 1
-	mov #0x0103, &0x6074 
+	_chkpt_finished:
+ ; 0 "" 2
+	.loc 1 485 0
+ ; 485 "../qwark.c" 1
+	cmp.b #0x02,&0x6075
+ ; 0 "" 2
+	.loc 1 486 0
+ ; 486 "../qwark.c" 1
+	jeq  __pre_finish_2nd_buffer 
  ; 0 "" 2
 	.loc 1 488 0
  ; 488 "../qwark.c" 1
+	mov #0x0103, &0x6074 
+ ; 0 "" 2
+	.loc 1 495 0
+ ; 495 "../qwark.c" 1
 	mov &0x6024,r11
- ; 0 "" 2
-	.loc 1 489 0
- ; 489 "../qwark.c" 1
-	mov &0x6026,r12
- ; 0 "" 2
-	.loc 1 490 0
- ; 490 "../qwark.c" 1
-	mov &0x6028,r13
- ; 0 "" 2
-	.loc 1 491 0
- ; 491 "../qwark.c" 1
-	mov &0x602A,r14
- ; 0 "" 2
-	.loc 1 492 0
- ; 492 "../qwark.c" 1
-	mov &0x602C,r15
- ; 0 "" 2
-	.loc 1 494 0
- ; 494 "../qwark.c" 1
-	br #_finish
  ; 0 "" 2
 	.loc 1 496 0
  ; 496 "../qwark.c" 1
-	__pre_finish_2nd_buffer:
+	mov &0x6026,r12
+ ; 0 "" 2
+	.loc 1 497 0
+ ; 497 "../qwark.c" 1
+	mov &0x6028,r13
  ; 0 "" 2
 	.loc 1 498 0
  ; 498 "../qwark.c" 1
-	mov #0x0301, &0x6074 
+	mov &0x602A,r14
+ ; 0 "" 2
+	.loc 1 499 0
+ ; 499 "../qwark.c" 1
+	mov &0x602C,r15
+ ; 0 "" 2
+	.loc 1 501 0
+ ; 501 "../qwark.c" 1
+	br #_finish
  ; 0 "" 2
 	.loc 1 503 0
  ; 503 "../qwark.c" 1
-	mov &0x6054,r11
- ; 0 "" 2
-	.loc 1 504 0
- ; 504 "../qwark.c" 1
-	mov &0x6056,r12
+	__pre_finish_2nd_buffer:
  ; 0 "" 2
 	.loc 1 505 0
  ; 505 "../qwark.c" 1
-	mov &0x6058,r13
+	mov #0x0301, &0x6074 
  ; 0 "" 2
-	.loc 1 506 0
- ; 506 "../qwark.c" 1
-	mov &0x605A,r14
- ; 0 "" 2
-	.loc 1 507 0
- ; 507 "../qwark.c" 1
-	mov &0x605C,r15
- ; 0 "" 2
-	.loc 1 509 0
- ; 509 "../qwark.c" 1
-	_finish:
+	.loc 1 510 0
+ ; 510 "../qwark.c" 1
+	mov &0x6054,r11
  ; 0 "" 2
 	.loc 1 511 0
  ; 511 "../qwark.c" 1
-	mov #0x0001, &0x02A0
+	mov &0x6056,r12
+ ; 0 "" 2
+	.loc 1 512 0
+ ; 512 "../qwark.c" 1
+	mov &0x6058,r13
  ; 0 "" 2
 	.loc 1 513 0
-	NOP
+ ; 513 "../qwark.c" 1
+	mov &0x605A,r14
+ ; 0 "" 2
+	.loc 1 514 0
+ ; 514 "../qwark.c" 1
+	mov &0x605C,r15
+ ; 0 "" 2
+	.loc 1 516 0
+ ; 516 "../qwark.c" 1
+	_finish:
+ ; 0 "" 2
+	.loc 1 518 0
+ ; 518 "../qwark.c" 1
+	mov #0x0001, &0x02A0
+ ; 0 "" 2
+	.loc 1 520 0
+ ; 520 "../qwark.c" 1
+	add #0x01, &0x6076
+ ; 0 "" 2
+	.loc 1 523 0
 	; start of epilogue
 	RETI
 .LFE1:
@@ -1074,7 +1091,7 @@ INT_Qwark:
 .Letext0:
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.4byte	0x53
+	.4byte	0x54
 	.2byte	0x3
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -1095,13 +1112,13 @@ INT_Qwark:
 	.byte	0x1
 	.4byte	.LASF0
 	.byte	0x1
-	.byte	0xfe
+	.2byte	0x105
 	.byte	0x1
 	.4byte	.LFB1
 	.4byte	.LFE1
 	.byte	0x1
 	.byte	0x9c
-	.uleb128 0x3
+	.uleb128 0x4
 	.byte	0x1
 	.4byte	.LASF1
 	.byte	0x1
@@ -1147,6 +1164,27 @@ INT_Qwark:
 	.byte	0
 	.byte	0
 	.uleb128 0x3
+	.uleb128 0x2e
+	.byte	0
+	.uleb128 0x3f
+	.uleb128 0xc
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0x5
+	.uleb128 0x27
+	.uleb128 0xc
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x1
+	.uleb128 0x40
+	.uleb128 0xa
+	.byte	0
+	.byte	0
+	.uleb128 0x4
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -1236,730 +1274,730 @@ INT_Qwark:
 	.string	"__ATOMIC_CONSUME 1"
 	.byte	0x1
 	.uleb128 0xe
-	.string	"__FINITE_MATH_ONLY__ 0"
+	.string	"__OPTIMIZE__ 1"
 	.byte	0x1
 	.uleb128 0xf
-	.string	"__SIZEOF_INT__ 2"
+	.string	"__FINITE_MATH_ONLY__ 0"
 	.byte	0x1
 	.uleb128 0x10
-	.string	"__SIZEOF_LONG__ 4"
+	.string	"__SIZEOF_INT__ 2"
 	.byte	0x1
 	.uleb128 0x11
-	.string	"__SIZEOF_LONG_LONG__ 8"
+	.string	"__SIZEOF_LONG__ 4"
 	.byte	0x1
 	.uleb128 0x12
-	.string	"__SIZEOF_SHORT__ 2"
+	.string	"__SIZEOF_LONG_LONG__ 8"
 	.byte	0x1
 	.uleb128 0x13
-	.string	"__SIZEOF_FLOAT__ 4"
+	.string	"__SIZEOF_SHORT__ 2"
 	.byte	0x1
 	.uleb128 0x14
-	.string	"__SIZEOF_DOUBLE__ 8"
+	.string	"__SIZEOF_FLOAT__ 4"
 	.byte	0x1
 	.uleb128 0x15
-	.string	"__SIZEOF_LONG_DOUBLE__ 8"
+	.string	"__SIZEOF_DOUBLE__ 8"
 	.byte	0x1
 	.uleb128 0x16
-	.string	"__SIZEOF_SIZE_T__ 2"
+	.string	"__SIZEOF_LONG_DOUBLE__ 8"
 	.byte	0x1
 	.uleb128 0x17
-	.string	"__CHAR_BIT__ 8"
+	.string	"__SIZEOF_SIZE_T__ 2"
 	.byte	0x1
 	.uleb128 0x18
-	.string	"__BIGGEST_ALIGNMENT__ 2"
+	.string	"__CHAR_BIT__ 8"
 	.byte	0x1
 	.uleb128 0x19
-	.string	"__ORDER_LITTLE_ENDIAN__ 1234"
+	.string	"__BIGGEST_ALIGNMENT__ 2"
 	.byte	0x1
 	.uleb128 0x1a
-	.string	"__ORDER_BIG_ENDIAN__ 4321"
+	.string	"__ORDER_LITTLE_ENDIAN__ 1234"
 	.byte	0x1
 	.uleb128 0x1b
-	.string	"__ORDER_PDP_ENDIAN__ 3412"
+	.string	"__ORDER_BIG_ENDIAN__ 4321"
 	.byte	0x1
 	.uleb128 0x1c
-	.string	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__"
+	.string	"__ORDER_PDP_ENDIAN__ 3412"
 	.byte	0x1
 	.uleb128 0x1d
-	.string	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__"
+	.string	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__"
 	.byte	0x1
 	.uleb128 0x1e
-	.string	"__SIZEOF_POINTER__ 2"
+	.string	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__"
 	.byte	0x1
 	.uleb128 0x1f
-	.string	"__SIZE_TYPE__ unsigned int"
+	.string	"__SIZEOF_POINTER__ 2"
 	.byte	0x1
 	.uleb128 0x20
-	.string	"__PTRDIFF_TYPE__ int"
+	.string	"__SIZE_TYPE__ unsigned int"
 	.byte	0x1
 	.uleb128 0x21
-	.string	"__WCHAR_TYPE__ long int"
+	.string	"__PTRDIFF_TYPE__ int"
 	.byte	0x1
 	.uleb128 0x22
-	.string	"__WINT_TYPE__ unsigned int"
+	.string	"__WCHAR_TYPE__ long int"
 	.byte	0x1
 	.uleb128 0x23
-	.string	"__INTMAX_TYPE__ long long int"
+	.string	"__WINT_TYPE__ unsigned int"
 	.byte	0x1
 	.uleb128 0x24
-	.string	"__UINTMAX_TYPE__ long long unsigned int"
+	.string	"__INTMAX_TYPE__ long long int"
 	.byte	0x1
 	.uleb128 0x25
-	.string	"__CHAR16_TYPE__ short unsigned int"
+	.string	"__UINTMAX_TYPE__ long long unsigned int"
 	.byte	0x1
 	.uleb128 0x26
-	.string	"__CHAR32_TYPE__ long unsigned int"
+	.string	"__CHAR16_TYPE__ short unsigned int"
 	.byte	0x1
 	.uleb128 0x27
-	.string	"__SIG_ATOMIC_TYPE__ int"
+	.string	"__CHAR32_TYPE__ long unsigned int"
 	.byte	0x1
 	.uleb128 0x28
-	.string	"__INT8_TYPE__ signed char"
+	.string	"__SIG_ATOMIC_TYPE__ int"
 	.byte	0x1
 	.uleb128 0x29
-	.string	"__INT16_TYPE__ short int"
+	.string	"__INT8_TYPE__ signed char"
 	.byte	0x1
 	.uleb128 0x2a
-	.string	"__INT32_TYPE__ long int"
+	.string	"__INT16_TYPE__ short int"
 	.byte	0x1
 	.uleb128 0x2b
-	.string	"__INT64_TYPE__ long long int"
+	.string	"__INT32_TYPE__ long int"
 	.byte	0x1
 	.uleb128 0x2c
-	.string	"__UINT8_TYPE__ unsigned char"
+	.string	"__INT64_TYPE__ long long int"
 	.byte	0x1
 	.uleb128 0x2d
-	.string	"__UINT16_TYPE__ short unsigned int"
+	.string	"__UINT8_TYPE__ unsigned char"
 	.byte	0x1
 	.uleb128 0x2e
-	.string	"__UINT32_TYPE__ long unsigned int"
+	.string	"__UINT16_TYPE__ short unsigned int"
 	.byte	0x1
 	.uleb128 0x2f
-	.string	"__UINT64_TYPE__ long long unsigned int"
+	.string	"__UINT32_TYPE__ long unsigned int"
 	.byte	0x1
 	.uleb128 0x30
-	.string	"__INT_LEAST8_TYPE__ signed char"
+	.string	"__UINT64_TYPE__ long long unsigned int"
 	.byte	0x1
 	.uleb128 0x31
-	.string	"__INT_LEAST16_TYPE__ short int"
+	.string	"__INT_LEAST8_TYPE__ signed char"
 	.byte	0x1
 	.uleb128 0x32
-	.string	"__INT_LEAST32_TYPE__ long int"
+	.string	"__INT_LEAST16_TYPE__ short int"
 	.byte	0x1
 	.uleb128 0x33
-	.string	"__INT_LEAST64_TYPE__ long long int"
+	.string	"__INT_LEAST32_TYPE__ long int"
 	.byte	0x1
 	.uleb128 0x34
-	.string	"__UINT_LEAST8_TYPE__ unsigned char"
+	.string	"__INT_LEAST64_TYPE__ long long int"
 	.byte	0x1
 	.uleb128 0x35
-	.string	"__UINT_LEAST16_TYPE__ short unsigned int"
+	.string	"__UINT_LEAST8_TYPE__ unsigned char"
 	.byte	0x1
 	.uleb128 0x36
-	.string	"__UINT_LEAST32_TYPE__ long unsigned int"
+	.string	"__UINT_LEAST16_TYPE__ short unsigned int"
 	.byte	0x1
 	.uleb128 0x37
-	.string	"__UINT_LEAST64_TYPE__ long long unsigned int"
+	.string	"__UINT_LEAST32_TYPE__ long unsigned int"
 	.byte	0x1
 	.uleb128 0x38
-	.string	"__INT_FAST8_TYPE__ int"
+	.string	"__UINT_LEAST64_TYPE__ long long unsigned int"
 	.byte	0x1
 	.uleb128 0x39
-	.string	"__INT_FAST16_TYPE__ int"
+	.string	"__INT_FAST8_TYPE__ int"
 	.byte	0x1
 	.uleb128 0x3a
-	.string	"__INT_FAST32_TYPE__ long int"
+	.string	"__INT_FAST16_TYPE__ int"
 	.byte	0x1
 	.uleb128 0x3b
-	.string	"__INT_FAST64_TYPE__ long long int"
+	.string	"__INT_FAST32_TYPE__ long int"
 	.byte	0x1
 	.uleb128 0x3c
-	.string	"__UINT_FAST8_TYPE__ unsigned int"
+	.string	"__INT_FAST64_TYPE__ long long int"
 	.byte	0x1
 	.uleb128 0x3d
-	.string	"__UINT_FAST16_TYPE__ unsigned int"
+	.string	"__UINT_FAST8_TYPE__ unsigned int"
 	.byte	0x1
 	.uleb128 0x3e
-	.string	"__UINT_FAST32_TYPE__ long unsigned int"
+	.string	"__UINT_FAST16_TYPE__ unsigned int"
 	.byte	0x1
 	.uleb128 0x3f
-	.string	"__UINT_FAST64_TYPE__ long long unsigned int"
+	.string	"__UINT_FAST32_TYPE__ long unsigned int"
 	.byte	0x1
 	.uleb128 0x40
-	.string	"__INTPTR_TYPE__ int"
+	.string	"__UINT_FAST64_TYPE__ long long unsigned int"
 	.byte	0x1
 	.uleb128 0x41
-	.string	"__UINTPTR_TYPE__ unsigned int"
+	.string	"__INTPTR_TYPE__ int"
 	.byte	0x1
 	.uleb128 0x42
-	.string	"__has_include(STR) __has_include__(STR)"
+	.string	"__UINTPTR_TYPE__ unsigned int"
 	.byte	0x1
 	.uleb128 0x43
-	.string	"__has_include_next(STR) __has_include_next__(STR)"
+	.string	"__has_include(STR) __has_include__(STR)"
 	.byte	0x1
 	.uleb128 0x44
-	.string	"__GXX_ABI_VERSION 1011"
+	.string	"__has_include_next(STR) __has_include_next__(STR)"
 	.byte	0x1
 	.uleb128 0x45
-	.string	"__SCHAR_MAX__ 0x7f"
+	.string	"__GXX_ABI_VERSION 1011"
 	.byte	0x1
 	.uleb128 0x46
-	.string	"__SHRT_MAX__ 0x7fff"
+	.string	"__SCHAR_MAX__ 0x7f"
 	.byte	0x1
 	.uleb128 0x47
-	.string	"__INT_MAX__ 0x7fff"
+	.string	"__SHRT_MAX__ 0x7fff"
 	.byte	0x1
 	.uleb128 0x48
-	.string	"__LONG_MAX__ 0x7fffffffL"
+	.string	"__INT_MAX__ 0x7fff"
 	.byte	0x1
 	.uleb128 0x49
-	.string	"__LONG_LONG_MAX__ 0x7fffffffffffffffLL"
+	.string	"__LONG_MAX__ 0x7fffffffL"
 	.byte	0x1
 	.uleb128 0x4a
-	.string	"__WCHAR_MAX__ 0x7fffffffL"
+	.string	"__LONG_LONG_MAX__ 0x7fffffffffffffffLL"
 	.byte	0x1
 	.uleb128 0x4b
-	.string	"__WCHAR_MIN__ (-__WCHAR_MAX__ - 1)"
+	.string	"__WCHAR_MAX__ 0x7fffffffL"
 	.byte	0x1
 	.uleb128 0x4c
-	.string	"__WINT_MAX__ 0xffffU"
+	.string	"__WCHAR_MIN__ (-__WCHAR_MAX__ - 1)"
 	.byte	0x1
 	.uleb128 0x4d
-	.string	"__WINT_MIN__ 0U"
+	.string	"__WINT_MAX__ 0xffffU"
 	.byte	0x1
 	.uleb128 0x4e
-	.string	"__PTRDIFF_MAX__ 0x7fff"
+	.string	"__WINT_MIN__ 0U"
 	.byte	0x1
 	.uleb128 0x4f
-	.string	"__SIZE_MAX__ 0xffffU"
+	.string	"__PTRDIFF_MAX__ 0x7fff"
 	.byte	0x1
 	.uleb128 0x50
-	.string	"__SCHAR_WIDTH__ 8"
+	.string	"__SIZE_MAX__ 0xffffU"
 	.byte	0x1
 	.uleb128 0x51
-	.string	"__SHRT_WIDTH__ 16"
+	.string	"__SCHAR_WIDTH__ 8"
 	.byte	0x1
 	.uleb128 0x52
-	.string	"__INT_WIDTH__ 16"
+	.string	"__SHRT_WIDTH__ 16"
 	.byte	0x1
 	.uleb128 0x53
-	.string	"__LONG_WIDTH__ 32"
+	.string	"__INT_WIDTH__ 16"
 	.byte	0x1
 	.uleb128 0x54
-	.string	"__LONG_LONG_WIDTH__ 64"
+	.string	"__LONG_WIDTH__ 32"
 	.byte	0x1
 	.uleb128 0x55
-	.string	"__WCHAR_WIDTH__ 32"
+	.string	"__LONG_LONG_WIDTH__ 64"
 	.byte	0x1
 	.uleb128 0x56
-	.string	"__WINT_WIDTH__ 16"
+	.string	"__WCHAR_WIDTH__ 32"
 	.byte	0x1
 	.uleb128 0x57
-	.string	"__PTRDIFF_WIDTH__ 16"
+	.string	"__WINT_WIDTH__ 16"
 	.byte	0x1
 	.uleb128 0x58
-	.string	"__SIZE_WIDTH__ 16"
+	.string	"__PTRDIFF_WIDTH__ 16"
 	.byte	0x1
 	.uleb128 0x59
-	.string	"__INTMAX_MAX__ 0x7fffffffffffffffLL"
+	.string	"__SIZE_WIDTH__ 16"
 	.byte	0x1
 	.uleb128 0x5a
-	.string	"__INTMAX_C(c) c ## LL"
+	.string	"__INTMAX_MAX__ 0x7fffffffffffffffLL"
 	.byte	0x1
 	.uleb128 0x5b
-	.string	"__UINTMAX_MAX__ 0xffffffffffffffffULL"
+	.string	"__INTMAX_C(c) c ## LL"
 	.byte	0x1
 	.uleb128 0x5c
-	.string	"__UINTMAX_C(c) c ## ULL"
+	.string	"__UINTMAX_MAX__ 0xffffffffffffffffULL"
 	.byte	0x1
 	.uleb128 0x5d
-	.string	"__INTMAX_WIDTH__ 64"
+	.string	"__UINTMAX_C(c) c ## ULL"
 	.byte	0x1
 	.uleb128 0x5e
-	.string	"__SIG_ATOMIC_MAX__ 0x7fff"
+	.string	"__INTMAX_WIDTH__ 64"
 	.byte	0x1
 	.uleb128 0x5f
-	.string	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)"
+	.string	"__SIG_ATOMIC_MAX__ 0x7fff"
 	.byte	0x1
 	.uleb128 0x60
-	.string	"__SIG_ATOMIC_WIDTH__ 16"
+	.string	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)"
 	.byte	0x1
 	.uleb128 0x61
-	.string	"__INT8_MAX__ 0x7f"
+	.string	"__SIG_ATOMIC_WIDTH__ 16"
 	.byte	0x1
 	.uleb128 0x62
-	.string	"__INT16_MAX__ 0x7fff"
+	.string	"__INT8_MAX__ 0x7f"
 	.byte	0x1
 	.uleb128 0x63
-	.string	"__INT32_MAX__ 0x7fffffffL"
+	.string	"__INT16_MAX__ 0x7fff"
 	.byte	0x1
 	.uleb128 0x64
-	.string	"__INT64_MAX__ 0x7fffffffffffffffLL"
+	.string	"__INT32_MAX__ 0x7fffffffL"
 	.byte	0x1
 	.uleb128 0x65
-	.string	"__UINT8_MAX__ 0xff"
+	.string	"__INT64_MAX__ 0x7fffffffffffffffLL"
 	.byte	0x1
 	.uleb128 0x66
-	.string	"__UINT16_MAX__ 0xffffU"
+	.string	"__UINT8_MAX__ 0xff"
 	.byte	0x1
 	.uleb128 0x67
-	.string	"__UINT32_MAX__ 0xffffffffUL"
+	.string	"__UINT16_MAX__ 0xffffU"
 	.byte	0x1
 	.uleb128 0x68
-	.string	"__UINT64_MAX__ 0xffffffffffffffffULL"
+	.string	"__UINT32_MAX__ 0xffffffffUL"
 	.byte	0x1
 	.uleb128 0x69
-	.string	"__INT_LEAST8_MAX__ 0x7f"
+	.string	"__UINT64_MAX__ 0xffffffffffffffffULL"
 	.byte	0x1
 	.uleb128 0x6a
-	.string	"__INT8_C(c) c"
+	.string	"__INT_LEAST8_MAX__ 0x7f"
 	.byte	0x1
 	.uleb128 0x6b
-	.string	"__INT_LEAST8_WIDTH__ 8"
+	.string	"__INT8_C(c) c"
 	.byte	0x1
 	.uleb128 0x6c
-	.string	"__INT_LEAST16_MAX__ 0x7fff"
+	.string	"__INT_LEAST8_WIDTH__ 8"
 	.byte	0x1
 	.uleb128 0x6d
-	.string	"__INT16_C(c) c"
+	.string	"__INT_LEAST16_MAX__ 0x7fff"
 	.byte	0x1
 	.uleb128 0x6e
-	.string	"__INT_LEAST16_WIDTH__ 16"
+	.string	"__INT16_C(c) c"
 	.byte	0x1
 	.uleb128 0x6f
-	.string	"__INT_LEAST32_MAX__ 0x7fffffffL"
+	.string	"__INT_LEAST16_WIDTH__ 16"
 	.byte	0x1
 	.uleb128 0x70
-	.string	"__INT32_C(c) c ## L"
+	.string	"__INT_LEAST32_MAX__ 0x7fffffffL"
 	.byte	0x1
 	.uleb128 0x71
-	.string	"__INT_LEAST32_WIDTH__ 32"
+	.string	"__INT32_C(c) c ## L"
 	.byte	0x1
 	.uleb128 0x72
-	.string	"__INT_LEAST64_MAX__ 0x7fffffffffffffffLL"
+	.string	"__INT_LEAST32_WIDTH__ 32"
 	.byte	0x1
 	.uleb128 0x73
-	.string	"__INT64_C(c) c ## LL"
+	.string	"__INT_LEAST64_MAX__ 0x7fffffffffffffffLL"
 	.byte	0x1
 	.uleb128 0x74
-	.string	"__INT_LEAST64_WIDTH__ 64"
+	.string	"__INT64_C(c) c ## LL"
 	.byte	0x1
 	.uleb128 0x75
-	.string	"__UINT_LEAST8_MAX__ 0xff"
+	.string	"__INT_LEAST64_WIDTH__ 64"
 	.byte	0x1
 	.uleb128 0x76
-	.string	"__UINT8_C(c) c"
+	.string	"__UINT_LEAST8_MAX__ 0xff"
 	.byte	0x1
 	.uleb128 0x77
-	.string	"__UINT_LEAST16_MAX__ 0xffffU"
+	.string	"__UINT8_C(c) c"
 	.byte	0x1
 	.uleb128 0x78
-	.string	"__UINT16_C(c) c ## U"
+	.string	"__UINT_LEAST16_MAX__ 0xffffU"
 	.byte	0x1
 	.uleb128 0x79
-	.string	"__UINT_LEAST32_MAX__ 0xffffffffUL"
+	.string	"__UINT16_C(c) c ## U"
 	.byte	0x1
 	.uleb128 0x7a
-	.string	"__UINT32_C(c) c ## UL"
+	.string	"__UINT_LEAST32_MAX__ 0xffffffffUL"
 	.byte	0x1
 	.uleb128 0x7b
-	.string	"__UINT_LEAST64_MAX__ 0xffffffffffffffffULL"
+	.string	"__UINT32_C(c) c ## UL"
 	.byte	0x1
 	.uleb128 0x7c
-	.string	"__UINT64_C(c) c ## ULL"
+	.string	"__UINT_LEAST64_MAX__ 0xffffffffffffffffULL"
 	.byte	0x1
 	.uleb128 0x7d
-	.string	"__INT_FAST8_MAX__ 0x7fff"
+	.string	"__UINT64_C(c) c ## ULL"
 	.byte	0x1
 	.uleb128 0x7e
-	.string	"__INT_FAST8_WIDTH__ 16"
+	.string	"__INT_FAST8_MAX__ 0x7fff"
 	.byte	0x1
 	.uleb128 0x7f
-	.string	"__INT_FAST16_MAX__ 0x7fff"
+	.string	"__INT_FAST8_WIDTH__ 16"
 	.byte	0x1
 	.uleb128 0x80
-	.string	"__INT_FAST16_WIDTH__ 16"
+	.string	"__INT_FAST16_MAX__ 0x7fff"
 	.byte	0x1
 	.uleb128 0x81
-	.string	"__INT_FAST32_MAX__ 0x7fffffffL"
+	.string	"__INT_FAST16_WIDTH__ 16"
 	.byte	0x1
 	.uleb128 0x82
-	.string	"__INT_FAST32_WIDTH__ 32"
+	.string	"__INT_FAST32_MAX__ 0x7fffffffL"
 	.byte	0x1
 	.uleb128 0x83
-	.string	"__INT_FAST64_MAX__ 0x7fffffffffffffffLL"
+	.string	"__INT_FAST32_WIDTH__ 32"
 	.byte	0x1
 	.uleb128 0x84
-	.string	"__INT_FAST64_WIDTH__ 64"
+	.string	"__INT_FAST64_MAX__ 0x7fffffffffffffffLL"
 	.byte	0x1
 	.uleb128 0x85
-	.string	"__UINT_FAST8_MAX__ 0xffffU"
+	.string	"__INT_FAST64_WIDTH__ 64"
 	.byte	0x1
 	.uleb128 0x86
-	.string	"__UINT_FAST16_MAX__ 0xffffU"
+	.string	"__UINT_FAST8_MAX__ 0xffffU"
 	.byte	0x1
 	.uleb128 0x87
-	.string	"__UINT_FAST32_MAX__ 0xffffffffUL"
+	.string	"__UINT_FAST16_MAX__ 0xffffU"
 	.byte	0x1
 	.uleb128 0x88
-	.string	"__UINT_FAST64_MAX__ 0xffffffffffffffffULL"
+	.string	"__UINT_FAST32_MAX__ 0xffffffffUL"
 	.byte	0x1
 	.uleb128 0x89
-	.string	"__INTPTR_MAX__ 0x7fff"
+	.string	"__UINT_FAST64_MAX__ 0xffffffffffffffffULL"
 	.byte	0x1
 	.uleb128 0x8a
-	.string	"__INTPTR_WIDTH__ 16"
+	.string	"__INTPTR_MAX__ 0x7fff"
 	.byte	0x1
 	.uleb128 0x8b
-	.string	"__UINTPTR_MAX__ 0xffffU"
+	.string	"__INTPTR_WIDTH__ 16"
 	.byte	0x1
 	.uleb128 0x8c
-	.string	"__GCC_IEC_559 0"
+	.string	"__UINTPTR_MAX__ 0xffffU"
 	.byte	0x1
 	.uleb128 0x8d
-	.string	"__GCC_IEC_559_COMPLEX 0"
+	.string	"__GCC_IEC_559 0"
 	.byte	0x1
 	.uleb128 0x8e
-	.string	"__FLT_EVAL_METHOD__ 0"
+	.string	"__GCC_IEC_559_COMPLEX 0"
 	.byte	0x1
 	.uleb128 0x8f
-	.string	"__FLT_EVAL_METHOD_TS_18661_3__ 0"
+	.string	"__FLT_EVAL_METHOD__ 0"
 	.byte	0x1
 	.uleb128 0x90
-	.string	"__DEC_EVAL_METHOD__ 2"
+	.string	"__FLT_EVAL_METHOD_TS_18661_3__ 0"
 	.byte	0x1
 	.uleb128 0x91
-	.string	"__FLT_RADIX__ 2"
+	.string	"__DEC_EVAL_METHOD__ 2"
 	.byte	0x1
 	.uleb128 0x92
-	.string	"__FLT_MANT_DIG__ 24"
+	.string	"__FLT_RADIX__ 2"
 	.byte	0x1
 	.uleb128 0x93
-	.string	"__FLT_DIG__ 6"
+	.string	"__FLT_MANT_DIG__ 24"
 	.byte	0x1
 	.uleb128 0x94
-	.string	"__FLT_MIN_EXP__ (-125)"
+	.string	"__FLT_DIG__ 6"
 	.byte	0x1
 	.uleb128 0x95
-	.string	"__FLT_MIN_10_EXP__ (-37)"
+	.string	"__FLT_MIN_EXP__ (-125)"
 	.byte	0x1
 	.uleb128 0x96
-	.string	"__FLT_MAX_EXP__ 128"
+	.string	"__FLT_MIN_10_EXP__ (-37)"
 	.byte	0x1
 	.uleb128 0x97
-	.string	"__FLT_MAX_10_EXP__ 38"
+	.string	"__FLT_MAX_EXP__ 128"
 	.byte	0x1
 	.uleb128 0x98
-	.string	"__FLT_DECIMAL_DIG__ 9"
+	.string	"__FLT_MAX_10_EXP__ 38"
 	.byte	0x1
 	.uleb128 0x99
-	.string	"__FLT_MAX__ 3.4028234663852886e+38F"
+	.string	"__FLT_DECIMAL_DIG__ 9"
 	.byte	0x1
 	.uleb128 0x9a
-	.string	"__FLT_MIN__ 1.1754943508222875e-38F"
+	.string	"__FLT_MAX__ 3.4028234663852886e+38F"
 	.byte	0x1
 	.uleb128 0x9b
-	.string	"__FLT_EPSILON__ 1.1920928955078125e-7F"
+	.string	"__FLT_MIN__ 1.1754943508222875e-38F"
 	.byte	0x1
 	.uleb128 0x9c
-	.string	"__FLT_DENORM_MIN__ 1.4012984643248171e-45F"
+	.string	"__FLT_EPSILON__ 1.1920928955078125e-7F"
 	.byte	0x1
 	.uleb128 0x9d
-	.string	"__FLT_HAS_DENORM__ 1"
+	.string	"__FLT_DENORM_MIN__ 1.4012984643248171e-45F"
 	.byte	0x1
 	.uleb128 0x9e
-	.string	"__FLT_HAS_INFINITY__ 1"
+	.string	"__FLT_HAS_DENORM__ 1"
 	.byte	0x1
 	.uleb128 0x9f
-	.string	"__FLT_HAS_QUIET_NAN__ 1"
+	.string	"__FLT_HAS_INFINITY__ 1"
 	.byte	0x1
 	.uleb128 0xa0
-	.string	"__DBL_MANT_DIG__ 53"
+	.string	"__FLT_HAS_QUIET_NAN__ 1"
 	.byte	0x1
 	.uleb128 0xa1
-	.string	"__DBL_DIG__ 15"
+	.string	"__DBL_MANT_DIG__ 53"
 	.byte	0x1
 	.uleb128 0xa2
-	.string	"__DBL_MIN_EXP__ (-1021)"
+	.string	"__DBL_DIG__ 15"
 	.byte	0x1
 	.uleb128 0xa3
-	.string	"__DBL_MIN_10_EXP__ (-307)"
+	.string	"__DBL_MIN_EXP__ (-1021)"
 	.byte	0x1
 	.uleb128 0xa4
-	.string	"__DBL_MAX_EXP__ 1024"
+	.string	"__DBL_MIN_10_EXP__ (-307)"
 	.byte	0x1
 	.uleb128 0xa5
-	.string	"__DBL_MAX_10_EXP__ 308"
+	.string	"__DBL_MAX_EXP__ 1024"
 	.byte	0x1
 	.uleb128 0xa6
-	.string	"__DBL_DECIMAL_DIG__ 17"
+	.string	"__DBL_MAX_10_EXP__ 308"
 	.byte	0x1
 	.uleb128 0xa7
-	.string	"__DBL_MAX__ ((double)1.7976931348623157e+308L)"
+	.string	"__DBL_DECIMAL_DIG__ 17"
 	.byte	0x1
 	.uleb128 0xa8
-	.string	"__DBL_MIN__ ((double)2.2250738585072014e-308L)"
+	.string	"__DBL_MAX__ ((double)1.7976931348623157e+308L)"
 	.byte	0x1
 	.uleb128 0xa9
-	.string	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)"
+	.string	"__DBL_MIN__ ((double)2.2250738585072014e-308L)"
 	.byte	0x1
 	.uleb128 0xaa
-	.string	"__DBL_DENORM_MIN__ ((double)4.9406564584124654e-324L)"
+	.string	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)"
 	.byte	0x1
 	.uleb128 0xab
-	.string	"__DBL_HAS_DENORM__ 1"
+	.string	"__DBL_DENORM_MIN__ ((double)4.9406564584124654e-324L)"
 	.byte	0x1
 	.uleb128 0xac
-	.string	"__DBL_HAS_INFINITY__ 1"
+	.string	"__DBL_HAS_DENORM__ 1"
 	.byte	0x1
 	.uleb128 0xad
-	.string	"__DBL_HAS_QUIET_NAN__ 1"
+	.string	"__DBL_HAS_INFINITY__ 1"
 	.byte	0x1
 	.uleb128 0xae
-	.string	"__LDBL_MANT_DIG__ 53"
+	.string	"__DBL_HAS_QUIET_NAN__ 1"
 	.byte	0x1
 	.uleb128 0xaf
-	.string	"__LDBL_DIG__ 15"
+	.string	"__LDBL_MANT_DIG__ 53"
 	.byte	0x1
 	.uleb128 0xb0
-	.string	"__LDBL_MIN_EXP__ (-1021)"
+	.string	"__LDBL_DIG__ 15"
 	.byte	0x1
 	.uleb128 0xb1
-	.string	"__LDBL_MIN_10_EXP__ (-307)"
+	.string	"__LDBL_MIN_EXP__ (-1021)"
 	.byte	0x1
 	.uleb128 0xb2
-	.string	"__LDBL_MAX_EXP__ 1024"
+	.string	"__LDBL_MIN_10_EXP__ (-307)"
 	.byte	0x1
 	.uleb128 0xb3
-	.string	"__LDBL_MAX_10_EXP__ 308"
+	.string	"__LDBL_MAX_EXP__ 1024"
 	.byte	0x1
 	.uleb128 0xb4
-	.string	"__DECIMAL_DIG__ 17"
+	.string	"__LDBL_MAX_10_EXP__ 308"
 	.byte	0x1
 	.uleb128 0xb5
-	.string	"__LDBL_DECIMAL_DIG__ 17"
+	.string	"__DECIMAL_DIG__ 17"
 	.byte	0x1
 	.uleb128 0xb6
-	.string	"__LDBL_MAX__ 1.7976931348623157e+308L"
+	.string	"__LDBL_DECIMAL_DIG__ 17"
 	.byte	0x1
 	.uleb128 0xb7
-	.string	"__LDBL_MIN__ 2.2250738585072014e-308L"
+	.string	"__LDBL_MAX__ 1.7976931348623157e+308L"
 	.byte	0x1
 	.uleb128 0xb8
-	.string	"__LDBL_EPSILON__ 2.2204460492503131e-16L"
+	.string	"__LDBL_MIN__ 2.2250738585072014e-308L"
 	.byte	0x1
 	.uleb128 0xb9
-	.string	"__LDBL_DENORM_MIN__ 4.9406564584124654e-324L"
+	.string	"__LDBL_EPSILON__ 2.2204460492503131e-16L"
 	.byte	0x1
 	.uleb128 0xba
-	.string	"__LDBL_HAS_DENORM__ 1"
+	.string	"__LDBL_DENORM_MIN__ 4.9406564584124654e-324L"
 	.byte	0x1
 	.uleb128 0xbb
-	.string	"__LDBL_HAS_INFINITY__ 1"
+	.string	"__LDBL_HAS_DENORM__ 1"
 	.byte	0x1
 	.uleb128 0xbc
-	.string	"__LDBL_HAS_QUIET_NAN__ 1"
+	.string	"__LDBL_HAS_INFINITY__ 1"
 	.byte	0x1
 	.uleb128 0xbd
-	.string	"__FLT32_MANT_DIG__ 24"
+	.string	"__LDBL_HAS_QUIET_NAN__ 1"
 	.byte	0x1
 	.uleb128 0xbe
-	.string	"__FLT32_DIG__ 6"
+	.string	"__FLT32_MANT_DIG__ 24"
 	.byte	0x1
 	.uleb128 0xbf
-	.string	"__FLT32_MIN_EXP__ (-125)"
+	.string	"__FLT32_DIG__ 6"
 	.byte	0x1
 	.uleb128 0xc0
-	.string	"__FLT32_MIN_10_EXP__ (-37)"
+	.string	"__FLT32_MIN_EXP__ (-125)"
 	.byte	0x1
 	.uleb128 0xc1
-	.string	"__FLT32_MAX_EXP__ 128"
+	.string	"__FLT32_MIN_10_EXP__ (-37)"
 	.byte	0x1
 	.uleb128 0xc2
-	.string	"__FLT32_MAX_10_EXP__ 38"
+	.string	"__FLT32_MAX_EXP__ 128"
 	.byte	0x1
 	.uleb128 0xc3
-	.string	"__FLT32_DECIMAL_DIG__ 9"
+	.string	"__FLT32_MAX_10_EXP__ 38"
 	.byte	0x1
 	.uleb128 0xc4
-	.string	"__FLT32_MAX__ 3.4028234663852886e+38F32"
+	.string	"__FLT32_DECIMAL_DIG__ 9"
 	.byte	0x1
 	.uleb128 0xc5
-	.string	"__FLT32_MIN__ 1.1754943508222875e-38F32"
+	.string	"__FLT32_MAX__ 3.4028234663852886e+38F32"
 	.byte	0x1
 	.uleb128 0xc6
-	.string	"__FLT32_EPSILON__ 1.1920928955078125e-7F32"
+	.string	"__FLT32_MIN__ 1.1754943508222875e-38F32"
 	.byte	0x1
 	.uleb128 0xc7
-	.string	"__FLT32_DENORM_MIN__ 1.4012984643248171e-45F32"
+	.string	"__FLT32_EPSILON__ 1.1920928955078125e-7F32"
 	.byte	0x1
 	.uleb128 0xc8
-	.string	"__FLT32_HAS_DENORM__ 1"
+	.string	"__FLT32_DENORM_MIN__ 1.4012984643248171e-45F32"
 	.byte	0x1
 	.uleb128 0xc9
-	.string	"__FLT32_HAS_INFINITY__ 1"
+	.string	"__FLT32_HAS_DENORM__ 1"
 	.byte	0x1
 	.uleb128 0xca
-	.string	"__FLT32_HAS_QUIET_NAN__ 1"
+	.string	"__FLT32_HAS_INFINITY__ 1"
 	.byte	0x1
 	.uleb128 0xcb
-	.string	"__FLT64_MANT_DIG__ 53"
+	.string	"__FLT32_HAS_QUIET_NAN__ 1"
 	.byte	0x1
 	.uleb128 0xcc
-	.string	"__FLT64_DIG__ 15"
+	.string	"__FLT64_MANT_DIG__ 53"
 	.byte	0x1
 	.uleb128 0xcd
-	.string	"__FLT64_MIN_EXP__ (-1021)"
+	.string	"__FLT64_DIG__ 15"
 	.byte	0x1
 	.uleb128 0xce
-	.string	"__FLT64_MIN_10_EXP__ (-307)"
+	.string	"__FLT64_MIN_EXP__ (-1021)"
 	.byte	0x1
 	.uleb128 0xcf
-	.string	"__FLT64_MAX_EXP__ 1024"
+	.string	"__FLT64_MIN_10_EXP__ (-307)"
 	.byte	0x1
 	.uleb128 0xd0
-	.string	"__FLT64_MAX_10_EXP__ 308"
+	.string	"__FLT64_MAX_EXP__ 1024"
 	.byte	0x1
 	.uleb128 0xd1
-	.string	"__FLT64_DECIMAL_DIG__ 17"
+	.string	"__FLT64_MAX_10_EXP__ 308"
 	.byte	0x1
 	.uleb128 0xd2
-	.string	"__FLT64_MAX__ 1.7976931348623157e+308F64"
+	.string	"__FLT64_DECIMAL_DIG__ 17"
 	.byte	0x1
 	.uleb128 0xd3
-	.string	"__FLT64_MIN__ 2.2250738585072014e-308F64"
+	.string	"__FLT64_MAX__ 1.7976931348623157e+308F64"
 	.byte	0x1
 	.uleb128 0xd4
-	.string	"__FLT64_EPSILON__ 2.2204460492503131e-16F64"
+	.string	"__FLT64_MIN__ 2.2250738585072014e-308F64"
 	.byte	0x1
 	.uleb128 0xd5
-	.string	"__FLT64_DENORM_MIN__ 4.9406564584124654e-324F64"
+	.string	"__FLT64_EPSILON__ 2.2204460492503131e-16F64"
 	.byte	0x1
 	.uleb128 0xd6
-	.string	"__FLT64_HAS_DENORM__ 1"
+	.string	"__FLT64_DENORM_MIN__ 4.9406564584124654e-324F64"
 	.byte	0x1
 	.uleb128 0xd7
-	.string	"__FLT64_HAS_INFINITY__ 1"
+	.string	"__FLT64_HAS_DENORM__ 1"
 	.byte	0x1
 	.uleb128 0xd8
-	.string	"__FLT64_HAS_QUIET_NAN__ 1"
+	.string	"__FLT64_HAS_INFINITY__ 1"
 	.byte	0x1
 	.uleb128 0xd9
-	.string	"__FLT32X_MANT_DIG__ 53"
+	.string	"__FLT64_HAS_QUIET_NAN__ 1"
 	.byte	0x1
 	.uleb128 0xda
-	.string	"__FLT32X_DIG__ 15"
+	.string	"__FLT32X_MANT_DIG__ 53"
 	.byte	0x1
 	.uleb128 0xdb
-	.string	"__FLT32X_MIN_EXP__ (-1021)"
+	.string	"__FLT32X_DIG__ 15"
 	.byte	0x1
 	.uleb128 0xdc
-	.string	"__FLT32X_MIN_10_EXP__ (-307)"
+	.string	"__FLT32X_MIN_EXP__ (-1021)"
 	.byte	0x1
 	.uleb128 0xdd
-	.string	"__FLT32X_MAX_EXP__ 1024"
+	.string	"__FLT32X_MIN_10_EXP__ (-307)"
 	.byte	0x1
 	.uleb128 0xde
-	.string	"__FLT32X_MAX_10_EXP__ 308"
+	.string	"__FLT32X_MAX_EXP__ 1024"
 	.byte	0x1
 	.uleb128 0xdf
-	.string	"__FLT32X_DECIMAL_DIG__ 17"
+	.string	"__FLT32X_MAX_10_EXP__ 308"
 	.byte	0x1
 	.uleb128 0xe0
-	.string	"__FLT32X_MAX__ 1.7976931348623157e+308F32x"
+	.string	"__FLT32X_DECIMAL_DIG__ 17"
 	.byte	0x1
 	.uleb128 0xe1
-	.string	"__FLT32X_MIN__ 2.2250738585072014e-308F32x"
+	.string	"__FLT32X_MAX__ 1.7976931348623157e+308F32x"
 	.byte	0x1
 	.uleb128 0xe2
-	.string	"__FLT32X_EPSILON__ 2.2204460492503131e-16F32x"
+	.string	"__FLT32X_MIN__ 2.2250738585072014e-308F32x"
 	.byte	0x1
 	.uleb128 0xe3
-	.string	"__FLT32X_DENORM_MIN__ 4.9406564584124654e-324F32x"
+	.string	"__FLT32X_EPSILON__ 2.2204460492503131e-16F32x"
 	.byte	0x1
 	.uleb128 0xe4
-	.string	"__FLT32X_HAS_DENORM__ 1"
+	.string	"__FLT32X_DENORM_MIN__ 4.9406564584124654e-324F32x"
 	.byte	0x1
 	.uleb128 0xe5
-	.string	"__FLT32X_HAS_INFINITY__ 1"
+	.string	"__FLT32X_HAS_DENORM__ 1"
 	.byte	0x1
 	.uleb128 0xe6
-	.string	"__FLT32X_HAS_QUIET_NAN__ 1"
+	.string	"__FLT32X_HAS_INFINITY__ 1"
 	.byte	0x1
 	.uleb128 0xe7
-	.string	"__DEC32_MANT_DIG__ 7"
+	.string	"__FLT32X_HAS_QUIET_NAN__ 1"
 	.byte	0x1
 	.uleb128 0xe8
-	.string	"__DEC32_MIN_EXP__ (-94)"
+	.string	"__DEC32_MANT_DIG__ 7"
 	.byte	0x1
 	.uleb128 0xe9
-	.string	"__DEC32_MAX_EXP__ 97"
+	.string	"__DEC32_MIN_EXP__ (-94)"
 	.byte	0x1
 	.uleb128 0xea
-	.string	"__DEC32_MIN__ 1E-95DF"
+	.string	"__DEC32_MAX_EXP__ 97"
 	.byte	0x1
 	.uleb128 0xeb
-	.string	"__DEC32_MAX__ 9.999999E96DF"
+	.string	"__DEC32_MIN__ 1E-95DF"
 	.byte	0x1
 	.uleb128 0xec
-	.string	"__DEC32_EPSILON__ 1E-6DF"
+	.string	"__DEC32_MAX__ 9.999999E96DF"
 	.byte	0x1
 	.uleb128 0xed
-	.string	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF"
+	.string	"__DEC32_EPSILON__ 1E-6DF"
 	.byte	0x1
 	.uleb128 0xee
-	.string	"__DEC64_MANT_DIG__ 16"
+	.string	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF"
 	.byte	0x1
 	.uleb128 0xef
-	.string	"__DEC64_MIN_EXP__ (-382)"
+	.string	"__DEC64_MANT_DIG__ 16"
 	.byte	0x1
 	.uleb128 0xf0
-	.string	"__DEC64_MAX_EXP__ 385"
+	.string	"__DEC64_MIN_EXP__ (-382)"
 	.byte	0x1
 	.uleb128 0xf1
-	.string	"__DEC64_MIN__ 1E-383DD"
+	.string	"__DEC64_MAX_EXP__ 385"
 	.byte	0x1
 	.uleb128 0xf2
-	.string	"__DEC64_MAX__ 9.999999999999999E384DD"
+	.string	"__DEC64_MIN__ 1E-383DD"
 	.byte	0x1
 	.uleb128 0xf3
-	.string	"__DEC64_EPSILON__ 1E-15DD"
+	.string	"__DEC64_MAX__ 9.999999999999999E384DD"
 	.byte	0x1
 	.uleb128 0xf4
-	.string	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD"
+	.string	"__DEC64_EPSILON__ 1E-15DD"
 	.byte	0x1
 	.uleb128 0xf5
-	.string	"__DEC128_MANT_DIG__ 34"
+	.string	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD"
 	.byte	0x1
 	.uleb128 0xf6
-	.string	"__DEC128_MIN_EXP__ (-6142)"
+	.string	"__DEC128_MANT_DIG__ 34"
 	.byte	0x1
 	.uleb128 0xf7
-	.string	"__DEC128_MAX_EXP__ 6145"
+	.string	"__DEC128_MIN_EXP__ (-6142)"
 	.byte	0x1
 	.uleb128 0xf8
-	.string	"__DEC128_MIN__ 1E-6143DL"
+	.string	"__DEC128_MAX_EXP__ 6145"
 	.byte	0x1
 	.uleb128 0xf9
-	.string	"__DEC128_MAX__ 9.999999999999999999999999999999999E6144DL"
+	.string	"__DEC128_MIN__ 1E-6143DL"
 	.byte	0x1
 	.uleb128 0xfa
-	.string	"__DEC128_EPSILON__ 1E-33DL"
+	.string	"__DEC128_MAX__ 9.999999999999999999999999999999999E6144DL"
 	.byte	0x1
 	.uleb128 0xfb
-	.string	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL"
+	.string	"__DEC128_EPSILON__ 1E-33DL"
 	.byte	0x1
 	.uleb128 0xfc
-	.string	"__REGISTER_PREFIX__ "
+	.string	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL"
 	.byte	0x1
 	.uleb128 0xfd
-	.string	"__USER_LABEL_PREFIX__ "
+	.string	"__REGISTER_PREFIX__ "
 	.byte	0x1
 	.uleb128 0xfe
-	.string	"__GNUC_STDC_INLINE__ 1"
+	.string	"__USER_LABEL_PREFIX__ "
 	.byte	0x1
 	.uleb128 0xff
-	.string	"__NO_INLINE__ 1"
+	.string	"__GNUC_STDC_INLINE__ 1"
 	.byte	0x1
 	.uleb128 0x100
 	.string	"__STRICT_ANSI__ 1"
@@ -2501,20 +2539,23 @@ INT_Qwark:
 	.byte	0x1
 	.uleb128 0xb
 	.string	"INTERMITTENCY_HANDLING_ENABLED "
+	.byte	0x1
+	.uleb128 0xc
+	.string	"TIMER_TEST "
 	.byte	0x4
 	.byte	0
 	.section	.debug_line,"",@progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",@progbits,1
+.LASF2:
+	.ascii	"GNU C9"
+	.string	"9 7.3.1 -mmcu=msp430 -mhwmult=16bit -msmall -mcode-region=none -mdata-region=none -mdevices-csv-loc=/opt/ti/ccsv8/ccs_base/msp430/include_gcc/devices.csv -mcpu=msp430 -g3 -g -gdwarf-3 -gstrict-dwarf -g3 -O2 -std=c99 -std=c99 -fstrict-aliasing -fstack-usage"
 .LASF5:
 	.string	"unsigned int"
 .LASF3:
 	.string	"../qwark.c"
 .LASF0:
 	.string	"INT_Qwark"
-.LASF2:
-	.ascii	"GNU C9"
-	.string	"9 7.3.1 -mmcu=msp430 -mhwmult=16bit -msmall -mcode-region=none -mdata-region=none -mdevices-csv-loc=/opt/ti/ccsv8/ccs_base/msp430/include_gcc/devices.csv -mcpu=msp430 -g3 -g -gdwarf-3 -gstrict-dwarf -g3 -O0 -std=c99 -std=c99 -fstrict-aliasing -fstack-usage"
 .LASF1:
 	.string	"qwark_restore"
 .LASF4:

@@ -1,5 +1,5 @@
 # 1 "../timerA.c"
-# 1 "/home/hiram/eclipse-workspace/bitcount/Debug//"
+# 1 "/home/hiram/eclipse-workspace/int_cuckoo/Debug//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -280,8 +280,8 @@
 # 1 "<command-line>"
 #define PFX_MSP430_ELF 1
 # 1 "../timerA.c"
-# 1 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h" 1
-# 36 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h"
+# 1 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h" 1
+# 36 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h"
 # 1 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h" 1
 # 39 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h"
 #define __IN430_H__ 
@@ -426,7 +426,7 @@ typedef unsigned int __istate_t;
 #define _SWAP_BYTES(x) _swap_bytes(x)
 
 #define __no_init __attribute__ ((section (".noinit")))
-# 37 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h" 2
+# 37 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h" 2
 
 
 
@@ -460,7 +460,7 @@ typedef unsigned int __istate_t;
 #define LPM3_EXIT _BIC_SR_IRQ(LPM3_bits)
 #define LPM4 _BIS_SR(LPM4_bits)
 #define LPM4_EXIT _BIC_SR_IRQ(LPM4_bits)
-# 79 "/home/hiram/git/de0_nano_msp430/altera_de0_nano/software/libs/omsp_system.h"
+# 79 "/home/hiram/master/Qwark/altera_de0_nano/software/libs/omsp_system.h"
 #define IE1_set_wdtie() __asm__ __volatile__ ("bis.b #0x01, &0x0000")
 
 #define IFG1 (*(volatile unsigned char *) 0x0002)
@@ -648,6 +648,16 @@ void ta_wait(unsigned int);
 #define COV (0x0002)
 #define CCIFG (0x0001)
 # 3 "../timerA.c" 2
+# 1 "../qwark.h" 1
+# 9 "../qwark.h"
+#define QWARK_H_ 
+
+#define QWARK_CTL (*(volatile unsigned int *) 0x02A0)
+#define QWARK_VECTOR (5)
+#define QWARK_CHECKPOINT() QWARK_CTL |= 0x0020
+
+#define QWARK_EN 0x01
+# 4 "../timerA.c" 2
 
 
 
@@ -691,13 +701,20 @@ void ta_wait(unsigned int time_cnt) {
 __attribute__((wakeup)) void __attribute__((interrupt ((9)))) INT_timerA1(void) {
 
 
-  (*(volatile unsigned char *) 0x0090) ^= 0xFF;
-  (*(volatile unsigned int *) 0x0160) = (0x0001);
-  (*(volatile unsigned int *) 0x0172) = periodic_val;
-  __asm__ __volatile__ ("eint { nop");
-  (*(volatile unsigned int *) 0x0190) |= 0x0020;
-  (*(volatile unsigned int *) 0x0160) = (0x0200) | (0x0004) | (0x0010) | (0x0002);
 
+
+
+
+   (*(volatile unsigned int *) 0x0160) = (0x0001);
+
+
+   (*(volatile unsigned int *) 0x0172) = periodic_val;
+
+
+   (*(volatile unsigned int *) 0x0160) = (0x0200) | (0x0004) | (0x0010) | (0x0002);
+
+
+   (*(volatile unsigned int *) 0x02A0) |= 0x0020;
 
 
 }

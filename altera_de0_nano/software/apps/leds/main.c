@@ -13,7 +13,13 @@
 #define CHAR_BIT 8
 #define UART_DBG
 
-volatile unsigned  n_0, n_1, n_2, n_3, n_4, n_5, n_6;
+volatile unsigned  n_0 = 0;
+volatile unsigned  n_1 = 0;
+volatile unsigned  n_2 = 0;
+volatile unsigned  n_3 = 0;
+volatile unsigned  n_4 = 0;
+volatile unsigned  n_5 = 0;
+volatile unsigned  n_6 = 0;
 
 char bits[256] =
 {
@@ -121,7 +127,7 @@ void init()
 {
 
      WDTCTL = WDTPW | WDTHOLD; // Stop WDT
-  	 __asm__ __volatile__ ("nop");
+     __asm__ __volatile__ ("nop");
      eint();
      UART_BAUD = BAUD;                   // Init UART
      UART_CTL  = UART_EN;
@@ -135,8 +141,111 @@ void init()
 int main()
 {
 	init();
+	while(1);
+    	ta_wait(9980);
+    	//ta_wait(2000);
+	uint32_t seed;
+	unsigned  iter;
+	unsigned  func;
 
-  while(1);
+	/* Iterate through the 7 func statements 0 - 7*/
+	/* Each statement executes a different bitcount routine, with a different seed value, a 100 times*/
+	while(1){
+	LED_CTRL ^= 0xFF;
+
+	//Initialize the variables upon every loop
+
+	n_0=0;
+	n_1=0;
+	n_2=0;
+	n_3=0;
+	n_4=0;
+	n_5=0;
+	n_6=0;
+
+	//Toggle LED upon every execution
+
+	for (func = 0; func < 7; func++) {
+
+		seed = (uint32_t)SEED;
+		if(func == 0){
+
+			for(iter = 0; iter < ITER; ++iter, seed += 13){
+
+
+				n_0 += bit_count(seed);
+			}
+		}
+		else if(func == 1){
+
+			for(iter = 0; iter < ITER; ++iter, seed += 13){
+
+
+				n_1 += bitcount(seed);
+			}
+		}
+		else if(func == 2){
+
+			for(iter = 0; iter < ITER; ++iter, seed += 13){
+
+
+				n_2 += ntbl_bitcnt(seed);
+			}
+		}
+		else if(func == 3){
+
+			for(iter = 0; iter < ITER; ++iter, seed += 13){
+
+
+				n_3 += ntbl_bitcount(seed);
+			}
+		}
+		else if(func == 4){
+
+			for(iter = 0; iter < ITER; ++iter, seed += 13){
+
+
+				n_4 += BW_btbl_bitcount(seed);
+			}
+		}
+		else if(func == 5){
+
+			for(iter = 0; iter < ITER; ++iter, seed += 13){
+
+
+				n_5 += AR_btbl_bitcount(seed);
+			}
+		}
+		else if(func == 6){
+
+			for(iter = 0; iter < ITER; ++iter, seed += 13){
+
+
+				n_6 += bit_shifter(seed);
+			}
+		}
+	}
+	
+
+
+#ifdef UART_DBG
+	UART_WriteString("Benchmark Complete! \r\n");
+	UART_WriteNumber(n_0);
+	UART_WriteString("\r\n");
+	UART_WriteNumber(n_1);
+	UART_WriteString("\r\n");
+	UART_WriteNumber(n_2);
+	UART_WriteString("\r\n");
+	UART_WriteNumber(n_3);
+	UART_WriteString("\r\n");
+	UART_WriteNumber(n_4);
+	UART_WriteString("\r\n");
+	UART_WriteNumber(n_5);
+	UART_WriteString("\r\n");
+	UART_WriteNumber(n_6);
+	UART_WriteString("\r\n");
+#endif
+   }//while 1
 
 }
 
