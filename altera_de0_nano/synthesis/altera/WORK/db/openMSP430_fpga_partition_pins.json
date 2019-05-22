@@ -40,27 +40,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "ADDR[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ADDR[1]",
-					"strict" : false
-				},
-				{
-					"name" : "TL_ADDR[0]",
-					"strict" : false
-				},
-				{
-					"name" : "TL_ADDR[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ADDR_CE",
-					"strict" : false
-				},
-				{
 					"name" : "PER_UART_TX",
+					"strict" : false
+				},
+				{
+					"name" : "FPGA_CLK1_50",
 					"strict" : false
 				},
 				{
@@ -69,14 +53,6 @@
 				},
 				{
 					"name" : "UART_RX",
-					"strict" : false
-				},
-				{
-					"name" : "SW[1]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[0]",
 					"strict" : false
 				},
 				{
@@ -89,6 +65,14 @@
 				},
 				{
 					"name" : "SW[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
 					"strict" : false
 				}
 			]

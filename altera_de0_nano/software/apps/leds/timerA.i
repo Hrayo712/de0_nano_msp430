@@ -1,5 +1,5 @@
 # 1 "timerA.c"
-# 1 "/home/hiram/master/Qwark/altera_de0_nano/software/apps/leds//"
+# 1 "/home/hiram/master/Qwark_merge/altera_de0_nano/software/apps/leds//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -14,7 +14,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 2
 #define __SIZEOF_LONG__ 4
@@ -256,6 +255,7 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
+#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
 #define __CHAR_UNSIGNED__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
@@ -702,6 +702,17 @@ __attribute__((wakeup)) void __attribute__((interrupt ((9)))) INT_timerA1(void) 
 
 
 
- (*(volatile unsigned int *) 0x0120) = 0;
+
+
+
+
+   (*(volatile unsigned int *) 0x0160) = (0x0001);
+   (*(volatile unsigned int *) 0x0172) = periodic_val;
+
+
+   (*(volatile unsigned int *) 0x0160) = (0x0200) | (0x0004) | (0x0010) | (0x0002);
+
+
+   (*(volatile unsigned int *) 0x02A0) |= 0x0020;
 
 }
