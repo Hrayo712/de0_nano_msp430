@@ -1907,7 +1907,7 @@ UART_WriteString:
 .LASF6:
 	.string	"txdata"
 .LASF9:
-	.string	"/home/hiram/master/Qwark_merge/altera_de0_nano/software/apps/leds"
+	.string	"/home/hiram/master/Qwark_stack/altera_de0_nano/software/apps/leds"
 .LASF1:
 	.string	"char"
 .LASF7:

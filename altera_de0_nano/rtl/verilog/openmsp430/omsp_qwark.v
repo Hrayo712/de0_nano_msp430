@@ -96,7 +96,7 @@ parameter           DATA_WIDTH = 16;
 parameter           ADDR_WIDTH =  3;
 parameter           SLICE_WIDTH = 4;
 //parameter         DMEM_END      = `DMEM_BASE+`DMEM_SIZE;
-parameter           DMEM_END      = 16'h6000;
+parameter           DMEM_END      = 16'h7FFE;
 
 
 //=============================================================================
@@ -134,6 +134,7 @@ reg [ADDR_WIDTH:0]tlb_buff_ctr;
 /*Address forwarding: This is used to let the other buffer that a certain address is being written */
 reg [DATA_WIDTH-1:0]wr_buff_busy_writing;
 reg [DATA_WIDTH-1:0]rd_buff_busy_writing;
+reg [DATA_WIDTH-1:0]tlb_buff_busy_writing;
 
 //Address translation wires
 wire   tlb_match;
@@ -171,9 +172,9 @@ assign  irq_out	    		= irq_flag;
 
 assign  mem_track_en  = (eu_addr[15:0]>=(`DMEM_BASE)) & (eu_addr[15:0]< (DMEM_END));
 
-assign tl_addr =  tlb_match 	  							 ? addr_out_tlb		 : // Prioritize TLB match, over WAR detection	
-						tlb_buff_busy && rd_buf_out_match ? addr_out_rd			 :
-						WAR || sync_WAR		 	  			 ? addr_out_war		 : 
+assign tl_addr =  en && tlb_match 	  							 														   ? addr_out_tlb		 : // Prioritize TLB match, over WAR detection	
+						en && tlb_buff_busy && rd_buf_out_match && (tl_eu_addr == tlb_buff_busy_writing)		? addr_out_rd		 :
+						en && (WAR || sync_WAR)		 	  			 						   							   ? addr_out_war		 : 
 						eu_addr;
 
 always @(war_ctr) begin
@@ -188,7 +189,7 @@ always @(war_ctr) begin
 		3'b110 : addr_out_war <= 16'h600C;
 		3'b111 : addr_out_war <= 16'h600E;
 	  default : addr_out_war <= 16'h7000;
-		endcase  
+	  endcase  
 end		
 
 always @* begin
@@ -242,6 +243,7 @@ end
 //=============================================================================
 
 reg  sync_WAR;
+
 always @(posedge mclk) begin
 	if(puc_rst) begin
 	war_ctr <= 1'b0;
@@ -329,6 +331,19 @@ always @(posedge mclk) begin
 	end else if (~wr_buff_wr_en && ~wr_buff_busy) begin
 	//busy_writing = 0;
 	wr_buff_busy_writing <= 16'hCAFE;
+	end
+end
+
+/* TLB buffer Logic to Forward the WRITE address to the Read buffer*/
+
+always @(posedge mclk) begin
+
+	if(tlb_buff_wr_en) begin
+	tlb_buff_busy_writing <= read_address;
+	//busy_writing = 1;
+	end else if (~tlb_buff_wr_en && ~tlb_buff_busy) begin
+	//busy_writing = 0;
+	tlb_buff_busy_writing <= 16'hCAFE;
 	end
 end
 

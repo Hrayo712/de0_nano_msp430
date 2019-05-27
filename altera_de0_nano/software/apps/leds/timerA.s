@@ -84,41 +84,25 @@ INT_timerA1:
 	.loc 1 44 0
 ; start of function
 ; attributes: interrupt wakeup 
-; framesize_regs:     4
+; framesize_regs:     2
 ; framesize_locals:   0
 ; framesize_outgoing: 0
-; framesize:          4
-; elim ap -> fp       6
+; framesize:          2
+; elim ap -> fp       4
 ; elim fp -> sp       0
-; saved regs: R12 R13
+; saved regs: R12
 	; start of prologue
-	PUSH	R13
-.LCFI2:
 	PUSH	R12
-.LCFI3:
+.LCFI2:
 	; end of prologue
-	.loc 1 52 0
-	MOV.W	#352, R12
-	MOV.W	#1, @R12
-	.loc 1 53 0
-	MOV.W	#370, R12
-	MOV.W	&periodic_val, R13
-	MOV.W	R13, @R12
-	.loc 1 56 0
-	MOV.W	#352, R12
-	MOV.W	#534, @R12
-	.loc 1 59 0
-	MOV.W	#672, R12
-	MOV.W	@R12, R13
-	MOV.W	#672, R12
-	BIS.W	#32, R13
-	MOV.W	R13, @R12
-	.loc 1 61 0
+	.loc 1 48 0
+	MOV.W	#288, R12
+	MOV.W	#0, @R12
+	.loc 1 60 0
 	NOP
 	; start of epilogue
-	BIC.W	#240, 4(SP)
+	BIC.W	#240, 2(SP)
 	POP	R12
-	POP	R13
 	RETI
 .LFE2:
 	.size	INT_timerA1, .-INT_timerA1
@@ -173,14 +157,8 @@ INT_timerA1:
 	.4byte	.LCFI2-.LFB2
 	.byte	0xe
 	.uleb128 0x4
-	.byte	0x8d
-	.uleb128 0x2
-	.byte	0x4
-	.4byte	.LCFI3-.LCFI2
-	.byte	0xe
-	.uleb128 0x6
 	.byte	0x8c
-	.uleb128 0x3
+	.uleb128 0x2
 	.balign 4
 .LEFDE4:
 .text
@@ -1926,7 +1904,7 @@ INT_timerA1:
 .LASF4:
 	.string	"unsigned int"
 .LASF3:
-	.string	"/home/hiram/master/Qwark_merge/altera_de0_nano/software/apps/leds"
+	.string	"/home/hiram/master/Qwark_stack/altera_de0_nano/software/apps/leds"
 .LASF8:
 	.string	"ta_wait_no_lpm"
 .LASF0:

@@ -1,5 +1,5 @@
 # 1 "uart.c"
-# 1 "/home/hiram/master/Qwark_merge/altera_de0_nano/software/apps/leds//"
+# 1 "/home/hiram/master/Qwark_stack/altera_de0_nano/software/apps/leds//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L

@@ -252,6 +252,10 @@ always @* begin
         end
         STATE_WRITE_2: begin
             // set bit and write back
+				write_addr_next = write_addr;
+            write_data_padded_next = write_data_padded;
+            write_delete_next = write_delete;
+
             set_bit = 1'b1 << write_addr;
             wr_en = 1'b1;
             state_next = STATE_IDLE;

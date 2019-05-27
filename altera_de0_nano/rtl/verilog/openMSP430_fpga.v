@@ -375,7 +375,7 @@ omsp_qwark_periph qwark_periph_0 (
     .per_addr(per_addr),               						// Peripheral address
     .per_din(per_din),                 						// Peripheral data input
     .per_en(per_en),                   						// Peripheral enable (high active)
-    .dbg_acc(/*1'b0*/dbg_mem_en_q),
+    .dbg_acc(1'b0/*dbg_mem_en_q*/),
 	 .per_we(per_we),                   						// Peripheral write enable (high active)
   //Functionality related signals  
 	 .puc_rst(puc_rst),              	   					// Main system reset

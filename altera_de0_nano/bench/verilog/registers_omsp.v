@@ -138,6 +138,38 @@ wire       [15:0] omsp_dmem400E = dut.dmem_0.altsyncram_component.mem_data[7];
 wire       [15:0] omsp_dmem4010 = dut.dmem_0.altsyncram_component.mem_data[8];
 
 
+wire       [15:0] omsp_dmem6000 = dut.dmem_0.altsyncram_component.mem_data[4096];
+wire       [15:0] omsp_dmem6002 = dut.dmem_0.altsyncram_component.mem_data[4097];
+wire       [15:0] omsp_dmem6004 = dut.dmem_0.altsyncram_component.mem_data[4098];
+wire       [15:0] omsp_dmem6006 = dut.dmem_0.altsyncram_component.mem_data[4099];
+wire       [15:0] omsp_dmem6008 = dut.dmem_0.altsyncram_component.mem_data[4100];
+wire       [15:0] omsp_dmem600A = dut.dmem_0.altsyncram_component.mem_data[4101];
+wire       [15:0] omsp_dmem600C = dut.dmem_0.altsyncram_component.mem_data[4102];
+wire       [15:0] omsp_dmem600E = dut.dmem_0.altsyncram_component.mem_data[4103];
+
+
+
+wire       [15:0] omsp_dmem7FE0 = dut.dmem_0.altsyncram_component.mem_data[8176];
+wire       [15:0] omsp_dmem7FE2 = dut.dmem_0.altsyncram_component.mem_data[8177];
+
+
+wire       [15:0] omsp_dmem7FE4 = dut.dmem_0.altsyncram_component.mem_data[8178];
+wire       [15:0] omsp_dmem7FE6 = dut.dmem_0.altsyncram_component.mem_data[8179];
+
+wire       [15:0] omsp_dmem7FE8 = dut.dmem_0.altsyncram_component.mem_data[8180];
+wire       [15:0] omsp_dmem7FEA = dut.dmem_0.altsyncram_component.mem_data[8181];
+
+wire       [15:0] omsp_dmem7FEC = dut.dmem_0.altsyncram_component.mem_data[8182];
+wire       [15:0] omsp_dmem7FEE = dut.dmem_0.altsyncram_component.mem_data[8183];
+wire       [15:0] omsp_dmem7FF0 = dut.dmem_0.altsyncram_component.mem_data[8184];
+wire       [15:0] omsp_dmem7FF2 = dut.dmem_0.altsyncram_component.mem_data[8185];
+wire       [15:0] omsp_dmem7FF4 = dut.dmem_0.altsyncram_component.mem_data[8186];
+wire       [15:0] omsp_dmem7FF6 = dut.dmem_0.altsyncram_component.mem_data[8187];
+wire       [15:0] omsp_dmem7FF8 = dut.dmem_0.altsyncram_component.mem_data[8188];
+wire       [15:0] omsp_dmem7FFA = dut.dmem_0.altsyncram_component.mem_data[8189];
+wire       [15:0] omsp_dmem7FFC = dut.dmem_0.altsyncram_component.mem_data[8190];
+wire       [15:0] omsp_dmem7FFE = dut.dmem_0.altsyncram_component.mem_data[8191];
+
 // Program Memory cells
 //======================
 reg   [15:0] pmem [0:`PMEM_SIZE-1];

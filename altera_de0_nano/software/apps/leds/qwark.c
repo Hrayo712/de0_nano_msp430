@@ -9,7 +9,7 @@
 #include "qwark.h"
 
 #define INTERMITTENCY_HANDLING_ENABLED
-
+//#define TIMER_TEST
 
 #ifdef INTERMITTENCY_HANDLING_ENABLED
 
@@ -138,17 +138,38 @@ void qwark_restore(void)
 	__asm__ __volatile__ ("mov.b   #1, 0(r8)"); // 2 cycles
 
 	/* Configure the timer */
+#ifdef TIMER_TEST
+
+	__asm__ __volatile__ ("cmp  #0x00, &0x6078");	// 2 cycles
+
+	__asm__ __volatile__ ("jne  __readjust_config");	// 2 cycles
 	__asm__ __volatile__ ("mov  #370, r8");		    // 2 cycles
-	__asm__ __volatile__ ("mov  #10000, 0(r8)");	// 2 cycles
+	__asm__ __volatile__ ("mov  #45000, 0(r8)");	// 2 cycles
+	__asm__ __volatile__ ("mov  #45000, &0x6078");	// 2 cycles
+	__asm__ __volatile__ ("br #__timer_cnf");
+
+	__asm__ __volatile__ ("__readjust_config:");
+
+	__asm__ __volatile__ ("mov &0x6078, r8");	// 2 cycles
+	__asm__ __volatile__ ("sub #357, r8");		// 2 cycles
+	__asm__ __volatile__ ("mov r8, &0x6078");	// 2 cycles
+	__asm__ __volatile__ ("mov  #370, r8");		    // 2 cycles
+	__asm__ __volatile__ ("mov  &0x6078, 0(r8)");	// 2 cycles
+
+	__asm__ __volatile__ ("__timer_cnf:");
+
 
 	__asm__ __volatile__ ("mov  #352, r8");		    // 2 cycles
 	__asm__ __volatile__ ("mov  #534, 0(r8)");	    // 2 cycles
+
+
+#endif
 	//-------------------------------------------------------------------------------------------------------------//
 	//   VOLATILE STATE RESTORE 							   								   	   				   //
 	//	 12 CYCLES																								   //
 	//-------------------------------------------------------------------------------------------------------------//
 	//-------------------------------------------------------------------------------------------------------------//
-	//   STACK RESTORE 							   							  									   //
+	//   STACK RESTORE 	: Only for Volatile Stack Implementation						   						   //
 	//																									       	   //
 	//-------------------------------------------------------------------------------------------------------------//
 	//-------------------------------------------------------------------------------------------------------------//
@@ -156,39 +177,39 @@ void qwark_restore(void)
 	//	 N.A.																								       //
 	//-------------------------------------------------------------------------------------------------------------//
 
-	__asm__ __volatile__ ("mov #0x7FFE, r14");
+	//__asm__ __volatile__ ("mov #0x7FFE, r14");
 
-	__asm__ __volatile__ ("__erase_stack:");
+	//__asm__ __volatile__ ("__erase_stack:");
 
-	__asm__ __volatile__ ("cmp #0x7EFE,r14");
-	__asm__ __volatile__ ("jz __deletion_stack_complete");
+	//__asm__ __volatile__ ("cmp #0x7EFE,r14");
+	//__asm__ __volatile__ ("jz __deletion_stack_complete");
 
-	__asm__ __volatile__ ("mov #0x00000,@r14");
-	__asm__ __volatile__ ("decd r14");
-	__asm__ __volatile__ ("br #__erase_stack");
+	//__asm__ __volatile__ ("mov #0x00000,@r14");
+	//__asm__ __volatile__ ("decd r14");
+	//__asm__ __volatile__ ("br #__erase_stack");
 
-	__asm__ __volatile__ ("__deletion_stack_complete:");
+	//__asm__ __volatile__ ("__deletion_stack_complete:");
 
 	//-------------------------------------------------------------------------------------------------------------//
 	//   STACK RESTORE 							   							  									   //
 	//	 12 cycles per word		384 cycles	per 64B		+ 3 CYCLES OF LOGIC										   //
 	//-------------------------------------------------------------------------------------------------------------//
 
-	__asm__ __volatile__ ("mov #0x7FFE, r14");		//2 cycles
+	//__asm__ __volatile__ ("mov #0x7FFE, r14");		//2 cycles
 
-	__asm__ __volatile__ ("decd r12");				//1 cycle
+	//__asm__ __volatile__ ("decd r12");				//1 cycle
 
-	__asm__ __volatile__ ("__restore_stack:");
+	//__asm__ __volatile__ ("__restore_stack:");
 
-	__asm__ __volatile__ ("cmp r14,r12");	   		// compare and verify if the base has been reached - 1 cycle
-	__asm__ __volatile__ ("jz __init_restore_stack_complete"); //2 cycles
+	//__asm__ __volatile__ ("cmp r14,r12");	   		// compare and verify if the base has been reached - 1 cycle
+	//__asm__ __volatile__ ("jz __init_restore_stack_complete"); //2 cycles
 
-	__asm__ __volatile__ ("mov @r13,@r14");					//5 cycles
-	__asm__ __volatile__ ("decd r13");						//1 cycle
-	__asm__ __volatile__ ("decd r14");						//1 cycle
-	__asm__ __volatile__ ("br #__restore_stack");			//2 cycles
+	//__asm__ __volatile__ ("mov @r13,@r14");					//5 cycles
+	//__asm__ __volatile__ ("decd r13");						//1 cycle
+	//__asm__ __volatile__ ("decd r14");						//1 cycle
+	//__asm__ __volatile__ ("br #__restore_stack");				//2 cycles
 
-	__asm__ __volatile__ ("__init_restore_stack_complete:");
+	//__asm__ __volatile__ ("__init_restore_stack_complete:");
 
 	//-------------------------------------------------------------------------------------------------------------//
 	//   REGISTERS RESTORE: VERIFY WHICH REGISTERS SHOULD BE RESTORED					   						   //
@@ -356,7 +377,7 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 		/* Setup registers for copy*/
 
 		__asm__ __volatile__ ("tst r14 ");     	    // 		  1 cycle
-		__asm__ __volatile__ ("jz  _chkpt_stack");	// 		  2 cycles
+		__asm__ __volatile__ ("jz  __second_phase_start");	// 		  2 cycles
 
 		__asm__ __volatile__ ("mov #0x02A2, r13");	// 		  2 cycles
 
@@ -371,46 +392,47 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 		//-------------------------------------------------------------------------------------------------------------//
 		//   STACK CHECKPOINT: (FULL COPY / no segmentation)  													   	   //
 		//	 64B take approximately 466 cycles 										 								   //
-		//	  																   										   //
+		//	 NOTE: For a Fully non-volatile stack, this is not required (duh) 							   			   //
 		//-------------------------------------------------------------------------------------------------------------//
 
 		/* 1.3 .- Checkpoint the Stack (FULL COPY / no segmentation yet) : 64B stack take approximately 466 cycles*/
 
-		__asm__ __volatile__ ("_chkpt_stack:");
+		//__asm__ __volatile__ ("_chkpt_stack:");
 
 	    //verify which of the 2 stacks should be overwritten (Double buffering)
 
-		__asm__ __volatile__ ("mov #0x7FFE, r14");			 // 2 cycles
-		__asm__ __volatile__ ("mov &0X6042, r12"); 			 // Get the current SP - 3 cycles
-		__asm__ __volatile__ ("mov #0x6BFE, r13");			 // 2 cycles
+		//__asm__ __volatile__ ("mov #0x7FFE, r14");			 // 2 cycles
+		//__asm__ __volatile__ ("mov &0X6042, r12"); 			 // Get the current SP - 3 cycles
+		//__asm__ __volatile__ ("mov #0x6BFE, r13");			 // 2 cycles
 
-		__asm__ __volatile__ ("cmp.b #0x01,&0x6075");   	 // working with the second stack
-		__asm__ __volatile__ ("jz __pre_copy_stack");		 // 2 cycles
+		//__asm__ __volatile__ ("cmp.b #0x01,&0x6075");   	 	// working with the second stack
+		//__asm__ __volatile__ ("jz __pre_copy_stack");		 	// 2 cycles
 
-		__asm__ __volatile__ ("mov &0X6012, r12"); 			 // Get the current SP - 3 cycles
-		__asm__ __volatile__ ("mov #0x6FFE, r13");			 // 2 cycles
+		//__asm__ __volatile__ ("mov &0X6012, r12"); 			 // Get the current SP - 3 cycles
+		//__asm__ __volatile__ ("mov #0x6FFE, r13");			 // 2 cycles
 
-		__asm__ __volatile__ ("__pre_copy_stack:");
+		//__asm__ __volatile__ ("__pre_copy_stack:");
 
-		__asm__ __volatile__ ("decd r12");					 // 1 cycle
+		//__asm__ __volatile__ ("decd r12");					 // 1 cycle
 
-		__asm__ __volatile__ ("__copy_stack:");
+		//__asm__ __volatile__ ("__copy_stack:");
 
-		__asm__ __volatile__ ("cmp r14,r12");	   		  	 // compare and verify if the base has been reached - 1 cycle
-		__asm__ __volatile__ ("jz __copy_stack_complete");	 // 2 cycles
+		//__asm__ __volatile__ ("cmp r14,r12");	   		  	 // compare and verify if the base has been reached - 1 cycle
+		//__asm__ __volatile__ ("jz __copy_stack_complete");	 // 2 cycles
 
-		__asm__ __volatile__ ("mov @r14,@r13");			 	 // 5 cycles
+		//__asm__ __volatile__ ("mov @r14,@r13");			 	 // 5 cycles
 
-		__asm__ __volatile__ ("decd r13");				  	 // 1 cycle
-		__asm__ __volatile__ ("decd r14");				  	 // 1 cycle
-		__asm__ __volatile__ ("br #__copy_stack");		  	 // 2 cycle
+		//__asm__ __volatile__ ("decd r13");				  	 // 1 cycle
+		//__asm__ __volatile__ ("decd r14");				  	 // 1 cycle
+		//__asm__ __volatile__ ("br #__copy_stack");		  	 // 2 cycle
 
-		__asm__ __volatile__ ("__copy_stack_complete:");
+		//__asm__ __volatile__ ("__copy_stack_complete:");
 
 	//-------------------------------------------------------------------------------------------------------------//
 	//    END OF THE FIRST PHASE: Atomic Flag Handling for halfway through checkpoint							   //
 	//	  W.C 18 Cycles																							   //
 	//-------------------------------------------------------------------------------------------------------------//
+		__asm__ __volatile__ ("__second_phase_start:");
 
 		__asm__ __volatile__ ("cmp.b #0x01,&0x6075");		 // 4 cycles
 		__asm__ __volatile__ ("jz  __set_flag_2nd ");		 // 2 cycles
@@ -451,10 +473,21 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 		__asm__ __volatile__ ("cmp #0x8000,  r11 ");   		 // 2 cycles
 		__asm__ __volatile__ ("jeq _byte_copy ");   		 // 2 cycles
 
-		__asm__ __volatile__ ("mov @r14+2, @r13 ");    		 // 5 cycles
+		//verify that the program counter o status register will not be overwritten by previous stack saves. At this point, we know its a word access
+		__asm__ __volatile__ ("mov  r1,       r10 ");    	// 1 cycle
+		__asm__ __volatile__ ("cmp  r10  ,    r13 ");    	// 1 cycle - verify that the SR will not be overwritten by a previous violation (Discard it)
+		__asm__ __volatile__ ("jeq  _pre_end_copy ");    	// 2 cycles
+	
+		__asm__ __volatile__ ("incd r10 	  ");    		// 1 cycle
+		__asm__ __volatile__ ("cmp  r10,      r13 ");		// 1 cycle - verify that the PC will not be overwritten by a previous violation (Discard it)
+		__asm__ __volatile__ ("jeq  _pre_end_copy ");    	// 2 cycles
+  
+		__asm__ __volatile__ ("mov @r14, @r13 ");    		// 5 cycles
 
-		__asm__ __volatile__ ("dec r15");    				 // 1 cycles
-		__asm__ __volatile__ ("tst r15");    				 // 1 cycles
+		__asm__ __volatile__ ("_pre_end_copy:");
+		__asm__ __volatile__ ("incd r14");    				 // 1 cycle
+		__asm__ __volatile__ ("dec r15");    				 // 1 cycle
+		__asm__ __volatile__ ("tst r15");    				 // 1 cycle
 
 		__asm__ __volatile__ ("jnz  _second_phase_commit_strt");	// 2 cycles
 		__asm__ __volatile__ ("br #_chkpt_finished");		    	// 2 cycles
@@ -465,11 +498,21 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 		__asm__ __volatile__ ("and #0x01,    r11 ");   		// detect if its a byte write - 1 cycle
 		__asm__ __volatile__ ("bis  r11,     r14 ");   		// detect if its a byte write - 1 cycle
 
-		__asm__ __volatile__ ("mov.b @r14, @r13 ");    		// 5 cycles
-		__asm__ __volatile__ ("incd r14 ");    				// 1 cycle
+		//verify that the program counter o status register will not be overwritten by previous stack saves. At this point, we know its a byte access
+		__asm__ __volatile__ ("mov  r1,       r10 ");    	// 1 cycle
+		__asm__ __volatile__ ("cmp  r10  ,    r13 ");    	// 1 cycle - verify that the SR will not be overwritten by a previous violation (Discard it)
+		__asm__ __volatile__ ("jeq  _pre_end_copy ");    	// 2 cycles
+	
+		__asm__ __volatile__ ("incd r10 	  ");    	// 1 cycle							
+		__asm__ __volatile__ ("cmp  r10,      r13 ");		// 1 cycle - verify that the PC will not be overwritten by a previous violation (Discard it)
+		__asm__ __volatile__ ("jeq  _pre_end_copy ");    	// 2 cycles
 
-		__asm__ __volatile__ ("dec r15");    				// 1 cycles
-		__asm__ __volatile__ ("tst r15");    				// 1 cycles
+
+		__asm__ __volatile__ ("mov.b @r14, @r13 ");    				// 5 cycles
+
+		__asm__ __volatile__ ("incd r14");    				 		// 1 cycle
+		__asm__ __volatile__ ("dec r15");    						// 1 cycles
+		__asm__ __volatile__ ("tst r15");    						// 1 cycles
 		__asm__ __volatile__ ("jnz  _second_phase_commit_strt");	// 2 cycles
 
 	//-------------------------------------------------------------------------------------------------------------//
@@ -489,7 +532,7 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 	//    REGISTER RESTORE:	This is to continue operation and restore possibly modified registers 				   //
 	//																											   //
 	//-------------------------------------------------------------------------------------------------------------//
-
+		__asm__ __volatile__ ("mov &0x6022,r10"); 		//3 cycles
 		__asm__ __volatile__ ("mov &0x6024,r11"); 		//3 cycles
 		__asm__ __volatile__ ("mov &0x6026,r12"); 		//3 cycles
 		__asm__ __volatile__ ("mov &0x6028,r13"); 	    //3 cycles
@@ -505,14 +548,40 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 	//-------------------------------------------------------------------------------------------------------------//
 	//    REGISTER RESTORE:	This is to continue operation and restore possibly modified registers 				   //
 	//-------------------------------------------------------------------------------------------------------------//
-		__asm__ __volatile__ ("mov &0x6054,r11"); 		//3 cycles
-		__asm__ __volatile__ ("mov &0x6056,r12"); 		//3 cycles
+		__asm__ __volatile__ ("mov &0x6052,r10"); 	    //3 cycles		
+		__asm__ __volatile__ ("mov &0x6054,r11"); 	    //3 cycles
+		__asm__ __volatile__ ("mov &0x6056,r12"); 	    //3 cycles
 		__asm__ __volatile__ ("mov &0x6058,r13"); 	    //3 cycles
 		__asm__ __volatile__ ("mov &0x605A,r14"); 	    //3 cycles
 		__asm__ __volatile__ ("mov &0x605C,r15"); 	    //3 cycles
 
 		__asm__ __volatile__ ("_finish:");
 		/* Clear the counters, and re-enable Idempotency tracking*/
+		//__asm__ __volatile__ ("mov #0x0000, &0x6000");	//4 cycles
+		//__asm__ __volatile__ ("mov #0x0000, &0x6002");	//4 cycles
+		//__asm__ __volatile__ ("mov #0x0000, &0x6004");	//4 cycles
+		//__asm__ __volatile__ ("mov #0x0000, &0x6006");	//4 cycles
+		//__asm__ __volatile__ ("mov #0x0000, &0x6008");	//4 cycles
+		//__asm__ __volatile__ ("mov #0x0000, &0x600A");	//4 cycles
+		//__asm__ __volatile__ ("mov #0x0000, &0x600C");	//4 cycles
+		//__asm__ __volatile__ ("mov #0x0000, &0x600E");	//4 cycles
+
+		//__asm__ __volatile__ ("mov #0x0000, &0x02A2");	//4 cycles
+		//__asm__ __volatile__ ("mov #0x0000, &0x02A4");	//4 cycles
+		//__asm__ __volatile__ ("mov #0x0000, &0x02A6");	//4 cycles
+		//__asm__ __volatile__ ("mov #0x0000, &0x02A8");	//4 cycles
+		//__asm__ __volatile__ ("mov #0x0000, &0x02AA");	//4 cycles
+		//__asm__ __volatile__ ("mov #0x0000, &0x02AC");	//4 cycles
+		//__asm__ __volatile__ ("mov #0x0000, &0x02AE");	//4 cycles
+		//__asm__ __volatile__ ("mov #0x0000, &0x02B0");	//4 cycles
+
+		//Test software to measure the amount of checkpoints
+
+		//__asm__ __volatile__ ("add #0x01, &0x6076");	//4 cycles
+
 		__asm__ __volatile__ ("mov #0x0001, &0x02A0");	//4 cycles
 
+
+
 }
+

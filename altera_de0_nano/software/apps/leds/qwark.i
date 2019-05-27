@@ -1,5 +1,5 @@
 # 1 "qwark.c"
-# 1 "/home/hiram/master/Qwark_merge/altera_de0_nano/software/apps/leds//"
+# 1 "/home/hiram/master/Qwark_stack/altera_de0_nano/software/apps/leds//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -694,53 +694,7 @@ void qwark_restore(void)
 
  __asm__ __volatile__ ("mov.b #128, r8");
  __asm__ __volatile__ ("mov.b   #1, 0(r8)");
-
-
- __asm__ __volatile__ ("mov  #370, r8");
- __asm__ __volatile__ ("mov  #10000, 0(r8)");
-
- __asm__ __volatile__ ("mov  #352, r8");
- __asm__ __volatile__ ("mov  #534, 0(r8)");
-# 159 "qwark.c"
- __asm__ __volatile__ ("mov #0x7FFE, r14");
-
- __asm__ __volatile__ ("__erase_stack:");
-
- __asm__ __volatile__ ("cmp #0x7EFE,r14");
- __asm__ __volatile__ ("jz __deletion_stack_complete");
-
- __asm__ __volatile__ ("mov #0x00000,@r14");
- __asm__ __volatile__ ("decd r14");
- __asm__ __volatile__ ("br #__erase_stack");
-
- __asm__ __volatile__ ("__deletion_stack_complete:");
-
-
-
-
-
-
- __asm__ __volatile__ ("mov #0x7FFE, r14");
-
- __asm__ __volatile__ ("decd r12");
-
- __asm__ __volatile__ ("__restore_stack:");
-
- __asm__ __volatile__ ("cmp r14,r12");
- __asm__ __volatile__ ("jz __init_restore_stack_complete");
-
- __asm__ __volatile__ ("mov @r13,@r14");
- __asm__ __volatile__ ("decd r13");
- __asm__ __volatile__ ("decd r14");
- __asm__ __volatile__ ("br #__restore_stack");
-
- __asm__ __volatile__ ("__init_restore_stack_complete:");
-
-
-
-
-
-
+# 219 "qwark.c"
  __asm__ __volatile__ ("cmp.b #0x03,&0x6075");
  __asm__ __volatile__ ("jeq __Second_buffer_restore_stack");
 
@@ -803,7 +757,7 @@ void qwark_restore(void)
 
 
 void __attribute__((interrupt ((5)))) INT_Qwark(void) {
-# 269 "qwark.c"
+# 290 "qwark.c"
   __asm__ __volatile__ ("mov r12, &0x6072");
 
   __asm__ __volatile__ ("cmp.b #0x01,&0x6075");
@@ -816,7 +770,7 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("__second_buffer_init:");
 
   __asm__ __volatile__ ("mov #0x6040, r12");
-# 290 "qwark.c"
+# 311 "qwark.c"
   __asm__ __volatile__ ("__first_phase_commit:");
 
   __asm__ __volatile__ ("mov 2(r1),@r12");
@@ -876,9 +830,9 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("mov.b r14, @r12");
   __asm__ __volatile__ ("mov r14, r15 ");
   __asm__ __volatile__ ("incd r12");
-# 358 "qwark.c"
+# 379 "qwark.c"
   __asm__ __volatile__ ("tst r14 ");
-  __asm__ __volatile__ ("jz  _chkpt_stack");
+  __asm__ __volatile__ ("jz  __second_phase_start");
 
   __asm__ __volatile__ ("mov #0x02A2, r13");
 
@@ -889,42 +843,8 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("dec r14 ");
   __asm__ __volatile__ ("tst r14 ");
   __asm__ __volatile__ ("jnz  _scratchpad_addr_cpy");
-# 379 "qwark.c"
-  __asm__ __volatile__ ("_chkpt_stack:");
-
-
-
-  __asm__ __volatile__ ("mov #0x7FFE, r14");
-  __asm__ __volatile__ ("mov &0X6042, r12");
-  __asm__ __volatile__ ("mov #0x6BFE, r13");
-
-  __asm__ __volatile__ ("cmp.b #0x01,&0x6075");
-  __asm__ __volatile__ ("jz __pre_copy_stack");
-
-  __asm__ __volatile__ ("mov &0X6012, r12");
-  __asm__ __volatile__ ("mov #0x6FFE, r13");
-
-  __asm__ __volatile__ ("__pre_copy_stack:");
-
-  __asm__ __volatile__ ("decd r12");
-
-  __asm__ __volatile__ ("__copy_stack:");
-
-  __asm__ __volatile__ ("cmp r14,r12");
-  __asm__ __volatile__ ("jz __copy_stack_complete");
-
-  __asm__ __volatile__ ("mov @r14,@r13");
-
-  __asm__ __volatile__ ("decd r13");
-  __asm__ __volatile__ ("decd r14");
-  __asm__ __volatile__ ("br #__copy_stack");
-
-  __asm__ __volatile__ ("__copy_stack_complete:");
-
-
-
-
-
+# 435 "qwark.c"
+  __asm__ __volatile__ ("__second_phase_start:");
 
   __asm__ __volatile__ ("cmp.b #0x01,&0x6075");
   __asm__ __volatile__ ("jz  __set_flag_2nd ");
@@ -965,8 +885,19 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("cmp #0x8000,  r11 ");
   __asm__ __volatile__ ("jeq _byte_copy ");
 
-  __asm__ __volatile__ ("mov @r14+2, @r13 ");
 
+  __asm__ __volatile__ ("mov  r1,       r10 ");
+  __asm__ __volatile__ ("cmp  r10  ,    r13 ");
+  __asm__ __volatile__ ("jeq  _pre_end_copy ");
+
+  __asm__ __volatile__ ("incd r10 	  ");
+  __asm__ __volatile__ ("cmp  r10,      r13 ");
+  __asm__ __volatile__ ("jeq  _pre_end_copy ");
+
+  __asm__ __volatile__ ("mov @r14, @r13 ");
+
+  __asm__ __volatile__ ("_pre_end_copy:");
+  __asm__ __volatile__ ("incd r14");
   __asm__ __volatile__ ("dec r15");
   __asm__ __volatile__ ("tst r15");
 
@@ -979,9 +910,19 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("and #0x01,    r11 ");
   __asm__ __volatile__ ("bis  r11,     r14 ");
 
-  __asm__ __volatile__ ("mov.b @r14, @r13 ");
-  __asm__ __volatile__ ("incd r14 ");
 
+  __asm__ __volatile__ ("mov  r1,       r10 ");
+  __asm__ __volatile__ ("cmp  r10  ,    r13 ");
+  __asm__ __volatile__ ("jeq  _pre_end_copy ");
+
+  __asm__ __volatile__ ("incd r10 	  ");
+  __asm__ __volatile__ ("cmp  r10,      r13 ");
+  __asm__ __volatile__ ("jeq  _pre_end_copy ");
+
+
+  __asm__ __volatile__ ("mov.b @r14, @r13 ");
+
+  __asm__ __volatile__ ("incd r14");
   __asm__ __volatile__ ("dec r15");
   __asm__ __volatile__ ("tst r15");
   __asm__ __volatile__ ("jnz  _second_phase_commit_strt");
@@ -1003,7 +944,7 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 
 
-
+  __asm__ __volatile__ ("mov &0x6022,r10");
   __asm__ __volatile__ ("mov &0x6024,r11");
   __asm__ __volatile__ ("mov &0x6026,r12");
   __asm__ __volatile__ ("mov &0x6028,r13");
@@ -1019,6 +960,7 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 
 
+  __asm__ __volatile__ ("mov &0x6052,r10");
   __asm__ __volatile__ ("mov &0x6054,r11");
   __asm__ __volatile__ ("mov &0x6056,r12");
   __asm__ __volatile__ ("mov &0x6058,r13");
@@ -1026,7 +968,9 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("mov &0x605C,r15");
 
   __asm__ __volatile__ ("_finish:");
-
+# 582 "qwark.c"
   __asm__ __volatile__ ("mov #0x0001, &0x02A0");
+
+
 
 }

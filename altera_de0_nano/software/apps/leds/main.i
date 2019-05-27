@@ -1,5 +1,5 @@
 # 1 "main.c"
-# 1 "/home/hiram/master/Qwark_merge/altera_de0_nano/software/apps/leds//"
+# 1 "/home/hiram/master/Qwark_stack/altera_de0_nano/software/apps/leds//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -3077,15 +3077,16 @@ void ta_wait(unsigned int);
 #define SEED 4
 #define ITER 100
 #define CHAR_BIT 8
+
 #define UART_DBG 
 
-volatile unsigned n_0 = 0;
-volatile unsigned n_1 = 0;
-volatile unsigned n_2 = 0;
-volatile unsigned n_3 = 0;
-volatile unsigned n_4 = 0;
-volatile unsigned n_5 = 0;
-volatile unsigned n_6 = 0;
+volatile unsigned n_0 =0;
+volatile unsigned n_1 =0;
+volatile unsigned n_2 =0;
+volatile unsigned n_3 =0;
+volatile unsigned n_4 =0;
+volatile unsigned n_5 =0;
+volatile unsigned n_6 =0;
 
 char bits[256] =
 {
@@ -3191,15 +3192,13 @@ static int bit_shifter(uint32_t x)
 
 void init()
 {
-
      (*(volatile unsigned int *) 0x0120) = (0x5A00) | (0x0080);
-     __asm__ __volatile__ ("nop");
+    __asm__ __volatile__ ("nop");
      __asm__ __volatile__ ("eint { nop");
-     (*(volatile unsigned int *) 0x0082) = 8;
+   (*(volatile unsigned int *) 0x0082) = 8;
      (*(volatile unsigned char *) 0x0080) = 0x01;
 
-
-
+     (*(volatile unsigned int *) 0x02A0) = 0x01;
 }
 
 
@@ -3207,8 +3206,8 @@ void init()
 int main()
 {
  init();
- while(1);
-     ta_wait(9980);
+
+
 
  uint32_t seed;
  unsigned iter;
@@ -3217,6 +3216,7 @@ int main()
 
 
  while(1){
+
  (*(volatile unsigned char *) 0x0090) ^= 0xFF;
 
 
@@ -3235,63 +3235,48 @@ int main()
 
   seed = (uint32_t)4;
   if(func == 0){
-
    for(iter = 0; iter < 100; ++iter, seed += 13){
-
 
     n_0 += bit_count(seed);
    }
   }
   else if(func == 1){
-
    for(iter = 0; iter < 100; ++iter, seed += 13){
-
 
     n_1 += bitcount(seed);
    }
   }
   else if(func == 2){
-
    for(iter = 0; iter < 100; ++iter, seed += 13){
-
 
     n_2 += ntbl_bitcnt(seed);
    }
   }
   else if(func == 3){
-
    for(iter = 0; iter < 100; ++iter, seed += 13){
-
 
     n_3 += ntbl_bitcount(seed);
    }
   }
   else if(func == 4){
-
    for(iter = 0; iter < 100; ++iter, seed += 13){
-
 
     n_4 += BW_btbl_bitcount(seed);
    }
   }
   else if(func == 5){
-
    for(iter = 0; iter < 100; ++iter, seed += 13){
-
 
     n_5 += AR_btbl_bitcount(seed);
    }
   }
   else if(func == 6){
-
    for(iter = 0; iter < 100; ++iter, seed += 13){
-
 
     n_6 += bit_shifter(seed);
    }
   }
  }
-
 
 
 
@@ -3311,6 +3296,7 @@ int main()
  UART_WriteNumber(n_6);
  UART_WriteString("\r\n");
 
-   }
+
+ }
 
 }
