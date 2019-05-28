@@ -925,42 +925,45 @@ main:
 	; end of prologue
 	.loc 1 142 0
 	CALL	#init
+	.loc 1 143 0
+	MOV.B	#144, R12
+	MOV.B	#-86, @R12
 .L53:
-	.loc 1 154 0
+	.loc 1 156 0
 	MOV.B	#144, R12
 	MOV.B	@R12, R13
 	MOV.B	#144, R12
 	INV.B	R13
 	AND	#0xff, R13
 	MOV.B	R13, @R12
-	.loc 1 158 0
-	MOV.W	#0, &n_0
-	.loc 1 159 0
-	MOV.W	#0, &n_1
 	.loc 1 160 0
-	MOV.W	#0, &n_2
+	MOV.W	#0, &n_0
 	.loc 1 161 0
-	MOV.W	#0, &n_3
+	MOV.W	#0, &n_1
 	.loc 1 162 0
-	MOV.W	#0, &n_4
+	MOV.W	#0, &n_2
 	.loc 1 163 0
-	MOV.W	#0, &n_5
+	MOV.W	#0, &n_3
 	.loc 1 164 0
+	MOV.W	#0, &n_4
+	.loc 1 165 0
+	MOV.W	#0, &n_5
+	.loc 1 166 0
 	MOV.W	#0, &n_6
-	.loc 1 168 0
+	.loc 1 170 0
 	MOV.W	#0, @R1
 	BR	#.L30
 .L52:
-	.loc 1 170 0
+	.loc 1 172 0
 	MOV.W	#4, 4(R1)
 	MOV.W	#0, 6(R1)
-	.loc 1 171 0
+	.loc 1 173 0
 	CMP.W	#0, @R1 { JNE	.L31
-	.loc 1 172 0
+	.loc 1 174 0
 	MOV.W	#0, 2(R1)
 	BR	#.L32
 .L33:
-	.loc 1 174 0
+	.loc 1 176 0
 	MOV.W	4(R1), R12
 	MOV.W	6(R1), R13
 	CALL	#bit_count
@@ -968,22 +971,22 @@ main:
 	MOV.W	&n_0, R12
 	ADD.W	R13, R12
 	MOV.W	R12, &n_0
-	.loc 1 172 0
+	.loc 1 174 0
 	ADD.W	#1, 2(R1)
 	ADD	#13, 4(R1) { ADDC	#0, 6(R1)
 .L32:
-	.loc 1 172 0 is_stmt 0
+	.loc 1 174 0 is_stmt 0
 	MOV.B	#99, R12
 	CMP.W	2(R1), R12 { JHS	.L33
 	BR	#.L34
 .L31:
-	.loc 1 177 0 is_stmt 1
+	.loc 1 179 0 is_stmt 1
 	CMP.W	#1, @R1 { JNE	.L35
-	.loc 1 178 0
+	.loc 1 180 0
 	MOV.W	#0, 2(R1)
 	BR	#.L36
 .L37:
-	.loc 1 180 0
+	.loc 1 182 0
 	MOV.W	4(R1), R12
 	MOV.W	6(R1), R13
 	CALL	#bitcount
@@ -991,22 +994,22 @@ main:
 	MOV.W	&n_1, R12
 	ADD.W	R13, R12
 	MOV.W	R12, &n_1
-	.loc 1 178 0
+	.loc 1 180 0
 	ADD.W	#1, 2(R1)
 	ADD	#13, 4(R1) { ADDC	#0, 6(R1)
 .L36:
-	.loc 1 178 0 is_stmt 0
+	.loc 1 180 0 is_stmt 0
 	MOV.B	#99, R12
 	CMP.W	2(R1), R12 { JHS	.L37
 	BR	#.L34
 .L35:
-	.loc 1 183 0 is_stmt 1
+	.loc 1 185 0 is_stmt 1
 	CMP.W	#2, @R1 { JNE	.L38
-	.loc 1 184 0
+	.loc 1 186 0
 	MOV.W	#0, 2(R1)
 	BR	#.L39
 .L40:
-	.loc 1 186 0
+	.loc 1 188 0
 	MOV.W	4(R1), R12
 	MOV.W	6(R1), R13
 	CALL	#ntbl_bitcnt
@@ -1014,22 +1017,22 @@ main:
 	MOV.W	&n_2, R12
 	ADD.W	R13, R12
 	MOV.W	R12, &n_2
-	.loc 1 184 0
+	.loc 1 186 0
 	ADD.W	#1, 2(R1)
 	ADD	#13, 4(R1) { ADDC	#0, 6(R1)
 .L39:
-	.loc 1 184 0 is_stmt 0
+	.loc 1 186 0 is_stmt 0
 	MOV.B	#99, R12
 	CMP.W	2(R1), R12 { JHS	.L40
 	BR	#.L34
 .L38:
-	.loc 1 189 0 is_stmt 1
+	.loc 1 191 0 is_stmt 1
 	CMP.W	#3, @R1 { JNE	.L41
-	.loc 1 190 0
+	.loc 1 192 0
 	MOV.W	#0, 2(R1)
 	BR	#.L42
 .L43:
-	.loc 1 192 0
+	.loc 1 194 0
 	MOV.W	4(R1), R12
 	MOV.W	6(R1), R13
 	CALL	#ntbl_bitcount
@@ -1037,22 +1040,22 @@ main:
 	MOV.W	&n_3, R12
 	ADD.W	R13, R12
 	MOV.W	R12, &n_3
-	.loc 1 190 0
+	.loc 1 192 0
 	ADD.W	#1, 2(R1)
 	ADD	#13, 4(R1) { ADDC	#0, 6(R1)
 .L42:
-	.loc 1 190 0 is_stmt 0
+	.loc 1 192 0 is_stmt 0
 	MOV.B	#99, R12
 	CMP.W	2(R1), R12 { JHS	.L43
 	BR	#.L34
 .L41:
-	.loc 1 195 0 is_stmt 1
+	.loc 1 197 0 is_stmt 1
 	CMP.W	#4, @R1 { JNE	.L44
-	.loc 1 196 0
+	.loc 1 198 0
 	MOV.W	#0, 2(R1)
 	BR	#.L45
 .L46:
-	.loc 1 198 0
+	.loc 1 200 0
 	MOV.W	4(R1), R12
 	MOV.W	6(R1), R13
 	CALL	#BW_btbl_bitcount
@@ -1060,22 +1063,22 @@ main:
 	MOV.W	&n_4, R12
 	ADD.W	R13, R12
 	MOV.W	R12, &n_4
-	.loc 1 196 0
+	.loc 1 198 0
 	ADD.W	#1, 2(R1)
 	ADD	#13, 4(R1) { ADDC	#0, 6(R1)
 .L45:
-	.loc 1 196 0 is_stmt 0
+	.loc 1 198 0 is_stmt 0
 	MOV.B	#99, R12
 	CMP.W	2(R1), R12 { JHS	.L46
 	BR	#.L34
 .L44:
-	.loc 1 201 0 is_stmt 1
+	.loc 1 203 0 is_stmt 1
 	CMP.W	#5, @R1 { JNE	.L47
-	.loc 1 202 0
+	.loc 1 204 0
 	MOV.W	#0, 2(R1)
 	BR	#.L48
 .L49:
-	.loc 1 204 0
+	.loc 1 206 0
 	MOV.W	4(R1), R12
 	MOV.W	6(R1), R13
 	CALL	#AR_btbl_bitcount
@@ -1083,22 +1086,22 @@ main:
 	MOV.W	&n_5, R12
 	ADD.W	R13, R12
 	MOV.W	R12, &n_5
-	.loc 1 202 0
+	.loc 1 204 0
 	ADD.W	#1, 2(R1)
 	ADD	#13, 4(R1) { ADDC	#0, 6(R1)
 .L48:
-	.loc 1 202 0 is_stmt 0
+	.loc 1 204 0 is_stmt 0
 	MOV.B	#99, R12
 	CMP.W	2(R1), R12 { JHS	.L49
 	BR	#.L34
 .L47:
-	.loc 1 207 0 is_stmt 1
+	.loc 1 209 0 is_stmt 1
 	CMP.W	#6, @R1 { JNE	.L34
-	.loc 1 208 0
+	.loc 1 210 0
 	MOV.W	#0, 2(R1)
 	BR	#.L50
 .L51:
-	.loc 1 210 0
+	.loc 1 212 0
 	MOV.W	4(R1), R12
 	MOV.W	6(R1), R13
 	CALL	#bit_shifter
@@ -1106,66 +1109,111 @@ main:
 	MOV.W	&n_6, R12
 	ADD.W	R13, R12
 	MOV.W	R12, &n_6
-	.loc 1 208 0
+	.loc 1 210 0
 	ADD.W	#1, 2(R1)
 	ADD	#13, 4(R1) { ADDC	#0, 6(R1)
 .L50:
-	.loc 1 208 0 is_stmt 0
+	.loc 1 210 0 is_stmt 0
 	MOV.B	#99, R12
 	CMP.W	2(R1), R12 { JHS	.L51
 .L34:
-	.loc 1 168 0 is_stmt 1
+	.loc 1 170 0 is_stmt 1
 	ADD.W	#1, @R1
 .L30:
-	.loc 1 168 0 is_stmt 0
+	.loc 1 170 0 is_stmt 0
 	MOV.B	#6, R12
 	CMP.W	@R1, R12 { JHS	.L52
-	.loc 1 217 0 is_stmt 1
+	.loc 1 219 0 is_stmt 1
+	MOV.B	#144, R12
+	MOV.B	#-66, @R12
+	.loc 1 220 0
 	MOV.W	#.LC0, R12
 	CALL	#UART_WriteString
-	.loc 1 218 0
+	.loc 1 221 0
+	MOV.B	#144, R12
+	MOV.B	#0, @R12
+	.loc 1 222 0
 	MOV.W	&n_0, R12
 	CALL	#UART_WriteNumber
-	.loc 1 219 0
+	.loc 1 223 0
+	MOV.B	#144, R12
+	MOV.B	#-32, @R12
+	.loc 1 224 0
 	MOV.W	#.LC1, R12
 	CALL	#UART_WriteString
-	.loc 1 220 0
+	.loc 1 225 0
+	MOV.B	#144, R12
+	MOV.B	#1, @R12
+	.loc 1 226 0
 	MOV.W	&n_1, R12
 	CALL	#UART_WriteNumber
-	.loc 1 221 0
-	MOV.W	#.LC1, R12
-	CALL	#UART_WriteString
-	.loc 1 222 0
-	MOV.W	&n_2, R12
-	CALL	#UART_WriteNumber
-	.loc 1 223 0
-	MOV.W	#.LC1, R12
-	CALL	#UART_WriteString
-	.loc 1 224 0
-	MOV.W	&n_3, R12
-	CALL	#UART_WriteNumber
-	.loc 1 225 0
-	MOV.W	#.LC1, R12
-	CALL	#UART_WriteString
-	.loc 1 226 0
-	MOV.W	&n_4, R12
-	CALL	#UART_WriteNumber
-	.loc 1 227 0
-	MOV.W	#.LC1, R12
-	CALL	#UART_WriteString
 	.loc 1 228 0
-	MOV.W	&n_5, R12
-	CALL	#UART_WriteNumber
+	MOV.B	#144, R12
+	MOV.B	#-31, @R12
 	.loc 1 229 0
 	MOV.W	#.LC1, R12
 	CALL	#UART_WriteString
 	.loc 1 230 0
-	MOV.W	&n_6, R12
-	CALL	#UART_WriteNumber
+	MOV.B	#144, R12
+	MOV.B	#2, @R12
 	.loc 1 231 0
+	MOV.W	&n_2, R12
+	CALL	#UART_WriteNumber
+	.loc 1 233 0
+	MOV.B	#144, R12
+	MOV.B	#-30, @R12
+	.loc 1 234 0
 	MOV.W	#.LC1, R12
 	CALL	#UART_WriteString
-	.loc 1 154 0
+	.loc 1 235 0
+	MOV.B	#144, R12
+	MOV.B	#3, @R12
+	.loc 1 236 0
+	MOV.W	&n_3, R12
+	CALL	#UART_WriteNumber
+	.loc 1 237 0
+	MOV.B	#144, R12
+	MOV.B	#-29, @R12
+	.loc 1 238 0
+	MOV.W	#.LC1, R12
+	CALL	#UART_WriteString
+	.loc 1 239 0
+	MOV.B	#144, R12
+	MOV.B	#4, @R12
+	.loc 1 240 0
+	MOV.W	&n_4, R12
+	CALL	#UART_WriteNumber
+	.loc 1 241 0
+	MOV.B	#144, R12
+	MOV.B	#-28, @R12
+	.loc 1 242 0
+	MOV.W	#.LC1, R12
+	CALL	#UART_WriteString
+	.loc 1 243 0
+	MOV.B	#144, R12
+	MOV.B	#5, @R12
+	.loc 1 244 0
+	MOV.W	&n_5, R12
+	CALL	#UART_WriteNumber
+	.loc 1 245 0
+	MOV.B	#144, R12
+	MOV.B	#-27, @R12
+	.loc 1 246 0
+	MOV.W	#.LC1, R12
+	CALL	#UART_WriteString
+	.loc 1 247 0
+	MOV.B	#144, R12
+	MOV.B	#6, @R12
+	.loc 1 248 0
+	MOV.W	&n_6, R12
+	CALL	#UART_WriteNumber
+	.loc 1 249 0
+	MOV.B	#144, R12
+	MOV.B	#-26, @R12
+	.loc 1 250 0
+	MOV.W	#.LC1, R12
+	CALL	#UART_WriteString
+	.loc 1 156 0
 	BR	#.L53
 .LFE10:
 	.size	main, .-main
@@ -2525,7 +2573,7 @@ main:
 	.uleb128 0x1d
 	.4byte	.LASF123
 	.byte	0x1
-	.byte	0x92
+	.byte	0x94
 	.4byte	0x7f
 	.byte	0x2
 	.byte	0x91
@@ -2533,7 +2581,7 @@ main:
 	.uleb128 0x1d
 	.4byte	.LASF124
 	.byte	0x1
-	.byte	0x93
+	.byte	0x95
 	.4byte	0x73
 	.byte	0x2
 	.byte	0x91
@@ -2541,7 +2589,7 @@ main:
 	.uleb128 0x1d
 	.4byte	.LASF125
 	.byte	0x1
-	.byte	0x94
+	.byte	0x96
 	.4byte	0x73
 	.byte	0x2
 	.byte	0x91

@@ -93,8 +93,11 @@ input			 [1:0] mb_rd_msk;			 // Memory read mask									(syncrhonized to Execut
 // Parameter Declaration
 //=============================================================================
 parameter           DATA_WIDTH = 16;
-parameter           ADDR_WIDTH =  3;
+//parameter         ADDR_WIDTH =  3;
+parameter           ADDR_WIDTH =  4;
+
 parameter           SLICE_WIDTH = 4;
+
 //parameter         DMEM_END      = `DMEM_BASE+`DMEM_SIZE;
 parameter           DMEM_END      = 16'h7FFE;
 
@@ -161,7 +164,7 @@ assign byte_read = mb_rd_msk[1] && ~mb_rd_msk[0] ? 1'b1: 1'b0;
 
 assign  per_dout	    		= war_ctr;
 assign  per_dout_war_addr  = read_address | ~( rd_msk[0] & rd_msk[1] ) << DATA_WIDTH-1;
-//assign  per_wr        		= tlb_buff_wr_en;
+//assign  per_wr        	= tlb_buff_wr_en;
 assign  per_wr        		= per_addr_wr_en;
 assign  irq_out	    		= irq_flag;
 
@@ -172,9 +175,9 @@ assign  irq_out	    		= irq_flag;
 
 assign  mem_track_en  = (eu_addr[15:0]>=(`DMEM_BASE)) & (eu_addr[15:0]< (DMEM_END));
 
-assign tl_addr =  en && tlb_match 	  							 														   ? addr_out_tlb		 : // Prioritize TLB match, over WAR detection	
-						en && tlb_buff_busy && rd_buf_out_match && (tl_eu_addr == tlb_buff_busy_writing)		? addr_out_rd		 :
-						en && (WAR || sync_WAR)		 	  			 						   							   ? addr_out_war		 : 
+assign tl_addr =  /*en &&*/ tlb_match 	  							 														      ? addr_out_tlb		 : // Prioritize TLB match, over WAR detection	
+						/*en &&*/ tlb_buff_busy && rd_buf_out_match && (tl_eu_addr == tlb_buff_busy_writing)		? addr_out_rd		 :
+						/*en &&*/ (WAR || sync_WAR)		 	  			 						   							   ? addr_out_war		 : 
 						eu_addr;
 
 always @(war_ctr) begin
@@ -296,7 +299,7 @@ always @(posedge mclk) begin
 	wr_buff_wr_en <= eu_en &&  (eu_mb_wr[1] || eu_mb_wr[0]) && mem_track_en  && (tl_eu_addr!=rd_buff_busy_writing) && ~rd_buf_out_match && ~wr_buf_out_match && ~tlb_match;
 	
 	//Enable the TLB write upon WAR detection
-	tlb_buff_wr_en <= (WAR || sync_WAR) && ~tlb_match &&  (tlb_buff_ctr + 1 != 8) && (rd_buff_ctr != 8);
+	tlb_buff_wr_en <= (WAR || sync_WAR) && ~tlb_match /*&& (tlb_buff_ctr + 1 != 8)*/ ;
 	
 	per_addr_wr_en <= (WAR || sync_WAR) && ~tlb_match;
 	
@@ -406,7 +409,7 @@ end
             .clk(mclk),
             .rst(puc_rst),
 				.rst_clr(buff_rst),
-            .write_addr(rd_buff_ctr[2:0]), 
+            .write_addr(rd_buff_ctr[3:0]), 
             .write_data(tl_eu_addr),
             .write_delete(1'b0), 
             .write_enable(rd_buff_wr_en),
@@ -429,7 +432,7 @@ end
             .clk(mclk),
             .rst(puc_rst),
 				.rst_clr(buff_rst),
-            .write_addr(wr_buff_ctr[2:0]),
+            .write_addr(wr_buff_ctr[3:0]),
             .write_data(tl_eu_addr),
             .write_delete(1'b0),
             .write_enable(wr_buff_wr_en),
@@ -451,7 +454,7 @@ end
             .clk(mclk),
             .rst(puc_rst),
 				.rst_clr(buff_rst),
-            .write_addr(tlb_buff_ctr[2:0]),
+            .write_addr(tlb_buff_ctr[3:0]),
             .write_data(tl_eu_addr),
             .write_delete(1'b0),
             .write_enable(tlb_buff_wr_en), 

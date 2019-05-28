@@ -140,6 +140,8 @@ void init()
 int main()
 {
 	init();
+	LED_CTRL = 0xAA;
+	//while(1);
     	//ta_wait(45000); //10ms
 	//volatile unsigned  n_0, n_1, n_2, n_3, n_4, n_5, n_6;
 
@@ -214,20 +216,37 @@ int main()
    //QWARK_CHECKPOINT();
 
 #ifdef UART_DBG
+		LED_CTRL = 0xBE;
 	UART_WriteString("Benchmark Complete! \r\n");
+		LED_CTRL = 0x00;
 	UART_WriteNumber(n_0);
+		LED_CTRL = 0xE0;	
 	UART_WriteString("\r\n");
+		LED_CTRL = 0x01;
 	UART_WriteNumber(n_1);
+		
+		LED_CTRL = 0xE1;	
 	UART_WriteString("\r\n");
+		LED_CTRL = 0x02;
 	UART_WriteNumber(n_2);
+
+		LED_CTRL = 0xE2;	
 	UART_WriteString("\r\n");
+		LED_CTRL = 0x03;
 	UART_WriteNumber(n_3);
+		LED_CTRL = 0xE3;	
 	UART_WriteString("\r\n");
+		LED_CTRL = 0x04;
 	UART_WriteNumber(n_4);
+		LED_CTRL = 0xE4;	
 	UART_WriteString("\r\n");
+		LED_CTRL = 0x05;
 	UART_WriteNumber(n_5);
+		LED_CTRL = 0xE5;	
 	UART_WriteString("\r\n");
+		LED_CTRL = 0x06;
 	UART_WriteNumber(n_6);
+		LED_CTRL = 0xE6;	
 	UART_WriteString("\r\n");
 #endif
 

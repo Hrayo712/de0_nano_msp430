@@ -3206,6 +3206,8 @@ void init()
 int main()
 {
  init();
+ (*(volatile unsigned char *) 0x0090) = 0xAA;
+
 
 
 
@@ -3280,20 +3282,37 @@ int main()
 
 
 
+  (*(volatile unsigned char *) 0x0090) = 0xBE;
  UART_WriteString("Benchmark Complete! \r\n");
+  (*(volatile unsigned char *) 0x0090) = 0x00;
  UART_WriteNumber(n_0);
+  (*(volatile unsigned char *) 0x0090) = 0xE0;
  UART_WriteString("\r\n");
+  (*(volatile unsigned char *) 0x0090) = 0x01;
  UART_WriteNumber(n_1);
+
+  (*(volatile unsigned char *) 0x0090) = 0xE1;
  UART_WriteString("\r\n");
+  (*(volatile unsigned char *) 0x0090) = 0x02;
  UART_WriteNumber(n_2);
+
+  (*(volatile unsigned char *) 0x0090) = 0xE2;
  UART_WriteString("\r\n");
+  (*(volatile unsigned char *) 0x0090) = 0x03;
  UART_WriteNumber(n_3);
+  (*(volatile unsigned char *) 0x0090) = 0xE3;
  UART_WriteString("\r\n");
+  (*(volatile unsigned char *) 0x0090) = 0x04;
  UART_WriteNumber(n_4);
+  (*(volatile unsigned char *) 0x0090) = 0xE4;
  UART_WriteString("\r\n");
+  (*(volatile unsigned char *) 0x0090) = 0x05;
  UART_WriteNumber(n_5);
+  (*(volatile unsigned char *) 0x0090) = 0xE5;
  UART_WriteString("\r\n");
+  (*(volatile unsigned char *) 0x0090) = 0x06;
  UART_WriteNumber(n_6);
+  (*(volatile unsigned char *) 0x0090) = 0xE6;
  UART_WriteString("\r\n");
 
 
