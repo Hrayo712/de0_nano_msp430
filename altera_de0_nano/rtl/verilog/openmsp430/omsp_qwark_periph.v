@@ -53,7 +53,8 @@ module  omsp_qwark_periph (
 	 qwark_irq,								// Qwark Interrupt request signal
 // INPUTs
     mclk,                           // Main system clock
-    per_addr,                       // Peripheral address
+    mclk2,
+	 per_addr,                       // Peripheral address
     per_din,                        // Peripheral data input
     per_en,                         // Peripheral enable (high active)
     per_we,                         // Peripheral write enable (high active)
@@ -75,6 +76,7 @@ output				  qwark_irq;		// Qwark Interrupt request signal
 // INPUTs
 //=========
 input                   mclk;       // Main system clock
+input						  mclk2;
 input        [13:0] per_addr;       // Peripheral address
 input        [15:0]  per_din;       // Peripheral data input
 input                 per_en;       // Peripheral enable (high active)
@@ -158,18 +160,19 @@ wire [DEC_SZ-1:0] reg_rd    = reg_dec & {DEC_SZ{reg_read}};
 //============================================================================
 
 wire qwark_reg_wr;
-wire [3:0]qwark_dout;
+wire [3:0]qwark_dout_idx;
+wire [3:0]qwark_war_nr;
 wire irq_flag;
 wire [15:0]qwark_war_addr;
 
 /* One hot Address Multiplexer */
-wire [7:0]wr_addr_mux = (qwark_dout-1) == 3'b000 ? 8'b00000001 :
-								(qwark_dout-1) == 3'b001 ? 8'b00000010 :
-								(qwark_dout-1) == 3'b010 ? 8'b00000100 :
-								(qwark_dout-1) == 3'b011 ? 8'b00001000 :
-								(qwark_dout-1) == 3'b100 ? 8'b00010000 :
-								(qwark_dout-1) == 3'b101 ? 8'b00100000 :
-								(qwark_dout-1) == 3'b110 ? 8'b01000000 :
+wire [7:0]wr_addr_mux = (qwark_dout_idx) == 3'b000 ? 8'b00000001 :
+								(qwark_dout_idx) == 3'b001 ? 8'b00000010 :
+								(qwark_dout_idx) == 3'b010 ? 8'b00000100 :
+								(qwark_dout_idx) == 3'b011 ? 8'b00001000 :
+								(qwark_dout_idx) == 3'b100 ? 8'b00010000 :
+								(qwark_dout_idx) == 3'b101 ? 8'b00100000 :
+								(qwark_dout_idx) == 3'b110 ? 8'b01000000 :
 								 8'b10000000;
 // CNTRL1 Register
 //-----------------
@@ -193,8 +196,8 @@ assign      qwark_irq      = qwark_irq_req;
 always @ (posedge mclk or posedge puc_rst)
   if (puc_rst)       	  cntrl1 <=  16'h0000;
   else if (cntrl1_wr) 	  cntrl1 <=  per_din;
-  else if (qwark_reg_wr  &&  dly_irq_qwark_acc)   cntrl1 <=   {cntrl1[15:8],1'b1,cntrl1[6],{1{1'b0}},qwark_dout[3:0],1'b0};
-  else if (qwark_reg_wr  && ~dly_irq_qwark_acc)   cntrl1 <=   {{10{1'b0}},cntrl1[5],qwark_dout[3:0],cntrl1[0]};
+  else if (qwark_reg_wr  &&  dly_irq_qwark_acc)   cntrl1 <=   {cntrl1[15:8],1'b1,cntrl1[6],{1{1'b0}},qwark_war_nr[3:0],1'b0};
+  else if (qwark_reg_wr  && ~dly_irq_qwark_acc)   cntrl1 <=   {{10{1'b0}},cntrl1[5],qwark_war_nr[3:0],cntrl1[0]};
   else if (~qwark_reg_wr &&  dly_irq_qwark_acc)   cntrl1 <=   {cntrl1[15:8],1'b1,cntrl1[6],{1{1'b0}},cntrl1[4:1],1'b0};
   else if (irq_flag)		  							     cntrl1 <=   {{10{1'b0}},1'b1,cntrl1[4:0]};
 
@@ -317,9 +320,9 @@ wire [15:0] per_dout   =  cntrl1_rd  |
 //============================================================================
 // 5) QWARK PERIPHERAL FUNCTIONALITY
 //============================================================================
-
+wire [127:0] saved_war_addr = {cntrl2[15:0],cntrl3[15:0],cntrl4[15:0],cntrl5[15:0],cntrl6[15:0],cntrl7[15:0],cntrl8[15:0],cntrl9[15:0]};
 wire [15:0]  tl_addr;
-wire  [15:0] dmem_addr = eu_addr[15:0] + (`DMEM_BASE);
+wire [15:0]  dmem_addr = eu_addr[15:0] + (`DMEM_BASE);
 
 /* If the peripheral is enabled, then allow Qwark to decide which is the right address */
 assign addr_out = (cntrl1[0] || cntrl1[7])  && ~dbg_acc ? tl_addr_format : eu_addr[13:1];
@@ -329,19 +332,22 @@ wire [`DMEM_MSB:0] tl_addr_format = ({1'b0,tl_addr[15:1]})-(`DMEM_BASE);
 
 omsp_qwark qwark_0 (
 
-	 .tl_addr			 (tl_addr),	
-	 .per_dout		    (qwark_dout),	
-	 .per_wr		 	    (qwark_reg_wr),
-	 .irq_out			 (irq_flag),
-	 .per_dout_war_addr(qwark_war_addr),
-    .mclk				 (mclk),								
-	 .en					 (qwark_en),						
-	 .puc_rst			 (puc_rst),						  
-	 .eu_addr          (dmem_addr),     				
-	 .eu_en				 (~eu_en),							
-	 .eu_mb_wr			 (~eu_mb_wr),						
-	 .buff_rst			 (cntrl1[6]),
-	 .mb_rd_msk			 (mb_rd_msk)
+	 .tl_addr			 				    (tl_addr),	
+	 .per_dout_addr_index		(qwark_dout_idx),	
+	 .per_wr		 	   		     (qwark_reg_wr),
+	 .irq_out			 				   (irq_flag),
+	 .per_dout_war_addr		   (qwark_war_addr),
+	 .per_dout_war_nr				  (qwark_war_nr),
+    .mclk				 						 (mclk),
+	 .mclk2										(mclk2),
+	 .en									   (qwark_en),						
+	 .puc_rst			 					 (puc_rst),						  
+	 .eu_addr          				  (dmem_addr),     				
+	 .eu_en				 					  (~eu_en),							
+	 .eu_mb_wr			 				  (~eu_mb_wr),						
+	 .buff_rst			 				  (cntrl1[6]),
+	 .mb_rd_msk			 				  (mb_rd_msk),
+	 .reg_str_addr						  (saved_war_addr)
 	 );
 
 

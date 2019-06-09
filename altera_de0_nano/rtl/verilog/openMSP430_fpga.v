@@ -40,7 +40,8 @@ module openMSP430_fpga (
   // USER CLOCKS
   //-----------------------------
   input         FPGA_CLK1_50,
- 
+  input         FPGA_CLK2_50,
+  input			 EX_RST,
 
   //-----------------------------
   // USER INTERFACE (FPGA)
@@ -54,9 +55,9 @@ module openMSP430_fpga (
   //-----------------------------
   output        UART_TX,
   input         UART_RX,
-  output			 OUT_PLL,
-  
-  output PER_UART_TX
+  output			 OUT_PLL_1MHZ,
+  output			 OUT_PLL_4MHZ,
+  output 	    PER_UART_TX
 
 );
 
@@ -102,6 +103,8 @@ wire               lfxt_clk;
 wire               aclk_en;
 wire               smclk_en;
 wire               mclk;
+wire               mclk2;
+
 wire               reset_n;
 wire               puc_rst;
 
@@ -128,18 +131,20 @@ wire               hw_uart_rxd;
 
 wire   pll_out;
 wire   pll_lock;
+wire   pll_out_4mhz;
 
+assign dco_clk      = FPGA_CLK1_50;
+assign mclk2 		  = FPGA_CLK2_50;
 
-assign dco_clk    = FPGA_CLK1_50;
 //assign dco_clk    = pll_lock ? pll_out : 1'b0;
+//assign mclk2 		= pll_lock ? pll_out_4mhz : 1'b0;
 
-
-wire   reset_in_n = KEY[0];
+wire   reset_in_n = KEY[0] & ~EX_RST;
 
 // Release system reset a few clock cyles after the FPGA power-on-reset
 reg [7:0] reset_dly_chain;
 always @ (posedge dco_clk or negedge reset_in_n)
-  if (!reset_in_n) reset_dly_chain <= 8'h00;
+  if (!reset_in_n ) reset_dly_chain <= 8'h00;
   else             reset_dly_chain <= {1'b1, reset_dly_chain[7:1]};
 
 assign reset_n = reset_dly_chain[0];
@@ -348,10 +353,11 @@ ram_16x8k dmem_0 (
 //=============================================================================
 // 5) Clock Division  
 //=============================================================================
-//
+
 //	pll pll_0(
 //	.inclk0 (FPGA_CLK1_50),
 //	.c0     (pll_out),
+//	.c1	  (pll_out_4mhz),
 //	.locked (pll_lock)
 //	);
 
@@ -372,7 +378,8 @@ omsp_qwark_periph qwark_periph_0 (
 	 .qwark_irq(qwark_irq),
 // PERIPHERAL HANDLING INPUTs
     .mclk(mclk),                       						// Main system clock
-    .per_addr(per_addr),               						// Peripheral address
+    .mclk2(mclk2),
+	 .per_addr(per_addr),               						// Peripheral address
     .per_din(per_din),                 						// Peripheral data input
     .per_en(per_en),                   						// Peripheral enable (high active)
     .dbg_acc(1'b0/*dbg_mem_en_q*/),
@@ -417,6 +424,8 @@ omsp_uart #(.BASE_ADDR(15'h0080)) uart_0 (
 assign  UART_TX 		=  dbg_uart_txd;
 assign  PER_UART_TX  =  hw_uart_txd;
 assign  dbg_uart_rxd =  UART_RX;
+assign  OUT_PLL_1MHZ =  pll_out;
+assign  OUT_PLL_4MHZ =  pll_out_4mhz;
 
 
 endmodule

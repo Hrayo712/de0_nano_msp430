@@ -1,31 +1,4 @@
 
-State Machine - |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_tlb|state_reg
-Name state_reg.STATE_WRITE_2 state_reg.STATE_WRITE_1 state_reg.STATE_DELETE_2 state_reg.STATE_DELETE_1 state_reg.STATE_IDLE state_reg.STATE_INIT 
-state_reg.STATE_INIT 0 0 0 0 0 0 
-state_reg.STATE_IDLE 0 0 0 0 1 1 
-state_reg.STATE_DELETE_1 0 0 0 1 0 1 
-state_reg.STATE_DELETE_2 0 0 1 0 0 1 
-state_reg.STATE_WRITE_1 0 1 0 0 0 1 
-state_reg.STATE_WRITE_2 1 0 0 0 0 1 
-
-State Machine - |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_write_buff|state_reg
-Name state_reg.STATE_WRITE_2 state_reg.STATE_WRITE_1 state_reg.STATE_DELETE_2 state_reg.STATE_DELETE_1 state_reg.STATE_IDLE state_reg.STATE_INIT 
-state_reg.STATE_INIT 0 0 0 0 0 0 
-state_reg.STATE_IDLE 0 0 0 0 1 1 
-state_reg.STATE_DELETE_1 0 0 0 1 0 1 
-state_reg.STATE_DELETE_2 0 0 1 0 0 1 
-state_reg.STATE_WRITE_1 0 1 0 0 0 1 
-state_reg.STATE_WRITE_2 1 0 0 0 0 1 
-
-State Machine - |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|cam_bram:cam_read_buff|state_reg
-Name state_reg.STATE_WRITE_2 state_reg.STATE_WRITE_1 state_reg.STATE_DELETE_2 state_reg.STATE_DELETE_1 state_reg.STATE_IDLE state_reg.STATE_INIT 
-state_reg.STATE_INIT 0 0 0 0 0 0 
-state_reg.STATE_IDLE 0 0 0 0 1 1 
-state_reg.STATE_DELETE_1 0 0 0 1 0 1 
-state_reg.STATE_DELETE_2 0 0 1 0 0 1 
-state_reg.STATE_WRITE_1 0 1 0 0 0 1 
-state_reg.STATE_WRITE_2 1 0 0 0 0 1 
-
 State Machine - |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_state
 Name mem_state.M_ACCESS mem_state.M_ACCESS_BRK mem_state.M_SET_BRK mem_state.M_IDLE 
 mem_state.M_IDLE 0 0 0 0 

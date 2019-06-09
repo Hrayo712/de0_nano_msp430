@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Mon May 27 09:45:59 2019
+Analysis & Synthesis Status : Successful - Sun Jun  9 08:18:22 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : openMSP430_fpga
 Top-level Entity Name : openMSP430_fpga
 Family : Cyclone IV E
-Total logic elements : 5,517
-    Total combinational functions : 5,238
-    Dedicated logic registers : 1,464
-Total registers : 1464
-Total pins : 19
+Total logic elements : 4,828
+    Total combinational functions : 4,162
+    Dedicated logic registers : 1,856
+Total registers : 1856
+Total pins : 22
 Total virtual pins : 0
-Total memory bits : 396,288
+Total memory bits : 393,216
 Embedded Multiplier 9-bit elements : 2
 Total PLLs : 1

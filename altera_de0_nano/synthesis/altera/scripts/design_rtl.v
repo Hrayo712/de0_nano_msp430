@@ -79,8 +79,7 @@
 //Included 
 `include "../../../rtl/verilog/openmsp430/omsp_qwark.v" 
 `include "../../../rtl/verilog/openmsp430/omsp_qwark_periph.v" 
-`include "../../../rtl/verilog/cam_bram.v"
-`include "../../../rtl/verilog/cam_rd.v"
+
 `include "../../../rtl/verilog/priority_encoder.v"
 `include "../../../rtl/verilog/ram_dp.v"
 `include "../../../rtl/verilog/omsp_uart.v"

@@ -49,9 +49,11 @@ module  tb_openMSP430_fpga;
 
 // User Clocks
 reg               FPGA_CLK1_50;
+reg               FPGA_CLK2_50;
 
 // User Interface (FPGA)
 reg         [1:0] KEY;
+reg		EX_RST;
 reg         [3:0] SW;
 wire        [7:0] LED;
 
@@ -113,6 +115,13 @@ initial
 
   end
 
+initial
+  begin
+     FPGA_CLK2_50 = 1'b1;
+
+     forever #125.0 FPGA_CLK2_50 <= ~FPGA_CLK2_50; // 1 MHz
+
+  end
 
 initial
   begin
@@ -121,6 +130,10 @@ initial
      #600 KEY[0] = 1'b1;
   end
 
+initial
+  begin
+     EX_RST      = 1'b0; 
+end
 //
 // Global initialization
 //------------------------------
@@ -147,14 +160,16 @@ openMSP430_fpga dut (
 
      // USER CLOCKS
      .FPGA_CLK1_50    ( FPGA_CLK1_50    ),
-   
+     .FPGA_CLK2_50    ( FPGA_CLK2_50    ),
+     .EX_RST	      ( EX_RST 		),
      // USER INTERFACE (FPGA)
      .KEY             ( KEY             ),
      .LED             ( LED             ),
      .SW              ( SW              ),
      .UART_RX	      ( UART_RX		),
      .UART_TX	      ( UART_TX		),
-     .OUT_PLL	      (),
+     .OUT_PLL_1MHZ    (),
+     .OUT_PLL_4MHZ    (),
      .PER_UART_TX     (PER_UART_TX)
 );
 

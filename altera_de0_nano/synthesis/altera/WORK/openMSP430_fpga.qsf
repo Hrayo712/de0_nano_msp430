@@ -18,7 +18,7 @@
 #
 # Quartus Prime
 # Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-# Date created = 09:45:25  May 27, 2019
+# Date created = 06:07:08  May 30, 2019
 #
 # -------------------------------------------------------------------------- #
 #
@@ -39,7 +39,7 @@
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:45:25  MAY 27, 2019"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "06:07:08  MAY 30, 2019"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name VERILOG_FILE ../scripts/design_rtl.v
 set_global_assignment -name SEARCH_PATH ../../../rtl/verilog/openmsp430/

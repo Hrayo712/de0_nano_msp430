@@ -102,8 +102,7 @@
 ../../../rtl/verilog/openmsp430/periph/omsp_timerA.v
 
 //Included 
-../../../rtl/verilog/cam_bram.v
-../../../rtl/verilog/cam_rd.v
+
 
 ../../../rtl/verilog/priority_encoder.v
 ../../../rtl/verilog/ram_dp.v

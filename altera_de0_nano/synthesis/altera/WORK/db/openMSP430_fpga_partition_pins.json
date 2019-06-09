@@ -44,6 +44,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "EX_RST",
+					"strict" : false
+				},
+				{
 					"name" : "KEY[0]",
 					"strict" : false
 				},

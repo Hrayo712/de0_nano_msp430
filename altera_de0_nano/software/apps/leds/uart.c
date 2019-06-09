@@ -17,7 +17,7 @@ int UART_WriteChar (char txdata) {
 
   // Wait until the TX buffer is not full
   while (UART_STAT & UART_TX_FULL);
-
+  LED_CTRL = 0xEE;
   // Write the output character
   UART_TXD = txdata;
 

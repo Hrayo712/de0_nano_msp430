@@ -532,6 +532,8 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 
 		__asm__ __volatile__ ("mov.b @r14, @r13 ");    				// 5 cycles
 
+		__asm__ __volatile__ ("and #0xFFFE, r14");    				 	// 2 cycles
+
 		__asm__ __volatile__ ("incd r14");    				 		// 1 cycle
 		__asm__ __volatile__ ("dec r15");    						// 1 cycles
 		__asm__ __volatile__ ("tst r15");    						// 1 cycles

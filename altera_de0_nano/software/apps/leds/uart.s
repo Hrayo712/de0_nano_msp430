@@ -29,7 +29,10 @@ UART_WriteChar:
 	MOV.B	@R12, R12
 	AND.B	#8, R12
 	CMP.W	#0, R12 { JNE	.L2
-	.loc 1 22 0 is_stmt 1
+	.loc 1 20 0 is_stmt 1
+	MOV.B	#144, R12
+	MOV.B	#-18, @R12
+	.loc 1 22 0
 	MOV.B	#132, R12
 	MOV.B	1(R1), @R12
 	.loc 1 24 0

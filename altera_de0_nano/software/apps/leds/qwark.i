@@ -923,6 +923,8 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 # 533 "qwark.c"
   __asm__ __volatile__ ("mov.b @r14, @r13 ");
 
+  __asm__ __volatile__ ("and #0xFFFE, r14");
+
   __asm__ __volatile__ ("incd r14");
   __asm__ __volatile__ ("dec r15");
   __asm__ __volatile__ ("tst r15");

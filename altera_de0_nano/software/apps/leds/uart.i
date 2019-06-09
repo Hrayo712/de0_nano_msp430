@@ -615,7 +615,7 @@ int UART_WriteChar (char txdata) {
 
 
   while ((*(volatile unsigned char *) 0x0081) & 0x08);
-
+  (*(volatile unsigned char *) 0x0090) = 0xEE;
 
   (*(volatile unsigned char *) 0x0084) = txdata;
 
