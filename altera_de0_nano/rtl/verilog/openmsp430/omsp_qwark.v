@@ -115,7 +115,7 @@ reg tlb_buff_wr_en = 1'b0;
 reg per_addr_wr_en = 1'b0;
 
 /* counters*/
-reg [2:0]war_ctr;
+reg [3:0]war_ctr;
 reg [ADDR_WIDTH:0]rd_buff_ctr;
 reg [ADDR_WIDTH:0]wr_buff_ctr;
 
@@ -302,14 +302,12 @@ end
 always @(posedge mclk) begin
 	if(puc_rst) begin
 	irq_flag <= 1'b0;
-	end else if((wr_buff_ctr == 7 && wr_buff_wr_en) || (rd_buff_ctr == 7 && rd_buff_wr_en)) begin
+	end else if((wr_buff_ctr == 5 && wr_buff_wr_en) || (rd_buff_ctr == 5 && rd_buff_wr_en) ) begin
 	irq_flag <= 1'b1;
 	end else begin
 	irq_flag <= 1'b0;
 	end
 end
-
-
 
 //=============================================================================
 // Write After Read (WAR) detection Logic
@@ -599,14 +597,14 @@ assign	tlb_match_bits[5] = tlb_cmp_eu_addr == reg_str_addr[16*(2) +: 16]	? 1'b1 
 assign	tlb_match_bits[6] = tlb_cmp_eu_addr == reg_str_addr[16*(1) +: 16]	? 1'b1 : 1'b0;
 assign	tlb_match_bits[7] = tlb_cmp_eu_addr == reg_str_addr[16*(0) +: 16]	? 1'b1 : 1'b0;
 									
-wire [3:0] tlb_match_bus =  tlb_match_bits[0] ? 4'b1000 :
-									 tlb_match_bits[1] ? 4'b1001 :
-									 tlb_match_bits[2] ? 4'b1010 :
-									 tlb_match_bits[3] ? 4'b1011 :
-									 tlb_match_bits[4] ? 4'b1100 :
-									 tlb_match_bits[5] ? 4'b1101 :
+wire [3:0] tlb_match_bus =  tlb_match_bits[7] ? 4'b1111 :
 									 tlb_match_bits[6] ? 4'b1110 :
-									 tlb_match_bits[7] ? 4'b1111 :
+									 tlb_match_bits[5] ? 4'b1101 :
+									 tlb_match_bits[4] ? 4'b1100 :
+									 tlb_match_bits[3] ? 4'b1011 :
+									 tlb_match_bits[2] ? 4'b1010 :
+									 tlb_match_bits[1] ? 4'b1001 :
+									 tlb_match_bits[0] ? 4'b1000 :
 									 4'b0000;
 									 
 wire [2:0] tlb_match_addr = tlb_match_bus[2:0];

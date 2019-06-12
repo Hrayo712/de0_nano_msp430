@@ -1,16 +1,16 @@
 [*]
 [*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
-[*] Sun Jun  9 14:35:05 2019
+[*] Tue Jun 11 13:43:22 2019
 [*]
 [dumpfile] "/home/hiram/master/Qwark_stack/altera_de0_nano/sim/rtl_sim/run/tb_openMSP430_fpga.vcd"
-[dumpfile_mtime] "Sun Jun  9 14:33:29 2019"
-[dumpfile_size] 44079965
+[dumpfile_mtime] "Tue Jun 11 12:42:27 2019"
+[dumpfile_size] 2980368375
 [optimize_vcd]
 [savefile] "/home/hiram/master/Qwark_stack/altera_de0_nano/sim/rtl_sim/run/setup_cfg.gtkw"
-[timestart] 12380000
-[size] 1851 833
-[pos] -29 -29
-*-21.441101 482323500000 241262680000 241284500000 3731500000 240970500000 241372500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[timestart] 800871050000
+[size] 1851 874
+[pos] -51 -51
+*-22.441101 800874500000 241262680000 241284500000 3731500000 240970500000 241372500000 801117500000 800860500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_openMSP430_fpga.
 [treeopen] tb_openMSP430_fpga.dut.
 [treeopen] tb_openMSP430_fpga.dut.dmem_0.
@@ -22,13 +22,10 @@
 [sst_width] 312
 [signals_width] 281
 [sst_expanded] 1
-[sst_vpaned_height] 113
+[sst_vpaned_height] 185
 @28
 tb_openMSP430_fpga.dut.FPGA_CLK1_50
 tb_openMSP430_fpga.dut.pll_out
-@29
-tb_openMSP430_fpga.dut.pll_lock
-@28
 tb_openMSP430_fpga.dut.openmsp430_0.frontend_0.gie
 tb_openMSP430_fpga.dut.openmsp430_0.puc_rst
 tb_openMSP430_fpga.dut.timerA_0.tar_clk
@@ -197,8 +194,10 @@ tb_openMSP430_fpga.dut.qwark_periph_0.cntrl3[15:0]
 tb_openMSP430_fpga.dut.qwark_periph_0.cntrl4[15:0]
 [color] 1
 tb_openMSP430_fpga.dut.qwark_periph_0.cntrl5[15:0]
+@23
 [color] 1
 tb_openMSP430_fpga.dut.qwark_periph_0.cntrl6[15:0]
+@22
 [color] 1
 tb_openMSP430_fpga.dut.qwark_periph_0.cntrl7[15:0]
 [color] 1
@@ -284,8 +283,6 @@ tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.tlb_cmp_eu_addr[15:0]
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.rd_cmp_sync[2:0]
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.buff_rst
 @22
-[color] 1
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.war_ctr[2:0]
 [color] 1
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.addr_out_war[15:0]
 @28

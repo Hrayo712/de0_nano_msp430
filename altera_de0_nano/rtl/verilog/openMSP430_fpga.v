@@ -133,11 +133,11 @@ wire   pll_out;
 wire   pll_lock;
 wire   pll_out_4mhz;
 
-assign dco_clk      = FPGA_CLK1_50;
-assign mclk2 		  = FPGA_CLK2_50;
+//assign dco_clk      = FPGA_CLK1_50;
+//assign mclk2 		  = FPGA_CLK2_50;
 
-//assign dco_clk    = pll_lock ? pll_out : 1'b0;
-//assign mclk2 		= pll_lock ? pll_out_4mhz : 1'b0;
+assign dco_clk    = pll_lock ? pll_out : 1'b0;
+assign mclk2 		= pll_lock ? pll_out_4mhz : 1'b0;
 
 wire   reset_in_n = KEY[0] & ~EX_RST;
 
@@ -354,12 +354,12 @@ ram_16x8k dmem_0 (
 // 5) Clock Division  
 //=============================================================================
 
-//	pll pll_0(
-//	.inclk0 (FPGA_CLK1_50),
-//	.c0     (pll_out),
-//	.c1	  (pll_out_4mhz),
-//	.locked (pll_lock)
-//	);
+	pll pll_0(
+	.inclk0 (FPGA_CLK1_50),
+	.c0     (pll_out),
+	.c1	  (pll_out_4mhz),
+	.locked (pll_lock)
+	);
 
 //=============================================================================
 // 11)  QWARK
@@ -382,7 +382,7 @@ omsp_qwark_periph qwark_periph_0 (
 	 .per_addr(per_addr),               						// Peripheral address
     .per_din(per_din),                 						// Peripheral data input
     .per_en(per_en),                   						// Peripheral enable (high active)
-    .dbg_acc(1'b0/*dbg_mem_en_q*/),
+    .dbg_acc(/*1'b0*/dbg_mem_en_q),
 	 .per_we(per_we),                   						// Peripheral write enable (high active)
   //Functionality related signals  
 	 .puc_rst(puc_rst),              	   					// Main system reset

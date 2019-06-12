@@ -9,7 +9,7 @@
 #include "qwark.h"
 
 #define INTERMITTENCY_HANDLING_ENABLED
-//#define TIMER_TEST
+#define TIMER_TEST
 
 #ifdef INTERMITTENCY_HANDLING_ENABLED
 
@@ -27,15 +27,15 @@ void qwark_restore(void)
 	__asm__ __volatile__ ("mov #0x0000, &0x02A0");				// 4 cycles
 
 	__asm__ __volatile__ ("cmp.b #0x02, &0x6074");				// 2 cycles
-	__asm__ __volatile__ ("jz __qwark_retry_1st_setup");			// 2 cycles
+	__asm__ __volatile__ ("jz __qwark_retry_1st_setup");		// 2 cycles
 
 	__asm__ __volatile__ ("cmp.b #0x03, &0x6075");				// 3 cycles
-	__asm__ __volatile__ ("jz __qwark_restore_2nd_setup");			// 2 cycles
+	__asm__ __volatile__ ("jz __qwark_restore_2nd_setup");		// 2 cycles
 	__asm__ __volatile__ ("cmp.b #0x03, &0x6074");				// 3 cycles
 	__asm__ __volatile__ ("jnz __crt0_init_bss");				// 2 cycles
 
 	__asm__ __volatile__ ("cmp.b #0x02, &0x6075");				// 2 cycles
-	__asm__ __volatile__ ("jz  __qwark_retry_2nd_setup");			// 2 cycles
+	__asm__ __volatile__ ("jz  __qwark_retry_2nd_setup");		// 2 cycles
 
 	__asm__ __volatile__ ("__qwark_restore_1st_setup:");
 
@@ -99,6 +99,7 @@ void qwark_restore(void)
 	__asm__ __volatile__ ("bis  r11,     r14 ");   			// detect if its a byte write - 2 cycles
 
 	__asm__ __volatile__ ("mov.b @r14, @r9  ");    			// 5 cycles
+	__asm__ __volatile__ ("and #0xFFFE, r14 ");    			// 1 cycle
 	__asm__ __volatile__ ("incd r14 ");    					// 1 cycle
 
 	__asm__ __volatile__ ("dec r15");    					// 1 cycles
@@ -138,32 +139,17 @@ void qwark_restore(void)
 	__asm__ __volatile__ ("mov.b   #1, 0(r8)"); // 2 cycles
 
 	/* Configure the timer */
+
+
 #ifdef TIMER_TEST
-
-	__asm__ __volatile__ ("cmp  #0x00, &0x6078");	// 2 cycles
-
-	__asm__ __volatile__ ("jne  __readjust_config");	// 2 cycles
 	__asm__ __volatile__ ("mov  #370, r8");		    // 2 cycles
-	__asm__ __volatile__ ("mov  #45000, 0(r8)");	// 2 cycles
-	__asm__ __volatile__ ("mov  #45000, &0x6078");	// 2 cycles
-	__asm__ __volatile__ ("br #__timer_cnf");
-
-	__asm__ __volatile__ ("__readjust_config:");
-
-	__asm__ __volatile__ ("mov &0x6078, r8");	// 2 cycles
-	__asm__ __volatile__ ("sub #357, r8");		// 2 cycles
-	__asm__ __volatile__ ("mov r8, &0x6078");	// 2 cycles
-	__asm__ __volatile__ ("mov  #370, r8");		    // 2 cycles
-	__asm__ __volatile__ ("mov  &0x6078, 0(r8)");	// 2 cycles
-
-	__asm__ __volatile__ ("__timer_cnf:");
-
+	__asm__ __volatile__ ("mov  #9980, 0(r8)");	// 2 cycles
 
 	__asm__ __volatile__ ("mov  #352, r8");		    // 2 cycles
 	__asm__ __volatile__ ("mov  #534, 0(r8)");	    // 2 cycles
-
-
 #endif
+
+
 	//-------------------------------------------------------------------------------------------------------------//
 	//   VOLATILE STATE RESTORE 							   								   	   				   //
 	//	 12 CYCLES																								   //
@@ -532,8 +518,7 @@ interrupt (QWARK_VECTOR) INT_Qwark(void) {
 
 		__asm__ __volatile__ ("mov.b @r14, @r13 ");    				// 5 cycles
 
-		__asm__ __volatile__ ("and #0xFFFE, r14");    				 	// 2 cycles
-
+		__asm__ __volatile__ ("and #0xFFFE, r14");    				// 2 cycles
 		__asm__ __volatile__ ("incd r14");    				 		// 1 cycle
 		__asm__ __volatile__ ("dec r15");    						// 1 cycles
 		__asm__ __volatile__ ("tst r15");    						// 1 cycles

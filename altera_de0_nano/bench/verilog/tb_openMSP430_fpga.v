@@ -132,8 +132,19 @@ initial
 
 initial
   begin
-     EX_RST      = 1'b0; 
-end
+     EX_RST      = 1'b0;
+     #700;
+
+  end
+
+always 
+     begin
+	#11600000 ;
+	EX_RST = 1'b1;	 
+ 	
+	#5000; 
+	EX_RST = 1'b0;
+     end
 //
 // Global initialization
 //------------------------------
