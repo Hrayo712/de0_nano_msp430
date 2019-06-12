@@ -24,7 +24,8 @@ void ta_wait_no_lpm(unsigned int time_cnt) {
 // ( the timerA IRQ will exit the LPM0 state    )   //
 //                                                  //
 //--------------------------------------------------//
-unsigned int periodic_val;
+unsigned int periodic_val = 9980;
+
 void ta_wait(unsigned int time_cnt) {
 
   // Set time limit for IRQ generation

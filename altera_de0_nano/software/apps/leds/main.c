@@ -126,7 +126,7 @@ void init()
  	 UART_BAUD = BAUD;                   // Init UART
      UART_CTL  = UART_EN;
      //Enable QWARK
-     QWARK_CTL = QWARK_EN;
+     //QWARK_CTL = QWARK_EN;
 }
 
 
@@ -134,7 +134,8 @@ void init()
 int main()
 {
 	init();
-    	ta_wait(9980); //10ms
+	while(1);
+    	//ta_wait(9980); //10ms
 	//volatile unsigned  n_0, n_1, n_2, n_3, n_4, n_5, n_6;
 
 	uint32_t seed;

@@ -14,7 +14,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 2
 #define __SIZEOF_LONG__ 4
@@ -256,6 +255,7 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
+#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
 #define __CHAR_UNSIGNED__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
@@ -3192,7 +3192,7 @@ void init()
    (*(volatile unsigned int *) 0x0082) = 8;
      (*(volatile unsigned char *) 0x0080) = 0x01;
 
-     (*(volatile unsigned int *) 0x02A0) = 0x01;
+
 }
 
 
@@ -3200,6 +3200,7 @@ void init()
 int main()
 {
  init();
+ while(1);
      ta_wait(9980);
 
 

@@ -3,7 +3,7 @@ NAME            = leds
 OBJECTS         = main.o qwark.o timerA.o  uart.o
 
 # Compiler performance option (-Os / -O2 / -O3)
-PORT_CFLAGS     = -O2
+PORT_CFLAGS     = -O0
 
 # Choose GCC toolchain prefix ('msp430' for MSPGCC / 'msp430-elf' for GCC RedHat/TI)
 ifndef MSPGCC_PFX
@@ -38,7 +38,7 @@ download: download-uart
 
 #additional rules for files
 ${NAME}.elf: ${OBJECTS}
-	${CC}  -mhwmult=16bit -O2 -g -gdwarf-3 -gstrict-dwarf -Wall -g3 -msmall -fstrict-aliasing -Wstrict-aliasing -save-temps -fstack-usage -mcode-region=none -mdata-region=none -mmcu=msp430 -Wl,-Map=./${NAME}.map -Wl,--gc-sections -T ../../ldscripts/linker.${MSPGCC_PFX}.x -L/opt/ti/ccsv8/ccs_base/msp430/include_gcc -o $@ ${OBJECTS}
+	${CC}  -mhwmult=16bit -O0 -g -gdwarf-3 -gstrict-dwarf -Wall -g3 -msmall -fstrict-aliasing -Wstrict-aliasing -save-temps -fstack-usage -mcode-region=none -mdata-region=none -mmcu=msp430 -Wl,-Map=./${NAME}.map -Wl,--gc-sections -T ../../ldscripts/linker.${MSPGCC_PFX}.x -L/opt/ti/ccsv8/ccs_base/msp430/include_gcc -o $@ ${OBJECTS}
 
 ${NAME}.a43: ${NAME}.elf
 	${OBJCOPY} -O ihex $^ $@

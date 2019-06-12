@@ -1,18 +1,22 @@
-#include <omsp_system.h>
 
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <omsp_system.h>
+#include "uart.h"
+#include "qwark.h"
+#include "timerA.h"
 
 #define SEED 4
 #define ITER 100
 #define CHAR_BIT 8
 
-//typedef unsigned long uint32_t;
+#define UART_DBG
 
+volatile unsigned  n_0, n_1, n_2, n_3, n_4, n_5, n_6;
 
-static char bits[256] =
+char bits[256] =
 {
       0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4,  /* 0   - 15  */
       1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,  /* 16  - 31  */
@@ -32,22 +36,6 @@ static char bits[256] =
       4, 5, 5, 6, 5, 6, 6, 7, 5, 6, 6, 7, 6, 7, 7, 8   /* 240 - 255 */
 };
 
-
-
-void init()
-{
-
-     WDTCTL = WDTPW | WDTHOLD; // Stop WDT
-   //  PM5CTL0 &= ~LOCKLPM5;     // Disable the GPIO power-on default high-impedance mode
-
-	// Disable FRAM wait cycles to allow clock operation over 8MHz
-	//FRCTL0 = 0xA500 | ((1) << 4); // FRCTLPW | NWAITS_1;
-   // __delay_cycles(3);
-
-	/* init FRAM */
-  //  FRCTL0_H |= (FWPW) >> 8;
-
-}
 
 int btbl_bitcnt(uint32_t x)
 {
@@ -130,21 +118,37 @@ static int bit_shifter(uint32_t x)
 }
 
 
+void init()
+{
+     WDTCTL = WDTPW | WDTHOLD; // Stop WDT
+  	 __asm__ __volatile__ ("nop");
+     eint();
+ 	 UART_BAUD = BAUD;                   // Init UART
+     UART_CTL  = UART_EN;
+     //Enable QWARK
+     QWARK_CTL = QWARK_EN;
+}
+
+
+
 int main()
 {
 	init();
+    	ta_wait(9980); //10ms
+	//volatile unsigned  n_0, n_1, n_2, n_3, n_4, n_5, n_6;
 
 	uint32_t seed;
 	unsigned  iter;
 	unsigned  func;
-	volatile unsigned  n_0, n_1, n_2, n_3, n_4, n_5, n_6;
 
 	/* Iterate through the 7 func statements 0 - 7*/
 	/* Each statement executes a different bitcount routine, with a different seed value, a 100 times*/
 	while(1){
+
 	LED_CTRL ^= 0x0F;
 
 	//Initialize the variables upon every loop
+
 	n_0=0;
 	n_1=0;
 	n_2=0;
@@ -201,17 +205,28 @@ int main()
 			}
 		}
 	}
-	/*
-	    printf("%u\r\n", n_0);
-	    printf("%u\r\n", n_1);
-	    printf("%u\r\n", n_2);
-	    printf("%u\r\n", n_3);
-	    printf("%u\r\n", n_4);
-	    printf("%u\r\n", n_5);
-	    printf("%u\r\n", n_6);
-   */
-   }//while 1
 
-	return 0;
+#ifdef UART_DBG
+	UART_WriteString("Benchmark Complete! \r\n");
+	UART_WriteNumber(n_0);
+	UART_WriteString("\r\n");
+	UART_WriteNumber(n_1);
+	UART_WriteString("\r\n");
+	UART_WriteNumber(n_2);
+	UART_WriteString("\r\n");
+	UART_WriteNumber(n_3);
+	UART_WriteString("\r\n");
+	UART_WriteNumber(n_4);
+	UART_WriteString("\r\n");
+	UART_WriteNumber(n_5);
+	UART_WriteString("\r\n");
+	UART_WriteNumber(n_6);
+	UART_WriteString("\r\n");
+#endif
+
+	}//while 1
+
 }
+
+
 

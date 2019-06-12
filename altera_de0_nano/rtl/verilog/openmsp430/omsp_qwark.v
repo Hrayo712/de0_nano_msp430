@@ -302,7 +302,7 @@ end
 always @(posedge mclk) begin
 	if(puc_rst) begin
 	irq_flag <= 1'b0;
-	end else if((wr_buff_ctr == 5 && wr_buff_wr_en) || (rd_buff_ctr == 5 && rd_buff_wr_en) ) begin
+	end else if((wr_buff_ctr == 6 && wr_buff_wr_en) || (rd_buff_ctr == 6 && rd_buff_wr_en) ) begin //used to be 5
 	irq_flag <= 1'b1;
 	end else begin
 	irq_flag <= 1'b0;
