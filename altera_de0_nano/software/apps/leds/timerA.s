@@ -38,14 +38,7 @@ ta_wait_no_lpm:
 	RET
 .LFE0:
 	.size	ta_wait_no_lpm, .-ta_wait_no_lpm
-	.global	periodic_val
-.data
-	.balign 2
-	.type	periodic_val, @object
-	.size	periodic_val, 2
-periodic_val:
-	.short	9980
-.text
+	.comm	periodic_val,2,2
 	.balign 2
 	.global	ta_wait
 	.type	ta_wait, @function

@@ -1,233 +1,672 @@
+//#define LOG_PRINT
+//#define PRINTF_PRINT
 
+//#include <msp430fr5969.h> //only for MSP430FRAM
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <omsp_system.h>
-#include "uart.h"
 #include "qwark.h"
+#include "uart.h"
 #include "timerA.h"
-
-#define SEED 4
-#define ITER 100
-#define CHAR_BIT 8
 
 #define UART_DBG
 
-volatile unsigned  n_0, n_1, n_2, n_3, n_4, n_5, n_6;
+//#include <msp430.h>
+//#include "driverlib.h"
+//#include "nvm.h"
+//#include "arch.h"
+//#include "checkpoint.h"
+//#include "stackpool.h"
+//#include "virtualaddr.h"
+//#include "virtualmem.h"
+//#include "checkpoint_timer.h"
 
-char bits[256] =
+
+/* Sqrt.c */
+/* Square root by Newton's method */
+uint16_t sqrt16(uint32_t x)
 {
-      0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4,  /* 0   - 15  */
-      1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,  /* 16  - 31  */
-      1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,  /* 32  - 47  */
-      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,  /* 48  - 63  */
-      1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,  /* 64  - 79  */
-      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,  /* 80  - 95  */
-      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,  /* 96  - 111 */
-      3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,  /* 112 - 127 */
-      1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,  /* 128 - 143 */
-      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,  /* 144 - 159 */
-      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,  /* 160 - 175 */
-      3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,  /* 176 - 191 */
-      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,  /* 192 - 207 */
-      3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,  /* 208 - 223 */
-      3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,  /* 224 - 239 */
-      4, 5, 5, 6, 5, 6, 6, 7, 5, 6, 6, 7, 6, 7, 7, 8   /* 240 - 255 */
-};
+    uint16_t hi = 0xffff;
+    uint16_t lo = 0;
+    uint16_t mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+    uint32_t s = 0;
 
+    while (s != x && hi - lo > 1) {
+        mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+        s = (uint32_t)mid* (uint32_t)mid;
+        if (s < x)
+            lo = mid;
+        else
+            hi = mid;
+    }
 
-int btbl_bitcnt(uint32_t x)
-{
-      int cnt = bits[ ((char *)&x)[0] & 0xFF ];
-
-      if (0L != (x >>= 8))
-            cnt += btbl_bitcnt(x);
-      return cnt;
-}
-int bit_count(uint32_t x)
-{
-        int n = 0;
-
-        if (x) do
-              n++;
-        while (0 != (x = x&(x-1))) ;
-        return(n);
-}
-int bitcount(uint32_t i)
-{
-      i = ((i & 0xAAAAAAAAL) >>  1) + (i & 0x55555555L);
-      i = ((i & 0xCCCCCCCCL) >>  2) + (i & 0x33333333L);
-      i = ((i & 0xF0F0F0F0L) >>  4) + (i & 0x0F0F0F0FL);
-      i = ((i & 0xFF00FF00L) >>  8) + (i & 0x00FF00FFL);
-      i = ((i & 0xFFFF0000L) >> 16) + (i & 0x0000FFFFL);
-      return (int)i;
-}
-int ntbl_bitcount(uint32_t x)
-{
-      return
-            bits[ (int) (x & 0x0000000FUL)       ] +
-            bits[ (int)((x & 0x000000F0UL) >> 4) ] +
-            bits[ (int)((x & 0x00000F00UL) >> 8) ] +
-            bits[ (int)((x & 0x0000F000UL) >> 12)] +
-            bits[ (int)((x & 0x000F0000UL) >> 16)] +
-            bits[ (int)((x & 0x00F00000UL) >> 20)] +
-            bits[ (int)((x & 0x0F000000UL) >> 24)] +
-            bits[ (int)((x & 0xF0000000UL) >> 28)];
-}
-int BW_btbl_bitcount(uint32_t x)
-{
-      union
-      {
-            unsigned char ch[4];
-            long y;
-      } U;
-
-      U.y = x;
-
-      return bits[ U.ch[0] ] + bits[ U.ch[1] ] +
-             bits[ U.ch[3] ] + bits[ U.ch[2] ];
-}
-int AR_btbl_bitcount(uint32_t x)
-{
-      unsigned char * Ptr = (unsigned char *) &x ;
-      int Accu ;
-
-      Accu  = bits[ *Ptr++ ];
-      Accu += bits[ *Ptr++ ];
-      Accu += bits[ *Ptr++ ];
-      Accu += bits[ *Ptr ];
-      return Accu;
-}
-int ntbl_bitcnt(uint32_t x)
-{
-      int cnt = bits[(int)(x & 0x0000000FL)];
-
-      if (0L != (x >>= 4))
-            cnt += ntbl_bitcnt(x);
-
-      return cnt;
+    return mid;
 }
 
-static int bit_shifter(uint32_t x)
-{
-  int i, n;
-  for (i = n = 0; x && (i < (sizeof(uint32_t) * CHAR_BIT)); ++i, x >>= 1)
-    n += (int)(x & 1L);
-  return n;
+
+#ifdef LOG_PRINT
+#define LOG(...) do {       \
+    printf("Log: ");        \
+    printf(__VA_ARGS__);    \
+} while(0)
+#else /* !LOG_PRINT */
+#define LOG(...)
+#endif /* LOG_PRINT */
+
+#ifdef PRINTF_PRINT
+#define PRINTF printf
+#else
+#define PRINTF(...)
+#endif /* PRINTF_PRINT */
+
+//#define USE_LEDS
+
+// Number of samples to discard before recording training set
+#define NUM_WARMUP_SAMPLES 3
+
+#define ACCEL_WINDOW_SIZE 3
+#define MODEL_SIZE 16
+#define SAMPLE_NOISE_FLOOR 10 // TODO: made up value
+
+// Number of classifications to complete in one experiment
+#define SAMPLES_TO_COLLECT 128
+
+
+/* VISP */
+#ifdef CHECKPOINT_ON_TASK_BOUNDARY
+#define TASK_CHECKPOINT() checkpoint_full(); ++task_cp_cnt;
+//#define TASK_CHECKPOINT() checkpoint_and_reset(); ++task_cp_cnt;
+#else /* !CHECKPOINT_ON_TASK_BOUNDARY */
+#define TASK_CHECKPOINT(...)
+#endif /* CHECKPOINT_ON_TASK_BOUNDARY */
+/* VISP END */
+
+typedef struct {
+    uint8_t x;
+    uint8_t y;
+    uint8_t z;
+} threeAxis_t_8;
+
+typedef threeAxis_t_8 accelReading;
+typedef accelReading accelWindow[ACCEL_WINDOW_SIZE];
+
+typedef struct {
+    unsigned meanmag;
+    unsigned stddevmag;
+} features_t;
+
+typedef enum {
+    CLASS_STATIONARY,
+    CLASS_MOVING,
+} class_t;
+
+typedef struct {
+    features_t stationary[MODEL_SIZE];
+    features_t moving[MODEL_SIZE];
+} model_t;
+
+typedef enum {
+    MODE_IDLE = 3,
+    MODE_TRAIN_STATIONARY = 2,
+    MODE_TRAIN_MOVING = 1,
+    MODE_RECOGNIZE = 0, // default
+} run_mode_t;
+
+typedef struct {
+    unsigned totalCount;
+    unsigned movingCount;
+    unsigned stationaryCount;
+} stats_t;
+
+
+/* Globals */
+//NVM unsigned int count = 1;
+//NVM model_t model;
+
+unsigned int count = 1;
+model_t model;
+
+void ACCEL_singleSample(threeAxis_t_8* result){
+
+    //NVM static unsigned int _v_seed = 1;
+    static unsigned int _v_seed = 1;
+
+    unsigned int seed = _v_seed;
+
+    result->x = (seed*17)%85;
+    result->y = (seed*17*17)%85;
+    result->z = (seed*17*17*17)%85;
+    _v_seed = ++seed;
 }
 
+
+#define accel_sample ACCEL_singleSample
+
+void acquire_window(accelWindow window)
+{
+    accelReading sample;
+    unsigned samplesInWindow = 0;
+
+    TASK_CHECKPOINT();
+
+    while (samplesInWindow < ACCEL_WINDOW_SIZE) {
+        accel_sample(&sample);
+        LOG("acquire: sample %u %u %u\r\n", sample.x, sample.y, sample.z);
+
+        window[samplesInWindow++] = sample;
+    }
+}
+
+void transform(accelWindow window)
+{
+    unsigned i = 0;
+
+    LOG("transform\r\n");
+
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+        accelReading *sample = &window[i];
+
+        if (sample->x < SAMPLE_NOISE_FLOOR ||
+            sample->y < SAMPLE_NOISE_FLOOR ||
+            sample->z < SAMPLE_NOISE_FLOOR) {
+
+            LOG("transform: sample %u %u %u\r\n",
+                sample->x, sample->y, sample->z);
+
+            sample->x = (sample->x > SAMPLE_NOISE_FLOOR) ? sample->x : 0;
+            sample->y = (sample->y > SAMPLE_NOISE_FLOOR) ? sample->y : 0;
+            sample->z = (sample->z > SAMPLE_NOISE_FLOOR) ? sample->z : 0;
+        }
+    }
+}
+
+void featurize(features_t *features, accelWindow aWin)
+{
+    TASK_CHECKPOINT();
+
+    accelReading mean;
+    accelReading stddev;
+
+    mean.x = mean.y = mean.z = 0;
+    stddev.x = stddev.y = stddev.z = 0;
+    int i;
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+        mean.x += aWin[i].x;  // x
+        mean.y += aWin[i].y;  // y
+        mean.z += aWin[i].z;  // z
+    }
+    /*
+       mean.x = mean.x / ACCEL_WINDOW_SIZE;
+       mean.y = mean.y / ACCEL_WINDOW_SIZE;
+       mean.z = mean.z / ACCEL_WINDOW_SIZE;
+       */
+    mean.x >>= 2;
+    mean.y >>= 2;
+    mean.z >>= 2;
+
+    for (i = 0; i < ACCEL_WINDOW_SIZE; i++) {
+        stddev.x += aWin[i].x > mean.x ? aWin[i].x - mean.x
+            : mean.x - aWin[i].x;  // x
+        stddev.y += aWin[i].y > mean.y ? aWin[i].y - mean.y
+            : mean.y - aWin[i].y;  // y
+        stddev.z += aWin[i].z > mean.z ? aWin[i].z - mean.z
+            : mean.z - aWin[i].z;  // z
+    }
+    /*
+       stddev.x = stddev.x / (ACCEL_WINDOW_SIZE - 1);
+       stddev.y = stddev.y / (ACCEL_WINDOW_SIZE - 1);
+       stddev.z = stddev.z / (ACCEL_WINDOW_SIZE - 1);
+       */
+    stddev.x >>= 2;
+    stddev.y >>= 2;
+    stddev.z >>= 2;
+
+    unsigned meanmag = mean.x*mean.x + mean.y*mean.y + mean.z*mean.z;
+    unsigned stddevmag = stddev.x*stddev.x + stddev.y*stddev.y + stddev.z*stddev.z;
+
+    features->meanmag   = sqrt16(meanmag);
+    features->stddevmag = sqrt16(stddevmag);
+
+    LOG("featurize: mean %u sd %u\r\n", features->meanmag, features->stddevmag);
+}
+
+class_t classify(features_t *features, model_t *model)
+{
+    int move_less_error = 0;
+    int stat_less_error = 0;
+    features_t *model_features;
+    int i;
+
+    TASK_CHECKPOINT();
+
+    for (i = 0; i < MODEL_SIZE; ++i) {
+        model_features = &model->stationary[i];
+
+        long int stat_mean_err = (model_features->meanmag > features->meanmag)
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+
+        long int stat_sd_err = (model_features->stddevmag > features->stddevmag)
+            ? (model_features->stddevmag - features->stddevmag)
+            : (features->stddevmag - model_features->stddevmag);
+
+        model_features = &model->moving[i];
+
+        long int move_mean_err = (model_features->meanmag > features->meanmag)
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+
+        long int move_sd_err = (model_features->stddevmag > features->stddevmag)
+            ? (model_features->stddevmag - features->stddevmag)
+            : (features->stddevmag - model_features->stddevmag);
+
+        if (move_mean_err < stat_mean_err) {
+            move_less_error++;
+        } else {
+            stat_less_error++;
+        }
+
+        if (move_sd_err < stat_sd_err) {
+            move_less_error++;
+        } else {
+            stat_less_error++;
+        }
+    }
+
+    class_t class = move_less_error > stat_less_error ?
+                        CLASS_MOVING : CLASS_STATIONARY;
+    LOG("classify: class %u\r\n", class);
+
+    return class;
+}
+
+void record_stats(stats_t *stats, class_t class)
+{
+    TASK_CHECKPOINT();
+
+    /* stats->totalCount, stats->movingCount, and stats->stationaryCount have an
+     * nv-internal consistency requirement.  This code should be atomic. */
+
+    stats->totalCount++;
+
+    switch (class) {
+        case CLASS_MOVING:
+            stats->movingCount++;
+            break;
+
+        case CLASS_STATIONARY:
+            stats->stationaryCount++;
+            break;
+    }
+
+    LOG("stats: s %u m %u t %u\r\n",
+        stats->stationaryCount, stats->movingCount, stats->totalCount);
+}
+
+ unsigned resultStationaryPct;
+ unsigned resultMovingPct;
+ unsigned sum;
+
+void print_stats(stats_t *stats)
+{
+   // unsigned resultStationaryPct = stats->stationaryCount * 100 / stats->totalCount;
+   // unsigned resultMovingPct = stats->movingCount * 100 / stats->totalCount;
+   // unsigned sum = stats->stationaryCount + stats->movingCount;
+
+  resultStationaryPct = stats->stationaryCount * 100 / stats->totalCount;
+  resultMovingPct = stats->movingCount * 100 / stats->totalCount;
+  sum = stats->stationaryCount + stats->movingCount;
+
+    PRINTF("stats: s %u (%u%%) m %u (%u%%) sum/tot %u/%u: %c\r\n",
+           stats->stationaryCount, resultStationaryPct,
+           stats->movingCount, resultMovingPct,
+           stats->totalCount, sum,
+           sum == stats->totalCount && sum == SAMPLES_TO_COLLECT ? 'V' : 'X');
+
+       // QWARK_CHECKPOINT();
+    #ifdef UART_DBG
+    UART_WriteString("stats: s ");
+
+    UART_WriteNumber(stats->stationaryCount);
+
+    UART_WriteString(" (");
+
+    UART_WriteNumber(resultStationaryPct);
+
+    UART_WriteString("%) m ");
+
+    UART_WriteNumber(stats->movingCount);
+
+    UART_WriteString(" (");
+
+    UART_WriteNumber(resultMovingPct);
+
+    UART_WriteString("%)");
+
+    UART_WriteString(" sum/tot ");
+
+    UART_WriteNumber(stats->totalCount);
+
+    UART_WriteString("/");
+
+    UART_WriteNumber(sum);
+
+    if(sum == stats->totalCount && sum == SAMPLES_TO_COLLECT)
+    UART_WriteString(" V");
+    else
+    UART_WriteString(" X");
+
+
+    UART_WriteString("\r\n");
+
+  #else
+
+  #endif
+
+}
+
+void warmup_sensor(void)
+{
+    unsigned discardedSamplesCount = 0;
+    accelReading sample;
+
+    TASK_CHECKPOINT();
+
+    LOG("warmup\r\n");
+
+    while (discardedSamplesCount++ < NUM_WARMUP_SAMPLES) {
+        accel_sample(&sample);
+    }
+}
+
+void train(features_t *classModel)
+{
+    accelWindow sampleWindow;
+    features_t features;
+    unsigned i;
+
+    warmup_sensor();
+
+    for (i = 0; i < MODEL_SIZE; ++i) {
+        acquire_window(sampleWindow);
+        transform(sampleWindow);
+        featurize(&features, sampleWindow);
+
+        TASK_CHECKPOINT();
+
+        classModel[i] = features;
+    }
+
+    PRINTF("train: done: mn %u sd %u\r\n",
+           features.meanmag, features.stddevmag);
+#ifdef UART_DBG
+    UART_WriteString("train: done: mn ");
+    UART_WriteNumber(features.meanmag);
+    UART_WriteString(" sd ");
+    UART_WriteNumber(features.stddevmag);
+    UART_WriteString("\r\n");
+#else
+
+#endif
+
+}
+
+void recognize(model_t *model)
+{
+#ifdef MEMENTOS_NONVOLATILE
+    static __nv stats_t stats;
+#else
+    stats_t stats;
+#endif
+
+    accelWindow sampleWindow;
+    features_t features;
+    class_t class;
+    unsigned i;
+
+    stats.totalCount = 0;
+    stats.stationaryCount = 0;
+    stats.movingCount = 0;
+
+    for (i = 0; i < SAMPLES_TO_COLLECT; ++i) {
+        acquire_window(sampleWindow);
+        transform(sampleWindow);
+        featurize(&features, sampleWindow);
+        class = classify(&features, model);
+        record_stats(&stats, class);
+    }
+    print_stats(&stats);
+}
+
+void end_of_benchmark(void)
+{
+    LED_CTRL = 0x00;
+    PRINTF("This is the end of the AR benchmark\n");
+#ifdef UART_DBG
+    UART_WriteString("This is the end of the AR benchmark\n\r");
+#endif
+    exit(0);
+    //while (1);
+}
+
+void count_error(void)
+{
+    PRINTF("An error occured during count, count = %d\n", count);
+}
+
+
+run_mode_t select_mode(uint8_t *prev_pin_state)
+{
+    uint8_t pin_state;
+
+    TASK_CHECKPOINT();
+
+    count = count + 1;
+
+    /* The InK order
+     *  rounds:
+     *      1,2 = MODE_TRAIN_MOVING
+     *      3,4 = MODE_TRAIN_STATIONARY
+     *      5,6 = MODE_RECOGNIZE
+     *      7   = END OF BENCHMARK
+     */
+    switch(count) {
+        case 1:
+        case 2:
+            pin_state = MODE_TRAIN_MOVING;
+            break;
+        case 3:
+        case 4:
+            pin_state = MODE_TRAIN_STATIONARY;
+            break;
+        case 5:
+        case 6:
+            pin_state = MODE_RECOGNIZE;
+            break;
+        case 7:
+            end_of_benchmark();
+            break;
+        default:
+            pin_state = MODE_IDLE;
+            count_error();
+    }
+
+    //pin_state = GPIO(PORT_AUX, IN) & (BIT(PIN_AUX_1) | BIT(PIN_AUX_2));
+
+    // Don't re-launch training after finishing training
+    // Vito: could have done this while assigning pin_state. But keep is the same as the original
+    if ((pin_state == MODE_TRAIN_STATIONARY ||
+        pin_state == MODE_TRAIN_MOVING) &&
+        pin_state == *prev_pin_state) {
+        pin_state = MODE_IDLE;
+    } else {
+        *prev_pin_state = pin_state;
+    }
+
+    LOG("selectMode: pins %04x\r\n", pin_state);
+
+    return (run_mode_t)pin_state;
+}
 
 void init()
 {
-     WDTCTL = WDTPW | WDTHOLD; // Stop WDT
-  	 __asm__ __volatile__ ("nop");
-     eint();
- 	 UART_BAUD = BAUD;                   // Init UART
-     UART_CTL  = UART_EN;
-     //Enable QWARK
-     //QWARK_CTL = QWARK_EN;
+    WDTCTL = WDTPW | WDTHOLD; // Stop WDT
+   __asm__ __volatile__ ("nop");
+    eint();
+  UART_BAUD = BAUD;                   // Init UART
+    UART_CTL  = UART_EN;
+    //Enable QWARK
+    QWARK_CTL = QWARK_EN;
+
+
+    // init timer
+#ifdef CHECKPOINT_TIMER
+    checkpoint_timer_init();
+#endif
+
 }
+void init_moving (void){
 
+   model.moving[0].meanmag = 36;
+   model.moving[0].stddevmag = 30;
 
+   model.moving[1].meanmag = 56;
+   model.moving[1].stddevmag = 22;
+
+   model.moving[2].meanmag = 40;
+   model.moving[2].stddevmag = 30;
+
+   model.moving[3].meanmag = 48;
+   model.moving[3].stddevmag = 30;
+
+   model.moving[4].meanmag = 54;
+   model.moving[4].stddevmag = 20;
+
+   model.moving[5].meanmag = 50;
+   model.moving[5].stddevmag = 34;
+
+   model.moving[6].meanmag = 56;
+   model.moving[6].stddevmag = 22;
+
+   model.moving[7].meanmag = 58;
+   model.moving[7].stddevmag = 24;
+
+   model.moving[8].meanmag = 46;
+   model.moving[8].stddevmag = 30;
+
+   model.moving[9].meanmag = 52;
+   model.moving[9].stddevmag = 20;
+
+   model.moving[10].meanmag = 50;
+   model.moving[10].stddevmag = 34;
+
+   model.moving[11].meanmag = 56;
+   model.moving[11].stddevmag = 22;
+
+   model.moving[12].meanmag = 56;
+   model.moving[12].stddevmag = 24;
+
+   model.moving[13].meanmag = 46;
+   model.moving[13].stddevmag = 30;
+
+   model.moving[14].meanmag = 52;
+   model.moving[14].stddevmag = 20;
+
+   model.moving[15].meanmag = 50;
+   model.moving[15].stddevmag = 34;
+}
+void init_stationary(void){
+
+      model.stationary[0].meanmag = 56;
+      model.stationary[0].stddevmag = 24;
+
+      model.stationary[1].meanmag = 46;
+      model.stationary[1].stddevmag = 30;
+
+      model.stationary[2].meanmag = 52;
+      model.stationary[2].stddevmag = 20;
+
+      model.stationary[3].meanmag = 50;
+      model.stationary[3].stddevmag = 34;
+
+      model.stationary[4].meanmag = 56;
+      model.stationary[4].stddevmag = 22;
+
+      model.stationary[5].meanmag = 54;
+      model.stationary[5].stddevmag = 24;
+
+      model.stationary[6].meanmag = 46;
+      model.stationary[6].stddevmag = 30;
+
+      model.stationary[7].meanmag = 52;
+      model.stationary[7].stddevmag = 20;
+
+      model.stationary[8].meanmag = 48;
+      model.stationary[8].stddevmag = 34;
+
+      model.stationary[9].meanmag = 56;
+      model.stationary[9].stddevmag = 22;
+
+      model.stationary[10].meanmag = 54;
+      model.stationary[10].stddevmag = 24;
+
+      model.stationary[11].meanmag = 44;
+      model.stationary[11].stddevmag = 30;
+
+      model.stationary[12].meanmag = 50;
+      model.stationary[12].stddevmag = 20;
+
+      model.stationary[13].meanmag = 48;
+      model.stationary[13].stddevmag = 34;
+
+      model.stationary[14].meanmag = 54;
+      model.stationary[14].stddevmag = 22;
+
+      model.stationary[15].meanmag = 52;
+      model.stationary[15].stddevmag = 24;
+
+}
 
 int main()
 {
-	init();
-	while(1);
-    	//ta_wait(9980); //10ms
-	//volatile unsigned  n_0, n_1, n_2, n_3, n_4, n_5, n_6;
+    // "Globals" must be on the stack because Mementos doesn't handle real
+    // globals correctly
+    uint8_t prev_pin_state = MODE_IDLE;
+  //uint8_t prev_pin_state = MODE_TRAIN_MOVING;
 
-	uint32_t seed;
-	unsigned  iter;
-	unsigned  func;
+    //init_stationary();
+    //init_moving();
 
-	/* Iterate through the 7 func statements 0 - 7*/
-	/* Each statement executes a different bitcount routine, with a different seed value, a 100 times*/
-	while(1){
+    init();
+    ta_wait(4980);
 
-	LED_CTRL ^= 0x0F;
+    count = 1;
+    LED_CTRL = 0xFF;
+    while (1)
+    {
+        run_mode_t mode = select_mode(&prev_pin_state);
+      // run_mode_t mode = MODE_RECOGNIZE;
 
-	//Initialize the variables upon every loop
-
-	n_0=0;
-	n_1=0;
-	n_2=0;
-	n_3=0;
-	n_4=0;
-	n_5=0;
-	n_6=0;
-
-	//Toggle LED upon every execution
-
-	for (func = 0; func < 7; func++) {
-
-		seed = (uint32_t)SEED;
-		if(func == 0){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_0 += bit_count(seed);
-			}
-		}
-		else if(func == 1){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_1 += bitcount(seed);
-			}
-		}
-		else if(func == 2){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_2 += ntbl_bitcnt(seed);
-			}
-		}
-		else if(func == 3){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_3 += ntbl_bitcount(seed);
-			}
-		}
-		else if(func == 4){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_4 += BW_btbl_bitcount(seed);
-			}
-		}
-		else if(func == 5){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_5 += AR_btbl_bitcount(seed);
-			}
-		}
-		else if(func == 6){
-			for(iter = 0; iter < ITER; ++iter, seed += 13){
-
-				n_6 += bit_shifter(seed);
-			}
-		}
-	}
-
-#ifdef UART_DBG
-	UART_WriteString("Benchmark Complete! \r\n");
-	UART_WriteNumber(n_0);
-	UART_WriteString("\r\n");
-	UART_WriteNumber(n_1);
-	UART_WriteString("\r\n");
-	UART_WriteNumber(n_2);
-	UART_WriteString("\r\n");
-	UART_WriteNumber(n_3);
-	UART_WriteString("\r\n");
-	UART_WriteNumber(n_4);
-	UART_WriteString("\r\n");
-	UART_WriteNumber(n_5);
-	UART_WriteString("\r\n");
-	UART_WriteNumber(n_6);
-	UART_WriteString("\r\n");
-#endif
-
-	}//while 1
-
+        switch (mode) {
+            case MODE_TRAIN_STATIONARY:
+                LOG("mode: stationary\r\n");
+                train(model.stationary);
+                break;
+            case MODE_TRAIN_MOVING:
+                LOG("mode: moving\r\n");
+                train(model.moving);
+                break;
+            case MODE_RECOGNIZE:
+                LOG("mode: recognize\r\n");
+                recognize(&model);
+                break;
+            default:
+                LOG("mode: idle\r\n");
+                break;
+        }
+    }
+    return 0;
 }
-
-
 

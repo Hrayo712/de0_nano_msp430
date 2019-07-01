@@ -58,7 +58,13 @@ module  omsp_register_file (
     scg0,                         // System clock generator 1. Turns off the DCO
     scg1,                         // System clock generator 1. Turns off the SMCLK
     status,                       // R2 Status {V,N,Z,C}
-
+	 
+	 reg_r1,
+	 sp_wr,
+	 sp_inc,
+	 wr_sp_val,
+	 inc_sp_val,
+	 
 // INPUTs
     alu_stat,                     // ALU Status {V,N,Z,C}
     alu_stat_wr,                  // ALU Status write {V,N,Z,C}
@@ -92,6 +98,13 @@ output              scg0;         // System clock generator 1. Turns off the DCO
 output              scg1;         // System clock generator 1. Turns off the SMCLK
 output        [3:0] status;       // R2 Status {V,N,Z,C}
 
+
+output		  [15:0]reg_r1;
+output				  sp_wr; 
+output				  sp_inc;
+output		  [15:0]wr_sp_val;
+output		  [15:0]inc_sp_val;
+
 // INPUTs
 //=========
 input         [3:0] alu_stat;     // ALU Status {V,N,Z,C}
@@ -112,6 +125,15 @@ input               reg_sr_clr;   // Status register clear for interrupts
 input               reg_incr;     // Increment source register
 input               scan_enable;  // Scan enable (active during scan shifting)
 
+
+
+assign reg_r1 = r1;     							 //Stack pointer value 
+
+assign sp_wr  = r1_wr;    						    //Stack pointer write, this flag is used to modify the current stack pointer, modified after a CALL routine. Decrease is variable.
+assign sp_inc = r1_inc;  							 //Stack pointer increase, this is used for the return instruction, always increases by 2.
+
+assign wr_sp_val  = reg_dest_val_in;       //value to write after a CALL routine to readjust the SP, variable decrease.
+assign inc_sp_val = reg_sp_val;		    //value to write after during the CALL routine. decrease by 2.
 
 //=============================================================================
 // 1)  AUTOINCREMENT UNIT

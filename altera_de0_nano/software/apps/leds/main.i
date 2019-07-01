@@ -281,6 +281,9 @@
 #define PFX_MSP430_ELF 1
 # 1 "main.c"
 
+
+
+
 # 1 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/lib/gcc/msp430-elf/7.3.1/include/stdint.h" 1 3 4
 # 9 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/lib/gcc/msp430-elf/7.3.1/include/stdint.h" 3 4
 # 1 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/stdint.h" 1 3 4
@@ -806,7 +809,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 3 "main.c" 2
+# 6 "main.c" 2
 # 1 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/lib/gcc/msp430-elf/7.3.1/include/stdbool.h" 1 3 4
 # 29 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/lib/gcc/msp430-elf/7.3.1/include/stdbool.h" 3 4
 #define _STDBOOL_H 
@@ -818,7 +821,7 @@ typedef __uint_least64_t uint_least64_t;
 #define false 0
 # 52 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/lib/gcc/msp430-elf/7.3.1/include/stdbool.h" 3 4
 #define __bool_true_false_are_defined 1
-# 4 "main.c" 2
+# 7 "main.c" 2
 # 1 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/stdio.h" 1 3
 # 27 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/stdio.h" 3
 #define _STDIO_H_ 
@@ -2425,7 +2428,7 @@ static __inline__ int __sputc_r(struct _reent *_ptr, int _c, FILE *_p) {
 
 
 
-# 5 "main.c" 2
+# 8 "main.c" 2
 # 1 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/stdlib.h" 1 3
 
 
@@ -2642,7 +2645,7 @@ extern long double _strtold_r (struct _reent *, const char *restrict, char **res
 extern long double strtold (const char *restrict, char **restrict);
 # 311 "/opt/ti/ccsv8/tools/compiler/msp430-gcc-7.3.1.24_linux64/msp430-elf/include/stdlib.h" 3
 
-# 6 "main.c" 2
+# 9 "main.c" 2
 # 1 "../../libs/omsp_system.h" 1
 # 36 "../../libs/omsp_system.h"
 # 1 "/opt/ti/ccsv8/ccs_base/msp430/include_gcc/in430.h" 1
@@ -2912,7 +2915,17 @@ typedef unsigned int __istate_t;
 #define PORT1_VECTOR (3)
 #define UNUSED_01_VECTOR (2)
 #define UNUSED_00_VECTOR (1)
-# 7 "main.c" 2
+# 10 "main.c" 2
+# 1 "qwark.h" 1
+# 9 "qwark.h"
+#define QWARK_H_ 
+
+#define QWARK_CTL (*(volatile unsigned int *) 0x02A0)
+#define QWARK_VECTOR (5)
+#define QWARK_CHECKPOINT() QWARK_CTL |= 0x0020
+
+#define QWARK_EN 0x01
+# 11 "main.c" 2
 # 1 "uart.h" 1
 # 9 "uart.h"
 #define UART_H_ 
@@ -2962,17 +2975,7 @@ void UART_WriteString(char* string);
 #define UART_RX_VECTOR (7 *2)
 # 68 "uart.h"
 #define BAUD 8
-# 8 "main.c" 2
-# 1 "qwark.h" 1
-# 9 "qwark.h"
-#define QWARK_H_ 
-
-#define QWARK_CTL (*(volatile unsigned int *) 0x02A0)
-#define QWARK_VECTOR (5)
-#define QWARK_CHECKPOINT() QWARK_CTL |= 0x0020
-
-#define QWARK_EN 0x01
-# 9 "main.c" 2
+# 12 "main.c" 2
 # 1 "timerA.h" 1
 
 #define TIMERA_H 
@@ -3072,225 +3075,636 @@ void ta_wait(unsigned int);
 #define OUT (0x0004)
 #define COV (0x0002)
 #define CCIFG (0x0001)
-# 10 "main.c" 2
-
-#define SEED 4
-#define ITER 100
-#define CHAR_BIT 8
+# 13 "main.c" 2
 
 #define UART_DBG 
-
-volatile unsigned n_0, n_1, n_2, n_3, n_4, n_5, n_6;
-
-char bits[256] =
+# 29 "main.c"
+uint16_t sqrt16(uint32_t x)
 {
-      0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4,
-      1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,
-      1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,
-      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
-      1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,
-      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
-      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
-      3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
-      1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,
-      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
-      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
-      3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
-      2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
-      3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
-      3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
-      4, 5, 5, 6, 5, 6, 6, 7, 5, 6, 6, 7, 6, 7, 7, 8
-};
+    uint16_t hi = 0xffff;
+    uint16_t lo = 0;
+    uint16_t mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+    uint32_t s = 0;
 
+    while (s != x && hi - lo > 1) {
+        mid = ((uint32_t)hi + (uint32_t)lo) >> 1;
+        s = (uint32_t)mid* (uint32_t)mid;
+        if (s < x)
+            lo = mid;
+        else
+            hi = mid;
+    }
 
-int btbl_bitcnt(uint32_t x)
-{
-      int cnt = bits[ ((char *)&x)[0] & 0xFF ];
-
-      if (0L != (x >>= 8))
-            cnt += btbl_bitcnt(x);
-      return cnt;
+    return mid;
 }
-int bit_count(uint32_t x)
-{
-        int n = 0;
+# 55 "main.c"
+#define LOG(...) 
 
-        if (x) do
-              n++;
-        while (0 != (x = x&(x-1))) ;
-        return(n);
+
+
+
+
+#define PRINTF(...) 
+
+
+
+
+
+#define NUM_WARMUP_SAMPLES 3
+
+#define ACCEL_WINDOW_SIZE 3
+#define MODEL_SIZE 16
+#define SAMPLE_NOISE_FLOOR 10
+
+
+#define SAMPLES_TO_COLLECT 128
+
+
+
+
+
+
+
+#define TASK_CHECKPOINT(...) 
+
+
+
+typedef struct {
+    uint8_t x;
+    uint8_t y;
+    uint8_t z;
+} threeAxis_t_8;
+
+typedef threeAxis_t_8 accelReading;
+typedef accelReading accelWindow[3];
+
+typedef struct {
+    unsigned meanmag;
+    unsigned stddevmag;
+} features_t;
+
+typedef enum {
+    CLASS_STATIONARY,
+    CLASS_MOVING,
+} class_t;
+
+typedef struct {
+    features_t stationary[16];
+    features_t moving[16];
+} model_t;
+
+typedef enum {
+    MODE_IDLE = 3,
+    MODE_TRAIN_STATIONARY = 2,
+    MODE_TRAIN_MOVING = 1,
+    MODE_RECOGNIZE = 0,
+} run_mode_t;
+
+typedef struct {
+    unsigned totalCount;
+    unsigned movingCount;
+    unsigned stationaryCount;
+} stats_t;
+
+
+
+
+
+
+unsigned int count = 1;
+model_t model;
+
+void ACCEL_singleSample(threeAxis_t_8* result){
+
+
+    static unsigned int _v_seed = 1;
+
+    unsigned int seed = _v_seed;
+
+    result->x = (seed*17)%85;
+    result->y = (seed*17*17)%85;
+    result->z = (seed*17*17*17)%85;
+    _v_seed = ++seed;
 }
-int bitcount(uint32_t i)
-{
-      i = ((i & 0xAAAAAAAAL) >> 1) + (i & 0x55555555L);
-      i = ((i & 0xCCCCCCCCL) >> 2) + (i & 0x33333333L);
-      i = ((i & 0xF0F0F0F0L) >> 4) + (i & 0x0F0F0F0FL);
-      i = ((i & 0xFF00FF00L) >> 8) + (i & 0x00FF00FFL);
-      i = ((i & 0xFFFF0000L) >> 16) + (i & 0x0000FFFFL);
-      return (int)i;
-}
-int ntbl_bitcount(uint32_t x)
-{
-      return
-            bits[ (int) (x & 0x0000000FUL) ] +
-            bits[ (int)((x & 0x000000F0UL) >> 4) ] +
-            bits[ (int)((x & 0x00000F00UL) >> 8) ] +
-            bits[ (int)((x & 0x0000F000UL) >> 12)] +
-            bits[ (int)((x & 0x000F0000UL) >> 16)] +
-            bits[ (int)((x & 0x00F00000UL) >> 20)] +
-            bits[ (int)((x & 0x0F000000UL) >> 24)] +
-            bits[ (int)((x & 0xF0000000UL) >> 28)];
-}
-int BW_btbl_bitcount(uint32_t x)
-{
-      union
-      {
-            unsigned char ch[4];
-            long y;
-      } U;
 
-      U.y = x;
 
-      return bits[ U.ch[0] ] + bits[ U.ch[1] ] +
-             bits[ U.ch[3] ] + bits[ U.ch[2] ];
-}
-int AR_btbl_bitcount(uint32_t x)
+#define accel_sample ACCEL_singleSample
+
+void acquire_window(accelWindow window)
 {
-      unsigned char * Ptr = (unsigned char *) &x ;
-      int Accu ;
+    accelReading sample;
+    unsigned samplesInWindow = 0;
 
-      Accu = bits[ *Ptr++ ];
-      Accu += bits[ *Ptr++ ];
-      Accu += bits[ *Ptr++ ];
-      Accu += bits[ *Ptr ];
-      return Accu;
-}
-int ntbl_bitcnt(uint32_t x)
-{
-      int cnt = bits[(int)(x & 0x0000000FL)];
+    ;
 
-      if (0L != (x >>= 4))
-            cnt += ntbl_bitcnt(x);
+    while (samplesInWindow < 3) {
+        ACCEL_singleSample(&sample);
+        ;
 
-      return cnt;
+        window[samplesInWindow++] = sample;
+    }
 }
 
-static int bit_shifter(uint32_t x)
+void transform(accelWindow window)
 {
-  int i, n;
-  for (i = n = 0; x && (i < (sizeof(uint32_t) * 8)); ++i, x >>= 1)
-    n += (int)(x & 1L);
-  return n;
+    unsigned i = 0;
+
+    ;
+
+    for (i = 0; i < 3; i++) {
+        accelReading *sample = &window[i];
+
+        if (sample->x < 10 ||
+            sample->y < 10 ||
+            sample->z < 10) {
+
+           
+                                                ;
+
+            sample->x = (sample->x > 10) ? sample->x : 0;
+            sample->y = (sample->y > 10) ? sample->y : 0;
+            sample->z = (sample->z > 10) ? sample->z : 0;
+        }
+    }
 }
 
+void featurize(features_t *features, accelWindow aWin)
+{
+    ;
+
+    accelReading mean;
+    accelReading stddev;
+
+    mean.x = mean.y = mean.z = 0;
+    stddev.x = stddev.y = stddev.z = 0;
+    int i;
+    for (i = 0; i < 3; i++) {
+        mean.x += aWin[i].x;
+        mean.y += aWin[i].y;
+        mean.z += aWin[i].z;
+    }
+
+
+
+
+
+    mean.x >>= 2;
+    mean.y >>= 2;
+    mean.z >>= 2;
+
+    for (i = 0; i < 3; i++) {
+        stddev.x += aWin[i].x > mean.x ? aWin[i].x - mean.x
+            : mean.x - aWin[i].x;
+        stddev.y += aWin[i].y > mean.y ? aWin[i].y - mean.y
+            : mean.y - aWin[i].y;
+        stddev.z += aWin[i].z > mean.z ? aWin[i].z - mean.z
+            : mean.z - aWin[i].z;
+    }
+
+
+
+
+
+    stddev.x >>= 2;
+    stddev.y >>= 2;
+    stddev.z >>= 2;
+
+    unsigned meanmag = mean.x*mean.x + mean.y*mean.y + mean.z*mean.z;
+    unsigned stddevmag = stddev.x*stddev.x + stddev.y*stddev.y + stddev.z*stddev.z;
+
+    features->meanmag = sqrt16(meanmag);
+    features->stddevmag = sqrt16(stddevmag);
+
+    ;
+}
+
+class_t classify(features_t *features, model_t *model)
+{
+    int move_less_error = 0;
+    int stat_less_error = 0;
+    features_t *model_features;
+    int i;
+
+    ;
+
+    for (i = 0; i < 16; ++i) {
+        model_features = &model->stationary[i];
+
+        long int stat_mean_err = (model_features->meanmag > features->meanmag)
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+
+        long int stat_sd_err = (model_features->stddevmag > features->stddevmag)
+            ? (model_features->stddevmag - features->stddevmag)
+            : (features->stddevmag - model_features->stddevmag);
+
+        model_features = &model->moving[i];
+
+        long int move_mean_err = (model_features->meanmag > features->meanmag)
+            ? (model_features->meanmag - features->meanmag)
+            : (features->meanmag - model_features->meanmag);
+
+        long int move_sd_err = (model_features->stddevmag > features->stddevmag)
+            ? (model_features->stddevmag - features->stddevmag)
+            : (features->stddevmag - model_features->stddevmag);
+
+        if (move_mean_err < stat_mean_err) {
+            move_less_error++;
+        } else {
+            stat_less_error++;
+        }
+
+        if (move_sd_err < stat_sd_err) {
+            move_less_error++;
+        } else {
+            stat_less_error++;
+        }
+    }
+
+    class_t class = move_less_error > stat_less_error ?
+                        CLASS_MOVING : CLASS_STATIONARY;
+    ;
+
+    return class;
+}
+
+void record_stats(stats_t *stats, class_t class)
+{
+    ;
+
+
+
+
+    stats->totalCount++;
+
+    switch (class) {
+        case CLASS_MOVING:
+            stats->movingCount++;
+            break;
+
+        case CLASS_STATIONARY:
+            stats->stationaryCount++;
+            break;
+    }
+
+   
+                                                                      ;
+}
+
+ unsigned resultStationaryPct;
+ unsigned resultMovingPct;
+ unsigned sum;
+
+void print_stats(stats_t *stats)
+{
+
+
+
+
+  resultStationaryPct = stats->stationaryCount * 100 / stats->totalCount;
+  resultMovingPct = stats->movingCount * 100 / stats->totalCount;
+  sum = stats->stationaryCount + stats->movingCount;
+
+   
+
+
+
+                                                                             ;
+
+
+
+    UART_WriteString("stats: s ");
+
+    UART_WriteNumber(stats->stationaryCount);
+
+    UART_WriteString(" (");
+
+    UART_WriteNumber(resultStationaryPct);
+
+    UART_WriteString("%) m ");
+
+    UART_WriteNumber(stats->movingCount);
+
+    UART_WriteString(" (");
+
+    UART_WriteNumber(resultMovingPct);
+
+    UART_WriteString("%)");
+
+    UART_WriteString(" sum/tot ");
+
+    UART_WriteNumber(stats->totalCount);
+
+    UART_WriteString("/");
+
+    UART_WriteNumber(sum);
+
+    if(sum == stats->totalCount && sum == 128)
+    UART_WriteString(" V");
+    else
+    UART_WriteString(" X");
+
+
+    UART_WriteString("\r\n");
+
+
+
+
+
+}
+
+void warmup_sensor(void)
+{
+    unsigned discardedSamplesCount = 0;
+    accelReading sample;
+
+    ;
+
+    ;
+
+    while (discardedSamplesCount++ < 3) {
+        ACCEL_singleSample(&sample);
+    }
+}
+
+void train(features_t *classModel)
+{
+    accelWindow sampleWindow;
+    features_t features;
+    unsigned i;
+
+    warmup_sensor();
+
+    for (i = 0; i < 16; ++i) {
+        acquire_window(sampleWindow);
+        transform(sampleWindow);
+        featurize(&features, sampleWindow);
+
+        ;
+
+        classModel[i] = features;
+    }
+
+   
+                                                ;
+
+    UART_WriteString("train: done: mn ");
+    UART_WriteNumber(features.meanmag);
+    UART_WriteString(" sd ");
+    UART_WriteNumber(features.stddevmag);
+    UART_WriteString("\r\n");
+
+
+
+
+}
+
+void recognize(model_t *model)
+{
+
+
+
+    stats_t stats;
+
+
+    accelWindow sampleWindow;
+    features_t features;
+    class_t class;
+    unsigned i;
+
+    stats.totalCount = 0;
+    stats.stationaryCount = 0;
+    stats.movingCount = 0;
+
+    for (i = 0; i < 128; ++i) {
+        acquire_window(sampleWindow);
+        transform(sampleWindow);
+        featurize(&features, sampleWindow);
+        class = classify(&features, model);
+        record_stats(&stats, class);
+    }
+    print_stats(&stats);
+}
+
+void end_of_benchmark(void)
+{
+    (*(volatile unsigned char *) 0x0090) = 0x00;
+    ;
+
+    UART_WriteString("This is the end of the AR benchmark\n\r");
+
+    exit(0);
+
+}
+
+void count_error(void)
+{
+    ;
+}
+
+
+run_mode_t select_mode(uint8_t *prev_pin_state)
+{
+    uint8_t pin_state;
+
+    ;
+
+    count = count + 1;
+# 475 "main.c"
+    switch(count) {
+        case 1:
+        case 2:
+            pin_state = MODE_TRAIN_MOVING;
+            break;
+        case 3:
+        case 4:
+            pin_state = MODE_TRAIN_STATIONARY;
+            break;
+        case 5:
+        case 6:
+            pin_state = MODE_RECOGNIZE;
+            break;
+        case 7:
+            end_of_benchmark();
+            break;
+        default:
+            pin_state = MODE_IDLE;
+            count_error();
+    }
+
+
+
+
+
+    if ((pin_state == MODE_TRAIN_STATIONARY ||
+        pin_state == MODE_TRAIN_MOVING) &&
+        pin_state == *prev_pin_state) {
+        pin_state = MODE_IDLE;
+    } else {
+        *prev_pin_state = pin_state;
+    }
+
+    ;
+
+    return (run_mode_t)pin_state;
+}
 
 void init()
 {
-     (*(volatile unsigned int *) 0x0120) = (0x5A00) | (0x0080);
-    __asm__ __volatile__ ("nop");
-     __asm__ __volatile__ ("eint { nop");
-   (*(volatile unsigned int *) 0x0082) = 8;
-     (*(volatile unsigned char *) 0x0080) = 0x01;
+    (*(volatile unsigned int *) 0x0120) = (0x5A00) | (0x0080);
+   __asm__ __volatile__ ("nop");
+    __asm__ __volatile__ ("eint { nop");
+  (*(volatile unsigned int *) 0x0082) = 8;
+    (*(volatile unsigned char *) 0x0080) = 0x01;
+
+    (*(volatile unsigned int *) 0x02A0) = 0x01;
+
+
+
+
+
 
 
 }
+void init_moving (void){
 
+   model.moving[0].meanmag = 36;
+   model.moving[0].stddevmag = 30;
 
+   model.moving[1].meanmag = 56;
+   model.moving[1].stddevmag = 22;
+
+   model.moving[2].meanmag = 40;
+   model.moving[2].stddevmag = 30;
+
+   model.moving[3].meanmag = 48;
+   model.moving[3].stddevmag = 30;
+
+   model.moving[4].meanmag = 54;
+   model.moving[4].stddevmag = 20;
+
+   model.moving[5].meanmag = 50;
+   model.moving[5].stddevmag = 34;
+
+   model.moving[6].meanmag = 56;
+   model.moving[6].stddevmag = 22;
+
+   model.moving[7].meanmag = 58;
+   model.moving[7].stddevmag = 24;
+
+   model.moving[8].meanmag = 46;
+   model.moving[8].stddevmag = 30;
+
+   model.moving[9].meanmag = 52;
+   model.moving[9].stddevmag = 20;
+
+   model.moving[10].meanmag = 50;
+   model.moving[10].stddevmag = 34;
+
+   model.moving[11].meanmag = 56;
+   model.moving[11].stddevmag = 22;
+
+   model.moving[12].meanmag = 56;
+   model.moving[12].stddevmag = 24;
+
+   model.moving[13].meanmag = 46;
+   model.moving[13].stddevmag = 30;
+
+   model.moving[14].meanmag = 52;
+   model.moving[14].stddevmag = 20;
+
+   model.moving[15].meanmag = 50;
+   model.moving[15].stddevmag = 34;
+}
+void init_stationary(void){
+
+      model.stationary[0].meanmag = 56;
+      model.stationary[0].stddevmag = 24;
+
+      model.stationary[1].meanmag = 46;
+      model.stationary[1].stddevmag = 30;
+
+      model.stationary[2].meanmag = 52;
+      model.stationary[2].stddevmag = 20;
+
+      model.stationary[3].meanmag = 50;
+      model.stationary[3].stddevmag = 34;
+
+      model.stationary[4].meanmag = 56;
+      model.stationary[4].stddevmag = 22;
+
+      model.stationary[5].meanmag = 54;
+      model.stationary[5].stddevmag = 24;
+
+      model.stationary[6].meanmag = 46;
+      model.stationary[6].stddevmag = 30;
+
+      model.stationary[7].meanmag = 52;
+      model.stationary[7].stddevmag = 20;
+
+      model.stationary[8].meanmag = 48;
+      model.stationary[8].stddevmag = 34;
+
+      model.stationary[9].meanmag = 56;
+      model.stationary[9].stddevmag = 22;
+
+      model.stationary[10].meanmag = 54;
+      model.stationary[10].stddevmag = 24;
+
+      model.stationary[11].meanmag = 44;
+      model.stationary[11].stddevmag = 30;
+
+      model.stationary[12].meanmag = 50;
+      model.stationary[12].stddevmag = 20;
+
+      model.stationary[13].meanmag = 48;
+      model.stationary[13].stddevmag = 34;
+
+      model.stationary[14].meanmag = 54;
+      model.stationary[14].stddevmag = 22;
+
+      model.stationary[15].meanmag = 52;
+      model.stationary[15].stddevmag = 24;
+
+}
 
 int main()
 {
- init();
- while(1);
-     ta_wait(9980);
 
 
- uint32_t seed;
- unsigned iter;
- unsigned func;
+    uint8_t prev_pin_state = MODE_IDLE;
 
 
 
- while(1){
-
- (*(volatile unsigned char *) 0x0090) ^= 0x0F;
 
 
+    init();
+    ta_wait(4980);
 
- n_0=0;
- n_1=0;
- n_2=0;
- n_3=0;
- n_4=0;
- n_5=0;
- n_6=0;
-
-
-
- for (func = 0; func < 7; func++) {
-
-  seed = (uint32_t)4;
-  if(func == 0){
-   for(iter = 0; iter < 100; ++iter, seed += 13){
-
-    n_0 += bit_count(seed);
-   }
-  }
-  else if(func == 1){
-   for(iter = 0; iter < 100; ++iter, seed += 13){
-
-    n_1 += bitcount(seed);
-   }
-  }
-  else if(func == 2){
-   for(iter = 0; iter < 100; ++iter, seed += 13){
-
-    n_2 += ntbl_bitcnt(seed);
-   }
-  }
-  else if(func == 3){
-   for(iter = 0; iter < 100; ++iter, seed += 13){
-
-    n_3 += ntbl_bitcount(seed);
-   }
-  }
-  else if(func == 4){
-   for(iter = 0; iter < 100; ++iter, seed += 13){
-
-    n_4 += BW_btbl_bitcount(seed);
-   }
-  }
-  else if(func == 5){
-   for(iter = 0; iter < 100; ++iter, seed += 13){
-
-    n_5 += AR_btbl_bitcount(seed);
-   }
-  }
-  else if(func == 6){
-   for(iter = 0; iter < 100; ++iter, seed += 13){
-
-    n_6 += bit_shifter(seed);
-   }
-  }
- }
+    count = 1;
+    (*(volatile unsigned char *) 0x0090) = 0xFF;
+    while (1)
+    {
+        run_mode_t mode = select_mode(&prev_pin_state);
 
 
- UART_WriteString("Benchmark Complete! \r\n");
- UART_WriteNumber(n_0);
- UART_WriteString("\r\n");
- UART_WriteNumber(n_1);
- UART_WriteString("\r\n");
- UART_WriteNumber(n_2);
- UART_WriteString("\r\n");
- UART_WriteNumber(n_3);
- UART_WriteString("\r\n");
- UART_WriteNumber(n_4);
- UART_WriteString("\r\n");
- UART_WriteNumber(n_5);
- UART_WriteString("\r\n");
- UART_WriteNumber(n_6);
- UART_WriteString("\r\n");
-
-
- }
-
+        switch (mode) {
+            case MODE_TRAIN_STATIONARY:
+                ;
+                train(model.stationary);
+                break;
+            case MODE_TRAIN_MOVING:
+                ;
+                train(model.moving);
+                break;
+            case MODE_RECOGNIZE:
+                ;
+                recognize(&model);
+                break;
+            default:
+                ;
+                break;
+        }
+    }
+    return 0;
 }

@@ -216,6 +216,22 @@ wire       [15:0] omsp_dmem600A = dut.dmem_0.altsyncram_component.mem_data[4101]
 wire       [15:0] omsp_dmem600C = dut.dmem_0.altsyncram_component.mem_data[4102];
 wire       [15:0] omsp_dmem600E = dut.dmem_0.altsyncram_component.mem_data[4103];
 
+
+wire       [15:0] omsp_dmem6075 = dut.dmem_0.altsyncram_component.mem_data[4154];
+wire       [15:0] omsp_dmem6076 = dut.dmem_0.altsyncram_component.mem_data[4155];
+wire       [15:0] omsp_dmem6078 = dut.dmem_0.altsyncram_component.mem_data[4156];
+
+
+wire       [15:0] omsp_dmem7FAE = dut.dmem_0.altsyncram_component.mem_data[8151];
+wire       [15:0] omsp_dmem7FB0 = dut.dmem_0.altsyncram_component.mem_data[8152];
+wire       [15:0] omsp_dmem7FB2 = dut.dmem_0.altsyncram_component.mem_data[8153];
+wire       [15:0] omsp_dmem7FB4 = dut.dmem_0.altsyncram_component.mem_data[8154];
+wire       [15:0] omsp_dmem7FB6 = dut.dmem_0.altsyncram_component.mem_data[8155];
+wire       [15:0] omsp_dmem7FB8 = dut.dmem_0.altsyncram_component.mem_data[8156];
+wire       [15:0] omsp_dmem7FBA = dut.dmem_0.altsyncram_component.mem_data[8157];
+wire       [15:0] omsp_dmem7FBC = dut.dmem_0.altsyncram_component.mem_data[8158];
+wire       [15:0] omsp_dmem7FBE = dut.dmem_0.altsyncram_component.mem_data[8159];
+
 wire       [15:0] omsp_dmem7FC0 = dut.dmem_0.altsyncram_component.mem_data[8160];
 wire       [15:0] omsp_dmem7FC2 = dut.dmem_0.altsyncram_component.mem_data[8161];
 wire       [15:0] omsp_dmem7FC4 = dut.dmem_0.altsyncram_component.mem_data[8162];
@@ -253,6 +269,71 @@ wire       [15:0] omsp_dmem7FF8 = dut.dmem_0.altsyncram_component.mem_data[8188]
 wire       [15:0] omsp_dmem7FFA = dut.dmem_0.altsyncram_component.mem_data[8189];
 wire       [15:0] omsp_dmem7FFC = dut.dmem_0.altsyncram_component.mem_data[8190];
 wire       [15:0] omsp_dmem7FFE = dut.dmem_0.altsyncram_component.mem_data[8191];
+
+
+wire       [15:0] omsp_dmem6FAE = dut.dmem_0.altsyncram_component.mem_data[6103];
+wire       [15:0] omsp_dmem6FB0 = dut.dmem_0.altsyncram_component.mem_data[6104];
+wire       [15:0] omsp_dmem6FB2 = dut.dmem_0.altsyncram_component.mem_data[6105];
+wire       [15:0] omsp_dmem6FB4 = dut.dmem_0.altsyncram_component.mem_data[6106];
+wire       [15:0] omsp_dmem6FB6 = dut.dmem_0.altsyncram_component.mem_data[6107];
+wire       [15:0] omsp_dmem6FB8 = dut.dmem_0.altsyncram_component.mem_data[6108];
+wire       [15:0] omsp_dmem6FBA = dut.dmem_0.altsyncram_component.mem_data[6109];
+wire       [15:0] omsp_dmem6FBC = dut.dmem_0.altsyncram_component.mem_data[6110];
+wire       [15:0] omsp_dmem6FBE = dut.dmem_0.altsyncram_component.mem_data[6111];
+wire       [15:0] omsp_dmem6FC0 = dut.dmem_0.altsyncram_component.mem_data[6112];
+wire       [15:0] omsp_dmem6FC2 = dut.dmem_0.altsyncram_component.mem_data[6113];
+wire       [15:0] omsp_dmem6FC4 = dut.dmem_0.altsyncram_component.mem_data[6114];
+wire       [15:0] omsp_dmem6FC6 = dut.dmem_0.altsyncram_component.mem_data[6115];
+wire       [15:0] omsp_dmem6FC8 = dut.dmem_0.altsyncram_component.mem_data[6116];
+wire       [15:0] omsp_dmem6FCA = dut.dmem_0.altsyncram_component.mem_data[6117];
+wire       [15:0] omsp_dmem6FCC = dut.dmem_0.altsyncram_component.mem_data[6118];
+wire       [15:0] omsp_dmem6FCE = dut.dmem_0.altsyncram_component.mem_data[6119];
+wire       [15:0] omsp_dmem6FD0 = dut.dmem_0.altsyncram_component.mem_data[6120];
+wire       [15:0] omsp_dmem6FD2 = dut.dmem_0.altsyncram_component.mem_data[6121];
+wire       [15:0] omsp_dmem6FD4 = dut.dmem_0.altsyncram_component.mem_data[6122];
+wire       [15:0] omsp_dmem6FD6 = dut.dmem_0.altsyncram_component.mem_data[6123];
+wire       [15:0] omsp_dmem6FD8 = dut.dmem_0.altsyncram_component.mem_data[6124];
+wire       [15:0] omsp_dmem6FDA = dut.dmem_0.altsyncram_component.mem_data[6125];
+wire       [15:0] omsp_dmem6FDC = dut.dmem_0.altsyncram_component.mem_data[6126];
+wire       [15:0] omsp_dmem6FDE = dut.dmem_0.altsyncram_component.mem_data[6127];
+wire       [15:0] omsp_dmem6FE0 = dut.dmem_0.altsyncram_component.mem_data[6128];
+wire       [15:0] omsp_dmem6FE2 = dut.dmem_0.altsyncram_component.mem_data[6129];
+wire       [15:0] omsp_dmem6FE4 = dut.dmem_0.altsyncram_component.mem_data[6130];
+wire       [15:0] omsp_dmem6FE6 = dut.dmem_0.altsyncram_component.mem_data[6131];
+wire       [15:0] omsp_dmem6FE8 = dut.dmem_0.altsyncram_component.mem_data[6132];
+wire       [15:0] omsp_dmem6FEA = dut.dmem_0.altsyncram_component.mem_data[6133];
+wire       [15:0] omsp_dmem6FEC = dut.dmem_0.altsyncram_component.mem_data[6134];
+wire       [15:0] omsp_dmem6FEE = dut.dmem_0.altsyncram_component.mem_data[6135];
+wire       [15:0] omsp_dmem6FF0 = dut.dmem_0.altsyncram_component.mem_data[6136];
+wire       [15:0] omsp_dmem6FF2 = dut.dmem_0.altsyncram_component.mem_data[6137];
+wire       [15:0] omsp_dmem6FF4 = dut.dmem_0.altsyncram_component.mem_data[6138];
+wire       [15:0] omsp_dmem6FF6 = dut.dmem_0.altsyncram_component.mem_data[6139];
+wire       [15:0] omsp_dmem6FF8 = dut.dmem_0.altsyncram_component.mem_data[6140];
+wire       [15:0] omsp_dmem6FFA = dut.dmem_0.altsyncram_component.mem_data[6141];
+wire       [15:0] omsp_dmem6FFC = dut.dmem_0.altsyncram_component.mem_data[6142];
+wire       [15:0] omsp_dmem6FFE = dut.dmem_0.altsyncram_component.mem_data[6143];
+wire       [15:0] omsp_dmem7000 = dut.dmem_0.altsyncram_component.mem_data[6144];
+
+
+
+wire       [15:0] omsp_dmem6BE0 = dut.dmem_0.altsyncram_component.mem_data[5616];
+wire       [15:0] omsp_dmem6BE2 = dut.dmem_0.altsyncram_component.mem_data[5617];
+wire       [15:0] omsp_dmem6BE4 = dut.dmem_0.altsyncram_component.mem_data[5618];
+wire       [15:0] omsp_dmem6BE6 = dut.dmem_0.altsyncram_component.mem_data[5619];
+wire       [15:0] omsp_dmem6BE8 = dut.dmem_0.altsyncram_component.mem_data[5620];
+wire       [15:0] omsp_dmem6BEA = dut.dmem_0.altsyncram_component.mem_data[5621];
+wire       [15:0] omsp_dmem6BEC = dut.dmem_0.altsyncram_component.mem_data[5622];
+wire       [15:0] omsp_dmem6BEE = dut.dmem_0.altsyncram_component.mem_data[5623];
+wire       [15:0] omsp_dmem6BF0 = dut.dmem_0.altsyncram_component.mem_data[5624];
+wire       [15:0] omsp_dmem6BF2 = dut.dmem_0.altsyncram_component.mem_data[5625];
+wire       [15:0] omsp_dmem6BF4 = dut.dmem_0.altsyncram_component.mem_data[5626];
+wire       [15:0] omsp_dmem6BF6 = dut.dmem_0.altsyncram_component.mem_data[5627];
+wire       [15:0] omsp_dmem6BF8 = dut.dmem_0.altsyncram_component.mem_data[5628];
+wire       [15:0] omsp_dmem6BFA = dut.dmem_0.altsyncram_component.mem_data[5629];
+wire       [15:0] omsp_dmem6BFC = dut.dmem_0.altsyncram_component.mem_data[5630];
+wire       [15:0] omsp_dmem6BFE = dut.dmem_0.altsyncram_component.mem_data[5631];
+wire       [15:0] omsp_dmem6BFF = dut.dmem_0.altsyncram_component.mem_data[5632];
+
 
 // Program Memory cells
 //======================

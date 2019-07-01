@@ -681,7 +681,7 @@ void ta_wait_no_lpm(unsigned int time_cnt) {
 
 
 
-unsigned int periodic_val = 9980;
+unsigned int periodic_val;
 
 void ta_wait(unsigned int time_cnt) {
 

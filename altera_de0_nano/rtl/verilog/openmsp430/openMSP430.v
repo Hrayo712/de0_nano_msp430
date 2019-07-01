@@ -79,6 +79,16 @@ module  openMSP430 (
     smclk_en,                                // FPGA ONLY: SMCLK enable
 	 dbg_mem_en_out,
 	 mb_rd_msk,
+
+	sp_val,
+	sp_wr_out,  
+	sp_inc_out,
+	sp_dec_out,
+	sp_wr_val,
+	sp_inc_val,
+	pc_out,
+   irq_detect,
+	inst_pc,
 // INPUTs
     cpu_en,                                  // Enable CPU code execution (asynchronous and non-glitchy)
     dbg_en,                                  // Debug interface enable (asynchronous and non-glitchy)
@@ -144,6 +154,17 @@ output               smclk;                  // ASIC ONLY: SMCLK
 output               smclk_en;               // FPGA ONLY: SMCLK enable
 output					dbg_mem_en_out;
 output          [1:0] mb_rd_msk;
+
+
+output [15:0] sp_val;
+output sp_wr_out;   
+output sp_inc_out; 
+output sp_dec_out;  
+output [15:0] sp_wr_val;
+output [15:0] sp_inc_val;
+output [15:0] pc_out;
+output irq_detect;
+output [15:0] inst_pc;
 // INPUTs
 //============
 input                cpu_en;                 // Enable CPU code execution (asynchronous and non-glitchy)
@@ -265,6 +286,28 @@ wire [1:0]eu_mb_rd_msk;
 
 assign dbg_mem_en_out = dbg_mem_en;
 assign mb_rd_msk = eu_mb_rd_msk;
+
+
+wire [15:0] reg_sp; 			   
+wire eu_sp_wr 	;		  
+wire eu_sp_inc ;		  
+wire eu_sp_dec ;		  
+wire [15:0] eu_wr_sp_val ;	  
+wire [15:0] eu_inc_sp_val ;	  
+wire irq_detect_out;
+wire [15:0] inst_pc_out;
+
+assign sp_val	    = reg_sp;
+assign sp_wr_out   = eu_sp_wr;
+assign sp_inc_out  = eu_sp_inc;
+assign sp_dec_out  = eu_sp_dec;
+assign sp_wr_val   = eu_wr_sp_val;
+assign sp_inc_val  = eu_inc_sp_val;
+
+assign pc_out		 = pc;
+assign inst_pc_nxt_out  = pc_nxt;
+assign irq_detect  = irq_detect_out;
+assign inst_pc		 = inst_pc_out;
 //=============================================================================
 // 2)  GLOBAL CLOCK & RESET MANAGEMENT
 //=============================================================================
@@ -352,7 +395,8 @@ omsp_frontend frontend_0 (
     .nmi_acc           (nmi_acc),            // Non-Maskable interrupt request accepted
     .pc                (pc),                 // Program counter
     .pc_nxt            (pc_nxt),             // Next PC value (for CALL & IRQ)
-
+	 .irq_detect_out    (irq_detect_out),
+	 .inst_pc_out	     (inst_pc_out),
 // INPUTs
     .cpu_en_s          (cpu_en_s),           // Enable CPU code execution (synchronous)
     .cpu_halt_cmd      (cpu_halt_cmd),       // Halt CPU command
@@ -396,6 +440,13 @@ omsp_execution_unit execution_unit_0 (
     .scg0              (scg0),               // System clock generator 1. Turns off the DCO
     .scg1              (scg1),               // System clock generator 1. Turns off the SMCLK
 	 .mb_rd_msk 		  (eu_mb_rd_msk),
+	 .reg_sp 			  (reg_sp),
+	 .eu_sp_wr 			  (eu_sp_wr),
+	 .eu_sp_inc 		  (eu_sp_inc),
+	 .eu_sp_dec 		  (eu_sp_dec),
+	 .eu_wr_sp_val 	  (eu_wr_sp_val),
+	 .eu_inc_sp_val 	  (eu_inc_sp_val),
+	 
 // INPUTs
     .dbg_halt_st       (cpu_halt_st),        // Halt/Run status from CPU
     .dbg_mem_dout      (dbg_mem_dout),       // Debug unit data output

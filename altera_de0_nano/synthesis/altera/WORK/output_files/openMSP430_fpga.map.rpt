@@ -1,5 +1,5 @@
 Analysis & Synthesis report for openMSP430_fpga
-Wed Jun 12 04:00:45 2019
+Mon Jul  1 02:26:09 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -80,15 +80,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jun 12 04:00:45 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon Jul  1 02:26:09 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; openMSP430_fpga                             ;
 ; Top-level Entity Name              ; openMSP430_fpga                             ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4,827                                       ;
-;     Total combinational functions  ; 4,161                                       ;
-;     Dedicated logic registers      ; 1,857                                       ;
-; Total registers                    ; 1857                                        ;
+; Total logic elements               ; 5,200                                       ;
+;     Total combinational functions  ; 4,509                                       ;
+;     Dedicated logic registers      ; 2,012                                       ;
+; Total registers                    ; 2012                                        ;
 ; Total pins                         ; 22                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 393,216                                     ;
@@ -245,20 +245,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------+
 ; Resource                                    ; Usage   ;
 +---------------------------------------------+---------+
-; Estimated Total logic elements              ; 4,827   ;
+; Estimated Total logic elements              ; 5,200   ;
 ;                                             ;         ;
-; Total combinational functions               ; 4161    ;
+; Total combinational functions               ; 4509    ;
 ; Logic element usage by number of LUT inputs ;         ;
-;     -- 4 input functions                    ; 2798    ;
-;     -- 3 input functions                    ; 866     ;
-;     -- <=2 input functions                  ; 497     ;
+;     -- 4 input functions                    ; 2801    ;
+;     -- 3 input functions                    ; 1200    ;
+;     -- <=2 input functions                  ; 508     ;
 ;                                             ;         ;
 ; Logic elements by mode                      ;         ;
-;     -- normal mode                          ; 3774    ;
-;     -- arithmetic mode                      ; 387     ;
+;     -- normal mode                          ; 3976    ;
+;     -- arithmetic mode                      ; 533     ;
 ;                                             ;         ;
-; Total registers                             ; 1857    ;
-;     -- Dedicated logic registers            ; 1857    ;
+; Total registers                             ; 2012    ;
+;     -- Dedicated logic registers            ; 2012    ;
 ;     -- I/O registers                        ; 0       ;
 ;                                             ;         ;
 ; I/O pins                                    ; 22      ;
@@ -270,9 +270,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1       ;
 ;                                             ;         ;
 ; Maximum fan-out node                        ; dco_clk ;
-; Maximum fan-out                             ; 1901    ;
-; Total fan-out                               ; 22438   ;
-; Average fan-out                             ; 3.67    ;
+; Maximum fan-out                             ; 2056    ;
+; Total fan-out                               ; 24123   ;
+; Average fan-out                             ; 3.65    ;
 +---------------------------------------------+---------+
 
 
@@ -281,40 +281,40 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
 ; Compilation Hierarchy Node                                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                  ; Entity Name                  ; Library Name ;
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
-; |openMSP430_fpga                                            ; 4161 (13)           ; 1857 (17)                 ; 393216      ; 2            ; 0       ; 1         ; 22   ; 0            ; |openMSP430_fpga                                                                                                     ; openMSP430_fpga              ; work         ;
-;    |omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0| ; 186 (24)            ; 164 (32)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0                                              ; omsp_de0_nano_soc_led_key_sw ; work         ;
+; |openMSP430_fpga                                            ; 4509 (14)           ; 2012 (17)                 ; 393216      ; 2            ; 0       ; 1         ; 22   ; 0            ; |openMSP430_fpga                                                                                                     ; openMSP430_fpga              ; work         ;
+;    |omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0| ; 184 (22)            ; 164 (32)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0                                              ; omsp_de0_nano_soc_led_key_sw ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_key0|        ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key0 ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_key1|        ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key1 ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_sw0|         ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw0  ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_sw1|         ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw1  ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_sw2|         ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw2  ; sync_debouncer_10ms          ; work         ;
 ;       |sync_debouncer_10ms:sync_debouncer_10ms_sw3|         ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_sw3  ; sync_debouncer_10ms          ; work         ;
-;    |omsp_qwark_periph:qwark_periph_0|                       ; 1011 (214)          ; 750 (149)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0                                                                    ; omsp_qwark_periph            ; work         ;
-;       |omsp_qwark:qwark_0|                                  ; 797 (797)           ; 601 (601)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0                                                 ; omsp_qwark                   ; work         ;
+;    |omsp_qwark_periph:qwark_periph_0|                       ; 1309 (302)          ; 889 (230)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0                                                                    ; omsp_qwark_periph            ; work         ;
+;       |omsp_qwark:qwark_0|                                  ; 1007 (1007)         ; 659 (659)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0                                                 ; omsp_qwark                   ; work         ;
 ;    |omsp_timerA:timerA_0|                                   ; 291 (291)           ; 136 (130)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0                                                                                ; omsp_timerA                  ; work         ;
 ;       |omsp_sync_cell:sync_cell_cci0|                       ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci0                                                  ; omsp_sync_cell               ; work         ;
 ;       |omsp_sync_cell:sync_cell_cci1|                       ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci1                                                  ; omsp_sync_cell               ; work         ;
 ;       |omsp_sync_cell:sync_cell_cci2|                       ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_cci2                                                  ; omsp_sync_cell               ; work         ;
-;    |omsp_uart:uart_0|                                       ; 161 (161)           ; 106 (104)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_uart:uart_0                                                                                    ; omsp_uart                    ; work         ;
+;    |omsp_uart:uart_0|                                       ; 164 (164)           ; 106 (104)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_uart:uart_0                                                                                    ; omsp_uart                    ; work         ;
 ;       |omsp_sync_cell:sync_cell_uart_rxd|                   ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|omsp_uart:uart_0|omsp_sync_cell:sync_cell_uart_rxd                                                  ; omsp_sync_cell               ; work         ;
-;    |openMSP430:openmsp430_0|                                ; 2481 (312)          ; 683 (0)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0                                                                             ; openMSP430                   ; work         ;
-;       |omsp_clock_module:clock_module_0|                    ; 23 (23)             ; 21 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0                                            ; omsp_clock_module            ; work         ;
+;    |openMSP430:openmsp430_0|                                ; 2529 (360)          ; 699 (0)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0                                                                             ; openMSP430                   ; work         ;
+;       |omsp_clock_module:clock_module_0|                    ; 25 (25)             ; 21 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0                                            ; omsp_clock_module            ; work         ;
 ;          |omsp_sync_cell:sync_cell_lfxt_clk|                ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_lfxt_clk          ; omsp_sync_cell               ; work         ;
 ;          |omsp_sync_cell:sync_cell_puc|                     ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_puc               ; omsp_sync_cell               ; work         ;
 ;          |omsp_sync_reset:sync_reset_por|                   ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por             ; omsp_sync_reset              ; work         ;
-;       |omsp_dbg:dbg_0|                                      ; 337 (196)           ; 148 (69)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0                                                              ; omsp_dbg                     ; work         ;
+;       |omsp_dbg:dbg_0|                                      ; 339 (198)           ; 148 (69)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0                                                              ; omsp_dbg                     ; work         ;
 ;          |omsp_dbg_uart:dbg_uart_0|                         ; 141 (140)           ; 79 (77)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0                                     ; omsp_dbg_uart                ; work         ;
 ;             |omsp_sync_cell:sync_cell_uart_rxd|             ; 1 (1)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|omsp_sync_cell:sync_cell_uart_rxd   ; omsp_sync_cell               ; work         ;
-;       |omsp_execution_unit:execution_unit_0|                ; 1151 (233)          ; 266 (35)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0                                        ; omsp_execution_unit          ; work         ;
-;          |omsp_alu:alu_0|                                   ; 262 (262)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0                         ; omsp_alu                     ; work         ;
-;          |omsp_register_file:register_file_0|               ; 656 (656)           ; 231 (231)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0     ; omsp_register_file           ; work         ;
-;       |omsp_frontend:frontend_0|                            ; 316 (316)           ; 116 (116)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0                                                    ; omsp_frontend                ; work         ;
-;       |omsp_mem_backbone:mem_backbone_0|                    ; 145 (145)           ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0                                            ; omsp_mem_backbone            ; work         ;
-;       |omsp_multiplier:multiplier_0|                        ; 138 (138)           ; 70 (70)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0                                                ; omsp_multiplier              ; work         ;
+;       |omsp_execution_unit:execution_unit_0|                ; 1153 (228)          ; 266 (35)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0                                        ; omsp_execution_unit          ; work         ;
+;          |omsp_alu:alu_0|                                   ; 272 (272)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0                         ; omsp_alu                     ; work         ;
+;          |omsp_register_file:register_file_0|               ; 653 (653)           ; 231 (231)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0     ; omsp_register_file           ; work         ;
+;       |omsp_frontend:frontend_0|                            ; 317 (317)           ; 132 (132)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0                                                    ; omsp_frontend                ; work         ;
+;       |omsp_mem_backbone:mem_backbone_0|                    ; 137 (137)           ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0                                            ; omsp_mem_backbone            ; work         ;
+;       |omsp_multiplier:multiplier_0|                        ; 139 (139)           ; 70 (70)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0                                                ; omsp_multiplier              ; work         ;
 ;          |lpm_mult:Mult0|                                   ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0                                 ; lpm_mult                     ; work         ;
 ;             |mult_p4t:auto_generated|                       ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0|mult_p4t:auto_generated         ; mult_p4t                     ; work         ;
-;       |omsp_sfr:sfr_0|                                      ; 6 (6)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_sfr:sfr_0                                                              ; omsp_sfr                     ; work         ;
-;       |omsp_watchdog:watchdog_0|                            ; 53 (53)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0                                                    ; omsp_watchdog                ; work         ;
+;       |omsp_sfr:sfr_0|                                      ; 7 (7)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_sfr:sfr_0                                                              ; omsp_sfr                     ; work         ;
+;       |omsp_watchdog:watchdog_0|                            ; 52 (52)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0                                                    ; omsp_watchdog                ; work         ;
 ;    |pll:pll_0|                                              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|pll:pll_0                                                                                           ; pll                          ; work         ;
 ;       |altpll:altpll_component|                             ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|pll:pll_0|altpll:altpll_component                                                                   ; altpll                       ; work         ;
 ;          |pll_altpll:auto_generated|                        ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |openMSP430_fpga|pll:pll_0|altpll:altpll_component|pll_altpll:auto_generated                                         ; pll_altpll                   ; work         ;
@@ -425,12 +425,9 @@ Encoding Type:  One-Hot
 ; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[1]                                            ; Stuck at GND due to stuck port data_in                                       ;
 ; omsp_timerA:timerA_0|taclk_dly                                                                              ; Lost fanout                                                                  ;
 ; omsp_timerA:timerA_0|inclk_dly                                                                              ; Lost fanout                                                                  ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|tlb_buff_busy_writing[14]                               ; Stuck at VCC due to stuck port data_in                                       ;
 ; openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_src_bin[3]                                            ; Merged with openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_jmp_bin[1] ;
 ; openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_src_bin[2]                                            ; Merged with openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_jmp_bin[0] ;
 ; openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r1[0]       ; Stuck at GND due to stuck port data_in                                       ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_busy_writing[14]                                ; Stuck at VCC due to stuck port data_in                                       ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_busy_writing[14]                                ; Stuck at VCC due to stuck port data_in                                       ;
 ; openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_state~4                                                          ; Lost fanout                                                                  ;
 ; openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_state~5                                                          ; Lost fanout                                                                  ;
 ; openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|uart_state~4                                ; Lost fanout                                                                  ;
@@ -439,22 +436,20 @@ Encoding Type:  One-Hot
 ; openMSP430:openmsp430_0|omsp_frontend:frontend_0|i_state~4                                                  ; Lost fanout                                                                  ;
 ; openMSP430:openmsp430_0|omsp_frontend:frontend_0|i_state~5                                                  ; Lost fanout                                                                  ;
 ; openMSP430:openmsp430_0|omsp_frontend:frontend_0|i_state~6                                                  ; Lost fanout                                                                  ;
-; Total Number of Removed Registers = 64                                                                      ;                                                                              ;
+; Total Number of Removed Registers = 61                                                                      ;                                                                              ;
 +-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                             ;
-+------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------+
-; Register name                                                                ; Reason for Removal        ; Registers Removed due to This Register                                       ;
-+------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------+
-; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[0]             ; Stuck at GND              ; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[1],            ;
-;                                                                              ; due to stuck port data_in ; omsp_timerA:timerA_0|taclk_dly, omsp_timerA:timerA_0|inclk_dly               ;
-; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[0]             ; Stuck at GND              ; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[1]             ;
-;                                                                              ; due to stuck port data_in ;                                                                              ;
-; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_busy_writing[14] ; Stuck at VCC              ; omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_busy_writing[14] ;
-;                                                                              ; due to stuck port data_in ;                                                                              ;
-+------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                      ;
++------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------+
+; Register name                                                    ; Reason for Removal        ; Registers Removed due to This Register                            ;
++------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------+
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[0] ; Stuck at GND              ; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_inclk|data_sync[1], ;
+;                                                                  ; due to stuck port data_in ; omsp_timerA:timerA_0|taclk_dly, omsp_timerA:timerA_0|inclk_dly    ;
+; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[0] ; Stuck at GND              ; omsp_timerA:timerA_0|omsp_sync_cell:sync_cell_taclk|data_sync[1]  ;
+;                                                                  ; due to stuck port data_in ;                                                                   ;
++------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -462,12 +457,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1857  ;
-; Number of registers using Synchronous Clear  ; 150   ;
-; Number of registers using Synchronous Load   ; 132   ;
-; Number of registers using Asynchronous Clear ; 1259  ;
+; Total registers                              ; 2012  ;
+; Number of registers using Synchronous Clear  ; 218   ;
+; Number of registers using Synchronous Load   ; 148   ;
+; Number of registers using Asynchronous Clear ; 1356  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1405  ;
+; Number of registers using Clock Enable       ; 1552  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -523,120 +518,128 @@ Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r2[7]          ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_buf[0]                                    ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_buf[13]                                   ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0|wdtcnt[0]                                                     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr0[0]                                                                                 ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr1[10]                                                                                ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr2[14]                                                                                ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl1[4]                                                                     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r4[7]          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r5[2]          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r6[4]          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r7[7]          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r8[7]          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r9[15]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r10[3]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r11[9]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r12[2]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r13[10]        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r14[7]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r15[7]         ;
-; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|read_address[2]                                            ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_cmp_sync[2]                                             ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_out_nxt[13]                                   ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|clk_div[1]                                                                                ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl2[10]                                                                    ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl3[4]                                                                     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl4[5]                                                                     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl5[4]                                                                     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl6[15]                                                                    ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl7[2]                                                                     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl8[5]                                                                     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl9[15]                                                                    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|sumext_s[0]                                               ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |openMSP430_fpga|omsp_uart:uart_0|rxfer_buf[2]                                                                                  ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_busy_writing[0]                                    ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_busy_writing[7]                                    ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_bit[1]                                    ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_sext[6]                                                  ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r1[6]          ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_ctr[2]                                             ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_ctr[4]                                             ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|war_ctr[0]                                                 ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_cnt[12]                                   ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|tar[12]                                                                                   ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[28]                                                ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[33]                                                ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[61]                                                ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[78]                                                ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[89]                                                ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[97]                                                ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[112]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[136]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[156]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[167]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[189]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[205]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[214]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[233]                                               ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[240]                                               ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reslo[6]                                                  ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reshi[14]                                                 ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[22]                                                ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[34]                                                ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[61]                                                ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[78]                                                ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[86]                                                ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[100]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[113]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[142]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[153]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[168]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[178]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[193]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[221]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[236]                                               ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[240]                                               ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[8]                                                 ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[10]                                                ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[11]                                                            ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |openMSP430_fpga|omsp_uart:uart_0|txfer_bit[1]                                                                                  ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |openMSP430_fpga|omsp_uart:uart_0|txfer_cnt[14]                                                                                 ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl1[10]                                                                    ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |openMSP430_fpga|omsp_uart:uart_0|rxfer_bit[3]                                                                                  ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |openMSP430_fpga|omsp_uart:uart_0|rxfer_cnt[5]                                                                                  ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[6]                                                             ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|omsp_uart:uart_0|txfer_buf[2]                                                                                  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|dbg_mem_dout[13]                                                        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|eu_mdb_in[15]                                         ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[4]                     ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[10]                                               ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|pmem_addr[0]                                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|dbg_mem_din[12]                                       ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|mab[0]                                                        ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|mab[4]                                                        ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_dest[5]                                                  ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_in_bw[3]                                      ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[8]                                                ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[3]                     ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[7]                     ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[11]                    ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[15]                    ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 45 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|op_dst[2]                                         ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[5]                                                ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[3]                                                ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|addr_out[12]                                                                  ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|addr_out[0]                                                                   ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|inst_src_in[5] ;
-; 7:1                ; 16 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|op_src[7]                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r2[3]           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_buf[9]                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_buf[5]                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_watchdog:watchdog_0|wdtcnt[8]                                                      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr0[3]                                                                                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr1[1]                                                                                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|taccr2[7]                                                                                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl11[1]                                                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl13[8]                                                                     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl1[4]                                                                      ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|read_address[8]                                             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r4[0]           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r5[11]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r6[1]           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r7[14]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r8[14]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r9[0]           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r10[8]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r11[2]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r12[5]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r13[4]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r14[0]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r15[6]          ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_cmp_sync[0]                                              ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_out_nxt[14]                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|clk_div[1]                                                                                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl12[0]                                                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl2[15]                                                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl3[13]                                                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl4[4]                                                                      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl5[9]                                                                      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl6[15]                                                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl7[2]                                                                      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl8[15]                                                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl9[13]                                                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|sumext_s[1]                                                ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|cntrl10[8]                                                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|pc_inc[13]                                                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |openMSP430_fpga|omsp_uart:uart_0|rxfer_buf[4]                                                                                   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_busy_writing[0]                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_busy_writing[15]                                    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_bit[1]                                     ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_sext[5]                                                   ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|r1[1]           ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff_ctr[0]                                              ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff_ctr[0]                                              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|war_ctr[0]                                                  ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0|xfer_cnt[14]                                    ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|omsp_timerA:timerA_0|tar[0]                                                                                     ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[17]                                                 ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[44]                                                 ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[60]                                                 ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[76]                                                 ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[90]                                                 ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[106]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[126]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[133]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[155]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[167]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[187]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[199]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[215]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[231]                                                ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[248]                                                ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reslo[8]                                                   ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|reshi[8]                                                   ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|init_sp_val[2]                                              ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|max_sp[1]                                                   ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[16]                                                 ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[38]                                                 ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[58]                                                 ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[70]                                                 ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[90]                                                 ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[104]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[115]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[128]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[153]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[171]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[188]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[204]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[221]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[230]                                                ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[243]                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|rd_buff[6]                                                  ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_buff[14]                                                 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[15]                                                             ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |openMSP430_fpga|omsp_uart:uart_0|txfer_bit[2]                                                                                   ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |openMSP430_fpga|omsp_uart:uart_0|txfer_cnt[10]                                                                                  ;
+; 6:1                ; 14 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|sp_seg_addr[2]                                              ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |openMSP430_fpga|omsp_uart:uart_0|rxfer_bit[3]                                                                                   ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |openMSP430_fpga|omsp_uart:uart_0|rxfer_cnt[11]                                                                                  ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|mem_data[0]                                                              ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |openMSP430_fpga|omsp_uart:uart_0|txfer_buf[7]                                                                                   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_dbg:dbg_0|dbg_mem_dout[14]                                                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|eu_mdb_in[13]                                          ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[12]                     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[9]                                                 ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|pmem_addr[1]                                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0|dbg_mem_din[8]                                         ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|mab[0]                                                         ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|mab[3]                                                         ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_dest[7]                                                   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|mdb_in_bw[0]                                       ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[7]                                                 ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[3]                      ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[7]                      ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[9]                      ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0|alu_out_nxt[13]                     ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 45 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|op_dst[13]                                         ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[5]                                                 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_frontend:frontend_0|inst_as_nxt[3]                                                 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|addr_out[8]                                                                    ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|addr_out[2]                                                                    ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |openMSP430_fpga|omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0|wr_cmp_eu_addr[15]                                          ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0|inst_src_in[11] ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |openMSP430_fpga|openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|op_src[9]                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------+
@@ -1412,6 +1415,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CNTRL7         ; 10101100                                                                                                                                                                                                                                                         ; Unsigned Binary ;
 ; CNTRL8         ; 10101110                                                                                                                                                                                                                                                         ; Unsigned Binary ;
 ; CNTRL9         ; 10110000                                                                                                                                                                                                                                                         ; Unsigned Binary ;
+; CNTRL10        ; 10110010                                                                                                                                                                                                                                                         ; Unsigned Binary ;
+; CNTRL11        ; 10110100                                                                                                                                                                                                                                                         ; Unsigned Binary ;
+; CNTRL12        ; 10110110                                                                                                                                                                                                                                                         ; Unsigned Binary ;
+; CNTRL13        ; 10111000                                                                                                                                                                                                                                                         ; Unsigned Binary ;
 ; DEC_SZ         ; 256                                                                                                                                                                                                                                                              ; Signed Integer  ;
 ; BASE_REG       ; 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001 ; Unsigned Binary ;
 ; CNTRL1_D       ; 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
@@ -1423,20 +1430,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CNTRL7_D       ; 0000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
 ; CNTRL8_D       ; 0000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
 ; CNTRL9_D       ; 0000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; CNTRL10_D      ; 0000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; CNTRL11_D      ; 0000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; CNTRL12_D      ; 0000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; CNTRL13_D      ; 0000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
 +----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +--------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0 ;
-+----------------+------------------+--------------------------------------------------------------+
-; Parameter Name ; Value            ; Type                                                         ;
-+----------------+------------------+--------------------------------------------------------------+
-; DATA_WIDTH     ; 16               ; Signed Integer                                               ;
-; ADDR_WIDTH     ; 4                ; Signed Integer                                               ;
-; SLICE_WIDTH    ; 4                ; Signed Integer                                               ;
-; DMEM_END       ; 0111111111111110 ; Unsigned Binary                                              ;
-+----------------+------------------+--------------------------------------------------------------+
++-------------------+------------------+-----------------------------------------------------------+
+; Parameter Name    ; Value            ; Type                                                      ;
++-------------------+------------------+-----------------------------------------------------------+
+; DATA_WIDTH        ; 16               ; Signed Integer                                            ;
+; ADDR_WIDTH        ; 4                ; Signed Integer                                            ;
+; SLICE_WIDTH       ; 4                ; Signed Integer                                            ;
+; DMEM_END          ; 0110000000000000 ; Unsigned Binary                                           ;
+; SEGMENT_THRESHOLD ; 50               ; Signed Integer                                            ;
++-------------------+------------------+-----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1585,6 +1597,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------+--------+----------+-------------------------------------------------------------------------------------+
 ; tl_addr[15..14] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; tl_addr[0]      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; sp_sig_updt[0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; sp_seg_in[15]   ; Input  ; Info     ; Stuck at GND                                                                        ;
 +-----------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -1675,35 +1689,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 22                          ;
-; cycloneiii_ff         ; 1857                        ;
-;     CLR               ; 247                         ;
-;     CLR SCLR          ; 114                         ;
+; cycloneiii_ff         ; 2012                        ;
+;     CLR               ; 245                         ;
+;     CLR SCLR          ; 115                         ;
 ;     CLR SCLR SLD      ; 4                           ;
 ;     CLR SLD           ; 36                          ;
-;     ENA               ; 535                         ;
-;     ENA CLR           ; 766                         ;
+;     ENA               ; 538                         ;
+;     ENA CLR           ; 848                         ;
+;     ENA CLR SCLR      ; 16                          ;
 ;     ENA CLR SCLR SLD  ; 16                          ;
 ;     ENA CLR SLD       ; 76                          ;
-;     ENA SCLR          ; 12                          ;
-;     SCLR              ; 4                           ;
-;     plain             ; 47                          ;
-; cycloneiii_lcell_comb ; 4163                        ;
-;     arith             ; 387                         ;
-;         2 data inputs ; 253                         ;
-;         3 data inputs ; 134                         ;
-;     normal            ; 3776                        ;
-;         0 data inputs ; 6                           ;
-;         1 data inputs ; 25                          ;
-;         2 data inputs ; 215                         ;
-;         3 data inputs ; 732                         ;
-;         4 data inputs ; 2798                        ;
+;     ENA SCLR          ; 44                          ;
+;     ENA SCLR SLD      ; 14                          ;
+;     SCLR              ; 7                           ;
+;     SCLR SLD          ; 2                           ;
+;     plain             ; 51                          ;
+; cycloneiii_lcell_comb ; 4511                        ;
+;     arith             ; 533                         ;
+;         2 data inputs ; 256                         ;
+;         3 data inputs ; 277                         ;
+;     normal            ; 3978                        ;
+;         0 data inputs ; 9                           ;
+;         1 data inputs ; 24                          ;
+;         2 data inputs ; 221                         ;
+;         3 data inputs ; 923                         ;
+;         4 data inputs ; 2801                        ;
 ; cycloneiii_mac_mult   ; 1                           ;
 ; cycloneiii_mac_out    ; 1                           ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 48                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 27.00                       ;
-; Average LUT depth     ; 14.05                       ;
+; Max LUT depth         ; 28.30                       ;
+; Average LUT depth     ; 14.65                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1712,7 +1729,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:09     ;
+; Top            ; 00:00:21     ;
 +----------------+--------------+
 
 
@@ -1722,18 +1739,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Jun 12 04:00:20 2019
+    Info: Processing started: Mon Jul  1 02:25:15 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off openMSP430_fpga -c openMSP430_fpga
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20029): Only one processor detected - disabling parallel compilation
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(270) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 270
-Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(270) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 270
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(272) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 272
-Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(272) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 272
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(907) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 907
-Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(907) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 907
-Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(909) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 909
-Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(909) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 909
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(282) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 282
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(282) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 282
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(284) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 284
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(284) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 284
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(919) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 919
+Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(919) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 919
+Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(921) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 921
+Warning (10335): Unrecognized synthesis attribute "on" at ../../../rtl/verilog/openmsp430/omsp_frontend.v(921) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 921
 Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(275) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 275
 Warning (10335): Unrecognized synthesis attribute "off" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(275) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 275
 Warning (10335): Unrecognized synthesis attribute "coverage" at ../../../rtl/verilog/openmsp430/omsp_dbg.v(277) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 277
@@ -1833,14 +1850,17 @@ Info (12021): Found 53 design units, including 53 entities, in source file /home
     Info (12023): Found entity 51: ogfx_gpu_dma File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma.v Line: 43
     Info (12023): Found entity 52: ogfx_gpu_dma_addr File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/opengfx430/ogfx_gpu_dma_addr.v Line: 43
     Info (12023): Found entity 53: ogfx_ram_arbiter File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/opengfx430/ogfx_ram_arbiter.v Line: 53
-Warning (10236): Verilog HDL Implicit Net warning at omsp_qwark.v(245): created implicit net for "mem_track_en" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 245
-Warning (10236): Verilog HDL Implicit Net warning at omsp_qwark_periph.v(186): created implicit net for "dly_irq_qwark_acc" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 186
+Warning (10236): Verilog HDL Implicit Net warning at openMSP430.v(308): created implicit net for "inst_pc_nxt_out" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 308
+Warning (10236): Verilog HDL Implicit Net warning at omsp_qwark.v(328): created implicit net for "mem_track_en" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 328
+Warning (10236): Verilog HDL Implicit Net warning at omsp_qwark_periph.v(219): created implicit net for "dly_irq_qwark_acc" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 219
 Warning (10222): Verilog HDL Parameter Declaration warning at priority_encoder.v(46): Parameter Declaration in module "priority_encoder" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/priority_encoder.v Line: 46
 Warning (10222): Verilog HDL Parameter Declaration warning at priority_encoder.v(47): Parameter Declaration in module "priority_encoder" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/priority_encoder.v Line: 47
 Info (12127): Elaborating entity "openMSP430_fpga" for the top level hierarchy
-Info (12128): Elaborating entity "openMSP430" for hierarchy "openMSP430:openmsp430_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 226
-Warning (10036): Verilog HDL or VHDL warning at openMSP430.v(482): object "UNUSED_fe_mab_0" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 482
-Info (12128): Elaborating entity "omsp_clock_module" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 316
+Info (12128): Elaborating entity "openMSP430" for hierarchy "openMSP430:openmsp430_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 246
+Warning (10036): Verilog HDL or VHDL warning at openMSP430.v(308): object "inst_pc_nxt_out" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 308
+Warning (10036): Verilog HDL or VHDL warning at openMSP430.v(533): object "UNUSED_fe_mab_0" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 533
+Warning (10230): Verilog HDL assignment warning at openMSP430.v(308): truncated value with size 16 to match size of target (1) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 308
+Info (12128): Elaborating entity "omsp_clock_module" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 359
 Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(164): object "nodiv_smclk" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 164
 Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(378): object "UNUSED_cpuoff" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 378
 Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(379): object "UNUSED_mclk_enable" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 379
@@ -1857,31 +1877,31 @@ Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(960): object
 Warning (10036): Verilog HDL or VHDL warning at omsp_clock_module.v(961): object "UNUSED_scan_mode" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 961
 Info (12128): Elaborating entity "omsp_sync_cell" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_cell:sync_cell_lfxt_clk" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 628
 Info (12128): Elaborating entity "omsp_sync_reset" for hierarchy "openMSP430:openmsp430_0|omsp_clock_module:clock_module_0|omsp_sync_reset:sync_reset_por" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_clock_module.v Line: 1223
-Info (12128): Elaborating entity "omsp_frontend" for hierarchy "openMSP430:openmsp430_0|omsp_frontend:frontend_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 377
-Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(314): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 314
-Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(390): object "UNUSED_dma_en" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 390
-Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(391): object "UNUSED_wkup" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 391
-Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(392): object "UNUSED_wdt_wkup" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 392
-Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(393): object "UNUSED_nmi_wkup" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 393
-Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(394): object "UNUSED_dma_wkup" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 394
-Info (12128): Elaborating entity "omsp_execution_unit" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 425
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(423): object "UNUSED_inst_ad_idx" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 423
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(424): object "UNUSED_inst_ad_indir" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 424
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(425): object "UNUSED_inst_ad_indir_i" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 425
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(426): object "UNUSED_inst_ad_symb" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 426
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(427): object "UNUSED_inst_ad_imm" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 427
-Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(428): object "UNUSED_inst_ad_const" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 428
-Info (12128): Elaborating entity "omsp_register_file" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 211
-Warning (10036): Verilog HDL or VHDL warning at omsp_register_file.v(158): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v Line: 158
-Warning (10036): Verilog HDL or VHDL warning at omsp_register_file.v(172): object "UNUSED_reg_sp_val_0" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v Line: 172
-Info (12128): Elaborating entity "omsp_alu" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 319
+Info (12128): Elaborating entity "omsp_frontend" for hierarchy "openMSP430:openmsp430_0|omsp_frontend:frontend_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 421
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(326): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 326
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(402): object "UNUSED_dma_en" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 402
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(403): object "UNUSED_wkup" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 403
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(404): object "UNUSED_wdt_wkup" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 404
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(405): object "UNUSED_nmi_wkup" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 405
+Warning (10036): Verilog HDL or VHDL warning at omsp_frontend.v(406): object "UNUSED_dma_wkup" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_frontend.v Line: 406
+Info (12128): Elaborating entity "omsp_execution_unit" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 476
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(460): object "UNUSED_inst_ad_idx" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 460
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(461): object "UNUSED_inst_ad_indir" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 461
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(462): object "UNUSED_inst_ad_indir_i" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 462
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(463): object "UNUSED_inst_ad_symb" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 463
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(464): object "UNUSED_inst_ad_imm" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 464
+Warning (10036): Verilog HDL or VHDL warning at omsp_execution_unit.v(465): object "UNUSED_inst_ad_const" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 465
+Info (12128): Elaborating entity "omsp_register_file" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_register_file:register_file_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 248
+Warning (10036): Verilog HDL or VHDL warning at omsp_register_file.v(180): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v Line: 180
+Warning (10036): Verilog HDL or VHDL warning at omsp_register_file.v(194): object "UNUSED_reg_sp_val_0" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_register_file.v Line: 194
+Info (12128): Elaborating entity "omsp_alu" for hierarchy "openMSP430:openmsp430_0|omsp_execution_unit:execution_unit_0|omsp_alu:alu_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_execution_unit.v Line: 356
 Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(254): object "UNUSED_inst_so_rra" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 254
 Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(255): object "UNUSED_inst_so_push" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 255
 Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(256): object "UNUSED_inst_so_call" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 256
 Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(257): object "UNUSED_inst_so_reti" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 257
 Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(258): object "UNUSED_inst_jmp" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 258
 Warning (10036): Verilog HDL or VHDL warning at omsp_alu.v(259): object "UNUSED_inst_alu" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_alu.v Line: 259
-Info (12128): Elaborating entity "omsp_mem_backbone" for hierarchy "openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 480
+Info (12128): Elaborating entity "omsp_mem_backbone" for hierarchy "openMSP430:openmsp430_0|omsp_mem_backbone:mem_backbone_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 531
 Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(213): object "UNUSED_dma_addr" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 213
 Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(214): object "UNUSED_dma_din" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 214
 Warning (10036): Verilog HDL or VHDL warning at omsp_mem_backbone.v(215): object "UNUSED_dma_en" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 215
@@ -1893,7 +1913,7 @@ Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(239): tru
 Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(258): truncated value with size 32 to match size of target (16) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 258
 Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(263): truncated value with size 32 to match size of target (16) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 263
 Warning (10230): Verilog HDL assignment warning at omsp_mem_backbone.v(268): truncated value with size 32 to match size of target (16) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_mem_backbone.v Line: 268
-Info (12128): Elaborating entity "omsp_sfr" for hierarchy "openMSP430:openmsp430_0|omsp_sfr:sfr_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 512
+Info (12128): Elaborating entity "omsp_sfr" for hierarchy "openMSP430:openmsp430_0|omsp_sfr:sfr_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 563
 Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(367): object "UNUSED_scan_mode" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 367
 Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(368): object "UNUSED_nmi" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 368
 Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(369): object "UNUSED_nmi_acc" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 369
@@ -1902,15 +1922,15 @@ Warning (10036): Verilog HDL or VHDL warning at omsp_sfr.v(374): object "UNUSED_
 Warning (10230): Verilog HDL assignment warning at omsp_sfr.v(240): truncated value with size 32 to match size of target (7) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 240
 Warning (10230): Verilog HDL assignment warning at omsp_sfr.v(246): truncated value with size 32 to match size of target (9) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 246
 Warning (10230): Verilog HDL assignment warning at omsp_sfr.v(247): truncated value with size 32 to match size of target (6) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_sfr.v Line: 247
-Info (12128): Elaborating entity "omsp_watchdog" for hierarchy "openMSP430:openmsp430_0|omsp_watchdog:watchdog_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 548
+Info (12128): Elaborating entity "omsp_watchdog" for hierarchy "openMSP430:openmsp430_0|omsp_watchdog:watchdog_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 599
 Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(170): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 170
 Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(556): object "UNUSED_scan_mode" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 556
 Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(557): object "UNUSED_smclk" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 557
 Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(558): object "UNUSED_aclk" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 558
 Warning (10036): Verilog HDL or VHDL warning at omsp_watchdog.v(560): object "UNUSED_per_din" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_watchdog.v Line: 560
-Info (12128): Elaborating entity "omsp_multiplier" for hierarchy "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 580
+Info (12128): Elaborating entity "omsp_multiplier" for hierarchy "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 631
 Warning (10036): Verilog HDL or VHDL warning at omsp_multiplier.v(168): object "UNUSED_scan_enable" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 168
-Info (12128): Elaborating entity "omsp_dbg" for hierarchy "openMSP430:openmsp430_0|omsp_dbg:dbg_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 638
+Info (12128): Elaborating entity "omsp_dbg" for hierarchy "openMSP430:openmsp430_0|omsp_dbg:dbg_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/openMSP430.v Line: 689
 Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(493): object "UNUSED_eu_mab" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 493
 Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(494): object "UNUSED_eu_mb_en" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 494
 Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(495): object "UNUSED_eu_mb_wr" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 495
@@ -1921,13 +1941,13 @@ Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(867): object "UNUSED_
 Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(868): object "UNUSED_dbg_i2c_sda_in" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 868
 Warning (10036): Verilog HDL or VHDL warning at omsp_dbg.v(869): object "UNUSED_dbg_rd_rdy" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 869
 Info (12128): Elaborating entity "omsp_dbg_uart" for hierarchy "openMSP430:openmsp430_0|omsp_dbg:dbg_0|omsp_dbg_uart:dbg_uart_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_dbg.v Line: 817
-Info (12128): Elaborating entity "omsp_de0_nano_soc_led_key_sw" for hierarchy "omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 254
+Info (12128): Elaborating entity "omsp_de0_nano_soc_led_key_sw" for hierarchy "omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 274
 Info (12128): Elaborating entity "sync_debouncer_10ms" for hierarchy "omsp_de0_nano_soc_led_key_sw:de0_nano_soc_led_key_sw_0|sync_debouncer_10ms:sync_debouncer_10ms_key1" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/omsp_de0_nano_soc_led_key_sw.v Line: 158
 Warning (10230): Verilog HDL assignment warning at sync_debouncer_10ms.v(75): truncated value with size 32 to match size of target (19) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/sync_debouncer_10ms.v Line: 75
-Info (12128): Elaborating entity "omsp_timerA" for hierarchy "omsp_timerA:timerA_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 292
+Info (12128): Elaborating entity "omsp_timerA" for hierarchy "omsp_timerA:timerA_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 312
 Warning (10230): Verilog HDL assignment warning at omsp_timerA.v(179): truncated value with size 512 to match size of target (128) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v Line: 179
 Warning (10230): Verilog HDL assignment warning at omsp_timerA.v(180): truncated value with size 512 to match size of target (128) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/periph/omsp_timerA.v Line: 180
-Info (12128): Elaborating entity "ram_16x16k" for hierarchy "ram_16x16k:pmem_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 340
+Info (12128): Elaborating entity "ram_16x16k" for hierarchy "ram_16x16k:pmem_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 360
 Info (12128): Elaborating entity "altsyncram" for hierarchy "ram_16x16k:pmem_0|altsyncram:altsyncram_component" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 92
 Info (12130): Elaborated megafunction instantiation "ram_16x16k:pmem_0|altsyncram:altsyncram_component" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 92
 Info (12133): Instantiated megafunction "ram_16x16k:pmem_0|altsyncram:altsyncram_component" with the following parameter: File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/mega/ram_16x16k.v Line: 92
@@ -1956,7 +1976,7 @@ Info (12128): Elaborating entity "decode_jsa" for hierarchy "ram_16x16k:pmem_0|a
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_iob.tdf
     Info (12023): Found entity 1: mux_iob File: /home/hiram/master/Qwark_stack/altera_de0_nano/synthesis/altera/WORK/db/mux_iob.tdf Line: 22
 Info (12128): Elaborating entity "mux_iob" for hierarchy "ram_16x16k:pmem_0|altsyncram:altsyncram_component|altsyncram_b1l1:auto_generated|mux_iob:mux2" File: /home/hiram/master/Qwark_stack/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b1l1.tdf Line: 44
-Info (12128): Elaborating entity "ram_16x8k" for hierarchy "ram_16x8k:dmem_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 351
+Info (12128): Elaborating entity "ram_16x8k" for hierarchy "ram_16x8k:dmem_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 371
 Info (12128): Elaborating entity "altsyncram" for hierarchy "ram_16x8k:dmem_0|altsyncram:altsyncram_component" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 92
 Info (12130): Elaborated megafunction instantiation "ram_16x8k:dmem_0|altsyncram:altsyncram_component" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 92
 Info (12133): Instantiated megafunction "ram_16x8k:dmem_0|altsyncram:altsyncram_component" with the following parameter: File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/mega/ram_16x8k.v Line: 92
@@ -1978,7 +1998,7 @@ Info (12133): Instantiated megafunction "ram_16x8k:dmem_0|altsyncram:altsyncram_
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_b4j1.tdf
     Info (12023): Found entity 1: altsyncram_b4j1 File: /home/hiram/master/Qwark_stack/altera_de0_nano/synthesis/altera/WORK/db/altsyncram_b4j1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_b4j1" for hierarchy "ram_16x8k:dmem_0|altsyncram:altsyncram_component|altsyncram_b4j1:auto_generated" File: /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "pll" for hierarchy "pll:pll_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 362
+Info (12128): Elaborating entity "pll" for hierarchy "pll:pll_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 382
 Info (12128): Elaborating entity "altpll" for hierarchy "pll:pll_0|altpll:altpll_component" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/mega/pll.v Line: 98
 Info (12130): Elaborated megafunction instantiation "pll:pll_0|altpll:altpll_component" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/mega/pll.v Line: 98
 Info (12133): Instantiated megafunction "pll:pll_0|altpll:altpll_component" with the following parameter: File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/mega/pll.v Line: 98
@@ -2044,50 +2064,56 @@ Info (12133): Instantiated megafunction "pll:pll_0|altpll:altpll_component" with
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
     Info (12023): Found entity 1: pll_altpll File: /home/hiram/master/Qwark_stack/altera_de0_nano/synthesis/altera/WORK/db/pll_altpll.v Line: 29
 Info (12128): Elaborating entity "pll_altpll" for hierarchy "pll:pll_0|altpll:altpll_component|pll_altpll:auto_generated" File: /home/hiram/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "omsp_qwark_periph" for hierarchy "omsp_qwark_periph:qwark_periph_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 394
-Warning (10230): Verilog HDL assignment warning at omsp_qwark_periph.v(325): truncated value with size 32 to match size of target (16) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 325
-Warning (10230): Verilog HDL assignment warning at omsp_qwark_periph.v(331): truncated value with size 32 to match size of target (13) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 331
-Info (12128): Elaborating entity "omsp_qwark" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 351
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(114): object "tlb_buff_wr_en" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 114
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(441): object "rd_buff_0" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 441
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(442): object "rd_buff_1" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 442
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(443): object "rd_buff_2" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 443
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(444): object "rd_buff_3" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 444
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(445): object "rd_buff_4" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 445
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(446): object "rd_buff_5" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 446
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(447): object "rd_buff_6" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 447
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(448): object "rd_buff_7" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 448
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(449): object "rd_buff_8" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 449
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(450): object "rd_buff_9" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 450
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(451): object "rd_buff_10" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 451
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(452): object "rd_buff_11" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 452
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(453): object "rd_buff_12" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 453
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(454): object "rd_buff_13" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 454
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(455): object "rd_buff_14" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 455
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(456): object "rd_buff_15" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 456
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(507): object "rd_match_addr" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 507
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(517): object "wr_buff_0" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 517
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(518): object "wr_buff_1" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 518
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(519): object "wr_buff_2" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 519
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(520): object "wr_buff_3" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 520
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(521): object "wr_buff_4" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 521
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(522): object "wr_buff_5" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 522
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(523): object "wr_buff_6" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 523
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(524): object "wr_buff_7" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 524
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(525): object "wr_buff_8" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 525
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(526): object "wr_buff_9" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 526
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(527): object "wr_buff_10" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 527
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(528): object "wr_buff_11" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 528
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(529): object "wr_buff_12" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 529
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(530): object "wr_buff_13" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 530
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(531): object "wr_buff_14" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 531
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(532): object "wr_buff_15" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 532
-Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(582): object "wr_match_addr" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 582
-Warning (10230): Verilog HDL assignment warning at omsp_qwark.v(225): truncated value with size 32 to match size of target (4) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 225
-Warning (10762): Verilog HDL Case Statement warning at omsp_qwark.v(286): can't check case statement for completeness because the case expression has too many possible states File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 286
-Warning (10235): Verilog HDL Always Construct warning at omsp_qwark.v(319): variable "en" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 319
-Warning (10230): Verilog HDL assignment warning at omsp_qwark.v(406): truncated value with size 32 to match size of target (4) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 406
-Info (12128): Elaborating entity "omsp_uart" for hierarchy "omsp_uart:uart_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 418
+Info (12128): Elaborating entity "omsp_qwark_periph" for hierarchy "omsp_qwark_periph:qwark_periph_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 424
+Warning (10230): Verilog HDL assignment warning at omsp_qwark_periph.v(427): truncated value with size 32 to match size of target (16) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 427
+Warning (10230): Verilog HDL assignment warning at omsp_qwark_periph.v(447): truncated value with size 32 to match size of target (13) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 447
+Info (12128): Elaborating entity "omsp_qwark" for hierarchy "omsp_qwark_periph:qwark_periph_0|omsp_qwark:qwark_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark_periph.v Line: 485
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(145): object "tlb_buff_wr_en" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 145
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(218): object "dbg_seg_val" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 218
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(246): object "sp_seg_addr_dbg" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 246
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(599): object "rd_buff_0" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 599
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(600): object "rd_buff_1" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 600
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(601): object "rd_buff_2" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 601
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(602): object "rd_buff_3" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 602
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(603): object "rd_buff_4" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 603
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(604): object "rd_buff_5" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 604
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(605): object "rd_buff_6" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 605
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(606): object "rd_buff_7" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 606
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(607): object "rd_buff_8" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 607
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(608): object "rd_buff_9" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 608
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(609): object "rd_buff_10" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 609
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(610): object "rd_buff_11" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 610
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(611): object "rd_buff_12" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 611
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(612): object "rd_buff_13" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 612
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(613): object "rd_buff_14" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 613
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(614): object "rd_buff_15" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 614
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(665): object "rd_match_addr" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 665
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(675): object "wr_buff_0" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 675
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(676): object "wr_buff_1" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 676
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(677): object "wr_buff_2" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 677
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(678): object "wr_buff_3" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 678
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(679): object "wr_buff_4" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 679
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(680): object "wr_buff_5" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 680
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(681): object "wr_buff_6" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 681
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(682): object "wr_buff_7" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 682
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(683): object "wr_buff_8" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 683
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(684): object "wr_buff_9" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 684
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(685): object "wr_buff_10" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 685
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(686): object "wr_buff_11" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 686
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(687): object "wr_buff_12" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 687
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(688): object "wr_buff_13" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 688
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(689): object "wr_buff_14" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 689
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(690): object "wr_buff_15" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 690
+Warning (10036): Verilog HDL or VHDL warning at omsp_qwark.v(740): object "wr_match_addr" assigned a value but never read File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 740
+Warning (10230): Verilog HDL assignment warning at omsp_qwark.v(185): truncated value with size 32 to match size of target (4) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 185
+Warning (10230): Verilog HDL assignment warning at omsp_qwark.v(230): truncated value with size 16 to match size of target (8) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 230
+Warning (10230): Verilog HDL assignment warning at omsp_qwark.v(233): truncated value with size 16 to match size of target (8) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 233
+Warning (10230): Verilog HDL assignment warning at omsp_qwark.v(236): truncated value with size 32 to match size of target (8) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 236
+Warning (10230): Verilog HDL assignment warning at omsp_qwark.v(262): truncated value with size 32 to match size of target (16) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 262
+Warning (10762): Verilog HDL Case Statement warning at omsp_qwark.v(369): can't check case statement for completeness because the case expression has too many possible states File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 369
+Warning (10235): Verilog HDL Always Construct warning at omsp_qwark.v(403): variable "en" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 403
+Warning (10230): Verilog HDL assignment warning at omsp_qwark.v(490): truncated value with size 32 to match size of target (4) File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_qwark.v Line: 490
+Info (12128): Elaborating entity "omsp_uart" for hierarchy "omsp_uart:uart_0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 448
 Info (278001): Inferred 1 megafunctions from design logic
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|Mult0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 396
 Info (12130): Elaborated megafunction instantiation "openMSP430:openmsp430_0|omsp_multiplier:multiplier_0|lpm_mult:Mult0" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openmsp430/omsp_multiplier.v Line: 396
@@ -2112,18 +2138,18 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "FPGA_CLK2_50" File: /home/hiram/master/Qwark_stack/altera_de0_nano/rtl/verilog/openMSP430_fpga.v Line: 43
-Info (21057): Implemented 5069 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5447 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 4996 logic cells
+    Info (21061): Implemented 5374 logic cells
     Info (21064): Implemented 48 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 2 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 173 warnings
-    Info: Peak virtual memory: 1064 megabytes
-    Info: Processing ended: Wed Jun 12 04:00:45 2019
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:23
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 182 warnings
+    Info: Peak virtual memory: 1065 megabytes
+    Info: Processing ended: Mon Jul  1 02:26:09 2019
+    Info: Elapsed time: 00:00:54
+    Info: Total CPU time (on all processors): 00:00:51
 
 
 +------------------------------------------+

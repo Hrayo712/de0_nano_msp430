@@ -164,6 +164,16 @@ assign lfxt_clk = lfxt_clk_cnt[8];
 wire dbg_mem_en_q;
 wire [1:0] mb_rd_msk;
 
+wire [15:0] sp_val;
+wire sp_wr_out; 
+wire sp_inc_out;
+wire sp_dec_out;
+wire [15:0] sp_wr_val;
+wire [15:0] sp_inc_val;
+wire [15:0] pc_out;
+wire [15:0] inst_pc;
+wire irq_detect;
+
 openMSP430 openmsp430_0 (
 
 // OUTPUTs
@@ -198,6 +208,16 @@ openMSP430 openmsp430_0 (
     .smclk_en          (smclk_en),            // FPGA ONLY: SMCLK enable
 	 .dbg_mem_en_out	  (dbg_mem_en_q),
 	 .mb_rd_msk			  (mb_rd_msk),
+
+	 .sp_val 			  (sp_val),
+	 .sp_wr_out 		  (sp_wr_out),  
+	 .sp_inc_out		  (sp_inc_out),
+	 .sp_dec_out		  (sp_dec_out),
+	 .sp_wr_val			  (sp_wr_val),
+	 .sp_inc_val		  (sp_inc_val),
+	 .pc_out				  (pc_out),
+	 .irq_detect		  (irq_detect),
+	 .inst_pc			  (inst_pc),
 // INPUTs
     .cpu_en            (1'b1),                // Enable CPU code execution (asynchronous and non-glitchy)
     .dbg_en            (1'b1),                // Debug interface enable (asynchronous and non-glitchy)
@@ -373,24 +393,34 @@ wire qwark_irq;
 omsp_qwark_periph qwark_periph_0 (
 
 // OUTPUTs
-    .per_dout(per_dout_qwark),        					 		// Peripheral data output
-	 .addr_out(qwark_addr),
-	 .qwark_irq(qwark_irq),
+    .per_dout    (per_dout_qwark),        					 		// Peripheral data output
+	 .addr_out    (qwark_addr),
+	 .qwark_irq	  (qwark_irq),
 // PERIPHERAL HANDLING INPUTs
-    .mclk(mclk),                       						// Main system clock
-    .mclk2(mclk2),
-	 .per_addr(per_addr),               						// Peripheral address
-    .per_din(per_din),                 						// Peripheral data input
-    .per_en(per_en),                   						// Peripheral enable (high active)
-    .dbg_acc(/*1'b0*/dbg_mem_en_q),
-	 .per_we(per_we),                   						// Peripheral write enable (high active)
+    .mclk		  (mclk),                       						// Main system clock
+    .mclk2		  (mclk2),
+	 .per_addr	  (per_addr),               						// Peripheral address
+    .per_din	  (per_din),                 						// Peripheral data input
+    .per_en		  (per_en),                   						// Peripheral enable (high active)
+    .dbg_acc	  (/*1'b0*/dbg_mem_en_q),
+	 .per_we		  (per_we),                   						// Peripheral write enable (high active)
+	//Stack segmentation signals
+	 .sp_val 	  (sp_val),
+	 .sp_wr_out   (sp_wr_out),  
+	 .sp_inc_out  (sp_inc_out),
+	 .sp_dec_out  (sp_dec_out),
+	 .sp_wr_val	  (sp_wr_val),
+	 .sp_inc_val  (sp_inc_val),
+	 .pc   		  (pc_out),
+	 .irq_detect  (irq_detect),
+	 .inst_pc	  (inst_pc),
   //Functionality related signals  
-	 .puc_rst(puc_rst),              	   					// Main system reset
-	 .eu_addr({{2{1'b0}},dmem_addr[`DMEM_MSB:0],1'b0}),   // Execution Unit Memory Address Bus    (Logical Address)
-	 .eu_en(dmem_cen),												// Execution Unit Memory Address Bus Enable  (Active High)
-	 .eu_mb_wr(dmem_wen),  				   						// Execution Unit Memory Write
+	 .puc_rst     (puc_rst),              	   					// Main system reset
+	 .eu_addr	  ({{2{1'b0}},dmem_addr[`DMEM_MSB:0],1'b0}),   // Execution Unit Memory Address Bus    (Logical Address)
+	 .eu_en		  (dmem_cen),												// Execution Unit Memory Address Bus Enable  (Active High)
+	 .eu_mb_wr	  (dmem_wen),  				   						// Execution Unit Memory Write
 	 .irq_qwark_acc(irq_acc[4]),
-	 .mb_rd_msk(mb_rd_msk)
+	 .mb_rd_msk   (mb_rd_msk)
 );
 
 

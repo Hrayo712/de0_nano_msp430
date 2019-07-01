@@ -139,13 +139,13 @@ initial
 
 always 
      begin
-	#11600000 ;
+	#9340230 ;
 	EX_RST = 1'b1;	 
  	
-	#5000; 
+   #100; 
 	EX_RST = 1'b0;
-     end
-//
+end
+
 // Global initialization
 //------------------------------
 initial

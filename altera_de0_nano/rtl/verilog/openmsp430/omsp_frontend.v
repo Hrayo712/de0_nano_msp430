@@ -75,7 +75,8 @@ module  omsp_frontend (
     nmi_acc,                           // Non-Maskable interrupt request accepted
     pc,                                // Program counter
     pc_nxt,                            // Next PC value (for CALL & IRQ)
-
+    irq_detect_out,
+	 inst_pc_out,
 // INPUTs
     cpu_en_s,                          // Enable CPU code execution (synchronous)
     cpu_halt_cmd,                      // Halt CPU command
@@ -129,6 +130,8 @@ output               nmi_acc;          // Non-Maskable interrupt request accepte
 output        [15:0] pc;               // Program counter
 output        [15:0] pc_nxt;           // Next PC value (for CALL & IRQ)
 
+output				   irq_detect_out;
+output		  [15:0]		inst_pc_out;
 // INPUTs
 //=========
 input                cpu_en_s;         // Enable CPU code execution (synchronous)
@@ -152,6 +155,15 @@ input                wdt_irq;          // Watchdog-timer interrupt
 input                wdt_wkup;         // Watchdog Wakeup
 input                wkup;             // System Wake-up (asynchronous)
 
+assign irq_detect_out = irq_detect;
+
+
+reg  [15:0] inst_pc;
+always @(posedge mclk or posedge puc_rst)
+  if (puc_rst)     inst_pc  <=  16'h0000;
+  else if (decode) inst_pc  <=  pc;
+  
+assign inst_pc_out = inst_pc;
 
 //=============================================================================
 // 1)  UTILITY FUNCTIONS

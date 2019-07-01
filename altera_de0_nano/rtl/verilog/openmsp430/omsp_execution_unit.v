@@ -61,7 +61,15 @@ module  omsp_execution_unit (
     scg0,                          // System clock generator 1. Turns off the DCO
     scg1,                          // System clock generator 1. Turns off the SMCLK
     mb_rd_msk,
-// INPUTs
+	 
+	 reg_sp,
+    eu_sp_wr,
+	 eu_sp_inc,
+	 eu_sp_dec,
+	 eu_wr_sp_val,
+	 eu_inc_sp_val,
+	 
+	 // INPUTs
     dbg_halt_st,                   // Halt/Run status from CPU
     dbg_mem_dout,                  // Debug unit data output
     dbg_reg_wr,                    // Debug unit CPU register write
@@ -103,6 +111,14 @@ output              pc_sw_wr;      // Program counter software write
 output              scg0;          // System clock generator 1. Turns off the DCO
 output              scg1;          // System clock generator 1. Turns off the SMCLK
 output		  [1:0] mb_rd_msk;
+
+output    		[15:0] reg_sp;
+output    			  eu_sp_wr;
+output	 			  eu_sp_inc;
+output	 			  eu_sp_dec;
+output    	[15:0] eu_wr_sp_val;
+output    	[15:0] eu_inc_sp_val;
+
 // INPUTs
 //=========
 input               dbg_halt_st;   // Halt/Run status from CPU
@@ -148,6 +164,20 @@ wire         [15:0] mdb_in_val;
 wire          [3:0] status;
 
 
+wire 			[15:0]  reg_r1;
+wire 				     sp_wr;
+wire 				     sp_inc;
+wire			[15:0]  wr_sp_val;
+wire        [15:0]  inc_sp_val;
+
+assign reg_sp       	   = reg_r1;
+assign eu_sp_wr	 	   = sp_wr;
+assign eu_sp_inc   	   = sp_inc;
+assign eu_sp_dec    	   = reg_sp_wr;
+
+assign eu_wr_sp_val     = wr_sp_val;
+assign eu_inc_sp_val    = inc_sp_val;
+
 //=============================================================================
 // 2)  REGISTER FILE
 //=============================================================================
@@ -176,6 +206,7 @@ wire reg_incr     =  (exec_done          & inst_as[`INDIR_I]) |
 assign dbg_reg_din = reg_dest;
 
 
+
 omsp_register_file register_file_0 (
 
 // OUTPUTs
@@ -189,7 +220,13 @@ omsp_register_file register_file_0 (
     .scg0         (scg0),         // System clock generator 1. Turns off the DCO
     .scg1         (scg1),         // System clock generator 1. Turns off the SMCLK
     .status       (status),       // R2 Status {V,N,Z,C}
-
+	 
+	 .reg_r1			(reg_r1),
+	 .sp_wr			(sp_wr),
+	 .sp_inc			(sp_inc),
+	 .wr_sp_val    (wr_sp_val),
+	 .inc_sp_val   (inc_sp_val), 
+	 
 // INPUTs
     .alu_stat     (alu_stat),     // ALU Status {V,N,Z,C}
     .alu_stat_wr  (alu_stat_wr),  // ALU Status write {V,N,Z,C}
