@@ -127,6 +127,7 @@ wire       [15:0] omsp_mem27C = dut.pmem_0.altsyncram_component.mem_data[62];
 wire       [15:0] omsp_mem27E = dut.pmem_0.altsyncram_component.mem_data[63];
 wire       [15:0] omsp_mem280 = dut.pmem_0.altsyncram_component.mem_data[64];
 
+/*
 wire       [15:0] omsp_dmem4000 = dut.dmem_0.altsyncram_component.mem_data[0];
 wire       [15:0] omsp_dmem4002 = dut.dmem_0.altsyncram_component.mem_data[1];
 wire       [15:0] omsp_dmem4004 = dut.dmem_0.altsyncram_component.mem_data[2];
@@ -220,6 +221,7 @@ wire       [15:0] omsp_dmem600E = dut.dmem_0.altsyncram_component.mem_data[4103]
 wire       [15:0] omsp_dmem6075 = dut.dmem_0.altsyncram_component.mem_data[4154];
 wire       [15:0] omsp_dmem6076 = dut.dmem_0.altsyncram_component.mem_data[4155];
 wire       [15:0] omsp_dmem6078 = dut.dmem_0.altsyncram_component.mem_data[4156];
+wire       [15:0] omsp_dmem607A = dut.dmem_0.altsyncram_component.mem_data[4157];
 
 
 wire       [15:0] omsp_dmem7FAE = dut.dmem_0.altsyncram_component.mem_data[8151];
@@ -334,7 +336,7 @@ wire       [15:0] omsp_dmem6BFC = dut.dmem_0.altsyncram_component.mem_data[5630]
 wire       [15:0] omsp_dmem6BFE = dut.dmem_0.altsyncram_component.mem_data[5631];
 wire       [15:0] omsp_dmem6BFF = dut.dmem_0.altsyncram_component.mem_data[5632];
 
-
+*/
 // Program Memory cells
 //======================
 reg   [15:0] pmem [0:`PMEM_SIZE-1];

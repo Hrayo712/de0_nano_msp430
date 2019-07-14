@@ -1,0 +1,77 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Mon Jul  8 15:09:34 2019
+[*]
+[dumpfile] "/home/hiram/master/Qwark_stack/altera_de0_nano/sim/rtl_sim/run/tb_openMSP430_fpga.vcd"
+[dumpfile_mtime] "Mon Jul  8 13:23:15 2019"
+[dumpfile_size] 6734596668
+[savefile] "/home/hiram/master/Qwark_stack/altera_de0_nano/sim/rtl_sim/run/stack_analysis.gtkw"
+[timestart] 0
+[size] 1851 874
+[pos] -29 -29
+*-39.000000 11102500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_openMSP430_fpga.
+[treeopen] tb_openMSP430_fpga.dut.
+[treeopen] tb_openMSP430_fpga.dut.openmsp430_0.
+[treeopen] tb_openMSP430_fpga.dut.qwark_periph_0.
+[sst_width] 363
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 248
+@c00022
+[color] 3
+tb_openMSP430_fpga.omsp_r1[15:0]
+@28
+[color] 3
+(0)tb_openMSP430_fpga.omsp_r1[15:0]
+[color] 3
+(1)tb_openMSP430_fpga.omsp_r1[15:0]
+[color] 3
+(2)tb_openMSP430_fpga.omsp_r1[15:0]
+[color] 3
+(3)tb_openMSP430_fpga.omsp_r1[15:0]
+[color] 3
+(4)tb_openMSP430_fpga.omsp_r1[15:0]
+[color] 3
+(5)tb_openMSP430_fpga.omsp_r1[15:0]
+[color] 3
+(6)tb_openMSP430_fpga.omsp_r1[15:0]
+[color] 3
+(7)tb_openMSP430_fpga.omsp_r1[15:0]
+[color] 3
+(8)tb_openMSP430_fpga.omsp_r1[15:0]
+[color] 3
+(9)tb_openMSP430_fpga.omsp_r1[15:0]
+[color] 3
+(10)tb_openMSP430_fpga.omsp_r1[15:0]
+[color] 3
+(11)tb_openMSP430_fpga.omsp_r1[15:0]
+[color] 3
+(12)tb_openMSP430_fpga.omsp_r1[15:0]
+[color] 3
+(13)tb_openMSP430_fpga.omsp_r1[15:0]
+[color] 3
+(14)tb_openMSP430_fpga.omsp_r1[15:0]
+[color] 3
+(15)tb_openMSP430_fpga.omsp_r1[15:0]
+@1401200
+-group_end
+@22
+[color] 1
+tb_openMSP430_fpga.LED[7:0]
+@28
+tb_openMSP430_fpga.dut.openmsp430_0.execution_unit_0.gie
+@29
+[color] 1
+tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.irq_flag
+[color] 1
+(0)tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.irq_seg[1:0]
+[color] 1
+(1)tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.irq_seg[1:0]
+@22
+[color] 7
+tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.sp_seg_addr_dbg[14:0]
+tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.sp_init_out[15:0]
+tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.sp_max_val[15:0]
+[pattern_trace] 1
+[pattern_trace] 0

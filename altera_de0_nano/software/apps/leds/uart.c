@@ -25,7 +25,7 @@ int UART_WriteChar (char txdata) {
 }
 
 
-void UART_WriteNumber (int n)
+void UART_WriteNumber (unsigned n)
 {
   char buf[20];
   int i = 0;
@@ -61,3 +61,56 @@ void UART_WriteString(char* string){
 
     }
  }
+
+
+void UART_WriteString_HEX(char* string, unsigned length){
+
+    char i = 0;
+    char up_nibble;
+    char down_nibble;
+
+    /* while the null character found at the end of every string is not found, keep iterating through the pointer*/
+  for (i = 0  ; i < length ; i++)
+  {
+      up_nibble = (string[i]&0xF0)>>4;
+      down_nibble = (string[i]&0x0F);
+      
+      if(up_nibble >=0 && up_nibble <= 9)
+        up_nibble += 48;
+      else
+        up_nibble += 55;
+
+
+      if(down_nibble >=0 && down_nibble <= 9)
+        down_nibble += 48;
+      else
+        down_nibble += 55;
+
+      UART_WriteChar(up_nibble);
+      UART_WriteChar(down_nibble);
+
+  }
+      
+}
+
+  
+
+void UART_16_WriteHex(unsigned short hex_val){
+
+    char i = 0;
+    char tmp = 0;
+    unsigned short var;
+    for( i=0 ; i<4 ; i++){
+
+     // tmp = (char)(((hex_val&(0xF000>>(i*4)))>>(12-(i*4))) + 55);
+      LED_CTRL = 01;
+      var = (hex_val&((0xF000)>>(i*4)))>>(12-(i*4));
+      tmp = (char)var;
+      if(tmp >= 0 && tmp <= 9)
+        tmp += 48;
+      else
+        tmp += 55;
+      UART_WriteChar(tmp);
+    }
+ }
+

@@ -40,8 +40,8 @@ UART_WriteChar:
 	RET
 .LFE0:
 	.size	UART_WriteChar, .-UART_WriteChar
-	.global	__mspabi_remi
-	.global	__mspabi_divi
+	.global	__mspabi_remu
+	.global	__mspabi_divu
 	.balign 2
 	.global	UART_WriteNumber
 	.type	UART_WriteNumber, @function
@@ -63,22 +63,13 @@ UART_WriteNumber:
 	MOV.W	R12, @R1
 	.loc 1 31 0
 	MOV.W	#0, 22(R1)
-	.loc 1 32 0
-	CMP.W	#0, @R1 { JGE	.L6
-	.loc 1 34 0
-	MOV.B	#45, R12
-	CALL	#UART_WriteChar
-	.loc 1 35 0
-	MOV.B	#0, R12
-	SUB.W	@R1, R12
-	MOV.W	R12, @R1
 	.loc 1 37 0
-	BR	#.L6
-.L7:
+	BR	#.L5
+.L6:
 	.loc 1 39 0
 	MOV.W	@R1, R12
 	MOV.B	#10, R13
-	CALL	#__mspabi_remi
+	CALL	#__mspabi_remu
 .LVL0:
 	MOV.B	R12, R13
 	MOV.W	22(R1), R12
@@ -94,17 +85,17 @@ UART_WriteNumber:
 	.loc 1 40 0
 	MOV.W	@R1, R12
 	MOV.B	#10, R13
-	CALL	#__mspabi_divi
+	CALL	#__mspabi_divu
 .LVL1:
 	MOV.W	R12, @R1
-.L6:
+.L5:
 	.loc 1 37 0
 	MOV.B	#9, R12
-	CMP.W	@R1, R12 { JL	.L7
+	CMP.W	@R1, R12 { JLO	.L6
 	.loc 1 42 0
 	MOV.W	@R1, R12
 	MOV.B	#10, R13
-	CALL	#__mspabi_remi
+	CALL	#__mspabi_remu
 .LVL2:
 	MOV.B	R12, R13
 	MOV.W	22(R1), R12
@@ -118,8 +109,8 @@ UART_WriteNumber:
 	ADD.W	R13, R12
 	MOV.B	R14, @R12
 	.loc 1 43 0
-	BR	#.L8
-.L9:
+	BR	#.L7
+.L8:
 	.loc 1 44 0
 	ADD.W	#-1, 22(R1)
 	MOV.W	R1, R12
@@ -127,10 +118,10 @@ UART_WriteNumber:
 	ADD.W	22(R1), R12
 	MOV.B	@R12, R12
 	CALL	#UART_WriteChar
-.L8:
+.L7:
 	.loc 1 43 0
 	MOV.B	#0, R12
-	CMP.W	22(R1), R12 { JL	.L9
+	CMP.W	22(R1), R12 { JL	.L8
 	.loc 1 45 0
 	NOP
 	; start of epilogue
@@ -160,8 +151,8 @@ UART_WriteString:
 	.loc 1 54 0
 	MOV.B	#0, 3(R1)
 	.loc 1 57 0
-	BR	#.L11
-.L12:
+	BR	#.L10
+.L11:
 	.loc 1 60 0
 	MOV.B	3(R1), R12
 	MOV.B	R12, R13
@@ -170,12 +161,12 @@ UART_WriteString:
 	ADD.W	@R1, R12
 	MOV.B	@R12, R12
 	CALL	#UART_WriteChar
-.L11:
+.L10:
 	.loc 1 57 0
 	MOV.B	3(R1), R12
 	ADD.W	@R1, R12
 	MOV.B	@R12, R12
-	CMP.W	#0, R12 { JNE	.L12
+	CMP.W	#0, R12 { JNE	.L11
 	.loc 1 63 0
 	NOP
 	; start of epilogue
@@ -183,6 +174,169 @@ UART_WriteString:
 	RET
 .LFE2:
 	.size	UART_WriteString, .-UART_WriteString
+	.balign 2
+	.global	UART_WriteString_HEX
+	.type	UART_WriteString_HEX, @function
+UART_WriteString_HEX:
+.LFB3:
+	.loc 1 66 0
+; start of function
+; framesize_regs:     0
+; framesize_locals:   8
+; framesize_outgoing: 0
+; framesize:          8
+; elim ap -> fp       2
+; elim fp -> sp       8
+; saved regs:(none)
+	; start of prologue
+	SUB.W	#8, R1
+.LCFI3:
+	; end of prologue
+	MOV.W	R12, 2(R1)
+	MOV.W	R13, @R1
+	.loc 1 68 0
+	MOV.B	#0, 7(R1)
+	.loc 1 73 0
+	MOV.B	#0, 7(R1)
+	BR	#.L13
+.L18:
+	.loc 1 75 0
+	MOV.B	7(R1), R12
+	ADD.W	2(R1), R12
+	MOV.B	@R12, R12
+	CALL	#__mspabi_srli_4
+.LVL3:
+	MOV.B	R12, 6(R1)
+	.loc 1 76 0
+	MOV.B	7(R1), R12
+	ADD.W	2(R1), R12
+	MOV.B	@R12, R12
+	MOV.B	R12, R13
+	AND.B	#15, R13
+	MOV.B	R13, 5(R1)
+	.loc 1 78 0
+	MOV.B	#9, R12
+	CMP.B	6(R1), R12 { JLO	.L14
+	.loc 1 79 0
+	ADD.B	#48, 6(R1)
+	BR	#.L15
+.L14:
+	.loc 1 81 0
+	ADD.B	#55, 6(R1)
+.L15:
+	.loc 1 84 0
+	MOV.B	#9, R12
+	CMP.B	5(R1), R12 { JLO	.L16
+	.loc 1 85 0
+	ADD.B	#48, 5(R1)
+	BR	#.L17
+.L16:
+	.loc 1 87 0
+	ADD.B	#55, 5(R1)
+.L17:
+	.loc 1 89 0
+	MOV.B	6(R1), R12
+	CALL	#UART_WriteChar
+	.loc 1 90 0
+	MOV.B	5(R1), R12
+	CALL	#UART_WriteChar
+	.loc 1 73 0
+	MOV.B	7(R1), R12
+	MOV.B	R12, R13
+	ADD.B	#1, R13
+	MOV.B	R13, 7(R1)
+.L13:
+	.loc 1 73 0 is_stmt 0
+	MOV.B	7(R1), R12
+	CMP.W	@R1, R12 { JLO	.L18
+	.loc 1 94 0 is_stmt 1
+	NOP
+	; start of epilogue
+	ADD.W	#8, R1
+	RET
+.LFE3:
+	.size	UART_WriteString_HEX, .-UART_WriteString_HEX
+	.balign 2
+	.global	UART_16_WriteHex
+	.type	UART_16_WriteHex, @function
+UART_16_WriteHex:
+.LFB4:
+	.loc 1 98 0
+; start of function
+; framesize_regs:     0
+; framesize_locals:   6
+; framesize_outgoing: 0
+; framesize:          6
+; elim ap -> fp       2
+; elim fp -> sp       6
+; saved regs:(none)
+	; start of prologue
+	SUB.W	#6, R1
+.LCFI4:
+	; end of prologue
+	MOV.W	R12, @R1
+	.loc 1 100 0
+	MOV.B	#0, 5(R1)
+	.loc 1 101 0
+	MOV.B	#0, 4(R1)
+	.loc 1 103 0
+	MOV.B	#0, 5(R1)
+	BR	#.L20
+.L23:
+	.loc 1 106 0
+	MOV.B	#144, R12
+	MOV.B	#1, @R12
+	.loc 1 107 0
+	MOV.B	5(R1), R12
+	ADD.W	R12, R12
+	ADD.W	R12, R12
+	MOV.W	R12, R13
+	MOV.W	#-4096, R12
+	CALL	#__mspabi_srli
+.LVL4:
+	MOV.W	R12, R14
+	AND.W	@R1, R14
+	MOV.B	5(R1), R13
+	MOV.W	#3, R12 { SUB.W	R13, R12
+	ADD.W	R12, R12
+	ADD.W	R12, R12
+	MOV.W	R12, R13
+	MOV.W	R14, R12
+	CALL	#__mspabi_srli
+.LVL5:
+	MOV.W	R12, 2(R1)
+	.loc 1 108 0
+	MOV.W	2(R1), R12
+	MOV.B	R12, 4(R1)
+	.loc 1 109 0
+	MOV.B	#9, R12
+	CMP.B	4(R1), R12 { JLO	.L21
+	.loc 1 110 0
+	ADD.B	#48, 4(R1)
+	BR	#.L22
+.L21:
+	.loc 1 112 0
+	ADD.B	#55, 4(R1)
+.L22:
+	.loc 1 113 0
+	MOV.B	4(R1), R12
+	CALL	#UART_WriteChar
+	.loc 1 103 0
+	MOV.B	5(R1), R12
+	MOV.B	R12, R13
+	ADD.B	#1, R13
+	MOV.B	R13, 5(R1)
+.L20:
+	.loc 1 103 0 is_stmt 0
+	MOV.B	#3, R12
+	CMP.B	5(R1), R12 { JHS	.L23
+	.loc 1 115 0 is_stmt 1
+	NOP
+	; start of epilogue
+	ADD.W	#6, R1
+	RET
+.LFE4:
+	.size	UART_16_WriteHex, .-UART_16_WriteHex
 	.section	.debug_frame,"",@progbits
 .Lframe0:
 	.4byte	.LECIE0-.LSCIE0
@@ -236,19 +390,43 @@ UART_WriteString:
 	.uleb128 0x6
 	.balign 4
 .LEFDE4:
+.LSFDE6:
+	.4byte	.LEFDE6-.LASFDE6
+.LASFDE6:
+	.4byte	.Lframe0
+	.4byte	.LFB3
+	.4byte	.LFE3-.LFB3
+	.byte	0x4
+	.4byte	.LCFI3-.LFB3
+	.byte	0xe
+	.uleb128 0xa
+	.balign 4
+.LEFDE6:
+.LSFDE8:
+	.4byte	.LEFDE8-.LASFDE8
+.LASFDE8:
+	.4byte	.Lframe0
+	.4byte	.LFB4
+	.4byte	.LFE4-.LFB4
+	.byte	0x4
+	.4byte	.LCFI4-.LFB4
+	.byte	0xe
+	.uleb128 0x8
+	.balign 4
+.LEFDE8:
 .text
 .Letext0:
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.4byte	0xe7
+	.4byte	0x198
 	.2byte	0x3
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF7
+	.4byte	.LASF14
 	.byte	0xc
-	.4byte	.LASF8
-	.4byte	.LASF9
+	.4byte	.LASF15
+	.4byte	.LASF16
 	.4byte	.Ltext0
 	.4byte	.Letext0
 	.4byte	.Ldebug_line0
@@ -259,7 +437,114 @@ UART_WriteString:
 	.4byte	.LASF0
 	.uleb128 0x3
 	.byte	0x1
+	.4byte	.LASF3
+	.byte	0x1
+	.byte	0x62
+	.byte	0x1
+	.4byte	.LFB4
+	.4byte	.LFE4
+	.byte	0x1
+	.byte	0x9c
+	.4byte	0x7e
+	.uleb128 0x4
+	.4byte	.LASF5
+	.byte	0x1
+	.byte	0x62
+	.4byte	0x7e
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -8
+	.uleb128 0x5
+	.string	"i"
+	.byte	0x1
+	.byte	0x64
+	.4byte	0x85
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -3
+	.uleb128 0x5
+	.string	"tmp"
+	.byte	0x1
+	.byte	0x65
+	.4byte	0x85
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -4
+	.uleb128 0x5
+	.string	"var"
+	.byte	0x1
+	.byte	0x66
+	.4byte	0x7e
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -6
+	.byte	0
+	.uleb128 0x2
+	.byte	0x2
+	.byte	0x7
+	.4byte	.LASF1
+	.uleb128 0x2
+	.byte	0x1
+	.byte	0x8
 	.4byte	.LASF2
+	.uleb128 0x3
+	.byte	0x1
+	.4byte	.LASF4
+	.byte	0x1
+	.byte	0x42
+	.byte	0x1
+	.4byte	.LFB3
+	.4byte	.LFE3
+	.byte	0x1
+	.byte	0x9c
+	.4byte	0xe8
+	.uleb128 0x4
+	.4byte	.LASF6
+	.byte	0x1
+	.byte	0x42
+	.4byte	0xe8
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -8
+	.uleb128 0x4
+	.4byte	.LASF7
+	.byte	0x1
+	.byte	0x42
+	.4byte	0x29
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -10
+	.uleb128 0x5
+	.string	"i"
+	.byte	0x1
+	.byte	0x44
+	.4byte	0x85
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -3
+	.uleb128 0x6
+	.4byte	.LASF8
+	.byte	0x1
+	.byte	0x45
+	.4byte	0x85
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -4
+	.uleb128 0x6
+	.4byte	.LASF9
+	.byte	0x1
+	.byte	0x46
+	.4byte	0x85
+	.byte	0x2
+	.byte	0x91
+	.sleb128 -5
+	.byte	0
+	.uleb128 0x7
+	.byte	0x2
+	.4byte	0x85
+	.uleb128 0x3
+	.byte	0x1
+	.4byte	.LASF10
 	.byte	0x1
 	.byte	0x34
 	.byte	0x1
@@ -267,12 +552,12 @@ UART_WriteString:
 	.4byte	.LFE2
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0x62
+	.4byte	0x120
 	.uleb128 0x4
-	.4byte	.LASF4
+	.4byte	.LASF6
 	.byte	0x1
 	.byte	0x34
-	.4byte	0x62
+	.4byte	0xe8
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -6
@@ -280,21 +565,14 @@ UART_WriteString:
 	.string	"i"
 	.byte	0x1
 	.byte	0x36
-	.4byte	0x68
+	.4byte	0x85
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -3
 	.byte	0
-	.uleb128 0x6
-	.byte	0x2
-	.4byte	0x68
-	.uleb128 0x2
-	.byte	0x1
-	.byte	0x8
-	.4byte	.LASF1
 	.uleb128 0x3
 	.byte	0x1
-	.4byte	.LASF3
+	.4byte	.LASF11
 	.byte	0x1
 	.byte	0x1c
 	.byte	0x1
@@ -302,12 +580,12 @@ UART_WriteString:
 	.4byte	.LFE1
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0xad
-	.uleb128 0x7
+	.4byte	0x15e
+	.uleb128 0x8
 	.string	"n"
 	.byte	0x1
 	.byte	0x1c
-	.4byte	0xad
+	.4byte	0x29
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -26
@@ -315,7 +593,7 @@ UART_WriteString:
 	.string	"buf"
 	.byte	0x1
 	.byte	0x1e
-	.4byte	0xb4
+	.4byte	0x15e
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -24
@@ -323,38 +601,38 @@ UART_WriteString:
 	.string	"i"
 	.byte	0x1
 	.byte	0x1f
-	.4byte	0xad
+	.4byte	0x16e
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -4
 	.byte	0
-	.uleb128 0x8
-	.byte	0x2
-	.byte	0x5
-	.string	"int"
 	.uleb128 0x9
-	.4byte	0x68
-	.4byte	0xc4
+	.4byte	0x85
+	.4byte	0x16e
 	.uleb128 0xa
 	.4byte	0x29
 	.byte	0x13
 	.byte	0
 	.uleb128 0xb
+	.byte	0x2
+	.byte	0x5
+	.string	"int"
+	.uleb128 0xc
 	.byte	0x1
-	.4byte	.LASF5
+	.4byte	.LASF12
 	.byte	0x1
 	.byte	0x10
 	.byte	0x1
-	.4byte	0xad
+	.4byte	0x16e
 	.4byte	.LFB0
 	.4byte	.LFE0
 	.byte	0x1
 	.byte	0x9c
 	.uleb128 0x4
-	.4byte	.LASF6
+	.4byte	.LASF13
 	.byte	0x1
 	.byte	0x10
-	.4byte	0x68
+	.4byte	0x85
 	.byte	0x2
 	.byte	0x91
 	.sleb128 -3
@@ -448,6 +726,21 @@ UART_WriteString:
 	.byte	0
 	.byte	0
 	.uleb128 0x6
+	.uleb128 0x34
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0xa
+	.byte	0
+	.byte	0
+	.uleb128 0x7
 	.uleb128 0xf
 	.byte	0
 	.uleb128 0xb
@@ -456,7 +749,7 @@ UART_WriteString:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x7
+	.uleb128 0x8
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -469,17 +762,6 @@ UART_WriteString:
 	.uleb128 0x13
 	.uleb128 0x2
 	.uleb128 0xa
-	.byte	0
-	.byte	0
-	.uleb128 0x8
-	.uleb128 0x24
-	.byte	0
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3e
-	.uleb128 0xb
-	.uleb128 0x3
-	.uleb128 0x8
 	.byte	0
 	.byte	0
 	.uleb128 0x9
@@ -501,6 +783,17 @@ UART_WriteString:
 	.byte	0
 	.byte	0
 	.uleb128 0xb
+	.uleb128 0x24
+	.byte	0
+	.uleb128 0xb
+	.uleb128 0xb
+	.uleb128 0x3e
+	.uleb128 0xb
+	.uleb128 0x3
+	.uleb128 0x8
+	.byte	0
+	.byte	0
+	.uleb128 0xc
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1832,67 +2125,67 @@ UART_WriteString:
 	.uleb128 0x9
 	.string	"UART_H_ "
 	.byte	0x1
-	.uleb128 0x13
+	.uleb128 0x15
 	.string	"UART_CTL (*(volatile unsigned char *) 0x0080)"
 	.byte	0x1
-	.uleb128 0x14
+	.uleb128 0x16
 	.string	"UART_STAT (*(volatile unsigned char *) 0x0081)"
 	.byte	0x1
-	.uleb128 0x15
+	.uleb128 0x17
 	.string	"UART_BAUD (*(volatile unsigned int *) 0x0082)"
 	.byte	0x1
-	.uleb128 0x16
+	.uleb128 0x18
 	.string	"UART_TXD (*(volatile unsigned char *) 0x0084)"
 	.byte	0x1
-	.uleb128 0x17
+	.uleb128 0x19
 	.string	"UART_RXD (*(volatile unsigned char *) 0x0085)"
 	.byte	0x1
-	.uleb128 0x1f
+	.uleb128 0x21
 	.string	"UART_IEN_TX_EMPTY 0x80"
 	.byte	0x1
-	.uleb128 0x20
+	.uleb128 0x22
 	.string	"UART_IEN_TX 0x40"
 	.byte	0x1
-	.uleb128 0x21
+	.uleb128 0x23
 	.string	"UART_IEN_RX_OVFLW 0x20"
 	.byte	0x1
-	.uleb128 0x22
+	.uleb128 0x24
 	.string	"UART_IEN_RX 0x10"
 	.byte	0x1
-	.uleb128 0x23
+	.uleb128 0x25
 	.string	"UART_SMCLK_SEL 0x02"
 	.byte	0x1
-	.uleb128 0x24
+	.uleb128 0x26
 	.string	"UART_EN 0x01"
 	.byte	0x1
-	.uleb128 0x27
+	.uleb128 0x29
 	.string	"UART_TX_EMPTY_PND 0x80"
 	.byte	0x1
-	.uleb128 0x28
+	.uleb128 0x2a
 	.string	"UART_TX_PND 0x40"
 	.byte	0x1
-	.uleb128 0x29
+	.uleb128 0x2b
 	.string	"UART_RX_OVFLW_PND 0x20"
 	.byte	0x1
-	.uleb128 0x2a
+	.uleb128 0x2c
 	.string	"UART_RX_PND 0x10"
 	.byte	0x1
-	.uleb128 0x2b
+	.uleb128 0x2d
 	.string	"UART_TX_FULL 0x08"
 	.byte	0x1
-	.uleb128 0x2c
+	.uleb128 0x2e
 	.string	"UART_TX_BUSY 0x04"
 	.byte	0x1
-	.uleb128 0x2d
+	.uleb128 0x2f
 	.string	"UART_RX_BUSY 0x01"
 	.byte	0x1
-	.uleb128 0x34
+	.uleb128 0x36
 	.string	"UART_TX_VECTOR (6 *2)"
 	.byte	0x1
-	.uleb128 0x35
+	.uleb128 0x37
 	.string	"UART_RX_VECTOR (7 *2)"
 	.byte	0x1
-	.uleb128 0x44
+	.uleb128 0x46
 	.string	"BAUD 8"
 	.byte	0x4
 	.byte	0x4
@@ -1900,24 +2193,38 @@ UART_WriteString:
 	.section	.debug_line,"",@progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",@progbits,1
+.LASF6:
+	.string	"string"
 .LASF0:
 	.string	"unsigned int"
-.LASF2:
-	.string	"UART_WriteString"
-.LASF6:
-	.string	"txdata"
-.LASF9:
-	.string	"/home/hiram/master/Qwark_stack/altera_de0_nano/software/apps/leds"
-.LASF1:
-	.string	"char"
-.LASF7:
-	.string	"GNU C99 7.3.1 -mcpu=msp430 -mhwmult=16bit -msmall -mcode-region=none -mdata-region=none -mdevices-csv-loc=/opt/ti/ccsv8/ccs_base/msp430/include_gcc/devices.csv -g3 -g -gdwarf-3 -gstrict-dwarf -O0 -std=c99 -std=c99 -fstrict-aliasing -fstack-usage"
 .LASF3:
-	.string	"UART_WriteNumber"
+	.string	"UART_16_WriteHex"
+.LASF12:
+	.string	"UART_WriteChar"
+.LASF7:
+	.string	"length"
+.LASF5:
+	.string	"hex_val"
 .LASF8:
+	.string	"up_nibble"
+.LASF16:
+	.string	"/home/hiram/master/Qwark_stack/altera_de0_nano/software/apps/leds"
+.LASF2:
+	.string	"char"
+.LASF15:
 	.string	"uart.c"
 .LASF4:
-	.string	"string"
-.LASF5:
-	.string	"UART_WriteChar"
+	.string	"UART_WriteString_HEX"
+.LASF11:
+	.string	"UART_WriteNumber"
+.LASF9:
+	.string	"down_nibble"
+.LASF1:
+	.string	"short unsigned int"
+.LASF14:
+	.string	"GNU C99 7.3.1 -mcpu=msp430 -mhwmult=16bit -msmall -mcode-region=none -mdata-region=none -mdevices-csv-loc=/opt/ti/ccsv8/ccs_base/msp430/include_gcc/devices.csv -g3 -g -gdwarf-3 -gstrict-dwarf -O0 -std=c99 -std=c99 -fstrict-aliasing -fstack-usage"
+.LASF13:
+	.string	"txdata"
+.LASF10:
+	.string	"UART_WriteString"
 	.ident	"GCC: (Mitto Systems Limited - msp430-gcc 7.3.1.24) 7.3.1"

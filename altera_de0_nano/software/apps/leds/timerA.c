@@ -45,7 +45,7 @@ void ta_wait(unsigned int time_cnt) {
 wakeup interrupt (TIMERA1_VECTOR) INT_timerA1(void) {
 
 
-      //Force Reset
+  //Force Reset
 	 // WDTCTL = 0;
 	  TACTL = TAIFG;
 	  //LED_CTRL ^= 0x0F;
@@ -55,7 +55,7 @@ wakeup interrupt (TIMERA1_VECTOR) INT_timerA1(void) {
 	  // Start and re-initialize TimerA
 	  TACTL  = TASSEL1 | TACLR | MC_1 | TAIE;
 
-	  QWARK_CHECKPOINT();
+	 QWARK_CHECKPOINT();
 
 
 }

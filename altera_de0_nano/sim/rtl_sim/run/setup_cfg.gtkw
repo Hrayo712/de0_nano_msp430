@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
-[*] Sun Jun 23 09:06:36 2019
+[*] Mon Jul  8 15:52:07 2019
 [*]
 [dumpfile] "/home/hiram/master/Qwark_stack/altera_de0_nano/sim/rtl_sim/run/tb_openMSP430_fpga.vcd"
-[dumpfile_mtime] "Sun Jun 23 09:02:24 2019"
-[dumpfile_size] 443360174
+[dumpfile_mtime] "Mon Jul  8 15:49:57 2019"
+[dumpfile_size] 380985786
 [savefile] "/home/hiram/master/Qwark_stack/altera_de0_nano/sim/rtl_sim/run/setup_cfg.gtkw"
-[timestart] 47305540000
-[size] 1851 833
+[timestart] 50099690000
+[size] 1851 874
 [pos] -29 -29
-*-22.441101 47309500000 20000100000 19834500000 19947550000 19568590000 24556460000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-22.441101 50113500000 50113500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_openMSP430_fpga.
 [treeopen] tb_openMSP430_fpga.dut.
 [treeopen] tb_openMSP430_fpga.dut.dmem_0.
@@ -21,7 +21,7 @@
 [sst_width] 342
 [signals_width] 345
 [sst_expanded] 1
-[sst_vpaned_height] 198
+[sst_vpaned_height] 391
 @28
 tb_openMSP430_fpga.EX_RST
 tb_openMSP430_fpga.dut.FPGA_CLK1_50
@@ -51,7 +51,6 @@ tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.irq_flag
 tb_openMSP430_fpga.dut.qwark_periph_0.irq_detect
 [color] 1
 (1)tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.irq_seg[1:0]
-@29
 tb_openMSP430_fpga.dut.qwark_periph_0.r1
 @22
 tb_openMSP430_fpga.dut.qwark_periph_0.pc_inc[15:0]
@@ -78,7 +77,11 @@ tb_openMSP430_fpga.dut.qwark_periph_0.inst_pc[15:0]
 tb_openMSP430_fpga.msp_debug_omsp.inst_cycle[31:0]
 @820
 tb_openMSP430_fpga.msp_debug_omsp.inst_full[255:0]
+[color] 1
 tb_openMSP430_fpga.dut.uart_0.data_tx[7:0]
+@24
+[color] 1
+tb_openMSP430_fpga.omsp_dmem607A[15:0]
 @22
 tb_openMSP430_fpga.omsp_dmem6BFE[15:0]
 tb_openMSP430_fpga.omsp_dmem6BFC[15:0]
@@ -190,11 +193,11 @@ tb_openMSP430_fpga.omsp_dmem7FB2[15:0]
 tb_openMSP430_fpga.omsp_dmem7FB0[15:0]
 [color] 2
 tb_openMSP430_fpga.omsp_dmem7FAE[15:0]
-@24
 [color] 3
 tb_openMSP430_fpga.omsp_dmem4000[15:0]
 [color] 3
 tb_openMSP430_fpga.omsp_dmem4002[15:0]
+@24
 [color] 3
 tb_openMSP430_fpga.omsp_dmem4004[15:0]
 [color] 3
@@ -278,6 +281,9 @@ tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.en
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.mem_track_en
 tb_openMSP430_fpga.dut.qwark_periph_0.irq_qwark_acc
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_irq
+@29
+tb_openMSP430_fpga.dut.qwark_periph_0.qwark_reg_wr
+@28
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.irq_flag
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.buff_rst
 @c00028
@@ -379,43 +385,5 @@ tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_wr_en
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_busy_writing[15:0]
 [color] 3
 tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_ctr[4:0]
-[color] 2
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.rd_buff_0[15:0]
-[color] 2
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.rd_buff_1[15:0]
-[color] 2
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.rd_buff_2[15:0]
-[color] 2
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.rd_buff_3[15:0]
-[color] 2
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.rd_buff_4[15:0]
-[color] 2
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.rd_buff_5[15:0]
-[color] 2
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.rd_buff_6[15:0]
-[color] 2
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.rd_buff_7[15:0]
-[color] 3
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_0[15:0]
-[color] 3
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_1[15:0]
-[color] 3
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_2[15:0]
-[color] 3
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_3[15:0]
-[color] 3
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_4[15:0]
-[color] 3
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_5[15:0]
-[color] 3
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_6[15:0]
-[color] 3
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_7[15:0]
-[color] 3
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_8[15:0]
-[color] 3
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_9[15:0]
-[color] 3
-tb_openMSP430_fpga.dut.qwark_periph_0.qwark_0.wr_buff_10[15:0]
 [pattern_trace] 1
 [pattern_trace] 0

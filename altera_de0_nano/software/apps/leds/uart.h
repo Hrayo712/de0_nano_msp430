@@ -10,8 +10,10 @@
 
 
 int UART_WriteChar (char txdata);
-void UART_WriteNumber (int n);
+void UART_WriteNumber (unsigned n);
 void UART_WriteString(char* string);
+void UART_16_WriteHex(unsigned short hex_val);
+void UART_WriteString_HEX(char* string, unsigned length);
 //--------------------------------------------------
 // Hardware UART register address mapping
 //--------------------------------------------------

@@ -245,11 +245,13 @@ always @ (posedge mclk or posedge puc_rst)
   if (puc_rst)       	  cntrl1 <=  16'h0000;
   else if (cntrl1_wr) 	  cntrl1 <=  per_din;
   else if (qwark_reg_wr  &&  dly_irq_qwark_acc)   cntrl1 <=   {cntrl1[15:8],1'b1,cntrl1[6],{1{1'b0}},qwark_war_nr[3:0],1'b0};
-  else if (qwark_reg_wr  && ~dly_irq_qwark_acc)   cntrl1 <=   {cntrl1[15:6],cntrl1[5],qwark_war_nr[3:0],cntrl1[0]};
+  else if (qwark_reg_wr  && ~dly_irq_qwark_acc &&  irq_flag)  cntrl1 <=   {cntrl1[15:6],{1{1'b1}},qwark_war_nr[3:0],cntrl1[0]};
+  else if (qwark_reg_wr  && ~dly_irq_qwark_acc && ~irq_flag)  cntrl1 <=   {cntrl1[15:6],cntrl1[5],qwark_war_nr[3:0],cntrl1[0]};
   else if (~qwark_reg_wr &&  dly_irq_qwark_acc)   cntrl1 <=   {cntrl1[15:8],1'b1,cntrl1[6],{1{1'b0}},cntrl1[4:1],1'b0};
-  else if (irq_flag)		  							     cntrl1 <=   {cntrl1[15:6],1'b1,cntrl1[4:0]};
+  else if (irq_flag)		  							     cntrl1 <=   {cntrl1[15:6],{1{1'b1}},cntrl1[4:0]};
 
-  // CNTRL2 Register
+  
+// CNTRL2 Register
 //-----------------
 reg  [15:0] cntrl2;
 

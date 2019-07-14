@@ -729,7 +729,7 @@ void qwark_restore(void)
 
 
  __asm__ __volatile__ ("mov  #370, r8");
- __asm__ __volatile__ ("mov  #4980, 0(r8)");
+ __asm__ __volatile__ ("mov  #9980, 0(r8)");
 
  __asm__ __volatile__ ("mov  #352, r8");
  __asm__ __volatile__ ("mov  #534, 0(r8)");
@@ -744,10 +744,10 @@ void qwark_restore(void)
 
  __asm__ __volatile__ ("__erase_stack:");
 
- __asm__ __volatile__ ("cmp #0x7FA0,r14");
+ __asm__ __volatile__ ("cmp #0x7C00,r14");
  __asm__ __volatile__ ("jz __deletion_stack_complete");
 
- __asm__ __volatile__ ("mov #0x00000,@r14");
+ __asm__ __volatile__ ("mov #0x0000,@r14");
  __asm__ __volatile__ ("decd r14");
  __asm__ __volatile__ ("br #__erase_stack");
 
@@ -828,7 +828,16 @@ void qwark_restore(void)
 
 
 void __attribute__((interrupt ((5)))) INT_Qwark(void) {
-# 282 "qwark.c"
+
+
+
+ __asm__ __volatile__ ("mov #0xAA, &0x0090 ");
+
+
+
+
+
+
   __asm__ __volatile__ ("mov r13, &0x6070");
   __asm__ __volatile__ ("mov r12, &0x6072");
 
@@ -842,7 +851,7 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("__second_buffer_init:");
 
   __asm__ __volatile__ ("mov #0x6040, r12");
-# 306 "qwark.c"
+# 307 "qwark.c"
   __asm__ __volatile__ ("__first_phase_commit:");
 
   __asm__ __volatile__ ("mov 2(r1),@r12");
@@ -916,7 +925,7 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("mov.b r14, @r12");
   __asm__ __volatile__ ("mov r14, r15 ");
   __asm__ __volatile__ ("incd r12");
-# 388 "qwark.c"
+# 389 "qwark.c"
   __asm__ __volatile__ ("tst r14 ");
   __asm__ __volatile__ ("jz  __seg_logic");
 
@@ -937,7 +946,6 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 
   __asm__ __volatile__ ("__seg_logic:");
-
 
 
 
@@ -968,6 +976,13 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 
   __asm__ __volatile__ ("__commit_th:");
+
+  __asm__ __volatile__ ("cmp #0x8000,r12");
+  __asm__ __volatile__ ("jne __commit_th_cmp");
+  __asm__ __volatile__ ("decd  r12");
+
+  __asm__ __volatile__ ("__commit_th_cmp:");
+
   __asm__ __volatile__ ("cmp.b #0x01,&0x6075");
   __asm__ __volatile__ ("jz  __commit_on_2nd ");
   __asm__ __volatile__ ("mov r12, &0x6076");
@@ -983,7 +998,6 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
   __asm__ __volatile__ ("_chkpt_stack:");
 
-
   __asm__ __volatile__ ("mov #0x0000, &0x6BFE");
   __asm__ __volatile__ ("mov #0x0000, &0x6BFC");
 
@@ -992,7 +1006,6 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("__first_stack_chkpt_setup:");
   __asm__ __volatile__ ("cmp.b #0x00, &0x6075 ");
   __asm__ __volatile__ ("jne __segmentation_logic");
-
 
 
   __asm__ __volatile__ ("mov #0x6FFE, r13");
@@ -1016,10 +1029,8 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
   __asm__ __volatile__ ("__sp_seg_define:");
 
-
   __asm__ __volatile__ ("cmp r10, r14");
   __asm__ __volatile__ ("jne __sp_overlap");
-
 
 
   __asm__ __volatile__ ("cmp r10, r12");
@@ -1030,7 +1041,6 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 
   __asm__ __volatile__ ("__sp_overlap:");
-
 
   __asm__ __volatile__ ("cmp r14, r12");
   __asm__ __volatile__ ("jeq __stack_chkpt_end");
@@ -1093,7 +1103,6 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
 
 
-
   __asm__ __volatile__ ("cmp.b #0x01,&0x6075");
   __asm__ __volatile__ ("jz  __set_flag_2nd ");
 
@@ -1102,9 +1111,8 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
   __asm__ __volatile__ ("__set_flag_2nd:");
   __asm__ __volatile__ ("add.b #0x01, &0x6075 ");
-# 585 "qwark.c"
+# 586 "qwark.c"
   __asm__ __volatile__ ("_WAR_commit:");
-
 
   __asm__ __volatile__ ("tst r15 ");
   __asm__ __volatile__ ("jz  _stack_write_back");
@@ -1160,8 +1168,6 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
 
   __asm__ __volatile__ ("cmp #0x0000,  &0x6BFE");
   __asm__ __volatile__ ("jeq _chkpt_finished");
-
-
 
   __asm__ __volatile__ ("mov &0x6BFE,  r13 ");
   __asm__ __volatile__ ("mov &0x6BFC,  r12 ");
@@ -1244,7 +1250,12 @@ void __attribute__((interrupt ((5)))) INT_Qwark(void) {
   __asm__ __volatile__ ("mov #0x0000, &0x02AE");
   __asm__ __volatile__ ("mov #0x0000, &0x02B0");
 
+  __asm__ __volatile__ ("add #0x01, &0x607A");
 
+
+
+  __asm__ __volatile__ ("mov #0xFF, &0x0090 ");
 
   __asm__ __volatile__ ("mov #0x0001, &0x02A0");
+
 }

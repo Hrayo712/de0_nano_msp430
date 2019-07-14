@@ -95,9 +95,9 @@ output        				  		[2:0]	 irq_out;	// Interrupt request signal
 output 	[DATA_WIDTH-1:0]  per_dout_war_addr;	// Peripheral WAR Address 
 output 				  [3:0]	  per_dout_war_nr;
 output				 [15:0]			 sp_seg_out;
-output					[15:0]       sp_max_val;
-output						 [2:0]   sp_sig_updt;
-output						  [15:0] sp_init_out;
+output				 [15:0]         sp_max_val;
+output				  [2:0]        sp_sig_updt;
+output				 [15:0]        sp_init_out;
 
 // INPUTs
 //=========
@@ -243,7 +243,7 @@ reg sp_per_seg_updt_dly;
 reg sp_per_max_updt_dly;
 
 // Segmentation Interrupt logic and segment update
-wire [14:0 ]sp_seg_addr_dbg = sp_seg_addr[14:0];
+wire [14:0]sp_seg_addr_dbg = sp_seg_addr[14:0];
 
 always @(posedge mclk) begin
 	if (puc_rst) begin
@@ -265,7 +265,7 @@ always @(posedge mclk) begin
 	sp_r1_syn <= 1'b1;
 	sp_seg_addr <= 16'h8000 | (sp_val);
 	
-	end else if (en && sp_seg_addr[14:0] != 16'h0000 && sp_val >= sp_seg_addr[14:0] && ~sp_r1_syn) begin
+	end else if (en && sp_seg_addr[14:0] != 16'h0000 && sp_val >= sp_seg_addr[14:0] && sp_val <= 16'h7FFE && ~sp_r1_syn) begin
 	sp_sig[2] <= 1'b1;
 	sp_seg_addr <= sp_val;
 	
@@ -284,7 +284,7 @@ always @(posedge mclk) begin
 	end else if(en && ~sp_sig[0]) begin
 	init_sp_val <= sp_val;
 	sp_sig[0] <= 1'b1;
-	end else if (en && sp_sig[0] && sp_val >= init_sp_val) begin
+	end else if (en && sp_sig[0] && sp_val >= init_sp_val && sp_val <= 16'h7FFE) begin
 	sp_sig[1] <= 1'b1;
 	init_sp_val <= sp_val;
 	
@@ -306,7 +306,7 @@ always @(posedge mclk) begin
 	end else if(en && max_sp == 16'h0000) begin
 	max_sp <= sp_val;
 
-   end else if (en && sp_val > max_sp) begin
+   end else if (en && sp_val > max_sp && sp_val <= 16'h7FFE) begin
 	max_sp <= sp_val;
 	
 	end else if (sp_per_max_updt_dly) begin
@@ -386,7 +386,7 @@ end
 always @(posedge mclk) begin
 	if(puc_rst) begin
 	irq_flag <= 1'b0;
-	end else if((wr_buff_ctr == 7 && wr_buff_wr_en) || (rd_buff_ctr == 7 && rd_buff_wr_en) ) begin //used to be 5 //tested segmentation on 6
+	end else if((wr_buff_ctr == 7 && wr_buff_wr_en) || (rd_buff_ctr == 7 && rd_buff_wr_en) || (war_ctr == 5 && WAR)) begin //used to be 5 //tested segmentation on 6
 	irq_flag <= 1'b1;
 	end else begin
 	irq_flag <= 1'b0;
@@ -596,22 +596,22 @@ end
 
 reg [255:0] rd_buff;
 //For debug
-wire [15:0]rd_buff_0 = rd_buff[16*(0)  +: 16];
-wire [15:0]rd_buff_1 = rd_buff[16*(1)  +: 16];
-wire [15:0]rd_buff_2 = rd_buff[16*(2)  +: 16];
-wire [15:0]rd_buff_3 = rd_buff[16*(3)  +: 16];
-wire [15:0]rd_buff_4 = rd_buff[16*(4)  +: 16];
-wire [15:0]rd_buff_5 = rd_buff[16*(5)  +: 16];
-wire [15:0]rd_buff_6 = rd_buff[16*(6)  +: 16];
-wire [15:0]rd_buff_7 = rd_buff[16*(7)  +: 16];
-wire [15:0]rd_buff_8 = rd_buff[16*(8)  +: 16];
-wire [15:0]rd_buff_9 = rd_buff[16*(9)  +: 16];
-wire [15:0]rd_buff_10 = rd_buff[16*(10)  +: 16];
-wire [15:0]rd_buff_11 = rd_buff[16*(11)  +: 16];
-wire [15:0]rd_buff_12 = rd_buff[16*(12)  +: 16];
-wire [15:0]rd_buff_13 = rd_buff[16*(13)  +: 16];
-wire [15:0]rd_buff_14 = rd_buff[16*(14)  +: 16];
-wire [15:0]rd_buff_15 = rd_buff[16*(15)  +: 16];
+//wire [15:0]rd_buff_0 = rd_buff[16*(0)  +: 16];
+//wire [15:0]rd_buff_1 = rd_buff[16*(1)  +: 16];
+//wire [15:0]rd_buff_2 = rd_buff[16*(2)  +: 16];
+//wire [15:0]rd_buff_3 = rd_buff[16*(3)  +: 16];
+//wire [15:0]rd_buff_4 = rd_buff[16*(4)  +: 16];
+//wire [15:0]rd_buff_5 = rd_buff[16*(5)  +: 16];
+//wire [15:0]rd_buff_6 = rd_buff[16*(6)  +: 16];
+//wire [15:0]rd_buff_7 = rd_buff[16*(7)  +: 16];
+//wire [15:0]rd_buff_8 = rd_buff[16*(8)  +: 16];
+//wire [15:0]rd_buff_9 = rd_buff[16*(9)  +: 16];
+//wire [15:0]rd_buff_10 = rd_buff[16*(10)  +: 16];
+//wire [15:0]rd_buff_11 = rd_buff[16*(11)  +: 16];
+//wire [15:0]rd_buff_12 = rd_buff[16*(12)  +: 16];
+//wire [15:0]rd_buff_13 = rd_buff[16*(13)  +: 16];
+//wire [15:0]rd_buff_14 = rd_buff[16*(14)  +: 16];
+//wire [15:0]rd_buff_15 = rd_buff[16*(15)  +: 16];
 
 
 always @(posedge mclk) begin
@@ -636,11 +636,11 @@ assign	rd_match_bits[7]  = rd_cmp_eu_addr == rd_buff[16*(7)  +: 16]	? 1'b1 : 1'b
 assign	rd_match_bits[8]  = rd_cmp_eu_addr == rd_buff[16*(8)  +: 16]	? 1'b1 : 1'b0;
 assign	rd_match_bits[9]  = rd_cmp_eu_addr == rd_buff[16*(9)  +: 16]	? 1'b1 : 1'b0;
 assign	rd_match_bits[10] = rd_cmp_eu_addr == rd_buff[16*(10) +: 16]	? 1'b1 : 1'b0;
-assign	rd_match_bits[11] = rd_cmp_eu_addr == rd_buff[16*(11) +: 16]	? 1'b1 : 1'b0;
-assign	rd_match_bits[12] = rd_cmp_eu_addr == rd_buff[16*(12) +: 16]	? 1'b1 : 1'b0;
-assign	rd_match_bits[13] = rd_cmp_eu_addr == rd_buff[16*(13) +: 16]	? 1'b1 : 1'b0;
-assign	rd_match_bits[14] = rd_cmp_eu_addr == rd_buff[16*(14) +: 16]	? 1'b1 : 1'b0;
-assign	rd_match_bits[15] = rd_cmp_eu_addr == rd_buff[16*(15) +: 16]	? 1'b1 : 1'b0;
+//assign	rd_match_bits[11] = rd_cmp_eu_addr == rd_buff[16*(11) +: 16]	? 1'b1 : 1'b0;
+//assign	rd_match_bits[12] = rd_cmp_eu_addr == rd_buff[16*(12) +: 16]	? 1'b1 : 1'b0;
+//assign	rd_match_bits[13] = rd_cmp_eu_addr == rd_buff[16*(13) +: 16]	? 1'b1 : 1'b0;
+//assign	rd_match_bits[14] = rd_cmp_eu_addr == rd_buff[16*(14) +: 16]	? 1'b1 : 1'b0;
+//assign	rd_match_bits[15] = rd_cmp_eu_addr == rd_buff[16*(15) +: 16]	? 1'b1 : 1'b0;
 
 
 				
@@ -655,11 +655,11 @@ wire [4:0] rd_match_bus =  rd_match_bits[0]  ? 5'b10000 :
 									rd_match_bits[8]  ? 5'b11000 :
 									rd_match_bits[9]  ? 5'b11001 :
 									rd_match_bits[10] ? 5'b11010 :
-									rd_match_bits[11] ? 5'b11011 :
-									rd_match_bits[12] ? 5'b11100 :
-									rd_match_bits[13] ? 5'b11101 :
-									rd_match_bits[14] ? 5'b11110 :
-									rd_match_bits[15] ? 5'b11111 :
+									//rd_match_bits[11] ? 5'b11011 :
+									//rd_match_bits[12] ? 5'b11100 :
+									//rd_match_bits[13] ? 5'b11101 :
+									//rd_match_bits[14] ? 5'b11110 :
+									//rd_match_bits[15] ? 5'b11111 :
 									5'b01111;
 									 
 wire [3:0] rd_match_addr = rd_match_bus[3:0];
@@ -672,22 +672,22 @@ wire       rd_match      = rd_match_bus[4];
 
 reg [255:0] wr_buff;
 //For debug
-wire [15:0]wr_buff_0 = wr_buff[16*(0)  +: 16];
-wire [15:0]wr_buff_1 = wr_buff[16*(1)  +: 16];
-wire [15:0]wr_buff_2 = wr_buff[16*(2)  +: 16];
-wire [15:0]wr_buff_3 = wr_buff[16*(3)  +: 16];
-wire [15:0]wr_buff_4 = wr_buff[16*(4)  +: 16];
-wire [15:0]wr_buff_5 = wr_buff[16*(5)  +: 16];
-wire [15:0]wr_buff_6 = wr_buff[16*(6)  +: 16];
-wire [15:0]wr_buff_7 = wr_buff[16*(7)  +: 16];
-wire [15:0]wr_buff_8 = wr_buff[16*(8)  +: 16];
-wire [15:0]wr_buff_9 = wr_buff[16*(9)  +: 16];
-wire [15:0]wr_buff_10 = wr_buff[16*(10)  +: 16];
-wire [15:0]wr_buff_11 = wr_buff[16*(11)  +: 16];
-wire [15:0]wr_buff_12 = wr_buff[16*(12)  +: 16];
-wire [15:0]wr_buff_13 = wr_buff[16*(13)  +: 16];
-wire [15:0]wr_buff_14 = wr_buff[16*(14)  +: 16];
-wire [15:0]wr_buff_15 = wr_buff[16*(15)  +: 16];
+//wire [15:0]wr_buff_0 = wr_buff[16*(0)  +: 16];
+//wire [15:0]wr_buff_1 = wr_buff[16*(1)  +: 16];
+//wire [15:0]wr_buff_2 = wr_buff[16*(2)  +: 16];
+//wire [15:0]wr_buff_3 = wr_buff[16*(3)  +: 16];
+//wire [15:0]wr_buff_4 = wr_buff[16*(4)  +: 16];
+//wire [15:0]wr_buff_5 = wr_buff[16*(5)  +: 16];
+//wire [15:0]wr_buff_6 = wr_buff[16*(6)  +: 16];
+//wire [15:0]wr_buff_7 = wr_buff[16*(7)  +: 16];
+//wire [15:0]wr_buff_8 = wr_buff[16*(8)  +: 16];
+//wire [15:0]wr_buff_9 = wr_buff[16*(9)  +: 16];
+//wire [15:0]wr_buff_10 = wr_buff[16*(10)  +: 16];
+//wire [15:0]wr_buff_11 = wr_buff[16*(11)  +: 16];
+//wire [15:0]wr_buff_12 = wr_buff[16*(12)  +: 16];
+//wire [15:0]wr_buff_13 = wr_buff[16*(13)  +: 16];
+//wire [15:0]wr_buff_14 = wr_buff[16*(14)  +: 16];
+//wire [15:0]wr_buff_15 = wr_buff[16*(15)  +: 16];
 
 always @(posedge mclk) begin
 	
@@ -711,11 +711,11 @@ assign	wr_match_bits[7]  = wr_cmp_eu_addr == wr_buff[16*(7)  +: 16]	? 1'b1 : 1'b
 assign	wr_match_bits[8]  = wr_cmp_eu_addr == wr_buff[16*(8)  +: 16]	? 1'b1 : 1'b0;
 assign	wr_match_bits[9]  = wr_cmp_eu_addr == wr_buff[16*(9)  +: 16]	? 1'b1 : 1'b0;
 assign	wr_match_bits[10] = wr_cmp_eu_addr == wr_buff[16*(10) +: 16]	? 1'b1 : 1'b0;
-assign	wr_match_bits[11] = wr_cmp_eu_addr == wr_buff[16*(11) +: 16]	? 1'b1 : 1'b0;
-assign	wr_match_bits[12] = wr_cmp_eu_addr == wr_buff[16*(12) +: 16]	? 1'b1 : 1'b0;
-assign	wr_match_bits[13] = wr_cmp_eu_addr == wr_buff[16*(13) +: 16]	? 1'b1 : 1'b0;
-assign	wr_match_bits[14] = wr_cmp_eu_addr == wr_buff[16*(14) +: 16]	? 1'b1 : 1'b0;
-assign	wr_match_bits[15] = wr_cmp_eu_addr == wr_buff[16*(15) +: 16]	? 1'b1 : 1'b0;
+//assign	wr_match_bits[11] = wr_cmp_eu_addr == wr_buff[16*(11) +: 16]	? 1'b1 : 1'b0;
+//assign	wr_match_bits[12] = wr_cmp_eu_addr == wr_buff[16*(12) +: 16]	? 1'b1 : 1'b0;
+//assign	wr_match_bits[13] = wr_cmp_eu_addr == wr_buff[16*(13) +: 16]	? 1'b1 : 1'b0;
+//assign	wr_match_bits[14] = wr_cmp_eu_addr == wr_buff[16*(14) +: 16]	? 1'b1 : 1'b0;
+//assign	wr_match_bits[15] = wr_cmp_eu_addr == wr_buff[16*(15) +: 16]	? 1'b1 : 1'b0;
 
 
 				
@@ -730,11 +730,11 @@ wire [4:0] wr_match_bus =  wr_match_bits[0]  ? 5'b10000 :
 									wr_match_bits[8]  ? 5'b11000 :
 									wr_match_bits[9]  ? 5'b11001 :
 									wr_match_bits[10] ? 5'b11010 :
-									wr_match_bits[11] ? 5'b11011 :
-									wr_match_bits[12] ? 5'b11100 :
-									wr_match_bits[13] ? 5'b11101 :
-									wr_match_bits[14] ? 5'b11110 :
-									wr_match_bits[15] ? 5'b11111 :
+									//wr_match_bits[11] ? 5'b11011 :
+									//wr_match_bits[12] ? 5'b11100 :
+									//wr_match_bits[13] ? 5'b11101 :
+									//wr_match_bits[14] ? 5'b11110 :
+									//wr_match_bits[15] ? 5'b11111 :
 									5'b01111;
 									 
 wire [3:0] wr_match_addr = wr_match_bus[3:0];

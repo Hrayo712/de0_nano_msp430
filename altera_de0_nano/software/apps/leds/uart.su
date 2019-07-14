@@ -1,3 +1,5 @@
 uart.c:16:5:UART_WriteChar	2	static
 uart.c:28:6:UART_WriteNumber	24	static
 uart.c:52:6:UART_WriteString	4	static
+uart.c:66:6:UART_WriteString_HEX	8	static
+uart.c:98:6:UART_16_WriteHex	6	static

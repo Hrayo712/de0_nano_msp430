@@ -712,7 +712,7 @@ __attribute__((wakeup)) void __attribute__((interrupt ((9)))) INT_timerA1(void) 
 
    (*(volatile unsigned int *) 0x0160) = (0x0200) | (0x0004) | (0x0010) | (0x0002);
 
-   (*(volatile unsigned int *) 0x02A0) |= 0x0020;
+  (*(volatile unsigned int *) 0x02A0) |= 0x0020;
 
 
 }

@@ -104,6 +104,31 @@ initial
 
   end
 
+integer outfile;
+integer outfile2;
+integer outfile3;
+
+//initial
+//  begin
+//    outfile = $fopen("./stack_usage.txt");
+//    #500
+//    forever #100000.0     $fdisplay(outfile, "%02x", dut.openmsp430_0.execution_unit_0.register_file_0.reg_r1);
+//  end
+
+//  initial
+//  begin
+//    outfile2 = $fopen("./segment_bounds.txt");
+//    #500
+//    forever #100000.0     $fdisplay(outfile2, "%02x", dut.qwark_periph_0.qwark_0.sp_seg_addr_dbg);
+//  end
+
+  initial
+    begin
+      outfile3 = $fopen("./checkpoint_time.txt");
+      forever #1000.0  $fdisplay(outfile3, "%02x", dut.LED);
+    end
+
+
 //
 // Generate Clock & Reset
 //------------------------------
@@ -137,14 +162,14 @@ initial
 
   end
 
-always 
-     begin
-	#9340230 ;
-	EX_RST = 1'b1;	 
+//always 
+ // begin
+//	#1027010 ;
+//	EX_RST = 1'b1;	 
  	
-   #100; 
-	EX_RST = 1'b0;
-end
+//  #100; 
+//	EX_RST = 1'b0;
+//end
 
 // Global initialization
 //------------------------------

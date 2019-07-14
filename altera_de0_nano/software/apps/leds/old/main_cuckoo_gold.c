@@ -4,7 +4,7 @@
 //#define BLOCK_PRINT
 //#define BLOCK_LOG_PRINT
 
-#define UART_DBG
+//#define UART_DBG
 
 #ifdef MSP430
 #include <msp430.h>

@@ -1,5 +1,5 @@
 Flow report for openMSP430_fpga
-Mon Jul  1 02:27:18 2019
+Sun Jul 14 06:42:16 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,22 +40,22 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Jul  1 02:26:56 2019       ;
+; Flow Status                        ; Flow Failed - Sun Jul 14 06:42:16 2019      ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; openMSP430_fpga                             ;
-; Top-level Entity Name              ; openMSP430_fpga                             ;
+; Top-level Entity Name              ; omsp_qwark_periph                           ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 4,850 / 22,320 ( 22 % )                     ;
-;     Total combinational functions  ; 4,514 / 22,320 ( 20 % )                     ;
-;     Dedicated logic registers      ; 2,012 / 22,320 ( 9 % )                      ;
-; Total registers                    ; 2012                                        ;
-; Total pins                         ; 22 / 154 ( 14 % )                           ;
+; Total logic elements               ; 1,723 / 22,320 ( 8 % )                      ;
+;     Total combinational functions  ; 1,393 / 22,320 ( 6 % )                      ;
+;     Dedicated logic registers      ; 729 / 22,320 ( 3 % )                        ;
+; Total registers                    ; 729                                         ;
+; Total pins                         ; 173 / 154 ( 112 % )                         ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 393,216 / 608,256 ( 65 % )                  ;
-; Embedded Multiplier 9-bit elements ; 2 / 132 ( 2 % )                             ;
-; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
+; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
+; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -64,29 +64,32 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/01/2019 02:25:16 ;
+; Start date & time ; 07/14/2019 06:41:48 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; openMSP430_fpga     ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                         ;
-+-------------------------------------+-----------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                   ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+-----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 52235801857.156197311604478             ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                      ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                       ; --            ; --          ; --         ;
-; OPTIMIZATION_TECHNIQUE              ; -- (Not supported for targeted family)  ; Balanced      ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family)  ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)  ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)  ; --            ; --          ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                            ; --            ; --          ; --         ;
-; SEARCH_PATH                         ; ../../../rtl/verilog/openmsp430/        ; --            ; --          ; --         ;
-; SEARCH_PATH                         ; ../../../rtl/verilog/openmsp430/periph/ ; --            ; --          ; --         ;
-; SEARCH_PATH                         ; ../../../rtl/verilog/opengfx430/        ; --            ; --          ; --         ;
-+-------------------------------------+-----------------------------------------+---------------+-------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                 ;
++-------------------------------------+-----------------------------------------+-----------------+-------------------+------------+
+; Assignment Name                     ; Value                                   ; Default Value   ; Entity Name       ; Section Id ;
++-------------------------------------+-----------------------------------------+-----------------+-------------------+------------+
+; COMPILER_SIGNATURE_ID               ; 52235801857.156311170805228             ; --              ; --                ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                      ; --              ; --                ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                       ; --              ; --                ; --         ;
+; OPTIMIZATION_TECHNIQUE              ; -- (Not supported for targeted family)  ; Balanced        ; --                ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)  ; --              ; omsp_qwark_periph ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)  ; --              ; omsp_qwark_periph ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)  ; --              ; omsp_qwark_periph ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                     ; --              ; --                ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW   ; --              ; --                ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                            ; --              ; --                ; --         ;
+; SEARCH_PATH                         ; ../../../rtl/verilog/openmsp430/        ; --              ; --                ; --         ;
+; SEARCH_PATH                         ; ../../../rtl/verilog/openmsp430/periph/ ; --              ; --                ; --         ;
+; SEARCH_PATH                         ; ../../../rtl/verilog/opengfx430/        ; --              ; --                ; --         ;
+; TOP_LEVEL_ENTITY                    ; omsp_qwark_periph                       ; openMSP430_fpga ; --                ; --         ;
++-------------------------------------+-----------------------------------------+-----------------+-------------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -94,11 +97,9 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:52     ; 1.0                     ; 1027 MB             ; 00:00:49                           ;
-; Fitter               ; 00:00:38     ; 1.0                     ; 1208 MB             ; 00:00:38                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 832 MB              ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:20     ; 1.0                     ; 862 MB              ; 00:00:20                           ;
-; Total                ; 00:01:53     ; --                      ; --                  ; 00:01:49                           ;
+; Analysis & Synthesis ; 00:00:23     ; 1.0                     ; 951 MB              ; 00:00:18                           ;
+; Fitter               ; 00:00:04     ; 1.0                     ; 1012 MB             ; 00:00:03                           ;
+; Total                ; 00:00:27     ; --                      ; --                  ; 00:00:21                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -109,8 +110,6 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+----------------+------------+----------------+
 ; Analysis & Synthesis ; ubuntu           ; Ubuntu 18.04.2 ; 18         ; x86_64         ;
 ; Fitter               ; ubuntu           ; Ubuntu 18.04.2 ; 18         ; x86_64         ;
-; Assembler            ; ubuntu           ; Ubuntu 18.04.2 ; 18         ; x86_64         ;
-; Timing Analyzer      ; ubuntu           ; Ubuntu 18.04.2 ; 18         ; x86_64         ;
 +----------------------+------------------+----------------+------------+----------------+
 
 
@@ -119,8 +118,6 @@ refer to the applicable agreement for further details.
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off openMSP430_fpga -c openMSP430_fpga
 quartus_fit --read_settings_files=off --write_settings_files=off openMSP430_fpga -c openMSP430_fpga
-quartus_asm --read_settings_files=off --write_settings_files=off openMSP430_fpga -c openMSP430_fpga
-quartus_sta openMSP430_fpga -c openMSP430_fpga
 
 
 

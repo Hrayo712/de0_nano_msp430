@@ -1,6 +1,6 @@
 # makfile configuration
 NAME            = leds
-OBJECTS         = main.o qwark.o timerA.o  uart.o
+OBJECTS         = main.o qwark.o timerA.o  uart.o #aes.o
 
 # Compiler performance option (-Os / -O2 / -O3)
 PORT_CFLAGS     = -O0

@@ -364,7 +364,7 @@ qwark_restore:
  ; 0 "" 2
 	.loc 1 174 0
  ; 174 "qwark.c" 1
-	mov  #4980, 0(r8)
+	mov  #9980, 0(r8)
  ; 0 "" 2
 	.loc 1 176 0
  ; 176 "qwark.c" 1
@@ -384,7 +384,7 @@ qwark_restore:
  ; 0 "" 2
 	.loc 1 189 0
  ; 189 "qwark.c" 1
-	cmp #0x7FA0,r14
+	cmp #0x7C00,r14
  ; 0 "" 2
 	.loc 1 190 0
  ; 190 "qwark.c" 1
@@ -392,7 +392,7 @@ qwark_restore:
  ; 0 "" 2
 	.loc 1 192 0
  ; 192 "qwark.c" 1
-	mov #0x00000,@r14
+	mov #0x0000,@r14
  ; 0 "" 2
 	.loc 1 193 0
  ; 193 "qwark.c" 1
@@ -599,268 +599,272 @@ INT_Qwark:
 ; saved regs:(none)
 	; start of prologue
 	; end of prologue
-	.loc 1 282 0
- ; 282 "qwark.c" 1
-	mov r13, &0x6070
+	.loc 1 276 0
+ ; 276 "qwark.c" 1
+	mov #0xAA, &0x0090 
  ; 0 "" 2
 	.loc 1 283 0
  ; 283 "qwark.c" 1
-	mov r12, &0x6072
+	mov r13, &0x6070
  ; 0 "" 2
-	.loc 1 285 0
- ; 285 "qwark.c" 1
-	cmp.b #0x01,&0x6075
+	.loc 1 284 0
+ ; 284 "qwark.c" 1
+	mov r12, &0x6072
  ; 0 "" 2
 	.loc 1 286 0
  ; 286 "qwark.c" 1
-	jz __second_buffer_init
+	cmp.b #0x01,&0x6075
  ; 0 "" 2
-	.loc 1 288 0
- ; 288 "qwark.c" 1
-	mov #0x6010, r12
+	.loc 1 287 0
+ ; 287 "qwark.c" 1
+	jz __second_buffer_init
  ; 0 "" 2
 	.loc 1 289 0
  ; 289 "qwark.c" 1
-	mov.b #0x01,&0x6074
+	mov #0x6010, r12
  ; 0 "" 2
 	.loc 1 290 0
  ; 290 "qwark.c" 1
+	mov.b #0x01,&0x6074
+ ; 0 "" 2
+	.loc 1 291 0
+ ; 291 "qwark.c" 1
 	br #__first_phase_commit
  ; 0 "" 2
-	.loc 1 292 0
- ; 292 "qwark.c" 1
+	.loc 1 293 0
+ ; 293 "qwark.c" 1
 	__second_buffer_init:
  ; 0 "" 2
-	.loc 1 294 0
- ; 294 "qwark.c" 1
+	.loc 1 295 0
+ ; 295 "qwark.c" 1
 	mov #0x6040, r12
  ; 0 "" 2
-	.loc 1 306 0
- ; 306 "qwark.c" 1
+	.loc 1 307 0
+ ; 307 "qwark.c" 1
 	__first_phase_commit:
  ; 0 "" 2
-	.loc 1 308 0
- ; 308 "qwark.c" 1
+	.loc 1 309 0
+ ; 309 "qwark.c" 1
 	mov 2(r1),@r12
- ; 0 "" 2
-	.loc 1 310 0
- ; 310 "qwark.c" 1
-	cmp #0x0000,&0x02B8
  ; 0 "" 2
 	.loc 1 311 0
  ; 311 "qwark.c" 1
-	jeq __continue_first_phase_commit
+	cmp #0x0000,&0x02B8
  ; 0 "" 2
 	.loc 1 312 0
  ; 312 "qwark.c" 1
+	jeq __continue_first_phase_commit
+ ; 0 "" 2
+	.loc 1 313 0
+ ; 313 "qwark.c" 1
 	sub &0x02B8,@r12
  ; 0 "" 2
-	.loc 1 314 0
- ; 314 "qwark.c" 1
+	.loc 1 315 0
+ ; 315 "qwark.c" 1
 	__continue_first_phase_commit:
  ; 0 "" 2
-	.loc 1 316 0
- ; 316 "qwark.c" 1
+	.loc 1 317 0
+ ; 317 "qwark.c" 1
 	incd r12
- ; 0 "" 2
-	.loc 1 318 0
- ; 318 "qwark.c" 1
-	mov r1,@r12
  ; 0 "" 2
 	.loc 1 319 0
  ; 319 "qwark.c" 1
-	add #0x04,@r12
+	mov r1,@r12
  ; 0 "" 2
 	.loc 1 320 0
  ; 320 "qwark.c" 1
-	incd r12
+	add #0x04,@r12
  ; 0 "" 2
-	.loc 1 322 0
- ; 322 "qwark.c" 1
-	mov 0(r1),@r12
+	.loc 1 321 0
+ ; 321 "qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 323 0
  ; 323 "qwark.c" 1
-	incd r12
+	mov 0(r1),@r12
  ; 0 "" 2
-	.loc 1 325 0
- ; 325 "qwark.c" 1
-	mov &0x02A0,r13
+	.loc 1 324 0
+ ; 324 "qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 326 0
  ; 326 "qwark.c" 1
-	and #0x3E,r13
+	mov &0x02A0,r13
  ; 0 "" 2
 	.loc 1 327 0
  ; 327 "qwark.c" 1
-	bis #0x40,r13
+	and #0x3E,r13
  ; 0 "" 2
 	.loc 1 328 0
  ; 328 "qwark.c" 1
-	mov r13,&0x02A0
+	bis #0x40,r13
  ; 0 "" 2
 	.loc 1 329 0
  ; 329 "qwark.c" 1
-	and #0xBF,r13
+	mov r13,&0x02A0
  ; 0 "" 2
 	.loc 1 330 0
  ; 330 "qwark.c" 1
-	mov r13,&0x02A0
+	and #0xBF,r13
  ; 0 "" 2
-	.loc 1 332 0
- ; 332 "qwark.c" 1
-	mov r4,@r12
+	.loc 1 331 0
+ ; 331 "qwark.c" 1
+	mov r13,&0x02A0
  ; 0 "" 2
 	.loc 1 333 0
  ; 333 "qwark.c" 1
-	incd r12
+	mov r4,@r12
  ; 0 "" 2
-	.loc 1 335 0
- ; 335 "qwark.c" 1
-	mov r5,@r12
+	.loc 1 334 0
+ ; 334 "qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 336 0
  ; 336 "qwark.c" 1
-	incd r12
+	mov r5,@r12
  ; 0 "" 2
-	.loc 1 338 0
- ; 338 "qwark.c" 1
-	mov r6,@r12
+	.loc 1 337 0
+ ; 337 "qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 339 0
  ; 339 "qwark.c" 1
-	incd r12
+	mov r6,@r12
  ; 0 "" 2
-	.loc 1 341 0
- ; 341 "qwark.c" 1
-	mov r7,@r12
+	.loc 1 340 0
+ ; 340 "qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 342 0
  ; 342 "qwark.c" 1
-	incd r12
+	mov r7,@r12
  ; 0 "" 2
-	.loc 1 344 0
- ; 344 "qwark.c" 1
-	mov r8,@r12
+	.loc 1 343 0
+ ; 343 "qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 345 0
  ; 345 "qwark.c" 1
-	incd r12
+	mov r8,@r12
  ; 0 "" 2
-	.loc 1 347 0
- ; 347 "qwark.c" 1
-	mov r9,@r12
+	.loc 1 346 0
+ ; 346 "qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 348 0
  ; 348 "qwark.c" 1
-	incd r12
+	mov r9,@r12
  ; 0 "" 2
-	.loc 1 350 0
- ; 350 "qwark.c" 1
-	mov r10,@r12
+	.loc 1 349 0
+ ; 349 "qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 351 0
  ; 351 "qwark.c" 1
-	incd r12
+	mov r10,@r12
  ; 0 "" 2
-	.loc 1 353 0
- ; 353 "qwark.c" 1
-	mov r11,@r12
+	.loc 1 352 0
+ ; 352 "qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 354 0
  ; 354 "qwark.c" 1
-	incd r12
+	mov r11,@r12
  ; 0 "" 2
-	.loc 1 356 0
- ; 356 "qwark.c" 1
-	mov &0x6072,@r12
+	.loc 1 355 0
+ ; 355 "qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 357 0
  ; 357 "qwark.c" 1
-	incd r12
+	mov &0x6072,@r12
  ; 0 "" 2
-	.loc 1 359 0
- ; 359 "qwark.c" 1
-	mov &0x6070,@r12
+	.loc 1 358 0
+ ; 358 "qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 360 0
  ; 360 "qwark.c" 1
-	incd r12
+	mov &0x6070,@r12
  ; 0 "" 2
-	.loc 1 362 0
- ; 362 "qwark.c" 1
-	mov r14,@r12
+	.loc 1 361 0
+ ; 361 "qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 363 0
  ; 363 "qwark.c" 1
-	incd r12
+	mov r14,@r12
  ; 0 "" 2
-	.loc 1 365 0
- ; 365 "qwark.c" 1
-	mov r15,@r12
+	.loc 1 364 0
+ ; 364 "qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 366 0
  ; 366 "qwark.c" 1
-	incd r12
+	mov r15,@r12
  ; 0 "" 2
-	.loc 1 374 0
- ; 374 "qwark.c" 1
-	mov &0x02A0, r14
+	.loc 1 367 0
+ ; 367 "qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 375 0
  ; 375 "qwark.c" 1
-	RRA r14
+	mov &0x02A0, r14
  ; 0 "" 2
 	.loc 1 376 0
  ; 376 "qwark.c" 1
-	mov.b r14, @r12
+	RRA r14
  ; 0 "" 2
 	.loc 1 377 0
  ; 377 "qwark.c" 1
-	mov r14, r15 
+	mov.b r14, @r12
  ; 0 "" 2
 	.loc 1 378 0
  ; 378 "qwark.c" 1
-	incd r12
+	mov r14, r15 
  ; 0 "" 2
-	.loc 1 388 0
- ; 388 "qwark.c" 1
-	tst r14 
+	.loc 1 379 0
+ ; 379 "qwark.c" 1
+	incd r12
  ; 0 "" 2
 	.loc 1 389 0
  ; 389 "qwark.c" 1
+	tst r14 
+ ; 0 "" 2
+	.loc 1 390 0
+ ; 390 "qwark.c" 1
 	jz  __seg_logic
  ; 0 "" 2
-	.loc 1 391 0
- ; 391 "qwark.c" 1
+	.loc 1 392 0
+ ; 392 "qwark.c" 1
 	mov #0x02A2, r13
  ; 0 "" 2
-	.loc 1 393 0
- ; 393 "qwark.c" 1
+	.loc 1 394 0
+ ; 394 "qwark.c" 1
 	_scratchpad_addr_cpy:
- ; 0 "" 2
-	.loc 1 395 0
- ; 395 "qwark.c" 1
-	mov @r13+2, @r12
  ; 0 "" 2
 	.loc 1 396 0
  ; 396 "qwark.c" 1
-	incd r12
+	mov @r13+2, @r12
  ; 0 "" 2
 	.loc 1 397 0
  ; 397 "qwark.c" 1
-	dec r14 
+	incd r12
  ; 0 "" 2
 	.loc 1 398 0
  ; 398 "qwark.c" 1
-	tst r14 
+	dec r14 
  ; 0 "" 2
 	.loc 1 399 0
  ; 399 "qwark.c" 1
+	tst r14 
+ ; 0 "" 2
+	.loc 1 400 0
+ ; 400 "qwark.c" 1
 	jnz  _scratchpad_addr_cpy
  ; 0 "" 2
-	.loc 1 407 0
- ; 407 "qwark.c" 1
+	.loc 1 408 0
+ ; 408 "qwark.c" 1
 	__seg_logic:
  ; 0 "" 2
 	.loc 1 412 0
@@ -919,280 +923,296 @@ INT_Qwark:
  ; 438 "qwark.c" 1
 	__commit_th:
  ; 0 "" 2
-	.loc 1 439 0
- ; 439 "qwark.c" 1
-	cmp.b #0x01,&0x6075
- ; 0 "" 2
 	.loc 1 440 0
  ; 440 "qwark.c" 1
-	jz  __commit_on_2nd 
+	cmp #0x8000,r12
  ; 0 "" 2
 	.loc 1 441 0
  ; 441 "qwark.c" 1
-	mov r12, &0x6076
+	jne __commit_th_cmp
  ; 0 "" 2
-	.loc 1 443 0
- ; 443 "qwark.c" 1
-	br #_chkpt_stack
+	.loc 1 442 0
+ ; 442 "qwark.c" 1
+	decd  r12
  ; 0 "" 2
-	.loc 1 445 0
- ; 445 "qwark.c" 1
-	__commit_on_2nd: 
+	.loc 1 444 0
+ ; 444 "qwark.c" 1
+	__commit_th_cmp:
  ; 0 "" 2
 	.loc 1 446 0
  ; 446 "qwark.c" 1
-	mov r12, &0x6078 
+	cmp.b #0x01,&0x6075
+ ; 0 "" 2
+	.loc 1 447 0
+ ; 447 "qwark.c" 1
+	jz  __commit_on_2nd 
+ ; 0 "" 2
+	.loc 1 448 0
+ ; 448 "qwark.c" 1
+	mov r12, &0x6076
+ ; 0 "" 2
+	.loc 1 450 0
+ ; 450 "qwark.c" 1
+	br #_chkpt_stack
  ; 0 "" 2
 	.loc 1 452 0
  ; 452 "qwark.c" 1
+	__commit_on_2nd: 
+ ; 0 "" 2
+	.loc 1 453 0
+ ; 453 "qwark.c" 1
+	mov r12, &0x6078 
+ ; 0 "" 2
+	.loc 1 459 0
+ ; 459 "qwark.c" 1
 	_chkpt_stack:
- ; 0 "" 2
-	.loc 1 455 0
- ; 455 "qwark.c" 1
-	mov #0x0000, &0x6BFE
- ; 0 "" 2
-	.loc 1 456 0
- ; 456 "qwark.c" 1
-	mov #0x0000, &0x6BFC
- ; 0 "" 2
-	.loc 1 460 0
- ; 460 "qwark.c" 1
-	__first_stack_chkpt_setup:
  ; 0 "" 2
 	.loc 1 461 0
  ; 461 "qwark.c" 1
-	cmp.b #0x00, &0x6075 
+	mov #0x0000, &0x6BFE
  ; 0 "" 2
 	.loc 1 462 0
  ; 462 "qwark.c" 1
-	jne __segmentation_logic
+	mov #0x0000, &0x6BFC
  ; 0 "" 2
 	.loc 1 466 0
  ; 466 "qwark.c" 1
-	mov #0x6FFE, r13
+	__first_stack_chkpt_setup:
  ; 0 "" 2
 	.loc 1 467 0
  ; 467 "qwark.c" 1
-	mov #0x7FFE, r14
+	cmp.b #0x00, &0x6075 
  ; 0 "" 2
 	.loc 1 468 0
  ; 468 "qwark.c" 1
+	jne __segmentation_logic
+ ; 0 "" 2
+	.loc 1 471 0
+ ; 471 "qwark.c" 1
+	mov #0x6FFE, r13
+ ; 0 "" 2
+	.loc 1 472 0
+ ; 472 "qwark.c" 1
+	mov #0x7FFE, r14
+ ; 0 "" 2
+	.loc 1 473 0
+ ; 473 "qwark.c" 1
 	br #__copy_stack
- ; 0 "" 2
-	.loc 1 474 0
- ; 474 "qwark.c" 1
-	__segmentation_logic:
- ; 0 "" 2
-	.loc 1 476 0
- ; 476 "qwark.c" 1
-	mov &0x02B4, r14
- ; 0 "" 2
-	.loc 1 477 0
- ; 477 "qwark.c" 1
-	mov &0x6076, r10
- ; 0 "" 2
-	.loc 1 478 0
- ; 478 "qwark.c" 1
-	cmp.b #0x01, &0x6075 
  ; 0 "" 2
 	.loc 1 479 0
  ; 479 "qwark.c" 1
-	jeq __sp_seg_define 
+	__segmentation_logic:
  ; 0 "" 2
-	.loc 1 480 0
- ; 480 "qwark.c" 1
-	mov &0x6078, r10
+	.loc 1 481 0
+ ; 481 "qwark.c" 1
+	mov &0x02B4, r14
+ ; 0 "" 2
+	.loc 1 482 0
+ ; 482 "qwark.c" 1
+	mov &0x6076, r10
+ ; 0 "" 2
+	.loc 1 483 0
+ ; 483 "qwark.c" 1
+	cmp.b #0x01, &0x6075 
+ ; 0 "" 2
+	.loc 1 484 0
+ ; 484 "qwark.c" 1
+	jeq __sp_seg_define 
  ; 0 "" 2
 	.loc 1 485 0
  ; 485 "qwark.c" 1
+	mov &0x6078, r10
+ ; 0 "" 2
+	.loc 1 490 0
+ ; 490 "qwark.c" 1
 	__sp_seg_define:
  ; 0 "" 2
-	.loc 1 488 0
- ; 488 "qwark.c" 1
+	.loc 1 492 0
+ ; 492 "qwark.c" 1
 	cmp r10, r14
- ; 0 "" 2
-	.loc 1 489 0
- ; 489 "qwark.c" 1
-	jne __sp_overlap
  ; 0 "" 2
 	.loc 1 493 0
  ; 493 "qwark.c" 1
+	jne __sp_overlap
+ ; 0 "" 2
+	.loc 1 496 0
+ ; 496 "qwark.c" 1
 	cmp r10, r12
  ; 0 "" 2
-	.loc 1 494 0
- ; 494 "qwark.c" 1
+	.loc 1 497 0
+ ; 497 "qwark.c" 1
 	jeq __stack_chkpt_end
  ; 0 "" 2
-	.loc 1 495 0
- ; 495 "qwark.c" 1
+	.loc 1 498 0
+ ; 498 "qwark.c" 1
 	br #__sp_pre_copy
- ; 0 "" 2
-	.loc 1 500 0
- ; 500 "qwark.c" 1
-	__sp_overlap:
  ; 0 "" 2
 	.loc 1 503 0
  ; 503 "qwark.c" 1
-	cmp r14, r12
+	__sp_overlap:
  ; 0 "" 2
-	.loc 1 504 0
- ; 504 "qwark.c" 1
-	jeq __stack_chkpt_end
+	.loc 1 505 0
+ ; 505 "qwark.c" 1
+	cmp r14, r12
  ; 0 "" 2
 	.loc 1 506 0
  ; 506 "qwark.c" 1
-	decd r14 
+	jeq __stack_chkpt_end
  ; 0 "" 2
 	.loc 1 508 0
  ; 508 "qwark.c" 1
-	mov #0x6BFE, r13
- ; 0 "" 2
-	.loc 1 509 0
- ; 509 "qwark.c" 1
-	mov r14, @r13 
+	decd r14 
  ; 0 "" 2
 	.loc 1 510 0
  ; 510 "qwark.c" 1
-	decd r13 
+	mov #0x6BFE, r13
  ; 0 "" 2
 	.loc 1 511 0
  ; 511 "qwark.c" 1
-	mov r10, @r13
+	mov r14, @r13 
  ; 0 "" 2
 	.loc 1 512 0
  ; 512 "qwark.c" 1
 	decd r13 
  ; 0 "" 2
+	.loc 1 513 0
+ ; 513 "qwark.c" 1
+	mov r10, @r13
+ ; 0 "" 2
 	.loc 1 514 0
  ; 514 "qwark.c" 1
-	mov r12, r11 
- ; 0 "" 2
-	.loc 1 515 0
- ; 515 "qwark.c" 1
-	cmp r10, r12
+	decd r13 
  ; 0 "" 2
 	.loc 1 516 0
  ; 516 "qwark.c" 1
-	jge __overlap_copy
+	mov r12, r11 
  ; 0 "" 2
 	.loc 1 517 0
  ; 517 "qwark.c" 1
-	mov r10, r11 
+	cmp r10, r12
+ ; 0 "" 2
+	.loc 1 518 0
+ ; 518 "qwark.c" 1
+	jge __overlap_copy
  ; 0 "" 2
 	.loc 1 519 0
  ; 519 "qwark.c" 1
-	__overlap_copy:
+	mov r10, r11 
  ; 0 "" 2
 	.loc 1 521 0
  ; 521 "qwark.c" 1
-	mov @r14, @r13 
+	__overlap_copy:
  ; 0 "" 2
-	.loc 1 522 0
- ; 522 "qwark.c" 1
-	cmp r14,r11
+	.loc 1 523 0
+ ; 523 "qwark.c" 1
+	mov @r14, @r13 
  ; 0 "" 2
 	.loc 1 524 0
  ; 524 "qwark.c" 1
-	jeq __sp_ovl_copy
- ; 0 "" 2
-	.loc 1 525 0
- ; 525 "qwark.c" 1
-	decd r13
+	cmp r14,r11
  ; 0 "" 2
 	.loc 1 526 0
  ; 526 "qwark.c" 1
-	decd r14
+	jeq __sp_ovl_copy
  ; 0 "" 2
 	.loc 1 527 0
  ; 527 "qwark.c" 1
-	br #__overlap_copy
+	decd r13
  ; 0 "" 2
-	.loc 1 532 0
- ; 532 "qwark.c" 1
-	__sp_ovl_copy:
+	.loc 1 528 0
+ ; 528 "qwark.c" 1
+	decd r14
+ ; 0 "" 2
+	.loc 1 529 0
+ ; 529 "qwark.c" 1
+	br #__overlap_copy
  ; 0 "" 2
 	.loc 1 534 0
  ; 534 "qwark.c" 1
-	cmp r10,r12
+	__sp_ovl_copy:
  ; 0 "" 2
-	.loc 1 535 0
- ; 535 "qwark.c" 1
-	jge __stack_chkpt_end
+	.loc 1 536 0
+ ; 536 "qwark.c" 1
+	cmp r10,r12
  ; 0 "" 2
 	.loc 1 537 0
  ; 537 "qwark.c" 1
-	__sp_pre_copy:
+	jge __stack_chkpt_end
  ; 0 "" 2
 	.loc 1 539 0
  ; 539 "qwark.c" 1
-	decd r14 
- ; 0 "" 2
-	.loc 1 540 0
- ; 540 "qwark.c" 1
-	mov r14, r13
+	__sp_pre_copy:
  ; 0 "" 2
 	.loc 1 541 0
  ; 541 "qwark.c" 1
-	sub #0x1000, r13
+	decd r14 
  ; 0 "" 2
-	.loc 1 546 0
- ; 546 "qwark.c" 1
-	__copy_stack:
+	.loc 1 542 0
+ ; 542 "qwark.c" 1
+	mov r14, r13
+ ; 0 "" 2
+	.loc 1 543 0
+ ; 543 "qwark.c" 1
+	sub #0x1000, r13
  ; 0 "" 2
 	.loc 1 548 0
  ; 548 "qwark.c" 1
-	mov @r14,@r13
+	__copy_stack:
  ; 0 "" 2
 	.loc 1 550 0
  ; 550 "qwark.c" 1
-	cmp r14,r12
+	mov @r14,@r13
  ; 0 "" 2
-	.loc 1 551 0
- ; 551 "qwark.c" 1
-	jz __stack_chkpt_end
+	.loc 1 552 0
+ ; 552 "qwark.c" 1
+	cmp r14,r12
  ; 0 "" 2
 	.loc 1 553 0
  ; 553 "qwark.c" 1
-	decd r13
- ; 0 "" 2
-	.loc 1 554 0
- ; 554 "qwark.c" 1
-	decd r14
+	jz __stack_chkpt_end
  ; 0 "" 2
 	.loc 1 555 0
  ; 555 "qwark.c" 1
-	br #__copy_stack
+	decd r13
+ ; 0 "" 2
+	.loc 1 556 0
+ ; 556 "qwark.c" 1
+	decd r14
  ; 0 "" 2
 	.loc 1 557 0
  ; 557 "qwark.c" 1
-	__stack_chkpt_end:
+	br #__copy_stack
  ; 0 "" 2
-	.loc 1 565 0
- ; 565 "qwark.c" 1
-	cmp.b #0x01,&0x6075
+	.loc 1 559 0
+ ; 559 "qwark.c" 1
+	__stack_chkpt_end:
  ; 0 "" 2
 	.loc 1 566 0
  ; 566 "qwark.c" 1
-	jz  __set_flag_2nd 
+	cmp.b #0x01,&0x6075
  ; 0 "" 2
-	.loc 1 568 0
- ; 568 "qwark.c" 1
-	add.b #0x01, &0x6074 
+	.loc 1 567 0
+ ; 567 "qwark.c" 1
+	jz  __set_flag_2nd 
  ; 0 "" 2
 	.loc 1 569 0
  ; 569 "qwark.c" 1
-	br  #_WAR_commit 
+	add.b #0x01, &0x6074 
  ; 0 "" 2
-	.loc 1 571 0
- ; 571 "qwark.c" 1
-	__set_flag_2nd:
+	.loc 1 570 0
+ ; 570 "qwark.c" 1
+	br  #_WAR_commit 
  ; 0 "" 2
 	.loc 1 572 0
  ; 572 "qwark.c" 1
+	__set_flag_2nd:
+ ; 0 "" 2
+	.loc 1 573 0
+ ; 573 "qwark.c" 1
 	add.b #0x01, &0x6075 
  ; 0 "" 2
-	.loc 1 585 0
- ; 585 "qwark.c" 1
+	.loc 1 586 0
+ ; 586 "qwark.c" 1
 	_WAR_commit:
  ; 0 "" 2
 	.loc 1 588 0
@@ -1331,231 +1351,239 @@ INT_Qwark:
  ; 641 "qwark.c" 1
 	jeq _chkpt_finished
  ; 0 "" 2
-	.loc 1 645 0
- ; 645 "qwark.c" 1
+	.loc 1 643 0
+ ; 643 "qwark.c" 1
 	mov &0x6BFE,  r13 
+ ; 0 "" 2
+	.loc 1 644 0
+ ; 644 "qwark.c" 1
+	mov &0x6BFC,  r12 
  ; 0 "" 2
 	.loc 1 646 0
  ; 646 "qwark.c" 1
-	mov &0x6BFC,  r12 
+	mov r13,  r14 
+ ; 0 "" 2
+	.loc 1 647 0
+ ; 647 "qwark.c" 1
+	sub #0x1000,  r14 
  ; 0 "" 2
 	.loc 1 648 0
  ; 648 "qwark.c" 1
-	mov r13,  r14 
- ; 0 "" 2
-	.loc 1 649 0
- ; 649 "qwark.c" 1
-	sub #0x1000,  r14 
+	mov #0x6BFA,  r10 
  ; 0 "" 2
 	.loc 1 650 0
  ; 650 "qwark.c" 1
-	mov #0x6BFA,  r10 
- ; 0 "" 2
-	.loc 1 652 0
- ; 652 "qwark.c" 1
 	_second_phase_stack_cpy:
+ ; 0 "" 2
+	.loc 1 651 0
+ ; 651 "qwark.c" 1
+	mov @r10,@r14
  ; 0 "" 2
 	.loc 1 653 0
  ; 653 "qwark.c" 1
-	mov @r10,@r14
+	cmp r13, r12
+ ; 0 "" 2
+	.loc 1 654 0
+ ; 654 "qwark.c" 1
+	jeq _chkpt_finished
  ; 0 "" 2
 	.loc 1 655 0
  ; 655 "qwark.c" 1
-	cmp r13, r12
+	decd r10
  ; 0 "" 2
 	.loc 1 656 0
  ; 656 "qwark.c" 1
-	jeq _chkpt_finished
+	decd r13
  ; 0 "" 2
 	.loc 1 657 0
  ; 657 "qwark.c" 1
-	decd r10
+	decd r14
  ; 0 "" 2
 	.loc 1 658 0
  ; 658 "qwark.c" 1
-	decd r13
- ; 0 "" 2
-	.loc 1 659 0
- ; 659 "qwark.c" 1
-	decd r14
- ; 0 "" 2
-	.loc 1 660 0
- ; 660 "qwark.c" 1
 	br # _second_phase_stack_cpy
  ; 0 "" 2
-	.loc 1 666 0
- ; 666 "qwark.c" 1
+	.loc 1 664 0
+ ; 664 "qwark.c" 1
 	_chkpt_finished:
  ; 0 "" 2
-	.loc 1 669 0
- ; 669 "qwark.c" 1
+	.loc 1 667 0
+ ; 667 "qwark.c" 1
 	cmp.b #0x02,&0x6075
+ ; 0 "" 2
+	.loc 1 668 0
+ ; 668 "qwark.c" 1
+	jeq  __pre_finish_2nd_buffer 
  ; 0 "" 2
 	.loc 1 670 0
  ; 670 "qwark.c" 1
-	jeq  __pre_finish_2nd_buffer 
- ; 0 "" 2
-	.loc 1 672 0
- ; 672 "qwark.c" 1
 	mov #0x0103, &0x6074 
+ ; 0 "" 2
+	.loc 1 676 0
+ ; 676 "qwark.c" 1
+	mov &0x6022,r10
+ ; 0 "" 2
+	.loc 1 677 0
+ ; 677 "qwark.c" 1
+	mov &0x6024,r11
  ; 0 "" 2
 	.loc 1 678 0
  ; 678 "qwark.c" 1
-	mov &0x6022,r10
+	mov &0x6026,r12
  ; 0 "" 2
 	.loc 1 679 0
  ; 679 "qwark.c" 1
-	mov &0x6024,r11
+	mov &0x6028,r13
  ; 0 "" 2
 	.loc 1 680 0
  ; 680 "qwark.c" 1
-	mov &0x6026,r12
+	mov &0x602A,r14
  ; 0 "" 2
 	.loc 1 681 0
  ; 681 "qwark.c" 1
-	mov &0x6028,r13
+	mov &0x602C,r15
  ; 0 "" 2
 	.loc 1 682 0
  ; 682 "qwark.c" 1
-	mov &0x602A,r14
+	mov &0x6076,&0x02B2
  ; 0 "" 2
 	.loc 1 683 0
  ; 683 "qwark.c" 1
-	mov &0x602C,r15
+	mov &0x6076,&0x02B4
  ; 0 "" 2
 	.loc 1 684 0
  ; 684 "qwark.c" 1
-	mov &0x6076,&0x02B2
+	mov &0x6076,&0x02B6
  ; 0 "" 2
 	.loc 1 685 0
  ; 685 "qwark.c" 1
-	mov &0x6076,&0x02B4
- ; 0 "" 2
-	.loc 1 686 0
- ; 686 "qwark.c" 1
-	mov &0x6076,&0x02B6
- ; 0 "" 2
-	.loc 1 687 0
- ; 687 "qwark.c" 1
 	br #_finish
+ ; 0 "" 2
+	.loc 1 690 0
+ ; 690 "qwark.c" 1
+	__pre_finish_2nd_buffer:
  ; 0 "" 2
 	.loc 1 692 0
  ; 692 "qwark.c" 1
-	__pre_finish_2nd_buffer:
+	mov #0x0301, &0x6074 
  ; 0 "" 2
 	.loc 1 694 0
  ; 694 "qwark.c" 1
-	mov #0x0301, &0x6074 
+	mov &0x6052,r10
+ ; 0 "" 2
+	.loc 1 695 0
+ ; 695 "qwark.c" 1
+	mov &0x6054,r11
  ; 0 "" 2
 	.loc 1 696 0
  ; 696 "qwark.c" 1
-	mov &0x6052,r10
+	mov &0x6056,r12
  ; 0 "" 2
 	.loc 1 697 0
  ; 697 "qwark.c" 1
-	mov &0x6054,r11
+	mov &0x6058,r13
  ; 0 "" 2
 	.loc 1 698 0
  ; 698 "qwark.c" 1
-	mov &0x6056,r12
+	mov &0x605A,r14
  ; 0 "" 2
 	.loc 1 699 0
  ; 699 "qwark.c" 1
-	mov &0x6058,r13
+	mov &0x605C,r15
  ; 0 "" 2
 	.loc 1 700 0
  ; 700 "qwark.c" 1
-	mov &0x605A,r14
+	mov &0x6078,&0x02B2
  ; 0 "" 2
 	.loc 1 701 0
  ; 701 "qwark.c" 1
-	mov &0x605C,r15
+	mov &0x6078,&0x02B4
  ; 0 "" 2
 	.loc 1 702 0
  ; 702 "qwark.c" 1
-	mov &0x6078,&0x02B2
+	mov &0x6078,&0x02B6
  ; 0 "" 2
 	.loc 1 703 0
  ; 703 "qwark.c" 1
-	mov &0x6078,&0x02B4
- ; 0 "" 2
-	.loc 1 704 0
- ; 704 "qwark.c" 1
-	mov &0x6078,&0x02B6
- ; 0 "" 2
-	.loc 1 705 0
- ; 705 "qwark.c" 1
 	_finish:
+ ; 0 "" 2
+	.loc 1 706 0
+ ; 706 "qwark.c" 1
+	mov #0x0000, &0x6000
+ ; 0 "" 2
+	.loc 1 707 0
+ ; 707 "qwark.c" 1
+	mov #0x0000, &0x6002
  ; 0 "" 2
 	.loc 1 708 0
  ; 708 "qwark.c" 1
-	mov #0x0000, &0x6000
+	mov #0x0000, &0x6004
  ; 0 "" 2
 	.loc 1 709 0
  ; 709 "qwark.c" 1
-	mov #0x0000, &0x6002
+	mov #0x0000, &0x6006
  ; 0 "" 2
 	.loc 1 710 0
  ; 710 "qwark.c" 1
-	mov #0x0000, &0x6004
+	mov #0x0000, &0x6008
  ; 0 "" 2
 	.loc 1 711 0
  ; 711 "qwark.c" 1
-	mov #0x0000, &0x6006
+	mov #0x0000, &0x600A
  ; 0 "" 2
 	.loc 1 712 0
  ; 712 "qwark.c" 1
-	mov #0x0000, &0x6008
+	mov #0x0000, &0x600C
  ; 0 "" 2
 	.loc 1 713 0
  ; 713 "qwark.c" 1
-	mov #0x0000, &0x600A
- ; 0 "" 2
-	.loc 1 714 0
- ; 714 "qwark.c" 1
-	mov #0x0000, &0x600C
+	mov #0x0000, &0x600E
  ; 0 "" 2
 	.loc 1 715 0
  ; 715 "qwark.c" 1
-	mov #0x0000, &0x600E
+	mov #0x0000, &0x02A2
+ ; 0 "" 2
+	.loc 1 716 0
+ ; 716 "qwark.c" 1
+	mov #0x0000, &0x02A4
  ; 0 "" 2
 	.loc 1 717 0
  ; 717 "qwark.c" 1
-	mov #0x0000, &0x02A2
+	mov #0x0000, &0x02A6
  ; 0 "" 2
 	.loc 1 718 0
  ; 718 "qwark.c" 1
-	mov #0x0000, &0x02A4
+	mov #0x0000, &0x02A8
  ; 0 "" 2
 	.loc 1 719 0
  ; 719 "qwark.c" 1
-	mov #0x0000, &0x02A6
+	mov #0x0000, &0x02AA
  ; 0 "" 2
 	.loc 1 720 0
  ; 720 "qwark.c" 1
-	mov #0x0000, &0x02A8
+	mov #0x0000, &0x02AC
  ; 0 "" 2
 	.loc 1 721 0
  ; 721 "qwark.c" 1
-	mov #0x0000, &0x02AA
+	mov #0x0000, &0x02AE
  ; 0 "" 2
 	.loc 1 722 0
  ; 722 "qwark.c" 1
-	mov #0x0000, &0x02AC
- ; 0 "" 2
-	.loc 1 723 0
- ; 723 "qwark.c" 1
-	mov #0x0000, &0x02AE
+	mov #0x0000, &0x02B0
  ; 0 "" 2
 	.loc 1 724 0
  ; 724 "qwark.c" 1
-	mov #0x0000, &0x02B0
+	add #0x01, &0x607A
  ; 0 "" 2
 	.loc 1 728 0
  ; 728 "qwark.c" 1
+	mov #0xFF, &0x0090 
+ ; 0 "" 2
+	.loc 1 730 0
+ ; 730 "qwark.c" 1
 	mov #0x0001, &0x02A0
  ; 0 "" 2
-	.loc 1 729 0
+	.loc 1 732 0
 	NOP
 	; start of epilogue
 	RETI
